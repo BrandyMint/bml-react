@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 import common from './common';
 import config from '../config';
@@ -26,6 +27,7 @@ export default {
   },
 
   plugins: [
+    new CleanWebpackPlugin('dist', { root: process.cwd() }),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new webpack.optimize.UglifyJsPlugin({
