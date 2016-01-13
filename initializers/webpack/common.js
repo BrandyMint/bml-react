@@ -2,6 +2,7 @@ import path from 'path';
 
 import postcssBEM from 'postcss-bem';
 import postcssNested from 'postcss-nested';
+import postcssImport from 'postcss-import';
 
 const root = path.join(process.cwd(), 'src');
 const entry = path.join(process.cwd(), 'initializers/client');
@@ -21,6 +22,7 @@ export default {
   },
 
   postcss: webpack => [
+    postcssImport({ addDependencyTo: webpack, path: root }),
     postcssBEM,
     postcssNested,
   ],

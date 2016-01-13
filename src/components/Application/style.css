@@ -1,3 +1,7 @@
 body {
   background-color: #cbcccb;
 }
+
+div[class*='col'] {
+  background-color: red;
+}

@@ -8,6 +8,12 @@ common.module.loaders.push({
   test: /\.css$/,
   loaders: ['style-loader', 'css-loader', 'postcss-loader'],
   include: common.root,
+  exclude: /node_modules/
+});
+
+common.module.loaders.push({
+  test: /bootstrap/,
+  loaders: ['style-loader', 'css-loader'],
 });
 
 export default {

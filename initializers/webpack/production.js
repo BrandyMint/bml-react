@@ -14,6 +14,12 @@ common.module.loaders.push({
     'postcss-loader',
   ]),
   include: common.root,
+  exclude: /node_modules/,
+});
+
+common.module.loaders.push({
+  test: /bootstrap/,
+  loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
 });
 
 export default {
