@@ -1,0 +1,27 @@
+{
+  "name": "bml-react",
+
+  "version": "0.0.0",
+
+  "description": "Awesome BML front-end",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandyMint/bml-react.git"
+  },
+
+  "author": "Sergey Laptev <iamsergeylaptev@gmail.com>",
+
+  "bugs": {
+    "url": "https://github.com/BrandyMint/bml-react/issues"
+  },
+
+  "engines": {
+    "node": "^4.0.0",
+    "npm": "^3.0.0"
+  }
+}
