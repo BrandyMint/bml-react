@@ -1,4 +1,4 @@
-import 'stylesheets/style.less';
+import 'stylesheets/style.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

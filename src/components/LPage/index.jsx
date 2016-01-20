@@ -137,8 +137,8 @@ LPage.defaultProps = {
       leadText: 'This template features the \'Lato\' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.',
       image: {
         url: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/phones.png',
-        height: 458,
-        width: 302,
+        height: 302,
+        width: 458,
       },
     },
     ctaMyBad: {

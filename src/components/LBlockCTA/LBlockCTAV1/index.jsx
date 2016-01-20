@@ -12,10 +12,10 @@ const LBlockCTAV1 = ({ backgroundImageUrl, items, text }) => (
         <div className="col-lg-6">
           <ul className="list-inline banner-social-buttons">
             {map(items, (item, index) =>
-              <li key={index}>
+              <li key={index} className="list-inline-item">
                 <a
                   href={item.url}
-                  className="btn btn-default btn-lg"
+                  className="btn btn-secondary btn-lg"
                 >
                   <span className="network-name">{item.title}</span>
                 </a>

@@ -6,7 +6,7 @@ $bubbleZindex: 10;
 $bubbleTextColor: #fff;
 
 @component Bubble {
-  color: #000;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   position: relative;

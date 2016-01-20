@@ -12,14 +12,14 @@ const LBlockFooterV1 = ({ copyrightText, items }) => (
             {
               reduce(items, (acc, item, index) => {
                 acc.push((
-                  <li key={index + '-item'}>
+                  <li className="list-inline-item" key={index + '-item'}>
                     <a href={item.url}>{item.title}</a>
                   </li>
                 ));
 
                 if (size(items) > 1 && index < size(items) - 1) {
                   acc.push(
-                    <li className="footer-menu-divider" key={index + '-divider'}>⋅</li>
+                    <li className="footer-menu-divider list-inline-item" key={index + '-divider'}>⋅</li>
                   );
                 }
 

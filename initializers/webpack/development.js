@@ -11,8 +11,8 @@ common.module.loaders.push({
 });
 
 common.module.loaders.push({
-  test: /\.less$/,
-  loaders: ['style', 'css', 'less'],
+  test: /\.s(a|c)ss$/,
+  loaders: ['style', 'css', 'sass'],
 });
 
 export default {

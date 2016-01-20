@@ -11,12 +11,11 @@ common.module.loaders.push({
   test: /\.css$/,
   loader: ExtractTextPlugin.extract('style', ['css', 'postcss']),
   include: common.root,
-  exclude: /node_modules/,
 });
 
 common.module.loaders.push({
-  test: /\.less$/,
-  loader: ExtractTextPlugin.extract('style', ['css', 'less']),
+  test: /\.s(a|c)ss$/,
+  loader: ExtractTextPlugin.extract('style', ['css', 'sass']),
 });
 
 export default {
