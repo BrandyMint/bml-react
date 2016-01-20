@@ -72,7 +72,38 @@ LPage.defaultProps = {
         height: 458,
         width: 302,
       },
-    }
+    },
+    ctaMyBad: {
+      text: 'Connect to BML landings:',
+      backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/banner-bg.jpg',
+      items: [
+        {
+          title: 'Twitter',
+          url: 'twitter.com',
+        },
+        {
+          title: 'GitHub',
+          url: 'github.com',
+        },
+      ],
+    },
+    myFooter: {
+      copyrightText: 'Copyright © BML landing 2016. All Rights Reserved',
+      items: [
+        {
+          title: 'Home',
+          url: '#',
+        },
+        {
+          title: 'About',
+          url: '#about',
+        },
+        {
+          title: 'Services',
+          url: '#services',
+        },
+      ],
+    },
   },
   blocks: [
     {
@@ -104,6 +135,16 @@ LPage.defaultProps = {
       uuid: 'hello2323',
       type: 'LBlockContentSection',
       view: 'LBlockContentSectionV1',
+    },
+    {
+      uuid: 'ctaMyBad',
+      type: 'LBlockCTA',
+      view: 'LBlockCTAV1',
+    },
+    {
+      uuid: 'myFooter',
+      type: 'LBlockFooter',
+      view: 'LBlockFooterV1',
     },
   ],
 };

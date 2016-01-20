@@ -5,11 +5,15 @@ import LBlockLayer from 'components/LBlockLayer';
 import LBlockHeader from 'components/LBlockHeader';
 import LBlockNavbar from 'components/LBlockNavbar';
 import LBlockContentSection from 'components/LBlockContentSection';
+import LBlockCTA from 'components/LBlockCTA';
+import LBlockFooter from 'components/LBlockFooter';
 
 const typeComponents = {
   LBlockContentSection,
   LBlockHeader,
   LBlockNavbar,
+  LBlockCTA,
+  LBlockFooter,
 };
 
 class LBlock extends Component {

@@ -64,6 +64,61 @@ const BLOCKS = [
         width: 458,
       },
     }
+  },
+  {
+    type: 'LBlockCTA',
+    view: 'LBlockCTAV1',
+    title: 'Кнопка действий',
+    description: 'raw description22323',
+    image: {
+      url: 'hello123.ru',
+      height: 100,
+      width: 100,
+    },
+    rate: 3,
+    defaultData: {
+      text: 'Connect to Start BML:',
+      backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/banner-bg.jpg',
+      items: [
+        {
+          title: 'Twitter',
+          url: 'twitter.com'.
+        },
+        {
+          title: 'GitHub',
+          url: 'github.com',
+        },
+      ],
+    }
+  },
+  {
+    type: 'LBlockFooter',
+    view: 'LBlockFooterV1',
+    title: 'Подвал',
+    description: 'raw description223',
+    image: {
+      url: 'hello1.ru',
+      height: 100,
+      width: 100,
+    },
+    rate: 5,
+    defaultData: {
+      copyrightText: 'Copyright © Your Company 2014. All Rights Reserved',
+      items: [
+        {
+          title: 'Home',
+          url: '#',
+        },
+        {
+          title: 'About',
+          url: '#about',
+        },
+        {
+          title: 'Services',
+          url: '#services',
+        },
+      ],
+    }
   }
 ];
 
