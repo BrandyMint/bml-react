@@ -6,6 +6,7 @@ import './LBlockLayer.css';
 // LBlockLayerEditable
 // LBlockLayerView
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
+import LBlockViewChanger from 'components/LBlockViewChanger';
 
 const LBlockLayer = ({ children, isEditMode }) => {
   const layerClasses = classnames({
@@ -15,8 +16,12 @@ const LBlockLayer = ({ children, isEditMode }) => {
 
   return (
     <div className={layerClasses}>
-      {isEditMode && <LBlockSettingsButton />}
-
+      {isEditMode && (
+        <div className="LBlockLayer-actions">
+          <LBlockSettingsButton />
+          <LBlockViewChanger />
+        </div>
+      )}
       {Children.only(children)}
     </div>
   );

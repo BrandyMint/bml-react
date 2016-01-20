@@ -1,0 +1,37 @@
+$bubbleHeight: 40px;
+$bubbleSmallWidth: 40px;
+$bubbleBackground: rgba(0, 0, 0, 0.3);
+$bubbleBackgroundHover: rgba(0, 0, 0, 0.2);
+$bubbleZindex: 10;
+$bubbleTextColor: #fff;
+
+@component Bubble {
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  height: $bubbleHeight;
+  min-width: $bubbleSmallWidth;
+  margin: 0;
+  border-radius: calc($bubbleHeight / 2);
+  background-color: $bubbleBackground;
+  z-index: $bubbleZindex;
+  transition: background-color .2s ease;
+  letter-spacing: 0;
+  word-spacing: 0;
+
+  &:hover {
+    background-color: $bubbleBackgroundHover;
+  }
+
+  @modifier withIcon {
+    display: table;
+  }
+
+  @descendent icon {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 20px;
+  }
+}
