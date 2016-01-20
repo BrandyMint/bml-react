@@ -1,32 +1,50 @@
-import React, { Children, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+
+import bind from 'lodash/bind';
 
 import './Bubble.css';
 
 import Icon from 'components/ui-elements/Icon';
 
-const Bubble = ({ children, icon, text }) => {
-  const bubbleClasses = classnames({
-    'Bubble': true,
-    'Bubble--withText': Boolean(text),
-    'Bubble--withIcon': Boolean(icon),
-  });
+class Bubble extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className={bubbleClasses}>
-      {!!text && <span className="Bubble-text">{text}</span>}
-      {!!icon && (
-        <span className="Bubble-icon">
-          <Icon glyph={icon} />
-        </span>
-      )}
-      {!text && !icon && children}
-    </div>
-  );
-};
+    this.handleClick = bind(this.handleClick, this);
+  }
+  handleClick(event) {
+    if (this.props.onClick) {
+      event.preventDefault();
+      this.props.onClick();
+    }
+  }
+  render() {
+    const { children, icon, text, onClick } = this.props;
+    const bubbleClasses = classnames({
+      'Bubble': true,
+      'Bubble--withText': !!text,
+      'Bubble--withIcon': !!icon,
+    });
+
+    return (
+      <div className={bubbleClasses} onClick={this.handleClick}>
+        {!!text && <span className="Bubble-text">{text}</span>}
+        {!!icon && (
+          <span className="Bubble-icon">
+            <Icon glyph={icon} />
+          </span>
+        )}
+        {!text && !icon && children}
+      </div>
+    );
+  }
+}
 
 Bubble.propTypes = {
   children: PropTypes.node,
+  icon: PropTypes.string,
+  onClick: PropTypes.func,
   text: PropTypes.string,
 };
 

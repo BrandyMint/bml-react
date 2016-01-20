@@ -1,17 +1,85 @@
 import React, { Component, PropTypes } from 'react';
 
+import get from 'lodash/get';
+import map from 'lodash/map';
+import bind from 'lodash/bind';
+import size from 'lodash/size';
+import find from 'lodash/find';
+import findIndex from 'lodash/findIndex';
+
+import VIEWS from 'constants/views';
+
 import LBlockList from 'components/LBlockList';
 
 class LPage extends Component {
-  state = {
-    blocks: this.props.blocks,
-    data: this.props.data,
-  };
+  constructor(props) {
+    super(props);
+
+    this.switchNextView = bind(this.switchNextView, this);
+    this.switchPrevView = bind(this.switchPrevView, this);
+
+    this.state = {
+      blocks: props.blocks,
+      data: props.data,
+    };
+  }
+  switchNextView(uuid) {
+    const nextBlocks = map(this.state.blocks, (block) => {
+      if (block.uuid === uuid) {
+        const views = get(VIEWS, block.type);
+        const viewsCount = size(views);
+
+        if (viewsCount > 1) {
+          const view = block.view;
+          const viewIndex = findIndex(views, { view });
+          const nextViewIndex = viewIndex + 1 !== viewsCount ? viewIndex + 1 : 0;
+          const nextView = get(views, nextViewIndex);
+
+          return {
+            ...block,
+            view: nextView.view,
+          };
+        }
+      }
+
+      return block;
+    });
+
+    this.setState({ blocks: nextBlocks });
+  }
+  switchPrevView(uuid) {
+    const nextBlocks = map(this.state.blocks, (block) => {
+      if (block.uuid === uuid) {
+        const views = get(VIEWS, block.type);
+        const viewsCount = size(views);
+
+        if (viewsCount > 1) {
+          const view = block.view;
+          const viewIndex = findIndex(views, { view });
+          const prevViewIndex = viewIndex <= 0 ? viewsCount - 1 : viewIndex - 1;
+          const prevView = get(views, prevViewIndex);
+
+          return {
+            ...block,
+            view: prevView.view,
+          };
+        }
+      }
+
+      return block;
+    });
+
+    this.setState({ blocks: nextBlocks });
+  }
   render() {
     return (
       <div className="LPage">
         <div className="LPage-content">
-          <LBlockList {...this.state} />
+          <LBlockList
+            {...this.state}
+            onViewSwitchNext={this.switchNextView}
+            onViewSwitchPrev={this.switchPrevView}
+          />
         </div>
       </div>
     );

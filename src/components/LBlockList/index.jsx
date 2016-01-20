@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import get from 'lodash/get';
 import map from 'lodash/map';
+import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
 import LBlock from 'components/LBlock';
@@ -13,13 +14,21 @@ const Placeholder = () => (
   </div>
 );
 
-const LBlockList = ({ blocks, data }) => {
+const LBlockList = ({
+  blocks,
+  data,
+
+  onViewSwitchNext,
+  onViewSwitchPrev
+}) => {
   const renderBlock = (block) => {
     const props = {
       block: {
         ...block,
         data: get(data, block.uuid),
       },
+      onViewSwitchNext: partial(onViewSwitchNext, block.uuid),
+      onViewSwitchPrev: partial(onViewSwitchPrev, block.uuid),
       key: block.uuid,
     };
 

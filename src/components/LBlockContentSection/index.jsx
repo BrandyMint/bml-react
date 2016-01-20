@@ -2,10 +2,12 @@ import React, { Component, PropTypes } from 'react';
 
 import LBlockContentSectionV1 from './LBlockContentSectionV1';
 import LBlockContentSectionV2 from './LBlockContentSectionV2';
+import LBlockContentSectionV3 from './LBlockContentSectionV3';
 
 const viewComponents = {
   LBlockContentSectionV1,
   LBlockContentSectionV2,
+  LBlockContentSectionV3,
 };
 
 const LBlockContentSection = ({ data, view }) => {

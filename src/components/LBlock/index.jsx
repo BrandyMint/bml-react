@@ -18,12 +18,17 @@ const typeComponents = {
 
 class LBlock extends Component {
   render() {
-    const { block, isEditMode } = this.props;
+    const { block, isEditMode, onViewSwitchNext, onViewSwitchPrev } = this.props;
     const TypeComponent = typeComponents[block.type];
 
     return (
       <div className="LBlock">
-        <LBlockLayer block={block} isEditMode={isEditMode}>
+        <LBlockLayer
+          block={block}
+          isEditMode={isEditMode}
+          onViewSwitchNext={onViewSwitchNext}
+          onViewSwitchPrev={onViewSwitchPrev}
+        >
           {TypeComponent
             ? <TypeComponent data={block.data} view={block.view} />
             : <span>Unknown type of block {block.type}</span>
@@ -37,6 +42,8 @@ class LBlock extends Component {
 LBlock.propTypes = {
   block: PropTypes.object.isRequired,
   isEditMode: PropTypes.bool,
+  onViewSwitchNext: PropTypes.func.isRequired,
+  onViewSwitchPrev: PropTypes.func.isRequired,
 };
 
 LBlock.defaultProps = {

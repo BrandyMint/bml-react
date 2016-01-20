@@ -33,6 +33,11 @@ export default {
     new CleanWebpackPlugin('dist', { root: process.cwd() }),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.DefinePlugin({
+      __CLIENT__: true,
+      __SERVER__: false,
+      __ENV__: '"production"',
+    }),
     new webpack.optimize.UglifyJsPlugin({
       output: { comments: false },
       compress: { warnings: false },

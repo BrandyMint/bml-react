@@ -1,31 +1,18 @@
-const BLOCKS = [
+import { HEADER_TYPE, NAVBAR_TYPE, CONTENT_SECTION_TYPE, CTA_TYPE, FOOTER_TYPE } from './blockTypes';
+import VIEWS from './views';
+
+const TYPES = [
   {
-    type: 'LBlockHeader',
-    view: 'LBLockHeaderV1',
-    title: 'Заголовок',
-    description: 'html raw description',
-    image: {
-      url: 'google.ru',
-      height: 100,
-      width: 100,
-    },
-    rate: 1,
+    type: HEADER_TYPE,
+    views: VIEWS[HEADER_TYPE],
     defaultData: {
       header: 'Hello',
       subheader: 'My little friend!',
     },
   },
   {
-    type: 'LBlockNavbar',
-    view: 'LBlockNavbarV1',
-    title: 'Панель навигации',
-    description: 'raw description',
-    image: {
-      url: 'hello.ru',
-      height: 100,
-      width: 100,
-    },
-    rate: 4,
+    type: NAVBAR_TYPE,
+    views: VIEWS[NAVBAR_TYPE],
     defaultData: {
       logoText: 'BML theme',
       items: [
@@ -42,19 +29,11 @@ const BLOCKS = [
           url: 'contact.ru',
         },
       ],
-    }
+    },
   },
   {
-    type: 'LBlockContentSection',
-    view: 'LBlockContentSectionV1',
-    title: 'Область с контентом',
-    description: 'raw description2',
-    image: {
-      url: 'hello3.ru',
-      height: 100,
-      width: 100,
-    },
-    rate: 2,
+    type: CONTENT_SECTION_TYPE,
+    views: VIEWS[CONTENT_SECTION_TYPE],
     defaultData: {
       headerText: 'Death to the Stock Photo: <br /> Special Thanks',
       leadText: 'A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.',
@@ -63,45 +42,29 @@ const BLOCKS = [
         height: 354,
         width: 458,
       },
-    }
+    },
   },
   {
-    type: 'LBlockCTA',
-    view: 'LBlockCTAV1',
-    title: 'Кнопка действий',
-    description: 'raw description22323',
-    image: {
-      url: 'hello123.ru',
-      height: 100,
-      width: 100,
-    },
-    rate: 3,
+    type: CTA_TYPE,
+    views: VIEWS[CTA_TYPE],
     defaultData: {
       text: 'Connect to Start BML:',
       backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/banner-bg.jpg',
       items: [
         {
           title: 'Twitter',
-          url: 'twitter.com'.
+          url: 'twitter.com',
         },
         {
           title: 'GitHub',
           url: 'github.com',
         },
       ],
-    }
+    },
   },
   {
-    type: 'LBlockFooter',
-    view: 'LBlockFooterV1',
-    title: 'Подвал',
-    description: 'raw description223',
-    image: {
-      url: 'hello1.ru',
-      height: 100,
-      width: 100,
-    },
-    rate: 5,
+    type: FOOTER_TYPE,
+    views: VIEWS[FOOTER_TYPE],
     defaultData: {
       copyrightText: 'Copyright © Your Company 2014. All Rights Reserved',
       items: [
@@ -118,8 +81,8 @@ const BLOCKS = [
           url: '#services',
         },
       ],
-    }
-  }
+    },
+  },
 ];
 
-export default BLOCKS;
+export default TYPES;

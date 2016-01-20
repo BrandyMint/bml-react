@@ -8,7 +8,7 @@ import './LBlockLayer.css';
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import LBlockViewChanger from 'components/LBlockViewChanger';
 
-const LBlockLayer = ({ children, isEditMode }) => {
+const LBlockLayer = ({ children, isEditMode, onViewSwitchNext, onViewSwitchPrev }) => {
   const layerClasses = classnames({
     'LBlockLayer': true,
     'is-editing': isEditMode,
@@ -19,7 +19,10 @@ const LBlockLayer = ({ children, isEditMode }) => {
       {isEditMode && (
         <div className="LBlockLayer-actions">
           <LBlockSettingsButton />
-          <LBlockViewChanger />
+          <LBlockViewChanger
+            onViewSwitchNext={onViewSwitchNext}
+            onViewSwitchPrev={onViewSwitchPrev}
+          />
         </div>
       )}
       {Children.only(children)}
@@ -29,6 +32,8 @@ const LBlockLayer = ({ children, isEditMode }) => {
 
 LBlockLayer.propTypes = {
   isEditMode: PropTypes.bool,
+  onViewSwitchNext: PropTypes.func.isRequired,
+  onViewSwitchPrev: PropTypes.func.isRequired,
 };
 
 export default LBlockLayer;

@@ -1,10 +1,18 @@
 @component LBlockLayer {
   position: relative;
 
+  &:hover {
+    .LBlockLayer-actions {
+      opacity: 1;
+    }
+  }
+
   @descendent actions {
     position: absolute;
     top: 10px;
     left: 15px;
     width: 200px;
+    opacity: 0;
+    transition: opacity 1s;
   }
 }
