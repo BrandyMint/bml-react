@@ -1,11 +1,11 @@
+import 'stylesheets/style.less';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Application from 'components/Application';
+import LPage from 'components/LPage';
 
 ReactDOM.render(
-  <Application />,
+  <LPage />,
   document.getElementById('content')
 );

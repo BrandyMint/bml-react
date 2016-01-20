@@ -9,17 +9,14 @@ import config from '../config';
 
 common.module.loaders.push({
   test: /\.css$/,
-  loader: ExtractTextPlugin.extract('style-loader', [
-    'css-loader',
-    'postcss-loader',
-  ]),
+  loader: ExtractTextPlugin.extract('style', ['css', 'postcss']),
   include: common.root,
   exclude: /node_modules/,
 });
 
 common.module.loaders.push({
-  test: /bootstrap/,
-  loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+  test: /\.less$/,
+  loader: ExtractTextPlugin.extract('style', ['css', 'less']),
 });
 
 export default {

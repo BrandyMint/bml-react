@@ -1,0 +1,6 @@
+@component LBlockSettingsButton {
+  background-color: grey;
+  border-radius: 50px;
+  position: absolute;
+  opacity: .5;
+}

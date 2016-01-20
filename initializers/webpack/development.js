@@ -6,14 +6,13 @@ import config from '../config';
 
 common.module.loaders.push({
   test: /\.css$/,
-  loaders: ['style-loader', 'css-loader', 'postcss-loader'],
+  loaders: ['style', 'css', 'postcss'],
   include: common.root,
-  exclude: /node_modules/
 });
 
 common.module.loaders.push({
-  test: /bootstrap/,
-  loaders: ['style-loader', 'css-loader'],
+  test: /\.less$/,
+  loaders: ['style', 'css', 'less'],
 });
 
 export default {

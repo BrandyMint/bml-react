@@ -1,0 +1,5 @@
+@component LBlockLayer {
+  .LBlockSettingsButton {
+    left: 20px;
+  }
+}
