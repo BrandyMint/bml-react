@@ -10,11 +10,13 @@ const LBlockNavbarV1 = ({ items, logoText }) => (
           {logoText}
         </a>
       </div>
-      <div className="collapse navbar-collapse">
-        <ul className="nav navbar-nav navbar-right">
+      <div className="navbar-collapse">
+        <ul className="nav navbar-nav pull-right">
           {map(items, (item, index) =>
-            <li key={index}>
-              <a href={item.url}>{item.title}</a>
+            <li className="nav-item" key={index}>
+              <a className="nav-link" href={item.url}>
+                {item.title}
+              </a>
             </li>
           )}
         </ul>
