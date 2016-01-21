@@ -1,6 +1,4 @@
-@component LBlockViewChanger {
-  float: left;
-
+@component LBlockPositionChanger {
   .Bubble {
     float: left;
     margin-right: 10px;

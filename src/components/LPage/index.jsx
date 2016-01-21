@@ -15,13 +15,43 @@ class LPage extends Component {
   constructor(props) {
     super(props);
 
+    this.downBlockPosition = bind(this.downBlockPosition, this);
     this.switchNextView = bind(this.switchNextView, this);
     this.switchPrevView = bind(this.switchPrevView, this);
+    this.upBlockPosition = bind(this.upBlockPosition, this);
 
     this.state = {
       blocks: props.blocks,
       data: props.data,
     };
+  }
+  upBlockPosition(uuid) {
+    const { blocks } = this.state;
+    const blockIndex = findIndex(blocks, { uuid });
+    const prevBlockIndex = blockIndex - 1;
+
+    if (blockIndex) {
+      const newBlocks = [...blocks];
+      const block = newBlocks[blockIndex];
+      newBlocks[blockIndex] = newBlocks[prevBlockIndex];
+      newBlocks[prevBlockIndex] = block;
+
+      this.setState({ blocks: newBlocks }); 
+    }
+  }
+  downBlockPosition(uuid) {
+    const { blocks } = this.state;
+    const blockIndex = findIndex(blocks, { uuid });
+    const nextBlockIndex = blockIndex + 1;
+
+    if (size(blocks) > nextBlockIndex) {
+      const newBlocks = [...blocks];
+      const block = newBlocks[blockIndex];
+      newBlocks[blockIndex] = newBlocks[nextBlockIndex];
+      newBlocks[nextBlockIndex] = block;
+
+      this.setState({ blocks: newBlocks }); 
+    }
   }
   switchNextView(uuid) {
     const nextBlocks = map(this.state.blocks, (block) => {
@@ -77,6 +107,9 @@ class LPage extends Component {
         <div className="LPage-content">
           <LBlockList
             {...this.state}
+            isEditMode
+            onBlockPositionDown={this.downBlockPosition}
+            onBlockPositionUp={this.upBlockPosition}
             onViewSwitchNext={this.switchNextView}
             onViewSwitchPrev={this.switchPrevView}
           />

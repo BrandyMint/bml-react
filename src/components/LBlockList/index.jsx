@@ -20,6 +20,8 @@ const LBlockList = ({
   data,
   isEditMode,
 
+  onBlockPositionDown,
+  onBlockPositionUp,
   onViewSwitchNext,
   onViewSwitchPrev
 }) => {
@@ -30,6 +32,8 @@ const LBlockList = ({
         data: get(data, block.uuid),
       },
       isEditMode: isEditMode,
+      onBlockPositionDown: partial(onBlockPositionDown, block.uuid),
+      onBlockPositionUp: partial(onBlockPositionUp, block.uuid),
       onViewSwitchNext: partial(onViewSwitchNext, block.uuid),
       onViewSwitchPrev: partial(onViewSwitchPrev, block.uuid),
       key: block.uuid,
@@ -52,11 +56,15 @@ LBlockList.propTypes = {
   blocks: PropTypes.array.isRequired,
   data: PropTypes.object.isRequired,
   isEditMode: PropTypes.bool,
+  onBlockPositionDown: PropTypes.func,
+  onBlockPositionUp: PropTypes.func,
   onViewSwitchNext: PropTypes.func,
   onViewSwitchPrev: PropTypes.func,
 };
 
 LBlockList.defaultProps = {
+  onBlockPositionDown: noop,
+  onBlockPositionUp: noop,
   onViewSwitchPrev: noop,
   onViewSwitchNext: noop,
 };

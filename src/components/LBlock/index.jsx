@@ -19,7 +19,10 @@ const typeComponents = {
 
 class LBlock extends Component {
   render() {
-    const { block, isEditMode, onViewSwitchNext, onViewSwitchPrev } = this.props;
+    const {
+      block, isEditMode,
+      onBlockPositionDown, onBlockPositionUp, onViewSwitchNext, onViewSwitchPrev,
+    } = this.props;
     const TypeComponent = typeComponents[block.type];
 
     return (
@@ -27,6 +30,8 @@ class LBlock extends Component {
         <LBlockLayer
           block={block}
           isEditMode={isEditMode}
+          onBlockPositionDown={onBlockPositionDown}
+          onBlockPositionUp={onBlockPositionUp}
           onViewSwitchNext={onViewSwitchNext}
           onViewSwitchPrev={onViewSwitchPrev}
         >
@@ -43,6 +48,8 @@ class LBlock extends Component {
 LBlock.propTypes = {
   block: PropTypes.object.isRequired,
   isEditMode: PropTypes.bool,
+  onBlockPositionDown: PropTypes.func.isRequired,
+  onBlockPositionUp: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
 };

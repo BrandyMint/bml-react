@@ -5,8 +5,17 @@ import classnames from 'classnames';
 
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import LBlockViewChanger from 'components/LBlockViewChanger';
+import LBlockPositionChanger from 'components/LBlockPositionChanger';
 
-const LBlockLayer = ({ children, isEditMode, onViewSwitchNext, onViewSwitchPrev }) => {
+const LBlockLayer = ({
+  children,
+  isEditMode,
+
+  onBlockPositionDown,
+  onBlockPositionUp,
+  onViewSwitchNext,
+  onViewSwitchPrev
+}) => {
   const layerClasses = classnames({
     'LBlockLayer': true,
     'is-editing': isEditMode,
@@ -21,6 +30,10 @@ const LBlockLayer = ({ children, isEditMode, onViewSwitchNext, onViewSwitchPrev 
             onViewSwitchNext={onViewSwitchNext}
             onViewSwitchPrev={onViewSwitchPrev}
           />
+          <LBlockPositionChanger
+            onBlockPositionDown={onBlockPositionDown}
+            onBlockPositionUp={onBlockPositionUp}
+          />
         </div>
       )}
       {Children.only(children)}
@@ -30,6 +43,8 @@ const LBlockLayer = ({ children, isEditMode, onViewSwitchNext, onViewSwitchPrev 
 
 LBlockLayer.propTypes = {
   isEditMode: PropTypes.bool,
+  onBlockPositionDown: PropTypes.func.isRequired,
+  onBlockPositionUp: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
 };
