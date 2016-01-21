@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import LPage from 'components/LPage';
+import LSite from 'components/LSite';
 
 if (__ENV__ === 'development') {
   ReactDOM.render(
@@ -14,4 +15,5 @@ if (__ENV__ === 'development') {
   global.React = React;
   global.ReactDOM = ReactDOM;
   global.LPage = LPage;
+  global.LSite = LSite;
 }

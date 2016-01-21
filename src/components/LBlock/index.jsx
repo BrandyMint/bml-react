@@ -47,8 +47,4 @@ LBlock.propTypes = {
   onViewSwitchPrev: PropTypes.func.isRequired,
 };
 
-LBlock.defaultProps = {
-  isEditMode: true,
-};
-
 export default LBlock;

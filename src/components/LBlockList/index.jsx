@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import get from 'lodash/get';
 import map from 'lodash/map';
+import noop from 'lodash/noop';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
@@ -17,6 +18,7 @@ const Placeholder = () => (
 const LBlockList = ({
   blocks,
   data,
+  isEditMode,
 
   onViewSwitchNext,
   onViewSwitchPrev
@@ -27,6 +29,7 @@ const LBlockList = ({
         ...block,
         data: get(data, block.uuid),
       },
+      isEditMode: isEditMode,
       onViewSwitchNext: partial(onViewSwitchNext, block.uuid),
       onViewSwitchPrev: partial(onViewSwitchPrev, block.uuid),
       key: block.uuid,
@@ -44,5 +47,18 @@ const LBlockList = ({
     </div>
   );
 }
+
+LBlockList.propTypes = {
+  blocks: PropTypes.array.isRequired,
+  data: PropTypes.object.isRequired,
+  isEditMode: PropTypes.bool,
+  onViewSwitchNext: PropTypes.func,
+  onViewSwitchPrev: PropTypes.func,
+};
+
+LBlockList.defaultProps = {
+  onViewSwitchPrev: noop,
+  onViewSwitchNext: noop,
+};
 
 export default LBlockList;

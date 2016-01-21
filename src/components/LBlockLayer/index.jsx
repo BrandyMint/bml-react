@@ -1,10 +1,8 @@
+import './LBlockLayer.css';
+
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-import './LBlockLayer.css';
-
-// LBlockLayerEditable
-// LBlockLayerView
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import LBlockViewChanger from 'components/LBlockViewChanger';
 

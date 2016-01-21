@@ -7,6 +7,8 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import common from './common';
 import config from '../config';
 
+const extractTheme = new ExtractTextPlugin('stylesheets/[name].css');
+
 common.module.loaders.push({
   test: /\.css$/,
   loader: ExtractTextPlugin.extract('style', ['css', 'postcss']),
@@ -30,7 +32,7 @@ export default {
 
   plugins: [
     new CleanWebpackPlugin('dist', { root: process.cwd() }),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new webpack.DefinePlugin({
       __CLIENT__: true,
