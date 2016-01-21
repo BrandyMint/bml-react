@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+
 import bind from 'lodash/bind';
 
 import LBlockLayer from 'components/LBlockLayer';
-import LBlockHeader from 'components/LBlockHeader';
+import LBlockMustRead from 'components/LBlockMustRead';
 import LBlockNavbar from 'components/LBlockNavbar';
 import LBlockContentSection from 'components/LBlockContentSection';
 import LBlockCTA from 'components/LBlockCTA';
@@ -10,7 +11,7 @@ import LBlockFooter from 'components/LBlockFooter';
 
 const typeComponents = {
   LBlockContentSection,
-  LBlockHeader,
+  LBlockMustRead,
   LBlockNavbar,
   LBlockCTA,
   LBlockFooter,

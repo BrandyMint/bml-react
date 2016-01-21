@@ -13,6 +13,6 @@
     left: 15px;
     width: 200px;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity .3s;
   }
 }

@@ -7,7 +7,7 @@ import Icon from 'components/ui-elements/Icon';
 
 const LBlockSettingsButton = ({ onEditStart }) => (
   <div className="LBlockSettingsButton">
-    <Bubble icon="cogs" />
+    <Bubble icon="cog" />
   </div>
 );
 

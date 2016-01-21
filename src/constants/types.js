@@ -1,36 +1,9 @@
-import { HEADER_TYPE, NAVBAR_TYPE, CONTENT_SECTION_TYPE, CTA_TYPE, FOOTER_TYPE } from './blockTypes';
+import {
+  CONTENT_SECTION_TYPE, CTA_TYPE, FOOTER_TYPE, MUST_READ_TYPE, NAVBAR_TYPE,
+} from './blockTypes';
 import VIEWS from './views';
 
 const TYPES = [
-  {
-    type: HEADER_TYPE,
-    views: VIEWS[HEADER_TYPE],
-    defaultData: {
-      header: 'Hello',
-      subheader: 'My little friend!',
-    },
-  },
-  {
-    type: NAVBAR_TYPE,
-    views: VIEWS[NAVBAR_TYPE],
-    defaultData: {
-      logoText: 'BML theme',
-      items: [
-        {
-          title: 'About',
-          url: 'google.ru',
-        },
-        {
-          title: 'Services',
-          url: 'services.ru',
-        },
-        {
-          title: 'Contact',
-          url: 'contact.ru',
-        },
-      ],
-    },
-  },
   {
     type: CONTENT_SECTION_TYPE,
     views: VIEWS[CONTENT_SECTION_TYPE],
@@ -79,6 +52,35 @@ const TYPES = [
         {
           title: 'Services',
           url: '#services',
+        },
+      ],
+    },
+  },
+  {
+    type: MUST_READ_TYPE,
+    views: VIEWS[HEADER_TYPE],
+    defaultData: {
+      header: 'Hello',
+      subheader: 'My little friend!',
+    },
+  },
+  {
+    type: NAVBAR_TYPE,
+    views: VIEWS[NAVBAR_TYPE],
+    defaultData: {
+      logoText: 'BML theme',
+      items: [
+        {
+          title: 'About',
+          url: 'google.ru',
+        },
+        {
+          title: 'Services',
+          url: 'services.ru',
+        },
+        {
+          title: 'Contact',
+          url: 'contact.ru',
         },
       ],
     },

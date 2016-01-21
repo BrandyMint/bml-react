@@ -1,7 +1,0 @@
-@component LBlockHeaderV2 {
-  background-color: orange;
-
-  @descendent header {
-    font-size: 30px;
-  }
-}

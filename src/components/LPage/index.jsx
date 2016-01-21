@@ -96,10 +96,24 @@ LPage.defaultProps = {
     weq23: {
       header: 'Hello',
       subheader: 'My little friend!',
-    },
-    weq3: {
-      header: 'Hello2',
-      subheader: 'My little friend2!',
+      backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/intro-bg.jpg',
+      items: [
+        {
+          title: 'Twitter',
+          icon: 'twitter',
+          url: 'twitter.com',
+        },
+        {
+          title: 'GitHub',
+          icon: 'github',
+          url: 'github.com',
+        },
+        {
+          title: 'LinkedIn',
+          icon: 'linkedin',
+          url: 'linkedin.com',
+        },
+      ],
     },
     tko: {
       logoText: 'BML theme',
@@ -181,13 +195,8 @@ LPage.defaultProps = {
     },
     {
       uuid: 'weq23',
-      type: 'LBlockHeader',
-      view: 'LBlockHeaderV1',
-    },
-    {
-      uuid: 'weq3',
-      type: 'LBlockHeader',
-      view: 'LBlockHeaderV2',
+      type: 'LBlockMustRead',
+      view: 'LBlockMustReadV1',
     },
     {
       uuid: 'hello',

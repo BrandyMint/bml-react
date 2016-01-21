@@ -1,13 +1,8 @@
 import {
-  HEADER_TYPE, NAVBAR_TYPE, CONTENT_SECTION_TYPE, CTA_TYPE, FOOTER_TYPE,
+  CONTENT_SECTION_TYPE, CTA_TYPE, FOOTER_TYPE, MUST_READ_TYPE, NAVBAR_TYPE,
 } from './blockTypes';
 
 import {
-  HEADER_VIEW_V1,
-  HEADER_VIEW_V2,
-
-  NAVBAR_VIEW_V1,
-
   CONTENT_SECTION_VIEW_V1,
   CONTENT_SECTION_VIEW_V2,
   CONTENT_SECTION_VIEW_V3,
@@ -15,46 +10,13 @@ import {
   CTA_VIEW_V1,
 
   FOOTER_VIEW_V1,
+
+  MUST_READ_VIEW_V1,
+
+  NAVBAR_VIEW_V1,
 } from './blockViews';
 
 const VIEWS = {
-  [HEADER_TYPE]: [
-    {
-      view: HEADER_VIEW_V1,
-      title: 'Заголовок',
-      description: 'html raw description',
-      image: {
-        url: 'google.ru',
-        height: 100,
-        width: 100,
-      },
-      rate: 1,
-    },
-    {
-      view: HEADER_VIEW_V2,
-      title: 'Заголовок 2',
-      description: 'html raw descriptiondsad',
-      image: {
-        url: 'google.ru',
-        height: 100,
-        width: 100,
-      },
-      rate: 2,
-    },
-  ],
-  [NAVBAR_TYPE]: [
-    {
-      view: NAVBAR_VIEW_V1,
-      title: 'Панель навигации',
-      description: 'raw description',
-      image: {
-        url: 'hello.ru',
-        height: 100,
-        width: 100,
-      },
-      rate: 4,
-    },
-  ],
   [CONTENT_SECTION_TYPE]: [
     {
       view: CONTENT_SECTION_VIEW_V1,
@@ -114,6 +76,32 @@ const VIEWS = {
         width: 100,
       },
       rate: 5,
+    },
+  ],
+  [MUST_READ_TYPE]: [
+    {
+      view: MUST_READ_VIEW_V1,
+      title: 'Заголовок',
+      description: 'html raw description',
+      image: {
+        url: 'google.ru',
+        height: 100,
+        width: 100,
+      },
+      rate: 1,
+    },
+  ],
+  [NAVBAR_TYPE]: [
+    {
+      view: NAVBAR_VIEW_V1,
+      title: 'Панель навигации',
+      description: 'raw description',
+      image: {
+        url: 'hello.ru',
+        height: 100,
+        width: 100,
+      },
+      rate: 4,
     },
   ],
 };
