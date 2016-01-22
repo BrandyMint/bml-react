@@ -106,7 +106,7 @@ class LPage extends Component {
     return (
       <div className="LPage">
         <div className="LPage-operator">
-          <OperatorPanel backUrl={this.props.backUrl} />
+          <OperatorPanel exitUrl={this.props.exitUrl} />
         </div>
         <div className="LPage-content">
           <LBlockList
@@ -124,13 +124,13 @@ class LPage extends Component {
 }
 
 LPage.propTypes = {
-  backUrl: PropTypes.string,
+  exitUrl: PropTypes.string,
   blocks: PropTypes.array,
   data: PropTypes.object,
 };
 
 LPage.defaultProps = {
-  backUrl: 'google.ru',
+  exitUrl: 'google.ru',
   data: {
     weq23: {
       header: 'Hello',
