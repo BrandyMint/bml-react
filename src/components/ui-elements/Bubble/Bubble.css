@@ -21,7 +21,9 @@ $bubbleTextColor: #fff;
   word-spacing: 0;
   user-select: none;
 
+  &:focus,
   &:hover {
+    color: #fff;
     background-color: $bubbleBackgroundHover;
   }
 

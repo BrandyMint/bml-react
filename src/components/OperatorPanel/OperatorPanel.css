@@ -1,0 +1,7 @@
+@component OperatorPanel {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  z-index: 1;
+  will-change: transform;
+}

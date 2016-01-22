@@ -2,9 +2,12 @@ import React, { Component, PropTypes } from 'react';
 
 import get from 'lodash/get';
 import map from 'lodash/map';
+import size from 'lodash/size';
 import noop from 'lodash/noop';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
+
+import VIEWS from 'constants/views';
 
 import LBlock from 'components/LBlock';
 import LBlockAddButton from 'components/LBlockAddButton';
@@ -31,6 +34,8 @@ const LBlockList = ({
         ...block,
         data: get(data, block.uuid),
       },
+      hasMultipleViews: size(VIEWS[block.type]) > 1,
+      hasMultipleBlocks: size(blocks) > 1,
       isEditMode: isEditMode,
       onBlockPositionDown: partial(onBlockPositionDown, block.uuid),
       onBlockPositionUp: partial(onBlockPositionUp, block.uuid),

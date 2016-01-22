@@ -2,17 +2,30 @@
   position: relative;
 
   &:hover {
-    .LBlockLayer-actions {
+    .LBlockLayer-topPanel {
       opacity: 1;
     }
   }
 
-  @descendent actions {
+  @descendent topPanel {
     position: absolute;
     top: 10px;
     left: 15px;
-    width: 300px;
-    opacity: 0;
+    /* opacity: 0; */
     transition: opacity .3s;
+  }
+
+  @descendent actions {
+    float: left;
+
+    & > * {
+      display: inline-block;
+    }
+  }
+
+  @descendent viewInfo {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 14px;
   }
 }

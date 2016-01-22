@@ -8,7 +8,10 @@ import LBlockViewChanger from 'components/LBlockViewChanger';
 import LBlockPositionChanger from 'components/LBlockPositionChanger';
 
 const LBlockLayer = ({
+  block,
   children,
+  hasMultipleBlocks,
+  hasMultipleViews,
   isEditMode,
 
   onBlockPositionDown,
@@ -24,16 +27,25 @@ const LBlockLayer = ({
   return (
     <div className={layerClasses}>
       {isEditMode && (
-        <div className="LBlockLayer-actions">
-          <LBlockSettingsButton />
-          <LBlockViewChanger
-            onViewSwitchNext={onViewSwitchNext}
-            onViewSwitchPrev={onViewSwitchPrev}
-          />
-          <LBlockPositionChanger
-            onBlockPositionDown={onBlockPositionDown}
-            onBlockPositionUp={onBlockPositionUp}
-          />
+        <div className="LBlockLayer-topPanel">
+          <div className="LBlockLayer-actions">
+            <LBlockSettingsButton />
+            {hasMultipleViews &&
+              <LBlockViewChanger
+                onViewSwitchNext={onViewSwitchNext}
+                onViewSwitchPrev={onViewSwitchPrev}
+              />
+            }
+            {hasMultipleBlocks &&
+              <LBlockPositionChanger
+                onBlockPositionDown={onBlockPositionDown}
+                onBlockPositionUp={onBlockPositionUp}
+              />
+            }
+          </div>
+          <div className="LBlockLayer-viewInfo text-muted">
+            {block.view}
+          </div>
         </div>
       )}
       {Children.only(children)}
@@ -42,7 +54,9 @@ const LBlockLayer = ({
 };
 
 LBlockLayer.propTypes = {
+  block: PropTypes.object,
   isEditMode: PropTypes.bool,
+  hasMultipleViews: PropTypes.bool,
   onBlockPositionDown: PropTypes.func.isRequired,
   onBlockPositionUp: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,

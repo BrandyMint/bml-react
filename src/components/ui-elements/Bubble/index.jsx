@@ -20,7 +20,7 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, icon, text, onClick } = this.props;
+    const { children, icon, text, onClick, url } = this.props;
     const bubbleClasses = classnames({
       'Bubble': true,
       'Bubble--withText': !!text,
@@ -28,7 +28,11 @@ class Bubble extends Component {
     });
 
     return (
-      <div className={bubbleClasses} onClick={this.handleClick}>
+      <a
+        className={bubbleClasses}
+        href={url || '#'}
+        onClick={this.handleClick}
+      >
         {!!text && <span className="Bubble-text">{text}</span>}
         {!!icon && (
           <span className="Bubble-icon">
@@ -36,7 +40,7 @@ class Bubble extends Component {
           </span>
         )}
         {!text && !icon && children}
-      </div>
+      </a>
     );
   }
 }
@@ -46,6 +50,7 @@ Bubble.propTypes = {
   icon: PropTypes.string,
   onClick: PropTypes.func,
   text: PropTypes.string,
+  url: PropTypes.string,
 };
 
 export default Bubble;

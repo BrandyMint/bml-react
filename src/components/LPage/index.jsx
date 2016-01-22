@@ -9,6 +9,7 @@ import findIndex from 'lodash/findIndex';
 
 import VIEWS from 'constants/views';
 
+import OperatorPanel from 'components/OperatorPanel';
 import LBlockList from 'components/LBlockList';
 
 class LPage extends Component {
@@ -104,6 +105,9 @@ class LPage extends Component {
   render() {
     return (
       <div className="LPage">
+        <div className="LPage-operator">
+          <OperatorPanel backUrl={this.props.backUrl} />
+        </div>
         <div className="LPage-content">
           <LBlockList
             {...this.state}
@@ -120,11 +124,13 @@ class LPage extends Component {
 }
 
 LPage.propTypes = {
+  backUrl: PropTypes.string,
   blocks: PropTypes.array,
   data: PropTypes.object,
 };
 
 LPage.defaultProps = {
+  backUrl: 'google.ru',
   data: {
     weq23: {
       header: 'Hello',
