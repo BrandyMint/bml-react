@@ -16,7 +16,6 @@ export default {
     bundle: entry,
     vendor: [
       'classnames',
-      'ramda',
       'react',
       'react-dom',
       'redux',
