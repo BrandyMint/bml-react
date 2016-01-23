@@ -54,6 +54,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "babel-register": "^6.4.3",
     "bootstrap": "^4.0.0-alpha.2",
     "classnames": "^2.2.3",
     "font-awesome": "^4.5.0",
