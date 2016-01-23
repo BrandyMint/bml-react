@@ -39,6 +39,12 @@ export default {
         to: 'stylesheets/themes',
       },
     ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(process.cwd(), 'src/assets/images'),
+        to: 'images',
+      },
+    ]),
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new webpack.DefinePlugin({
