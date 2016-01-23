@@ -33,7 +33,7 @@ const types = [
       headerText: 'Death to the Stock Photo: <br /> Special Thanks',
       leadText: 'A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.',
       image: {
-        url: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/ipad.png',
+        url: '/images/themes/t1/ipad.png',
         height: 354,
         width: 458,
       },
@@ -43,7 +43,7 @@ const types = [
     type: CTA_TYPE,
     defaultData: {
       text: 'Connect to Start BML:',
-      backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/banner-bg.jpg',
+      backgroundImageUrl: '/images/themes/t1/banner-bg.jpg',
       items: [
         {
           title: 'Twitter',
@@ -237,7 +237,7 @@ if (__ENV__ === 'development') {
           data: {
             header: 'Hello',
             subheader: 'My little friend!',
-            backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/intro-bg.jpg',
+            backgroundImageUrl: '/images/themes/t1/intro-bg.jpg',
             items: [
               {
                 title: 'Twitter',
@@ -265,7 +265,7 @@ if (__ENV__ === 'development') {
             headerText: 'Death to the Stock Photo: <br /> Special Thanks;)',
             leadText: 'A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.',
             image: {
-              url: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/ipad.png',
+              url: '/images/themes/t1/ipad.png',
               height: 354,
               width: 458,
             },
@@ -279,7 +279,7 @@ if (__ENV__ === 'development') {
             headerText: '3D Device Mockups <br /> by PSDCovers',
             leadText: 'Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!',
             image: {
-              url: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/dog.png',
+              url: '/images/themes/t1/dog.png',
               height: 383,
               width: 458,
             },
@@ -293,7 +293,7 @@ if (__ENV__ === 'development') {
             headerText: 'Google Web Fonts and<br>Font Awesome Icons',
             leadText: 'This template features the \'Lato\' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.',
             image: {
-              url: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/phones.png',
+              url: '/images/themes/t1/phones.png',
               height: 302,
               width: 458,
             },
@@ -305,7 +305,7 @@ if (__ENV__ === 'development') {
           view: 'LBlockCTAV1',
           data: {
             text: 'Connect to BML landings:',
-            backgroundImageUrl: 'http://ironsummitmedia.github.io/startbootstrap-landing-page/img/banner-bg.jpg',
+            backgroundImageUrl: '/images/themes/t1/banner-bg.jpg',
             items: [
               {
                 title: 'Twitter',
