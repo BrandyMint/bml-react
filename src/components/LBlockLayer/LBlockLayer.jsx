@@ -19,6 +19,7 @@ class LBlockLayer extends Component {
       'is-editing': isEditMode,
     });
 
+    const title = block.view.replace('LBlock', '');
     return (
       <div className={layerClasses}>
         {isEditMode && (
@@ -38,8 +39,8 @@ class LBlockLayer extends Component {
                 />
               }
             </div>
-            <div className="LBlockLayer-viewInfo text-muted">
-              {block.view}
+            <div className="LBlockLayer-viewInfo Bubble text-muted">
+              {title}
             </div>
           </div>
         )}

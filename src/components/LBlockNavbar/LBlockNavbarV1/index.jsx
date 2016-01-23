@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import map from 'lodash/map';
 
 const LBlockNavbarV1 = ({ items, logoText }) => (
-  <nav className="navbar navbar-default topnav" role="navigation">
+  <nav className="navbar navbar-light bg-faded topnav" role="navigation">
     <div className="container topnav">
       <div className="navbar-header">
         <a className="navbar-brand topnav" href="#">

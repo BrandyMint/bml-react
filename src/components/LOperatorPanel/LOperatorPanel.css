@@ -1,7 +1,9 @@
+$panelZindex: 9999;
+
 @component LOperatorPanel {
   position: fixed;
   right: 15px;
   top: 10px;
-  z-index: 1;
+  z-index: $panelZindex;
   will-change: transform;
 }

@@ -2,7 +2,7 @@ $bubbleHeight: 40px;
 $bubbleSmallWidth: 40px;
 $bubbleBackground: rgba(0, 0, 0, 0.3);
 $bubbleBackgroundHover: rgba(0, 0, 0, 0.2);
-$bubbleZindex: 10;
+$bubbleZindex: 9999;
 $bubbleTextColor: #fff;
 
 @component Bubble {
