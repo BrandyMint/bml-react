@@ -1,22 +1,26 @@
 import React, { PropTypes } from 'react';
 
 import {
-  CONTENT_SECTION_TYPE, CTA_TYPE, FOOTER_TYPE, MUST_READ_TYPE, NAVBAR_TYPE,
+  CONTENT_SECTION_TYPE1,
+  CTA_TYPE1,
+  FOOTER_TYPE1,
+  MUST_READ_TYPE1,
+  NAVBAR_TYPE1,
 } from 'constants/blockTypesKeys';
 
+import BContentSectionType1 from 'components/blocks/BContentSection/BContentSectionType1';
+import BCTAType1 from 'components/blocks/BCTA/BCTAType1';
+import BFooterType1 from 'components/blocks/BFooter/BFooterType1';
+import BMustReadType1 from 'components/blocks/BMustRead/BMustReadType1';
+import BNavbarType1 from 'components/blocks/BNavbar/BNavbarType1';
 import LBlockLayer from 'components/LBlockLayer';
-import LBlockMustRead from 'components/LBlockMustRead';
-import LBlockNavbar from 'components/LBlockNavbar';
-import LBlockContentSection from 'components/LBlockContentSection';
-import LBlockCTA from 'components/LBlockCTA';
-import LBlockFooter from 'components/LBlockFooter';
 
 const typeComponents = {
-  [CONTENT_SECTION_TYPE]: LBlockContentSection,
-  [CTA_TYPE]: LBlockCTA,
-  [FOOTER_TYPE]: LBlockFooter,
-  [MUST_READ_TYPE]: LBlockMustRead,
-  [NAVBAR_TYPE]: LBlockNavbar,
+  [CONTENT_SECTION_TYPE1]: BContentSectionType1,
+  [CTA_TYPE1]: BCTAType1,
+  [FOOTER_TYPE1]: BFooterType1,
+  [MUST_READ_TYPE1]: BMustReadType1,
+  [NAVBAR_TYPE1]: BNavbarType1,
 };
 
 const Placeholder = ({ type }) => (

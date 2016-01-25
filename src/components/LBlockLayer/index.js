@@ -3,6 +3,8 @@ import { createSelector, createStructuredSelector } from 'reselect';
 
 import size from 'lodash/size';
 
+import BLOCK_VIEWS from 'constants/blockViews';
+
 import {
   downBlockPosition, switchNextView, switchPrevView, upBlockPosition
 } from 'actions/blocks';
@@ -10,21 +12,13 @@ import {
 import LBlockLayer from './LBlockLayer';
 
 const isEditModeSelector = state => state.application.isEditMode;
-const typeSelector = (_, props) => props.block.type;
-const blockViewsSelector = state => state.blocks.views;
-const hasMultipleBlockSelector = state => size(state.blocks.items) > 1;
-
-const hasMultipleViewsSelector = createSelector(
-  typeSelector,
-  blockViewsSelector,
-
-  (type, views) => size(views[type]) > 1
-);
+const hasMultipleBlocksSelector = state => size(state.blocks) > 1;
+const hasMultipleViewsSelector = (state, props) => size(BLOCK_VIEWS[props.block.type]) > 1
 
 const lBlockLayerSelector = createStructuredSelector({
   isEditMode: isEditModeSelector,
   hasMultipleViews: hasMultipleViewsSelector,
-  hasMultipleBlocks: hasMultipleBlockSelector,
+  hasMultipleBlocks: hasMultipleBlocksSelector,
 });
 
 const actions = {

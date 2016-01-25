@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import map from 'lodash/map';
 
-const LBlockCTAV1 = ({ backgroundImageUrl, items, text }) => (
+const BCTAType1View1 = ({ backgroundImageUrl, items, text }) => (
   <div className="banner" style={{ backgroundImage: `url("${backgroundImageUrl}")` }}>
     <div className="container">
       <div className="row">
@@ -28,10 +28,10 @@ const LBlockCTAV1 = ({ backgroundImageUrl, items, text }) => (
   </div>
 );
 
-LBlockCTAV1.propTypes = {
+BCTAType1View1.propTypes = {
   text: PropTypes.string.isRequired,
   backgroundImageUrl: PropTypes.string,
   items: PropTypes.array.isRequired,
 };
 
-export default LBlockCTAV1;
+export default BCTAType1View1;

@@ -3,6 +3,8 @@ import './LBlockLayer.css';
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
+import replace from 'lodash/replace';
+
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import LBlockViewChanger from 'components/LBlockViewChanger';
 import LBlockPositionChanger from 'components/LBlockPositionChanger';
@@ -19,7 +21,6 @@ class LBlockLayer extends Component {
       'is-editing': isEditMode,
     });
 
-    const title = block.view.replace('LBlock', '');
     return (
       <div className={layerClasses}>
         {isEditMode && (
@@ -40,7 +41,7 @@ class LBlockLayer extends Component {
               }
             </div>
             <div className="LBlockLayer-viewInfo Bubble text-muted">
-              {title}
+              {replace(block.view, /^B/, '')}
             </div>
           </div>
         )}

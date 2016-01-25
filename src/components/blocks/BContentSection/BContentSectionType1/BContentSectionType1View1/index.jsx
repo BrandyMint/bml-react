@@ -1,22 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 
-const LBlockContentSectionV3 = ({ headerText, image, leadText }) => (
-  <div className="content-section-b">
+const BContentSectionType1View1 = ({ headerText, image, leadText }) => (
+  <div className="content-section-a">
     <div className="container">
       <div className="row">
-        <div className="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+        <div className="col-lg-5 col-sm-6">
           <hr className="section-heading-spacer" />
           <div className="clearfix" />
-          <p
-            className="lead"
-            dangerouslySetInnerHTML={{ __html: leadText }}
-          />
           <h2
             className="section-heading"
             dangerouslySetInnerHTML={{ __html: headerText }}
           />
+          <p
+            className="lead"
+            dangerouslySetInnerHTML={{ __html: leadText }}
+          />
         </div>
-        <div className="col-lg-5 col-sm-pull-6 col-sm-6">
+        <div className="col-lg-5 col-lg-offset-2 col-sm-6">
           <img
             className="img-responsive"
             height={image.height}
@@ -29,10 +29,10 @@ const LBlockContentSectionV3 = ({ headerText, image, leadText }) => (
   </div>
 );
 
-LBlockContentSectionV3.propTypes = {
+BContentSectionType1View1.propTypes = {
   headerText: PropTypes.string.isRequired,
   leadText: PropTypes.string,
   image: PropTypes.object,
 };
 
-export default LBlockContentSectionV3;
+export default BContentSectionType1View1;

@@ -4,7 +4,7 @@ import map from 'lodash/map';
 
 import Icon from 'components/ui-elements/Icon';
 
-const LBlockMustReadV1 = ({ backgroundImageUrl, header, items, subheader }) => (
+const BMustReadType1View1 = ({ backgroundImageUrl, header, items, subheader }) => (
   <div className="intro-header" style={{ backgroundImage: `url("${backgroundImageUrl}")` }}>
     <div className="container">
       <div className="row">
@@ -34,11 +34,11 @@ const LBlockMustReadV1 = ({ backgroundImageUrl, header, items, subheader }) => (
   </div>
 );
 
-LBlockMustReadV1.propTypes = {
+BMustReadType1View1.propTypes = {
   backgroundImageUrl: PropTypes.string,
   header: PropTypes.string.isRequired,
   items: PropTypes.array.isRequired,
   subheader: PropTypes.string,
 };
 
-export default LBlockMustReadV1;
+export default BMustReadType1View1;

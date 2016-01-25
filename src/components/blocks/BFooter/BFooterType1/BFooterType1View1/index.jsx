@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import reduce from 'lodash/reduce';
 import size from 'lodash/size';
 
-const LBlockFooterV1 = ({ copyrightText, items }) => (
+const BFooterType1View1 = ({ copyrightText, items }) => (
   <footer>
     <div className="container">
       <div className="row">
@@ -34,9 +34,9 @@ const LBlockFooterV1 = ({ copyrightText, items }) => (
   </footer>
 );
 
-LBlockFooterV1.propTypes = {
+BFooterType1View1.propTypes = {
   copyrightText: PropTypes.string,
   items: PropTypes.array.isRequired,
 };
 
-export default LBlockFooterV1;
+export default BFooterType1View1;

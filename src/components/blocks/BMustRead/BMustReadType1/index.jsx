@@ -1,32 +1,34 @@
 import React, { Component, PropTypes } from 'react';
 
-import LBlockMustReadV1 from './LBlockMustReadV1';
+import { MUST_READ_TYPE1_VIEW1 } from 'constants/blockViewsKeys';
+
+import BMustReadType1View1 from './BMustReadType1View1';
 
 const viewComponents = {
-  LBlockMustReadV1,
+  [MUST_READ_TYPE1_VIEW1]: BMustReadType1View1,
 };
 
-const LBlockMustRead = ({ data, view }) => {
+const BMustReadType1 = ({ data, view }) => {
   const ViewComponent = viewComponents[view];
 
   return (
-    <div className="LBlockMustRead">
+    <div className="BMustReadType1">
       {ViewComponent
         ? <ViewComponent {...data} />
-        : <span>Unknown view of LBlockMustRead {view}</span>
+        : <span>Unknown view of BMustReadType1 {view}</span>
       }
     </div>
   );
 };
 
-LBlockMustRead.propTypes = {
-  view: PropTypes.string,
+BMustReadType1.propTypes = {
   data: PropTypes.shape({
     backgroundImageUrl: PropTypes.string,
     header: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
     subheader: PropTypes.string,
   }),
+  view: PropTypes.string,
 };
 
-export default LBlockMustRead;
+export default BMustReadType1;

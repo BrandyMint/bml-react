@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 
 import LBlocks from './LBlocks';
 
-const blocksSelector = state => state.blocks.items;
+const blocksSelector = state => state.blocks;
 
 const lBlocksSelector = createStructuredSelector({
   blocks: blocksSelector,

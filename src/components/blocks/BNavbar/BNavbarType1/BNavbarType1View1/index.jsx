@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import map from 'lodash/map';
 
-const LBlockNavbarV1 = ({ items, logoText }) => (
+const BNavbarType1View1 = ({ items, logoText }) => (
   <nav className="navbar navbar-light bg-faded topnav" role="navigation">
     <div className="container topnav">
       <div className="navbar-header">
@@ -25,9 +25,9 @@ const LBlockNavbarV1 = ({ items, logoText }) => (
   </nav>
 );
 
-LBlockNavbarV1.propTypes = {
+BNavbarType1View1.propTypes = {
   items: PropTypes.array.isRequired,
   logoText: PropTypes.string.isRequired,
 };
 
-export default LBlockNavbarV1;
+export default BNavbarType1View1;
