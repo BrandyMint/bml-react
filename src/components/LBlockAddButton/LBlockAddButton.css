@@ -1,0 +1,44 @@
+@component LBlockAddButton {
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: all .25s ease;
+  cursor: pointer;
+
+  @descendent handle {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255,255,255,.6);
+    border: 1px solid #ebebeb;
+    border-radius: 100em;
+    transition: all .25s ease;
+  }
+
+  .Icon {
+    transition: all .25s ease;
+    margin-top: 9px;
+    font-size: 40px;
+    opacity: .4;
+    transform: scale(.55);
+  }
+
+  &:hover {
+    .LBlockAddButton-handle {
+      border: 1px solid #1eabf8;
+      background: rgba(70,186,249,.8);
+      box-shadow: 0 0 8px rgba(0,0,0,.1);
+    }
+
+    .Icon {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}

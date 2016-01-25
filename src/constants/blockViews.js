@@ -27,7 +27,7 @@ const BLOCK_VIEWS = {
       title: 'Область с контентом',
       description: 'raw description2',
       image: {
-        url: 'hello3.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },
@@ -38,7 +38,7 @@ const BLOCK_VIEWS = {
       title: 'Область с контентом 2',
       description: 'raw description22',
       image: {
-        url: 'hello3.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },
@@ -49,7 +49,7 @@ const BLOCK_VIEWS = {
       title: 'Область с контентом 3',
       description: 'raw description22323',
       image: {
-        url: 'hello3.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },
@@ -62,7 +62,7 @@ const BLOCK_VIEWS = {
       title: 'Кнопка действий',
       description: 'raw description22323',
       image: {
-        url: 'hello123.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },
@@ -75,7 +75,7 @@ const BLOCK_VIEWS = {
       title: 'Подвал',
       description: 'raw description223',
       image: {
-        url: 'hello1.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },
@@ -88,7 +88,7 @@ const BLOCK_VIEWS = {
       title: 'Заголовок',
       description: 'html raw description',
       image: {
-        url: 'google.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },
@@ -101,7 +101,7 @@ const BLOCK_VIEWS = {
       title: 'Панель навигации',
       description: 'raw description',
       image: {
-        url: 'hello.ru',
+        url: '/images/themes/t1/intro-bg.jpg',
         height: 100,
         width: 100,
       },

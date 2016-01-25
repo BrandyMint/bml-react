@@ -11,8 +11,4 @@ const LBlockSettingsButton = ({ onEditStart }) => (
   </div>
 );
 
-LBlockSettingsButton.propTypes = {
-
-};
-
 export default LBlockSettingsButton;

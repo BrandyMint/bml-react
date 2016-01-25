@@ -33,14 +33,14 @@ const LBlock = ({ block }) => {
   const TypeComponent = typeComponents[block.type];
 
   return (
-    <div className="LBlock">
+    <section className="LBlock">
       <LBlockLayer block={block}>
         {TypeComponent
           ? <TypeComponent data={block.data} view={block.view} />
           : <Placeholder type={block.type} />
         }
       </LBlockLayer>
-    </div>
+    </section>
   );
 };
 

@@ -8,7 +8,8 @@ import findIndex from 'lodash/findIndex';
 import BLOCK_VIEWS from 'constants/blockViews';
 
 import {
-  DOWN_BLOCK_POSITION, UP_BLOCK_POSITION, SWITCH_NEXT_VIEW, SWITCH_PREV_VIEW
+  DOWN_BLOCK_POSITION, UP_BLOCK_POSITION, SWITCH_NEXT_VIEW, SWITCH_PREV_VIEW,
+  SUBMIT_ADDING_BLOCK,
 } from 'actions/blocks';
 
 import {
@@ -243,6 +244,14 @@ const handlers = {
 
       return block;
     });
+  },
+
+  [SUBMIT_ADDING_BLOCK]: (state, action) => {
+    const { block, position } = action.payload;
+    const newState = [...state];
+    newState.splice(position, 0, block)
+
+    return newState;
   },
 };
 

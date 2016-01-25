@@ -4,7 +4,7 @@ import {
   FOOTER_TYPE1,
   MUST_READ_TYPE1,
   NAVBAR_TYPE1,
-} from 'constants/blockTypes';
+} from 'constants/blockTypesKeys';
 
 const BLOCK_TYPES = [
   {
@@ -61,6 +61,24 @@ const BLOCK_TYPES = [
     defaultData: {
       header: 'Hello',
       subheader: 'My little friend!',
+      backgroundImageUrl: '/images/themes/t1/intro-bg.jpg',
+      items: [
+        {
+          title: 'Twitter',
+          icon: 'twitter',
+          url: 'twitter.com',
+        },
+        {
+          title: 'GitHub',
+          icon: 'github',
+          url: 'github.com',
+        },
+        {
+          title: 'LinkedIn',
+          icon: 'linkedin',
+          url: 'linkedin.com',
+        },
+      ],
     },
   },
   {

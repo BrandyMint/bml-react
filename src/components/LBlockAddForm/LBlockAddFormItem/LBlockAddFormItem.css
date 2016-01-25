@@ -1,0 +1,13 @@
+@component LBlockAddFormItem {
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #e5e5e5;
+
+  @when selected {
+    background-color: grey;
+  }
+
+  @descendent content {
+    padding: 10px 0;
+  }
+}
