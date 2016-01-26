@@ -5,22 +5,15 @@ import bind from 'lodash/bind';
 import Modal from 'components/ui-elements/Modal';
 import LBlockAddForm from 'components/LBlockAddForm';
 
-const hide = () => {
-  console.log('hide');
-};
-
 const LBlockAddModal = ({ isVisible, onAdd, onCancel }) => (
-  <Modal show={isVisible} onHide={hide}>
-    <Modal.Header>
+  <Modal show={isVisible}>
+    <Modal.Header closeButton onHide={onCancel}>
       <Modal.Title>Добавление нового блока</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <LBlockAddForm />
     </Modal.Body>
     <Modal.Footer>
-      <button className="btn btn-secondary" type="button" onClick={onCancel}>
-        Закрыть
-      </button>
       <button className="btn btn-primary" type="button" onClick={onAdd}>
         Добавить
       </button>

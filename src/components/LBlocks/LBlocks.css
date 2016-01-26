@@ -1,0 +1,14 @@
+@component LBlocks {
+  @descendent section {
+    .LBlockAddButton {
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    &:hover {
+      .LBlockAddButton {
+        opacity: 1;
+      }
+    }
+  }
+}

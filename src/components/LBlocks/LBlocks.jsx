@@ -1,3 +1,5 @@
+import './LBlocks.css';
+
 import React, { PropTypes } from 'react';
 
 import map from 'lodash/map';
@@ -14,19 +16,14 @@ const Placeholder = () => (
 );
 
 const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
-  const renderSection = (block, index) => {
-    const blockItem = <LBlock block={block} key={block.uuid} />;
-    const buttonItem = (
-      <LBlockAddButton
-        key={`${block.uuid}-addButton`}
-        onClick={() => onAddBlock(index)}
-      />
-    );
-
-    return isEditMode && index > 0 && index < size(blocks)
-      ? [buttonItem, blockItem]
-      : blockItem;
-  };
+  const renderSection = (block, index) => (
+    <div className="LBlocks-section" key={block.uuid}>
+      {isEditMode && index > 0 && index < size(blocks) &&
+        <LBlockAddButton onClick={() => onAddBlock(index)} />
+      }
+      <LBlock block={block} />
+    </div>
+  );
 
   return (
     <div className="LBlocks">
