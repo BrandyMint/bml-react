@@ -1,14 +1,24 @@
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import { createSelector } from 'reselect';
+
+import { saveChanges } from 'actions/landingVersions';
 
 import LOperatorPanel from './LOperatorPanel';
 
-const exitUrlSelector = state => state.application.exitUrl;
-const isEditModeSelector = state => state.application.isEditMode;
+const applicationSelector = state => state.application;
 
-const operatorPanelSelector = createStructuredSelector({
-  exitUrl: exitUrlSelector,
-  isEditMode: isEditModeSelector,
-});
+const operatorPanelSelector = createSelector(
+  applicationSelector,
 
-export default connect(operatorPanelSelector)(LOperatorPanel);
+  (application) => ({
+    exitUrl: application.exitUrl,
+    isEditMode: application.isEditMode,
+    hasUnsavedChanges: application.hasUnsavedChanges,
+  }),
+);
+
+const actions = {
+  onSaveChanges: saveChanges,
+};
+
+export default connect(operatorPanelSelector, actions)(LOperatorPanel);

@@ -6,4 +6,9 @@ $panelZindex: 9999;
   top: 10px;
   z-index: $panelZindex;
   will-change: transform;
+
+  & > * {
+    margin-left: 10px;
+    float: left;
+  }
 }

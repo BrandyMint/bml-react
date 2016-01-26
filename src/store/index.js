@@ -1,9 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 
-// import APIMiddleware from 'middleware/API';
-// import chain from 'middleware/chain';
-// import historyMiddleware from 'middleware/history';
-// import notObject from 'middleware/notObject';
+import APIMiddleware from 'middleware/API';
 import thunk from 'redux-thunk';
 
 import reducers from 'reducers';
@@ -14,7 +11,7 @@ if (__ENV__ === 'development') {
   create = (initialState) => {
     const middlewares = [
       thunk,
-      // APIMiddleware,
+      APIMiddleware,
     ];
 
     const store = applyMiddleware(...middlewares)(createStore)(reducers, initialState);
@@ -31,7 +28,7 @@ if (__ENV__ === 'development') {
   create = (initialState) => {
     const middlewares = [
       thunk,
-      // APIMiddleware,
+      APIMiddleware,
     ];
 
     return applyMiddleware(...middlewares)(createStore)(reducers, initialState);
