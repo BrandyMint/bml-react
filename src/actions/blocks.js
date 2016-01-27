@@ -6,6 +6,8 @@ import head from 'lodash/head';
 import BLOCK_TYPES from 'constants/blockTypes';
 import BLOCK_VIEWS from 'constants/blockViews';
 
+export const CHANGE_BLOCK_FIELD = 'CHANGE_BLOCK_FIELD';
+
 export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
 export const SELECT_BLOCK_FOR_ADDING = 'SELECT_BLOCK_FOR_ADDING';
@@ -50,6 +52,11 @@ export const submitAddingBlock = () => (dispatch, getState) => {
     });
   }
 };
+
+export const changeField = (uuid, fieldName, value) => ({
+  type: CHANGE_BLOCK_FIELD,
+  payload: { fieldName, uuid, value },
+});
 
 export const selectBlockForAdding = (index) => ({
   type: SELECT_BLOCK_FOR_ADDING,

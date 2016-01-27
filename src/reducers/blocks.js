@@ -1,6 +1,7 @@
 import createReducer from 'helpers/createReducer';
 
 import map from 'lodash/map';
+import set from 'lodash/set';
 import size from 'lodash/size';
 import assign from 'lodash/assign';
 import findIndex from 'lodash/findIndex';
@@ -9,7 +10,7 @@ import BLOCK_VIEWS from 'constants/blockViews';
 
 import {
   DOWN_BLOCK_POSITION, UP_BLOCK_POSITION, SWITCH_NEXT_VIEW, SWITCH_PREV_VIEW,
-  SUBMIT_ADDING_BLOCK,
+  SUBMIT_ADDING_BLOCK, CHANGE_BLOCK_FIELD,
 } from 'actions/blocks';
 
 import {
@@ -54,7 +55,7 @@ const initialState = [
     type: MUST_READ_TYPE1,
     view: MUST_READ_TYPE1_VIEW1,
     data: {
-      header: 'Hello',
+      header: 'Hello world!',
       subheader: 'My little friend!',
       backgroundImageUrl: '/images/themes/t1/intro-bg.jpg',
       items: [
@@ -252,6 +253,21 @@ const handlers = {
     newState.splice(position, 0, block)
 
     return newState;
+  },
+
+  [CHANGE_BLOCK_FIELD]: (state, action) => {
+    const { fieldName, uuid, value } = action.payload;
+
+    return map(state, (block) => {
+      return block.uuid === uuid
+        ? set(
+            {...block, data: {...block.data}},
+            `data.${fieldName}`,
+            value
+          )
+        : block
+    }
+    )
   },
 };
 

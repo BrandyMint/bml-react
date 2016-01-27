@@ -32,8 +32,8 @@ const BContentSectionType1 = ({ data, view }) => {
 BContentSectionType1.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
-    leadText: PropTypes.string,
     image: PropTypes.object,
+    leadText: PropTypes.string,
   }),
   view: PropTypes.string,
 };
