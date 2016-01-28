@@ -1,14 +1,18 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import './LBlockSettingsButton.css';
 
 import Bubble from 'components/ui-elements/Bubble';
 import Icon from 'components/ui-elements/Icon';
 
-const LBlockSettingsButton = ({ onEditStart }) => (
+const LBlockSettingsButton = ({ onEditingStart }) => (
   <div className="LBlockSettingsButton">
-    <Bubble icon="cog" />
+    <Bubble icon="cog" onClick={onEditingStart} />
   </div>
 );
+
+LBlockSettingsButton.propTypes = {
+  onEditingStart: PropTypes.func.isRequired,
+};
 
 export default LBlockSettingsButton;

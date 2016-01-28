@@ -1,9 +1,13 @@
 import createReducer from 'helpers/createReducer';
 
 import {
-  CANCEL_ADDING_BLOCK,
   START_ADDING_BLOCK,
+  CANCEL_ADDING_BLOCK,
   SUBMIT_ADDING_BLOCK,
+
+  START_EDITING_BLOCK,
+  DELETE_EDITING_BLOCK,
+  CANCEL_EDITING_BLOCK,
 } from 'actions/blocks';
 
 export const ADD_BLOCK = 'addBlock';
@@ -13,13 +17,16 @@ const initialState = {
   current: null,
 };
 
-const handlers = {
-  [START_ADDING_BLOCK]: (state, action) => ({
-    current: ADD_BLOCK,
-  }),
+const switchCurrent = current => () => ({ current });
 
+const handlers = {
+  [START_ADDING_BLOCK]: switchCurrent(ADD_BLOCK),
   [CANCEL_ADDING_BLOCK]: () => initialState,
   [SUBMIT_ADDING_BLOCK]: () => initialState,
+
+  [START_EDITING_BLOCK]: switchCurrent(EDIT_BLOCK),
+  [DELETE_EDITING_BLOCK]: () => initialState,
+  [CANCEL_EDITING_BLOCK]: () => initialState,
 };
 
 export default createReducer(initialState, handlers);

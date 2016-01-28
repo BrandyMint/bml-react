@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import LPage from 'components/LPage';
 import LOperatorPanel from 'components/LOperatorPanel';
 import LBlockAddModal from 'components/LBlockAddModal';
+import LBlockEditModal from 'components/LBlockEditModal';
 
 const LApplication = () => (
   <div className="LApplication">
@@ -13,6 +14,7 @@ const LApplication = () => (
       <LPage />
     </div>
     <LBlockAddModal />
+    <LBlockEditModal />
   </div>
 );
 

@@ -6,7 +6,8 @@ import size from 'lodash/size';
 import BLOCK_VIEWS from 'constants/blockViews';
 
 import {
-  downBlockPosition, switchNextView, switchPrevView, upBlockPosition
+  downBlockPosition, switchNextView, switchPrevView, upBlockPosition,
+  startEditing,
 } from 'actions/blocks';
 
 import LBlockLayer from './LBlockLayer';
@@ -26,6 +27,7 @@ const actions = {
   onViewSwitchNext: switchNextView,
   onViewSwitchPrev: switchPrevView,
   onBlockPositionUp: upBlockPosition,
+  onEditingStart: startEditing,
 };
 
 export default connect(lBlockLayerSelector, actions)(LBlockLayer);

@@ -23,6 +23,7 @@ const LBlockAddModal = ({ isVisible, onAdd, onCancel }) => (
 
 LBlockAddModal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
+
   onAdd: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
 };

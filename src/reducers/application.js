@@ -1,9 +1,17 @@
 import createReducer from 'helpers/createReducer';
 
 import { LANDING_VERSION_UPDATE_SUCCESS } from 'actions/landingVersions';
+
 import {
-  DOWN_BLOCK_POSITION, UP_BLOCK_POSITION, SWITCH_NEXT_VIEW, SWITCH_PREV_VIEW,
-  SUBMIT_ADDING_BLOCK, CHANGE_BLOCK_FIELD,
+  UP_BLOCK_POSITION,
+  DOWN_BLOCK_POSITION,
+  SWITCH_NEXT_VIEW,
+  SWITCH_PREV_VIEW,
+
+  CHANGE_BLOCK_FIELD,
+
+  SUBMIT_ADDING_BLOCK,
+  DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
 const initialState = {
@@ -29,6 +37,7 @@ const handlers = {
   [SWITCH_PREV_VIEW]: unsavedChanges(true),
   [SUBMIT_ADDING_BLOCK]: unsavedChanges(true),
   [CHANGE_BLOCK_FIELD]: unsavedChanges(true),
+  [DELETE_EDITING_BLOCK]: unsavedChanges(true),
 };
 
 export default createReducer(initialState, handlers);

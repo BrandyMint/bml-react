@@ -1,1 +1,129 @@
 @import '~bootstrap/scss/bootstrap.scss';
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  > li {
+    position: relative;
+    display: block;
+    > a {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      &:hover, &:focus {
+        text-decoration: none;
+        background-color: #eee;
+      }
+    }
+    &.disabled > a {
+      color: #777;
+      &:hover, &:focus {
+        color: #777;
+        text-decoration: none;
+        cursor: not-allowed;
+        background-color: transparent;
+      }
+    }
+  }
+  .open > a {
+    background-color: #eee;
+    border-color: #337ab7;
+    &:hover, &:focus {
+      background-color: #eee;
+      border-color: #337ab7;
+    }
+  }
+  .nav-divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+  }
+  > li > a > img {
+    max-width: none;
+  }
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+  > li {
+    float: left;
+    margin-bottom: -1px;
+    > a {
+      margin-right: 2px;
+      line-height: 1.42857143;
+      border: 1px solid transparent;
+      border-radius: 4px 4px 0 0;
+      &:hover {
+        border-color: #eee #eee #ddd;
+      }
+    }
+    &.active > a {
+      color: #555;
+      cursor: default;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: transparent;
+      &:hover, &:focus {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+  &.nav-justified {
+    width: 100%;
+    border-bottom: 0;
+    > {
+      li {
+        float: none;
+        > a {
+          margin-bottom: 5px;
+          text-align: center;
+        }
+      }
+      .dropdown .dropdown-menu {
+        top: auto;
+        left: auto;
+      }
+      li > a {
+        margin-right: 0;
+        border-radius: 4px;
+      }
+      .active > a {
+        border: 1px solid #ddd;
+        &:hover, &:focus {
+          border: 1px solid #ddd;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+    > a {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > {
+    li > a {
+      border-bottom: 1px solid #ddd;
+      border-radius: 4px 4px 0 0;
+    }
+    .active > a {
+      border-bottom-color: #fff;
+      &:hover, &:focus {
+        border-bottom-color: #fff;
+      }
+    }
+  }
+}

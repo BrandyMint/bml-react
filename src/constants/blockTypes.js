@@ -13,7 +13,7 @@ const BLOCK_TYPES = [
       headerText: 'Death to the Stock Photo: <br /> Special Thanks',
       leadText: 'A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.',
       image: {
-        url: '/images/themes/t1/ipad.png',
+        url: '/assets/images/themes/t1/ipad.png',
         height: 354,
         width: 458,
       },
@@ -23,7 +23,7 @@ const BLOCK_TYPES = [
     type: CTA_TYPE1,
     defaultData: {
       text: 'Connect to Start BML:',
-      backgroundImageUrl: '/images/themes/t1/banner-bg.jpg',
+      backgroundImageUrl: '/assets/images/themes/t1/banner-bg.jpg',
       items: [
         {
           title: 'Twitter',
@@ -61,7 +61,7 @@ const BLOCK_TYPES = [
     defaultData: {
       header: 'Hello',
       subheader: 'My little friend!',
-      backgroundImageUrl: '/images/themes/t1/intro-bg.jpg',
+      backgroundImageUrl: '/assets/images/themes/t1/intro-bg.jpg',
       items: [
         {
           title: 'Twitter',

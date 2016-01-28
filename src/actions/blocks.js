@@ -12,6 +12,10 @@ export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
 export const SELECT_BLOCK_FOR_ADDING = 'SELECT_BLOCK_FOR_ADDING';
 
+export const START_EDITING_BLOCK = 'START_EDITING_BLOCK';
+export const DELETE_EDITING_BLOCK = 'DELETE_EDITING_BLOCK';
+export const CANCEL_EDITING_BLOCK = 'CANCEL_EDITING_BLOCK';
+
 export const SUBMIT_ADDING_BLOCK = 'SUBMIT_ADDING_BLOCK';
 
 export const DOWN_BLOCK_POSITION = 'DOWN_BLOCK_POSITION';
@@ -27,6 +31,27 @@ export const startAddingBlock = (position) => ({
 export const cancelAddingBlock = () => ({
   type: CANCEL_ADDING_BLOCK,
 });
+
+export const startEditing = (block) => ({
+  type: START_EDITING_BLOCK,
+  payload: { block },
+});
+
+export const cancelEditingBlock = () => ({
+  type: CANCEL_EDITING_BLOCK,
+});
+
+export const deleteEditingBlock = () => (dispatch, getState) => {
+  const { editBlockForm } = getState();
+  const { uuid } = editBlockForm;
+
+  if (uuid) {
+    dispatch({
+      type: DELETE_EDITING_BLOCK,
+      payload: { uuid },
+    });
+  }
+};
 
 export const submitAddingBlock = () => (dispatch, getState) => {
   const { addBlockForm } = getState();

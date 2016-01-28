@@ -13,7 +13,7 @@ class LBlockLayer extends Component {
   render() {
     const {
       block, children, isEditMode, hasMultipleBlocks, hasMultipleViews,
-      onBlockPositionDown, onBlockPositionUp, onViewSwitchNext, onViewSwitchPrev,
+      onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
     } = this.props;
 
     const layerClasses = classnames({
@@ -26,7 +26,7 @@ class LBlockLayer extends Component {
         {isEditMode && (
           <div className="LBlockLayer-topPanel">
             <div className="LBlockLayer-actions">
-              <LBlockSettingsButton />
+              <LBlockSettingsButton onEditingStart={() => onEditingStart(block)} />
               {hasMultipleViews &&
                 <LBlockViewChanger
                   onViewSwitchNext={() => onViewSwitchNext(block.uuid)}
@@ -55,8 +55,10 @@ LBlockLayer.propTypes = {
   block: PropTypes.object,
   isEditMode: PropTypes.bool,
   hasMultipleViews: PropTypes.bool,
+
   onBlockPositionDown: PropTypes.func.isRequired,
   onBlockPositionUp: PropTypes.func.isRequired,
+  onEditingStart: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
 };
