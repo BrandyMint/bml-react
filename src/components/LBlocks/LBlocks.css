@@ -6,6 +6,10 @@
     }
 
     &:hover {
+      .LBlockLayer-topPanel {
+        opacity: 1;
+      }
+
       .LBlockAddButton {
         opacity: 1;
       }
