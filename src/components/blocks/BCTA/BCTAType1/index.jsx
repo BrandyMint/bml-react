@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import { CTA_TYPE1_VIEW1 } from 'constants/blockViewsKeys';
 
@@ -23,9 +23,9 @@ const BCTAType1 = ({ data, view }) => {
 
 BCTAType1.propTypes = {
   data: PropTypes.shape({
-    text: PropTypes.string.isRequired,
     backgroundImageUrl: PropTypes.string,
     items: PropTypes.array.isRequired,
+    text: PropTypes.string.isRequired,
   }),
   view: PropTypes.string,
 };

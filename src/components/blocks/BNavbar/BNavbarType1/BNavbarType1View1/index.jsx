@@ -1,18 +1,18 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import map from 'lodash/map';
 
-const BNavbarType1View1 = ({ items, logoText }) => (
+const BNavbarType1View1 = (data) => (
   <nav className="navbar navbar-light bg-faded topnav" role="navigation">
     <div className="container topnav">
       <div className="navbar-header">
         <a className="navbar-brand topnav" href="#">
-          {logoText}
+          {data.logoText}
         </a>
       </div>
       <div className="navbar-collapse">
         <ul className="nav navbar-nav pull-right">
-          {map(items, (item, index) =>
+          {map(data.items, (item, index) =>
             <li className="nav-item" key={index}>
               <a className="nav-link" href={item.url}>
                 {item.title}
@@ -24,10 +24,5 @@ const BNavbarType1View1 = ({ items, logoText }) => (
     </div>
   </nav>
 );
-
-BNavbarType1View1.propTypes = {
-  items: PropTypes.array.isRequired,
-  logoText: PropTypes.string.isRequired,
-};
 
 export default BNavbarType1View1;

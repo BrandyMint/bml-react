@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import { MUST_READ_TYPE1_VIEW1 } from 'constants/blockViewsKeys';
 
