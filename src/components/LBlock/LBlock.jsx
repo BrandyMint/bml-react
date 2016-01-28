@@ -46,12 +46,12 @@ class LBlock extends Component {
     const { block } = this.props;
 
     const TypeComponent = typeComponents[block.type];
-    const blockMeta = get(block, 'data.meta', {});
+    const nodeAttrs = get(block, 'data.nodeAttributes', {});
 
     return (
       <section
-        className={classnames('LBlock', blockMeta.class)}
-        id={blockMeta.id}
+        className={classnames('LBlock', nodeAttrs.class)}
+        id={nodeAttrs.id}
       >
         <LBlockLayer block={block}>
           {TypeComponent

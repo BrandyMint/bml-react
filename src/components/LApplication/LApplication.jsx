@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import './LApplication.css';
+
 import LPage from 'components/LPage';
 import LOperatorPanel from 'components/LOperatorPanel';
 import LBlockAddModal from 'components/LBlockAddModal';
