@@ -1,27 +1,32 @@
-import './LOperatorPanel.css';
+import React, { Component, PropTypes } from 'react';
 
-import React, { PropTypes } from 'react';
+import './LOperatorPanel.css';
 
 import Bubble from 'components/ui-elements/Bubble';
 
-const LOperatorPanel = ({
-  exitUrl,
-  hasUnsavedChanges,
-  isEditMode,
-  onSaveChanges
-}) => (
-  isEditMode
-    ? (
-      <div className="LOperatorPanel">
-        {hasUnsavedChanges &&
-          <Bubble icon="check" onClick={onSaveChanges} />
-        }
-        <Bubble icon="times" url={exitUrl} />
-      </div>
-    ) : (
-      <span />
-    )
-);
+class LOperatorPanel extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    window.onbeforeunload = this.props.hasUnsavedChanges
+      ? () => 'Хотите закрыть конструктор, не сохранив изменения?'
+      : null;
+  }
+  render() {
+    const { exitUrl, hasUnsavedChanges, isEditMode, onSaveChanges } = this.props;
+
+    if (isEditMode) {
+      return (
+        <div className="LOperatorPanel">
+          {hasUnsavedChanges &&
+            <Bubble icon="check" onClick={onSaveChanges} />
+          }
+          <Bubble icon="times" url={exitUrl} />
+        </div>
+      );
+    }
+
+    return false;
+  }
+}
 
 LOperatorPanel.propTypes = {
   exitUrl: PropTypes.string,

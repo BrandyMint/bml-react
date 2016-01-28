@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
+import get from 'lodash/get';
 import partial from 'lodash/partial';
 
 import {
@@ -42,10 +44,15 @@ class LBlock extends Component {
   }
   render() {
     const { block } = this.props;
+
     const TypeComponent = typeComponents[block.type];
+    const blockMeta = get(block, 'data.meta', {});
 
     return (
-      <section className="LBlock">
+      <section
+        className={classnames('LBlock', blockMeta.class)}
+        id={blockMeta.id}
+      >
         <LBlockLayer block={block}>
           {TypeComponent
             ? <TypeComponent data={block.data} view={block.view} />
