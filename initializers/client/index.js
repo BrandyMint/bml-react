@@ -17,6 +17,11 @@ const initApp = (initialState) => {
     </Provider>,
     document.getElementById('content')
   );
+
+  window.addEventListener('beforeunload', (e) => {
+    e.returnValue = 'Хотите закрыть конструктор, не сохранив изменения?';
+    return '\o/';
+  });
 };
 
 if (__ENV__ === 'development') {
