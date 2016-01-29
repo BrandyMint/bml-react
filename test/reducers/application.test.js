@@ -1,4 +1,3 @@
-import assign from 'lodash/assign';
 import expect from 'expect';
 
 import application from 'reducers/application';

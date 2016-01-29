@@ -12,7 +12,7 @@ class LBlockAddForm extends Component {
     const select = (index) => {
       onSelect(index);
       onAdd();
-    }
+    };
 
     return (
       <div className="LBlockAddForm">
@@ -33,7 +33,7 @@ LBlockAddForm.propTypes = {
   items: PropTypes.array.isRequired,
   selectedIndex: PropTypes.number,
   onSelect: PropTypes.func.isRequired,
-  onAdd: PropTypes.func.isRequired
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default LBlockAddForm;

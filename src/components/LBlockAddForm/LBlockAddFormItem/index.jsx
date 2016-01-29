@@ -7,7 +7,6 @@ const LBlockAddFormItem = ({
   description,
   image,
   isSelected,
-  rate,
   title,
 
   onSelect,
@@ -40,7 +39,6 @@ LBlockAddFormItem.propTypes = {
   description: PropTypes.string,
   isSelected: PropTypes.bool,
   image: PropTypes.object,
-  rate: PropTypes.number,
   title: PropTypes.string,
   onSelect: PropTypes.func,
 };
