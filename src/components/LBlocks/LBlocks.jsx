@@ -7,6 +7,8 @@ import size from 'lodash/size';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import LBlock from 'components/LBlock';
 import LBlockAddButton from 'components/LBlockAddButton';
 
@@ -21,7 +23,7 @@ const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
     <div className="LBlocks-section" key={block.uuid}>
       {isEditMode && index > 0 && index < size(blocks) &&
         <LBlockAddButton onClick={partial(onAddBlock, index)} />
-      }
+        }
       <LBlock block={block} />
     </div>
   );
@@ -29,8 +31,12 @@ const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
   return (
     <div className="LBlocks">
       {isEmpty(blocks)
-        ? <Placeholder />
-        : map(blocks, renderSection)
+        ?
+          <Placeholder />
+        :
+          <ReactCSSTransitionGroup component="div" transitionName="animation" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+            {map(blocks, renderSection)}
+          </ReactCSSTransitionGroup>
       }
     </div>
   );
