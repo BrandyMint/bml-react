@@ -15,6 +15,7 @@ import {
   CHANGE_BLOCK_CONTENT,
 
   SUBMIT_ADDING_BLOCK,
+  SUBMIT_EDITING_BLOCK,
   DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
@@ -50,6 +51,7 @@ const handlers = {
   [SWITCH_NEXT_VIEW]: unsavedChanges(true),
   [SWITCH_PREV_VIEW]: unsavedChanges(true),
   [SUBMIT_ADDING_BLOCK]: unsavedChanges(true),
+  [SUBMIT_EDITING_BLOCK]: unsavedChanges(true),
   [CHANGE_BLOCK_CONTENT]: unsavedChanges(true),
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
 };

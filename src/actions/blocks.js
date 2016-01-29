@@ -7,6 +7,7 @@ import BLOCK_TYPES from 'constants/blockTypes';
 import BLOCK_VIEWS from 'constants/blockViews';
 
 export const CHANGE_BLOCK_CONTENT = 'CHANGE_BLOCK_CONTENT';
+export const CHANGE_BLOCK_NODE_ATTRIBUTES = 'CHANGE_BLOCK_NODE_ATTRIBUTES';
 
 export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
@@ -17,6 +18,7 @@ export const DELETE_EDITING_BLOCK = 'DELETE_EDITING_BLOCK';
 export const CANCEL_EDITING_BLOCK = 'CANCEL_EDITING_BLOCK';
 
 export const SUBMIT_ADDING_BLOCK = 'SUBMIT_ADDING_BLOCK';
+export const SUBMIT_EDITING_BLOCK = 'SUBMIT_EDITING_BLOCK';
 
 export const DOWN_BLOCK_POSITION = 'DOWN_BLOCK_POSITION';
 export const UP_BLOCK_POSITION = 'UP_BLOCK_POSITION';
@@ -36,6 +38,16 @@ export const startEditing = (block) => ({
   type: START_EDITING_BLOCK,
   payload: { block },
 });
+
+export const submitEditingBlock = () => (dispatch, getState) => {
+  const { editBlockForm } = getState();
+  const { block } = editBlockForm;
+
+  dispatch({
+    type: SUBMIT_EDITING_BLOCK,
+    payload: { block },
+  });
+};
 
 export const cancelEditingBlock = () => ({
   type: CANCEL_EDITING_BLOCK,
@@ -80,6 +92,11 @@ export const submitAddingBlock = () => (dispatch, getState) => {
 
 export const changeContent = (uuid, fieldName, value) => ({
   type: CHANGE_BLOCK_CONTENT,
+  payload: { fieldName, uuid, value },
+});
+
+export const changeNodeAttributes = (uuid, fieldName, value) => ({
+  type: CHANGE_BLOCK_NODE_ATTRIBUTES,
   payload: { fieldName, uuid, value },
 });
 

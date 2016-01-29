@@ -62,7 +62,7 @@ if (__ENV__ === 'development') {
         },
         nodeAttributes: {
           id: '44086800-a7e8-0133-a838-746d04736cf8',
-          class: '',
+          class: 'hello',
         },
         meta: {},
       },

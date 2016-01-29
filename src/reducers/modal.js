@@ -4,6 +4,7 @@ import {
   START_ADDING_BLOCK,
   CANCEL_ADDING_BLOCK,
   SUBMIT_ADDING_BLOCK,
+  SUBMIT_EDITING_BLOCK,
 
   START_EDITING_BLOCK,
   DELETE_EDITING_BLOCK,
@@ -23,6 +24,7 @@ const handlers = {
   [START_ADDING_BLOCK]: switchCurrent(ADD_BLOCK),
   [CANCEL_ADDING_BLOCK]: () => initialState,
   [SUBMIT_ADDING_BLOCK]: () => initialState,
+  [SUBMIT_EDITING_BLOCK]: () => initialState,
 
   [START_EDITING_BLOCK]: switchCurrent(EDIT_BLOCK),
   [DELETE_EDITING_BLOCK]: () => initialState,
