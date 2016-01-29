@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createSelector, createStructuredSelector } from 'reselect';
 
-import { cancelEditingBlock, deleteEditingBlock } from 'actions/blocks';
+import { cancelEditingBlock, deleteEditingBlock, submitEditingBlock } from 'actions/blocks';
 
 import { EDIT_BLOCK } from 'reducers/modal';
 
@@ -21,6 +21,7 @@ const lBlockEditModalSelector = createStructuredSelector({
 const actions = {
   onCancel: cancelEditingBlock,
   onDelete: deleteEditingBlock,
+  onSave: submitEditingBlock,
 };
 
 export default connect(lBlockEditModalSelector, actions)(LBlockEditModal);

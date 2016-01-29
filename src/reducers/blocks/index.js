@@ -6,6 +6,7 @@ import switchNextView from './handlers/switchNextView';
 import switchPrevView from './handlers/switchPrevView';
 import changeBlockField from './handlers/changeBlockField';
 import addBlock from './handlers/addBlock';
+import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
 
 import {
@@ -15,8 +16,10 @@ import {
   SWITCH_PREV_VIEW,
 
   CHANGE_BLOCK_CONTENT,
+  CHANGE_BLOCK_NODE_ATTRIBUTES,
 
   SUBMIT_ADDING_BLOCK,
+  SUBMIT_EDITING_BLOCK,
   DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
@@ -29,8 +32,10 @@ const handlers = {
   [SWITCH_PREV_VIEW]: switchPrevView,
 
   [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
+  [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),
 
   [SUBMIT_ADDING_BLOCK]: addBlock,
+  [SUBMIT_EDITING_BLOCK]: updateBlock,
   [DELETE_EDITING_BLOCK]: deleteBlock,
 };
 
