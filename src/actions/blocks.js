@@ -43,7 +43,7 @@ export const submitEditingBlock = () => (dispatch, getState) => {
   const { editBlockForm } = getState();
   const { block } = editBlockForm;
 
-  dispatch({
+  return dispatch({
     type: SUBMIT_EDITING_BLOCK,
     payload: { block },
   });
@@ -58,7 +58,7 @@ export const deleteEditingBlock = () => (dispatch, getState) => {
   const { uuid } = editBlockForm.block;
 
   if (uuid) {
-    dispatch({
+    return dispatch({
       type: DELETE_EDITING_BLOCK,
       payload: { uuid },
     });
@@ -75,7 +75,7 @@ export const submitAddingBlock = () => (dispatch, getState) => {
   const firstViewOfType = head(get(BLOCK_VIEWS, blockType.type));
 
   if (blockType && firstViewOfType) {
-    dispatch({
+    return dispatch({
       type: SUBMIT_ADDING_BLOCK,
       payload: {
         position,

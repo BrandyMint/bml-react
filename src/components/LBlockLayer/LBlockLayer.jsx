@@ -25,7 +25,7 @@ class LBlockLayer extends Component {
     return (
       <div className={layerClasses}>
         {isEditMode && (
-          <div className="LBlockLayer-topPanel">
+          <div className="LBlockLayer-topPanel" ref="topPanel">
             <div className="LBlockLayer-actions">
               <LBlockSettingsButton onEditingStart={partial(onEditingStart, block)} />
               {hasMultipleViews &&
