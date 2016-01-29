@@ -6,16 +6,11 @@ import LBlockAddForm from 'components/LBlockAddForm';
 const LBlockAddModal = ({ isVisible, onAdd, onCancel }) => (
   <Modal show={isVisible}>
     <Modal.Header closeButton onHide={onCancel}>
-      <Modal.Title>Добавление нового блока</Modal.Title>
+      <Modal.Title>Выберите блок для вставки</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <LBlockAddForm />
+      <LBlockAddForm onAdd={onAdd}/>
     </Modal.Body>
-    <Modal.Footer>
-      <button className="btn btn-primary" type="button" onClick={onAdd}>
-        Добавить
-      </button>
-    </Modal.Footer>
   </Modal>
 );
 
