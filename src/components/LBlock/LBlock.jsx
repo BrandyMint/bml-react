@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
 import get from 'lodash/get';
+import assign from 'lodash/assign';
 import partial from 'lodash/partial';
 
 import {
@@ -45,13 +46,20 @@ class LBlock extends Component {
   render() {
     const { block } = this.props;
     const { nodeAttributes, type } = block;
+
+    const blockId = nodeAttributes.id;
+    const blockClasses = classnames('LBlock', nodeAttributes.class);
+
+    const backgroundImageUrl = get(block, 'background.image.url');
+    const blockStyles = assign(
+      {},
+      backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
+    );
+
     const TypeComponent = typeComponents[type];
 
     return (
-      <section
-        className={classnames('LBlock', nodeAttributes.class)}
-        id={nodeAttributes.id}
-      >
+      <section className={blockClasses} id={blockId} style={blockStyles}>
         <LBlockLayer block={block}>
           {TypeComponent
             ? <TypeComponent data={block.content} view={block.view} />

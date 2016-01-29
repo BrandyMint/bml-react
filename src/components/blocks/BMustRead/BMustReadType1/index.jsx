@@ -23,7 +23,6 @@ const BMustReadType1 = ({ data, view }) => {
 
 BMustReadType1.propTypes = {
   data: PropTypes.shape({
-    backgroundImageUrl: PropTypes.string,
     header: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
     subheader: PropTypes.string,
