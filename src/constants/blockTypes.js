@@ -37,7 +37,6 @@ const BLOCK_TYPES = [
     type: CTA_TYPE1,
     defaultData: {
       content: {
-        backgroundImageUrl: '/assets/images/themes/t1/banner-bg.jpg',
         items: [
           {
             title: 'Twitter',
@@ -51,7 +50,12 @@ const BLOCK_TYPES = [
         text: 'Connect to Start BML:',
       },
       background: {
-        image: null,
+        image: {
+          uuid: null,
+          url: '/assets/images/themes/t1/banner-bg.jpg',
+          width: null,
+          height: null,
+        },
         color: '#121212',
         position: '',
         attachment: '',
@@ -104,7 +108,6 @@ const BLOCK_TYPES = [
       content: {
         header: 'Hello',
         subheader: 'My little friend!',
-        backgroundImageUrl: '/assets/images/themes/t1/intro-bg.jpg',
         items: [
           {
             title: 'Twitter',
@@ -124,7 +127,12 @@ const BLOCK_TYPES = [
         ],
       },
       background: {
-        image: null,
+        image: {
+          uuid: null,
+          url: '/assets/images/themes/t1/intro-bg.jpg',
+          width: null,
+          height: null,
+        },
         color: '#121212',
         position: '',
         attachment: '',

@@ -70,7 +70,6 @@ if (__ENV__ === 'development') {
         "content": {
           "header": "На все 100% !",
           "subheader": "Шаблон для посадочной страницы",
-          "backgroundImageUrl": "/assets/images/themes/t1/banner-bg.jpg",
           "items": [
             {
               "icon": "twitter",
@@ -85,7 +84,12 @@ if (__ENV__ === 'development') {
           ]
         },
         "background": {
-          "image": null,
+          image: {
+            uuid: null,
+            url: '/assets/images/themes/t1/intro-bg.jpg',
+            width: null,
+            height: null,
+          },
           "color": "#121212",
           "position": '',
           "attachment": '',
@@ -181,7 +185,6 @@ if (__ENV__ === 'development') {
         "view": "BCTAType1View1",
         "content": {
           "text": "Присоединяйся к нам в соцсетях!",
-          "backgroundImageUrl": "/assets/images/themes/t1/banner-bg.jpg",
           "items": [
             {
               "icon": "twitter",
@@ -196,7 +199,12 @@ if (__ENV__ === 'development') {
           ]
         },
         "background": {
-          "image": null,
+          image: {
+            uuid: null,
+            url: '/assets/images/themes/t1/banner-bg.jpg',
+            width: null,
+            height: null,
+          },
           "color": "#121212",
           "position": '',
           "attachment": '',

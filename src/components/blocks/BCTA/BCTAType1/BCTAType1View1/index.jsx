@@ -5,10 +5,7 @@ import map from 'lodash/map';
 import StringEditable from 'components/primitives/StringEditable';
 
 const BCTAType1View1 = (data) => (
-  <div
-    className="banner"
-    style={{ backgroundImage: `url("${data.backgroundImageUrl}")` }}
-  >
+  <div className="banner">
     <div className="container">
       <div className="row">
         <div className="col-lg-6">

@@ -6,10 +6,7 @@ import Icon from 'components/ui-elements/Icon';
 import StringEditable from 'components/primitives/StringEditable';
 
 const BMustReadType1View1 = (data) => (
-  <div
-    className="intro-header"
-    style={{ backgroundImage: `url("${data.backgroundImageUrl}")` }}
-  >
+  <div className="intro-header">
     <div className="container">
       <div className="row">
         <div className="col-lg-12">

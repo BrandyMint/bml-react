@@ -23,7 +23,6 @@ const BCTAType1 = ({ data, view }) => {
 
 BCTAType1.propTypes = {
   data: PropTypes.shape({
-    backgroundImageUrl: PropTypes.string,
     items: PropTypes.array.isRequired,
     text: PropTypes.string.isRequired,
   }),
