@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { changeField } from 'actions/blocks';
+import { changeContent } from 'actions/blocks';
 
 import LBlock from './LBlock';
 
@@ -12,7 +12,7 @@ const lBlockSelector = createStructuredSelector({
 });
 
 const actions = {
-  onFieldChange: changeField,
+  onContentChange: changeContent,
 };
 
 export default connect(lBlockSelector, actions)(LBlock);

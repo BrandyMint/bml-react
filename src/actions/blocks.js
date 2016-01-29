@@ -6,7 +6,7 @@ import head from 'lodash/head';
 import BLOCK_TYPES from 'constants/blockTypes';
 import BLOCK_VIEWS from 'constants/blockViews';
 
-export const CHANGE_BLOCK_FIELD = 'CHANGE_BLOCK_FIELD';
+export const CHANGE_BLOCK_CONTENT = 'CHANGE_BLOCK_CONTENT';
 
 export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
@@ -71,15 +71,15 @@ export const submitAddingBlock = () => (dispatch, getState) => {
           uuid: uuid.v4(),
           type: blockType.type,
           view: firstViewOfType.view,
-          data: blockType.defaultData,
+          ...blockType.defaultData,
         },
       },
     });
   }
 };
 
-export const changeField = (uuid, fieldName, value) => ({
-  type: CHANGE_BLOCK_FIELD,
+export const changeContent = (uuid, fieldName, value) => ({
+  type: CHANGE_BLOCK_CONTENT,
   payload: { fieldName, uuid, value },
 });
 

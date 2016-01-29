@@ -36,10 +36,10 @@ class StringEditable extends Component {
   }
   handleKeyDownEnter(event) {
     const { fieldName } = this.props;
-    const { onFieldChange } = this.context;
+    const { onContentChange } = this.context;
 
     event.target.blur();
-    onFieldChange(fieldName, event.target.innerHTML);
+    onContentChange(fieldName, event.target.innerHTML);
   }
   handleBlur() {
     this.setState({ value: getValue(this.props) });
@@ -76,7 +76,7 @@ StringEditable.defaultProps = {
 
 StringEditable.contextTypes = {
   isEditMode: PropTypes.bool,
-  onFieldChange: PropTypes.func.isRequired,
+  onContentChange: PropTypes.func.isRequired,
 };
 
 export default StringEditable;

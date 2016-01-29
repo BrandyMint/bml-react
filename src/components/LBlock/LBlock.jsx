@@ -35,27 +35,26 @@ const Placeholder = ({ type }) => (
 
 class LBlock extends Component {
   getChildContext() {
-    const { block, isEditMode, onFieldChange } = this.props;
+    const { block, isEditMode, onContentChange } = this.props;
 
     return {
       isEditMode,
-      onFieldChange: partial(onFieldChange, block.uuid),
+      onContentChange: partial(onContentChange, block.uuid),
     };
   }
   render() {
     const { block } = this.props;
-
-    const TypeComponent = typeComponents[block.type];
-    const nodeAttrs = get(block, 'data.nodeAttributes', {});
+    const { nodeAttributes, type } = block;
+    const TypeComponent = typeComponents[type];
 
     return (
       <section
-        className={classnames('LBlock', nodeAttrs.class)}
-        id={nodeAttrs.id}
+        className={classnames('LBlock', nodeAttributes.class)}
+        id={nodeAttributes.id}
       >
         <LBlockLayer block={block}>
           {TypeComponent
-            ? <TypeComponent data={block.data} view={block.view} />
+            ? <TypeComponent data={block.content} view={block.view} />
             : <Placeholder type={block.type} />
           }
         </LBlockLayer>
@@ -66,7 +65,7 @@ class LBlock extends Component {
 
 LBlock.childContextTypes = {
   isEditMode: PropTypes.bool,
-  onFieldChange: PropTypes.func,
+  onContentChange: PropTypes.func,
 };
 
 export default LBlock;

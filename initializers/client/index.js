@@ -35,9 +35,9 @@ if (__ENV__ === 'development') {
     "blocks": [
       {
         "uuid": "44086800-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.809+03:00",
-        "updated_at": "2016-01-28T15:26:22.809+03:00",
-        "data": {
+        "type": "BNavbarType1",
+        "view": "BNavbarType1View1",
+        "content": {
           "logoText": "Лендос!",
           "items": [
             {
@@ -50,14 +50,24 @@ if (__ENV__ === 'development') {
             }
           ]
         },
-        "type": "BNavbarType1",
-        "view": "BNavbarType1View1"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-0133-a838-746d04736cf8',
+          "class": ''
+        },
+        "meta": {},
       },
       {
         "uuid": "440bb620-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.812+03:00",
-        "updated_at": "2016-01-28T15:26:22.812+03:00",
-        "data": {
+        "type": "BMustReadType1",
+        "view": "BMustReadType1View1",
+        "content": {
           "header": "На все 100% !",
           "subheader": "Шаблон для посадочной страницы",
           "backgroundImageUrl": "/assets/images/themes/t1/banner-bg.jpg",
@@ -74,14 +84,24 @@ if (__ENV__ === 'development') {
             }
           ]
         },
-        "type": "BMustReadType1",
-        "view": "BMustReadType1View1"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-013',
+          "class": ''
+        },
+        "meta": {},
       },
       {
         "uuid": "440c3460-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.815+03:00",
-        "updated_at": "2016-01-28T15:26:22.815+03:00",
-        "data": {
+        "type": "BContentSectionType1",
+        "view": "BContentSectionType1View1",
+        "content": {
           "headerText": "Отдельное спасибо <br />Death to the Stock Photo !",
           "leadText": "Отдельное спасибо <a target=\"_blank\" href=\"http://join.deathtothestockphoto.com/\">Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.",
           "image": {
@@ -90,14 +110,24 @@ if (__ENV__ === 'development') {
             "width": 458
           }
         },
-        "type": "BContentSectionType1",
-        "view": "BContentSectionType1View1"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-0133-a838-',
+          "class": ''
+        },
+        "meta": {},
       },
       {
         "uuid": "440c9d50-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.818+03:00",
-        "updated_at": "2016-01-28T15:26:22.818+03:00",
-        "data": {
+        "type": "BContentSectionType1",
+        "view": "BContentSectionType1View2",
+        "content": {
           "headerText": "3D макеты на предметах<br /> от PSDCovers",
           "leadText": "Преврати свой двумерный дизайн в высококачественные, трехмерные снимки за секунды используя бесплатные экшены в Photoshop от <a target=\"_blank\" href=\"http://www.psdcovers.com/\">PSDCovers</a>!<br />Посетите их сайт чтобы скачать что-то восхитительное и увидить экшены в действии!",
           "image": {
@@ -106,14 +136,24 @@ if (__ENV__ === 'development') {
             "width": 458
           }
         },
-        "type": "BContentSectionType1",
-        "view": "BContentSectionType1View2"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-0133-a838-746d0473',
+          "class": ''
+        },
+        "meta": {},
       },
       {
         "uuid": "440d06f0-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.821+03:00",
-        "updated_at": "2016-01-28T15:26:22.821+03:00",
-        "data": {
+        "type": "BContentSectionType1",
+        "view": "BContentSectionType1View1",
+        "content": {
           "headerText": "Шрифты Google Web и<br>иконки Font Awesome",
           "leadText": "Этот шаблон применяет 'Lato' шрифт, часть <a target=\"_blank\" href=\"http://www.google.com/fonts\">библиотеки Google Web Font</a>, также как и <a target=\"_blank\" href=\"http://fontawesome.io\">иконки из Font Awesome</a>.",
           "image": {
@@ -122,14 +162,24 @@ if (__ENV__ === 'development') {
             "width": 458
           }
         },
-        "type": "BContentSectionType1",
-        "view": "BContentSectionType1View1"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-0133-746d04736cf8',
+          "class": ''
+        },
+        "meta": {},
       },
       {
         "uuid": "440d6ea0-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.823+03:00",
-        "updated_at": "2016-01-28T15:26:22.823+03:00",
-        "data": {
+        "type": "BCTAType1",
+        "view": "BCTAType1View1",
+        "content": {
           "text": "Присоединяйся к нам в соцсетях!",
           "backgroundImageUrl": "/assets/images/themes/t1/banner-bg.jpg",
           "items": [
@@ -145,14 +195,24 @@ if (__ENV__ === 'development') {
             }
           ]
         },
-        "type": "BCTAType1",
-        "view": "BCTAType1View1"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-013asd3-746d04736cf8',
+          "class": ''
+        },
+        "meta": {},
       },
       {
         "uuid": "440ddca0-a7e8-0133-a838-746d04736cf8",
-        "created_at": "2016-01-28T15:26:22.827+03:00",
-        "updated_at": "2016-01-28T15:26:22.827+03:00",
-        "data": {
+        "type": "BFooterType1",
+        "view": "BFooterType1View1",
+        "content": {
           "copyrightText": "Copyright © BML landing 2016. All Rights Reserved",
           "items": [
             {
@@ -169,8 +229,18 @@ if (__ENV__ === 'development') {
             }
           ]
         },
-        "type": "BFooterType1",
-        "view": "BFooterType1View1"
+        "background": {
+          "image": null,
+          "color": "#121212",
+          "position": '',
+          "attachment": '',
+          "repeat": '',
+        },
+        "nodeAttributes": {
+          "id": '44086800-a7e8-013asd3-746d04736cf8',
+          "class": ''
+        },
+        "meta": {},
       }
     ],
     "modal": {

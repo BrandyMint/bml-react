@@ -14,7 +14,7 @@ import {
   SWITCH_NEXT_VIEW,
   SWITCH_PREV_VIEW,
 
-  CHANGE_BLOCK_FIELD,
+  CHANGE_BLOCK_CONTENT,
 
   SUBMIT_ADDING_BLOCK,
   DELETE_EDITING_BLOCK,
@@ -46,7 +46,7 @@ const handlers = {
   [SWITCH_NEXT_VIEW]: switchNextView,
   [SWITCH_PREV_VIEW]: switchPrevView,
 
-  [CHANGE_BLOCK_FIELD]: changeBlockField,
+  [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
 
   [SUBMIT_ADDING_BLOCK]: addBlock,
   [DELETE_EDITING_BLOCK]: deleteBlock,
