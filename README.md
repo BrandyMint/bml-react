@@ -1,7 +1,7 @@
 # bml-react
 
-[![build status](https://img.shields.io/travis/BrandyMint/bml-react.svg?style=flat-square)](https://travis-ci.org/loktar00/react-lazy-load)
-[![dependency status](https://david-dm.org/BrandyMint/bml-react.svg?style=flat-square)](https://david-dm.org/loktar00/react-lazy-load)
+[![build status](https://img.shields.io/travis/BrandyMint/bml-react.svg?style=flat-square)](https://travis-ci.org/BrandyMint/bml-react)
+[![dependency status](https://david-dm.org/BrandyMint/bml-react.svg?style=flat-square)](https://david-dm.org/BrandyMint/bml-react)
 
 Собираем ./dist:
 
