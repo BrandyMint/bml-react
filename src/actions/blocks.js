@@ -57,7 +57,7 @@ export const submitAddingBlock = () => (dispatch, getState) => {
   const { addBlockForm } = getState();
   const { position, selectedIndex } = addBlockForm;
 
-  if (selectedIndex == null) return;
+  if (selectedIndex === null) return;
 
   const blockType = get(BLOCK_TYPES, selectedIndex);
   const firstViewOfType = head(get(BLOCK_VIEWS, blockType.type));

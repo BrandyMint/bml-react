@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react';
 
 import map from 'lodash/map';
 import size from 'lodash/size';
+import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
 import LBlock from 'components/LBlock';
@@ -19,7 +20,7 @@ const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
   const renderSection = (block, index) => (
     <div className="LBlocks-section" key={block.uuid}>
       {isEditMode && index > 0 && index < size(blocks) &&
-        <LBlockAddButton onClick={() => onAddBlock(index)} />
+        <LBlockAddButton onClick={partial(onAddBlock, index)} />
       }
       <LBlock block={block} />
     </div>

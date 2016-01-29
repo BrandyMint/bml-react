@@ -5,7 +5,7 @@ import './LOperatorPanel.css';
 import Bubble from 'components/ui-elements/Bubble';
 
 class LOperatorPanel extends Component {
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     window.onbeforeunload = this.props.hasUnsavedChanges
       ? () => 'Хотите закрыть конструктор, не сохранив изменения?'
       : null;

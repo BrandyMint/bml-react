@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 
 import Body from './ModalBody';
 import Footer from './ModalFooter';
@@ -7,7 +6,7 @@ import Header from './ModalHeader';
 import Title from './ModalTitle';
 
 class Modal extends Component {
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.show !== this.props.show) {
       if (this.props.show) {
         document.body.classList.add('modal-open');
@@ -42,5 +41,10 @@ Modal.Body = Body;
 Modal.Footer = Footer;
 Modal.Header = Header;
 Modal.Title = Title;
+
+Modal.propTypes = {
+  children: PropTypes.node,
+  show: PropTypes.bool.isRequired,
+};
 
 export default Modal;

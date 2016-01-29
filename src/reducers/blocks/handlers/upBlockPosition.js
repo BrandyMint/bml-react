@@ -1,4 +1,3 @@
-import size from 'lodash/size';
 import findIndex from 'lodash/findIndex';
 
 export default (state, action) => {
@@ -8,7 +7,7 @@ export default (state, action) => {
 
   let newState = state;
 
-  if (blockIndex != -1) {
+  if (blockIndex !== -1) {
     newState = [...state];
     const block = newState[blockIndex];
     newState[blockIndex] = newState[prevBlockIndex];

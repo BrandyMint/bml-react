@@ -14,14 +14,19 @@ const BFooterType1View1 = (data) => (
             {
               reduce(data.items, (acc, item, index) => {
                 acc.push((
-                  <li className="list-inline-item" key={index + '-item'}>
+                  <li className="list-inline-item" key={`${index}-item`}>
                     <a href={item.url}>{item.title}</a>
                   </li>
                 ));
 
                 if (size(data.items) > 1 && index < size(data.items) - 1) {
                   acc.push(
-                    <li className="footer-menu-divider list-inline-item" key={index + '-divider'}>⋅</li>
+                    <li
+                      className="footer-menu-divider list-inline-item"
+                      key={`${index}-divider`}
+                    >
+                      ⋅
+                    </li>
                   );
                 }
 

@@ -1,5 +1,3 @@
-import get from 'lodash/get';
-
 import { API_CALL } from 'middleware/API';
 
 export const LANDING_VERSION_UPDATE_REQUEST = 'LANDING_VERSION_UPDATE_REQUEST';
@@ -7,7 +5,6 @@ export const LANDING_VERSION_UPDATE_SUCCESS = 'LANDING_VERSION_UPDATE_SUCCESS';
 export const LANDING_VERSION_UPDATE_FAILURE = 'LANDING_VERSION_UPDATE_FAILURE';
 
 export const saveChanges = () => (dispatch, getState) => {
-  const state = getState();
   const {
     blocks,
     application: { landing_version_uuid: uuid },

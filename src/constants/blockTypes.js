@@ -28,7 +28,7 @@ const BLOCK_TYPES = [
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
-        class: ''
+        class: '',
       },
       meta: {},
     },
@@ -63,7 +63,7 @@ const BLOCK_TYPES = [
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
-        class: ''
+        class: '',
       },
       meta: {},
     },
@@ -97,7 +97,7 @@ const BLOCK_TYPES = [
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
-        class: ''
+        class: '',
       },
       meta: {},
     },
@@ -140,7 +140,7 @@ const BLOCK_TYPES = [
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
-        class: ''
+        class: '',
       },
       meta: {},
     },
@@ -174,7 +174,7 @@ const BLOCK_TYPES = [
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
-        class: ''
+        class: '',
       },
       meta: {},
     },

@@ -9,7 +9,7 @@ export default (state, action) => {
   let newState = state;
 
   if (size(state) > nextBlockIndex) {
-    newState = [...state];    
+    newState = [...state];
     const block = newState[blockIndex];
     newState[blockIndex] = newState[nextBlockIndex];
     newState[nextBlockIndex] = block;

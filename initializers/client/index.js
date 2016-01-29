@@ -1,3 +1,5 @@
+/* global __ENV__ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -21,239 +23,239 @@ const initApp = (initialState) => {
 
 if (__ENV__ === 'development') {
   initApp({
-    "addBlockForm": {
-      "selectedIndex": null,
-      "position": null
+    addBlockForm: {
+      selectedIndex: null,
+      position: null,
     },
-    "application": {
-      "exitUrl": "/_a/landings/1/analytics",
-      "isEditMode": true,
-      "landing_version_uuid": "10ba27fa-0628-44fd-af24-8430eea47ca7",
-      "api_key": "5d8aa2f240c5d05e992e0e84f58ce965",
-      "hasUnsavedChanges": false
+    application: {
+      exitUrl: '/_a/landings/1/analytics',
+      isEditMode: true,
+      landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
+      api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
+      hasUnsavedChanges: false,
     },
-    "blocks": [
+    blocks: [
       {
-        "uuid": "44086800-a7e8-0133-a838-746d04736cf8",
-        "type": "BNavbarType1",
-        "view": "BNavbarType1View1",
-        "content": {
-          "logoText": "Лендос!",
-          "items": [
+        uuid: '44086800-a7e8-0133-a838-746d04736cf8',
+        type: 'BNavbarType1',
+        view: 'BNavbarType1View1',
+        content: {
+          logoText: 'Лендос!',
+          items: [
             {
-              "title": "О нас",
-              "url": "google.ru"
+              title: 'О нас',
+              url: 'google.ru',
             },
             {
-              "title": "Услуги",
-              "url": "services.ru"
-            }
-          ]
+              title: 'Услуги',
+              url: 'services.ru',
+            },
+          ],
         },
-        "background": {
-          "image": null,
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+        background: {
+          image: null,
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-0133-a838-746d04736cf8',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-0133-a838-746d04736cf8',
+          class: '',
         },
-        "meta": {},
+        meta: {},
       },
       {
-        "uuid": "440bb620-a7e8-0133-a838-746d04736cf8",
-        "type": "BMustReadType1",
-        "view": "BMustReadType1View1",
-        "content": {
-          "header": "На все 100% !",
-          "subheader": "Шаблон для посадочной страницы",
-          "items": [
+        uuid: '440bb620-a7e8-0133-a838-746d04736cf8',
+        type: 'BMustReadType1',
+        view: 'BMustReadType1View1',
+        content: {
+          header: 'На все 100% !',
+          subheader: 'Шаблон для посадочной страницы',
+          items: [
             {
-              "icon": "twitter",
-              "title": "Twitter",
-              "url": "twitter.com"
+              icon: 'twitter',
+              title: 'Twitter',
+              url: 'twitter.com',
             },
             {
-              "icon": "github",
-              "title": "GitHub",
-              "url": "github.com"
-            }
-          ]
+              icon: 'github',
+              title: 'GitHub',
+              url: 'github.com',
+            },
+          ],
         },
-        "background": {
+        background: {
           image: {
             uuid: null,
             url: '/assets/images/themes/t1/intro-bg.jpg',
             width: null,
             height: null,
           },
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-013',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-013',
+          class: '',
         },
-        "meta": {},
+        meta: {},
       },
       {
-        "uuid": "440c3460-a7e8-0133-a838-746d04736cf8",
-        "type": "BContentSectionType1",
-        "view": "BContentSectionType1View1",
-        "content": {
-          "headerText": "Отдельное спасибо <br />Death to the Stock Photo !",
-          "leadText": "Отдельное спасибо <a target=\"_blank\" href=\"http://join.deathtothestockphoto.com/\">Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.",
-          "image": {
-            "url": "/assets/images/themes/t1/ipad.png",
-            "height": 354,
-            "width": 458
-          }
+        uuid: '440c3460-a7e8-0133-a838-746d04736cf8',
+        type: 'BContentSectionType1',
+        view: 'BContentSectionType1View1',
+        content: {
+          headerText: 'Отдельное спасибо <br />Death to the Stock Photo !',
+          leadText: 'Отдельное спасибо <a target=\'_blank\' href=\'http://join.deathtothestockphoto.com/\'>Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.',
+          image: {
+            url: '/assets/images/themes/t1/ipad.png',
+            height: 354,
+            width: 458,
+          },
         },
-        "background": {
-          "image": null,
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+        background: {
+          image: null,
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-0133-a838-',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-0133-a838-',
+          class: '',
         },
-        "meta": {},
+        meta: {},
       },
       {
-        "uuid": "440c9d50-a7e8-0133-a838-746d04736cf8",
-        "type": "BContentSectionType1",
-        "view": "BContentSectionType1View2",
-        "content": {
-          "headerText": "3D макеты на предметах<br /> от PSDCovers",
-          "leadText": "Преврати свой двумерный дизайн в высококачественные, трехмерные снимки за секунды используя бесплатные экшены в Photoshop от <a target=\"_blank\" href=\"http://www.psdcovers.com/\">PSDCovers</a>!<br />Посетите их сайт чтобы скачать что-то восхитительное и увидить экшены в действии!",
-          "image": {
-            "url": "/assets/images/themes/t1/dog.png",
-            "height": 383,
-            "width": 458
-          }
+        uuid: '440c9d50-a7e8-0133-a838-746d04736cf8',
+        type: 'BContentSectionType1',
+        view: 'BContentSectionType1View2',
+        content: {
+          headerText: '3D макеты на предметах<br /> от PSDCovers',
+          leadText: 'Преврати свой двумерный дизайн в высококачественные, трехмерные снимки за секунды используя бесплатные экшены в Photoshop от <a target=\'_blank\' href=\'http://www.psdcovers.com/\'>PSDCovers</a>!<br />Посетите их сайт чтобы скачать что-то восхитительное и увидить экшены в действии!',
+          image: {
+            url: '/assets/images/themes/t1/dog.png',
+            height: 383,
+            width: 458,
+          },
         },
-        "background": {
-          "image": null,
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+        background: {
+          image: null,
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-0133-a838-746d0473',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-0133-a838-746d0473',
+          class: '',
         },
-        "meta": {},
+        meta: {},
       },
       {
-        "uuid": "440d06f0-a7e8-0133-a838-746d04736cf8",
-        "type": "BContentSectionType1",
-        "view": "BContentSectionType1View1",
-        "content": {
-          "headerText": "Шрифты Google Web и<br>иконки Font Awesome",
-          "leadText": "Этот шаблон применяет 'Lato' шрифт, часть <a target=\"_blank\" href=\"http://www.google.com/fonts\">библиотеки Google Web Font</a>, также как и <a target=\"_blank\" href=\"http://fontawesome.io\">иконки из Font Awesome</a>.",
-          "image": {
-            "url": "/assets/images/themes/t1/phones.png",
-            "height": 302,
-            "width": 458
-          }
+        uuid: '440d06f0-a7e8-0133-a838-746d04736cf8',
+        type: 'BContentSectionType1',
+        view: 'BContentSectionType1View1',
+        content: {
+          headerText: 'Шрифты Google Web и<br>иконки Font Awesome',
+          leadText: 'Этот шаблон применяет \'Lato\' шрифт, часть <a target=\'_blank\' href=\'http://www.google.com/fonts\'>библиотеки Google Web Font</a>, также как и <a target=\'_blank\' href=\'http://fontawesome.io\'>иконки из Font Awesome</a>.',
+          image: {
+            url: '/assets/images/themes/t1/phones.png',
+            height: 302,
+            width: 458,
+          },
         },
-        "background": {
-          "image": null,
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+        background: {
+          image: null,
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-0133-746d04736cf8',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-0133-746d04736cf8',
+          class: '',
         },
-        "meta": {},
+        meta: {},
       },
       {
-        "uuid": "440d6ea0-a7e8-0133-a838-746d04736cf8",
-        "type": "BCTAType1",
-        "view": "BCTAType1View1",
-        "content": {
-          "text": "Присоединяйся к нам в соцсетях!",
-          "items": [
+        uuid: '440d6ea0-a7e8-0133-a838-746d04736cf8',
+        type: 'BCTAType1',
+        view: 'BCTAType1View1',
+        content: {
+          text: 'Присоединяйся к нам в соцсетях!',
+          items: [
             {
-              "icon": "twitter",
-              "title": "Twitter",
-              "url": "twitter.com"
+              icon: 'twitter',
+              title: 'Twitter',
+              url: 'twitter.com',
             },
             {
-              "icon": "github",
-              "title": "GitHub",
-              "url": "github.com"
-            }
-          ]
+              icon: 'github',
+              title: 'GitHub',
+              url: 'github.com',
+            },
+          ],
         },
-        "background": {
+        background: {
           image: {
             uuid: null,
             url: '/assets/images/themes/t1/banner-bg.jpg',
             width: null,
             height: null,
           },
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-013asd3-746d04736cf8',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-013asd3-746d04736cf8',
+          class: '',
         },
-        "meta": {},
+        meta: {},
       },
       {
-        "uuid": "440ddca0-a7e8-0133-a838-746d04736cf8",
-        "type": "BFooterType1",
-        "view": "BFooterType1View1",
-        "content": {
-          "copyrightText": "Copyright © BML landing 2016. All Rights Reserved",
-          "items": [
+        uuid: '440ddca0-a7e8-0133-a838-746d04736cf8',
+        type: 'BFooterType1',
+        view: 'BFooterType1View1',
+        content: {
+          copyrightText: 'Copyright © BML landing 2016. All Rights Reserved',
+          items: [
             {
-              "title": "Домой",
-              "url": "#top"
+              title: 'Домой',
+              url: '#top',
             },
             {
-              "title": "О нас",
-              "url": "#about"
+              title: 'О нас',
+              url: '#about',
             },
             {
-              "title": "Услуги",
-              "url": "#services"
-            }
-          ]
+              title: 'Услуги',
+              url: '#services',
+            },
+          ],
         },
-        "background": {
-          "image": null,
-          "color": "#121212",
-          "position": '',
-          "attachment": '',
-          "repeat": '',
+        background: {
+          image: null,
+          color: '#121212',
+          position: '',
+          attachment: '',
+          repeat: '',
         },
-        "nodeAttributes": {
-          "id": '44086800-a7e8-013asd3-746d04736cf8',
-          "class": ''
+        nodeAttributes: {
+          id: '44086800-a7e8-013asd3-746d04736cf8',
+          class: '',
         },
-        "meta": {},
-      }
+        meta: {},
+      },
     ],
-    "modal": {
-      "current": null
-    }
+    modal: {
+      current: null,
+    },
   });
 }
 

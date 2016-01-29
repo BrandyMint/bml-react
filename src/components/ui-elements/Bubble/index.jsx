@@ -20,9 +20,9 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, icon, text, onClick, url } = this.props;
+    const { children, icon, text, url } = this.props;
     const bubbleClasses = classnames({
-      'Bubble': true,
+      Bubble: true,
       'Bubble--withText': !!text,
       'Bubble--withIcon': !!icon,
     });

@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "description": "Awesome BML front-end",
   "scripts": {
+    "build": "NODE_ENV=production node -r 'babel-core/register' ./initializers/webpack/build.js",
     "start": "NODE_ENV=development node -r 'babel-register' ./initializers/server/index.js",
-    "build": "NODE_ENV=production node -r 'babel-core/register' ./initializers/webpack/build.js"
+    "lint": "eslint --ext .js --ext .jsx src initializers"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "css-loader": "^0.23.1",
     "ejs": "^2.3.4",
     "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-react": "^3.16.1",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",

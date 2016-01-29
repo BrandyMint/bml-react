@@ -2,6 +2,7 @@ import assign from 'lodash/assign';
 import get from 'lodash/get';
 import merge from 'lodash/merge';
 
+import qs from 'qs';
 import Rx from 'rx';
 import request from 'superagent';
 
@@ -56,7 +57,6 @@ export default store => next => action => {
   const [requestType, successType, failureType] = types;
 
   const apiKey = get(store.getState(), 'application.api_key');
-  const landingVersionUuid = get(store.getState(), 'application.landing_version_uuid');
 
   const completeHeaders = assign(
     { 'Content-Type': 'application/json' },

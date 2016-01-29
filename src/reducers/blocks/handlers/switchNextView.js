@@ -6,7 +6,7 @@ import BLOCK_VIEWS from 'constants/blockViews';
 
 export default (state, action) => {
   const { uuid } = action.payload;
-  
+
   return map(state, (block) => {
     if (block.uuid === uuid) {
       const blockViews = BLOCK_VIEWS[block.type];

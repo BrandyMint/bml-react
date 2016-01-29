@@ -1,6 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-
-import bind from 'lodash/bind';
+import React, { PropTypes } from 'react';
 
 import Modal from 'components/ui-elements/Modal';
 import LBlockAddForm from 'components/LBlockAddForm';

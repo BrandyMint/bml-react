@@ -1,6 +1,8 @@
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
+import partial from 'lodash/partial';
+
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import LBlockViewChanger from 'components/LBlockViewChanger';
 import LBlockPositionChanger from 'components/LBlockPositionChanger';
@@ -16,7 +18,7 @@ class LBlockLayer extends Component {
     } = this.props;
 
     const layerClasses = classnames({
-      'LBlockLayer': true,
+      LBlockLayer: true,
       'is-editing': isEditMode,
     });
 
@@ -25,17 +27,17 @@ class LBlockLayer extends Component {
         {isEditMode && (
           <div className="LBlockLayer-topPanel">
             <div className="LBlockLayer-actions">
-              <LBlockSettingsButton onEditingStart={() => onEditingStart(block)} />
+              <LBlockSettingsButton onEditingStart={partial(onEditingStart, block)} />
               {hasMultipleViews &&
                 <LBlockViewChanger
-                  onViewSwitchNext={() => onViewSwitchNext(block.uuid)}
-                  onViewSwitchPrev={() => onViewSwitchPrev(block.uuid)}
+                  onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
+                  onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
                 />
               }
               {hasMultipleBlocks &&
                 <LBlockPositionChanger
-                  onBlockPositionDown={() => onBlockPositionDown(block.uuid)}
-                  onBlockPositionUp={() => onBlockPositionUp(block.uuid)}
+                  onBlockPositionDown={partial(onBlockPositionDown, block.uuid)}
+                  onBlockPositionUp={partial(onBlockPositionUp, block.uuid)}
                 />
               }
             </div>
@@ -50,7 +52,9 @@ class LBlockLayer extends Component {
 
 LBlockLayer.propTypes = {
   block: PropTypes.object,
+  children: PropTypes.node,
   isEditMode: PropTypes.bool,
+  hasMultipleBlocks: PropTypes.bool,
   hasMultipleViews: PropTypes.bool,
 
   onBlockPositionDown: PropTypes.func.isRequired,

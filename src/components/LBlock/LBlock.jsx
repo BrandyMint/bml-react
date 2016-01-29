@@ -71,6 +71,12 @@ class LBlock extends Component {
   }
 }
 
+LBlock.propTypes = {
+  block: PropTypes.object.isRequired,
+  isEditMode: PropTypes.bool,
+  onContentChange: PropTypes.func.isRequired,
+};
+
 LBlock.childContextTypes = {
   isEditMode: PropTypes.bool,
   onContentChange: PropTypes.func,

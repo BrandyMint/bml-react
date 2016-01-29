@@ -6,9 +6,6 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import common from './common';
-import config from '../config';
-
-const extractTheme = new ExtractTextPlugin('stylesheets/[name].css');
 
 common.module.loaders.push({
   test: /\.css$/,

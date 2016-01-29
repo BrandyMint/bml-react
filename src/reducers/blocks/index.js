@@ -20,24 +20,6 @@ import {
   DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
-import {
-  CONTENT_SECTION_TYPE1, CTA_TYPE1, FOOTER_TYPE1, MUST_READ_TYPE1, NAVBAR_TYPE1,
-} from 'constants/blockTypesKeys';
-
-import {
-  CONTENT_SECTION_TYPE1_VIEW1,
-  CONTENT_SECTION_TYPE1_VIEW2,
-  CONTENT_SECTION_TYPE1_VIEW3,
-
-  CTA_TYPE1_VIEW1,
-
-  FOOTER_TYPE1_VIEW1,
-
-  MUST_READ_TYPE1_VIEW1,
-
-  NAVBAR_TYPE1_VIEW1,
-} from 'constants/blockViewsKeys';
-
 const initialState = [];
 
 const handlers = {

@@ -24,4 +24,10 @@ class LBlockAddForm extends Component {
   }
 }
 
+LBlockAddForm.propTypes = {
+  items: PropTypes.array.isRequired,
+  selectedIndex: PropTypes.number,
+  onSelect: PropTypes.func.isRequired,
+};
+
 export default LBlockAddForm;

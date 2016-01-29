@@ -1,10 +1,8 @@
-import React, { Component, PropTypes, createElement } from 'react';
+import { Component, PropTypes, createElement } from 'react';
 import { findDOMNode } from 'react-dom';
 
 import classnames from 'classnames';
 import MediumEditor from 'medium-editor';
-
-import bind from 'lodash/bind';
 
 import './Redactor.css';
 
@@ -28,7 +26,7 @@ class Redactor extends Component {
   componentDidUpdate(prevProps) {
     findDOMNode(this).innerHTML = this.props.value;
 
-    if (prevProps.readOnly != this.props.readOnly) {
+    if (prevProps.readOnly !== this.props.readOnly) {
       if (this.props.readOnly) {
         this.destroyEditor();
       } else {
@@ -74,6 +72,7 @@ Redactor.propTypes = {
   value: PropTypes.string,
   onBlur: PropTypes.func,
   onKeyDown: PropTypes.func,
+  onKeyDownEnter: PropTypes.func,
 };
 
 Redactor.defaultProps = {

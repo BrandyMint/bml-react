@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createSelector, createStructuredSelector } from 'reselect';
+import { createStructuredSelector } from 'reselect';
 
 import size from 'lodash/size';
 
@@ -14,7 +14,7 @@ import LBlockLayer from './LBlockLayer';
 
 const isEditModeSelector = state => state.application.isEditMode;
 const hasMultipleBlocksSelector = state => size(state.blocks) > 1;
-const hasMultipleViewsSelector = (state, props) => size(BLOCK_VIEWS[props.block.type]) > 1
+const hasMultipleViewsSelector = (state, props) => size(BLOCK_VIEWS[props.block.type]) > 1;
 
 const lBlockLayerSelector = createStructuredSelector({
   isEditMode: isEditModeSelector,

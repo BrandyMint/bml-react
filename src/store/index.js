@@ -1,3 +1,5 @@
+/* global __ENV__ */
+
 import { createStore, applyMiddleware } from 'redux';
 
 import APIMiddleware from 'middleware/API';

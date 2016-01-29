@@ -21,13 +21,13 @@ class LBlockLayerViewInfo extends Component {
     this.show();
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.removeTimer();
   }
 
   setTimer() {
     this.removeTimer();
-    this.timer = window.setTimeout(() => { this.hide() }, TIMEOUT);
+    this.timer = window.setTimeout(() => { this.hide(); }, TIMEOUT);
   }
 
   removeTimer() {
@@ -50,12 +50,12 @@ class LBlockLayerViewInfo extends Component {
     const { block } = this.props;
     const { show } = this.state;
 
-    const title = replace(block.view, /^B/, '')
+    const title = replace(block.view, /^B/, '');
 
     const classes = classnames({
-      'LBlockLayerViewInfo': true,
+      LBlockLayerViewInfo: true,
       'is-hidden': !show,
-      'Bubble': true,
+      Bubble: true,
     });
 
     return (

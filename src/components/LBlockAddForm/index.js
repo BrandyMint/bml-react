@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createSelector, createStructuredSelector } from 'reselect';
+import { createStructuredSelector } from 'reselect';
 
 import head from 'lodash/head';
 import reduce from 'lodash/reduce';
