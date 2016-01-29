@@ -50,7 +50,7 @@ class LBlock extends Component {
     const blockId = nodeAttributes.id;
     const blockClasses = classnames('LBlock', nodeAttributes.class);
 
-    const backgroundImageUrl = get(block, 'background.image.url');
+    const backgroundImageUrl = get(block, 'backgroundImage.url');
     const blockStyles = assign(
       {},
       backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },

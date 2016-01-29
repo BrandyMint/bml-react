@@ -86,13 +86,13 @@ if (__ENV__ === 'development') {
             },
           ],
         },
+        backgroundImage: {
+          uuid: null,
+          url: '/assets/images/themes/t1/intro-bg.jpg',
+          width: null,
+          height: null,
+        },
         background: {
-          image: {
-            uuid: null,
-            url: '/assets/images/themes/t1/intro-bg.jpg',
-            width: null,
-            height: null,
-          },
           color: '#121212',
           position: '',
           attachment: '',
@@ -201,13 +201,13 @@ if (__ENV__ === 'development') {
             },
           ],
         },
+        backgroundImage: {
+          uuid: null,
+          url: '/assets/images/themes/t1/banner-bg.jpg',
+          width: null,
+          height: null,
+        },
         background: {
-          image: {
-            uuid: null,
-            url: '/assets/images/themes/t1/banner-bg.jpg',
-            width: null,
-            height: null,
-          },
           color: '#121212',
           position: '',
           attachment: '',

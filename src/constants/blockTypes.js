@@ -20,7 +20,6 @@ const BLOCK_TYPES = [
         leadText: 'A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.',
       },
       background: {
-        image: null,
         color: '#121212',
         position: '',
         attachment: '',
@@ -49,13 +48,13 @@ const BLOCK_TYPES = [
         ],
         text: 'Connect to Start BML:',
       },
+      backgroundImage: {
+        uuid: null,
+        url: '/assets/images/themes/t1/banner-bg.jpg',
+        width: null,
+        height: null,
+      },
       background: {
-        image: {
-          uuid: null,
-          url: '/assets/images/themes/t1/banner-bg.jpg',
-          width: null,
-          height: null,
-        },
         color: '#121212',
         position: '',
         attachment: '',
@@ -89,7 +88,6 @@ const BLOCK_TYPES = [
         ],
       },
       background: {
-        image: null,
         color: '#121212',
         position: '',
         attachment: '',
@@ -126,13 +124,13 @@ const BLOCK_TYPES = [
           },
         ],
       },
+      backgroundImage: {
+        uuid: null,
+        url: '/assets/images/themes/t1/intro-bg.jpg',
+        width: null,
+        height: null,
+      },
       background: {
-        image: {
-          uuid: null,
-          url: '/assets/images/themes/t1/intro-bg.jpg',
-          width: null,
-          height: null,
-        },
         color: '#121212',
         position: '',
         attachment: '',
@@ -166,7 +164,6 @@ const BLOCK_TYPES = [
         ],
       },
       background: {
-        image: null,
         color: '#121212',
         position: '',
         attachment: '',
