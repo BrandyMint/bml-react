@@ -1,13 +1,12 @@
-import './LBlockLayer.css';
-
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
-
-import replace from 'lodash/replace';
 
 import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import LBlockViewChanger from 'components/LBlockViewChanger';
 import LBlockPositionChanger from 'components/LBlockPositionChanger';
+import LBlockLayerViewInfo from 'components/LBlockLayerViewInfo';
+
+import './LBlockLayer.css';
 
 class LBlockLayer extends Component {
   render() {
@@ -40,9 +39,7 @@ class LBlockLayer extends Component {
                 />
               }
             </div>
-            <div className="LBlockLayer-viewInfo Bubble text-muted">
-              {replace(block.view, /^B/, '')}
-            </div>
+            <LBlockLayerViewInfo block={block} />
           </div>
         )}
         {Children.only(children)}
