@@ -3,7 +3,8 @@ import createReducer from 'helpers/createReducer';
 import {
   LANDING_VERSION_UPDATE_SUCCESS,
   LANDING_VERSION_UPDATE_FAILURE,
-  LANDING_VERSION_UPDATE_REQUEST } from 'actions/landingVersions';
+  LANDING_VERSION_UPDATE_REQUEST,
+} from 'actions/landingVersions';
 
 import {
   UP_BLOCK_POSITION,
