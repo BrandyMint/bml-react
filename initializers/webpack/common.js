@@ -3,6 +3,7 @@ import path from 'path';
 import postcssBEM from 'postcss-bem';
 import postcssNested from 'postcss-nested';
 import postcssImport from 'postcss-import';
+import postcssMixins from 'postcss-sassy-mixins';
 import postcssSimpleVars from 'postcss-simple-vars';
 import postcssCalc from 'postcss-calc';
 
@@ -28,6 +29,7 @@ export default {
     postcssCalc,
     postcssBEM,
     postcssNested,
+    postcssMixins,
   ],
 
   resolve: {
@@ -36,6 +38,7 @@ export default {
   },
 
   module: {
+    preLoaders: [],
     loaders: [
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

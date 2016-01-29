@@ -1,6 +1,10 @@
 import createReducer from 'helpers/createReducer';
 
-import { LANDING_VERSION_UPDATE_SUCCESS } from 'actions/landingVersions';
+import {
+  LANDING_VERSION_UPDATE_SUCCESS,
+  LANDING_VERSION_UPDATE_FAILURE,
+  LANDING_VERSION_UPDATE_REQUEST,
+} from 'actions/landingVersions';
 
 import {
   UP_BLOCK_POSITION,
@@ -16,6 +20,7 @@ import {
 
 const initialState = {
   isEditMode: true,
+  isSaving: false,
   hasUnsavedChanges: false,
 
   api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
@@ -28,9 +33,18 @@ const unsavedChanges = value => state => ({
   ...state, hasUnsavedChanges: value,
 });
 
-const handlers = {
-  [LANDING_VERSION_UPDATE_SUCCESS]: unsavedChanges(false),
+const savingChanges = value => state => ({
+  ...state, isSaving: value,
+});
 
+const handlers = {
+  [LANDING_VERSION_UPDATE_REQUEST]: savingChanges(true),
+  [LANDING_VERSION_UPDATE_FAILURE]: savingChanges(false),
+  [LANDING_VERSION_UPDATE_SUCCESS]: state => ({
+    ...state,
+    isSaving: false,
+    hasUnsavedChanges: false,
+  }),
   [DOWN_BLOCK_POSITION]: unsavedChanges(true),
   [UP_BLOCK_POSITION]: unsavedChanges(true),
   [SWITCH_NEXT_VIEW]: unsavedChanges(true),
