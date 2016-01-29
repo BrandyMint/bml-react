@@ -36,6 +36,7 @@ export default {
   },
 
   module: {
+    preLoaders: [],
     loaders: [
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

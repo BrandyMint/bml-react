@@ -1,7 +1,8 @@
 {
   "name": "bml-react",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Awesome BML front-end",
+  "license": "UPL-1.0",
   "scripts": {
     "build": "NODE_ENV=production node -r 'babel-core/register' ./initializers/webpack/build.js",
     "start": "NODE_ENV=development node -r 'babel-register' ./initializers/server/index.js",
@@ -31,6 +32,7 @@
     "clean-webpack-plugin": "^0.1.6",
     "copy-webpack-plugin": "^0.3.3",
     "css-loader": "^0.23.1",
+    "ctags-webpack-plugin": "^0.3.0",
     "ejs": "^2.3.4",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",

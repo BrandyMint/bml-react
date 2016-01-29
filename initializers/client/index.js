@@ -30,6 +30,7 @@ if (__ENV__ === 'development') {
     application: {
       exitUrl: '/_a/landings/1/analytics',
       isEditMode: true,
+      isSaving: false,
       landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
       api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
       hasUnsavedChanges: false,

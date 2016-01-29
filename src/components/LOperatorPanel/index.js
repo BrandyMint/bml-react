@@ -13,6 +13,7 @@ const operatorPanelSelector = createSelector(
   (application) => ({
     exitUrl: application.exitUrl,
     isEditMode: application.isEditMode,
+    isSaving: application.isSaving,
     hasUnsavedChanges: application.hasUnsavedChanges,
   }),
 );

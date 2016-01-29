@@ -1,20 +1,23 @@
 $bubbleHeight: 40px;
 $bubbleSmallWidth: 40px;
 $bubbleBackground: rgba(255,255,255,.6);
+$bubbleProcessingBackground: rgba(255,225,125,.8);
 $bubbleBackgroundHover: rgba(70,186,249,.8);
 $bubbleTextColor: #fff;
 
 @component Bubble {
-  color: #666;
   cursor: pointer;
   display: inline-block;
   position: relative;
   height: $bubbleHeight;
   min-width: $bubbleSmallWidth;
   margin: 0;
-  border: 1px solid #ebebeb;
   border-radius: calc($bubbleHeight / 2);
+
   background-color: $bubbleBackground;
+  border: 1px solid #ebebeb;
+  color: #666;
+
   transition: background-color .2s ease;
   letter-spacing: 0;
   word-spacing: 0;
@@ -25,7 +28,7 @@ $bubbleTextColor: #fff;
   &:focus,
   &:hover {
     border: 1px solid #1eabf8;
-    background: $bubbleBackgroundHover;
+    background-color: $bubbleBackgroundHover;
     box-shadow: 0 0 8px rgba(0,0,0,.1);
     color: #fff;
     opacity: 1;
@@ -34,6 +37,18 @@ $bubbleTextColor: #fff;
   @modifier withIcon {
     /* Это мы так центрируем по вертикали */
     padding-top: 3px;
+  }
+
+  @when processing {
+    background-color: $bubbleProcessingBackground;
+    border: 1px solid #ebebeb;
+    color: #666;
+    &:focus,
+    &:hover {
+      background-color: $bubbleProcessingBackground;
+      border: 1px solid #ebebeb;
+      color: #666;
+    }
   }
 
   @descendent icon {

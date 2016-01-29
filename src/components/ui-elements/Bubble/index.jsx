@@ -20,11 +20,12 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, icon, text, url } = this.props;
+    const { children, icon, text, url, isProcessing } = this.props;
     const bubbleClasses = classnames({
       Bubble: true,
       'Bubble--withText': !!text,
       'Bubble--withIcon': !!icon,
+      'is-processing': isProcessing,
     });
 
     return (
@@ -51,6 +52,7 @@ Bubble.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string,
   url: PropTypes.string,
+  isProcessing: PropTypes.bool,
 };
 
 export default Bubble;
