@@ -8,7 +8,7 @@ import {
   SWITCH_NEXT_VIEW,
   SWITCH_PREV_VIEW,
 
-  CHANGE_BLOCK_FIELD,
+  CHANGE_BLOCK_CONTENT,
 
   SUBMIT_ADDING_BLOCK,
   DELETE_EDITING_BLOCK,
@@ -36,7 +36,7 @@ const handlers = {
   [SWITCH_NEXT_VIEW]: unsavedChanges(true),
   [SWITCH_PREV_VIEW]: unsavedChanges(true),
   [SUBMIT_ADDING_BLOCK]: unsavedChanges(true),
-  [CHANGE_BLOCK_FIELD]: unsavedChanges(true),
+  [CHANGE_BLOCK_CONTENT]: unsavedChanges(true),
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
 };
 
