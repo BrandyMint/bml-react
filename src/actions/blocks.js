@@ -55,7 +55,7 @@ export const cancelEditingBlock = () => ({
 
 export const deleteEditingBlock = () => (dispatch, getState) => {
   const { editBlockForm } = getState();
-  const { uuid } = editBlockForm;
+  const { uuid } = editBlockForm.block;
 
   if (uuid) {
     dispatch({

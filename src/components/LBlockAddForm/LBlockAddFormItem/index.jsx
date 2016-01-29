@@ -25,7 +25,7 @@ const LBlockAddFormItem = ({
         </div>
         <div className="col-sm-8">
           <div className="LBlockAddFormItem-content">
-            <h5 className="LBlockAddFormItem-title">({rate}) {title}</h5>
+            <h5 className="LBlockAddFormItem-title">{title}</h5>
             <p className="LBlockAddFormItem-description">
               {description}
             </p>
