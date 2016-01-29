@@ -29,6 +29,31 @@ const BContentSectionType1 = ({ data, view }) => {
   );
 };
 
+BContentSectionType1.contentSchema = {
+  version: 1,
+  backgroundImage: false,
+  fields: [
+    {
+      title: 'Заголовок',
+      key: 'headerText',
+      type: 'string',
+      isRequired: true,
+    },
+    {
+      title: 'Описание',
+      key: 'leadText',
+      type: 'text',
+      isRequired: true,
+    },
+    {
+      title: 'Картинка',
+      key: 'image',
+      type: 'image',
+      isRequired: true,
+    },
+  ],
+}
+
 BContentSectionType1.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,

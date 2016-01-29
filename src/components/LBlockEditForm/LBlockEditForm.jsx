@@ -1,10 +1,16 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import get from 'lodash/get';
 import partial from 'lodash/partial';
 
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
+
+import TypesRepository from 'helpers/TypesRepository';
+
+import ContentSchemaForm from 'components/ContentSchemaForm';
+
+import './LBlockEditForm.css';
 
 const NodeAttribute = ({
   attribute,
@@ -38,7 +44,7 @@ const NodeAttribute = ({
 };
 
 const NodeAttributes = ({ attributes, onChange }) => (
-  <div>
+  <div className="TabPage">
     <NodeAttribute
       attribute="id"
       description="Аттрибут id у тега блока"
@@ -58,22 +64,32 @@ const NodeAttributes = ({ attributes, onChange }) => (
   </div>
 );
 
-const LBlockEditForm = ({ block, onNodeAttributeChange }) => (
-  <Tabs>
-    <Tab eventKey={1} title="Контент">Управление контентом</Tab>
-    <Tab eventKey={2} title="Фон">Управление фоном</Tab>
-    <Tab eventKey={3} title="Стили">
-      <NodeAttributes
-        attributes={block.nodeAttributes}
-        onChange={onNodeAttributeChange}
-      />
-    </Tab>
-  </Tabs>
-);
+class LBlockEditForm extends Component {
+  render() {
+    const { block, onNodeAttributeChange } = this.props;
+
+    return (
+      <Tabs>
+        <Tab eventKey={1} title="Содержание">
+          <ContentSchemaForm
+            block={block}
+          />
+        </Tab>
+        <Tab eventKey={2} title="Свойства элемента">
+          <NodeAttributes
+            attributes={block.nodeAttributes}
+            onChange={onNodeAttributeChange}
+          />
+        </Tab>
+      </Tabs>
+    )
+  }
+}
 
 LBlockEditForm.propTypes = {
   block: PropTypes.object.isRequired,
   onNodeAttributeChange: PropTypes.func.isRequired,
+  onContentChange: PropTypes.func.isRequired,
 };
 
 export default LBlockEditForm;
