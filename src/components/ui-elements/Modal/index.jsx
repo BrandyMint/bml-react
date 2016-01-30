@@ -16,12 +16,12 @@ class Modal extends Component {
     }
   }
   render() {
-    const { children, show } = this.props;
+    const { children, show, className } = this.props;
 
     if (show) {
       return (
         <span>
-          <div className="modal" style={{ display: show ? 'block' : 'none' }}>
+          <div className={className} style={{ display: show ? 'block' : 'none' }}>
             <div className="modal-dialog">
               <div className="modal-content">
                 {children}
@@ -42,9 +42,14 @@ Modal.Footer = Footer;
 Modal.Header = Header;
 Modal.Title = Title;
 
+Modal.defaultProps = {
+  className: 'modal',
+};
+
 Modal.propTypes = {
   children: PropTypes.node,
   show: PropTypes.bool.isRequired,
+  className: PropTypes.string,
 };
 
 export default Modal;

@@ -1,0 +1,11 @@
+@component LBlockEditModal {
+  font-size: 80%;
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .form-control {
+    font-size: 0.8rem;
+  }
+}

@@ -4,7 +4,7 @@ import Modal from 'components/ui-elements/Modal';
 import LBlockEditForm from 'components/LBlockEditForm';
 
 const LBlockEditModal = ({ isVisible, onCancel, onDelete, onSave }) => (
-  <Modal show={isVisible}>
+  <Modal show={isVisible} className="modal LBlockEditModal">
     <Modal.Header closeButton onHide={onCancel}>
       <Modal.Title>Редактирование блока</Modal.Title>
     </Modal.Header>
@@ -13,18 +13,18 @@ const LBlockEditModal = ({ isVisible, onCancel, onDelete, onSave }) => (
     </Modal.Body>
     <Modal.Footer>
       <button
-        className="btn btn-danger"
+        className="btn btn-danger-outline"
         type="button"
         onClick={onDelete}
       >
         Удалить
       </button>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary-outline"
         type="button"
         onClick={onSave}
       >
-        Сохранить
+        OK
       </button>
     </Modal.Footer>
   </Modal>

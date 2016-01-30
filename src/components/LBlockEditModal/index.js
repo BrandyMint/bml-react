@@ -7,6 +7,8 @@ import { EDIT_BLOCK } from 'reducers/modal';
 
 import LBlockEditModal from './LBlockEditModal';
 
+import './LBlockEditModal.css';
+
 const currentModalSelector = state => state.modal.current;
 
 const isVisibleSelector = createSelector(

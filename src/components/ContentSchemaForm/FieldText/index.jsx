@@ -12,6 +12,8 @@ class FieldText extends Component {
         <textarea
           className="form-control"
           type="text"
+          rows="5"
+          styles={ { height: 'auto' } }
           id={fieldKey}
           value={value}
           onChange={onChange}
