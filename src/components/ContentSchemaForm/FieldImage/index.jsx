@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { FIELD_TYPES } from 'constants/schemaFieldTypes';
 
 class FieldImage extends Component {
   render() {
-    const { title, fieldKey, value, isRequired, onChange } = this.props;
+    const { title, fieldKey, value } = this.props;
 
     const imageStyle = {
       maxWidth: '200px',
       maxHeight: '200px',
-    }
+    };
 
     return (
       <fieldset className="form-group">
@@ -20,7 +19,7 @@ class FieldImage extends Component {
           </div>
       </fieldset>
     );
-  };
+  }
 }
 
 FieldImage.propTypes = {
@@ -30,12 +29,10 @@ FieldImage.propTypes = {
     uuid: PropTypes.string,
     url: PropTypes.string,
     width: PropTypes.number,
-    height: PropTypes.number
+    height: PropTypes.number,
   }),
   isRequired: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
 export default FieldImage;
-
-

@@ -6,8 +6,6 @@ import partial from 'lodash/partial';
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
 
-import TypesRepository from 'helpers/TypesRepository';
-
 import ContentSchemaForm from 'components/ContentSchemaForm';
 
 import './LBlockEditForm.css';
@@ -82,7 +80,7 @@ class LBlockEditForm extends Component {
           />
         </Tab>
       </Tabs>
-    )
+    );
   }
 }
 

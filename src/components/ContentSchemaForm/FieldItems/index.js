@@ -13,10 +13,17 @@ class FieldItemSubfield extends Component {
         isRequired={field.isRequired}
         onChange={onChange}
         value={value}
-        />
+      />
     );
   }
 }
+
+FieldItemSubfield.propTypes = {
+  field: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.object.isRequired,
+};
+
 class FieldItem extends Component {
   render() {
     const { item, itemSchemaFields, onChange } = this.props;
@@ -29,16 +36,29 @@ class FieldItem extends Component {
           field={field}
           value={item[field.key]}
           onChange={onChange}
-          />
-          )}
+        />
+       )}
       </li>
     );
   }
 }
 
+FieldItem.propTypes = {
+  itemSchemaFields: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  field: PropTypes.object.isRequired,
+};
+
 class FieldItems extends Component {
   render() {
-    const { title, fieldKey, items, itemSchema, isRequired, onChange } = this.props;
+    const {
+      title,
+      fieldKey,
+      items,
+      itemSchema,
+      onChange,
+    } = this.props;
 
     return (
       <fieldset className="form-group">
@@ -51,13 +71,14 @@ class FieldItems extends Component {
                 item={item}
                 key={index}
                 itemSchemaFields={itemSchema.fields}
-                onChange={onChange} />
+                onChange={onChange}
+              />
              )
             }
           </ul>
       </fieldset>
     );
-  };
+  }
 }
 
 FieldItems.propTypes = {
@@ -79,4 +100,3 @@ FieldItems.propTypes = {
 };
 
 export default FieldItems;
-

@@ -50,12 +50,12 @@ BCTAType1.contentSchema = {
             key: 'url',
             type: 'url',
             isRequired: false,
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
-  ]
-}
+  ],
+};
 
 BCTAType1.propTypes = {
   data: PropTypes.shape({

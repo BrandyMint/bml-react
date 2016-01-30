@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { FIELD_TYPES } from 'constants/schemaFieldTypes';
 
 class FieldText extends Component {
   render() {
-    const { title, fieldKey, value, isRequired, onChange } = this.props;
+    const { title, fieldKey, value, onChange } = this.props;
 
     return (
       <fieldset className="form-group">
@@ -16,10 +15,10 @@ class FieldText extends Component {
           id={fieldKey}
           value={value}
           onChange={onChange}
-          />
+        />
       </fieldset>
     );
-  };
+  }
 }
 
 FieldText.propTypes = {
@@ -31,4 +30,3 @@ FieldText.propTypes = {
 };
 
 export default FieldText;
-

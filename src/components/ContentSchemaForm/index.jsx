@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
 
-import {
-  changeContent
-} from 'actions/blocks';
+import { changeContent } from 'actions/blocks';
 
 import ContentSchemaForm from './ContentSchemaForm';
 

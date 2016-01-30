@@ -1,4 +1,3 @@
-import BLOCK_TYPES from 'constants/blockTypes';
 import typeComponents from 'constants/typeComponents';
 
 const TypesRepository = {
@@ -10,7 +9,7 @@ const TypesRepository = {
 
   getContentSchema(type) {
     return this.get(type).contentSchema;
-  }
-}
+  },
+};
 
 export default TypesRepository;

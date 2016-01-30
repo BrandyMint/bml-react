@@ -34,7 +34,12 @@ const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
         ?
           <Placeholder />
         :
-          <ReactCSSTransitionGroup component="div" transitionName="animation" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+          <ReactCSSTransitionGroup
+            component="div"
+            transitionName="animation"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}
+          >
             {map(blocks, renderSection)}
           </ReactCSSTransitionGroup>
       }

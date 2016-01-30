@@ -52,7 +52,7 @@ BContentSectionType1.contentSchema = {
       isRequired: true,
     },
   ],
-}
+};
 
 BContentSectionType1.propTypes = {
   data: PropTypes.shape({
