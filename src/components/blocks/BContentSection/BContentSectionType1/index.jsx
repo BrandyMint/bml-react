@@ -31,7 +31,7 @@ const BContentSectionType1 = ({ data, view }) => {
 
 BContentSectionType1.contentSchema = {
   version: 1,
-  backgroundImage: false,
+  backgroundImage: true,
   fields: [
     {
       title: 'Заголовок',
