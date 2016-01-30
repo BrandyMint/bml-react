@@ -21,6 +21,42 @@ const BFooterType1 = ({ data, view }) => {
   );
 };
 
+BFooterType1.contentSchema = {
+  version: 1,
+  backgroundImage: true,
+  fields: [
+    {
+      title: 'Копирайт',
+      key: 'copyrightText',
+      type: 'string',
+      isRequired: false
+    },
+    {
+      title: 'Ссылки в меню',
+      key: 'items',
+      type: 'items',
+      isRequired: true,
+      itemSchema: {
+        limit: 12,
+        fields: [
+          {
+            title: 'Название',
+            key: 'title',
+            type: 'string',
+            isRequired: true,
+          },
+          {
+            title: 'Ссылка',
+            key: 'url',
+            type: 'url',
+            isRequired: true,
+          },
+        ],
+      },
+    },
+  ],
+};
+
 BFooterType1.propTypes = {
   data: PropTypes.shape({
     copyrightText: PropTypes.string,
