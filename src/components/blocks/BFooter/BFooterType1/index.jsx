@@ -29,7 +29,7 @@ BFooterType1.contentSchema = {
       title: 'Копирайт',
       key: 'copyrightText',
       type: 'string',
-      isRequired: false
+      isRequired: false,
     },
     {
       title: 'Ссылки в меню',
