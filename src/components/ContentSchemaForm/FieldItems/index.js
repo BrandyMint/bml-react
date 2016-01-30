@@ -1,54 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { FIELD_BASIC_TYPES, FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
+import { FIELD_BASIC_TYPES } from 'constants/schemaFieldTypes';
 import map from 'lodash/map';
 
-class FieldItemSubfield extends Component {
-  render() {
-    const { field, value, onChange } = this.props;
-    const FieldComponent = FIELD_COMPONENTS[field.type];
-    return (
-      <FieldComponent
-        fieldKey={field.key}
-        title={field.title}
-        isRequired={field.isRequired}
-        onChange={onChange}
-        value={value}
-      />
-    );
-  }
-}
-
-FieldItemSubfield.propTypes = {
-  field: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.object.isRequired,
-};
-
-class FieldItem extends Component {
-  render() {
-    const { item, itemSchemaFields, onChange } = this.props;
-
-    return (
-      <li>
-      { map(itemSchemaFields, (field, index) =>
-        <FieldItemSubfield
-          key={index}
-          field={field}
-          value={item[field.key]}
-          onChange={onChange}
-        />
-       )}
-      </li>
-    );
-  }
-}
-
-FieldItem.propTypes = {
-  itemSchemaFields: PropTypes.object.isRequired,
-  item: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
-  field: PropTypes.object.isRequired,
-};
+import FieldItem from 'components/ContentSchemaForm/FieldItem';
 
 class FieldItems extends Component {
   render() {
@@ -65,7 +19,7 @@ class FieldItems extends Component {
         <label htmlFor={fieldKey}>
           {title}
           </label>
-          <ul className="FieldItems">
+          <ol className="FieldItems">
             {map(items, (item, index) =>
               <FieldItem
                 item={item}
@@ -75,7 +29,7 @@ class FieldItems extends Component {
               />
              )
             }
-          </ul>
+          </ol>
       </fieldset>
     );
   }
