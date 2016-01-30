@@ -21,6 +21,42 @@ const BNavbarType1 = ({ data, view }) => {
   );
 };
 
+BNavbarType1.contentSchema = {
+  version: 1,
+  backgroundImage: false,
+  fields: [
+    {
+      title: 'Бренд',
+      key: 'logoText',
+      type: 'string',
+      isRequired: true,
+    },
+    {
+      title: 'Меню',
+      key: 'items',
+      type: 'items',
+      isRequired: false,
+      itemSchema: {
+        limit: 7,
+        fields: [
+          {
+            title: 'Название',
+            key: 'title',
+            type: 'string',
+            isRequired: true,
+          },
+          {
+            title: 'Ссылка',
+            key: 'url',
+            type: 'url',
+            isRequired: true,
+          },
+        ],
+      },
+    },
+  ],
+};
+
 BNavbarType1.propTypes = {
   data: PropTypes.shape({
     items: PropTypes.array,
