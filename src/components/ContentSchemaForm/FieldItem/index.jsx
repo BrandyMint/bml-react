@@ -23,10 +23,9 @@ class FieldItem extends Component {
 }
 
 FieldItem.propTypes = {
-  itemSchemaFields: PropTypes.object.isRequired,
+  itemSchemaFields: PropTypes.array.isRequired,
   item: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
-  field: PropTypes.object.isRequired,
 };
 
 export default FieldItem;

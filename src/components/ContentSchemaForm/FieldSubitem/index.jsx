@@ -20,7 +20,7 @@ class FieldSubitem extends Component {
 FieldSubitem.propTypes = {
   field: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.object.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default FieldSubitem;
