@@ -40,12 +40,17 @@ class FieldItems extends Component {
               items[index][key] = value;
               onChange(items);
             };
+            const onRemoveItem = (index) => {
+              items.splice(index, 1);
+              onChange(items);
+            };
             return (
               <FieldItem
                 item={item}
                 key={index}
                 itemSchemaFields={itemSchema.fields}
                 onChange={partial(onChangeItem, index)}
+                onRemove={partial(onRemoveItem, index)}
               />
             );
           }

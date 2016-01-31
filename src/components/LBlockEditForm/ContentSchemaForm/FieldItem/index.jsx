@@ -7,7 +7,7 @@ import FieldSubitem from '../FieldSubitem';
 
 class FieldItem extends Component {
   render() {
-    const { item, itemSchemaFields, onChange } = this.props;
+    const { item, itemSchemaFields, onChange, onRemove } = this.props;
 
     return (
       <li>
@@ -22,7 +22,7 @@ class FieldItem extends Component {
             />
           )
        )}
-       <a href="#" className="text-danger">
+       <a href="#" className="text-danger" onClick={onRemove}>
        <Icon glyph="remove" />
        </a>
       </li>
@@ -34,6 +34,7 @@ FieldItem.propTypes = {
   itemSchemaFields: PropTypes.array.isRequired,
   item: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
 };
 
 export default FieldItem;
