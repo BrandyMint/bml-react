@@ -4,6 +4,8 @@ class FieldString extends Component {
   render() {
     const { title, fieldKey, value, onChange } = this.props;
 
+    const handleChange = (event) => onChange(event.target.value);
+
     return (
       <fieldset className="form-group">
         <label htmlFor={fieldKey}>
@@ -14,7 +16,7 @@ class FieldString extends Component {
           type="text"
           id={fieldKey}
           value={value}
-          onChange={onChange}
+          onChange={handleChange}
         />
       </fieldset>
     );

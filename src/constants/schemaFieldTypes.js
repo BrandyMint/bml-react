@@ -1,7 +1,7 @@
-import FieldString from 'components/ContentSchemaForm/FieldString';
-import FieldText from 'components/ContentSchemaForm/FieldText';
-import FieldImage from 'components/ContentSchemaForm/FieldImage';
-import FieldItems from 'components/ContentSchemaForm/FieldItems';
+import FieldString from 'components/LBlockEditForm/ContentSchemaForm/FieldString';
+import FieldText from 'components/LBlockEditForm/ContentSchemaForm/FieldText';
+import FieldImage from 'components/LBlockEditForm/ContentSchemaForm/FieldImage';
+import FieldItems from 'components/LBlockEditForm/ContentSchemaForm/FieldItems';
 
 export const FIELD_TYPE_STRING = 'string';
 export const FIELD_TYPE_URL = 'url';

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { changeNodeAttribute, changeContent } from 'actions/editBlockForm';
+import { changeNodeAttribute, changeContentField } from 'actions/editBlockForm';
 
 import LBlockEditForm from './LBlockEditForm';
 
@@ -10,7 +10,7 @@ const lBlockEditFormSelector = state => ({
 
 const actions = {
   onNodeAttributeChange: changeNodeAttribute,
-  onContentChange: changeContent,
+  onContentChange: changeContentField,
 };
 
 export default connect(lBlockEditFormSelector, actions)(LBlockEditForm);

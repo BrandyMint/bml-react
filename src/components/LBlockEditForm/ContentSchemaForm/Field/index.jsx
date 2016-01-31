@@ -1,23 +1,18 @@
 import React, { Component, PropTypes } from 'react';
-import FieldItems from 'components/ContentSchemaForm/FieldItems';
+import FieldItems from '../FieldItems';
 import { FIELD_TYPES, FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
 
 class Field extends Component {
   render() {
-    const { field, block } = this.props;
-    const value = block.content[field.key];
-    const handleChange = (some) => {
-      // TODO
-      value(some);
-    };
-
+    const { field, content, onChange } = this.props;
+    const value = content[field.key];
     if (field.type === 'items') {
       return (
         <FieldItems
           fieldKey={field.key}
           title={field.title}
           itemSchema={field.itemSchema}
-          onChange={handleChange}
+          onChange={onChange}
           items={value}
         />
       );
@@ -28,7 +23,7 @@ class Field extends Component {
         fieldKey={field.key}
         title={field.title}
         isRequired={field.isRequired}
-        onChange={handleChange}
+        onChange={onChange}
         value={value}
       />
     );
@@ -36,7 +31,7 @@ class Field extends Component {
 }
 
 Field.propTypes = {
-  block: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
   field: PropTypes.shape({
     title: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,
@@ -45,7 +40,7 @@ Field.propTypes = {
     limit: PropTypes.number,
     itemSchema: PropTypes.object,
   }).isRequired,
-  // onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Field;
