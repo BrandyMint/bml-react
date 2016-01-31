@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { FIELD_BASIC_TYPES } from 'constants/schemaFieldTypes';
 import map from 'lodash/map';
 
-import FieldItem from 'components/ContentSchemaForm/FieldItem';
+import FieldItem from '../FieldItem';
 
 class FieldItems extends Component {
   render() {
