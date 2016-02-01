@@ -45,11 +45,7 @@ const BLOCK_TYPES = [
         },
         leadText: 'A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.',
       },
-      background: {
-        color: '#121212',
-        position: '',
-        attachment: '',
-        repeat: '',
+      backgroundImage: {
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
@@ -80,12 +76,6 @@ const BLOCK_TYPES = [
         width: null,
         height: null,
       },
-      background: {
-        color: '#121212',
-        position: '',
-        attachment: '',
-        repeat: '',
-      },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
         class: '',
@@ -113,12 +103,7 @@ const BLOCK_TYPES = [
           },
         ],
       },
-      background: {
-        color: '#121212',
-        position: '',
-        attachment: '',
-        repeat: '',
-      },
+      backgroundImage: { },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
         class: '',
@@ -156,12 +141,6 @@ const BLOCK_TYPES = [
         width: null,
         height: null,
       },
-      background: {
-        color: '#121212',
-        position: '',
-        attachment: '',
-        repeat: '',
-      },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
         class: '',
@@ -189,11 +168,7 @@ const BLOCK_TYPES = [
           },
         ],
       },
-      background: {
-        color: '#121212',
-        position: '',
-        attachment: '',
-        repeat: '',
+      backgroundImage: {
       },
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',

@@ -53,12 +53,7 @@ if (__ENV__ === 'development') {
             },
           ],
         },
-        background: {
-          image: null,
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
+        backgroundImage: {
         },
         nodeAttributes: {
           id: '44086800-a7e8-0133-a838-746d04736cf8',
@@ -92,12 +87,6 @@ if (__ENV__ === 'development') {
           width: null,
           height: null,
         },
-        background: {
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
-        },
         nodeAttributes: {
           id: '44086800-a7e8-013',
           class: '',
@@ -117,12 +106,7 @@ if (__ENV__ === 'development') {
             width: 458,
           },
         },
-        background: {
-          image: null,
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
+        backgroundImage: {
         },
         nodeAttributes: {
           id: '44086800-a7e8-0133-a838-',
@@ -143,12 +127,7 @@ if (__ENV__ === 'development') {
             width: 458,
           },
         },
-        background: {
-          image: null,
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
+        backgroundImage: {
         },
         nodeAttributes: {
           id: '44086800-a7e8-0133-a838-746d0473',
@@ -169,12 +148,7 @@ if (__ENV__ === 'development') {
             width: 458,
           },
         },
-        background: {
-          image: null,
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
+        backgroundImage: {
         },
         nodeAttributes: {
           id: '44086800-a7e8-0133-746d04736cf8',
@@ -206,12 +180,6 @@ if (__ENV__ === 'development') {
           url: '/assets/images/themes/t1/banner-bg.jpg',
           width: null,
           height: null,
-        },
-        background: {
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
         },
         nodeAttributes: {
           id: '44086800-a7e8-013asd3-746d04736cf8',
@@ -270,12 +238,7 @@ if (__ENV__ === 'development') {
             },
           ],
         },
-        background: {
-          image: null,
-          color: '#121212',
-          position: '',
-          attachment: '',
-          repeat: '',
+        backgroundImage: {
         },
         nodeAttributes: {
           id: '44086800-a7e8-013asd3-746d04736cf8',

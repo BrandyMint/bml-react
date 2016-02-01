@@ -6,7 +6,11 @@ import {
   CANCEL_EDITING_BLOCK, START_EDITING_BLOCK, SUBMIT_EDITING_BLOCK,
 } from 'actions/blocks';
 
-import { CHANGE_NODE_ATTRIBUTE, CHANGE_CONTENT_FIELD } from 'actions/editBlockForm';
+import {
+  CHANGE_NODE_ATTRIBUTE,
+  CHANGE_CONTENT_FIELD,
+  CHANGE_BACKGROUND,
+} from 'actions/editBlockForm';
 
 const initialState = {
   block: {
@@ -30,6 +34,7 @@ const handlers = {
   [CANCEL_EDITING_BLOCK]: () => initialState,
 
   [CHANGE_CONTENT_FIELD]: changeBlockField('content'),
+  [CHANGE_BACKGROUND]: changeBlockField('background'),
   [CHANGE_NODE_ATTRIBUTE]: changeBlockField('nodeAttributes'),
 };
 

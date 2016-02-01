@@ -32,7 +32,7 @@ class LBlock extends Component {
 
     const backgroundImageUrl = get(block, 'backgroundImage.url');
     const blockStyles = assign(
-      {},
+      { },
       backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
     );
 
