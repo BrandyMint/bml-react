@@ -2,9 +2,9 @@ import React from 'react';
 import classnames from 'classnames';
 
 const ModalFooter = ({ children, className }) => (
-  <h4 className={classnames('modal-footer', className)}>
+  <div className={classnames('modal-footer', className)}>
     {children}
-  </h4>
+  </div>
 );
 
 export default ModalFooter;
