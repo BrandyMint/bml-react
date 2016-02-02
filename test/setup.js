@@ -13,3 +13,5 @@ global.__CLIENT__ = false;
 global.__ENV__ = 'test';
 
 import '../initializers/server/cssHook';
+console.log(__dirname);
+console.log(process.cwd());
