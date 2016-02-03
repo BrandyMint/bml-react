@@ -4,9 +4,35 @@ import {
   FOOTER_TYPE1,
   MUST_READ_TYPE1,
   NAVBAR_TYPE1,
+  MAP_TYPE1,
 } from 'constants/blockTypesKeys';
 
 const BLOCK_TYPES = [
+  {
+    type: MAP_TYPE1,
+    defaultData: {
+      content: {
+        center: {
+          lat: 59.938043,
+          lng: 30.337157,
+        },
+        zoom: 9,
+        places: [
+          {
+            location: {
+              lat: 59.724465,
+              lng: 30.080121,
+            },
+            title: 'Велосипедная дорожка',
+          },
+        ],
+      },
+      nodeAttributes: {
+      },
+      meta: {
+      },
+    },
+  },
   {
     type: CONTENT_SECTION_TYPE1,
     defaultData: {

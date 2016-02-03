@@ -9,3 +9,5 @@ export const FOOTER_TYPE1_VIEW1 = 'BFooterType1View1';
 export const MUST_READ_TYPE1_VIEW1 = 'BMustReadType1View1';
 
 export const NAVBAR_TYPE1_VIEW1 = 'BNavbarType1View1';
+
+export const MAP_TYPE1_VIEW1 = 'BMapType1View1';
