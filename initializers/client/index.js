@@ -66,7 +66,7 @@ if (__ENV__ === 'development') {
         type: 'BMustReadType1',
         view: 'BMustReadType1View1',
         content: {
-          header: 'На все 100% !',
+          header: 'На все 100%',
           subheader: 'Шаблон для посадочной страницы',
           items: [
             {
