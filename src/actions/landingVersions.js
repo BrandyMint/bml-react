@@ -14,7 +14,22 @@ export const saveChanges = () => (dispatch, getState) => {
     [API_CALL]: {
       endpoint: `/landing_versions/${uuid}`,
       method: 'PUT',
-      query: { blocks },
+      payload: { blocks },
+      types: [
+        LANDING_VERSION_UPDATE_REQUEST,
+        LANDING_VERSION_UPDATE_SUCCESS,
+        LANDING_VERSION_UPDATE_FAILURE,
+      ],
+    },
+  });
+};
+
+export const saveImage = (image) => (dispatch) => {
+  dispatch({
+    [API_CALL]: {
+      endpoint: '/images/',
+      method: 'POST',
+      attach: { file: image },
       types: [
         LANDING_VERSION_UPDATE_REQUEST,
         LANDING_VERSION_UPDATE_SUCCESS,

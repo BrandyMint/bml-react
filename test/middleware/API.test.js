@@ -4,7 +4,7 @@ import expect from 'expect';
 import nock from 'nock';
 
 import APIMiddleware, { API_CALL } from 'middleware/API';
-import config from 'constants/Config';
+import config from 'constants/config';
 
 import configureStore from '../mockStore';
 

@@ -1,6 +1,8 @@
 import assign from 'lodash/assign';
 import get from 'lodash/get';
 import merge from 'lodash/merge';
+import keys from 'lodash/keys';
+import isEmpty from 'lodash/isEmpty';
 
 import qs from 'qs';
 import Rx from 'rx';
@@ -8,36 +10,51 @@ import request from 'superagent';
 
 import config from 'constants/config';
 
-const sendMethod = HTTPMethod =>
-  (HTTPMethod === 'post' || HTTPMethod === 'put') ? 'send' : 'query';
-
-const sendArguments = (HTTPMethod, query) =>
-  (HTTPMethod === 'post' || HTTPMethod === 'put')
-    ? JSON.stringify(query)
-    : qs.stringify(query, { arrayFormat: 'brackets' });
-
 const apiCall = (
   url = config.api.url,
   endpoint = '',
   method = 'GET',
-  query = {},
-  headers = {}
+  payload = {},
+  headers = {},
+  attach = {},
 ) => {
   const subject = new Rx.Subject();
   const HTTPMethod = method.toLowerCase();
 
-  request
-    [HTTPMethod](url + endpoint)
-    [sendMethod(HTTPMethod)](sendArguments(HTTPMethod, query))
-    .set(headers)
-    .end((error, data) => {
-      if (error) {
-        subject.onError({ data, error });
-      } else {
-        subject.onNext(data);
-        subject.onCompleted();
-      }
-    });
+  const onEnd = (error, data) => {
+    if (error) {
+      subject.onError({ data, error });
+    } else {
+      subject.onNext(data);
+      subject.onCompleted();
+    }
+  };
+
+  const hasAttach = !isEmpty(attach);
+
+  const completeHeaders = hasAttach ?
+    headers :
+    assign(headers, { 'Content-Type': 'application/json' });
+
+  const req = request
+    [HTTPMethod](url + endpoint);
+
+  if (!isEmpty(payload)) {
+    const sendMethod = (HTTPMethod === 'post' || HTTPMethod === 'put') ? 'send' : 'payload';
+    const sendArguments = (HTTPMethod, payload) =>
+      (HTTPMethod === 'put' || HTTPMethod === 'post') ?
+        JSON.stringify(payload) :
+        qs.stringify(payload, { arrayFormat: 'brackets' });
+
+    req
+      [sendMethod](sendArguments);
+  }
+
+  keys(attach).forEach(key => req.attach(key, attach[key]));
+
+  req
+    .set(completeHeaders)
+    .end(onEnd);
 
   return subject;
 };
@@ -53,20 +70,20 @@ const nextAction = (action, data) => {
 export default store => next => action => {
   if (!get(action, API_CALL)) return next(action);
 
-  const { endpoint, headers, method, query, types, url } = action[API_CALL];
+  const { endpoint, headers, method, payload, types, url, attach } = action[API_CALL];
   const [requestType, successType, failureType] = types;
 
   const apiKey = get(store.getState(), 'application.api_key');
 
   const completeHeaders = assign(
-    { 'Content-Type': 'application/json' },
+    {},
     apiKey ? { 'X-Api-Key': apiKey } : {},
     headers
   );
 
   next(nextAction(action, { type: requestType }));
 
-  const apiRequest = apiCall(url, endpoint, method, query, completeHeaders);
+  const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
   const onError = rawData => {
     const payload = get(rawData, 'data.body') || {};
