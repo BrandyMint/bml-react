@@ -6,6 +6,7 @@ import Tabs from 'react-bootstrap/lib/Tabs';
 import ContentSchemaForm from './ContentSchemaForm';
 import NodeAttributes from './NodeAttributes';
 import BackgroundForm from './BackgroundForm';
+import TypesRepository from 'helpers/TypesRepository';
 
 import './LBlockEditForm.css';
 
@@ -18,6 +19,7 @@ class LBlockEditForm extends Component {
       onBackgroundImageChange,
       } = this.props;
 
+    const schema = TypesRepository.getContentSchema(block.type);
     return (
       <Tabs>
         <Tab eventKey={1} title="Содержание">
@@ -33,12 +35,14 @@ class LBlockEditForm extends Component {
             onChange={onNodeAttributeChange}
           />
         </Tab>
-        <Tab eventKey={3} title="Фон">
-          <BackgroundForm
-            backgroundImage={block.backgroundImage}
-            onChange={onBackgroundImageChange}
-          />
-        </Tab>
+        { schema.backgroundImage && (
+          <Tab eventKey={3} title="Фон">
+            <BackgroundForm
+              backgroundImage={block.backgroundImage}
+              onChange={onBackgroundImageChange}
+            />
+          </Tab>)
+        }
       </Tabs>
     );
   }

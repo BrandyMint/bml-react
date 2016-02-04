@@ -5,6 +5,7 @@ import {
   MUST_READ_TYPE1,
   NAVBAR_TYPE1,
   MAP_TYPE1,
+  INLINE_FORM_TYPE1,
 } from 'constants/blockTypesKeys';
 
 import {
@@ -21,9 +22,23 @@ import {
   NAVBAR_TYPE1_VIEW1,
 
   MAP_TYPE1_VIEW1,
+
+  INLINE_FORM_TYPE1_VIEW1,
 } from 'constants/blockViewsKeys';
 
 const BLOCK_VIEWS = {
+  [INLINE_FORM_TYPE1]: [
+    {
+      view: INLINE_FORM_TYPE1_VIEW1,
+      title: 'Однострочная форма',
+      image: {
+        url: '/assets/images/themes/t1/intro-bg.jpg',
+        height: 100,
+        width: 100,
+      },
+      rate: 4,
+    },
+  ],
   [MAP_TYPE1]: [
     {
       view: MAP_TYPE1_VIEW1,

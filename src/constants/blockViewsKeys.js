@@ -11,3 +11,5 @@ export const MUST_READ_TYPE1_VIEW1 = 'BMustReadType1View1';
 export const NAVBAR_TYPE1_VIEW1 = 'BNavbarType1View1';
 
 export const MAP_TYPE1_VIEW1 = 'BMapType1View1';
+
+export const INLINE_FORM_TYPE1_VIEW1 = 'BInlineFormType1View1';

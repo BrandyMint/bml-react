@@ -4,6 +4,7 @@ import BFooterType1 from 'components/blocks/BFooter/BFooterType1';
 import BMustReadType1 from 'components/blocks/BMustRead/BMustReadType1';
 import BNavbarType1 from 'components/blocks/BNavbar/BNavbarType1';
 import BMapType1 from 'components/blocks/BMap/BMapType1';
+import BInlineFormType1 from 'components/blocks/BInlineForm/BInlineFormType1';
 
 import {
   CONTENT_SECTION_TYPE1,
@@ -12,6 +13,7 @@ import {
   MUST_READ_TYPE1,
   NAVBAR_TYPE1,
   MAP_TYPE1,
+  INLINE_FORM_TYPE1,
 } from 'constants/blockTypesKeys';
 
 const typeComponents = {
@@ -21,6 +23,7 @@ const typeComponents = {
   [MUST_READ_TYPE1]: BMustReadType1,
   [NAVBAR_TYPE1]: BNavbarType1,
   [MAP_TYPE1]: BMapType1,
+  [INLINE_FORM_TYPE1]: BInlineFormType1,
 };
 
 export default typeComponents;
