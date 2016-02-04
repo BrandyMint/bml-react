@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import 'stylesheets/style.scss';
+import 'react-widgets/lib/less/react-widgets.less';
 
 import createStore from 'store';
 

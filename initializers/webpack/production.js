@@ -18,6 +18,11 @@ common.module.loaders.push({
   loader: ExtractTextPlugin.extract('style', ['css', 'sass']),
 });
 
+common.module.loaders.push({
+  test: /\.less$/,
+  loader: ExtractTextPlugin.extract('style', ['css', 'less']),
+});
+
 export default {
   postcss: common.postcss,
 
