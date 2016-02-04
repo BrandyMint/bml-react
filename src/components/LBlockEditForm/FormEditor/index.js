@@ -9,7 +9,6 @@ class FormEditor extends Component {
   static propTypes = {
     formContent: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
-    // formSchema: PropTypes.string.isRequired,
   };
   render() {
     const { formContent, onChange } = this.props;
@@ -21,7 +20,7 @@ class FormEditor extends Component {
           <Field
             field={field}
             key={index}
-            content={formContent}
+            value={formContent[field.key]}
             onChange={partial(onChange, field.key)}
           />
          )

@@ -8,9 +8,7 @@ class FieldSubitem extends Component {
     const FieldComponent = FIELD_COMPONENTS[field.type];
     return (
       <FieldComponent
-        fieldKey={field.key}
-        title={field.title}
-        isRequired={field.isRequired}
+        field={field}
         onChange={onChange}
         value={value}
       />

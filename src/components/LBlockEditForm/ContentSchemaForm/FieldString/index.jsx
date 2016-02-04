@@ -3,24 +3,26 @@ import FormGroup from '../FormGroup';
 
 export default class FieldString extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    fieldKey: PropTypes.string.isRequired,
+    field: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired,
+      isRequired: PropTypes.bool.isRequired,
+    }),
     value: PropTypes.string,
-    isRequired: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
   };
 
   render() {
-    const { title, fieldKey, value, onChange } = this.props;
+    const { field, value, onChange } = this.props;
 
     const handleChange = (event) => onChange(event.target.value);
 
     return (
-      <FormGroup fieldKey={fieldKey} title={title}>
+      <FormGroup fieldKey={field.key} title={field.title}>
         <input
           className="form-control"
           type="text"
-          id={fieldKey}
+          id={field.key}
           value={value}
           onChange={handleChange}
         />

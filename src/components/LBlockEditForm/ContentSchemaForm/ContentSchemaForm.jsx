@@ -18,7 +18,7 @@ class ContentSchemaForm extends Component {
           <Field
             field={field}
             key={index}
-            content={content}
+            value={content[field.key]}
             onChange={partial(onChange, field.key)}
           />
         )
