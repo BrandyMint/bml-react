@@ -94,6 +94,30 @@ if (__ENV__ === 'development') {
         meta: {},
       },
       {
+        uuid: '440c3460-a7e8-0133-b838-746d04736cf8',
+        type: 'BInlineFormType1',
+        view: 'BInlineFormType1View1',
+        content: {
+          submit_title: 'Подписка',
+          fields: [
+            {
+              title: '',
+              placeholder: 'Имя',
+              key: 'name',
+              inputType: 'text',
+            },
+            {
+              title: '',
+              placeholder: 'Емайл',
+              key: 'email',
+              inputType: 'email',
+            },
+          ],
+        },
+        nodeAttributes: {},
+        meta: {},
+      },
+      {
         uuid: '440c3460-a7e8-0133-a838-746d04736cf8',
         type: 'BContentSectionType1',
         view: 'BContentSectionType1View1',

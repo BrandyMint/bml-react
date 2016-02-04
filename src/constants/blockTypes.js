@@ -5,9 +5,36 @@ import {
   MUST_READ_TYPE1,
   NAVBAR_TYPE1,
   MAP_TYPE1,
+  INLINE_FORM_TYPE1,
 } from 'constants/blockTypesKeys';
 
 const BLOCK_TYPES = [
+  {
+    type: INLINE_FORM_TYPE1,
+    defaultData: {
+      content: {
+        submitTitle: 'Подписаться',
+        fields: [
+          {
+            title: '',
+            placeholder: 'Имя',
+            key: 'name',
+            inputType: 'text',
+          },
+          {
+            title: '',
+            placeholder: 'Емайл',
+            key: 'email',
+            inputType: 'email',
+          },
+        ],
+      },
+      nodeAttributes: {
+      },
+      meta: {
+      },
+    },
+  },
   {
     type: MAP_TYPE1,
     defaultData: {
