@@ -42,7 +42,7 @@ class LBlock extends Component {
       <section className={blockClasses} id={blockId} style={blockStyles}>
         <LBlockLayer block={block}>
           {TypeComponent
-            ? <TypeComponent data={block.content} view={block.view} />
+            ? <TypeComponent {...block} />
             : <Placeholder type={block.type} />
           }
         </LBlockLayer>

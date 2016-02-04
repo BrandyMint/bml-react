@@ -13,7 +13,11 @@ const BLOCK_TYPES = [
     type: INLINE_FORM_TYPE1,
     defaultData: {
       content: {
+      },
+      form: {
         submitTitle: 'Подписаться',
+        destination: 'collection',
+        collection: 'default',
         fields: [
           {
             title: '',

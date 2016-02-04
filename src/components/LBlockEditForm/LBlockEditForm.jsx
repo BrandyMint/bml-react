@@ -6,6 +6,7 @@ import Tabs from 'react-bootstrap/lib/Tabs';
 import ContentSchemaForm from './ContentSchemaForm';
 import NodeAttributes from './NodeAttributes';
 import BackgroundForm from './BackgroundForm';
+import FormEditor from './FormEditor';
 import TypesRepository from 'helpers/TypesRepository';
 
 import './LBlockEditForm.css';
@@ -17,6 +18,7 @@ class LBlockEditForm extends Component {
       onNodeAttributeChange,
       onContentChange,
       onBackgroundImageChange,
+      onFormChange,
       } = this.props;
 
     const schema = TypesRepository.getContentSchema(block.type);
@@ -35,8 +37,16 @@ class LBlockEditForm extends Component {
             onChange={onNodeAttributeChange}
           />
         </Tab>
+        { schema.form && (
+          <Tab eventKey={3} title="Форма">
+            <FormEditor
+              formContent={block.form}
+              onChange={onFormChange}
+            />
+          </Tab>)
+        }
         { schema.backgroundImage && (
-          <Tab eventKey={3} title="Фон">
+          <Tab eventKey={4} title="Фон">
             <BackgroundForm
               backgroundImage={block.backgroundImage}
               onChange={onBackgroundImageChange}
@@ -53,6 +63,7 @@ LBlockEditForm.propTypes = {
   onNodeAttributeChange: PropTypes.func.isRequired,
   onContentChange: PropTypes.func.isRequired,
   onBackgroundImageChange: PropTypes.func.isRequired,
+  onFormChange: PropTypes.func.isRequired,
 };
 
 export default LBlockEditForm;

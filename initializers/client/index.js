@@ -36,6 +36,7 @@ if (__ENV__ === 'development') {
       hasUnsavedChanges: false,
     },
     blocks: [
+      /*
       {
         uuid: '44086800-a7e8-0133-a838-746d04736cf8',
         type: 'BNavbarType1',
@@ -92,13 +93,17 @@ if (__ENV__ === 'development') {
           class: '',
         },
         meta: {},
-      },
+        },
+        */
       {
         uuid: '440c3460-a7e8-0133-b838-746d04736cf8',
         type: 'BInlineFormType1',
         view: 'BInlineFormType1View1',
         content: {
-          submitTitle: 'Подписка',
+          title: 'Подписка',
+        },
+        form: {
+          submitTitle: 'Подписаться',
           fields: [
             {
               title: '',
@@ -117,6 +122,7 @@ if (__ENV__ === 'development') {
         nodeAttributes: {},
         meta: {},
       },
+      /*
       {
         uuid: '440c3460-a7e8-0133-a838-746d04736cf8',
         type: 'BContentSectionType1',
@@ -269,7 +275,7 @@ if (__ENV__ === 'development') {
           class: '',
         },
         meta: {},
-      },
+      },*/
     ],
     modal: {
       current: null,

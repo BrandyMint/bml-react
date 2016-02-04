@@ -7,12 +7,12 @@ class BInlineFormType1View1 extends Component {
   static propTypes = ViewPropType;
 
   render() {
-    const { fields, submitTitle } = this.props;
-    const FormId = 'form'; // TODO вычислять для каждой формы свой ID
+    const { content, form, uuid } = this.props;
     return (
       <form className="form-inline">
-        {map(fields, (field, index) => {
-          const key = `${FormId}-${index}`;
+        { content.title && (<span>{content.title}</span>)}
+        {map(form.fields, (field, index) => {
+          const key = `${uuid}-${index}`;
           return (
             <div className="form-group" key={index}>
               <label htmlFor={key}>{field.title}</label>
@@ -25,7 +25,7 @@ class BInlineFormType1View1 extends Component {
             </div>
           );
         })}
-        <button type="submit" className="btn btn-primary">{submitTitle}</button>
+        <button type="submit" className="btn btn-primary">{form.submitTitle}</button>
       </form>
     );
   }
