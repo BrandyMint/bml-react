@@ -1,26 +1,34 @@
 import React, { Component, PropTypes } from 'react';
 import FormGroup from '../FormGroup';
 
-export default class FieldString extends Component {
+export default class FieldNumber extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     fieldKey: PropTypes.string.isRequired,
-    value: PropTypes.string,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    step: PropTypes.number,
+    value: PropTypes.number,
     isRequired: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
   };
 
   render() {
-    const { title, fieldKey, value, onChange } = this.props;
+    const { title, fieldKey, value, min, max, step, onChange } = this.props;
 
-    const handleChange = (event) => onChange(event.target.value);
+    const handleChange = (event) => {
+      onChange(parseInt(event.target.value, 10));
+    };
 
     return (
       <FormGroup fieldKey={fieldKey} title={title}>
         <input
           className="form-control"
-          type="text"
+          type="number"
           id={fieldKey}
+          min={min}
+          max={max}
+          step={step}
           value={value}
           onChange={handleChange}
         />

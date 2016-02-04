@@ -1,4 +1,5 @@
 import { FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
+import CustomPropTypes from 'constants/customPropTypes';
 import React, { Component, PropTypes } from 'react';
 
 class FieldSubitem extends Component {
@@ -20,7 +21,7 @@ class FieldSubitem extends Component {
 FieldSubitem.propTypes = {
   field: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: CustomPropTypes.fieldValue.isRequired,
 };
 
 export default FieldSubitem;

@@ -4,6 +4,7 @@ import {
   FOOTER_TYPE1,
   MUST_READ_TYPE1,
   NAVBAR_TYPE1,
+  MAP_TYPE1,
 } from 'constants/blockTypesKeys';
 
 import {
@@ -18,9 +19,24 @@ import {
   MUST_READ_TYPE1_VIEW1,
 
   NAVBAR_TYPE1_VIEW1,
+
+  MAP_TYPE1_VIEW1,
 } from 'constants/blockViewsKeys';
 
 const BLOCK_VIEWS = {
+  [MAP_TYPE1]: [
+    {
+      view: MAP_TYPE1_VIEW1,
+      title: 'Карта',
+      description: 'Карта от karta.yandex.ru',
+      image: {
+        url: '/assets/images/themes/t1/intro-bg.jpg',
+        height: 100,
+        width: 100,
+      },
+      rate: 4,
+    },
+  ],
   [CONTENT_SECTION_TYPE1]: [
     {
       view: CONTENT_SECTION_TYPE1_VIEW1,

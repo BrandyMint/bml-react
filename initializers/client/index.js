@@ -220,6 +220,36 @@ if (__ENV__ === 'development') {
         meta: {},
       },
       {
+        uuid: '44086800-a7e8-0133-a838-646d04736cf8',
+        type: 'BMapType1',
+        view: 'BMapType1View1',
+        content: {
+          center: {
+            lat: 59.938043,
+            lng: 30.337157,
+          },
+          zoom: 9,
+          places: [
+            {
+              location: {
+                lat: 59.955413,
+                lng: 30.337844,
+              },
+              title: 'A',
+            },
+            {
+              location: {
+                lat: 59.724465,
+                lng: 30.080121,
+              },
+              title: 'B',
+            },
+          ],
+        },
+        nodeAttributes: {},
+        meta: {},
+      },
+      {
         uuid: '440ddca0-a7e8-0133-a838-746d04736cf8',
         type: 'BFooterType1',
         view: 'BFooterType1View1',
