@@ -98,7 +98,7 @@ if (__ENV__ === 'development') {
         type: 'BInlineFormType1',
         view: 'BInlineFormType1View1',
         content: {
-          submit_title: 'Подписка',
+          submitTitle: 'Подписка',
           fields: [
             {
               title: '',
