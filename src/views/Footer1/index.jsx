@@ -5,21 +5,23 @@ import size from 'lodash/size';
 
 import StringEditable from 'components/primitives/StringEditable';
 
-const BFooterType1View1 = (data) => (
+import { Types, makeView } from 'views/types';
+
+const Footer1 = ({content}) => (
   <footer>
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
           <ul className="list-inline">
             {
-              reduce(data.items, (acc, item, index) => {
+              reduce(content.items, (acc, item, index) => {
                 acc.push((
                   <li className="list-inline-item" key={`${index}-item`}>
                     <a href={item.url}>{item.title}</a>
                   </li>
                 ));
 
-                if (size(data.items) > 1 && index < size(data.items) - 1) {
+                if (size(content.items) > 1 && index < size(content.items) - 1) {
                   acc.push(
                     <li
                       className="footer-menu-divider list-inline-item"
@@ -36,7 +38,7 @@ const BFooterType1View1 = (data) => (
           </ul>
           <StringEditable
             className="copyright text-muted small"
-            data={data}
+            data={content}
             fieldName="copyrightText"
             tagName="p"
           />
@@ -46,4 +48,4 @@ const BFooterType1View1 = (data) => (
   </footer>
 );
 
-export default BFooterType1View1;
+export default makeView(Footer1, Types.footer);

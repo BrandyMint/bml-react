@@ -252,12 +252,65 @@ export const MustRead = {
   },
 };
 
+const FooterType = {
+  copyrightText: PropTypes.string,
+  items: PropTypes.array.isRequired,
+};
+
+const Footer = {
+  typeName: 'Footer',
+
+  // Фактически это полное содержание block-а
+  propTypes: {
+    content: PropTypes.shape(FooterType).isRequired,
+    form: PropTypes.object,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: true,
+    fields: [
+      {
+        title: 'Копирайт',
+        key: 'copyrightText',
+        type: 'string',
+        isRequired: false,
+      },
+      {
+        title: 'Ссылки в меню',
+        key: 'items',
+        type: 'items',
+        isRequired: true,
+        itemSchema: {
+          limit: 12,
+          fields: [
+            {
+              title: 'Название',
+              key: 'title',
+              type: 'string',
+              isRequired: true,
+            },
+            {
+              title: 'Ссылка',
+              key: 'url',
+              type: 'url',
+              isRequired: true,
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+};
+
 export const Types = {
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,
   cta: CTA,
   mustRead: MustRead,
+  footer: Footer,
 };
 
 export const makeView = (component, type) => {

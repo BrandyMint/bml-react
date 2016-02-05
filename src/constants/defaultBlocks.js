@@ -204,11 +204,9 @@ export default [
     nodeAttributes: {},
     meta: {},
   },
-  /*
   {
     uuid: '440ddca0-a7e8-0133-a838-746d04736cf8',
-    type: 'BFooterType1',
-    view: 'BFooterType1View1',
+    view: 'Footer1',
     content: {
       copyrightText: 'Copyright © BML landing 2016. All Rights Reserved',
       items: [
@@ -233,5 +231,5 @@ export default [
       class: '',
     },
     meta: {},
-  },*/
+  },
 ];
