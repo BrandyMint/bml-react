@@ -31,7 +31,9 @@ class GoogleMap1 extends Component {
   };
 
   render() {
+    /* eslint-disable react/prop-types */
     const { center, zoom, places } = this.props.content;
+    /* eslint-enable */
 
     return (
       <GoogleMap

@@ -9,7 +9,9 @@ class InlineForm1 extends Component {
   static propTypes = Types.inlineForm.propTypes;
 
   render() {
+    /* eslint-disable react/prop-types */
     const { content, form, uuid } = this.props;
+    /* eslint-enable */
     return (
       <form className="form-inline">
         { content.title && (<span>{content.title}</span>)}

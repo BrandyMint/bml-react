@@ -7,7 +7,7 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import { Types, makeView } from 'views/types';
 
-const Footer1 = ({content}) => (
+const Footer1 = ({ content }) => (
   <footer>
     <div className="container">
       <div className="row">

@@ -4,7 +4,9 @@ import { Types, makeView } from 'views/types';
 import map from 'lodash/map';
 
 const Navbar1 = (props) => {
+  /* eslint-disable react/prop-types */
   const { content } = props;
+  /* eslint-enable */
   return (
     <nav className="navbar navbar-light bg-faded topnav" role="navigation">
     <div className="container topnav">

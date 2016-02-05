@@ -16,11 +16,11 @@ class LBlockAddForm extends Component {
 
     return (
       <div className="LBlockAddForm">
-        {map(items, (item, index) =>
+      {map(items, (item, index) =>
           <LBlockAddFormItem
             {...item}
             isSelected={selectedIndex === index}
-            key={item.type}
+            key={index}
             onSelect={partial(select, index)}
           />
         )}

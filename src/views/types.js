@@ -356,8 +356,10 @@ export const Types = {
 };
 
 export const makeView = (component, type) => {
+  /* eslint-disable no-param-reassign */
   component.propTypes = type.propTypes;
   component.typeName = type.typeName;
   component.contentSchema = type.contentSchema;
+  /* eslint-enable */
   return component;
 };
