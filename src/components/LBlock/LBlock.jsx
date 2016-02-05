@@ -6,11 +6,11 @@ import assign from 'lodash/assign';
 import partial from 'lodash/partial';
 
 import LBlockLayer from 'components/LBlockLayer';
-import TypesRepository from 'helpers/TypesRepository';
+import { viewsRepository } from 'views/all';
 
-const Placeholder = ({ type }) => (
+const Placeholder = ({ block }) => (
   <div className="LBlock-placeholder">
-    Unknown type of block {type}
+    Unknown view of block {block.view}
   </div>
 );
 
@@ -25,7 +25,7 @@ class LBlock extends Component {
   }
   render() {
     const { block } = this.props;
-    const { nodeAttributes, type } = block;
+    const { nodeAttributes, view } = block;
 
     const blockId = nodeAttributes.id;
     const blockClasses = classnames('LBlock', nodeAttributes.class);
@@ -36,14 +36,14 @@ class LBlock extends Component {
       backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
     );
 
-    const TypeComponent = TypesRepository.get(type);
+    const ViewComponent = viewsRepository.getView(view);
 
     return (
       <section className={blockClasses} id={blockId} style={blockStyles}>
         <LBlockLayer block={block}>
-          {TypeComponent
-            ? <TypeComponent {...block} />
-            : <Placeholder type={block.type} />
+          {ViewComponent
+            ? <ViewComponent {...block} />
+            : <Placeholder block={block} />
           }
         </LBlockLayer>
       </section>
@@ -52,7 +52,7 @@ class LBlock extends Component {
 }
 
 LBlock.propTypes = {
-  block: PropTypes.object.isRequired,
+  block: PropTypes.object.isRequired, // TODO block shape
   isEditMode: PropTypes.bool,
   onContentChange: PropTypes.func.isRequired,
 };

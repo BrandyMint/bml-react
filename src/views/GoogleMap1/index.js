@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
+import { Types, makeView } from 'views/types';
 import map from 'lodash/map';
 
 import Place from './place.jsx';
 
 import { K_SIZE } from './styles.js';
 
-import ViewPropType from '../viewPropType';
+import './index.css';
 
 const DEFAULT_PLACE_TEXT = '·';
 
-class BMapType1View1 extends Component {
-  static propTypes = ViewPropType;
-
+class GoogleMap1 extends Component {
   static defaultProps = {
     center: {
       lat: 59.938043,
@@ -32,7 +31,7 @@ class BMapType1View1 extends Component {
   };
 
   render() {
-    const { center, zoom, places } = this.props;
+    const { center, zoom, places } = this.props.content;
 
     return (
       <GoogleMap
@@ -58,4 +57,4 @@ class BMapType1View1 extends Component {
   }
 }
 
-export default BMapType1View1;
+export default makeView(GoogleMap1, Types.googleMap);

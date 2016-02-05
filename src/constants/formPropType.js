@@ -1,5 +1,5 @@
 import { PropTypes } from 'react';
-import { FIELD_BASIC_TYPES } from 'constants/schemaFieldTypes';
+import { FIELD_BASIC_TYPES } from 'constants/fieldTypes';
 import CustomPropTypes from 'constants/customPropTypes';
 
 const FieldType = PropTypes.shape({

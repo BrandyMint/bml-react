@@ -44,7 +44,9 @@ class LBlockLayer extends Component {
             <LBlockLayerViewInfo block={block} />
           </div>
         )}
-        {Children.only(children)}
+        <div className={block.view}>
+          {Children.only(children)}
+        </div>
       </div>
     );
   }

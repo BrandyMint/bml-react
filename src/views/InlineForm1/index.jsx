@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import map from 'lodash/map';
 
-import ViewPropType from '../viewPropType';
+import { Types, makeView } from 'views/types';
 
-class BInlineFormType1View1 extends Component {
-  static propTypes = ViewPropType;
+import './index.css';
+
+class InlineForm1 extends Component {
+  static propTypes = Types.inlineForm.propTypes;
 
   render() {
     const { content, form, uuid } = this.props;
@@ -31,4 +33,4 @@ class BInlineFormType1View1 extends Component {
   }
 }
 
-export default BInlineFormType1View1;
+export default makeView(InlineForm1, Types.inlineForm);

@@ -1,18 +1,21 @@
 import React from 'react';
+import { Types, makeView } from 'views/types';
 
 import map from 'lodash/map';
 
-const BNavbarType1View1 = (data) => (
-  <nav className="navbar navbar-light bg-faded topnav" role="navigation">
+const Navbar1 = (props) => {
+  const { content } = props;
+  return (
+    <nav className="navbar navbar-light bg-faded topnav" role="navigation">
     <div className="container topnav">
       <div className="navbar-header">
         <a className="navbar-brand topnav" href="#">
-          {data.logoText}
+          {content.logoText}
         </a>
       </div>
       <div className="navbar-collapse">
         <ul className="nav navbar-nav pull-right">
-          {map(data.items, (item, index) =>
+          {map(content.items, (item, index) =>
             <li className="nav-item" key={index}>
               <a className="nav-link" href={item.url}>
                 {item.title}
@@ -23,6 +26,7 @@ const BNavbarType1View1 = (data) => (
       </div>
     </div>
   </nav>
-);
+  );
+};
 
-export default BNavbarType1View1;
+export default makeView(Navbar1, Types.navbar);

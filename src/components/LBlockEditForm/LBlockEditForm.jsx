@@ -7,7 +7,7 @@ import ContentSchemaForm from './ContentSchemaForm';
 import NodeAttributes from './NodeAttributes';
 import BackgroundForm from './BackgroundForm';
 import FormEditor from './FormEditor';
-import TypesRepository from 'helpers/TypesRepository';
+import { viewsRepository } from 'views/all';
 
 import './LBlockEditForm.css';
 
@@ -21,12 +21,12 @@ class LBlockEditForm extends Component {
       onFormChange,
       } = this.props;
 
-    const schema = TypesRepository.getContentSchema(block.type);
+    const schema = viewsRepository.getContentSchemaByViewName(block.view);
     return (
       <Tabs>
         <Tab eventKey={1} title="Содержание">
           <ContentSchemaForm
-            block={block}
+            schema={schema}
             content={block.content}
             onChange={onContentChange}
           />
