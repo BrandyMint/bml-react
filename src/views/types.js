@@ -188,11 +188,76 @@ const CTA = {
   },
 };
 
+const MustReadContentType = {
+  header: PropTypes.string.isRequired,
+  subheader: PropTypes.string,
+  items: PropTypes.array.isRequired,
+};
+
+export const MustRead = {
+  propTypes: {
+    content: PropTypes.shape(MustReadContentType).isRequired,
+    form: PropTypes.object,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: true,
+    fields: [
+      {
+        title: 'Заголовок',
+        key: 'header',
+        type: 'string',
+        isRequired: true,
+      },
+      {
+        title: 'Подзаголовок',
+        key: 'subheader',
+        type: 'text',
+        isRequired: false,
+      },
+      {
+        title: 'Кнопки',
+        key: 'items',
+        type: 'items',
+        isRequired: true,
+        itemSchema: {
+          limit: 5,
+          fields: [
+            {
+              title: 'Название',
+              key: 'title',
+              type: 'string',
+              defaultValue: 'Название',
+              isRequired: true,
+            },
+            {
+              title: 'Ссылка',
+              defaultValue: 'http://aydamaster.ru',
+              key: 'url',
+              type: 'url',
+              isRequired: true,
+            },
+            {
+              title: 'Иконка',
+              defaultValue: 'diamond',
+              key: 'icon',
+              type: 'string',
+              isRequired: false,
+            },
+          ],
+        },
+      },
+    ],
+  },
+};
+
 export const Types = {
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,
   cta: CTA,
+  mustRead: MustRead,
 };
 
 export const makeView = (component, type) => {

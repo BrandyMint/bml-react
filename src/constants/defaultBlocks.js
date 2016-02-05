@@ -23,11 +23,9 @@ export default [
     },
     meta: {},
   },
-  /*
   {
     uuid: '440bb620-a7e8-0133-a838-746d04736cf8',
-    type: 'BMustReadType1',
-    view: 'BMustReadType1View1',
+    view: 'MustRead1',
     content: {
       header: 'На все 100%',
       subheader: 'Шаблон для посадочной страницы',
@@ -55,8 +53,7 @@ export default [
       class: '',
     },
     meta: {},
-    },
-    */
+  },
   {
     uuid: '440c3460-a7e8-0133-b838-746d04736cf8',
     view: 'InlineForm1',

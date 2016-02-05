@@ -13,3 +13,6 @@ viewsRepository.registerView(GoogleMap1);
 
 import CTA1 from './CTA1';
 viewsRepository.registerView(CTA1);
+
+import MustRead1 from './MustRead1';
+viewsRepository.registerView(MustRead1);

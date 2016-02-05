@@ -21,57 +21,6 @@ const BMustReadType1 = ({ data, view }) => {
   );
 };
 
-BMustReadType1.contentSchema = {
-  version: 1,
-  backgroundImage: true,
-  fields: [
-    {
-      title: 'Заголовок',
-      key: 'header',
-      type: 'string',
-      isRequired: true,
-    },
-    {
-      title: 'Подзаголовок',
-      key: 'subheader',
-      type: 'text',
-      isRequired: false,
-    },
-    {
-      title: 'Кнопки',
-      key: 'items',
-      type: 'items',
-      isRequired: true,
-      itemSchema: {
-        limit: 5,
-        fields: [
-          {
-            title: 'Название',
-            key: 'title',
-            type: 'string',
-            defaultValue: 'Название',
-            isRequired: true,
-          },
-          {
-            title: 'Ссылка',
-            defaultValue: 'http://aydamaster.ru',
-            key: 'url',
-            type: 'url',
-            isRequired: true,
-          },
-          {
-            title: 'Иконка',
-            defaultValue: 'diamond',
-            key: 'icon',
-            type: 'string',
-            isRequired: false,
-          },
-        ],
-      },
-    },
-  ],
-};
-
 BMustReadType1.propTypes = {
   data: PropTypes.shape({
     header: PropTypes.string.isRequired,
