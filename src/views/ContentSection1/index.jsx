@@ -1,6 +1,5 @@
 import React from 'react';
 import { Types, makeView } from 'views/types';
-
 import StringEditable from 'components/primitives/StringEditable';
 
 const ContentSection1 = ({ content }) => (

@@ -22,3 +22,9 @@ viewsRepository.registerView(Footer1);
 
 import ContentSection1 from './ContentSection1';
 viewsRepository.registerView(ContentSection1);
+
+import ContentSection2 from './ContentSection2';
+viewsRepository.registerView(ContentSection2);
+
+import ContentSection3 from './ContentSection3';
+viewsRepository.registerView(ContentSection3);

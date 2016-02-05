@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Types, makeView } from 'views/types';
 import StringEditable from 'components/primitives/StringEditable';
 
-const BContentSectionType1View2 = (data) => (
+const ContentSection3 = ({ content }) => (
   <div className="content-section-b">
     <div className="container">
       <div className="row">
@@ -10,24 +10,24 @@ const BContentSectionType1View2 = (data) => (
           <hr className="section-heading-spacer" />
           <div className="clearfix" />
           <StringEditable
-            className="section-heading"
-            data={data}
-            fieldName="headerText"
-            tagName="h2"
-          />
-          <StringEditable
             className="lead"
-            data={data}
+            data={content}
             fieldName="leadText"
             tagName="p"
+          />
+          <StringEditable
+            className="section-heading"
+            data={content}
+            fieldName="headerText"
+            tagName="h2"
           />
         </div>
         <div className="col-lg-5 col-sm-pull-6 col-sm-6">
           <img
             className="img-responsive"
-            height={data.image.height}
-            src={data.image.url}
-            width={data.image.width}
+            height={content.image.height}
+            src={content.image.url}
+            width={content.image.width}
           />
         </div>
       </div>
@@ -35,4 +35,4 @@ const BContentSectionType1View2 = (data) => (
   </div>
 );
 
-export default BContentSectionType1View2;
+export default makeView(ContentSection3, Types.contentSection);
