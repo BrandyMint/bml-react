@@ -91,6 +91,7 @@ const GoogleMapType = {
 };
 
 const GoogleMap = {
+  typeName: 'GoogleMap',
   propTypes: {
     content: PropTypes.shape(GoogleMapType).isRequired,
     form: PropTypes.object,
@@ -146,6 +147,7 @@ const CTAContentType = {
 };
 
 const CTA = {
+  typeName: 'CTA',
   propTypes: {
     content: PropTypes.shape(CTAContentType).isRequired,
     form: PropTypes.object,
@@ -195,6 +197,7 @@ const MustReadContentType = {
 };
 
 export const MustRead = {
+  typeName: 'MustRead',
   propTypes: {
     content: PropTypes.shape(MustReadContentType).isRequired,
     form: PropTypes.object,
@@ -310,7 +313,7 @@ const ContentSectionType = {
 };
 
 const ContentSection = {
-  tagName: 'ContentSection1',
+  typeName: 'ContentSection1',
   propTypes: {
     content: PropTypes.shape(ContentSectionType).isRequired,
     form: PropTypes.object,
@@ -354,7 +357,7 @@ export const Types = {
 
 export const makeView = (component, type) => {
   component.propTypes = type.propTypes;
-  component.typeName = type.name;
+  component.typeName = type.typeName;
   component.contentSchema = type.contentSchema;
   return component;
 };
