@@ -146,11 +146,11 @@ export default [
       class: '',
     },
     meta: {},
-  },
+    },
+    */
   {
     uuid: '440d6ea0-a7e8-0133-a838-746d04736cf8',
-    type: 'BCTAType1',
-    view: 'BCTAType1View1',
+    view: 'CTA1',
     content: {
       text: 'Присоединяйся к нам в соцсетях!',
       items: [
@@ -177,8 +177,7 @@ export default [
       class: '',
     },
     meta: {},
-    },
-    */
+  },
   {
     uuid: '44086800-a7e8-0133-a838-646d04736cf8',
     view: 'GoogleMap1',

@@ -10,3 +10,6 @@ viewsRepository.registerView(Navbar1);
 
 import GoogleMap1 from './GoogleMap1';
 viewsRepository.registerView(GoogleMap1);
+
+import CTA1 from './CTA1';
+viewsRepository.registerView(CTA1);

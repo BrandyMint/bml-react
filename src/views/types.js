@@ -137,15 +137,62 @@ const GoogleMap = {
         },
       },
     ],
-  }
-}
+  },
+};
 
-////////////
+const CTAContentType = {
+  text: PropTypes.string.isRequired,
+  items: PropTypes.array.isRequired, // TODO array of shape
+};
+
+const CTA = {
+  propTypes: {
+    content: PropTypes.shape(CTAContentType).isRequired,
+    form: PropTypes.object,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: true,
+    fields: [
+      {
+        title: 'Текст',
+        key: 'text',
+        type: 'string',
+        isRequired: true,
+      },
+      {
+        title: 'Кнопки',
+        key: 'items',
+        type: 'items',
+        isRequired: true,
+        itemSchema: {
+          limit: 3,
+          fields: [
+            {
+              title: 'Название',
+              key: 'title',
+              type: 'string',
+              isRequired: true,
+            },
+            {
+              title: 'Ссылка',
+              key: 'url',
+              type: 'url',
+              isRequired: false,
+            },
+          ],
+        },
+      },
+    ],
+  },
+};
 
 export const Types = {
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,
+  cta: CTA,
 };
 
 export const makeView = (component, type) => {
