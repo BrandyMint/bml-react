@@ -301,7 +301,45 @@ const Footer = {
       },
     ],
   },
+};
 
+const ContentSectionType = {
+  headerText: PropTypes.string.isRequired,
+  image: PropTypes.object,
+  leadText: PropTypes.string,
+};
+
+const ContentSection = {
+  tagName: 'ContentSection1',
+  propTypes: {
+    content: PropTypes.shape(ContentSectionType).isRequired,
+    form: PropTypes.object,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: true,
+    fields: [
+      {
+        title: 'Заголовок',
+        key: 'headerText',
+        type: 'string',
+        isRequired: true,
+      },
+      {
+        title: 'Описание',
+        key: 'leadText',
+        type: 'text',
+        isRequired: true,
+      },
+      {
+        title: 'Картинка',
+        key: 'image',
+        type: 'image',
+        isRequired: true,
+      },
+    ],
+  },
 };
 
 export const Types = {
@@ -311,6 +349,7 @@ export const Types = {
   cta: CTA,
   mustRead: MustRead,
   footer: Footer,
+  contentSection: ContentSection,
 };
 
 export const makeView = (component, type) => {

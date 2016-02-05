@@ -19,3 +19,6 @@ viewsRepository.registerView(MustRead1);
 
 import Footer1 from './Footer1';
 viewsRepository.registerView(Footer1);
+
+import ContentSection1 from './ContentSection1';
+viewsRepository.registerView(ContentSection1);

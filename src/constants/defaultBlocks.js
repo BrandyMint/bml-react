@@ -80,11 +80,9 @@ export default [
     nodeAttributes: {},
     meta: {},
   },
-  /*
   {
     uuid: '440c3460-a7e8-0133-a838-746d04736cf8',
-    type: 'BContentSectionType1',
-    view: 'BContentSectionType1View1',
+    view: 'ContentSection1',
     content: {
       headerText: 'Отдельное спасибо <br />Death to the Stock Photo !',
       leadText: 'Отдельное спасибо <a target=\'_blank\' href=\'http://join.deathtothestockphoto.com/\'>Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.',
@@ -102,6 +100,7 @@ export default [
     },
     meta: {},
   },
+  /*
   {
     uuid: '440c9d50-a7e8-0133-a838-746d04736cf8',
     type: 'BContentSectionType1',
