@@ -1,10 +1,8 @@
 import uuid from 'uuid';
 
 import get from 'lodash/get';
-import head from 'lodash/head';
 
-import BLOCK_TYPES from 'constants/blockTypes';
-import BLOCK_VIEWS from 'constants/blockViews';
+import VIEW_EXAMPLES from 'constants/viewExamples';
 
 export const CHANGE_BLOCK_CONTENT = 'CHANGE_BLOCK_CONTENT';
 export const CHANGE_BLOCK_NODE_ATTRIBUTES = 'CHANGE_BLOCK_NODE_ATTRIBUTES';
@@ -71,19 +69,17 @@ export const submitAddingBlock = () => (dispatch, getState) => {
 
   if (selectedIndex === null) return;
 
-  const blockType = get(BLOCK_TYPES, selectedIndex);
-  const firstViewOfType = head(get(BLOCK_VIEWS, blockType.type));
+  const example = get(VIEW_EXAMPLES, selectedIndex);
 
-  if (blockType && firstViewOfType) {
+  if (example) {
     return dispatch({
       type: SUBMIT_ADDING_BLOCK,
       payload: {
         position,
         block: {
           uuid: uuid.v4(),
-          type: blockType.type,
-          view: firstViewOfType.view,
-          ...blockType.defaultData,
+          view: example.view,
+          ...example.defaultData,
         },
       },
     });

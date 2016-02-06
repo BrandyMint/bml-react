@@ -1,28 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import FieldItems from '../FieldItems';
-import { FIELD_TYPES, FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
+import { FIELD_TYPES } from 'constants/fieldTypes';
+import { FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
 
 class Field extends Component {
   render() {
-    const { field, content, onChange } = this.props;
-    const value = content[field.key];
-    if (field.type === 'items') {
-      return (
-        <FieldItems
-          fieldKey={field.key}
-          title={field.title}
-          itemSchema={field.itemSchema}
-          onChange={onChange}
-          items={value}
-        />
-      );
-    }
+    const { field, value, onChange } = this.props;
     const FieldComponent = FIELD_COMPONENTS[field.type];
     return (
       <FieldComponent
-        fieldKey={field.key}
-        title={field.title}
-        isRequired={field.isRequired}
+        field={field}
         onChange={onChange}
         value={value}
       />
@@ -31,7 +17,7 @@ class Field extends Component {
 }
 
 Field.propTypes = {
-  content: PropTypes.object.isRequired,
+  value: PropTypes.any,
   field: PropTypes.shape({
     title: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,

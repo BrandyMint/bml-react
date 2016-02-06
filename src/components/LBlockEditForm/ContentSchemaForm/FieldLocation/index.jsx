@@ -7,15 +7,18 @@ const STEP = 0.000001;
 
 export default class FieldLocation extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    fieldKey: PropTypes.string.isRequired,
+    field: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired,
+      isRequired: PropTypes.bool.isRequired,
+    }),
     value: CustomPropTypes.location.isRequired,
-    isRequired: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
   };
 
   render() {
-    const { title, fieldKey, value, onChange } = this.props;
+    const { field, value, onChange } = this.props;
+    const { title, key } = field;
 
     const handleChangeLng = (event) => {
       const v = parseFloat(event.target.value.replace(',', '.'));
@@ -27,14 +30,14 @@ export default class FieldLocation extends Component {
     };
 
     return (
-      <FormGroup fieldKey={fieldKey} title={title}>
+      <FormGroup fieldKey={key} title={title}>
         <div className="row">
           <div className="col-md-6">
             <input
               className="form-control"
               type="number"
               step={ STEP }
-              id={`${fieldKey}-lat`}
+              id={`${key}-lat`}
               value={value.lat}
               onChange={handleChangeLat}
             />
@@ -45,7 +48,7 @@ export default class FieldLocation extends Component {
               className="form-control"
               type="number"
               step={ STEP }
-              id={fieldKey}
+              id={key}
               value={value.lng}
               onChange={handleChangeLng}
             />

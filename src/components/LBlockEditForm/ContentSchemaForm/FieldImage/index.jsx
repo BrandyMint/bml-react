@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 class FieldImage extends Component {
   render() {
-    const { title, fieldKey, value } = this.props;
+    const { field, value } = this.props;
 
     const imageStyle = {
       maxWidth: '200px',
@@ -11,8 +11,8 @@ class FieldImage extends Component {
 
     return (
       <fieldset className="form-group">
-        <label htmlFor={fieldKey}>
-          {title}
+        <label htmlFor={field.key}>
+          {field.title}
           </label>
           <div>
             <img src={value.url} style={imageStyle}/>
@@ -23,15 +23,17 @@ class FieldImage extends Component {
 }
 
 FieldImage.propTypes = {
-  title: PropTypes.string.isRequired,
-  fieldKey: PropTypes.string.isRequired,
+  field: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    key: PropTypes.string.isRequired,
+    isRequired: PropTypes.bool.isRequired,
+  }),
   value: PropTypes.shape({
     uuid: PropTypes.string,
     url: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
   }),
-  isRequired: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

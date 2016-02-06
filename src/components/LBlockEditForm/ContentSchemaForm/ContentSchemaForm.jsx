@@ -1,15 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
-import TypesRepository from 'helpers/TypesRepository';
 
 import Field from './Field';
 
 class ContentSchemaForm extends Component {
   render() {
-    const { block, content, onChange } = this.props;
-
-    const schema = TypesRepository.getContentSchema(block.type);
+    const { content, schema, onChange } = this.props;
 
     return (
       <div className="TabPage">
@@ -18,7 +15,7 @@ class ContentSchemaForm extends Component {
           <Field
             field={field}
             key={index}
-            content={content}
+            value={content[field.key]}
             onChange={partial(onChange, field.key)}
           />
         )
@@ -29,7 +26,7 @@ class ContentSchemaForm extends Component {
 }
 
 ContentSchemaForm.propTypes = {
-  block: PropTypes.object.isRequired,
+  schema: PropTypes.object.isRequired, // TODO schema propType
   content: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 };

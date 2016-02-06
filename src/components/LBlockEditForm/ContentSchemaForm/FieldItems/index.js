@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import FormPropType from 'constants/formPropType';
 import Icon from 'components/ui-elements/Icon';
-import { FIELD_BASIC_TYPES } from 'constants/schemaFieldTypes';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 import each from 'lodash/each';
@@ -11,16 +11,18 @@ import FieldItem from '../FieldItem';
 
 class FieldItems extends Component {
   render() {
+    const { field, value, onChange } = this.props;
+
+    const items = value;
+
     const {
       title,
-      fieldKey,
-      items,
+      key,
       itemSchema,
-      onChange,
-    } = this.props;
+    } = field;
 
     const blankItem = {};
-    each(itemSchema.fields, (field) => blankItem[field.key] = field.defaultValue || '');
+    each(itemSchema.fields, (f) => blankItem[f.key] = f.defaultValue || '');
 
     const onClickAdd = () => {
       items.push(clone(blankItem));
@@ -29,7 +31,7 @@ class FieldItems extends Component {
 
     return (
       <fieldset className="form-group">
-        <label htmlFor={fieldKey}>
+        <label htmlFor={key}>
           <h3>
             {title}
           </h3>
@@ -67,20 +69,8 @@ class FieldItems extends Component {
 }
 
 FieldItems.propTypes = {
-  title: PropTypes.string.isRequired,
-  fieldKey: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
-  itemSchema: PropTypes.shape({
-    fields: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        key: PropTypes.string.isRequired,
-        type: PropTypes.oneOf(FIELD_BASIC_TYPES).isRequired,
-        isRequired: PropTypes.bool.isRequired,
-      })
-    ).isRequired,
-    limit: PropTypes.number.isRequired,
-  }).isRequired,
+  field: FormPropType.fieldItemsField.isRequired,
+  value: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

@@ -2,21 +2,21 @@ import React, { Component, PropTypes } from 'react';
 
 class FieldText extends Component {
   render() {
-    const { title, fieldKey, value, onChange } = this.props;
+    const { field, value, onChange } = this.props;
 
     const handleChange = (event) => onChange(event.target.value);
 
     return (
       <fieldset className="form-group">
-        <label htmlFor={fieldKey}>
-          {title}
+        <label htmlFor={field.key}>
+          {field.title}
         </label>
         <textarea
           className="form-control"
           type="text"
           rows="5"
           styles={ { height: 'auto' } }
-          id={fieldKey}
+          id={field.key}
           value={value}
           onChange={handleChange}
         />
@@ -26,10 +26,12 @@ class FieldText extends Component {
 }
 
 FieldText.propTypes = {
-  title: PropTypes.string.isRequired,
-  fieldKey: PropTypes.string.isRequired,
+  field: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    key: PropTypes.string.isRequired,
+    isRequired: PropTypes.bool.isRequired,
+  }),
   value: PropTypes.string,
-  isRequired: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

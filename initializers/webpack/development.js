@@ -17,6 +17,16 @@ common.module.loaders.push({
   loaders: ['style', 'css', 'sass'],
 });
 
+common.module.loaders.push({
+  test: /\.less$/,
+  loaders: ['style', 'css', 'less'],
+});
+
+common.module.loaders.push({
+  test: /\.gif$/,
+  loader: 'url-loader?mimetype=image/png',
+});
+
 export default {
   devtool: 'eval',
 
