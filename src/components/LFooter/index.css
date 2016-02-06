@@ -1,0 +1,24 @@
+@component LFooter {
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  user-select: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;
+
+  @descendent link {
+    cursor: pointer;
+
+    color: #ccc;
+    &:visited, &:link, &:focus, &:active {
+      color: #ccc;
+    }
+
+    &:hover {
+      color: #eee;
+    }
+  }
+}

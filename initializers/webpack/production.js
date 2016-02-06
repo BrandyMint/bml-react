@@ -37,12 +37,6 @@ export default {
     new CleanWebpackPlugin('dist', { root: process.cwd() }),
     new CopyWebpackPlugin([
       {
-        from: path.join(process.cwd(), 'src/stylesheets/themes'),
-        to: 'stylesheets/themes',
-      },
-    ]),
-    new CopyWebpackPlugin([
-      {
         from: path.join(process.cwd(), 'src/assets/images'),
         to: 'images',
       },

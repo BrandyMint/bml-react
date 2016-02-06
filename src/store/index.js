@@ -17,7 +17,7 @@ if (__ENV__ === 'development') {
     const middlewares = [
       thunk,
       APIMiddleware,
-      logger,
+      // logger,
     ];
 
     const store = applyMiddleware(...middlewares)(createStore)(reducers, initialState);

@@ -6,6 +6,7 @@ import assign from 'lodash/assign';
 import partial from 'lodash/partial';
 
 import LBlockLayer from 'components/LBlockLayer';
+import BackgroundVideo from 'views/shared/BackgroundVideo';
 import { viewsRepository } from 'views/all';
 
 const Placeholder = ({ block }) => (
@@ -27,9 +28,10 @@ class LBlock extends Component {
     const { block } = this.props;
     const { nodeAttributes, view } = block;
 
-    const blockId = nodeAttributes.id;
-    const blockClasses = classnames('LBlock', nodeAttributes.class);
+    const blockId = nodeAttributes ? nodeAttributes.id || block.uuid : block.uuid;
+    const blockClasses = nodeAttributes ? classnames('LBlock', nodeAttributes.class) : null;
 
+    const backgroundVideos = get(block, 'backgroundVideos') || [];
     const backgroundImageUrl = get(block, 'backgroundImage.url');
     const blockStyles = assign(
       { },
@@ -40,9 +42,11 @@ class LBlock extends Component {
 
     return (
       <section className={blockClasses} id={blockId} style={blockStyles}>
+        { !backgroundImageUrl && backgroundVideos.length>0 && (<BackgroundVideo videos={backgroundVideos}/>) }
         <LBlockLayer block={block}>
+
           {ViewComponent
-            ? <ViewComponent {...block} />
+            ? <div className="LBlock"><ViewComponent {...block} /></div>
             : <Placeholder block={block} />
           }
         </LBlockLayer>

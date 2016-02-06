@@ -1,34 +1,14 @@
 @component LBlocks {
   @descendent section {
-    .LBlockAddButton {
-      opacity: 0;
-      transition: opacity .3s;
-    }
+    /*.LBlockAddButton {*/
+      /*opacity: 0;*/
+      /*transition: opacity .3s;*/
+    /*}*/
 
-    &:hover {
-      .LBlockLayer-topPanel {
-        opacity: 1;
-      }
-
-      .LBlockAddButton {
-        opacity: 1;
-      }
-    }
+    /*&:hover {*/
+      /*.LBlockAddButton {*/
+        /*opacity: 1;*/
+      /*}*/
+    /*}*/
   }
-}
-
-.animation-enter {
-  opacity: 0.01;
-}
-.animation-enter.animation-enter-active {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.animation-leave {
-  opacity: 1;
-}
-.animation-leave.animation-leave-active {
-  opacity: 0.01;
-  transition: opacity 0.3s ease;
 }

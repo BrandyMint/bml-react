@@ -1,0 +1,15 @@
+@component MustRead2 {
+  min-height: 500px;
+  height: 700px;
+
+  @descendent header {
+    padding-top: 25px;
+    margin-bottom: 0.5em;
+    color: white;
+  }
+
+  @descendent subheader {
+    color: white;
+    margin-bottom: 2em;
+  }
+}
