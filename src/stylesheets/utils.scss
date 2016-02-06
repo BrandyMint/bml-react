@@ -1,0 +1,46 @@
+/* http://www.themedept.com/demo/getleads/agency.html */
+
+/* centering vertically section*/
+.vertical-center-abs, .vertical-center-rel{
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.vertical-center-abs {
+    position: absolute;
+}
+
+.vertical-center-rel {
+    position: relative;
+}
+
+/* centering vertically and horizontally */
+.vh-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate (-50%, -50%);
+    -moz-transform: translate (-50%, -50%);
+    -o-transform: translate (-50%, -50%);
+    -ms-transform: translate (-50%, -50%);
+    transform: translate (-50%, -50%);
+}
+
+/* centering vertically content */
+.y-middle {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}

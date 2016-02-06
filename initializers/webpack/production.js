@@ -47,6 +47,12 @@ export default {
         to: 'images',
       },
     ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(process.cwd(), 'src/assets/video'),
+        to: 'video',
+      },
+    ]),
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new webpack.DefinePlugin({

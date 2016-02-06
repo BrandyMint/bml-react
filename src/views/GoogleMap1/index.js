@@ -35,10 +35,19 @@ class GoogleMap1 extends Component {
     const { center, zoom, places } = this.props.content;
     /* eslint-enable */
 
+    const createMapOptions = () => (
+      {
+        panControl: false,
+        mapTypeControl: false,
+        scrollwheel: false,
+      }
+    );
+
     return (
       <GoogleMap
         // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
         center={[center.lat, center.lng]}
+        options={createMapOptions}
         zoom={zoom}
         // instead of css hover (which sometimes is bad for map markers)
         // (bad means inability to hover on markers placed under other markers)

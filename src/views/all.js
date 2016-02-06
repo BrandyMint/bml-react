@@ -28,3 +28,6 @@ viewsRepository.registerView(ContentSection2);
 
 import ContentSection3 from './ContentSection3';
 viewsRepository.registerView(ContentSection3);
+
+import MustRead2 from './MustRead2';
+viewsRepository.registerView(MustRead2);

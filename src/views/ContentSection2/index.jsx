@@ -2,6 +2,8 @@ import React from 'react';
 import { Types, makeView } from 'views/types';
 import StringEditable from 'components/primitives/StringEditable';
 
+import './index.css';
+
 const ContentSection2 = ({ content }) => (
   <div className="content-section-b">
     <div className="container">
