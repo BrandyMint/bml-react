@@ -2,8 +2,8 @@ import { PropTypes } from 'react';
 import CustomPropTypes from 'constants/customPropTypes';
 
 const NavbarContentType = {
-  logoText: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired, // TODO array of shape
+  logoLink: CustomPropTypes.link.isRequired,
+  items: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
 };
 
 const Navbar = {
@@ -21,7 +21,13 @@ const Navbar = {
     fields: [
       {
         title: 'Бренд',
-        key: 'logoText',
+        key: 'logoLink.text',
+        type: 'string',
+        isRequired: true,
+      },
+      {
+        title: 'Бренд (ссылка)',
+        key: 'logoLink.href',
         type: 'string',
         isRequired: true,
       },

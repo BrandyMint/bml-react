@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import map from 'lodash/map';
+import assign from 'lodash/assign';
 
 import './index.css';
 
@@ -8,8 +9,6 @@ const VIDEO_TYPES = [
   'video/webm',
   'video/ogg',
 ];
-
-const WIDTH = 1282;
 
 const containerStyles = {
   position: 'absolute',
@@ -34,7 +33,6 @@ const videoStyles = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   visibility: 'visible',
-  width: WIDTH,
   height: 'auto',
 };
 
@@ -54,9 +52,10 @@ class BackgroundVideo extends Component {
 
   render() {
     const { videos, overlay } = this.props;
+    const vs = assign(videoStyles, { width: document.width });
     return (<div>
           <div style={containerStyles}>
-          <video autoPlay loop muted style={videoStyles}>
+          <video autoPlay loop muted style={vs}>
             {map(videos, (video, index) =>
               <source src={video.src} key={index} type={video.type} />
             )}

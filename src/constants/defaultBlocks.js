@@ -1,5 +1,32 @@
 export default [
   {
+    uuid: '44086800-a7e8-0133-a838-746d04736cf8',
+    view: 'Navbar1',
+    content: {
+      logoLink: {
+        text: '8 (800) 77-55-661',
+        href: 'tel:88007755661',
+      },
+      items: [
+        {
+          text: 'О нас',
+          href: '#',
+        },
+        {
+          text: 'Услуги',
+          href: '#',
+        },
+      ],
+    },
+    backgroundImage: {
+    },
+    nodeAttributes: {
+      id: '44086800-a7e8-0133-a838-746d04736cf8',
+      class: 'hello',
+    },
+    meta: {},
+  },
+  {
     uuid: '441bb620-a7e8-0133-a838-746d04736cf8',
     view: 'MustRead2',
     backgroundImage: {
@@ -14,61 +41,6 @@ export default [
         },
       ],
     },
-  },
-  {
-    uuid: '44086800-a7e8-0133-a838-746d04736cf8',
-    view: 'Navbar1',
-    content: {
-      logoText: 'Лендос!',
-      items: [
-        {
-          title: 'О нас',
-          url: 'google.ru',
-        },
-        {
-          title: 'Услуги',
-          url: 'services.ru',
-        },
-      ],
-    },
-    backgroundImage: {
-    },
-    nodeAttributes: {
-      id: '44086800-a7e8-0133-a838-746d04736cf8',
-      class: 'hello',
-    },
-    meta: {},
-  },
-  {
-    uuid: '440bb620-a7e8-0133-a838-746d04736cf8',
-    view: 'MustRead1',
-    content: {
-      header: 'На все 100%',
-      subheader: 'Шаблон для посадочной страницы',
-      items: [
-        {
-          icon: 'twitter',
-          title: 'Twitter',
-          url: 'twitter.com',
-        },
-        {
-          icon: 'github',
-          title: 'GitHub',
-          url: 'github.com',
-        },
-      ],
-    },
-    backgroundImage: {
-      uuid: null,
-      url: '/assets/images/themes/t1/intro-bg.jpg',
-      width: null,
-      height: null,
-    },
-    nodeAttributes: {
-      id: '44086800-a7e8-013',
-      class: '',
-    },
-    meta: {},
   },
   {
     uuid: '440c3460-a7e8-0133-b838-746d04736cf8',
@@ -112,6 +84,37 @@ export default [
     },
     nodeAttributes: {
       id: '44086800-a7e8-0133-a838-',
+      class: '',
+    },
+    meta: {},
+  },
+  {
+    uuid: '440bb620-a7e8-0133-a838-746d04736cf8',
+    view: 'MustRead1',
+    content: {
+      header: 'На все 100%',
+      subheader: 'Шаблон для посадочной страницы',
+      items: [
+        {
+          icon: 'twitter',
+          title: 'Twitter',
+          url: 'twitter.com',
+        },
+        {
+          icon: 'github',
+          title: 'GitHub',
+          url: 'github.com',
+        },
+      ],
+    },
+    backgroundImage: {
+      uuid: null,
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      width: null,
+      height: null,
+    },
+    nodeAttributes: {
+      id: '44086800-a7e8-013',
       class: '',
     },
     meta: {},
