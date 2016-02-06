@@ -1,0 +1,27 @@
+@component MustRead2 {
+  height: 700px;
+
+  /* http://www.themedept.com/demo/getleads/agency.html */
+  a.btn {
+      display: inline-block;
+      color: #ffffff;
+      padding: 11px 18px;
+      margin-bottom: 7px;
+      margin-right: 5px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      vertical-align: middle;
+      white-space: pre-line;
+      text-align: center;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+  }
+}

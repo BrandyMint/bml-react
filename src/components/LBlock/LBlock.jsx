@@ -27,8 +27,8 @@ class LBlock extends Component {
     const { block } = this.props;
     const { nodeAttributes, view } = block;
 
-    const blockId = nodeAttributes.id;
-    const blockClasses = classnames('LBlock', nodeAttributes.class);
+    const blockId = nodeAttributes ? nodeAttributes.id || block.uuid : block.uuid;
+    const blockClasses = nodeAttributes ? classnames('LBlock', nodeAttributes.class) : {};
 
     const backgroundImageUrl = get(block, 'backgroundImage.url');
     const blockStyles = assign(

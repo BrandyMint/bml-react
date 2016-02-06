@@ -1,5 +1,21 @@
 export default [
   {
+    uuid: '441bb620-a7e8-0133-a838-746d04736cf8',
+    view: 'MustRead2',
+    backgroundImage: {
+    },
+    content: {
+      header: 'Посадочная страница со взрывной эффективностью!',
+      subheader: 'Удобный конструктор сайта с автоматической аналитикой',
+      items: [
+        {
+          title: 'Вперед!',
+          url: '#',
+        },
+      ],
+    },
+  },
+  {
     uuid: '44086800-a7e8-0133-a838-746d04736cf8',
     view: 'Navbar1',
     content: {
