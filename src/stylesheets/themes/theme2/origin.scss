@@ -1003,7 +1003,7 @@ Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing
       color: #657380;
       font-size: 15px;
       font-weight: 700;
-      padding: 16px;
+      padding: 14px;
       width:100%;
       height: auto;
       outline: 0;
@@ -1046,6 +1046,7 @@ Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing
   .form-inline .form-group,
   .form-inline .form-group input {
       margin-bottom: 2px;
+      margin-right: 1em;
   }
 
   .form-inline button {
@@ -1861,8 +1862,6 @@ Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing
       left: 100%;
       margin-top: -6px;
       margin-left: -1px;
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
       border-radius: 0;
   }
 
@@ -1895,8 +1894,6 @@ Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing
   .dropdown-submenu.pull-left>.dropdown-menu {
       left: -100%;
       margin-left: 10px;
-      -webkit-border-radius: 6px 0 6px 6px;
-      -moz-border-radius: 6px 0 6px 6px;
       border-radius: 6px 0 6px 6px;
   }
 
@@ -2487,9 +2484,6 @@ Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing
       font-size: 15px;
       line-height: 18px;
       font-weight: 700;
-      -webkit-transition: .3s ease;
-      -moz-transition: .3s ease;
-      -ms-transition: .3s ease;
       transition: .3s ease;
   }
 
@@ -3181,8 +3175,6 @@ Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing
       padding: 35px 20px;
       border: solid 3px #EFF1F4;
       text-align: center;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
       border-radius: 5px;
       margin-bottom: 25px;
   }
