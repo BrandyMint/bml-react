@@ -9,6 +9,13 @@ const LocationType = PropTypes.shape({
 
 const InputType = PropTypes.oneOf(InputTypes);
 
+const LinkType = PropTypes.shape({
+  text: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  target: PropTypes.string,
+});
+
 const FieldValueType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.number,
@@ -19,4 +26,5 @@ export default {
   location: LocationType,
   fieldValue: FieldValueType,
   inputType: InputType,
+  link: LinkType,
 };
