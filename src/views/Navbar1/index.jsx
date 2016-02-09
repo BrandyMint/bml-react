@@ -3,10 +3,10 @@ import { Types, makeView } from 'views/types';
 import classnames from 'classnames';
 
 import Link from 'views/shared/Link';
-
 import map from 'lodash/map';
-
 import './index.scss';
+
+const Y = 57;
 
 class Navbar1 extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class Navbar1 extends Component {
   }
 
   handleScroll() {
-    this.setState({ collapse: window.scrollY>0 });
+    this.setState({ collapse: window.scrollY > Y });
   }
 
   render() {

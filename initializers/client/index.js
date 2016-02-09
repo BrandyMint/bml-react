@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import 'stylesheets/style.scss';
+import 'stylesheets/index.scss';
 import 'react-widgets/lib/less/react-widgets.less';
 import Blocks from 'constants/defaultBlocks';
 

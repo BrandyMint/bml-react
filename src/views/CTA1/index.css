@@ -13,13 +13,13 @@
     margin-bottom: 0;
   }
 
-  @descendant social-buttons {
+  @descendent social-buttons {
     margin-top: 0;
     text-align: center;
   }
 
   @media (max-width: 1199px) {
-    @descendant ul.CTA1-social-buttons {
+    ul.CTA1-social-buttons {
       float: left;
       margin-top: 15px;
     }
