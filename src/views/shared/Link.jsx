@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CustomTypes from 'constants/customPropTypes';
 
 const Link = (props) => {
@@ -9,6 +9,7 @@ const Link = (props) => {
 
 Link.propTypes = {
   link: CustomTypes.link.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Link;

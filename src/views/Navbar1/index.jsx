@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import Link from 'views/shared/Link';
 import map from 'lodash/map';
-import './index.scss';
+import './index.css';
 
 const Y = 57;
 
@@ -59,6 +59,6 @@ class Navbar1 extends Component {
     </nav>
     );
   }
-};
+}
 
 export default makeView(Navbar1, Types.navbar);

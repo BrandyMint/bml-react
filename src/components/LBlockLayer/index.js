@@ -21,6 +21,7 @@ const lBlockLayerSelector = createStructuredSelector({
   isEditMode: isEditModeSelector,
   hasMultipleViews: hasMultipleViewsSelector,
   hasMultipleBlocks: hasMultipleBlocksSelector,
+  hasControlActivity: state => state.application.controlActivityTimeoutId > 0,
 });
 
 const actions = {

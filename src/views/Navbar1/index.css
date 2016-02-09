@@ -1,0 +1,5 @@
+@component Navbar1 {
+  a.navbar-brand {
+    color: white;
+  }
+}
