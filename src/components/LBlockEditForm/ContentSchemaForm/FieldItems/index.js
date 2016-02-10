@@ -58,7 +58,7 @@ class FieldItems extends Component {
           }
           )}
         </ol>
-        <div className="pull-right">
+        <div className="pull-xs-right">
           <button name="add" onClick={onClickAdd} className="btn btn-success-outline btn-sm">
             Добавить
           </button>

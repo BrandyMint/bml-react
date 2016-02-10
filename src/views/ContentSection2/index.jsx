@@ -26,7 +26,7 @@ const ContentSection2 = ({ content }) => (
         </div>
         <div className="col-lg-5 col-sm-pull-6 col-sm-6">
           <img
-            className="img-responsive"
+            className="img-fluid"
             height={content.image.height}
             src={content.image.url}
             width={content.image.width}

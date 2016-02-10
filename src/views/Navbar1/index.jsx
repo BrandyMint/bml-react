@@ -47,7 +47,7 @@ class Navbar1 extends Component {
             <Link className="navbar-brand" link={content.logoLink} />
           </div>
         <div className="navbar-collapse">
-          <ul className="nav navbar-nav pull-right">
+          <ul className="nav navbar-nav pull-xs-right">
             {map(content.items, (item, index) =>
               <li className="nav-item" key={index}>
                 <Link className="nav-link" link={item} />
