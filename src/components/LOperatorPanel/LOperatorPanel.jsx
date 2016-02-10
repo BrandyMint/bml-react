@@ -6,7 +6,8 @@ import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 import './LOperatorPanel.css';
 
-import Bubble from 'components/ui-elements/Bubble';
+import CogIcon from 'react-icons/lib/fa/cog';
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
 class LOperatorPanel extends Component {
   componentDidUpdate() {
@@ -30,7 +31,9 @@ class LOperatorPanel extends Component {
             {hasUnsavedChanges &&
               <LOperatorSaveButton onSaveChanges={onSaveChanges} isSaving={isSaving} />
               }
-            <Bubble icon="times" url={exitUrl} />
+            <BubbleIcon url={exitUrl}>
+              <CogIcon />
+            </BubbleIcon>
           </div>)}
       </ReactCSSTransitionGroup>
     );

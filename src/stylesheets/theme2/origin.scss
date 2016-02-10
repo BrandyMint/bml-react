@@ -58,15 +58,16 @@ section{
 /*------------------------------------------*/
 /*   Links
 /*------------------------------------------*/
-a:not(.btn),
-a:link:not(.btn),
-a:visited:not(.btn),
-a:hover:not(.btn),
-a:active:not(.btn) {
+a.link {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
     color: #439fe0;
     text-decoration: none;
     outline: 0;
     transition: all 0.25s ease-out;
+  }
 }
 
 a.inverse,

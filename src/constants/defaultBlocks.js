@@ -29,7 +29,11 @@ export default [
   {
     uuid: '441bb620-a7e8-0133-a838-746d04736cf8',
     view: 'MustRead2',
-    backgroundImage: {
+    backgroundImageFake: {
+      uuid: null,
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      width: null,
+      height: null,
     },
     content: {
       header: 'Посадочная страница со взрывной эффективностью!',

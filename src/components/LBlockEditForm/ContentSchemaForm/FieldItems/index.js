@@ -60,7 +60,7 @@ class FieldItems extends Component {
         </ol>
         <div className="pull-right">
           <button name="add" onClick={onClickAdd} className="btn btn-success-outline btn-sm">
-            <Icon glyph="plus" />
+            Добавить
           </button>
         </div>
       </fieldset>

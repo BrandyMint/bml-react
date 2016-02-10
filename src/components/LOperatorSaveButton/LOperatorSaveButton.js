@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import Bubble from 'components/ui-elements/Bubble';
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
+
+import CheckIcon from 'react-icons/lib/md/check';
+
+import SpinnerIcon from 'react-icons/lib/fa/spinner';
 
 class LOperatorSaveButton extends Component {
   render() {
@@ -7,18 +11,16 @@ class LOperatorSaveButton extends Component {
 
     if (isSaving) {
       return (
-        <Bubble
-          isProcessing
-          icon="spinner"
-        />
+        <BubbleIcon isProcessing>
+          <SpinnerIcon />
+        </BubbleIcon>
       );
     }
 
     return (
-      <Bubble
-        icon="check"
-        onClick={onSaveChanges}
-      />
+      <BubbleIcon onClick={onSaveChanges}>
+        <CheckIcon />
+      </BubbleIcon>
     );
   }
 }

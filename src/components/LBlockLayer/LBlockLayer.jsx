@@ -5,9 +5,6 @@ import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 import partial from 'lodash/partial';
 
-import ReactMixin from 'react-mixin';
-import HoverMixin from 'react-hover-mixin';
-
 import LBlockLayerPanel from 'components/LBlockLayerPanel';
 
 import './LBlockLayer.css';
@@ -69,7 +66,7 @@ class LBlockLayer extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {isEditMode && hasControlActivity && isHovered && (
+        {(
           <LBlockLayerPanel
             hasMultipleViews={hasMultipleViews}
             hasMultipleBlocks={hasMultipleBlocks}
@@ -106,7 +103,5 @@ LBlockLayer.propTypes = {
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
 };
-
-ReactMixin(LBlockLayer, HoverMixin);
 
 export default LBlockLayer;

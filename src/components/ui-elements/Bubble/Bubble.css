@@ -28,6 +28,7 @@ $bubbleTextColor: #fff;
   &:link,
   &:visited {
     color: #666;
+    opacity: 0.5;
   }
 
   &:focus,
@@ -40,6 +41,7 @@ $bubbleTextColor: #fff;
   }
 
   @modifier withIcon {
+    color: red;
     /* Это мы так центрируем по вертикали */
     padding-top: 3px;
   }

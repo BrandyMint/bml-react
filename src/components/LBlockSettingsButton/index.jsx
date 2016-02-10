@@ -2,11 +2,15 @@ import React, { PropTypes } from 'react';
 
 import './LBlockSettingsButton.css';
 
-import Bubble from 'components/ui-elements/Bubble';
+import FaCog from 'react-icons/lib/fa/cog';
+
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
 const LBlockSettingsButton = ({ onEditingStart }) => (
   <div className="LBlockSettingsButton">
-    <Bubble icon="cog" onClick={onEditingStart} />
+    <BubbleIcon onClick={onEditingStart}>
+      <FaCog />
+    </BubbleIcon>
   </div>
 );
 
