@@ -5,14 +5,44 @@ import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 import partial from 'lodash/partial';
 
+import ReactMixin from 'react-mixin';
+import HoverMixin from 'react-hover-mixin';
+
 import LBlockLayerPanel from 'components/LBlockLayerPanel';
 
 import './LBlockLayer.css';
 
+const TIMEOUT = 1000;
+
 class LBlockLayer extends Component {
   constructor(props) {
     super(props);
-    this.state = { isHovered: false };
+    this.state = {
+      isHovered: false,
+    };
+  }
+
+  componentWillUnmount() {
+    this.clearTimeout();
+  }
+
+  onHover() {
+    this.setState({isHovered: true});
+  }
+
+  onUnHover() {
+    this.clearTimeout()
+
+    this.unhoverTimeout = window.setTimeout(
+      () => this.setState({isHovered: false}),
+      TIMEOUT
+    );
+  }
+
+  clearTimeout() {
+    if (this.unhoverTimeout) {
+      window.clearTimeout(this.unhoverTimeout);
+    }
   }
 
   render() {
@@ -28,8 +58,8 @@ class LBlockLayer extends Component {
 
     const { isHovered } = this.state;
 
-    const onMouseEnter = () => this.setState({isHovered: true});
-    const onMouseLeave = () => this.setState({isHovered: false});
+    const onMouseEnter = this.onHover.bind(this)
+    const onMouseLeave = this.onUnHover.bind(this)
 
     return (
       <div className={layerClasses} onMouseOver={onMouseEnter} onMouseOut={onMouseLeave}>
@@ -76,5 +106,7 @@ LBlockLayer.propTypes = {
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
 };
+
+ReactMixin(LBlockLayer, HoverMixin);
 
 export default LBlockLayer;

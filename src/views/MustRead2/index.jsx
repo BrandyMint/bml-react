@@ -39,7 +39,7 @@ const MustRead2 = ({ content }) => {
                 (<a
                   href={link.url}
                   key={index}
-                  className="btn btn-shadow btn-blue text-uppercase btn-md"
+                  className="btn btn-shadow btn-primary text-uppercase btn-md"
                 >{link.title}
                 </a>
                 )

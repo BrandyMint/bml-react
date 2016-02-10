@@ -58,18 +58,14 @@ section{
 /*------------------------------------------*/
 /*   Links
 /*------------------------------------------*/
-a,
-a:link,
-a:visited,
-a:hover,
-a:active {
+a:not(.btn),
+a:link:not(.btn),
+a:visited:not(.btn),
+a:hover:not(.btn),
+a:active:not(.btn) {
     color: #439fe0;
     text-decoration: none;
     outline: 0;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    -ms-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
 }
 
@@ -352,7 +348,8 @@ b {
 a.btn {
     display: inline-block;
     padding: 11px 18px;
-    margin-bottom: 7px;
+    // Мешает в EditModal в нижниш кнопках
+    // margin-bottom: 7px;
     margin-right: 5px;
     font-size: 15px;
     font-weight: 900;
@@ -409,7 +406,7 @@ a.btn-nav,
     background-color: #525e6c !important;
 }
 
-.cta-header .active .btn-blue.btn-nav {
+.cta-header .active .btn-primary.btn-nav {
     background-color: #439FE0 !important;
 }
 
@@ -501,35 +498,35 @@ a.btn-border.btn-orange {
 /*------------------------------------------*/
 /*  Blue Buttons
 /*------------------------------------------*/
-.btn-blue,
-a.inverse.btn-blue,
-.inverse a.btn-blue {
+.btn-primary,
+a.inverse.btn-primary,
+.inverse a.btn-primary {
     background-color: #439FE0;
 }
 
-.btn.btn-blue {
+.btn.btn-primary {
   color: #ffffff;
   border: 3px solid #439FE0;
 }
 
-.btn-blue:hover,
-.btn-nav.btn-blue:hover,
-.btn-blue:focus,
-.btn-nav.btn-blue:focus {
+.btn-primary:hover,
+.btn-nav.btn-primary:hover,
+.btn-primary:focus,
+.btn-nav.btn-primary:focus {
     background-color: #1d83c9;
 }
 
-.btn.btn-blue:hover,
-.btn.btn-blue:focus {
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
     border: 3px solid #1d83c9;
 }
 
-.btn-shadow.btn-blue {
+.btn-shadow.btn-primary {
     box-shadow: 0 4px 0 #437598;
 }
 
-.btn-border.btn-blue,
-a.btn-border.btn-blue  {
+.btn-border.btn-primary,
+a.btn-border.btn-primary  {
     color: #439FE0;
 }
 
@@ -985,16 +982,12 @@ a.btn-app {
     color: #657380;
     font-size: 15px;
     font-weight: 700;
-    padding: 14px;
+    padding: 16px;
     width:100%;
     height: auto;
     outline: 0;
     border: 2px solid #e8ebed;
     box-shadow: none;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
     transition: all 0.2s;
 }
 
@@ -1546,7 +1539,7 @@ textarea {
 }
 
 .navbar-brand {
-    padding: 10px 0 0;
+    padding: 8px 0 0;
     height: auto;
     color: white;
 }
