@@ -5,51 +5,42 @@ import React from 'react';
 import { Types, makeView } from 'views/types';
 import map from 'lodash/map';
 import StringEditable from 'components/primitives/StringEditable';
-import BackgroundVideo from 'views/shared/BackgroundVideo';
 
 import './index.css';
 
 const MustRead2 = ({ content }) => {
-  const videos = [
-    { src: 'assets/video/video.mp4', type: 'video/mp4' },
-    { src: 'assets/video/video.webm', type: 'video/webm' },
-    { src: 'assets/video/video.ogv', type: 'video/ogg' },
-  ];
-
   return (
-    <section className="MustRead2 hero bg-video video-play">
-      <BackgroundVideo videos={videos} />
-
+    <section className="MustRead2">
       <div className="container vertical-center-rel">
         <div className="row">
             <div className="col-md-7">
               <StringEditable
-                className="text-white p-t-md"
+                className="MustRead2-header"
                 data={content}
                 fieldName="header"
                 tagName="h1"
               />
               <StringEditable
-                className="lead text-white m-b-md"
+                className="MustRead2-subheader"
                 data={content}
                 fieldName="subheader"
-                tagName="p"
+                tagName="h3"
               />
-              {map(content.items, (link, index) =>
-                (<a
-                  href={link.url}
-                  key={index}
-                  className="btn btn-shadow btn-primary text-uppercase btn-md"
-                >{link.title}
-                </a>
-                )
-              )}
+              <ul className="list-inline MustRead2-buttons">
+                {map(content.items, (link, index) =>
+                   (<li className="list-inline-item" key={index}>
+                     <a href={link.url}
+                      className="btn btn-shadow btn-primary text-uppercase btn-md"
+                    >{link.title}
+                    </a></li>
+                  )
+                )}
+              </ul>
             </div>
         </div>
       </div>
-
     </section>
-    );
+  );
 };
 
 export default makeView(MustRead2, Types.mustRead);

@@ -29,6 +29,11 @@ export default [
   {
     uuid: '441bb620-a7e8-0133-a838-746d04736cf8',
     view: 'MustRead2',
+    backgroundVideos: [
+      { src: 'assets/video/video.mp4', type: 'video/mp4' },
+      { src: 'assets/video/video.webm', type: 'video/webm' },
+      { src: 'assets/video/video.ogv', type: 'video/ogg' },
+    ],
     backgroundImageFake: {
       uuid: null,
       url: '/assets/images/themes/t1/intro-bg.jpg',

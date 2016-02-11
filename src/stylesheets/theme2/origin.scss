@@ -397,10 +397,10 @@ a.btn-nav,
     margin-right: 0;
     margin-bottom: 0;
     opacity: 1 !important;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+    &:hover {
+      color: #333;
+    }
 }
 
 .active .btn-nav {
@@ -1529,9 +1529,6 @@ textarea {
     border: none;
     margin-bottom: 0;
     padding: 20px;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 
@@ -1562,6 +1559,7 @@ textarea {
 .navbar-nav>li>a:hover {
     opacity: 1;
     background-color: transparent;
+    color: #333;
 }
 
 .navbar-nav>.active>a,
@@ -1569,6 +1567,7 @@ textarea {
 .navbar-nav>.active>a:focus {
     background-color: #eee;
     opacity: 1;
+    color: #333;
 }
 
 .navbar-toggle {
@@ -1602,9 +1601,6 @@ textarea {
 .navbar.bg-transparent.top-nav-collapse {
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 
@@ -1626,6 +1622,9 @@ textarea {
 .navbar.bg-color .navbar-nav>li>a {
     color: #fff;
     opacity: 1;
+    &:hover {
+      color: #555;
+    }
 }
 
 .navbar.bg-transparent.top-nav-collapse .navbar-nav>li>a {
@@ -1872,36 +1871,6 @@ textarea {
 /* ==========================================================================
    09. HERO SECTION
 ========================================================================== */
-/*------------------------------------------*/
-/*  Hero General
-/*------------------------------------------*/
-
-
-.hero {
-    height: 700px;
-}
-
-.hero.height-800,
-.hero.height-800-fix {
-    height: 800px;
-}
-
-.hero .lead {
-    font-weight: 700;
-}
-
-.hero .btn a {
-    font-size: 17px;
-    color: #ffffff;
-}
-
-.hero p.small a {
-    font-size: 15px;
-}
-
-.hero h1 {
-    margin-bottom: 20px;
-}
 
 /*------------------------------------------*/
 /*  Hero Closeup

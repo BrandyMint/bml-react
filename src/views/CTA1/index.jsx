@@ -23,7 +23,7 @@ const CTA1 = ({ content }) => (
             <li key={index} className="list-inline-item">
               <a
                 href={item.url}
-                className="btn btn-secondary btn-lg"
+                className="btn btn-secondary btn-md"
               >
                 {item.title}
               </a>

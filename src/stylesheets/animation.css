@@ -13,3 +13,23 @@
   opacity: 0.01;
   transition: opacity 0.3s ease;
 }
+
+.animation-slide-up-enter {
+  opacity: 0.01;
+  transform: translateY(-70px);
+}
+.animation-slide-up-enter.animation-slide-up-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+
+.animation-slide-up-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animation-slide-up-leave.animation-slide-up-leave-active {
+  opacity: 0.01;
+  transform: translateY(-70px);
+  transition: all 0.3s linear;
+}

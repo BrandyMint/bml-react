@@ -46,6 +46,7 @@ class LBlockLayer extends Component {
     const {
       block, children, isEditMode, hasMultipleBlocks, hasMultipleViews, hasControlActivity,
       onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
+      style,
     } = this.props;
 
     const layerClasses = classnames({
@@ -59,7 +60,7 @@ class LBlockLayer extends Component {
     const onMouseLeave = this.onUnHover.bind(this)
 
     return (
-      <div className={layerClasses} onMouseOver={onMouseEnter} onMouseOut={onMouseLeave}>
+      <div className={layerClasses} style={style} onMouseOver={onMouseEnter} onMouseOut={onMouseLeave}>
         <ReactCSSTransitionGroup
           component="div"
           transitionName="animation"

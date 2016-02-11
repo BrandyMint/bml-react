@@ -36,6 +36,12 @@ const videoStyles = {
   height: 'auto',
 };
 
+const videos = [
+  { src: 'assets/video/video.mp4', type: 'video/mp4' },
+  { src: 'assets/video/video.webm', type: 'video/webm' },
+  { src: 'assets/video/video.ogv', type: 'video/ogg' },
+];
+
 class BackgroundVideo extends Component {
   static propTypes = {
     overlay: PropTypes.bool.isRequired,
@@ -48,6 +54,7 @@ class BackgroundVideo extends Component {
   };
   static defaultProps = {
     overlay: true,
+    videos: videos,
   };
 
   render() {
