@@ -25,7 +25,7 @@ const CTA1 = ({ content }) => (
                 href={item.url}
                 className="btn btn-secondary btn-lg"
               >
-                <span className="network-name">{item.title}</span>
+                {item.title}
               </a>
             </li>
           )}

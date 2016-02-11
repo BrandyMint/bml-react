@@ -33,9 +33,7 @@ const MustRead1 = ({ content }) => (
                     href={item.url}
                     className="btn btn-secondary btn-lg"
                   >
-                    <Icon glyph={item.icon} />
-                    {' '}
-                    <span className="network-name">{item.title}</span>
+                  {item.title}
                   </a>
                 </li>
               )}
