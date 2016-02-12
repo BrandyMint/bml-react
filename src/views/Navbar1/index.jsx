@@ -10,6 +10,7 @@ import map from 'lodash/map';
 import './index.css';
 
 const Y = 40;
+const MIN = 5;
 
 class Navbar1 extends Component {
   constructor() {
@@ -33,7 +34,7 @@ class Navbar1 extends Component {
     if (this.scrollY < window.scrollY && state['collapse']) {
       state['shownav'] = false;
     }
-    if (this.scrollY > window.scrollY || window.scrollY == 0) {
+    if ((this.scrollY - window.scrollY > MIN) || window.scrollY == 0) {
       state['shownav'] = true;
     }
 

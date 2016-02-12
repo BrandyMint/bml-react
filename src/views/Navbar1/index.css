@@ -1,5 +1,13 @@
+@import 'stylesheets/config.css';
+
 @component Navbar1 {
   a.navbar-brand {
     color: white;
+  }
+}
+
+.sidebar--enabled {
+  .navbar-fixed-top {
+    left: $sidebarWidth;
   }
 }
