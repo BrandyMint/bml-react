@@ -1,0 +1,11 @@
+$bubbleZindex: 100;
+$footerZindex: 101;
+$sidebarZindex: 101;
+
+$sidebarWidth: 200px;
+
+$editorFooterHeight: 150px;
+$editorFooterOpenHeight: 150px;
+$editorFooterClosedHeight: 40px;
+$editorFooterBg: #333;
+$editorFooterClosedBottom: -110px;

@@ -5,6 +5,11 @@
 npm run build
 ```
 
+#### Responsive
+
+* https://github.com/akiran/react-responsive-mixin
+* http://wicky.nillia.ms/enquire.js/#walkthrough
+
 #### Тесты
 Запустить один раз
 ```

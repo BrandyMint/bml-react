@@ -6,6 +6,7 @@ import postcssImport from 'postcss-import';
 import postcssMixins from 'postcss-sassy-mixins';
 import postcssSimpleVars from 'postcss-simple-vars';
 import postcssCalc from 'postcss-calc';
+import postcssSelectorNot from 'postcss-selector-not';
 
 const root = path.join(process.cwd(), 'src');
 const entry = path.join(process.cwd(), 'initializers/client');
@@ -30,6 +31,7 @@ export default {
     postcssBEM,
     postcssNested,
     postcssMixins,
+    postcssSelectorNot,
   ],
 
   resolve: {

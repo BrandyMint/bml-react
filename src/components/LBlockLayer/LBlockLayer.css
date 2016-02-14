@@ -1,22 +1,5 @@
-$bubbleZindex: 9999;
+@import 'stylesheets/config.css';
 
 @component LBlockLayer {
   position: relative;
-
-  @descendent topPanel {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    opacity: 0;
-    transition: opacity .3s;
-    z-index: $bubbleZindex;
-  }
-
-  @descendent actions {
-    float: left;
-
-    & > * {
-      display: inline-block;
-    }
-  }
 }

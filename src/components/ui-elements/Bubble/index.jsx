@@ -20,11 +20,11 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, icon, text, url, isProcessing } = this.props;
+    const { children, hasIcon, text, url, isProcessing } = this.props;
     const bubbleClasses = classnames({
       Bubble: true,
       'Bubble--withText': !!text,
-      'Bubble--withIcon': !!icon,
+      'Bubble--withIcon': !!hasIcon,
       'is-processing': isProcessing,
     });
 
@@ -35,12 +35,7 @@ class Bubble extends Component {
         onClick={this.handleClick}
       >
         {!!text && <span className="Bubble-text">{text}</span>}
-        {!!icon && (
-          <span className="Bubble-icon">
-            <Icon glyph={icon} />
-          </span>
-        )}
-        {!text && !icon && children}
+        {children}
       </a>
     );
   }
@@ -48,7 +43,7 @@ class Bubble extends Component {
 
 Bubble.propTypes = {
   children: PropTypes.node,
-  icon: PropTypes.string,
+  hasIcon: PropTypes.bool,
   onClick: PropTypes.func,
   text: PropTypes.string,
   url: PropTypes.string,

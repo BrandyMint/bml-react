@@ -7,12 +7,11 @@ import size from 'lodash/size';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
 import LBlock from 'components/LBlock';
 import LBlockAddButton from 'components/LBlockAddButton';
 
-const TRANSITION_TIMEOUT = 300;
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 const Placeholder = () => (
   <div className="LBlocks-placeholder">
@@ -20,10 +19,10 @@ const Placeholder = () => (
   </div>
 );
 
-const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
+const LBlocks = ({ blocks, isEditMode, onAddBlock, hasControlActivity }) => {
   const renderSection = (block, index) => (
     <div className="LBlocks-section" key={block.uuid}>
-      {isEditMode && index > 0 && index < size(blocks) &&
+      {isEditMode && hasControlActivity && index > 0 &&
         <LBlockAddButton onClick={partial(onAddBlock, index)} />
         }
       <LBlock block={block} />

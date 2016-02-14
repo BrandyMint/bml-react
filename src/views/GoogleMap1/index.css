@@ -1,4 +1,8 @@
 @component GoogleMap1 {
   min-height: 200px;
   height: 400px;
+
+  .LBlock {
+    height: 400px;
+  }
 }

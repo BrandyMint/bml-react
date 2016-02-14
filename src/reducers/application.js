@@ -1,6 +1,11 @@
 import createReducer from 'helpers/createReducer';
 
 import {
+  APP_ACTIVITY_ON,
+  APP_ACTIVITY_OFF,
+} from 'actions/application';
+
+import {
   LANDING_VERSION_UPDATE_SUCCESS,
   LANDING_VERSION_UPDATE_FAILURE,
   LANDING_VERSION_UPDATE_REQUEST,
@@ -38,7 +43,17 @@ const savingChanges = value => state => ({
   ...state, isSaving: value,
 });
 
+const appActivityOff = state => ({ ...state, controlActivityTimeoutId: null, });
+
+const appActivityOn = (state, action) => {
+  return {
+  ...state, controlActivityTimeoutId: action.payload.timeoutId,
+  };
+}
+
 const handlers = {
+  [APP_ACTIVITY_ON]: appActivityOn,
+  [APP_ACTIVITY_OFF]: appActivityOff,
   [LANDING_VERSION_UPDATE_REQUEST]: savingChanges(true),
   [LANDING_VERSION_UPDATE_FAILURE]: savingChanges(false),
   [LANDING_VERSION_UPDATE_SUCCESS]: state => ({

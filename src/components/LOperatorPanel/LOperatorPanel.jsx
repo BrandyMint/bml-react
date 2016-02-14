@@ -1,10 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 
 import LOperatorSaveButton from 'components/LOperatorSaveButton';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 import './LOperatorPanel.css';
 
-import Bubble from 'components/ui-elements/Bubble';
+import CogIcon from 'react-icons/lib/fa/cog';
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
 class LOperatorPanel extends Component {
   componentDidUpdate() {
@@ -13,20 +16,27 @@ class LOperatorPanel extends Component {
       : null;
   }
   render() {
-    const { exitUrl, hasUnsavedChanges, isSaving, isEditMode, onSaveChanges } = this.props;
+    const { exitUrl, hasUnsavedChanges, isSaving, isEditMode, onSaveChanges, hasControlActivity } = this.props;
 
-    if (isEditMode) {
-      return (
-        <div className="LOperatorPanel">
-          {hasUnsavedChanges &&
-            <LOperatorSaveButton onSaveChanges={onSaveChanges} isSaving={isSaving} />
-          }
-          <Bubble icon="times" url={exitUrl} />
-        </div>
-      );
-    }
+    if (!isEditMode) { return false; }
 
-    return false;
+    return (
+      <ReactCSSTransitionGroup
+        component="div"
+        transitionName="animation"
+        transitionEnterTimeout={TRANSITION_TIMEOUT}
+        transitionLeaveTimeout={TRANSITION_TIMEOUT}
+        >{hasControlActivity && (
+          <div className="LOperatorPanel">
+            {hasUnsavedChanges &&
+              <LOperatorSaveButton onSaveChanges={onSaveChanges} isSaving={isSaving} />
+              }
+            <BubbleIcon url={exitUrl}>
+              <CogIcon />
+            </BubbleIcon>
+          </div>)}
+      </ReactCSSTransitionGroup>
+    );
   }
 }
 
