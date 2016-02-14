@@ -69,7 +69,7 @@ class LBlockLayer extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {!isTopNav && isEditMode && isHovered && (
+        {!isTopNav && isEditMode && false && isHovered && (
           <LBlockLayerPanel
             hasMultipleViews={hasMultipleViews}
             hasMultipleBlocks={hasMultipleBlocks}

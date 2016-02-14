@@ -13,8 +13,11 @@ class LApplication extends Component {
     const { onActivity } = this.props;
     return (
       <div className="LApplication" onMouseMove={onActivity} onContextMenu={onActivity}>
-        <div className="LApplicationOperator">
-          <LOperatorPanel />
+        <div className="LApplication-sidebar">
+          { false && (<LOperatorPanel />)}
+          A
+          B
+          C
         </div>
         <div className="LApplication-content">
           <LPage />

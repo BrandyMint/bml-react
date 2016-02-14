@@ -1,5 +1,3 @@
-@import 'stylesheets/config.css';
-
 @component LBlockLayer {
   position: relative;
 }

@@ -1,31 +1,31 @@
 export default [
-  {
-    uuid: '44086800-a7e8-0133-a838-746d04736cf8',
-    view: 'Navbar1',
-    content: {
-      logoLink: {
-        text: '8 (800) 77-55-661',
-        href: 'tel:88007755661',
-      },
-      items: [
-        {
-          text: 'О нас',
-          href: '#',
-        },
-        {
-          text: 'Услуги',
-          href: '#',
-        },
-      ],
-    },
-    backgroundImage: {
-    },
-    nodeAttributes: {
-      id: '44086800-a7e8-0133-a838-746d04736cf8',
-      class: 'hello',
-    },
-    meta: {},
-  },
+  //{
+    //uuid: '44086800-a7e8-0133-a838-746d04736cf8',
+    //view: 'Navbar1',
+    //content: {
+      //logoLink: {
+        //text: '8 (800) 77-55-661',
+        //href: 'tel:88007755661',
+      //},
+      //items: [
+        //{
+          //text: 'О нас',
+          //href: '#',
+        //},
+        //{
+          //text: 'Услуги',
+          //href: '#',
+        //},
+      //],
+    //},
+    //backgroundImage: {
+    //},
+    //nodeAttributes: {
+      //id: '44086800-a7e8-0133-a838-746d04736cf8',
+      //class: 'hello',
+    //},
+    //meta: {},
+  //},
   {
     uuid: '441bb620-a7e8-0133-a838-746d04736cf8',
     view: 'MustRead2',
