@@ -16,6 +16,24 @@
     margin: 0 0 $editorFooterClosedHeight;
   }
 
+  @descendent left-sidebar {
+    background: #333;
+    color: white;
+    float: left;
+    width: 40px;
+    min-height: 400px;
+    height: inherit;
+  }
+
+  @descendent right-sidebar {
+    background: #333;
+    float: left;
+    color: white;
+    width: 40px;
+    min-height: 400px;
+    height: inherit;
+  }
+
   @descendent footer {
     z-index: $footerZindex;
     position: fixed;
@@ -40,11 +58,14 @@
   }
 
   @descendent content {
+    /* Типовой цвет страницы */
+    background: #fff;
+
     @when sidebar {
       margin-left: $sidebarWidth;
       position: relative;
       overflow: auto;
-      z-index: 1;
+      z-index: $sidebarZindex;
       width: auto;
       height: auto;
     }

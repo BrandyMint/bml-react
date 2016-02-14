@@ -59,6 +59,8 @@ class LBlockLayer extends Component {
     const onMouseEnter = this.onHover.bind(this)
     const onMouseLeave = this.onUnHover.bind(this)
 
+    const isTopNav = block.view === 'Navbar1'; // TODO
+
     return (
       <div className={layerClasses} style={style} onMouseOver={onMouseEnter} onMouseOut={onMouseLeave}>
         <ReactCSSTransitionGroup
@@ -67,7 +69,7 @@ class LBlockLayer extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {isEditMode && isHovered && (
+        {!isTopNav && isEditMode && isHovered && (
           <LBlockLayerPanel
             hasMultipleViews={hasMultipleViews}
             hasMultipleBlocks={hasMultipleBlocks}

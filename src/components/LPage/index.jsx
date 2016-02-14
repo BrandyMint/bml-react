@@ -32,14 +32,16 @@ class LPage extends Component {
       [`is-${footerState}`]: true,
     });
 
+    // const contentStyles = { width: document.width - 80 };
+
     return (
       <div className={classes}>
         <div className="LPage-content">
           <LBlocks />
         </div>
-        <div className={footerClasses}>
+        { false && (<div className={footerClasses}>
           <LFooter state={footerState} onChangeState={onChangeState}/>
-        </div>
+        </div>)}
       </div>
     )
   };
