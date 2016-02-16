@@ -14,10 +14,12 @@
   }
 
   @descendent content {
-    position: absolute;
-    top: 0;
-    left: $dashboardSidebarWidth;
-    right: 0;
+    @when editing {
+      position: absolute;
+      top: 0;
+      left: $dashboardSidebarWidth;
+      right: 0;
+    }
   }
 
   .nav {

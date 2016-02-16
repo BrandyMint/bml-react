@@ -5,3 +5,9 @@
 @import 'utils.css';
 @import 'animation.css';
 @import 'theme2/index.scss';
+
+@import 'config';
+
+body.editor {
+  background: $dashboardBackground;
+}

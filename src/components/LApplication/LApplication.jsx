@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
 import LOperatorPanel from 'components/LOperatorPanel';
 
@@ -10,16 +11,26 @@ import './LApplication.css';
 
 class LApplication extends Component {
   render() {
-    const { onActivity } = this.props;
+    const { onActivity, isEditMode } = this.props;
+    const classes = classnames({
+      LApplication: true,
+      'is-editing': isEditMode,
+    });
+    const contentClasses = classnames({
+      'LApplication-content': true,
+      'is-editing': isEditMode,
+    });
     return (
-      <div className="LApplication" onMouseMove={onActivity} onContextMenu={onActivity}>
-        <div className="LApplication-sidebar">
-          { false && (<LOperatorPanel />)}
-          A
-          B
-          C
-        </div>
-        <div className="LApplication-content">
+      <div className={classes} onMouseMove={onActivity} onContextMenu={onActivity}>
+        { isEditMode && (
+          <div className="LApplication-sidebar">
+            { false && (<LOperatorPanel />)}
+            A
+            B
+            C
+          </div>
+          )}
+        <div className={contentClasses}>
           <LPage />
         </div>
         <LBlockAddModal />
@@ -31,6 +42,7 @@ class LApplication extends Component {
 
 LApplication.propTypes = {
   onActivity: PropTypes.func.isRequired,
+  isEditMode: PropTypes.bool.isRequired,
 };
 
 export default LApplication;

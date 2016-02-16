@@ -7,4 +7,4 @@ const actions = {
   onActivity: appActivity,
 };
 
-export default connect(state => state, actions)(LApplication);
+export default connect(state => state.application, actions)(LApplication);
