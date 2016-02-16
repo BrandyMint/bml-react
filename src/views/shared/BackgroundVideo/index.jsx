@@ -12,7 +12,7 @@ const VIDEO_TYPES = [
 
 const containerStyles = {
   position: 'absolute',
-  zIndex: -1,
+  zIndex: 0,
   top: 0,
   left: 0,
   bottom: 0,

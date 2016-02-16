@@ -10,7 +10,7 @@ import LBlockLayer from 'components/LBlockLayer';
 import BackgroundVideo from 'views/shared/BackgroundVideo';
 import { viewsRepository } from 'views/all';
 
-import FaCog from 'react-icons/lib/fa/cog';
+// import FaCog from 'react-icons/lib/fa/cog';
 
 const Placeholder = ({ block }) => (
   <div className="LBlock-placeholder">
@@ -58,7 +58,6 @@ class LBlock extends Component {
           </LBlockLayer>
         </section>
         <div className="LBC-panel">
-          <FaCog />
         </div>
       </div>
     );
