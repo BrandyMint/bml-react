@@ -17,6 +17,7 @@ class LBlock extends Component {
     const { block, onContentChange } = this.props;
 
     return {
+      isEditMode: true,
       onContentChange: partial(onContentChange, block.uuid),
     };
   }
@@ -57,6 +58,7 @@ LBlock.propTypes = {
 
 LBlock.childContextTypes = {
   onContentChange: PropTypes.func,
+  isEditMode: PropTypes.bool.isRequired,
 };
 
 export default LBlock;

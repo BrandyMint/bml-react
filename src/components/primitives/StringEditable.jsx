@@ -1,4 +1,5 @@
 import React, { Component, PropTypes, createElement } from 'react';
+import { findDOMNode } from 'react-dom';
 
 import get from 'lodash/get';
 import bind from 'lodash/bind';
@@ -42,7 +43,10 @@ class StringEditable extends Component {
     onContentChange(fieldName, event.target.innerHTML);
   }
   handleBlur() {
-    this.setState({ value: getValue(this.props) });
+    const { fieldName } = this.props;
+    const { onContentChange } = this.context;
+
+    onContentChange(fieldName, findDOMNode(this.refs.redactor).innerHTML);
   }
   render() {
     const { className, tagName } = this.props;
@@ -52,6 +56,7 @@ class StringEditable extends Component {
     if (isEditMode) {
       return (
         <Redactor
+          ref="redactor"
           className={className}
           readOnly={!isEditMode}
           tagName={tagName}
