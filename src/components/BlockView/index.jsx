@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import BlockViewBackground from 'components/BlockViewBackground';
 import UnknownView from 'views/unknown';
 import classnames from 'classnames';
 
@@ -30,7 +29,6 @@ class BlockView extends Component {
 
     return (
       <section className={blockClasses} id={blockId} style={blockStyles}>
-        <BlockViewBackground block={block} />
         <ViewComponent {...block} />
       </section>
     );

@@ -8,9 +8,8 @@ class BlockViewBackground extends Component {
     const { block } = this.props;
 
     const backgroundVideos = get(block, 'backgroundVideos') || [];
-    const backgroundImageUrl = get(block, 'backgroundImage.url');
 
-    if (backgroundImageUrl || backgroundVideos.length === 0) {
+    if (backgroundVideos.length === 0) {
       return false;
     }
 

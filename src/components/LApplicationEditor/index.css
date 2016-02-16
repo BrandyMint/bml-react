@@ -1,6 +1,6 @@
 @import 'stylesheets/config.css';
 
-@component LApplication {
+@component LApplicationEditor {
   @descendent sidebar {
     position: fixed;
     top: 0;
@@ -10,15 +10,13 @@
     background: $dashboardBackground;
     color: $dashboardTextColor;
     text-align: center;
-    padding: 4px;
+    padding: 10px 4px;
   }
 
   @descendent content {
-    @when editing {
-      position: absolute;
-      top: 0;
-      left: $dashboardSidebarWidth;
-      right: 0;
-    }
+    position: absolute;
+    top: 0;
+    left: $dashboardSidebarWidth;
+    right: 0;
   }
 }

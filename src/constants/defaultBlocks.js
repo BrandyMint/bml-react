@@ -37,7 +37,7 @@ export default [
       { src: 'assets/video/video.webm', type: 'video/webm' },
       { src: 'assets/video/video.ogv', type: 'video/ogg' },
     ],
-    backgroundImageFake: {
+    backgroundImage: {
       uuid: null,
       url: '/assets/images/themes/t1/intro-bg.jpg',
       width: null,
