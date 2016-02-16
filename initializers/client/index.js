@@ -15,6 +15,8 @@ import LApplicationEditor from 'components/LApplicationEditor';
 import LApplicationPreview from 'components/LApplicationPreview';
 import NoMatch from 'components/NoMatch';
 
+import MobilePreviewApp from 'components/MobilePreviewApp';
+
 const initApp = (initialState) => {
   const store = createStore(initialState);
 
@@ -23,6 +25,8 @@ const initApp = (initialState) => {
       <Router history={browserHistory}>
         <Route path="/" component={LApplicationEditor}/>
         <Route path="/preview" component={LApplicationPreview}/>
+        <Route path="/mobilePreview" component={MobilePreviewApp}/>
+        <Route path="/show" component={LApplicationPreview}/>
         <Route path="*" component={NoMatch} />
       </Router>
     </Provider>,
