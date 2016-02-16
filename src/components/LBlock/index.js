@@ -5,7 +5,7 @@ import { changeContent } from 'actions/blocks';
 
 import LBlock from './LBlock';
 
-const isEditModeSelector = state => state.application.isEditMode;
+const isEditModeSelector = state => true; // state.application.isEditMode;
 
 const lBlockSelector = createStructuredSelector({
   isEditMode: isEditModeSelector,

@@ -9,14 +9,8 @@ import partial from 'lodash/partial';
 import LBlockLayer from 'components/LBlockLayer';
 import BackgroundVideo from 'views/shared/BackgroundVideo';
 import { viewsRepository } from 'views/all';
-
+import UnknownView from 'views/unknown';
 // import FaCog from 'react-icons/lib/fa/cog';
-
-const Placeholder = ({ block }) => (
-  <div className="LBlock-placeholder">
-    Unknown view of block {block.view}
-  </div>
-);
 
 class LBlock extends Component {
   getChildContext() {
@@ -52,8 +46,8 @@ class LBlock extends Component {
           <LBlockLayer block={block}>
 
             {ViewComponent
-              ? <div className="LBlock"><ViewComponent {...block} /></div>
-              : <Placeholder block={block} />
+              ? <ViewComponent {...block} />
+              : <UnknownView block={block} />
             }
           </LBlockLayer>
         </section>

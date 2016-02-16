@@ -20,14 +20,9 @@ class LOperatorPanel extends Component {
       exitUrl,
       hasUnsavedChanges,
       isSaving,
-      isEditMode,
       onSaveChanges,
       hasControlActivity,
       } = this.props;
-
-    if (!isEditMode) {
-      return false;
-    }
 
     return (
       <ReactCSSTransitionGroup
@@ -54,7 +49,6 @@ LOperatorPanel.propTypes = {
   exitUrl: PropTypes.string,
   isSaving: PropTypes.bool.isRequired,
   hasUnsavedChanges: PropTypes.bool.isRequired,
-  isEditMode: PropTypes.bool,
   onSaveChanges: PropTypes.func.isRequired,
   hasControlActivity: PropTypes.bool,
 };

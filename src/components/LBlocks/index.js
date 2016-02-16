@@ -5,12 +5,8 @@ import { startAddingBlock } from 'actions/blocks';
 
 import LBlocks from './LBlocks';
 
-const blocksSelector = state => state.blocks;
-const isEditModeSelector = state => state.application.isEditMode;
-
 const selector = createStructuredSelector({
-  blocks: blocksSelector,
-  isEditMode: isEditModeSelector,
+  blocks: state => state.blocks,
   hasControlActivity: state => state.application.controlActivityTimeoutId > 0,
 });
 
