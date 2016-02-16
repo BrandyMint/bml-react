@@ -2,12 +2,19 @@ import React, { PropTypes } from 'react';
 
 import './LBlockViewChanger.css';
 
-import Bubble from 'components/ui-elements/Bubble';
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
+
+import IconRight from 'react-icons/lib/go/chevron-right';
+import IconLeft from 'react-icons/lib/go/chevron-left';
 
 const LBlockViewChanger = ({ onViewSwitchNext, onViewSwitchPrev }) => (
   <div className="LBlockViewChanger">
-    <Bubble icon="angle-left" onClick={onViewSwitchPrev} />
-    <Bubble icon="angle-right" onClick={onViewSwitchNext} />
+    <BubbleIcon onClick={onViewSwitchPrev}>
+      <IconLeft />
+    </BubbleIcon>
+    <BubbleIcon onClick={onViewSwitchNext}>
+      <IconRight />
+    </BubbleIcon>
   </div>
 );
 

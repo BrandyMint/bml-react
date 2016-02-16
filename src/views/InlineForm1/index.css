@@ -1,4 +1,8 @@
 @component InlineForm1 {
-  padding: 1em;
+  padding: 3em;
   text-align: center;
+  @descendent title {
+    text-transform: uppercase;
+    margin-right: 2em
+  }
 }

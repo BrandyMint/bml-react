@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-import './LApplication.css';
+import LOperatorPanel from 'components/LOperatorPanel';
 
 import LPage from 'components/LPage';
-import LOperatorPanel from 'components/LOperatorPanel';
 import LBlockAddModal from 'components/LBlockAddModal';
 import LBlockEditModal from 'components/LBlockEditModal';
 
-const LApplication = () => (
-  <div className="LApplication">
-    <div className="LApplication-operator">
-      <LOperatorPanel />
-    </div>
-    <div className="LApplication-content">
-      <LPage />
-    </div>
-    <LBlockAddModal />
-    <LBlockEditModal />
-  </div>
-);
+import './LApplication.css';
+
+class LApplication extends Component {
+  render() {
+    const { onActivity } = this.props;
+    return (
+      <div className="LApplication" onMouseMove={onActivity} onContextMenu={onActivity}>
+        <div className="LApplication-sidebar">
+          { false && (<LOperatorPanel />)}
+          A
+          B
+          C
+        </div>
+        <div className="LApplication-content">
+          <LPage />
+        </div>
+        <LBlockAddModal />
+        <LBlockEditModal />
+      </div>
+    );
+  }
+}
+
+LApplication.propTypes = {
+  onActivity: PropTypes.func.isRequired,
+};
 
 export default LApplication;

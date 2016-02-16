@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import 'stylesheets/style.scss';
+import 'stylesheets/index.scss';
 import 'react-widgets/lib/less/react-widgets.less';
 import Blocks from 'constants/defaultBlocks';
 
@@ -36,6 +36,7 @@ if (__ENV__ === 'development') {
       landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
       api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
       hasUnsavedChanges: false,
+      controlActivityTimeoutId: null,
     },
     blocks: Blocks,
     modal: {

@@ -4,8 +4,6 @@ import webpack from 'webpack';
 import common from './common';
 import config from '../config';
 
-import CTagsWebpackPlugin from 'ctags-webpack-plugin';
-
 common.module.loaders.push({
   test: /\.css$/,
   loaders: ['style', 'css', 'postcss'],
@@ -52,7 +50,6 @@ export default {
       __ENV__: '"development"',
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    new CTagsWebpackPlugin('tags'),
   ],
 
   resolve: common.resolve,

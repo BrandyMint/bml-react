@@ -2,12 +2,19 @@ import './LBlockPositionChanger.css';
 
 import React, { PropTypes } from 'react';
 
-import Bubble from 'components/ui-elements/Bubble';
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
+
+import IconUp from 'react-icons/lib/go/chevron-up';
+import IconDown from 'react-icons/lib/go/chevron-down';
 
 const LBlockPositionChanger = ({ onBlockPositionUp, onBlockPositionDown }) => (
   <div className="LBlockPositionChanger">
-    <Bubble icon="angle-up" onClick={onBlockPositionUp} />
-    <Bubble icon="angle-down" onClick={onBlockPositionDown} />
+    <BubbleIcon onClick={onBlockPositionUp}>
+      <IconUp />
+    </BubbleIcon>
+    <BubbleIcon onClick={onBlockPositionDown}>
+      <IconDown />
+    </BubbleIcon>
   </div>
 );
 

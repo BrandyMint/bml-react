@@ -1,4 +1,25 @@
+@import 'stylesheets/config.css';
+
 @component LApplication {
+  @descendent sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $dashboardSidebarWidth;
+    background: $dashboardBackground;
+    color: $dashboardTextColor;
+    text-align: center;
+    padding: 4px;
+  }
+
+  @descendent content {
+    position: absolute;
+    top: 0;
+    left: $dashboardSidebarWidth;
+    right: 0;
+  }
+
   .nav {
     padding-left: 0;
     margin-bottom: 0;

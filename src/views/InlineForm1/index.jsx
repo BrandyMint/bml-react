@@ -14,7 +14,7 @@ class InlineForm1 extends Component {
     /* eslint-enable */
     return (
       <form className="form-inline">
-        { content.title && (<span>{content.title}</span>)}
+        { content.title && (<span className="InlineForm1-title">{content.title}</span>)}
         {map(form.fields, (field, index) => {
           const key = `${uuid}-${index}`;
           return (

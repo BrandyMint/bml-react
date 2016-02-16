@@ -7,6 +7,8 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import { Types, makeView } from 'views/types';
 
+import './index.css';
+
 const Footer1 = ({ content }) => (
   <footer>
     <div className="container">
@@ -24,7 +26,7 @@ const Footer1 = ({ content }) => (
                 if (size(content.items) > 1 && index < size(content.items) - 1) {
                   acc.push(
                     <li
-                      className="footer-menu-divider list-inline-item"
+                      className="Footer1-menu-divider list-inline-item"
                       key={`${index}-divider`}
                     >
                       ⋅
@@ -37,7 +39,7 @@ const Footer1 = ({ content }) => (
             }
           </ul>
           <StringEditable
-            className="copyright text-muted small"
+            className="Footer1-copyright text-muted small"
             data={content}
             fieldName="copyrightText"
             tagName="p"
