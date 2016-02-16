@@ -49,10 +49,10 @@ class StringEditable extends Component {
     const { isEditMode } = this.context;
     const { value } = this.state;
 
-    if (isEditMode)  {
+    if (isEditMode) {
       return (
         <Redactor
-          className={classes}
+          className={className}
           readOnly={!isEditMode}
           tagName={tagName}
           value={value}
@@ -61,15 +61,14 @@ class StringEditable extends Component {
           onKeyDownEnter={this.handleKeyDownEnter}
         />
       );
-    } else {
-      return createElement(
-        tagName,
-        {
-          className: className,
-          dangerouslySetInnerHTML: { __html: value },
-        },
-      );
     }
+    return createElement(
+      tagName,
+      {
+        className,
+        dangerouslySetInnerHTML: { __html: value },
+      },
+    );
   }
 }
 

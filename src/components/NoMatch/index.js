@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
-const NoMatch = (props) => (
+const NoMatch = () => (
   <h2>Такая страница не найдена</h2>
 );
 

@@ -10,12 +10,16 @@ class BlockViewBackground extends Component {
     const backgroundVideos = get(block, 'backgroundVideos') || [];
     const backgroundImageUrl = get(block, 'backgroundImage.url');
 
-    if (backgroundImageUrl || backgroundVideos.length == 0) {
+    if (backgroundImageUrl || backgroundVideos.length === 0) {
       return false;
     }
 
     return (<BackgroundVideo videos={backgroundVideos}/>);
   }
 }
+
+BlockViewBackground.propTypes = {
+  block: PropTypes.object.isRequired,
+};
 
 export default BlockViewBackground;

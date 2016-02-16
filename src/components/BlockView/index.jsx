@@ -35,7 +35,7 @@ class BlockView extends Component {
       </section>
     );
   }
-};
+}
 
 BlockView.propTypes = {
   block: PropTypes.object.isRequired, // TODO block shape

@@ -11,7 +11,7 @@ import './index.css';
 
 class LApplication extends Component {
   render() {
-    const { onActivity, isEditMode } = this.props;
+    const { onActivity } = this.props;
     const classes = classnames({
       LApplication: true,
       'is-editing': true,
