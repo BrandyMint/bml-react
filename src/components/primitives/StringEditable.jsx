@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, createElement } from 'react';
 
 import get from 'lodash/get';
 import bind from 'lodash/bind';
@@ -49,16 +49,25 @@ class StringEditable extends Component {
     const { isEditMode } = this.context;
     const { value } = this.state;
 
-    return (
-      <Redactor
-        className={className}
-        readOnly={!isEditMode}
-        tagName={tagName}
-        value={value}
-        onBlur={this.handleBlur}
-        onKeyDown={this.handleKeyDown}
-        onKeyDownEnter={this.handleKeyDownEnter}
-      />
+    if (isEditMode) {
+      return (
+        <Redactor
+          className={className}
+          readOnly={!isEditMode}
+          tagName={tagName}
+          value={value}
+          onBlur={this.handleBlur}
+          onKeyDown={this.handleKeyDown}
+          onKeyDownEnter={this.handleKeyDownEnter}
+        />
+      );
+    }
+    return createElement(
+      tagName,
+      {
+        className,
+        dangerouslySetInnerHTML: { __html: value },
+      },
     );
   }
 }
@@ -76,7 +85,7 @@ StringEditable.defaultProps = {
 
 StringEditable.contextTypes = {
   isEditMode: PropTypes.bool,
-  onContentChange: PropTypes.func.isRequired,
+  onContentChange: PropTypes.func,
 };
 
 export default StringEditable;

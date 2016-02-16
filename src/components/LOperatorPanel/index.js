@@ -12,7 +12,6 @@ const operatorPanelSelector = createSelector(
 
   (application) => ({
     exitUrl: application.exitUrl,
-    isEditMode: application.isEditMode,
     isSaving: application.isSaving,
     hasUnsavedChanges: application.hasUnsavedChanges,
     hasControlActivity: application.controlActivityTimeoutId > 0,

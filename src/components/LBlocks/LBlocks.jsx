@@ -18,10 +18,10 @@ const Placeholder = () => (
   </div>
 );
 
-const LBlocks = ({ blocks, isEditMode, onAddBlock, hasControlActivity }) => {
+const LBlocks = ({ blocks, onAddBlock, hasControlActivity }) => {
   const renderSection = (block, index) => (
     <div className="LBlocks-section" key={block.uuid}>
-      {isEditMode && hasControlActivity && index > 0 &&
+      {hasControlActivity && index > 0 &&
         <LBlockAddButton onClick={partial(onAddBlock, index)} />
         }
       <LBlock block={block} />
@@ -49,7 +49,6 @@ const LBlocks = ({ blocks, isEditMode, onAddBlock, hasControlActivity }) => {
 
 LBlocks.propTypes = {
   blocks: PropTypes.array.isRequired,
-  isEditMode: PropTypes.bool.isRequired,
 };
 
 export default LBlocks;

@@ -44,13 +44,13 @@ class LBlockLayer extends Component {
 
   render() {
     const {
-      block, children, isEditMode, hasMultipleBlocks, hasMultipleViews,
+      block, children, hasMultipleBlocks, hasMultipleViews,
       onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
     } = this.props;
 
     const layerClasses = classnames({
       LBlockLayer: true,
-      'is-editing': isEditMode,
+      'is-editing': true,
     });
 
     const { isHovered } = this.state;
@@ -72,7 +72,7 @@ class LBlockLayer extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {!isTopNav && isEditMode && isHovered && (
+        {!isTopNav && isHovered && (
           <LBlockLayerPanel
             ref="panel"
             hasMultipleViews={hasMultipleViews}
@@ -99,7 +99,6 @@ class LBlockLayer extends Component {
 LBlockLayer.propTypes = {
   block: PropTypes.object,
   children: PropTypes.node,
-  isEditMode: PropTypes.bool,
   hasMultipleBlocks: PropTypes.bool,
   hasMultipleViews: PropTypes.bool,
   hasControlActivity: PropTypes.bool,

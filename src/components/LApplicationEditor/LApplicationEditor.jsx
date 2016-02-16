@@ -7,29 +7,27 @@ import LPage from 'components/LPage';
 import LBlockAddModal from 'components/LBlockAddModal';
 import LBlockEditModal from 'components/LBlockEditModal';
 
-import './LApplication.css';
+import './index.css';
 
 class LApplication extends Component {
   render() {
-    const { onActivity, isEditMode } = this.props;
+    const { onActivity } = this.props;
     const classes = classnames({
       LApplication: true,
-      'is-editing': isEditMode,
+      'is-editing': true,
     });
     const contentClasses = classnames({
       'LApplication-content': true,
-      'is-editing': isEditMode,
+      'is-editing': true,
     });
     return (
       <div className={classes} onMouseMove={onActivity} onContextMenu={onActivity}>
-        { isEditMode && (
-          <div className="LApplication-sidebar">
-            { false && (<LOperatorPanel />)}
-            A
-            B
-            C
-          </div>
-          )}
+        <div className="LApplication-sidebar">
+          A
+          B
+          C
+        </div>
+        { false && (<LOperatorPanel />) }
         <div className={contentClasses}>
           <LPage />
         </div>
@@ -42,7 +40,6 @@ class LApplication extends Component {
 
 LApplication.propTypes = {
   onActivity: PropTypes.func.isRequired,
-  isEditMode: PropTypes.bool.isRequired,
 };
 
 export default LApplication;
