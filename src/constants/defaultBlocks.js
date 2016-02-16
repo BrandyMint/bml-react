@@ -3,6 +3,7 @@ export default [
   {
     uuid: '44086800-a7e8-0133-a838-746d04736cf8',
     view: 'Navbar1',
+    isTopNav: true,
     content: {
       logoLink: {
         text: '8 (800) 77-55-661',

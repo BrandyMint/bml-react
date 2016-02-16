@@ -46,7 +46,6 @@ class LBlockLayer extends Component {
     const {
       block, children, isEditMode, hasMultipleBlocks, hasMultipleViews,
       onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
-      style,
     } = this.props;
 
     const layerClasses = classnames({
@@ -59,12 +58,11 @@ class LBlockLayer extends Component {
     const onMouseEnter = this.onHover.bind(this);
     const onMouseLeave = this.onUnHover.bind(this);
 
-    const isTopNav = block.view === 'Navbar1'; // TODO
+    const { isTopNav } = block;
 
     return (
       <div
         className={layerClasses}
-        style={style}
         onMouseOver={onMouseEnter}
         onMouseOut={onMouseLeave}
       >
@@ -74,8 +72,9 @@ class LBlockLayer extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {!isTopNav && isEditMode && false && isHovered && (
+        {!isTopNav && isEditMode && isHovered && (
           <LBlockLayerPanel
+            ref="panel"
             hasMultipleViews={hasMultipleViews}
             hasMultipleBlocks={hasMultipleBlocks}
 
@@ -110,8 +109,6 @@ LBlockLayer.propTypes = {
   onEditingStart: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
-
-  style: PropTypes.string,
 };
 
 export default LBlockLayer;

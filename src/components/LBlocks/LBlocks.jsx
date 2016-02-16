@@ -21,7 +21,7 @@ const Placeholder = () => (
 const LBlocks = ({ blocks, isEditMode, onAddBlock, hasControlActivity }) => {
   const renderSection = (block, index) => (
     <div className="LBlocks-section" key={block.uuid}>
-      {isEditMode && false && hasControlActivity && index > 0 &&
+      {isEditMode && hasControlActivity && index > 0 &&
         <LBlockAddButton onClick={partial(onAddBlock, index)} />
         }
       <LBlock block={block} />
