@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 
 import './index.css';
 
@@ -11,7 +10,6 @@ import LBlockLayer from 'components/LBlockLayer';
 import BackgroundVideo from 'views/shared/BackgroundVideo';
 import { viewsRepository } from 'views/all';
 
-import LBlockSettingsButton from 'components/LBlockSettingsButton';
 import FaCog from 'react-icons/lib/fa/cog';
 
 const Placeholder = ({ block }) => (
@@ -46,18 +44,20 @@ class LBlock extends Component {
     const ViewComponent = viewsRepository.getView(view);
 
     return (
-      <div className='LBC'>
-        <section className='LBC-content' id={blockId} style={blockStyles}>
-          { !backgroundImageUrl && backgroundVideos.length>0 && (<BackgroundVideo videos={backgroundVideos}/>) }
+      <div className="LBC">
+        <section className="LBC-content" id={blockId} style={blockStyles}>
+          { !backgroundImageUrl && backgroundVideos.length > 0 &&
+            (<BackgroundVideo videos={backgroundVideos}/>)
+          }
           <LBlockLayer block={block}>
 
             {ViewComponent
-              ? <div className='LBlock'><ViewComponent {...block} /></div>
+              ? <div className="LBlock"><ViewComponent {...block} /></div>
               : <Placeholder block={block} />
             }
           </LBlockLayer>
         </section>
-        <div className='LBC-panel'>
+        <div className="LBC-panel">
           <FaCog />
         </div>
       </div>

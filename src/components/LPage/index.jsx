@@ -7,15 +7,17 @@ import LFooter from 'components/LFooter';
 
 import './index.css';
 
-import { FOOTER_HIDE, FOOTER_CLOSED, FOOTER_OPEN, DEFAULT_FOOTER_STATE } from 'components/LFooter/states'
+import {
+  DEFAULT_FOOTER_STATE,
+} from 'components/LFooter/states';
 
 class LPage extends Component {
   constructor() {
     super();
     this.state = { footer: DEFAULT_FOOTER_STATE };
   }
-  render() {
 
+  render() {
     const footerState = this.state.footer;
 
     const classes = classnames({
@@ -25,7 +27,7 @@ class LPage extends Component {
 
     const onChangeState = (footerState) => {
       this.setState({ footer: footerState });
-    }
+    };
 
     const footerClasses = classnames({
       'LPage-footer': true,
@@ -43,8 +45,8 @@ class LPage extends Component {
           <LFooter state={footerState} onChangeState={onChangeState}/>
         </div>)}
       </div>
-    )
-  };
+    );
+  }
 }
 
 export default LPage;

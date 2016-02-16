@@ -43,13 +43,14 @@ const savingChanges = value => state => ({
   ...state, isSaving: value,
 });
 
-const appActivityOff = state => ({ ...state, controlActivityTimeoutId: null, });
+const appActivityOff = state => ({
+  ...state,
+  controlActivityTimeoutId: null,
+});
 
-const appActivityOn = (state, action) => {
-  return {
+const appActivityOn = (state, action) => ({
   ...state, controlActivityTimeoutId: action.payload.timeoutId,
-  };
-}
+});
 
 const handlers = {
   [APP_ACTIVITY_ON]: appActivityOn,

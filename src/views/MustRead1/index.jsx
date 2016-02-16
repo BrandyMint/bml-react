@@ -3,7 +3,6 @@ import React from 'react';
 import map from 'lodash/map';
 import { Types, makeView } from 'views/types';
 
-import Icon from 'components/ui-elements/Icon';
 import StringEditable from 'components/primitives/StringEditable';
 
 import './index.css';

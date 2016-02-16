@@ -53,8 +53,8 @@ class BackgroundVideo extends Component {
     ),
   };
   static defaultProps = {
+    videos,
     overlay: true,
-    videos: videos,
   };
 
   render() {

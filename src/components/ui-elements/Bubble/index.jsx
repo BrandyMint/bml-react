@@ -5,8 +5,6 @@ import bind from 'lodash/bind';
 
 import './Bubble.css';
 
-import Icon from 'components/ui-elements/Icon';
-
 class Bubble extends Component {
   constructor(props) {
     super(props);

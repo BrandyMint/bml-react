@@ -16,9 +16,18 @@ class LOperatorPanel extends Component {
       : null;
   }
   render() {
-    const { exitUrl, hasUnsavedChanges, isSaving, isEditMode, onSaveChanges, hasControlActivity } = this.props;
+    const {
+      exitUrl,
+      hasUnsavedChanges,
+      isSaving,
+      isEditMode,
+      onSaveChanges,
+      hasControlActivity,
+      } = this.props;
 
-    if (!isEditMode) { return false; }
+    if (!isEditMode) {
+      return false;
+    }
 
     return (
       <ReactCSSTransitionGroup
@@ -26,7 +35,8 @@ class LOperatorPanel extends Component {
         transitionName="animation"
         transitionEnterTimeout={TRANSITION_TIMEOUT}
         transitionLeaveTimeout={TRANSITION_TIMEOUT}
-        >{hasControlActivity && (
+      >
+        {hasControlActivity && (
           <div className="LOperatorPanel">
             {hasUnsavedChanges &&
               <LOperatorSaveButton onSaveChanges={onSaveChanges} isSaving={isSaving} />
@@ -46,6 +56,7 @@ LOperatorPanel.propTypes = {
   hasUnsavedChanges: PropTypes.bool.isRequired,
   isEditMode: PropTypes.bool,
   onSaveChanges: PropTypes.func.isRequired,
+  hasControlActivity: PropTypes.bool,
 };
 
 export default LOperatorPanel;

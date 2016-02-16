@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 import FormPropType from 'constants/formPropType';
-import Icon from 'components/ui-elements/Icon';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 import each from 'lodash/each';

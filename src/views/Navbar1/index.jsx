@@ -23,27 +23,28 @@ class Navbar1 extends Component {
     this.scrollY = 0;
     window.addEventListener('scroll', this.handleScroll);
   }
+
+  shouldComponentUpdate = shouldPureComponentUpdate;
+
   componendWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll() {
-    let state = {};
-    state['collapse'] = window.scrollY > Y;
+    const state = {};
+    state.collapse = window.scrollY > Y;
 
-    if (this.scrollY < window.scrollY && state['collapse']) {
-      state['shownav'] = false;
+    if (this.scrollY < window.scrollY && state.collapse) {
+      state.shownav = false;
     }
-    if ((this.scrollY - window.scrollY > MIN) || window.scrollY == 0) {
-      state['shownav'] = true;
+    if ((this.scrollY - window.scrollY > MIN) || window.scrollY === 0) {
+      state.shownav = true;
     }
 
-    this.scrollY = window.scrollY
+    this.scrollY = window.scrollY;
 
     this.setState(state);
   }
-
-  shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
     /* eslint-disable react/prop-types */
@@ -66,7 +67,7 @@ class Navbar1 extends Component {
         transitionName="animation-slide-up"
         transitionEnterTimeout={TRANSITION_TIMEOUT}
         transitionLeaveTimeout={TRANSITION_TIMEOUT}
-        >
+      >
         { shownav && (
           <nav className={classes} role="navigation">
             <div className="container">

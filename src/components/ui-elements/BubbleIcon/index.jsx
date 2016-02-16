@@ -8,12 +8,12 @@ class BubbleIcon extends Component {
     const props = this.props;
 
     return (
-     <Bubble hasIcon={true} {...props}>
+     <Bubble hasIcon {...props}>
        <span className="Bubble-icon">
          {children}
        </span>
     </Bubble>
-    )
+    );
   }
 }
 

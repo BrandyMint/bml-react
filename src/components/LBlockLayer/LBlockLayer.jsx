@@ -24,14 +24,14 @@ class LBlockLayer extends Component {
   }
 
   onHover() {
-    this.setState({isHovered: true});
+    this.setState({ isHovered: true });
   }
 
   onUnHover() {
-    this.clearTimeout()
+    this.clearTimeout();
 
     this.unhoverTimeout = window.setTimeout(
-      () => this.setState({isHovered: false}),
+      () => this.setState({ isHovered: false }),
       TIMEOUT
     );
   }
@@ -44,7 +44,7 @@ class LBlockLayer extends Component {
 
   render() {
     const {
-      block, children, isEditMode, hasMultipleBlocks, hasMultipleViews, hasControlActivity,
+      block, children, isEditMode, hasMultipleBlocks, hasMultipleViews,
       onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
       style,
     } = this.props;
@@ -56,13 +56,18 @@ class LBlockLayer extends Component {
 
     const { isHovered } = this.state;
 
-    const onMouseEnter = this.onHover.bind(this)
-    const onMouseLeave = this.onUnHover.bind(this)
+    const onMouseEnter = this.onHover.bind(this);
+    const onMouseLeave = this.onUnHover.bind(this);
 
     const isTopNav = block.view === 'Navbar1'; // TODO
 
     return (
-      <div className={layerClasses} style={style} onMouseOver={onMouseEnter} onMouseOut={onMouseLeave}>
+      <div
+        className={layerClasses}
+        style={style}
+        onMouseOver={onMouseEnter}
+        onMouseOut={onMouseLeave}
+      >
         <ReactCSSTransitionGroup
           component="div"
           transitionName="animation"
@@ -105,6 +110,8 @@ LBlockLayer.propTypes = {
   onEditingStart: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
+
+  style: PropTypes.string,
 };
 
 export default LBlockLayer;

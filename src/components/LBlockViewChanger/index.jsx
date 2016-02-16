@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import './LBlockViewChanger.css';
 
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
-import FaCog from 'react-icons/lib/fa/cog';
 
 import IconRight from 'react-icons/lib/go/chevron-right';
 import IconLeft from 'react-icons/lib/go/chevron-left';

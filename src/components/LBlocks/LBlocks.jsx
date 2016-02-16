@@ -3,7 +3,6 @@ import './LBlocks.css';
 import React, { PropTypes } from 'react';
 
 import map from 'lodash/map';
-import size from 'lodash/size';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
