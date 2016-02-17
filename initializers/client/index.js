@@ -3,19 +3,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route } from 'react-router';
 
 import 'stylesheets/index.scss';
 import 'react-widgets/lib/less/react-widgets.less';
 import Blocks from 'constants/defaultBlocks';
 
-import createStore from 'store';
+import { createStore, browserHistory } from './store';
 
 import LApplicationEditor from 'components/LApplicationEditor';
 import LApplicationPreview from 'components/LApplicationPreview';
-import NoMatch from 'components/NoMatch';
-
 import MobilePreviewApp from 'components/MobilePreviewApp';
+import NoMatch from 'components/NoMatch';
 
 const initApp = (initialState) => {
   const store = createStore(initialState);
