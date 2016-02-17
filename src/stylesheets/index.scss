@@ -13,3 +13,10 @@
 body.Editor {
   background: $dashboardBackground;
 }
+
+.IconLink {
+  color: #666;
+  &:hover {
+    color: #999;
+  }
+}

@@ -5,6 +5,8 @@ import LPage from 'components/LPage';
 import LBlockAddModal from 'components/LBlockAddModal';
 import LBlockEditModal from 'components/LBlockEditModal';
 
+import EditorRightSidebar from 'components/EditorRightSidebar';
+
 import CogIcon from 'react-icons/lib/fa/cog';
 import './index.css';
 
@@ -20,6 +22,7 @@ class LApplication extends Component {
           <div className="LApplicationEditor-content">
             <LPage />
           </div>
+          <EditorRightSidebar />
           <LBlockAddModal />
           <LBlockEditModal />
         </div>
