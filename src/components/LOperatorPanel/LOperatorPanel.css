@@ -1,4 +1,4 @@
-$panelZindex: 9999;
+@import 'stylesheets/config.css';
 
 @component LOperatorPanel {
   position: fixed;

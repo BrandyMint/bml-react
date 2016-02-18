@@ -1,4 +1,5 @@
-import component from './component.jsx';
+import component from './component';
+
 import './index.css';
 
 export default component;
