@@ -4,7 +4,7 @@ import partial from 'lodash/partial';
 
 import FieldSubitem from '../FieldSubitem';
 
-import MdRemoveCircleOutline from 'react-icons/md/remove-circle-outline';
+import MdRemoveCircleOutline from 'react-icons/lib/md/remove-circle-outline';
 
 class FieldItem extends Component {
   render() {

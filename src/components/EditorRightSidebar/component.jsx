@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-// import FullscreenIcon from 'react-icons/go/device-desktop';
-import FullscreenIcon from 'react-icons/go/screen-full';
-import MobileIcon from 'react-icons/go/device-mobile';
+// import FullscreenIcon from 'react-icons/lib/go/device-desktop';
+import FullscreenIcon from 'react-icons/lib/go/screen-full';
+import MobileIcon from 'react-icons/lib/go/device-mobile';
 
 class EditorRightSidebar extends Component {
   render() {

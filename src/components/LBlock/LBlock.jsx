@@ -10,7 +10,7 @@ import LBlockLayer from 'components/LBlockLayer';
 // import BlockViewBackground from 'components/BlockViewBackground';
 import { viewsRepository } from 'views/all';
 import UnknownView from 'views/unknown';
-// import FaCog from 'react-icons/fa/cog';
+// import FaCog from 'react-icons/lib/fa/cog';
 
 class LBlock extends Component {
   getChildContext() {
