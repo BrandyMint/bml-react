@@ -51,9 +51,9 @@ export default {
         loader: 'file-loader?name=fonts/[name].[ext]',
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         loader: 'babel',
-        include: [root, entry],
+        include: [root, entry, path.join(process.cwd(), 'node_modules/react-icons')],
       },
     ],
   },
