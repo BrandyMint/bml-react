@@ -8,7 +8,8 @@
     "start": "NODE_ENV=development node -r 'babel-register' ./initializers/server/index.js",
     "lint": "eslint --ext .js --ext .jsx src initializers test",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "screenshot": "node ./screenshoter.js http://3000.vkontraste.ru/ 960x720 src/assets/images/screenshot.png"
   },
   "repository": {
     "type": "git",
@@ -64,6 +65,7 @@
     "redbox-react": "^1.2.0",
     "redux-logger": "^2.4.0",
     "sass-loader": "^3.1.2",
+    "screenshot-stream": "^3.1.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
