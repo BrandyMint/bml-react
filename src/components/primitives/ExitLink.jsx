@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { createSelector } from 'reselect';
 
-import ExitIcon from 'react-icons/lib/md/exit-to-app';
+import ExitIcon from 'react-icons/lib/md/exit-to_app';
 
 const ExitLink = ({ exitUrl }) => (
   <Link to={exitUrl} className="IconLink">
