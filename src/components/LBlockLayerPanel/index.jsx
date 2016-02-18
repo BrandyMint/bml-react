@@ -19,12 +19,15 @@ class LBlockLayerPanel extends Component {
       onViewSwitchNext,
       onViewSwitchPrev,
 
+      onMouseEnter,
+      onMouseLeave,
+
       onBlockPositionDown,
       onBlockPositionUp,
     } = this.props;
 
     return (
-      <div className="LBlockLayerPanel">
+      <div onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter} className="LBlockLayerPanel">
         <div className="LBlockLayerPanel-actions">
           <LBlockSettingsButton onEditingStart={onEditingStart} />
           {hasMultipleViews &&

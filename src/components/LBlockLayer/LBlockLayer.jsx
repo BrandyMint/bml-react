@@ -9,13 +9,14 @@ import LBlockLayerPanel from 'components/LBlockLayerPanel';
 
 import './LBlockLayer.css';
 
-const TIMEOUT = 1000;
+const TIMEOUT = 500;
 
 class LBlockLayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isHovered: false,
+      isPanelHovered: false,
     };
   }
 
@@ -24,16 +25,16 @@ class LBlockLayer extends Component {
   }
 
   onHover() {
-    this.setState({ isHovered: true });
-  }
-
-  onUnHover() {
     this.clearTimeout();
-
+    this.setState({ isHovered: true });
     this.unhoverTimeout = window.setTimeout(
       () => this.setState({ isHovered: false }),
       TIMEOUT
     );
+  }
+
+  onUnHover() {
+    this.clearTimeout();
   }
 
   clearTimeout() {
@@ -53,18 +54,28 @@ class LBlockLayer extends Component {
       'is-editing': true,
     });
 
-    const { isHovered } = this.state;
+    const { isHovered, isPanelHovered } = this.state;
 
     const onMouseEnter = this.onHover.bind(this);
     const onMouseLeave = this.onUnHover.bind(this);
+
+    const onPanelMouseEnter = () => {
+      this.setState({ isPanelHovered: true });
+      console.log('panel mouse enter');
+      onMouseEnter();
+    }
+
+    const onPanelMouseLeave = () => {
+      this.setState({ isPanelHovered: false });
+      console.log('panel mouse leave');
+    }
 
     const { isTopNav } = block;
 
     return (
       <div
         className={layerClasses}
-        onMouseOver={onMouseEnter}
-        onMouseOut={onMouseLeave}
+        onMouseMove={onMouseEnter}
       >
         <ReactCSSTransitionGroup
           component="div"
@@ -72,11 +83,14 @@ class LBlockLayer extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {!isTopNav && isHovered && (
+        {!isTopNav && (isHovered || isPanelHovered) && (
           <LBlockLayerPanel
             ref="panel"
             hasMultipleViews={hasMultipleViews}
             hasMultipleBlocks={hasMultipleBlocks}
+
+            onMouseEnter={onPanelMouseEnter}
+            onMouseLeave={onPanelMouseLeave}
 
             onEditingStart={partial(onEditingStart, block)}
 

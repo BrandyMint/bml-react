@@ -24,7 +24,7 @@ const customCreateStore = (initialState) => {
     APIMiddleware,
   ];
 
-  if (__ENV__ === 'development') {
+  if (__ENV__ === 'development' && false) {
     middlewares.push(createLogger());
   }
 
