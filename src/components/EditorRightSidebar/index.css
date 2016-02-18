@@ -16,4 +16,13 @@
     display: block;
     margin-bottom: 0.2em;
   }
+
+  @descendent bottom {
+    padding: $sidebarPadding;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: $dashboardSidebarWidth;
+    text-align: center;
+  }
 }

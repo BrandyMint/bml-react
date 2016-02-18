@@ -14,9 +14,17 @@ body.Editor {
   background: $dashboardBackground;
 }
 
+.OpacityIcon {
+  color: #666;
+}
+
 .IconLink {
   color: #666;
   &:hover {
     color: #999;
+  }
+
+  &.IconRed {
+    color: red;
   }
 }
