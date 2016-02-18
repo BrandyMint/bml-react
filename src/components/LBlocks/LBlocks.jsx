@@ -73,7 +73,7 @@ class LBlocks extends Component {
 LBlocks.propTypes = {
   blocks: PropTypes.array.isRequired,
   onAddBlock: PropTypes.func.isRequired,
-  hasControlActivity: PropTypes.boolean.isRequired,
+  hasControlActivity: PropTypes.bool.isRequired,
 };
 
 export default LBlocks;
