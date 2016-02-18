@@ -57,18 +57,16 @@ class LBlockLayer extends Component {
     const { isHovered, isPanelHovered } = this.state;
 
     const onMouseEnter = this.onHover.bind(this);
-    const onMouseLeave = this.onUnHover.bind(this);
+    // const onMouseLeave = this.onUnHover.bind(this);
 
     const onPanelMouseEnter = () => {
       this.setState({ isPanelHovered: true });
-      console.log('panel mouse enter');
       onMouseEnter();
-    }
+    };
 
     const onPanelMouseLeave = () => {
       this.setState({ isPanelHovered: false });
-      console.log('panel mouse leave');
-    }
+    };
 
     const { isTopNav } = block;
 

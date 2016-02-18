@@ -59,6 +59,9 @@ LBlockLayerPanel.propTypes = {
 
   hasMultipleBlocks: PropTypes.bool.isRequired,
   hasMultipleViews: PropTypes.bool.isRequired,
+
+  onMouseEnter: PropTypes.func.isRequired,
+  onMouseLeave: PropTypes.func.isRequired,
 };
 
 export default LBlockLayerPanel;

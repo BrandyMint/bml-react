@@ -1,6 +1,6 @@
-import './LBlocks.css';
+import React, { PropTypes, Component } from 'react';
 
-import React, { PropTypes } from 'react';
+import './LBlocks.css';
 
 import map from 'lodash/map';
 import partial from 'lodash/partial';
@@ -18,37 +18,62 @@ const Placeholder = () => (
   </div>
 );
 
-const LBlocks = ({ blocks, onAddBlock, hasControlActivity }) => {
-  const renderSection = (block, index) => (
-    <div className="LBlocks-section" key={block.uuid}>
-      {hasControlActivity && index > 0 &&
-        <LBlockAddButton onClick={partial(onAddBlock, index)} />
-        }
-      <LBlock block={block} />
-    </div>
-  );
+class LBlocks extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeAddButtonUuid: null };
+  }
+  render() {
+    const { blocks, onAddBlock, hasControlActivity } = this.props;
 
-  return (
-    <div className="LBlocks">
-      {isEmpty(blocks)
-        ?
-          <Placeholder />
-        :
-          <ReactCSSTransitionGroup
-            component="div"
-            transitionName="animation"
-            transitionEnterTimeout={TRANSITION_TIMEOUT}
-            transitionLeaveTimeout={TRANSITION_TIMEOUT}
-          >
-            {map(blocks, renderSection)}
-          </ReactCSSTransitionGroup>
-      }
-    </div>
-  );
-};
+    const onMouseLeave = () => {
+      this.setState({ activeAddButtonUuid: null });
+    };
+
+    const onMouseEnter = (uuid) => {
+      this.setState({ activeAddButtonUuid: uuid });
+    };
+
+    const renderSection = (block, index) => {
+      const isActive = this.state.activeAddButtonUuid === block.uuid;
+
+      return (
+        <div className="LBlocks-section" key={block.uuid}>
+          {(hasControlActivity || isActive) && index > 0 &&
+            <LBlockAddButton
+              onMouseLeave={onMouseLeave}
+              onMouseEnter={partial(onMouseEnter, block.uuid)}
+              onClick={partial(onAddBlock, index)}
+            />}
+            <LBlock block={block} />
+          </div>
+      );
+    };
+
+    return (
+      <div className="LBlocks">
+        {isEmpty(blocks)
+          ?
+            <Placeholder />
+            :
+              <ReactCSSTransitionGroup
+                component="div"
+                transitionName="animation"
+                transitionEnterTimeout={TRANSITION_TIMEOUT}
+                transitionLeaveTimeout={TRANSITION_TIMEOUT}
+              >
+                {map(blocks, renderSection)}
+              </ReactCSSTransitionGroup>
+          }
+        </div>
+    );
+  }
+}
 
 LBlocks.propTypes = {
   blocks: PropTypes.array.isRequired,
+  onAddBlock: PropTypes.func.isRequired,
+  hasControlActivity: PropTypes.boolean.isRequired,
 };
 
 export default LBlocks;
