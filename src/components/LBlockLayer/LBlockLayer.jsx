@@ -2,6 +2,7 @@ import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
+import { APP_ACTIVITY_TIMEOUT } from 'actions/application';
 
 import partial from 'lodash/partial';
 
@@ -9,7 +10,7 @@ import LBlockLayerPanel from 'components/LBlockLayerPanel';
 
 import './LBlockLayer.css';
 
-const TIMEOUT = 500;
+const TIMEOUT = APP_ACTIVITY_TIMEOUT;
 
 class LBlockLayer extends Component {
   constructor(props) {
