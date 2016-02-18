@@ -24,7 +24,13 @@ class LBlocks extends Component {
     this.state = { activeAddButtonUuid: null };
   }
   render() {
-    const { blocks, onAddBlock, hasControlActivity } = this.props;
+    const {
+      blocks,
+      currentBlockUuid,
+      onAddBlock,
+      onCurrentBlock,
+      hasControlActivity,
+    } = this.props;
 
     const onMouseLeave = () => {
       this.setState({ activeAddButtonUuid: null });
@@ -32,22 +38,38 @@ class LBlocks extends Component {
 
     const onMouseEnter = (uuid) => {
       this.setState({ activeAddButtonUuid: uuid });
+      onCurrentBlock(uuid);
     };
+
+    let previousBlockUuid = null;
 
     const renderSection = (block, index) => {
       const isActive = this.state.activeAddButtonUuid === block.uuid;
 
-      return (
-        <div className="LBlocks-section" key={block.uuid}>
-          {(hasControlActivity || isActive) && index > 0 &&
+      const showButton = (hasControlActivity || isActive) &&
+        (currentBlockUuid === block.uuid || previousBlockUuid === currentBlockUuid) && index > 0;
+
+      const result = (
+        <div className="LBlocks-section" key={index}>
+          <ReactCSSTransitionGroup
+            component="div"
+            transitionName="animation"
+            transitionEnterTimeout={TRANSITION_TIMEOUT}
+            transitionLeaveTimeout={TRANSITION_TIMEOUT}
+          >
+          {showButton &&
             <LBlockAddButton
               onMouseLeave={onMouseLeave}
               onMouseEnter={partial(onMouseEnter, block.uuid)}
               onClick={partial(onAddBlock, index)}
             />}
-            <LBlock block={block} />
-          </div>
+          </ReactCSSTransitionGroup>
+          <LBlock block={block} onActive={partial(onCurrentBlock, block.uuid)}/>
+        </div>
       );
+
+      previousBlockUuid = block.uuid;
+      return result;
     };
 
     return (
@@ -73,7 +95,9 @@ class LBlocks extends Component {
 LBlocks.propTypes = {
   blocks: PropTypes.array.isRequired,
   onAddBlock: PropTypes.func.isRequired,
+  onCurrentBlock: PropTypes.func.isRequired,
   hasControlActivity: PropTypes.bool.isRequired,
+  currentBlockUuid: PropTypes.string,
 };
 
 export default LBlocks;

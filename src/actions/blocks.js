@@ -23,6 +23,13 @@ export const UP_BLOCK_POSITION = 'UP_BLOCK_POSITION';
 export const SWITCH_NEXT_VIEW = 'SWITCH_NEXT_VIEW';
 export const SWITCH_PREV_VIEW = 'SWITCH_PREV_VIEW';
 
+export const CURRENT_BLOCK = 'CURRENT_BLOCK';
+
+export const setCurrentBlock = (uuid) => ({
+  type: CURRENT_BLOCK,
+  payload: { uuid },
+});
+
 export const startAddingBlock = (position) => ({
   type: START_ADDING_BLOCK,
   payload: { position },

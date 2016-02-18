@@ -22,12 +22,16 @@ import {
   SUBMIT_ADDING_BLOCK,
   SUBMIT_EDITING_BLOCK,
   DELETE_EDITING_BLOCK,
+
+  CURRENT_BLOCK,
 } from 'actions/blocks';
 
 const initialState = {
   isEditMode: true,
   isSaving: false,
   hasUnsavedChanges: false,
+
+  currentBlockUuid: null,
 
   api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
   landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
@@ -52,9 +56,16 @@ const appActivityOn = (state, action) => ({
   ...state, controlActivityTimeoutId: action.payload.timeoutId,
 });
 
+const currentBlock = (state, action) => ({
+  ...state, currentBlockUuid: action.payload.uuid,
+});
+
 const handlers = {
+  [CURRENT_BLOCK]: currentBlock,
+
   [APP_ACTIVITY_ON]: appActivityOn,
   [APP_ACTIVITY_OFF]: appActivityOff,
+
   [LANDING_VERSION_UPDATE_REQUEST]: savingChanges(true),
   [LANDING_VERSION_UPDATE_FAILURE]: savingChanges(false),
   [LANDING_VERSION_UPDATE_SUCCESS]: state => ({

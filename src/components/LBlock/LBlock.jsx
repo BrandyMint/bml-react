@@ -22,7 +22,7 @@ class LBlock extends Component {
     };
   }
   render() {
-    const { block } = this.props;
+    const { block, onActive } = this.props;
     const { nodeAttributes, view } = block;
 
     const blockId = nodeAttributes ? nodeAttributes.id || block.uuid : block.uuid;
@@ -37,7 +37,7 @@ class LBlock extends Component {
     const ViewComponent = viewsRepository.getView(view) || UnknownView;
 
     return (
-      <div className="LBC">
+      <div className="LBC" onMouseMove={onActive} onMouseEnter={onActive}>
         <section className="LBC-content" id={blockId} style={blockStyles}>
           <LBlockLayer block={block}>
             <ViewComponent {...block} />
@@ -53,6 +53,7 @@ class LBlock extends Component {
 LBlock.propTypes = {
   block: PropTypes.object.isRequired, // TODO block shape
   onContentChange: PropTypes.func.isRequired,
+  onActive: PropTypes.func.isRequired,
 };
 
 LBlock.childContextTypes = {
