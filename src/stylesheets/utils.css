@@ -1,4 +1,4 @@
-.vertical-center-abs, .vertical-center-rel{
+.vertical-center-abs, .vertical-center-rel {
     top: 50%;
     transform: translateY(-50%);
 }
@@ -16,7 +16,7 @@
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate (-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .y-middle {

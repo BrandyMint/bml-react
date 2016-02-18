@@ -23,8 +23,10 @@
   @descendent buttons {
     margin-top: 1em;
   }
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
+  @component MustRead1 {
     @descendent message {
       padding-bottom: 15%;
     }
