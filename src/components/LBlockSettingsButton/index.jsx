@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import './LBlockSettingsButton.css';
 
-import FaCog from 'react-icons/lib/fa/cog';
+import FaCog from 'react-icons/fa/cog';
 
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
 

@@ -6,7 +6,7 @@ import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 import './LOperatorPanel.css';
 
-import CogIcon from 'react-icons/lib/fa/cog';
+import CogIcon from 'react-icons/fa/cog';
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
 class LOperatorPanel extends Component {

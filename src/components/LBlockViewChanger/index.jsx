@@ -4,8 +4,8 @@ import './LBlockViewChanger.css';
 
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
-import IconRight from 'react-icons/lib/go/chevron-right';
-import IconLeft from 'react-icons/lib/go/chevron-left';
+import IconRight from 'react-icons/go/chevron-right';
+import IconLeft from 'react-icons/go/chevron-left';
 
 const LBlockViewChanger = ({ onViewSwitchNext, onViewSwitchPrev }) => (
   <div className="LBlockViewChanger">

@@ -4,8 +4,8 @@ import React, { PropTypes } from 'react';
 
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
-import IconUp from 'react-icons/lib/go/chevron-up';
-import IconDown from 'react-icons/lib/go/chevron-down';
+import IconUp from 'react-icons/go/chevron-up';
+import IconDown from 'react-icons/go/chevron-down';
 
 const LBlockPositionChanger = ({ onBlockPositionUp, onBlockPositionDown }) => (
   <div className="LBlockPositionChanger">

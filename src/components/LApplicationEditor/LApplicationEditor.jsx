@@ -7,7 +7,7 @@ import LBlockEditModal from 'components/LBlockEditModal';
 
 import EditorRightSidebar from 'components/EditorRightSidebar';
 
-import CogIcon from 'react-icons/lib/fa/cog';
+import CogIcon from 'react-icons/fa/cog';
 import './index.css';
 
 class LApplication extends Component {

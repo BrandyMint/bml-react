@@ -2,7 +2,7 @@ import './LBlockAddButton.css';
 
 import React, { PropTypes } from 'react';
 
-import PlusIcon from 'react-icons/lib/fa/plus';
+import PlusIcon from 'react-icons/fa/plus';
 
 const LBlockAddButton = ({ onClick }) => (
   <div className="LBlockAddButton">
