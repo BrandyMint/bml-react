@@ -5,9 +5,9 @@ import LPage from 'components/LPage';
 import LBlockAddModal from 'components/LBlockAddModal';
 import LBlockEditModal from 'components/LBlockEditModal';
 
+import EditorLeftSidebar from 'components/EditorLeftSidebar';
 import EditorRightSidebar from 'components/EditorRightSidebar';
 
-import CogIcon from 'react-icons/lib/fa/cog';
 import './index.css';
 
 class LApplication extends Component {
@@ -16,9 +16,7 @@ class LApplication extends Component {
     return (
       <BodyClassName className="Editor">
         <div className="LApplicationEditor" onMouseMove={onActivity} onContextMenu={onActivity}>
-          <div className="LApplicationEditor-sidebar">
-            <CogIcon />
-          </div>
+          <EditorLeftSidebar />
           <div className="LApplicationEditor-content">
             <LPage />
           </div>

@@ -1,6 +1,6 @@
 @import 'stylesheets/config.css';
 
-@component EditorRightSidebar {
+@component EditorLeftSidebar {
   font-size: $sidebarFontSize;
   position: fixed;
   width: $dashboardSidebarWidth;
@@ -8,12 +8,7 @@
   color: $dashboardTextColor;
   text-align: center;
   padding: $sidebarPadding;
-  right: 0;
+  left: 0;
   top: 0;
   bottom: 0;
-
-  .IconLink {
-    display: block;
-    margin-bottom: 0.2em;
-  }
 }
