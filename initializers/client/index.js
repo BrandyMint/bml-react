@@ -27,6 +27,7 @@ const initApp = (initialState) => {
         <Route path="/preview" component={LApplicationPreview}/>
         <Route path="/mobilePreview" component={MobilePreviewApp}/>
         <Route path="/show" component={LApplicationPreview}/>
+        <Route path="*" component={LApplicationEditor}/>
         <Route path="*" component={NoMatch} />
       </Router>
     </Provider>,

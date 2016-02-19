@@ -23,6 +23,11 @@ common.module.loaders.push({
   loader: ExtractTextPlugin.extract('style', ['css', 'less']),
 });
 
+common.module.loaders.push({
+  test: /\.gif$/,
+  loader: 'url-loader?mimetype=image/png',
+});
+
 export default {
   postcss: common.postcss,
 
@@ -52,13 +57,13 @@ export default {
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
-      __ENV__: '"production"',
-      'process.env.NODE_ENV': '"production"',
+      __ENV__: '"production"', // TODO https://github.com/zertosh/loose-envify
+      // 'process.env.NODE_ENV': '"production"',
     }),
-    //new webpack.optimize.UglifyJsPlugin({
-      //output: { comments: false },
-      //compress: { warnings: false },
-    //}),
+    new webpack.optimize.UglifyJsPlugin({
+      output: { comments: false },
+      compress: { warnings: false },
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
   ],
