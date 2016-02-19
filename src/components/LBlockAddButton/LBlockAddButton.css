@@ -1,5 +1,7 @@
+@import 'stylesheets/config.css';
+
 @component LBlockAddButton {
-  z-index: 1;
+  z-index: $bubbleZindex;
   width: 100%;
   text-align: center;
   position: relative;

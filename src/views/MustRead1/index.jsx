@@ -3,36 +3,36 @@ import React from 'react';
 import map from 'lodash/map';
 import { Types, makeView } from 'views/types';
 
-import Icon from 'components/ui-elements/Icon';
 import StringEditable from 'components/primitives/StringEditable';
 
+import './index.css';
+
 const MustRead1 = ({ content }) => (
-  <div className="intro-header">
-    <div className="container">
+  <section className="MustRead2">
+    <div className="container vertical-center-rel">
       <div className="row">
         <div className="col-lg-12">
-          <div className="intro-message">
+          <div className="MustRead1-message">
             <StringEditable
               data={content}
+              className="MustRead1-header text-white"
               fieldName="header"
               tagName="h1"
             />
             <StringEditable
               data={content}
+              className="MustRead1-subheader text-white"
               fieldName="subheader"
               tagName="h3"
             />
-            <hr className="intro-divider" />
-            <ul className="list-inline intro-social-buttons">
+            <ul className="list-inline MustRead1-buttons">
               {map(content.items, (item, index) =>
                 <li key={index} className="list-inline-item">
                   <a
                     href={item.url}
-                    className="btn btn-secondary btn-lg"
+                    className="btn btn-primary btn-shadow text-uppercase btn-md"
                   >
-                    <Icon glyph={item.icon} />
-                    {' '}
-                    <span className="network-name">{item.title}</span>
+                  {item.title}
                   </a>
                 </li>
               )}
@@ -41,7 +41,7 @@ const MustRead1 = ({ content }) => (
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default makeView(MustRead1, Types.mustRead);

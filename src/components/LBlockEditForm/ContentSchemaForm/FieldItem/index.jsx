@@ -1,9 +1,10 @@
-import Icon from 'components/ui-elements/Icon';
 import React, { Component, PropTypes } from 'react';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 
 import FieldSubitem from '../FieldSubitem';
+
+import MdRemoveCircleOutline from 'react-icons/lib/md/remove-circle_outline';
 
 class FieldItem extends Component {
   render() {
@@ -22,9 +23,9 @@ class FieldItem extends Component {
             />
           )
        )}
-       <a href="#" className="text-danger" onClick={onRemove}>
-       <Icon glyph="remove" />
-       </a>
+       <button className="btn btn-sm text-danger" onClick={onRemove}>
+       <MdRemoveCircleOutline />
+       </button>
       </li>
     );
   }

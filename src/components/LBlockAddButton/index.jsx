@@ -2,12 +2,12 @@ import './LBlockAddButton.css';
 
 import React, { PropTypes } from 'react';
 
-import Icon from 'components/ui-elements/Icon';
+import PlusIcon from 'react-icons/lib/fa/plus';
 
-const LBlockAddButton = ({ onClick }) => (
-  <div className="LBlockAddButton">
+const LBlockAddButton = ({ onClick, onMouseEnter, onMouseLeave }) => (
+  <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="LBlockAddButton">
     <div className="LBlockAddButton-handle" onClick={onClick}>
-      <Icon glyph="plus" />
+      <PlusIcon className="Icon"/>
     </div>
   </div>
 );

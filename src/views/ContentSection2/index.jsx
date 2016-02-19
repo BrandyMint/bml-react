@@ -2,6 +2,8 @@ import React from 'react';
 import { Types, makeView } from 'views/types';
 import StringEditable from 'components/primitives/StringEditable';
 
+import './index.css';
+
 const ContentSection2 = ({ content }) => (
   <div className="content-section-b">
     <div className="container">
@@ -24,7 +26,7 @@ const ContentSection2 = ({ content }) => (
         </div>
         <div className="col-lg-5 col-sm-pull-6 col-sm-6">
           <img
-            className="img-responsive"
+            className="img-fluid"
             height={content.image.height}
             src={content.image.url}
             width={content.image.width}

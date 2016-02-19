@@ -1,0 +1,73 @@
+@import 'stylesheets/config.css';
+
+/*
+ * http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
+ */
+
+@component LPage {
+  min-height: 100%;
+  margin: 0;
+
+  @when footer-open {
+    margin: 0 0 $editorFooterOpenHeight;
+  }
+
+  @when footer-closed {
+    margin: 0 0 $editorFooterClosedHeight;
+  }
+
+  @descendent left-sidebar {
+    background: #333;
+    color: white;
+    float: left;
+    width: 40px;
+    min-height: 400px;
+    height: inherit;
+  }
+
+  @descendent right-sidebar {
+    background: #333;
+    float: left;
+    color: white;
+    width: 40px;
+    min-height: 400px;
+    height: inherit;
+  }
+
+  @descendent footer {
+    z-index: $footerZindex;
+    position: fixed;
+    transition: all 0.2s ease-out;
+    left: 0;
+    bottom: 0;
+    height: $editorFooterHeight;
+    width: 100%;
+    background: rgba(110, 110, 110, 1);
+    box-shadow: 10px 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-top: #666 solid 2px;
+    @when closed {
+      bottom: $editorFooterClosedBottom;
+    }
+  }
+
+  @descendent sidebar {
+    position: fixed;
+    width: $sidebarWidth;
+    height: 100%;
+    background: #ccc;
+  }
+
+  @descendent content {
+    /* Типовой цвет страницы */
+    background: #fff;
+
+    @when sidebar {
+      margin-left: $sidebarWidth;
+      position: relative;
+      overflow: auto;
+      z-index: $sidebarZindex;
+      width: auto;
+      height: auto;
+    }
+  }
+}

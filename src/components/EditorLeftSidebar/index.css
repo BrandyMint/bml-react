@@ -1,0 +1,14 @@
+@import 'stylesheets/config.css';
+
+@component EditorLeftSidebar {
+  font-size: $sidebarFontSize;
+  position: fixed;
+  width: $dashboardSidebarWidth;
+  background: $dashboardBackground;
+  color: $dashboardTextColor;
+  text-align: center;
+  padding: $sidebarPadding;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}

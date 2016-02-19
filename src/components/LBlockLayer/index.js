@@ -12,15 +12,14 @@ import {
 
 import LBlockLayer from './LBlockLayer';
 
-const isEditModeSelector = state => state.application.isEditMode;
 const hasMultipleBlocksSelector = state => size(state.blocks) > 1;
 const hasMultipleViewsSelector = (state, props) =>
   size(viewsRepository.getCompatibleViews(props.block.view)) > 1;
 
 const lBlockLayerSelector = createStructuredSelector({
-  isEditMode: isEditModeSelector,
   hasMultipleViews: hasMultipleViewsSelector,
   hasMultipleBlocks: hasMultipleBlocksSelector,
+  hasControlActivity: state => state.application.controlActivityTimeoutId > 0,
 });
 
 const actions = {

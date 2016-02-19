@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 import FormPropType from 'constants/formPropType';
-import Icon from 'components/ui-elements/Icon';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 import each from 'lodash/each';
@@ -58,9 +57,9 @@ class FieldItems extends Component {
           }
           )}
         </ol>
-        <div className="pull-right">
+        <div className="pull-xs-right">
           <button name="add" onClick={onClickAdd} className="btn btn-success-outline btn-sm">
-            <Icon glyph="plus" />
+            Добавить
           </button>
         </div>
       </fieldset>

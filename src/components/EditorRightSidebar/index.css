@@ -1,0 +1,28 @@
+@import 'stylesheets/config.css';
+
+@component EditorRightSidebar {
+  font-size: $sidebarFontSize;
+  position: fixed;
+  width: $dashboardSidebarWidth;
+  background: $dashboardBackground;
+  color: $dashboardTextColor;
+  text-align: center;
+  padding: $sidebarPadding;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  .IconLink {
+    display: block;
+    margin-bottom: 0.2em;
+  }
+
+  @descendent bottom {
+    padding: $sidebarPadding;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: $dashboardSidebarWidth;
+    text-align: center;
+  }
+}

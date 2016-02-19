@@ -1,0 +1,19 @@
+$bubbleZindex: 100;
+$footerZindex: 101;
+$sidebarZindex: 101;
+$panelZindex: 999;
+
+$sidebarWidth: 200px;
+
+$editorFooterHeight: 150px;
+$editorFooterOpenHeight: 150px;
+$editorFooterClosedHeight: 40px;
+$editorFooterBg: #333;
+$editorFooterClosedBottom: -110px;
+
+$dashboardSidebarWidth: 50px;
+$dashboardBackground: #111;
+$dashboardTextColor: #ccc;
+
+$sidebarPadding: 12px 4px;
+$sidebarFontSize: 1.8em;

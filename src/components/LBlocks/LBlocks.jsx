@@ -1,18 +1,16 @@
+import React, { PropTypes, Component } from 'react';
+
 import './LBlocks.css';
 
-import React, { PropTypes } from 'react';
-
 import map from 'lodash/map';
-import size from 'lodash/size';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
-
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import LBlock from 'components/LBlock';
 import LBlockAddButton from 'components/LBlockAddButton';
 
-const TRANSITION_TIMEOUT = 300;
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { TRANSITION_TIMEOUT } from 'constants/animation';
 
 const Placeholder = () => (
   <div className="LBlocks-placeholder">
@@ -20,38 +18,86 @@ const Placeholder = () => (
   </div>
 );
 
-const LBlocks = ({ blocks, isEditMode, onAddBlock }) => {
-  const renderSection = (block, index) => (
-    <div className="LBlocks-section" key={block.uuid}>
-      {isEditMode && index > 0 && index < size(blocks) &&
-        <LBlockAddButton onClick={partial(onAddBlock, index)} />
-        }
-      <LBlock block={block} />
-    </div>
-  );
+class LBlocks extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeAddButtonUuid: null };
+  }
+  render() {
+    const {
+      blocks,
+      currentBlockUuid,
+      onAddBlock,
+      onCurrentBlock,
+      hasControlActivity,
+    } = this.props;
 
-  return (
-    <div className="LBlocks">
-      {isEmpty(blocks)
-        ?
-          <Placeholder />
-        :
+    const onMouseLeave = () => {
+      this.setState({ activeAddButtonUuid: null });
+    };
+
+    const onMouseEnter = (uuid) => {
+      this.setState({ activeAddButtonUuid: uuid });
+      onCurrentBlock(uuid);
+    };
+
+    let previousBlockUuid = null;
+
+    const renderSection = (block, index) => {
+      const isActive = this.state.activeAddButtonUuid === block.uuid;
+
+      const showButton = (hasControlActivity || isActive) &&
+        (currentBlockUuid === block.uuid || previousBlockUuid === currentBlockUuid) && index > 0;
+
+      const result = (
+        <div className="LBlocks-section" key={index}>
           <ReactCSSTransitionGroup
             component="div"
             transitionName="animation"
             transitionEnterTimeout={TRANSITION_TIMEOUT}
             transitionLeaveTimeout={TRANSITION_TIMEOUT}
           >
-            {map(blocks, renderSection)}
+          {showButton &&
+            <LBlockAddButton
+              onMouseLeave={onMouseLeave}
+              onMouseEnter={partial(onMouseEnter, block.uuid)}
+              onClick={partial(onAddBlock, index)}
+            />}
           </ReactCSSTransitionGroup>
-      }
-    </div>
-  );
-};
+          <LBlock block={block} onActive={partial(onCurrentBlock, block.uuid)}/>
+        </div>
+      );
+
+      previousBlockUuid = block.uuid;
+      return result;
+    };
+
+    return (
+      <div className="LBlocks">
+        {isEmpty(blocks)
+          ?
+            <Placeholder />
+            :
+              <ReactCSSTransitionGroup
+                component="div"
+                transitionName="animation"
+                transitionEnterTimeout={TRANSITION_TIMEOUT}
+                transitionLeaveTimeout={TRANSITION_TIMEOUT}
+              >
+                {map(blocks, renderSection)}
+              </ReactCSSTransitionGroup>
+          }
+        </div>
+    );
+  }
+}
 
 LBlocks.propTypes = {
   blocks: PropTypes.array.isRequired,
-  isEditMode: PropTypes.bool.isRequired,
+  onAddBlock: PropTypes.func.isRequired,
+  onCurrentBlock: PropTypes.func.isRequired,
+  hasControlActivity: PropTypes.bool.isRequired,
+  currentBlockUuid: PropTypes.string,
 };
 
 export default LBlocks;
