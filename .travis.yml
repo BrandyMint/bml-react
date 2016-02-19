@@ -6,3 +6,4 @@ before_script:
 script:
   - npm run test
   - npm run build
+  - grep -v MODULE_NOT_FOUND ./dist/*.js
