@@ -16,6 +16,7 @@ application.set('views', __dirname);
 application.set('view engine', 'ejs');
 application.use(morgan('combined'));
 application.use('/assets', express.static(config.STATIC_ASSETS_PATH));
+application.use('/dist', express.static('dist'));
 application.use(webpackDev(compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: { colors: true },

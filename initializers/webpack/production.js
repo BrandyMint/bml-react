@@ -37,6 +37,12 @@ export default {
     new CleanWebpackPlugin('dist', { root: process.cwd() }),
     new CopyWebpackPlugin([
       {
+        from: path.join(process.cwd(), 'public'),
+        to: '.',
+      },
+    ]),
+    new CopyWebpackPlugin([
+      {
         from: path.join(process.cwd(), 'src/assets/images'),
         to: 'images',
       },
@@ -47,6 +53,7 @@ export default {
       __CLIENT__: true,
       __SERVER__: false,
       __ENV__: '"production"',
+      'process.env.NODE_ENV': '"production"',
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: { comments: false },
