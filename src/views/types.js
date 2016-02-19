@@ -247,13 +247,6 @@ export const MustRead = {
               type: 'url',
               isRequired: true,
             },
-            {
-              title: 'Иконка',
-              defaultValue: 'diamond',
-              key: 'icon',
-              type: 'string',
-              isRequired: false,
-            },
           ],
         },
       },
