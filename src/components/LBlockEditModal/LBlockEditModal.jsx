@@ -4,7 +4,7 @@ import Modal from 'components/ui-elements/Modal';
 import LBlockEditForm from 'components/LBlockEditForm';
 
 const LBlockEditModal = ({ isVisible, onCancel, onDelete, onSave }) => (
-  <Modal show={isVisible} className="modal LBlockEditModal">
+  <Modal show={isVisible} className="modal EditorModal LBlockEditModal">
     <Modal.Header closeButton onHide={onCancel}>
       <Modal.Title>Редактирование блока</Modal.Title>
     </Modal.Header>
