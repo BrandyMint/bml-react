@@ -58,7 +58,7 @@ export default {
       __CLIENT__: true,
       __SERVER__: false,
       __ENV__: '"production"', // TODO https://github.com/zertosh/loose-envify
-      // 'process.env.NODE_ENV': '"production"',
+      'process.env.NODE_ENV': '"production"',
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: { comments: false },
