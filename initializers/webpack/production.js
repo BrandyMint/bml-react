@@ -55,10 +55,10 @@ export default {
       __ENV__: '"production"',
       'process.env.NODE_ENV': '"production"',
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-      compress: { warnings: false },
-    }),
+    //new webpack.optimize.UglifyJsPlugin({
+      //output: { comments: false },
+      //compress: { warnings: false },
+    //}),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
   ],
