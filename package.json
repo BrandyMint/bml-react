@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js --ext .jsx src initializers test",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
-    "screenshot": "node ./screenshoter.js http://3000.vkontraste.ru/ 960x720 src/assets/images/screenshot.png"
+    "screenshot": "node ./screenshoter.js http://localhost:3000/ 960x720 src/assets/images/screenshot.png"
   },
   "repository": {
     "type": "git",
