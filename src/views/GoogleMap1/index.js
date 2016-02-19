@@ -68,4 +68,4 @@ class GoogleMap1 extends Component {
   }
 }
 
-export default makeView(GoogleMap1, Types.googleMap);
+export default makeView(GoogleMap1, 'GoogleMap1', Types.googleMap);

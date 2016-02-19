@@ -44,4 +44,4 @@ const MustRead1 = ({ content }) => (
   </section>
 );
 
-export default makeView(MustRead1, Types.mustRead);
+export default makeView(MustRead1, 'MustRead1', Types.mustRead);

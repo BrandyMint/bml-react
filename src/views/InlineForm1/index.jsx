@@ -35,4 +35,4 @@ class InlineForm1 extends Component {
   }
 }
 
-export default makeView(InlineForm1, Types.inlineForm);
+export default makeView(InlineForm1, 'InlineForm1', Types.inlineForm);

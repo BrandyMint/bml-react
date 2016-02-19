@@ -91,4 +91,4 @@ class Navbar1 extends Component {
   }
 }
 
-export default makeView(Navbar1, Types.navbar);
+export default makeView(Navbar1, 'Navbar1', Types.navbar);

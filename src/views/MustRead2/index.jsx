@@ -50,4 +50,4 @@ MustRead2.propTypes = {
   content: PropTypes.string,
 };
 
-export default makeView(MustRead2, Types.mustRead);
+export default makeView(MustRead2, 'MustRead2', Types.mustRead);

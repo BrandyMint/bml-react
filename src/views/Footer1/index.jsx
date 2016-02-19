@@ -50,4 +50,4 @@ const Footer1 = ({ content }) => (
   </footer>
 );
 
-export default makeView(Footer1, Types.footer);
+export default makeView(Footer1, 'Footer1', Types.footer);

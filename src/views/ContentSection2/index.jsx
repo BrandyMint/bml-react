@@ -37,4 +37,4 @@ const ContentSection2 = ({ content }) => (
   </div>
 );
 
-export default makeView(ContentSection2, Types.contentSection);
+export default makeView(ContentSection2, 'ContentSection2', Types.contentSection);

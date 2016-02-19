@@ -49,11 +49,11 @@ export default class ViewsRepository {
   }
 
   registerView(view) {
-    if (this.views[view.name]) {
-      const error = new Error(`View ${view.name} is already registered`);
+    if (this.views[view.viewName]) {
+      const error = new Error(`View ${view.viewName} is already registered`);
       throw error;
     }
-    this.views[view.name] = view;
+    this.views[view.viewName] = view;
 
     const typeName = view.typeName;
     if (!this.types[typeName]) {

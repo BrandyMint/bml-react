@@ -35,4 +35,4 @@ const CTA1 = ({ content }) => (
   </div>
 );
 
-export default makeView(CTA1, Types.cta);
+export default makeView(CTA1, 'CTA1', Types.cta);
