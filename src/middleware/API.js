@@ -41,7 +41,7 @@ const apiCall = (
 
   if (!isEmpty(payload)) {
     const sendMethod = (HTTPMethod === 'post' || HTTPMethod === 'put') ? 'send' : 'payload';
-    const sendArguments = (HTTPMethod, payload) =>
+    const sendArguments =
       (HTTPMethod === 'put' || HTTPMethod === 'post') ?
         JSON.stringify(payload) :
         qs.stringify(payload, { arrayFormat: 'brackets' });

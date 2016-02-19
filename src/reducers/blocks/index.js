@@ -9,6 +9,12 @@ import addBlock from './handlers/addBlock';
 import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
 
+// import defaultBlocks from 'constants/defaultBlocks';
+
+import {
+  LANDING_VERSION_LOAD_SUCCESS,
+} from 'actions/landingVersions';
+
 import {
   UP_BLOCK_POSITION,
   DOWN_BLOCK_POSITION,
@@ -30,6 +36,10 @@ const handlers = {
   [DOWN_BLOCK_POSITION]: downBlockPosition,
   [SWITCH_NEXT_VIEW]: switchNextView,
   [SWITCH_PREV_VIEW]: switchPrevView,
+
+  [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) => (payload.sections),
+  // Загружаем дефолтный пример
+  // [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) => (defaultBlocks),
 
   [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
   [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),

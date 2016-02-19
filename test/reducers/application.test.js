@@ -2,6 +2,8 @@ import expect from 'expect';
 
 import application from 'reducers/application';
 
+import initialState from 'constants/initialState';
+
 import {
   LANDING_VERSION_UPDATE_REQUEST,
   LANDING_VERSION_UPDATE_FAILURE,
@@ -9,17 +11,7 @@ import {
 
 describe('Reducers: application', () => {
   it('should return the initial state', () => {
-    expect(application(undefined, {})).toEqual({
-      isEditMode: true,
-      isSaving: false,
-      hasUnsavedChanges: false,
-      currentBlockUuid: null,
-
-      api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
-      landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
-
-      exitUrl: '/_a/landings/1/analytics',
-    });
+    expect(application(undefined, {})).toEqual(initialState.application);
   });
 
   it('should handle LANDING_VERSION_UPDATE_REQUEST', () => {
@@ -27,17 +19,9 @@ describe('Reducers: application', () => {
       type: LANDING_VERSION_UPDATE_REQUEST,
     };
 
-    expect(application(undefined, action)).toEqual({
-      isEditMode: true,
-      isSaving: true,
-      hasUnsavedChanges: false,
-      currentBlockUuid: null,
-
-      api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
-      landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
-
-      exitUrl: '/_a/landings/1/analytics',
-    });
+    expect(application(undefined, action)).toEqual(
+      { ...initialState.application, isSaving: true }
+    );
 
     const state = {
       isSaving: false,

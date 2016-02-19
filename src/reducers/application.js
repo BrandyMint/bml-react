@@ -9,6 +9,10 @@ import {
   LANDING_VERSION_UPDATE_SUCCESS,
   LANDING_VERSION_UPDATE_FAILURE,
   LANDING_VERSION_UPDATE_REQUEST,
+
+  LANDING_VERSION_LOAD_REQUEST,
+  LANDING_VERSION_LOAD_SUCCESS,
+  LANDING_VERSION_LOAD_FAILURE,
 } from 'actions/landingVersions';
 
 import {
@@ -26,18 +30,13 @@ import {
   CURRENT_BLOCK,
 } from 'actions/blocks';
 
-const initialState = {
-  isEditMode: true,
-  isSaving: false,
-  hasUnsavedChanges: false,
+import initialState from 'constants/initialState';
 
-  currentBlockUuid: null,
-
-  api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
-  landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
-
-  exitUrl: '/_a/landings/1/analytics',
-};
+import {
+  LOADING_STATE_LOADING,
+  LOADING_STATE_FAILURE,
+  LOADING_STATE_LOADED,
+} from 'constants/loadingStates';
 
 const unsavedChanges = value => state => ({
   ...state, hasUnsavedChanges: value,
@@ -66,6 +65,11 @@ const handlers = {
   [APP_ACTIVITY_ON]: appActivityOn,
   [APP_ACTIVITY_OFF]: appActivityOff,
 
+  [LANDING_VERSION_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),
+  [LANDING_VERSION_LOAD_FAILURE]: state => ({ ...state, loadingState: LOADING_STATE_FAILURE }),
+  [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) =>
+    ({ ...state, loadingState: LOADING_STATE_LOADED, landing_version_uuid: payload.uuid }),
+
   [LANDING_VERSION_UPDATE_REQUEST]: savingChanges(true),
   [LANDING_VERSION_UPDATE_FAILURE]: savingChanges(false),
   [LANDING_VERSION_UPDATE_SUCCESS]: state => ({
@@ -83,4 +87,4 @@ const handlers = {
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
 };
 
-export default createReducer(initialState, handlers);
+export default createReducer(initialState.application, handlers);
