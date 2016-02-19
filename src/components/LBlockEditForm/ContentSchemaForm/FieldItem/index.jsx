@@ -23,9 +23,9 @@ class FieldItem extends Component {
             />
           )
        )}
-       <a href="#" className="text-danger" onClick={onRemove}>
+       <button className="btn btn-sm text-danger" onClick={onRemove}>
        <MdRemoveCircleOutline />
-       </a>
+       </button>
       </li>
     );
   }
