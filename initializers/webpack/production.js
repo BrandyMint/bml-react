@@ -60,9 +60,8 @@ export default {
       __ENV__: '"production"', // TODO https://github.com/zertosh/loose-envify
       'process.env.NODE_ENV': '"production"',
     }),
-    // Нельзя минимифировать, потому что удаляются имена View
     new webpack.optimize.UglifyJsPlugin({
-      mangle: false,
+      mangle: false, // Нельзя минимифировать, потому что удаляются имена View
       output: { comments: false },
       compress: { warnings: true, drop_debugger: true, keep_fnames: true },
     }),
