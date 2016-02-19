@@ -13,6 +13,7 @@ describe('Reducers: application', () => {
       isEditMode: true,
       isSaving: false,
       hasUnsavedChanges: false,
+      currentBlockUuid: null,
 
       api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
       landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
@@ -30,6 +31,7 @@ describe('Reducers: application', () => {
       isEditMode: true,
       isSaving: true,
       hasUnsavedChanges: false,
+      currentBlockUuid: null,
 
       api_key: '5d8aa2f240c5d05e992e0e84f58ce965',
       landing_version_uuid: '10ba27fa-0628-44fd-af24-8430eea47ca7',
