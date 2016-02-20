@@ -75,7 +75,7 @@ class LBlockLayer extends Component {
 
     const blockClasses = classnames({
       [block.view]: true,
-      [themeClass]: true
+      [themeClass]: true,
     });
 
     return (
