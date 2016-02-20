@@ -1,3 +1,14 @@
-html {
-  min-height: 100%;
+.OpacityIcon {
+  color: #666;
+}
+
+.IconLink {
+  color: #666;
+  &:hover {
+    color: #999;
+  }
+
+  &.IconRed {
+    color: red;
+  }
 }

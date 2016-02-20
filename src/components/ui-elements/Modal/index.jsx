@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import BodyClassName from 'react-body-classname';
 
 import Body from './ModalBody';
 import Footer from './ModalFooter';
@@ -20,16 +21,18 @@ class Modal extends Component {
 
     if (show) {
       return (
-        <span>
-          <div className={className} style={{ display: show ? 'block' : 'none' }}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                {children}
+        <BodyClassName className="Modal-Open">
+          <span>
+            <div className={className} style={{ display: show ? 'block' : 'none' }}>
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  {children}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="modal-backdrop fade in" />
-        </span>
+            <div className="modal-backdrop fade in" />
+          </span>
+        </BodyClassName>
       );
     }
 

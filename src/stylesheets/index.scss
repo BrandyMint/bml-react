@@ -1,6 +1,7 @@
 @import 'bootstrap.scss';
 // @import 'font-awesome.scss';
 
+@import 'overwrites.scss';
 @import 'custom.scss';
 @import 'utils.css';
 @import 'animation.css';
@@ -8,23 +9,4 @@
 @import 'EditorModal.scss';
 @import 'theme2/index.scss';
 
-@import 'config';
-
-body.Editor {
-  background: $dashboardBackground;
-}
-
-.OpacityIcon {
-  color: #666;
-}
-
-.IconLink {
-  color: #666;
-  &:hover {
-    color: #999;
-  }
-
-  &.IconRed {
-    color: red;
-  }
-}
+@import 'body.scss';
