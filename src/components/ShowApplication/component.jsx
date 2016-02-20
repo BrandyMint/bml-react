@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import map from 'lodash/map';
 
-import BubblePanel from './BubblePanel';
 import BlockView from 'components/BlockView';
 
 import './index.css';
@@ -16,7 +15,6 @@ class LApplication extends Component {
           map(blocks, (block, index) => (<BlockView block={block} key={index} />))
         }
         </div>
-        <BubblePanel />
       </div>
     );
   }

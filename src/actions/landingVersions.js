@@ -24,7 +24,7 @@ export const loadVersion = (uuid) => (dispatch) =>
 export const saveChanges = () => (dispatch, getState) => {
   const {
     blocks,
-    application: { landing_version_uuid: uuid },
+    application: { landingVersionUuid: uuid },
   } = getState();
 
   return dispatch({

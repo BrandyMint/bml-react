@@ -1,0 +1,15 @@
+@import 'stylesheets/config.css';
+
+@component BubblePanel {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  z-index: $panelZindex;
+  will-change: transform;
+
+  & > * {
+    margin-left: 10px;
+    float: left;
+  }
+}
+

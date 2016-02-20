@@ -14,6 +14,7 @@ body.MobilePreviewBody {
   display: block;
   background: url("/assets/images/iphone6-white.png") left top / 100% no-repeat;
 
+
   @descendent viewport {
     width: 375px;
     height: 667px;
@@ -22,4 +23,8 @@ body.MobilePreviewBody {
     margin-top: 107px;
     overflow: hidden;
   }
+}
+
+iframe.MobileScreen {
+  border: 0;
 }

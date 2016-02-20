@@ -13,7 +13,7 @@ export default {
   application: {
     exitUrl: '/',
 
-    landing_version_uuid: null,
+    landingVersionUuid: null,
     api_key: API_KEY,
 
     loadingState: LOADING_STATE_NONE,

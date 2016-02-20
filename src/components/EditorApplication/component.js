@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import LApplicationEditor from 'components/LApplicationEditor';
 import {
   LOADING_STATE_LOADING,
   LOADING_STATE_FAILURE,
@@ -9,17 +8,17 @@ import {
 
 class EditorApplication extends Component {
   componentDidMount() {
-    this.props.loadVersion(this.props.params.landing_version_uuid);
+    this.props.loadVersion(this.props.params.landingVersionUuid);
   }
 
   render() {
-    const { loadingState } = this.props;
+    const { loadingState, children } = this.props;
 
     switch (loadingState) {
       case LOADING_STATE_LOADING:
         return (<div>Загружаю..</div>);
       case LOADING_STATE_LOADED:
-        return (<LApplicationEditor />);
+        return children;
       case LOADING_STATE_FAILURE:
         return (<div>Произошла ошибка при загрузке</div>);
       default:
@@ -31,8 +30,9 @@ class EditorApplication extends Component {
 EditorApplication.propTypes = {
   loadVersion: PropTypes.func.isRequired,
   loadingState: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
   params: PropTypes.shape({
-    landing_version_uuid: PropTypes.string.isRequired,
+    landingVersionUuid: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
 import EditorRightSidebar from 'components/EditorRightSidebar';
 
@@ -6,7 +6,8 @@ import './index.css';
 
 class App extends Component {
   render() {
-    const src = '/preview';
+    const { landingVersionUuid } = this.props;
+    const src = `/editor/${landingVersionUuid}/show`;
     return (
       <BodyClassName className="MobilePreviewBody">
         <div className="MobilePreview">
@@ -19,5 +20,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  landingVersionUuid: PropTypes.string.isRequired,
+};
 
 export default App;

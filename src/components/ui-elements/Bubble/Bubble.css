@@ -41,7 +41,6 @@ $bubbleTextColor: #fff;
   }
 
   @modifier withIcon {
-    color: red;
     /* Это мы так центрируем по вертикали */
     padding-top: 3px;
   }

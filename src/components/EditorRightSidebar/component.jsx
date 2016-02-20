@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import FullscreenIcon from 'react-icons/lib/md/desktop-windows';
@@ -9,12 +9,13 @@ import EditorSaveButton from 'components/EditorSaveButton';
 
 class EditorRightSidebar extends Component {
   render() {
+    const { landingVersionUuid } = this.props;
     return (
       <div className="EditorRightSidebar">
-        <Link to="/preview" className="IconLink">
+        <Link to={`/editor/${landingVersionUuid}/preview`} className="IconLink">
           <FullscreenIcon />
         </Link>
-        <Link to="/mobilePreview" className="IconLink">
+        <Link to={`/editor/${landingVersionUuid}/mobilePreview`} className="IconLink">
           <MobileIcon />
         </Link>
         <div className="EditorRightSidebar-bottom">
@@ -24,5 +25,10 @@ class EditorRightSidebar extends Component {
     );
   }
 }
+
+
+EditorRightSidebar.propTypes = {
+  landingVersionUuid: PropTypes.string.isRequired,
+};
 
 export default EditorRightSidebar;

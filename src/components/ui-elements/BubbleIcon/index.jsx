@@ -21,7 +21,7 @@ BubbleIcon.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   text: PropTypes.string,
-  url: PropTypes.string,
+  to: PropTypes.string,
   isProcessing: PropTypes.bool,
 };
 

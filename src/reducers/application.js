@@ -68,7 +68,7 @@ const handlers = {
   [LANDING_VERSION_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),
   [LANDING_VERSION_LOAD_FAILURE]: state => ({ ...state, loadingState: LOADING_STATE_FAILURE }),
   [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) =>
-    ({ ...state, loadingState: LOADING_STATE_LOADED, landing_version_uuid: payload.uuid }),
+    ({ ...state, loadingState: LOADING_STATE_LOADED, landingVersionUuid: payload.uuid }),
 
   [LANDING_VERSION_UPDATE_REQUEST]: savingChanges(true),
   [LANDING_VERSION_UPDATE_FAILURE]: savingChanges(false),
