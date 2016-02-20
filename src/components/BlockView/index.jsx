@@ -13,10 +13,13 @@ class BlockView extends Component {
     const { block } = this.props;
     const { nodeAttributes, view } = block;
 
+    const themeClass = 'Theme2';
+
     const blockId = nodeAttributes ? nodeAttributes.id || block.uuid : block.uuid;
     const blockClasses = classnames({
       BlockView: true,
       [block.view]: true,
+      [themeClass]: true,
     });// nodeAttributes ? classnames('BlockView', nodeAttributes.class) : null;
 
     const backgroundImageUrl = get(block, 'backgroundImage.url');

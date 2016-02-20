@@ -8,7 +8,6 @@ const ContentSection1 = ({ content }) => (
   <div className="container">
     <div className="row">
       <div className="col-lg-5 col-sm-6">
-        <hr className="section-heading-spacer" />
         <div className="clearfix" />
         <StringEditable
           className="section-heading"

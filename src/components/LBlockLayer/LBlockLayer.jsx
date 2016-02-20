@@ -71,6 +71,13 @@ class LBlockLayer extends Component {
 
     const { isTopNav } = block;
 
+    const themeClass = 'Theme2';
+
+    const blockClasses = classnames({
+      [block.view]: true,
+      [themeClass]: true
+    });
+
     return (
       <div
         className={layerClasses}
@@ -101,7 +108,7 @@ class LBlockLayer extends Component {
           />
         )}
         </ReactCSSTransitionGroup>
-        <div className={block.view}>
+        <div className={blockClasses}>
           {Children.only(children)}
         </div>
       </div>

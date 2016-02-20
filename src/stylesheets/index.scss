@@ -5,8 +5,15 @@
 @import 'custom.scss';
 @import 'utils.css';
 @import 'animation.css';
+@import 'spacing.scss';
 
 @import 'EditorModal.scss';
 @import 'theme2/index.scss';
 
 @import 'body.scss';
+
+// Из theme2
+section {
+  position: relative;
+  overflow: hidden;
+}

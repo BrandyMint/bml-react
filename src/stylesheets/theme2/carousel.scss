@@ -1,0 +1,282 @@
+
+/* ==========================================================================
+06. CAROUSEL, LOADER, LIGHTBOX & HOVER EFFECT
+========================================================================== */
+/*------------------------------------------*/
+/*   Owl Carousel
+/*------------------------------------------*/
+.shadow {
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  -ms-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.shadow:hover {
+  -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.owl-theme .owl-controls .owl-page span {
+  margin: 4px;
+}
+
+.owl-theme.inverse .owl-controls .owl-page.active span {
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.owl-theme.inverse .owl-controls .owl-page span {
+  border: 2px solid #fff;
+  background-color: transparent;
+}
+
+#owl-team .item{
+  margin: 3px 15px;
+}
+
+#owl-team .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*------------------------------------------*/
+/*   Loader
+/*------------------------------------------*/
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  overflow: hidden !important;
+}
+
+.loader.bg-white .loader-inner>div,
+.loader.bg-grey .loader-inner>div,
+.loader.bg-light .loader-inner>div
+{
+  border: 1px solid #69696E;
+}
+
+/*------------------------------------------*/
+/*   Lightbox Popup
+/*------------------------------------------*/
+.mfp-bg {
+  opacity: 0.9;
+}
+
+.mfp-title {
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.mfp-close {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+/*------------------------------------------*/
+/*   Hover Effects
+/*------------------------------------------*/
+.h figure {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.h figure img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-transition:all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+}
+
+.h figcaption {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition:all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+}
+
+.h figure:hover figcaption,
+.h figure:hover img {
+  opacity: 1;
+  -webkit-transition:all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+}
+
+/* caption-1 */
+.h.caption-1 figcaption {
+  border: 3px solid #dedde1;
+  border-radius: 0;
+  background-color: #ffffff;
+  background-color: rgba(255,255,255,1);
+}
+
+.h.caption-1 .caption-box {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+/* caption-2, caption-3 */
+.h.caption-2 figure img {
+  z-index: 10;
+}
+
+.h.caption-2 figure:hover img {
+  transform: translateY(-50px) scale(0.5);
+}
+
+.h.caption-2 figcaption .caption-box {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.h.caption-2 figcaption .caption-box p,
+.h.caption-3 figcaption .caption-box p {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.h.caption-2 figcaption .caption-box p.small,
+.h.caption-3 figcaption .caption-box p.small {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.h.caption-2 figcaption .caption-box a,
+.h.caption-3 figcaption .caption-box a {
+  padding: 5px 10px;
+}
+
+/* caption-3 */
+.h.caption-3 figure:hover img {
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+
+.h.caption-3 figcaption {
+  top: auto;
+  border: none;
+  padding-top: 10px;
+  background-color: #439FE0;
+  transform: translateY(100%);
+}
+
+.h.caption-3 figure:hover figcaption {
+  transform: translateY(0px);
+}
+
+.h.caption-3 figcaption .caption-box {
+  text-align: center;
+}
+
+/* caption-4 */
+.h.caption-4 figcaption {
+  background-color: rgba(51, 51, 51, 0.8);
+}
+
+.h.caption-4 .caption-box {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.h.caption-4 figure:hover img,
+.h.caption-5 figure:hover img{
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* caption-5 */
+.h.caption-5 figcaption {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.h.caption-5 .caption-box {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 23%;
+  width: 100%;
+  -webkit-transition:all 0.5s ease-out;
+  -moz-transition:all 0.5s ease-out;
+  -o-transition:all 0.5s ease-out;
+  transition:all 0.5s ease-out;
+}
+
+.h.caption-5 figure p,
+.h.caption-5 figure a {
+  visibility: hidden;
+  -webkit-transition:all 0.1s ease-out;
+  -moz-transition:all 0.1s ease-out;
+  -o-transition:all 0.1s ease-out;
+  transition:all 0.1s ease-out;
+}
+
+.h.caption-5 figure:hover p,
+.h.caption-5 figure:hover a {
+  visibility: visible;
+  -webkit-transition:all 0.5s ease-out;
+  -moz-transition:all 0.5s ease-out;
+  -o-transition:all 0.5s ease-out;
+  transition:all 0.5s ease-out;
+}
+
+.h.caption-5 figure:hover .caption-box {
+  padding-top: 0;
+  -webkit-transition:all 0.5s ease-out;
+  -moz-transition:all 0.5s ease-out;
+  -o-transition:all 0.5s ease-out;
+  transition:all 0.5s ease-out;
+}
+
+.h.caption-5 .caption-box h5>span {
+  display:block;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.img-thumbnail {
+  border: 1px solid #EFF1F4;
+}
+
+
+
+

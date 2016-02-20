@@ -1,0 +1,88 @@
+/* ==========================================================================
+03. BACKGROUNDS
+========================================================================== */
+/*------------------------------------------*/
+/*   Background Colors for demos
+/*------------------------------------------*/
+.bg-grey{
+  background-color: #EFF1F4;
+}
+
+.bg-light{
+  background-color: #fafafa;
+}
+
+.bg-orange {
+  background-color: #ef7c46;
+}
+
+.bg-blue {
+  background-color: #439FE0;
+}
+
+.bg-green {
+  background-color: #56B68B;
+}
+
+.bg-red {
+  background-color: #e74c3c;
+}
+
+.bg-purple {
+  background-color: #8e44ad;
+}
+
+.bg-yellow {
+  background-color: #f1c40f;
+}
+
+.bg-dark {
+  background-color: #525e6c;
+}
+
+.bg-black {
+  background-color: #2e3234;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+/*------------------------------------------*/
+/*   Background Images for demos
+/*------------------------------------------*/
+.bg-img {
+  /* TODO
+   * background: url("../images/bg-1.jpg") no-repeat center center scroll;
+   */
+-webkit-background-size: cover;
+-moz-background-size:cover;
+background-size: cover;
+}
+
+.bg-parallax {
+  background: transparent;
+}
+
+/*------------------------------------------*/
+/*  Overlay Effect
+/*------------------------------------------*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* Provides cross-browser RGBa background */
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#80000000', endColorstr='#80000000');
+  background: transparent;
+  background: rgba(51, 51, 51, 0.5);
+}
+
+/* set filter as none for IE9+, because IE9+ support RGBa */
+:root .overlay {
+  filter: none\0/IE9;
+}
+

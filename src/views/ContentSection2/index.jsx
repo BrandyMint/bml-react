@@ -9,7 +9,6 @@ const ContentSection2 = ({ content }) => (
     <div className="container">
       <div className="row">
         <div className="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
-          <hr className="section-heading-spacer" />
           <div className="clearfix" />
           <StringEditable
             className="section-heading"
