@@ -19,7 +19,7 @@ export default class ViewsRepository {
     const viewsCount = size(views);
     if (viewsCount > 1) {
       const viewIndex = findIndex(views, { viewName });
-      if (!(viewIndex && viewIndex >= 0)) {
+      if (viewIndex < 0) {
         const error = new Error(`No index for view ${viewName}`);
         throw error;
       }
@@ -35,7 +35,7 @@ export default class ViewsRepository {
     const viewsCount = size(views);
     if (viewsCount > 1) {
       const viewIndex = findIndex(views, { viewName });
-      if (!(viewIndex && viewIndex >= 0)) {
+      if (viewIndex < 0) {
         const error = new Error(`No index for view ${viewName}`);
         throw error;
       }
