@@ -56,9 +56,9 @@ export default {
       'process.env.NODE_ENV': '"production"',
     }),
     new webpack.optimize.UglifyJsPlugin({
-      mangle: false, // Нельзя минимифировать, потому что удаляются имена View
+      // mangle: false, // Нельзя минимифировать, потому что удаляются имена View
       output: { comments: false },
-      compress: { warnings: true, drop_debugger: false },
+      compress: { warnings: true, drop_debugger: true },
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
