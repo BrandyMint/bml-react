@@ -1,6 +1,32 @@
 import { PropTypes } from 'react';
 import CustomPropTypes from 'constants/customPropTypes';
 
+const ContentContentType = {
+  text: PropTypes.string.isRequired,
+};
+
+const content = {
+  typeName: 'Content',
+
+  // Фактически это полное содержание block-а
+  propTypes: {
+    content: PropTypes.shape(ContentContentType).isRequired,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: false,
+    fields: [
+      {
+        title: 'Текст',
+        key: 'text',
+        type: 'text',
+        isRequired: true,
+      },
+    ],
+  },
+};
+
 const NavbarContentType = {
   logoLink: CustomPropTypes.link.isRequired,
   items: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
@@ -346,6 +372,7 @@ const ContentSection = {
 };
 
 export const Types = {
+  content,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,

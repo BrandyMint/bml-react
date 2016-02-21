@@ -1,5 +1,19 @@
 export default [
   {
+    view: 'FreeText',
+    title: 'Тестокая страница',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        text: '<h1>Симпотичный заголовок</h1><p>и очень длинный текст</p>',
+      },
+    },
+  },
+  {
     view: 'InlineForm1',
     title: 'Однострочная форма',
     image: {

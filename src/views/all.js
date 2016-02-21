@@ -10,11 +10,13 @@ import ContentSection1 from './ContentSection1';
 import ContentSection2 from './ContentSection2';
 import ContentSection3 from './ContentSection3';
 import MustRead2 from './MustRead2';
+import FreeText from './FreeText';
 
 const list = {
   InlineForm1,
   Navbar1,
   GoogleMap1,
+  FreeText,
   CTA1,
   MustRead1,
   MustRead2,
