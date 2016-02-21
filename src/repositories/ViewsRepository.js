@@ -29,6 +29,7 @@ export default class ViewsRepository {
   getNextView(viewName) {
     const views = this.getCompatibleViews(viewName);
     const viewsCount = size(views);
+    debugger
     if (viewsCount > 1) {
       const viewIndex = findIndex(views, { name: viewName });
       const nextViewIndex = viewIndex + 1 !== viewsCount ? viewIndex + 1 : 0;
