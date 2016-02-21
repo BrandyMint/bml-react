@@ -9,7 +9,7 @@ export default (state, action) => {
     if (block.uuid === uuid) {
       const nextView = viewsRepository.getNextView(block.view);
       if (nextView) {
-        return { ...block, view: nextView.name };
+        return { ...block, view: nextView.viewName };
       }
     }
 
