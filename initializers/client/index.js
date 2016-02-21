@@ -20,6 +20,12 @@ import LApplicationEditor from 'components/LApplicationEditor';
 
 import initialState from 'constants/initialState';
 
+import semver from 'lib/semver';
+
+/* eslint-disable no-console */
+console.log(`Start application ${semver}`);
+/* eslint-enable */
+
 const store = createStore(initialState);
 
 ReactDOM.render(

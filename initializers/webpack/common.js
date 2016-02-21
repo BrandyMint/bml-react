@@ -55,6 +55,14 @@ export default {
         loader: 'babel',
         include: [root, entry, path.join(process.cwd(), 'node_modules/react-icons')],
       },
+      {
+        test: /\.gif$/,
+        loader: 'url-loader?mimetype=image/png',
+      },
+      {
+        test: /\.json/,
+        loader: 'json-loader',
+      },
     ],
   },
 };

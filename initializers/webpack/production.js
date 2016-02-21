@@ -23,11 +23,6 @@ common.module.loaders.push({
   loader: ExtractTextPlugin.extract('style', ['css', 'less']),
 });
 
-common.module.loaders.push({
-  test: /\.gif$/,
-  loader: 'url-loader?mimetype=image/png',
-});
-
 export default {
   postcss: common.postcss,
 
