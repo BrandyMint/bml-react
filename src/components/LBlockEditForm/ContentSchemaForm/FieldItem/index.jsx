@@ -23,7 +23,7 @@ class FieldItem extends Component {
             />
           )
        )}
-       <button className="btn btn-sm text-danger" onClick={onRemove}>
+       <button className="btn btn-sm btn-danger" onClick={onRemove}>
        <MdRemoveCircleOutline />
        </button>
       </li>

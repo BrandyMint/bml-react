@@ -12,7 +12,7 @@ const Navbar = {
   // Фактически это полное содержание block-а
   propTypes: {
     content: PropTypes.shape(NavbarContentType).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -63,10 +63,11 @@ const InlineForm = {
 
   // Фактически это полное содержание block-а
   propTypes: {
+    landingVersionUuid: PropTypes.string.isRequired,
     content: PropTypes.shape({
       title: PropTypes.string,
     }).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent.isRequired,
     uuid: PropTypes.string.isRequired,
   },
 
@@ -100,7 +101,7 @@ const GoogleMap = {
   typeName: 'GoogleMap',
   propTypes: {
     content: PropTypes.shape(GoogleMapType).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent,
     uuid: PropTypes.string.isRequired,
   },
 
@@ -156,7 +157,7 @@ const CTA = {
   typeName: 'CTA',
   propTypes: {
     content: PropTypes.shape(CTAContentType).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -206,7 +207,7 @@ export const MustRead = {
   typeName: 'MustRead',
   propTypes: {
     content: PropTypes.shape(MustReadContentType).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -265,7 +266,7 @@ const Footer = {
   // Фактически это полное содержание block-а
   propTypes: {
     content: PropTypes.shape(FooterType).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -315,7 +316,7 @@ const ContentSection = {
   typeName: 'ContentSection1',
   propTypes: {
     content: PropTypes.shape(ContentSectionType).isRequired,
-    form: PropTypes.object,
+    form: CustomPropTypes.formContent,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {

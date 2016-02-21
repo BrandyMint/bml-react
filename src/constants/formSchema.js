@@ -1,4 +1,4 @@
-const ShortInputTypes = [
+export const ShortInputTypes = [
   'text',
   'url',
   'email',
@@ -6,7 +6,7 @@ const ShortInputTypes = [
   'number',
 ];
 
-const Destinations = [
+export const Destinations = [
   'collection',
   'POST',
 ];
@@ -19,6 +19,7 @@ export default {
       type: 'string',
       isRequired: true,
     },
+    /*
     {
       title: 'Получатель',
       key: 'destination',
@@ -27,21 +28,20 @@ export default {
       data: Destinations,
       isRequired: true,
     },
-
-    /*
     { // Используется если destination == collection
-      title: 'Коллекция',
+      title: 'Коллекция (если получатель collection)',
       key: 'collection',
       type: 'string',
       isRequired: false,
       },
-    */
     {
-      title: 'URL для запроса, если получатель POST',
+      title: 'URL для запроса (если получатель POST)',
       key: 'url',
       type: 'string',
+      default: api.leadUrl,
       isRequired: false,
-    },
+      },
+      */
     {
       title: 'Поля',
       key: 'fields',
