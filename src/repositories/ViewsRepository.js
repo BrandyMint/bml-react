@@ -1,9 +1,9 @@
 import size from 'lodash/size';
 import findIndex from 'lodash/findIndex';
+import { views, types } from 'views/all';
 
 export default class ViewsRepository {
   views = {};
-  types = {};
 
   getContentSchemaByViewName(viewName) {
     return this.getView(viewName).contentSchema;
@@ -11,7 +11,7 @@ export default class ViewsRepository {
 
   getCompatibleViews(viewName) {
     const view = this.getView(viewName);
-    return this.types[view.typeName] || [];
+    return types[view.typeName] || [];
   }
 
   getPrevView(viewName) {
@@ -39,26 +39,14 @@ export default class ViewsRepository {
   }
 
   getView(viewName) {
-    const view = this.views[viewName];
+    const view = views[viewName];
 
     if (!view) {
-      const error = new Error(`No view ${viewName} is not registered`);
+      const error = new Error(`No view ${viewName} is registered`);
       throw error;
     }
     return view;
   }
-
-  registerView(view) {
-    if (this.views[view.viewName]) {
-      const error = new Error(`View ${view.viewName} is already registered`);
-      throw error;
-    }
-    this.views[view.viewName] = view;
-
-    const typeName = view.typeName;
-    if (!this.types[typeName]) {
-      this.types[typeName] = [];
-    }
-    this.types[typeName].push(view);
-  }
 }
+
+export const viewsRepository = new ViewsRepository();

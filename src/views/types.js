@@ -353,13 +353,3 @@ export const Types = {
   footer: Footer,
   contentSection: ContentSection,
 };
-
-export const makeView = (component, viewName, type) => {
-  /* eslint-disable no-param-reassign */
-  component.viewName = viewName;
-  component.propTypes = type.propTypes;
-  component.typeName = type.typeName;
-  component.contentSchema = type.contentSchema;
-  /* eslint-enable */
-  return component;
-};

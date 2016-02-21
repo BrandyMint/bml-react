@@ -2,10 +2,10 @@ import React from 'react';
 
 import reduce from 'lodash/reduce';
 import size from 'lodash/size';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 
 import StringEditable from 'components/primitives/StringEditable';
-
-import { Types, makeView } from 'views/types';
 
 import './index.css';
 
@@ -50,4 +50,4 @@ const Footer1 = ({ content }) => (
   </footer>
 );
 
-export default makeView(Footer1, 'Footer1', Types.footer);
+export default applyType(Footer1, Types.footer);

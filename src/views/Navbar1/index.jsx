@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 import classnames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
@@ -91,4 +92,4 @@ class Navbar1 extends Component {
   }
 }
 
-export default makeView(Navbar1, 'Navbar1', Types.navbar);
+export default applyType(Navbar1, Types.navbar);

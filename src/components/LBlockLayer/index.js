@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 
 import size from 'lodash/size';
 
-import { viewsRepository } from 'views/all';
+import { viewsRepository } from 'repositories/ViewsRepository';
 
 import {
   downBlockPosition, switchNextView, switchPrevView, upBlockPosition,

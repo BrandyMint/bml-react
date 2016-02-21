@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import map from 'lodash/map';
 
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 
 import './index.css';
 
@@ -35,4 +36,4 @@ class InlineForm1 extends Component {
   }
 }
 
-export default makeView(InlineForm1, 'InlineForm1', Types.inlineForm);
+export default applyType(InlineForm1, Types.inlineForm);

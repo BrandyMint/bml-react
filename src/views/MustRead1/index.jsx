@@ -1,7 +1,8 @@
 import React from 'react';
 
 import map from 'lodash/map';
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 
 import StringEditable from 'components/primitives/StringEditable';
 
@@ -44,4 +45,4 @@ const MustRead1 = ({ content }) => (
   </section>
 );
 
-export default makeView(MustRead1, 'MustRead1', Types.mustRead);
+export default applyType(MustRead1, Types.mustRead);

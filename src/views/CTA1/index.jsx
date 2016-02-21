@@ -1,7 +1,8 @@
 import React from 'react';
 
 import map from 'lodash/map';
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 
 import StringEditable from 'components/primitives/StringEditable';
 
@@ -35,4 +36,4 @@ const CTA1 = ({ content }) => (
   </div>
 );
 
-export default makeView(CTA1, 'CTA1', Types.cta);
+export default applyType(CTA1, Types.cta);

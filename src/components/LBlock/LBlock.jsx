@@ -8,7 +8,7 @@ import partial from 'lodash/partial';
 
 import LBlockLayer from 'components/LBlockLayer';
 // import BlockViewBackground from 'components/BlockViewBackground';
-import { viewsRepository } from 'views/all';
+import { viewsRepository } from 'repositories/ViewsRepository';
 import UnknownView from 'views/unknown';
 // import FaCog from 'react-icons/lib/fa/cog';
 

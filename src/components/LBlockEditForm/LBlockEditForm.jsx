@@ -7,7 +7,7 @@ import ContentSchemaForm from './ContentSchemaForm';
 import NodeAttributes from './NodeAttributes';
 import BackgroundForm from './BackgroundForm';
 import FormEditor from './FormEditor';
-import { viewsRepository } from 'views/all';
+import { viewsRepository } from 'repositories/ViewsRepository';
 
 import './LBlockEditForm.css';
 
