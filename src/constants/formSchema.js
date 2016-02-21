@@ -34,14 +34,13 @@ export default {
       type: 'string',
       isRequired: false,
       },
+      */
     {
       title: 'URL для запроса (если получатель POST)',
       key: 'url',
       type: 'string',
-      default: api.leadUrl,
       isRequired: false,
-      },
-      */
+    },
     {
       title: 'Поля',
       key: 'fields',

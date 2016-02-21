@@ -31,6 +31,8 @@ const formField = PropTypes.shape({
 // см constants/formSchema
 const formContent = PropTypes.shape({
   submitTitle: PropTypes.string.isRequired,
+  method: PropTypes.string,
+  url: PropTypes.string,
   fields: PropTypes.arrayOf(formField).isRequired,
 });
 
