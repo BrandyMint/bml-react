@@ -2,7 +2,8 @@
 // https://gist.github.com/mikechau/5547c67d0dc2957e907d
 
 import React, { Component, PropTypes } from 'react';
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 import map from 'lodash/map';
 import StringEditable from 'components/primitives/StringEditable';
 
@@ -50,4 +51,4 @@ MustRead2.propTypes = {
   content: PropTypes.string,
 };
 
-export default makeView(MustRead2, 'MustRead2', Types.mustRead);
+export default applyType(MustRead2, Types.mustRead);

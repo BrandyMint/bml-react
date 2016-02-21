@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import UnknownView from 'views/unknown';
 import classnames from 'classnames';
 
-import { viewsRepository } from 'views/all';
+import { viewsRepository } from 'repositories/ViewsRepository';
 
 import assign from 'lodash/assign';
 import get from 'lodash/get';

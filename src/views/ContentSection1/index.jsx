@@ -1,5 +1,6 @@
 import React from 'react';
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
 
 import './index.css';
@@ -34,4 +35,4 @@ const ContentSection1 = ({ content }) => (
   </div>
 );
 
-export default makeView(ContentSection1, 'ContentSection1', Types.contentSection);
+export default applyType(ContentSection1, Types.contentSection);

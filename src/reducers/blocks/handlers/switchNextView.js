@@ -1,6 +1,6 @@
 import map from 'lodash/map';
 
-import { viewsRepository } from 'views/all';
+import { viewsRepository } from 'repositories/ViewsRepository';
 
 export default (state, action) => {
   const { uuid } = action.payload;

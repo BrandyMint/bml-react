@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
-import { Types, makeView } from 'views/types';
+import { Types } from 'views/types';
+import { applyType } from 'views/utils';
 import map from 'lodash/map';
 
 import Place from './place.jsx';
@@ -68,4 +69,4 @@ class GoogleMap1 extends Component {
   }
 }
 
-export default makeView(GoogleMap1, 'GoogleMap1', Types.googleMap);
+export default applyType(GoogleMap1, Types.googleMap);
