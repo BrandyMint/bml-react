@@ -18,7 +18,11 @@ export default class ViewsRepository {
     const views = this.getCompatibleViews(viewName);
     const viewsCount = size(views);
     if (viewsCount > 1) {
-      const viewIndex = findIndex(views, { name: viewName });
+      const viewIndex = findIndex(views, { viewName });
+      if (!(viewIndex && viewIndex >= 0)) {
+        const error = new Error(`No index for view ${viewName}`);
+        throw error;
+      }
       const prevViewIndex = viewIndex > 0 ? viewIndex - 1 : viewsCount;
       const prevView = views[prevViewIndex];
 
@@ -29,9 +33,12 @@ export default class ViewsRepository {
   getNextView(viewName) {
     const views = this.getCompatibleViews(viewName);
     const viewsCount = size(views);
-    debugger
     if (viewsCount > 1) {
-      const viewIndex = findIndex(views, { name: viewName });
+      const viewIndex = findIndex(views, { viewName });
+      if (!(viewIndex && viewIndex >= 0)) {
+        const error = new Error(`No index for view ${viewName}`);
+        throw error;
+      }
       const nextViewIndex = viewIndex + 1 !== viewsCount ? viewIndex + 1 : 0;
       const nextView = views[nextViewIndex];
 
