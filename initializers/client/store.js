@@ -1,6 +1,6 @@
 /* global __ENV__ */
 
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { browserHistory } from 'react-router';
 import { syncHistory } from 'react-router-redux';
 import createLogger from 'redux-logger';
@@ -28,7 +28,10 @@ const customCreateStore = (initialState) => {
     middlewares.push(createLogger());
   }
 
-  const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+  const createStoreWithMiddleware = compose(
+    applyMiddleware(...middlewares),
+    window.devToolsExtension ? window.devToolsExtension() : f => f // redux DevTools
+  )(createStore);
 
   const store = createStoreWithMiddleware(reducer, initialState);
 
