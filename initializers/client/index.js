@@ -23,6 +23,7 @@ import initialState from 'constants/initialState';
 import semver from 'lib/semver';
 
 /* eslint-disable no-console */
+window.AppVersion = semver.version;
 console.log(`Start application ${semver}`);
 /* eslint-enable */
 
