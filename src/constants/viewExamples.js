@@ -1,7 +1,7 @@
 export default [
   {
     view: 'FreeText',
-    title: 'Тестокая страница',
+    title: 'Текстовая страница',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
       height: 100,
