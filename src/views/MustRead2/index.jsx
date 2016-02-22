@@ -1,7 +1,7 @@
 // https://github.com/BinaryThumb/react-background-video/blob/master/src/index.js
 // https://gist.github.com/mikechau/5547c67d0dc2957e907d
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import map from 'lodash/map';
@@ -11,7 +11,10 @@ import './index.css';
 
 class MustRead2 extends Component {
   render() {
+    /* eslint-disable react/prop-types */
     const { content } = this.props;
+    /* eslint-enable */
+
     return (
       <section className="MustRead2">
         <div className="container vertical-center-rel">
@@ -46,9 +49,5 @@ class MustRead2 extends Component {
     );
   }
 }
-
-MustRead2.propTypes = {
-  content: PropTypes.string,
-};
 
 export default applyType(MustRead2, Types.mustRead);
