@@ -16,7 +16,7 @@ class InlineForm1 extends Component {
     /* eslint-enable */
 
     const method = form.method || 'POST';
-    const action = form.url || config.api.leadUrl;
+    const action = form.url || config('leadUrl');
     return (
       <form className="form-inline" acceptCharset="UTF-8" action={action} method={method}>
         <input name="utf8" type="hidden" value="✓" />

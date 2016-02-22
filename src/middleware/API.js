@@ -11,13 +11,14 @@ import request from 'superagent';
 import config from 'constants/config';
 
 const apiCall = (
-  url = config.api.url,
+  url = null,
   endpoint = '',
   method = 'GET',
   payload = {},
   headers = {},
   attach = {},
 ) => {
+  const apiUrl = url || config('apiUrl');
   const subject = new Rx.Subject();
   const HTTPMethod = method.toLowerCase();
 
@@ -37,7 +38,7 @@ const apiCall = (
     assign(headers, { 'Content-Type': 'application/json' });
 
   const req = request
-    [HTTPMethod](url + endpoint);
+    [HTTPMethod](apiUrl + endpoint);
 
   if (!isEmpty(payload)) {
     const sendMethod = (HTTPMethod === 'post' || HTTPMethod === 'put') ? 'send' : 'payload';
