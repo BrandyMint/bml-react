@@ -68,13 +68,15 @@ const nextAction = (action, data) => {
   return next;
 };
 
-export default store => next => action => {
+// export default store => next => action => {
+export default () => next => action => {
   if (!get(action, API_CALL)) return next(action);
 
   const { endpoint, headers, method, payload, types, url, attach } = action[API_CALL];
   const [requestType, successType, failureType] = types;
 
-  const apiKey = get(store.getState(), 'application.api_key');
+  const apiKey = config('apiKey');
+  // const apiKey = get(store.getState(), 'application.api_key');
 
   const completeHeaders = assign(
     {},
