@@ -30,7 +30,7 @@ export default {
 
   output: {
     path: path.join(process.cwd(), 'dist'),
-    filename: '[name].js',
+    filename: '[name].bundle.js',
   },
 
   plugins: [
@@ -48,7 +48,14 @@ export default {
       },
     ]),
     new ExtractTextPlugin('[name].css'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'show',
+      filename: 'show.js',
+    }),
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,

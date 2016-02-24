@@ -11,7 +11,7 @@ import 'react-widgets/lib/less/react-widgets.less';
 
 import { createStore, browserHistory } from './store';
 
-import EditorApplication from 'components/EditorApplication';
+import LandingLoader from 'components/LandingLoader';
 import LApplicationPreview from 'components/LApplicationPreview';
 import ShowApplication from 'components/ShowApplication';
 import MobilePreviewApp from 'components/MobilePreviewApp';
@@ -20,19 +20,15 @@ import LApplicationEditor from 'components/LApplicationEditor';
 
 import initialState from 'constants/initialState';
 
-import semver from 'lib/semver';
-
-/* eslint-disable no-console */
-window.AppVersion = semver.version;
-console.log(`Start application ${semver}`);
-/* eslint-enable */
+import { semverInit } from 'lib/semver';
+semverInit();
 
 const store = createStore(initialState);
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/editor/:landingVersionUuid" component={EditorApplication}>
+      <Route path="/editor/:landingVersionUuid" component={LandingLoader}>
         <IndexRoute component={LApplicationEditor}/>
         <Route path="preview" component={LApplicationPreview}/>
         <Route path="mobilePreview" component={MobilePreviewApp}/>
