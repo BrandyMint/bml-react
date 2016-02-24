@@ -34,8 +34,8 @@ global.ShowDemo = () => {
 };
 
 
-global.ShowWrapper = () => {
-  const store = createStore(this.props);
+global.ShowWrapper = (props) => {
+  const store = createStore(props);
 
   return (
     <Provider store={store}>
