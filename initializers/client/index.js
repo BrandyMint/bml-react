@@ -6,8 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import 'stylesheets/index.scss';
-import 'react-widgets/lib/less/react-widgets.less';
+import 'styles';
 
 import { createStore, browserHistory } from './store';
 

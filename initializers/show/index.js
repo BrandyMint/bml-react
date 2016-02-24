@@ -5,6 +5,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
+// Выделить только стили без редактирования
+import 'styles';
+
 import { createStore } from '../client/store';
 import LandingLoader from 'components/LandingLoader';
 import ShowApplication from 'components/ShowApplication';
@@ -15,13 +18,28 @@ import config from 'constants/config';
 import { semverInit } from 'lib/semver';
 semverInit();
 
-const store = createStore(initialState);
+global.React = React;
+global.ReactDOM = ReactDOM;
 
-ReactDOM.render(
-  <Provider store={store}>
-    <LandingLoader params={ { landingVersionUuid: config('landingVersionUuid') } }>
+global.ShowDemo = () => {
+  const store = createStore(initialState);
+
+  return (
+    <Provider store={store}>
+      <LandingLoader params={ { landingVersionUuid: config('landingVersionUuid') } }>
+        <ShowApplication />
+      </LandingLoader>
+    </Provider>
+  );
+};
+
+
+global.ShowWrapper = () => {
+  const store = createStore(this.props);
+
+  return (
+    <Provider store={store}>
       <ShowApplication />
-    </LandingLoader>
-  </Provider>,
-  document.getElementById('content')
-);
+    </Provider>
+  );
+};
