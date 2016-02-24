@@ -54,10 +54,10 @@ export default {
       __ENV__: '"production"', // TODO https://github.com/zertosh/loose-envify
       'process.env.NODE_ENV': '"production"',
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-      compress: { warnings: true, drop_debugger: true },
-    }),
+    //new webpack.optimize.UglifyJsPlugin({
+      //output: { comments: false },
+      //compress: { warnings: true, drop_debugger: true },
+    //}),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
   ],
