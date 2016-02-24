@@ -27,7 +27,7 @@ export default {
 
   entry: {
     vendor: common.entry.vendor,
-    bundle: ['webpack-hot-middleware/client', common.entry.bundle],
+    editor: ['webpack-hot-middleware/client', common.entry.editor],
   },
 
   output: {
