@@ -9,14 +9,14 @@ import postcssCalc from 'postcss-calc';
 import postcssSelectorNot from 'postcss-selector-not';
 
 const root = path.join(process.cwd(), 'src');
-const show = path.join(process.cwd(), 'initializers/show');
+const viewer = path.join(process.cwd(), 'initializers/viewer');
 const editor = path.join(process.cwd(), 'initializers/client');
 
 export default {
   root,
 
   entry: {
-    show,
+    viewer,
     editor,
     vendor: [
       'classnames',
@@ -55,7 +55,7 @@ export default {
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        include: [root, editor, show, path.join(process.cwd(), 'node_modules/react-icons')],
+        include: [root, editor, viewer, path.join(process.cwd(), 'node_modules/react-icons')],
       },
       {
         test: /\.gif$/,
