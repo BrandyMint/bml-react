@@ -1,24 +1,28 @@
 import path from 'path';
 import webpack from 'webpack';
+import concat from 'lodash/concat';
 
 import common from './common';
 import config from '/initializers/config';
 
-common.module.loaders.push({
-  test: /\.css$/,
-  loaders: ['style', 'css', 'postcss'],
-  include: common.root,
-});
-
-common.module.loaders.push({
-  test: /\.s(a|c)ss$/,
-  loaders: ['style', 'css', 'sass'],
-});
-
-common.module.loaders.push({
-  test: /\.less$/,
-  loaders: ['style', 'css', 'less'],
-});
+const loaders = concat(
+  common.loaders,
+  [
+    {
+      test: /\.css$/,
+      loaders: ['style', 'css', 'postcss'],
+      include: common.root,
+    },
+    {
+      test: /\.s(a|c)ss$/,
+      loaders: ['style', 'css', 'sass'],
+    },
+    {
+      test: /\.less$/,
+      loaders: ['style', 'css', 'less'],
+    },
+  ]
+)
 
 export default {
   devtool: 'eval',
@@ -49,5 +53,5 @@ export default {
 
   resolve: common.resolve,
 
-  module: common.module,
+  module: { loaders: loaders },
 };

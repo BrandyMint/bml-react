@@ -41,30 +41,27 @@ export default {
     extensions: ['', '.js', '.jsx'],
   },
 
-  module: {
-    preLoaders: [],
-    loaders: [
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]',
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader?name=fonts/[name].[ext]',
-      },
-      {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: [root, editor, viewer, path.join(process.cwd(), 'node_modules/react-icons')],
-      },
-      {
-        test: /\.gif$/,
-        loader: 'url-loader?mimetype=image/png',
-      },
-      {
-        test: /\.json/,
-        loader: 'json-loader',
-      },
-    ],
-  },
+  loaders: [
+    {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'url-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]',
+    },
+    {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'file-loader?name=fonts/[name].[ext]',
+    },
+    {
+      test: /\.jsx?$/,
+      loader: 'babel',
+      include: [root, editor, viewer, path.join(process.cwd(), 'node_modules/react-icons')],
+    },
+    {
+      test: /\.gif$/,
+      loader: 'url-loader?mimetype=image/png',
+    },
+    {
+      test: /\.json/,
+      loader: 'json-loader',
+    },
+  ],
 };

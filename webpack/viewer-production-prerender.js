@@ -1,4 +1,4 @@
-import assign from 'lodash/assign';
+import merge from 'lodash/merge';
 import path from 'path';
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -6,15 +6,17 @@ import done from './done';
 
 import common from './common';
 
-const resolve = assign(
-  common.resolve,
+const resolve = merge(
   {
     alias: {
       'components/ui-elements/Redactor': 'viewer/stubs/Redactor.js',
       'superagent': 'viewer/stubs/superagent.js',
     }
-  }
+  },
+  common.resolve
 );
+
+console.log(common.resolve);
 
 export default {
   target: 'node',
@@ -46,5 +48,5 @@ export default {
 
   resolve: resolve,
 
-  module: common.module,
+  module: { loaders: common.loaders },
 };

@@ -1,6 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
 
+import concat from 'lodash/concat';
+
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -10,21 +12,26 @@ import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import common from './common';
 import done from './done';
 
-common.module.loaders.push({
-  test: /\.css$/,
-  loader: ExtractTextPlugin.extract('style', ['css', 'postcss']),
-  include: common.root,
-});
+const loaders = concat(
+  common.loaders,
+  [
+    {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style', ['css', 'postcss']),
+      include: common.root,
+    },
 
-common.module.loaders.push({
-  test: /\.s(a|c)ss$/,
-  loader: ExtractTextPlugin.extract('style', ['css', 'sass']),
-});
+    {
+      test: /\.s(a|c)ss$/,
+      loader: ExtractTextPlugin.extract('style', ['css', 'sass']),
+    },
 
-common.module.loaders.push({
-  test: /\.less$/,
-  loader: ExtractTextPlugin.extract('style', ['css', 'less']),
-});
+    {
+      test: /\.less$/,
+      loader: ExtractTextPlugin.extract('style', ['css', 'less']),
+    },
+  ]
+)
 
 export default {
   postcss: common.postcss,
@@ -56,5 +63,5 @@ export default {
 
   resolve: common.resolve,
 
-  module: common.module,
+  module: { loaders: loaders }
 };
