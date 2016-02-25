@@ -18,8 +18,8 @@ import config from 'constants/config';
 import { semverInit } from 'lib/semver';
 semverInit();
 
-global.React = React;
-global.ReactDOM = ReactDOM;
+//global.React = React;
+//global.ReactDOM = ReactDOM;
 
 global.ShowDemo = () => {
   const store = createStore(initialState);

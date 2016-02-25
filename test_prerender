@@ -1,0 +1,2 @@
+echo 'Test prerender'
+node -r ./dist/viewer-prerender.js -e 'console.log(global.ShowWrapper)' | grep '[function']
