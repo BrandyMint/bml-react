@@ -18,8 +18,10 @@ import config from 'constants/config';
 import { semverInit } from 'lib/semver';
 semverInit();
 
-//global.React = React;
-//global.ReactDOM = ReactDOM;
+if (__CLIENT__) {
+  window.React = React;
+  window.ReactDOM = ReactDOM;
+}
 
 global.ShowDemo = () => {
   const store = createStore(initialState);
@@ -33,6 +35,9 @@ global.ShowDemo = () => {
   );
 };
 
+global.DemoComponent = () => {
+  return (<div>DemoComponent rendered</div>);
+}
 
 global.ShowWrapper = (props) => {
   const store = createStore(props);

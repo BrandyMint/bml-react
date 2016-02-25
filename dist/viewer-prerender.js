@@ -109,11 +109,13 @@
 
 	(0, _semver.semverInit)();
 
-	//global.React = React;
-	//global.ReactDOM = ReactDOM;
-
 	// TODO Выделить только стили без редактирования
 	/* global __ENV__ */
+
+	if (false) {
+	  window.React = _react2.default;
+	  window.ReactDOM = _reactDom2.default;
+	}
 
 	global.ShowDemo = function () {
 	  var store = (0, _store2.default)(_initialState2.default);
@@ -126,6 +128,14 @@
 	      { params: { landingVersionUuid: (0, _config2.default)('landingVersionUuid') } },
 	      _react2.default.createElement(_ShowApplication2.default, null)
 	    )
+	  );
+	};
+
+	global.DemoComponent = function () {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'DemoComponent rendered'
 	  );
 	};
 
