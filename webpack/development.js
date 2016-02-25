@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 import common from './common';
-import config from '../config';
+import config from '/initializers/config';
 
 common.module.loaders.push({
   test: /\.css$/,

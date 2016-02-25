@@ -1,23 +1,16 @@
-import { createStore, applyMiddleware } from 'redux';
+/* global __ENV__ */
+
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 
 import thunk from 'redux-thunk';
 import APIMiddleware from 'middleware/API';
 
 import reducers from 'reducers';
 
-const customCreateStore = (initialState) => {
-  const middlewares = [
-    thunk,
-    APIMiddleware,
-  ];
+const middlewares = [
+  thunk,
+  APIMiddleware,
+];
 
-  const createStoreWithMiddleware = compose(
-    applyMiddleware(...middlewares),
-  )(createStore);
-
-  const store = createStoreWithMiddleware(reducers, initialState);
-
-  return store;
-};
-
-module.exports = customCreateStore;
+export default (initialState) =>
+  applyMiddleware(...middlewares)(createStore)(combineReducers(reducers), initialState);

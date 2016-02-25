@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 // TODO Выделить только стили без редактирования
 import 'viewer_styles';
 
-import { createStore } from './store';
+import createStore from './store';
 import LandingLoader from 'components/LandingLoader';
 import ShowApplication from 'components/ShowApplication';
 import initialState from 'constants/initialState';
