@@ -10,7 +10,7 @@ import postcssSelectorNot from 'postcss-selector-not';
 
 const root = path.join(process.cwd(), 'src');
 const viewer = path.join(process.cwd(), 'initializers/viewer');
-const editor = path.join(process.cwd(), 'initializers/client');
+const editor = path.join(process.cwd(), 'initializers/editor');
 
 export default {
   root,

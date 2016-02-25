@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import 'styles';
+import 'editor_styles';
 
 import { createStore, browserHistory } from './store';
 

@@ -5,10 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-// Выделить только стили без редактирования
-import 'styles';
+// TODO Выделить только стили без редактирования
+import 'viewer_styles';
 
-import { createStore } from '../client/store';
+import { createStore } from '../editor/store';
 import LandingLoader from 'components/LandingLoader';
 import ShowApplication from 'components/ShowApplication';
 import initialState from 'constants/initialState';
