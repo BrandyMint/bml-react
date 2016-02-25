@@ -1,6 +1,9 @@
 import webpack from 'webpack';
 import noop from 'lodash/noop';
 
-import webpackConfig from './production';
+import assets from './assets';
+import production from './production';
+import prerender from './prerender';
 
-webpack(webpackConfig, noop);
+// webpack([assets, production, prerender], noop);
+webpack([assets, production], noop);
