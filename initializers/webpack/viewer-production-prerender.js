@@ -34,6 +34,19 @@ export default {
   },
 
   plugins: [
+    new CleanWebpackPlugin('dist', { root: process.cwd() }),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(process.cwd(), 'public'),
+        to: '.',
+      },
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(process.cwd(), 'src/assets/images'),
+        to: 'images',
+      },
+    ]),
     new ExtractTextPlugin('[name].css'),
     new webpack.DefinePlugin({
       __CLIENT__: true,

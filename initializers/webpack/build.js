@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import noop from 'lodash/noop';
 
-import webpackConfig from './editor-production';
+import assetsProduction from './assets-production';
+import editorProduction from './editor-production';
 
-webpack(webpackConfig, noop);
+webpack([assetsProduction, editorProduction], noop);
