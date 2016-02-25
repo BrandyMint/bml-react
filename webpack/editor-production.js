@@ -5,7 +5,10 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
+import ProgressBarPlugin from 'progress-bar-webpack-plugin';
+
 import common from './common';
+import done from './done';
 
 common.module.loaders.push({
   test: /\.css$/,
@@ -34,6 +37,7 @@ export default {
   },
 
   plugins: [
+    new ProgressBarPlugin(),
     new ExtractTextPlugin('[name].css'),
     new webpack.DefinePlugin({
       __CLIENT__: true,
@@ -47,6 +51,7 @@ export default {
       output: { comments: false },
       compress: { warnings: true, drop_debugger: true },
     }),
+    done,
   ],
 
   resolve: common.resolve,

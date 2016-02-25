@@ -6,7 +6,7 @@ export const semver = semverUtils.parse(version);
 
 /* eslint-disable no-console */
 export const semverInit = () => {
-  window.AppVersion = semver.version;
+  global.AppVersion = semver.version;
   console.log(`Start application ${semver}`);
 };
 /* eslint-enable */

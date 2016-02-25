@@ -1,17 +1,25 @@
+import assign from 'lodash/assign';
 import path from 'path';
 import webpack from 'webpack';
+import ProgressBarPlugin from 'progress-bar-webpack-plugin';
+import done from './done';
 
 import common from './common';
 
-const resolve = assign({ alias: {
-    'components/ui-elements/Redactor': 'public/Redactor.js',
-      'superagent': 'public/superagent.js',
-} }, common.resolve);
+const resolve = assign(
+  common.resolve,
+  {
+    alias: {
+      'components/ui-elements/Redactor': 'viewer/stubs/Redactor.js',
+      'superagent': 'viewer/stubs/superagent.js',
+    }
+  }
+);
 
 export default {
   target: 'node',
 
-  entry: common.entry.viewer,
+  entry: { viewer: common.entry.viewer, },
 
   output: {
     path: path.join(process.cwd(), 'dist'),
@@ -19,6 +27,7 @@ export default {
   },
 
   plugins: [
+    new ProgressBarPlugin(),
     new webpack.NormalModuleReplacementPlugin(/\.(s?css|less)$/, 'node-noop'),
     new webpack.DefinePlugin({
       __CLIENT__: false,
@@ -32,6 +41,7 @@ export default {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
+    done,
   ],
 
   resolve: resolve,
