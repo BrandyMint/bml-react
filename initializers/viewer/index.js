@@ -3,7 +3,7 @@
 import { Provider } from 'react-redux';
 
 import { createStore } from './store';
-// import ShowApplication from 'components/ShowApplication';
+import ShowApplication from 'components/ShowApplication';
 
 global.ShowWrapper = (props) => {
   const store = createStore(props);

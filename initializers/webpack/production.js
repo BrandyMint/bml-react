@@ -34,19 +34,6 @@ export default {
   },
 
   plugins: [
-    new CleanWebpackPlugin('dist', { root: process.cwd() }),
-    new CopyWebpackPlugin([
-      {
-        from: path.join(process.cwd(), 'public'),
-        to: '.',
-      },
-    ]),
-    new CopyWebpackPlugin([
-      {
-        from: path.join(process.cwd(), 'src/assets/images'),
-        to: 'images',
-      },
-    ]),
     new ExtractTextPlugin('[name].css'),
     new webpack.DefinePlugin({
       __CLIENT__: true,
@@ -54,12 +41,12 @@ export default {
       __ENV__: '"production"', // TODO https://github.com/zertosh/loose-envify
       'process.env.NODE_ENV': '"production"',
     }),
-    //new webpack.optimize.UglifyJsPlugin({
-      //output: { comments: false },
-      //compress: { warnings: true, drop_debugger: true },
-    //}),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      output: { comments: false },
+      compress: { warnings: true, drop_debugger: true },
+    }),
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
   ],
 
   resolve: common.resolve,

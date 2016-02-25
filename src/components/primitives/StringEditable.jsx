@@ -5,7 +5,6 @@ import get from 'lodash/get';
 import bind from 'lodash/bind';
 
 import { ESC } from 'constants/keyCodes';
-
 import Redactor from 'components/ui-elements/Redactor';
 
 const getValue = (props) => get(props.data, props.fieldName, '');
