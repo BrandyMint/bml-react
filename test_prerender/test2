@@ -1,0 +1,2 @@
+echo 'Test prerender'
+cat test_prerender/test.js | node | grep BlockView > /dev/null && echo 'Ok'
