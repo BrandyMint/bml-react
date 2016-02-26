@@ -17,7 +17,7 @@ const resolve = merge(
 );
 
 export default {
-  target: 'node',
+  // target: 'node',
 
   entry: { viewer: common.entry.viewer, },
 
