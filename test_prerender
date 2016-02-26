@@ -1,2 +1,3 @@
 echo 'Test prerender'
-node -r ./dist/viewer-prerender.js -e 'console.log(global.ShowWrapper)' | grep '[function']
+node -r ./dist/viewer-prerender.js -e 'console.log(global.ShowWrapper)' | grep '[function'] &&
+  cat test/prerender-test.js| node | grep BlockView > /dev/null

@@ -35,10 +35,6 @@ global.ShowDemo = () => {
   );
 };
 
-global.DemoComponent = () => {
-  return (<div>DemoComponent rendered</div>);
-}
-
 global.ShowWrapper = (props) => {
   const store = createStore(props);
 
