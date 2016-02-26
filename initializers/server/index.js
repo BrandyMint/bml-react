@@ -4,9 +4,9 @@ import morgan from 'morgan';
 import webpack from 'webpack';
 import webpackDev from 'webpack-dev-middleware';
 import webpackHot from 'webpack-hot-middleware';
-import webpackConfig from '../webpack/development';
+import webpackConfig from '/webpack/development';
 
-import config from '../config';
+import config from '/initializers/config';
 import render from './render';
 
 const application = express();

@@ -1,14 +1,14 @@
-/* global __ENV__ */
+/* global __CLIENT__ */
 
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-// Выделить только стили без редактирования
-import 'styles';
+// TODO Выделить только стили без редактирования
+import 'viewer_styles';
 
-import { createStore } from '../client/store';
+import createStore from './store';
 import LandingLoader from 'components/LandingLoader';
 import ShowApplication from 'components/ShowApplication';
 import initialState from 'constants/initialState';
@@ -18,8 +18,10 @@ import config from 'constants/config';
 import { semverInit } from 'lib/semver';
 semverInit();
 
-global.React = React;
-global.ReactDOM = ReactDOM;
+if (__CLIENT__) {
+  window.React = React;
+  window.ReactDOM = ReactDOM;
+}
 
 global.ShowDemo = () => {
   const store = createStore(initialState);
@@ -32,7 +34,6 @@ global.ShowDemo = () => {
     </Provider>
   );
 };
-
 
 global.ShowWrapper = (props) => {
   const store = createStore(props);

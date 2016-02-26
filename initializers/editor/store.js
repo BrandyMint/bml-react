@@ -2,11 +2,11 @@
 
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { browserHistory } from 'react-router';
-import { syncHistory } from 'react-router-redux';
-import createLogger from 'redux-logger';
-import { routeReducer } from 'react-router-redux';
-
+import { syncHistory, routeReducer } from 'react-router-redux';
 import thunk from 'redux-thunk';
+
+import createLogger from 'redux-logger';
+
 import APIMiddleware from 'middleware/API';
 
 import reducers from 'reducers';
