@@ -7,5 +7,5 @@ require('./dist/viewer-prerender.js');
 var blocks = require('./test_prerender/blocks.js');
 
 console.log(
-  ReactDOMServer.renderToString(React.createElement(ShowWrapper, { blocks: blocks }))
+  ReactDOMServer.renderToString(React.createElement(Viewer, { blocks: blocks }))
 );

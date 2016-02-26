@@ -38,7 +38,7 @@ global.ShowDemo = () => {
   );
 };
 
-class ShowWrapper extends Component {
+class Viewer extends Component {
   render() {
     const store = createStore(this.props);
 
@@ -49,3 +49,5 @@ class ShowWrapper extends Component {
     );
   };
 }
+
+global.Viewer = Viewer;
