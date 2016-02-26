@@ -1,7 +1,7 @@
 /* global __CLIENT__ */
 
 import 'babel-polyfill';
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -18,6 +18,9 @@ import config from 'constants/config';
 import { semverInit } from 'lib/semver';
 semverInit();
 
+
+// CLIENT устанавливается когда комплиируем Demo-вариантт для dist-а
+// false когда компилируем вариант для prerender-а
 if (__CLIENT__) {
   window.React = React;
   window.ReactDOM = ReactDOM;
@@ -35,12 +38,14 @@ global.ShowDemo = () => {
   );
 };
 
-global.ShowWrapper = (props) => {
-  const store = createStore(props);
+class ShowWrapper extends Component {
+  render() {
+    const store = createStore(this.props);
 
-  return (
-    <Provider store={store}>
-      <ShowApplication />
-    </Provider>
-  );
-};
+    return (
+      <Provider store={store}>
+        <ShowApplication />
+      </Provider>
+    );
+  };
+}
