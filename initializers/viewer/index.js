@@ -1,4 +1,4 @@
-/* global __ENV__ */
+/* global __CLIENT__ */
 
 import 'babel-polyfill';
 import React from 'react';
