@@ -47,7 +47,7 @@ class Viewer extends Component {
         <ShowApplication />
       </Provider>
     );
-  };
+  }
 }
 
 global.Viewer = Viewer;
