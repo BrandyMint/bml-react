@@ -9,3 +9,7 @@ var blocks = require('./test_prerender/blocks.js');
 console.log(
   ReactDOMServer.renderToString(React.createElement(Viewer, { blocks: blocks }))
 );
+
+console.log(
+  ReactDOMServer.renderToStaticMarkup(React.createElement(Viewer, { blocks: blocks }))
+);
