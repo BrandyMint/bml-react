@@ -6,7 +6,7 @@ import config from 'constants/config';
 import ExitIcon from 'react-icons/lib/go/graph';
 
 const ExitLink = () => (
-  <Link to={config('exitUrl')} className="IconLink">
+  <Link to={config('exitUrl')} rel="external" className="IconLink">
     <ExitIcon />
   </Link>
 );
