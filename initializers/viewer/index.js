@@ -31,7 +31,7 @@ global.ShowDemo = () => {
 
   return (
     <Provider store={store}>
-      <LandingLoader params={ { landingVersionUuid: config('landingVersionUuid') } }>
+      <LandingLoader params={ { landingVariantUuid: config('landingVariantUuid') } }>
         <ShowApplication />
       </LandingLoader>
     </Provider>

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { saveChanges } from 'actions/landingVersions';
+import { saveChanges } from 'actions/landingVariants';
 
 import component from './component';
 
