@@ -56,6 +56,7 @@ Bubble.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string,
   to: PropTypes.string,
+  url: PropTypes.string,
   isProcessing: PropTypes.bool,
 };
 

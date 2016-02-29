@@ -9,8 +9,6 @@ export default {
     position: null,
   },
   application: {
-    exitUrl: '/',
-
     landingVersionUuid: null,
 
     loadingState: LOADING_STATE_NONE,

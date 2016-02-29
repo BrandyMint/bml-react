@@ -4,6 +4,7 @@ import LOperatorSaveButton from 'components/LOperatorSaveButton';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
 
+import config from 'constants/config';
 import './LOperatorPanel.css';
 
 import CogIcon from 'react-icons/lib/fa/cog';
@@ -17,12 +18,11 @@ class LOperatorPanel extends Component {
   }
   render() {
     const {
-      exitUrl,
       hasUnsavedChanges,
       isSaving,
       onSaveChanges,
       hasControlActivity,
-      } = this.props;
+    } = this.props;
 
     return (
       <ReactCSSTransitionGroup
@@ -36,8 +36,10 @@ class LOperatorPanel extends Component {
             {hasUnsavedChanges &&
               <LOperatorSaveButton onSaveChanges={onSaveChanges} isSaving={isSaving} />
               }
-            <BubbleIcon url={exitUrl}>
-              <CogIcon />
+              <BubbleIcon >
+                <a href={config('exitUrl')}>
+                  <CogIcon />
+                </a>
             </BubbleIcon>
           </div>)}
       </ReactCSSTransitionGroup>
@@ -46,7 +48,6 @@ class LOperatorPanel extends Component {
 }
 
 LOperatorPanel.propTypes = {
-  exitUrl: PropTypes.string,
   isSaving: PropTypes.bool.isRequired,
   hasUnsavedChanges: PropTypes.bool.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
