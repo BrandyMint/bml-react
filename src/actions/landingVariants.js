@@ -1,4 +1,7 @@
+/* global __FAKE_API__ */
+
 import { API_CALL } from 'middleware/API';
+import defaultBlocks from 'constants/defaultBlocks';
 
 export const LANDING_VARIANT_UPDATE_REQUEST = 'LANDING_VARIANT_UPDATE_REQUEST';
 export const LANDING_VARIANT_UPDATE_SUCCESS = 'LANDING_VARIANT_UPDATE_SUCCESS';
@@ -8,18 +11,26 @@ export const LANDING_VARIANT_LOAD_REQUEST = 'LANDING_VARIANT_LOAD_REQUEST';
 export const LANDING_VARIANT_LOAD_SUCCESS = 'LANDING_VARIANT_LOAD_SUCCESS';
 export const LANDING_VARIANT_LOAD_FAILURE = 'LANDING_VARIANT_LOAD_FAILURE';
 
-export const loadVariant = (uuid) => (dispatch) =>
-  dispatch({
-    [API_CALL]: {
-      endpoint: `/landing_variants/${uuid}`,
-      method: 'GET',
-      types: [
-        LANDING_VARIANT_LOAD_REQUEST,
-        LANDING_VARIANT_LOAD_SUCCESS,
-        LANDING_VARIANT_LOAD_FAILURE,
-      ],
-    },
-  });
+export const loadVariant = (uuid) => (dispatch) => {
+  if (__FAKE_API__) {
+    return dispatch({
+      type: LANDING_VARIANT_LOAD_SUCCESS,
+      payload: { sections: [] },
+    });
+  } else {
+    return dispatch({
+      [API_CALL]: {
+        endpoint: `/landing_variants/${uuid}`,
+        method: 'GET',
+        types: [
+          LANDING_VARIANT_LOAD_REQUEST,
+          LANDING_VARIANT_LOAD_SUCCESS,
+          LANDING_VARIANT_LOAD_FAILURE,
+        ],
+      },
+    });
+  }
+}
 
 export const saveChanges = () => (dispatch, getState) => {
   const {

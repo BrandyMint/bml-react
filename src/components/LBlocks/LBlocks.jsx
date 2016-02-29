@@ -8,15 +8,11 @@ import isEmpty from 'lodash/isEmpty';
 
 import LBlock from 'components/LBlock';
 import LBlockAddButton from 'components/LBlockAddButton';
+import EmptyPlaceholder from 'components/LBlocks/EmptyPlaceholder';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
 
-const Placeholder = () => (
-  <div className="LBlocks-placeholder">
-    <span>There is no blocks to display</span>
-  </div>
-);
 
 class LBlocks extends Component {
   constructor(props) {
@@ -46,16 +42,19 @@ class LBlocks extends Component {
     const renderSection = (block, index) => {
       const isActive = this.state.activeAddButtonUuid === block.uuid;
 
-      const showButton = (hasControlActivity || isActive) &&
-        (currentBlockUuid === block.uuid || previousBlockUuid === currentBlockUuid) && index > 0;
+      const showButton = 
+            (blocks.length === 0 )  ||
+            (
+            (hasControlActivity || isActive) &&
+            (currentBlockUuid === block.uuid || previousBlockUuid === currentBlockUuid) &&
+            (index > 0));
 
-      const result = (
-        <div className="LBlocks-section" key={index}>
-          <ReactCSSTransitionGroup
-            component="div"
-            transitionName="animation"
-            transitionEnterTimeout={TRANSITION_TIMEOUT}
-            transitionLeaveTimeout={TRANSITION_TIMEOUT}
+      const BeforeAddButton = (
+        <ReactCSSTransitionGroup
+          component="div"
+          transitionName="animation"
+          transitionEnterTimeout={TRANSITION_TIMEOUT}
+          transitionLeaveTimeout={TRANSITION_TIMEOUT}
           >
           {showButton &&
             <LBlockAddButton
@@ -63,8 +62,22 @@ class LBlocks extends Component {
               onMouseEnter={partial(onMouseEnter, block.uuid)}
               onClick={partial(onAddBlock, index)}
             />}
-          </ReactCSSTransitionGroup>
+        </ReactCSSTransitionGroup>
+      );
+
+      const AfterAddButton = (blocks.length > 0 && blocks.length-1 === index) ? (
+        <LBlockAddButton
+          onMouseLeave={onMouseLeave}
+          onMouseEnter={partial(onMouseEnter, block.uuid)}
+          onClick={partial(onAddBlock, index + 1)}
+        />
+      ) : undefined;
+
+      const result = (
+        <div className="LBlocks-section" key={index}>
+          {BeforeAddButton}
           <LBlock block={block} onActive={partial(onCurrentBlock, block.uuid)}/>
+          {AfterAddButton}
         </div>
       );
 
@@ -76,7 +89,9 @@ class LBlocks extends Component {
       <div className="LBlocks">
         {isEmpty(blocks)
           ?
-            <Placeholder />
+            <EmptyPlaceholder 
+              onAddBlock={partial(onAddBlock, 0)}
+            />
             :
               <ReactCSSTransitionGroup
                 component="div"

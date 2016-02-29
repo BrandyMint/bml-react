@@ -9,8 +9,6 @@ import addBlock from './handlers/addBlock';
 import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
 
-// import defaultBlocks from 'constants/defaultBlocks';
-
 import {
   LANDING_VARIANT_LOAD_SUCCESS,
 } from 'actions/landingVariants';
@@ -38,8 +36,6 @@ const handlers = {
   [SWITCH_PREV_VIEW]: switchPrevView,
 
   [LANDING_VARIANT_LOAD_SUCCESS]: (state, { payload }) => (payload.sections),
-  // Загружаем дефолтный пример
-  // [LANDING_VARIANT_LOAD_SUCCESS]: (state, { payload }) => (defaultBlocks),
 
   [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
   [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),
