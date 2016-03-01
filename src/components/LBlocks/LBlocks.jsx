@@ -67,10 +67,12 @@ class LBlocks extends Component {
       );
 
       const showAfterButton =
-        (blocks.length == 1 || hasControlActivity || isActive) &&
+        (blocks.length === 1 || hasControlActivity || isActive) &&
         (blocks.length > 0 && blocks.length - 1 === index);
 
-      const AfterButtonPlaceholder = (blocks.length -1 === index ) ? (<div style={{height: 30, backgroundColor: '#000'}} />) : null;
+      const AfterButtonPlaceholder = (blocks.length - 1 === index) ?
+        (<div style={{ height: 30, backgroundColor: '#000' }} />) : null;
+
       const AfterAddButton =
         (showAfterButton) ?
           (

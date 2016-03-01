@@ -186,7 +186,7 @@ export default [
     },
   },
   {
-    view: 'MustRead',
+    view: 'MustRead1',
     title: 'Заголовок',
     description: 'html raw description',
     image: {
@@ -223,6 +223,11 @@ export default [
         width: null,
         height: null,
       },
+      backgroundVideos: [
+        { src: '/assets/video/video.mp4', type: 'video/mp4' },
+        { src: '/assets/video/video.webm', type: 'video/webm' },
+        { src: '/assets/video/video.ogv', type: 'video/ogg' },
+      ],
       nodeAttributes: {
         id: '44086800-a7e8-0133-a838-746d04736cf8',
         class: '',

@@ -7,7 +7,7 @@ import assign from 'lodash/assign';
 import partial from 'lodash/partial';
 
 import LBlockLayer from 'components/LBlockLayer';
-// import BlockViewBackground from 'components/BlockViewBackground';
+import BlockViewBackground from 'components/BlockViewBackground';
 import { viewsRepository } from 'repositories/ViewsRepository';
 import UnknownView from 'views/unknown';
 // import FaCog from 'react-icons/lib/fa/cog';
@@ -39,6 +39,7 @@ class LBlock extends Component {
     return (
       <div className="LBC" onMouseMove={onActive} onMouseEnter={onActive}>
         <section className="LBC-content" id={blockId} style={blockStyles}>
+          <BlockViewBackground block={block} />
           <LBlockLayer block={block}>
             <ViewComponent {...block} />
           </LBlockLayer>
