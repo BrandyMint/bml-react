@@ -46,6 +46,7 @@ export default {
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
+      __FAKE_API__: false,
       __ENV__: '"development"',
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),

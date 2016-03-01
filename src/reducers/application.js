@@ -6,14 +6,14 @@ import {
 } from 'actions/application';
 
 import {
-  LANDING_VERSION_UPDATE_SUCCESS,
-  LANDING_VERSION_UPDATE_FAILURE,
-  LANDING_VERSION_UPDATE_REQUEST,
+  LANDING_VARIANT_UPDATE_SUCCESS,
+  LANDING_VARIANT_UPDATE_FAILURE,
+  LANDING_VARIANT_UPDATE_REQUEST,
 
-  LANDING_VERSION_LOAD_REQUEST,
-  LANDING_VERSION_LOAD_SUCCESS,
-  LANDING_VERSION_LOAD_FAILURE,
-} from 'actions/landingVersions';
+  LANDING_VARIANT_LOAD_REQUEST,
+  LANDING_VARIANT_LOAD_SUCCESS,
+  LANDING_VARIANT_LOAD_FAILURE,
+} from 'actions/variants';
 
 import {
   UP_BLOCK_POSITION,
@@ -65,14 +65,14 @@ const handlers = {
   [APP_ACTIVITY_ON]: appActivityOn,
   [APP_ACTIVITY_OFF]: appActivityOff,
 
-  [LANDING_VERSION_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),
-  [LANDING_VERSION_LOAD_FAILURE]: state => ({ ...state, loadingState: LOADING_STATE_FAILURE }),
-  [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) =>
-    ({ ...state, loadingState: LOADING_STATE_LOADED, landingVersionUuid: payload.uuid }),
+  [LANDING_VARIANT_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),
+  [LANDING_VARIANT_LOAD_FAILURE]: state => ({ ...state, loadingState: LOADING_STATE_FAILURE }),
+  [LANDING_VARIANT_LOAD_SUCCESS]: (state, { payload }) =>
+    ({ ...state, loadingState: LOADING_STATE_LOADED, variantUuid: payload.uuid }),
 
-  [LANDING_VERSION_UPDATE_REQUEST]: savingChanges(true),
-  [LANDING_VERSION_UPDATE_FAILURE]: savingChanges(false),
-  [LANDING_VERSION_UPDATE_SUCCESS]: state => ({
+  [LANDING_VARIANT_UPDATE_REQUEST]: savingChanges(true),
+  [LANDING_VARIANT_UPDATE_FAILURE]: savingChanges(false),
+  [LANDING_VARIANT_UPDATE_SUCCESS]: state => ({
     ...state,
     isSaving: false,
     hasUnsavedChanges: false,

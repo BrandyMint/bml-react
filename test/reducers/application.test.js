@@ -5,18 +5,18 @@ import application from 'reducers/application';
 import initialState from 'constants/initialState';
 
 import {
-  LANDING_VERSION_UPDATE_REQUEST,
-  LANDING_VERSION_UPDATE_FAILURE,
-} from 'actions/landingVersions';
+  LANDING_VARIANT_UPDATE_REQUEST,
+  LANDING_VARIANT_UPDATE_FAILURE,
+} from 'actions/variants';
 
 describe('Reducers: application', () => {
   it('should return the initial state', () => {
     expect(application(undefined, {})).toEqual(initialState.application);
   });
 
-  it('should handle LANDING_VERSION_UPDATE_REQUEST', () => {
+  it('should handle LANDING_VARIANT_UPDATE_REQUEST', () => {
     const action = {
-      type: LANDING_VERSION_UPDATE_REQUEST,
+      type: LANDING_VARIANT_UPDATE_REQUEST,
     };
 
     expect(application(undefined, action)).toEqual(
@@ -32,9 +32,9 @@ describe('Reducers: application', () => {
     });
   });
 
-  it('should handle LANDING_VERSION_UPDATE_FAILURE', () => {
+  it('should handle LANDING_VARIANT_UPDATE_FAILURE', () => {
     const action = {
-      type: LANDING_VERSION_UPDATE_FAILURE,
+      type: LANDING_VARIANT_UPDATE_FAILURE,
     };
 
     const state = {

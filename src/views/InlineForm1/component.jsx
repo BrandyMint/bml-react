@@ -12,7 +12,7 @@ class InlineForm1 extends Component {
 
   render() {
     /* eslint-disable react/prop-types */
-    const { landingVersionUuid, content, form, uuid } = this.props;
+    const { variantUuid, content, form, uuid } = this.props;
     /* eslint-enable */
 
     const method = form.method || 'POST';
@@ -21,10 +21,10 @@ class InlineForm1 extends Component {
       <form className="form-inline" acceptCharset="UTF-8" action={action} method={method}>
         <input name="utf8" type="hidden" value="✓" />
         <input
-          id="lead_form_landing_version_uuid"
-          name="landing_version_uuid"
+          id="lead_form_variant_uuid"
+          name="variant_uuid"
           type="hidden"
-          value={landingVersionUuid}
+          value={variantUuid}
         />
         { content.title && (<span className="InlineForm1-title">{content.title}</span>)}
         {map(form.fields, (field, index) => {

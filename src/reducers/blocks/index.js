@@ -9,11 +9,9 @@ import addBlock from './handlers/addBlock';
 import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
 
-// import defaultBlocks from 'constants/defaultBlocks';
-
 import {
-  LANDING_VERSION_LOAD_SUCCESS,
-} from 'actions/landingVersions';
+  LANDING_VARIANT_LOAD_SUCCESS,
+} from 'actions/variants';
 
 import {
   UP_BLOCK_POSITION,
@@ -37,9 +35,7 @@ const handlers = {
   [SWITCH_NEXT_VIEW]: switchNextView,
   [SWITCH_PREV_VIEW]: switchPrevView,
 
-  [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) => (payload.sections),
-  // Загружаем дефолтный пример
-  // [LANDING_VERSION_LOAD_SUCCESS]: (state, { payload }) => (defaultBlocks),
+  [LANDING_VARIANT_LOAD_SUCCESS]: (state, { payload }) => (payload.sections),
 
   [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
   [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),

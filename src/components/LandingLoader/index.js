@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import component from './component';
 
-import { loadVersion } from 'actions/landingVersions';
+import { loadVariant } from 'actions/variants';
 
-const actions = { loadVersion };
+const actions = { loadVariant };
 
 const selector = state => ({
   loadingState: state.application.loadingState,

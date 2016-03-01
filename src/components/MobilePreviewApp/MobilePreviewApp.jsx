@@ -6,8 +6,8 @@ import './index.css';
 
 class App extends Component {
   render() {
-    const { landingVersionUuid } = this.props;
-    const src = `/editor/${landingVersionUuid}/show`;
+    const { variantUuid } = this.props;
+    const src = `/editor/${variantUuid}/show`;
     return (
       <BodyClassName className="MobilePreviewBody">
         <div className="MobilePreview">
@@ -22,7 +22,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  landingVersionUuid: PropTypes.string.isRequired,
+  variantUuid: PropTypes.string.isRequired,
 };
 
 export default App;

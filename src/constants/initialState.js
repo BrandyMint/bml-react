@@ -1,7 +1,7 @@
 import { LOADING_STATE_NONE } from 'constants/loadingStates';
 // import Blocks from 'constants/defaultBlocks';
 
-export const EXAMPLE_LANDING_VERSION_UUID = '10ba27fa-0628-44fd-af24-8430eea47ca7';
+export const EXAMPLE_LANDING_VARIANT_UUID = '10ba27fa-0628-44fd-af24-8430eea47ca7';
 
 export default {
   addBlockForm: {
@@ -9,7 +9,9 @@ export default {
     position: null,
   },
   application: {
-    landingVersionUuid: null,
+    exitUrl: '/',
+
+    variantUuid: null,
 
     loadingState: LOADING_STATE_NONE,
     isSaving: false,

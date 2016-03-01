@@ -1,5 +1,3 @@
-/* global __ENV__ */
-
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -27,7 +25,7 @@ const store = createStore(initialState);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/editor/:landingVersionUuid" component={LandingLoader}>
+      <Route path="/editor/:variantUuid" component={LandingLoader}>
         <IndexRoute component={LApplicationEditor}/>
         <Route path="preview" component={LApplicationPreview}/>
         <Route path="mobilePreview" component={MobilePreviewApp}/>
