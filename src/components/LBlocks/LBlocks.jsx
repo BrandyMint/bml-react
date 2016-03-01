@@ -42,12 +42,13 @@ class LBlocks extends Component {
     const renderSection = (block, index) => {
       const isActive = this.state.activeAddButtonUuid === block.uuid;
 
-      const showButton = 
-            (blocks.length === 0 )  ||
-            (
-            (hasControlActivity || isActive) &&
+      const showButton =
+        (blocks.length === 0 ) ||
+        (
+          (hasControlActivity || isActive) &&
             (currentBlockUuid === block.uuid || previousBlockUuid === currentBlockUuid) &&
-            (index > 0));
+            (index > 0)
+        );
 
       const BeforeAddButton = (
         <ReactCSSTransitionGroup
@@ -89,7 +90,7 @@ class LBlocks extends Component {
       <div className="LBlocks">
         {isEmpty(blocks)
           ?
-            <EmptyPlaceholder 
+            <EmptyPlaceholder
               onAddBlock={partial(onAddBlock, 0)}
             />
             :

@@ -9,7 +9,9 @@ class EmptyPlaceholder extends Component {
     return (
         <div>
           <div className="LBlocksEmptyPlaceholder">
-            <h2 className="LBlocksEmptyPlaceholder-header">Лендинг не содержит никаких элеметов.</h2>
+            <h2 className="LBlocksEmptyPlaceholder-header">
+              Лендинг не содержит никаких элеметов.
+            </h2>
             <span>Добавьте что-нибудь.</span>
           </div>
           <LBlockAddButton onClick={onAddBlock} />
@@ -20,6 +22,6 @@ class EmptyPlaceholder extends Component {
 
 EmptyPlaceholder.propTypes = {
   onAddBlock: PropTypes.func.isRequired,
-}
+};
 
 export default EmptyPlaceholder;
