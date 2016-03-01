@@ -49,6 +49,7 @@ export default {
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
+      __FAKE_API__: false,
       __ENV__: '"production"', // TODO https://github.com/zertosh/loose-envify
       'process.env.NODE_ENV': '"production"',
     }),
