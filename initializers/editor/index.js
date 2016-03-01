@@ -25,7 +25,7 @@ const store = createStore(initialState);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/editor/:landingVariantUuid" component={LandingLoader}>
+      <Route path="/editor/:variantUuid" component={LandingLoader}>
         <IndexRoute component={LApplicationEditor}/>
         <Route path="preview" component={LApplicationPreview}/>
         <Route path="mobilePreview" component={MobilePreviewApp}/>

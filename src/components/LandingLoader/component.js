@@ -8,7 +8,7 @@ import {
 
 class EditorApplication extends Component {
   componentDidMount() {
-    this.props.loadVariant(this.props.params.landingVariantUuid);
+    this.props.loadVariant(this.props.params.variantUuid);
   }
 
   render() {
@@ -32,7 +32,7 @@ EditorApplication.propTypes = {
   loadingState: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
   params: PropTypes.shape({
-    landingVariantUuid: PropTypes.string.isRequired,
+    variantUuid: PropTypes.string.isRequired,
   }).isRequired,
 };
 

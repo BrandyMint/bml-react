@@ -20,7 +20,7 @@ export const loadVariant = (uuid) => (dispatch) => {
 
   return dispatch({
     [API_CALL]: {
-      endpoint: `/landing_variants/${uuid}`,
+      endpoint: `/variants/${uuid}`,
       method: 'GET',
       types: [
         LANDING_VARIANT_LOAD_REQUEST,
@@ -34,12 +34,12 @@ export const loadVariant = (uuid) => (dispatch) => {
 export const saveChanges = () => (dispatch, getState) => {
   const {
     blocks,
-    application: { landingVariantUuid: uuid },
+    application: { variantUuid: uuid },
   } = getState();
 
   return dispatch({
     [API_CALL]: {
-      endpoint: `/landing_variants/${uuid}`,
+      endpoint: `/variants/${uuid}`,
       method: 'PUT',
       payload: { blocks },
       types: [

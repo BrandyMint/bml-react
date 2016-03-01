@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { saveChanges } from 'actions/landingVariants';
+import { saveChanges } from 'actions/variants';
 
 import LOperatorPanel from './LOperatorPanel';
 

@@ -7,7 +7,7 @@ import initialState from 'constants/initialState';
 import {
   LANDING_VARIANT_UPDATE_REQUEST,
   LANDING_VARIANT_UPDATE_FAILURE,
-} from 'actions/landingVariants';
+} from 'actions/variants';
 
 describe('Reducers: application', () => {
   it('should return the initial state', () => {

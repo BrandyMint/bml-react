@@ -89,7 +89,7 @@ const InlineForm = {
 
   // Фактически это полное содержание block-а
   propTypes: {
-    landingVariantUuid: PropTypes.string.isRequired,
+    variantUuid: PropTypes.string.isRequired,
     content: PropTypes.shape({
       title: PropTypes.string,
     }).isRequired,

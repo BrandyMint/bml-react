@@ -4,10 +4,10 @@ import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
 class BubblePanel extends Component {
   render() {
-    const { landingVariantUuid } = this.props;
+    const { variantUuid } = this.props;
     return (
       <div className="BubblePanel">
-        <BubbleIcon to={`/editor/${landingVariantUuid}`}>
+        <BubbleIcon to={`/editor/${variantUuid}`}>
           <ExitIcon />
         </BubbleIcon>
       </div>
@@ -16,7 +16,7 @@ class BubblePanel extends Component {
 }
 
 BubblePanel.propTypes = {
-  landingVariantUuid: PropTypes.string.isRequired,
+  variantUuid: PropTypes.string.isRequired,
 };
 
 export default BubblePanel;

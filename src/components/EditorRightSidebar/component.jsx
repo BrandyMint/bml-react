@@ -9,13 +9,13 @@ import EditorSaveButton from 'components/EditorSaveButton';
 
 class EditorRightSidebar extends Component {
   render() {
-    const { landingVariantUuid } = this.props;
+    const { variantUuid } = this.props;
     return (
       <div className="EditorRightSidebar">
-        <Link to={`/editor/${landingVariantUuid}/preview`} className="IconLink">
+        <Link to={`/editor/${variantUuid}/preview`} className="IconLink">
           <FullscreenIcon />
         </Link>
-        <Link to={`/editor/${landingVariantUuid}/mobilePreview`} className="IconLink">
+        <Link to={`/editor/${variantUuid}/mobilePreview`} className="IconLink">
           <MobileIcon />
         </Link>
         <div className="EditorRightSidebar-bottom">
@@ -28,7 +28,7 @@ class EditorRightSidebar extends Component {
 
 
 EditorRightSidebar.propTypes = {
-  landingVariantUuid: PropTypes.string.isRequired,
+  variantUuid: PropTypes.string.isRequired,
 };
 
 export default EditorRightSidebar;

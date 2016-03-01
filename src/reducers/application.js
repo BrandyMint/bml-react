@@ -13,7 +13,7 @@ import {
   LANDING_VARIANT_LOAD_REQUEST,
   LANDING_VARIANT_LOAD_SUCCESS,
   LANDING_VARIANT_LOAD_FAILURE,
-} from 'actions/landingVariants';
+} from 'actions/variants';
 
 import {
   UP_BLOCK_POSITION,
@@ -68,7 +68,7 @@ const handlers = {
   [LANDING_VARIANT_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),
   [LANDING_VARIANT_LOAD_FAILURE]: state => ({ ...state, loadingState: LOADING_STATE_FAILURE }),
   [LANDING_VARIANT_LOAD_SUCCESS]: (state, { payload }) =>
-    ({ ...state, loadingState: LOADING_STATE_LOADED, landingVariantUuid: payload.uuid }),
+    ({ ...state, loadingState: LOADING_STATE_LOADED, variantUuid: payload.uuid }),
 
   [LANDING_VARIANT_UPDATE_REQUEST]: savingChanges(true),
   [LANDING_VARIANT_UPDATE_FAILURE]: savingChanges(false),

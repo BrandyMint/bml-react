@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BackgroundForm from './BackgroundForm';
 
-import { saveImage } from 'actions/landingVariants';
+import { saveImage } from 'actions/variants';
 
 const mapStateToProps = state => state;
 

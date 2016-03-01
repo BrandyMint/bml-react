@@ -11,7 +11,7 @@ import deleteBlock from './handlers/deleteBlock';
 
 import {
   LANDING_VARIANT_LOAD_SUCCESS,
-} from 'actions/landingVariants';
+} from 'actions/variants';
 
 import {
   UP_BLOCK_POSITION,

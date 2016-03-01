@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import component from './component';
 
 const selector = state => ({
-  landingVariantUuid: state.application.landingVariantUuid,
+  variantUuid: state.application.variantUuid,
 });
 
 export default connect(selector)(component);
