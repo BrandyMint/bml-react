@@ -42,7 +42,7 @@ class LBlocks extends Component {
     const renderSection = (block, index) => {
       const isActive = this.state.activeAddButtonUuid === block.uuid;
 
-      const showButton =
+      const showBeforeButton =
         (blocks.length === 0) ||
         (
           (hasControlActivity || isActive) &&
@@ -57,7 +57,7 @@ class LBlocks extends Component {
           transitionEnterTimeout={TRANSITION_TIMEOUT}
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
-        {showButton &&
+        {showBeforeButton &&
           <LBlockAddButton
             onMouseLeave={onMouseLeave}
             onMouseEnter={partial(onMouseEnter, block.uuid)}
@@ -66,15 +66,20 @@ class LBlocks extends Component {
         </ReactCSSTransitionGroup>
       );
 
+      const showAfterButton =
+        (blocks.length == 1 || hasControlActivity || isActive) &&
+        (blocks.length > 0 && blocks.length - 1 === index);
+
+      const AfterButtonPlaceholder = (blocks.length -1 === index ) ? (<div style={{height: 30, backgroundColor: '#000'}} />) : null;
       const AfterAddButton =
-        (blocks.length > 0 && blocks.length - 1 === index) ?
+        (showAfterButton) ?
           (
             <LBlockAddButton
               onMouseLeave={onMouseLeave}
               onMouseEnter={partial(onMouseEnter, block.uuid)}
               onClick={partial(onAddBlock, index + 1)}
             />
-          ) : null;
+      ) : AfterButtonPlaceholder;
 
       const result = (
         <div className="LBlocks-section" key={index}>
