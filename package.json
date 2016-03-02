@@ -92,6 +92,7 @@
     "react-hover-mixin": "^1.1.1",
     "react-icon-base": "^1.0.0",
     "react-icons": "brandymint/react-icons",
+    "react-medium-editor": "^1.6.3",
     "react-mixin": "^3.0.3",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.6",

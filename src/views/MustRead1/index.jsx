@@ -24,7 +24,7 @@ const MustRead1 = ({ content }) => (
               data={content}
               className="MustRead1-subheader text-white"
               fieldName="subheader"
-              tagName="h3"
+              tagName="div"
             />
             <ul className="list-inline MustRead1-buttons">
               {map(content.items, (item, index) =>

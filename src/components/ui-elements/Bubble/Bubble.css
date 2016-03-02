@@ -18,6 +18,8 @@ $bubbleTextColor: #fff;
   border: 1px solid #ebebeb;
   color: #666;
 
+  font-size: 1rem;
+  line-height: 1.5;
   transition: background-color .2s ease;
   letter-spacing: 0;
   word-spacing: 0;

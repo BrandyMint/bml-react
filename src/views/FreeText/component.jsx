@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
-import StringEditable from 'components/primitives/StringEditable';
+import RichEditable from 'components/primitives/RichEditable';
 
 // import { Link } from 'react-router';
 
@@ -15,7 +15,7 @@ class View extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <StringEditable
+            <RichEditable
               className="Text"
               data={content}
               fieldName="text"

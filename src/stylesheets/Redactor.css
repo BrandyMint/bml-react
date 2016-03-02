@@ -19,7 +19,3 @@
     background: #ffb7b7; /* WebKit/Blink Browsers */
   }
 }
-
-.medium-editor-toolbar {
-  z-index: 2000;
-}

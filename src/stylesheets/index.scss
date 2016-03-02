@@ -1,13 +1,11 @@
 @import 'bootstrap.scss';
-// @import 'font-awesome.scss';
+@import '~react-widgets/dist/css/react-widgets.css';
 
 @import 'overwrites.scss';
 @import 'custom.scss';
-@import 'utils.css';
 @import 'animation.css';
 @import 'spacing.scss';
 
-@import 'EditorModal.scss';
 @import 'theme2/index.scss';
 
 @import 'body.scss';
