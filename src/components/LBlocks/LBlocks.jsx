@@ -12,13 +12,14 @@ import EmptyPlaceholder from 'components/LBlocks/EmptyPlaceholder';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
-
+import shouldPureComponentUpdate from 'react-pure-render/function';
 
 class LBlocks extends Component {
   constructor(props) {
     super(props);
     this.state = { activeAddButtonUuid: null };
   }
+  shouldComponentUpdate = shouldPureComponentUpdate;
   render() {
     const {
       blocks,
@@ -84,7 +85,7 @@ class LBlocks extends Component {
       ) : AfterButtonPlaceholder;
 
       const result = (
-        <div className="LBlocks-section" key={index}>
+        <div className="LBlocks-section" key={block.uuid}>
           {BeforeAddButton}
           <LBlock block={block} onActive={partial(onCurrentBlock, block.uuid)}/>
           {AfterAddButton}

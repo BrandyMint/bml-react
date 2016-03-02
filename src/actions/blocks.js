@@ -1,6 +1,7 @@
 import uuid from 'uuid';
 
 import get from 'lodash/get';
+import cloneDeep from 'lodash/cloneDeep';
 
 import VIEW_EXAMPLES from 'constants/viewExamples';
 
@@ -85,8 +86,8 @@ export const submitAddingBlock = () => (dispatch, getState) => {
         position,
         block: {
           uuid: uuid.v4(),
-          view: example.view,
-          ...example.defaultData,
+          view: cloneDeep(example.view),
+          ...cloneDeep(example.defaultData),
         },
       },
     });

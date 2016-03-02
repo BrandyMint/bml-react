@@ -3,8 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 import get from 'lodash/get';
 import bind from 'lodash/bind';
-
-import { ESC } from 'constants/keyCodes';
+import shouldPureComponentUpdate from 'react-pure-render/function';
 
 import Redactor from 'components/ui-elements/Redactor';
 
@@ -15,25 +14,19 @@ class StringEditable extends Component {
     super(props, context);
 
     this.handleBlur = bind(this.handleBlur, this);
-    this.handleKeyDown = bind(this.handleKeyDown, this);
     this.handleKeyDownEnter = bind(this.handleKeyDownEnter, this);
 
     this.state = {
       value: getValue(props),
     };
   }
+  shouldComponentUpdate = shouldPureComponentUpdate;
   componentWillReceiveProps(nextProps) {
     if (getValue(this.props) !== getValue(nextProps)) {
       this.setState({ value: getValue(nextProps) });
     }
   }
-  handleKeyDown(event) {
-    if (event.keyCode === ESC) {
-      event.target.blur();
-      this.setState({ value: getValue(this.props) });
-    } else {
-      this.setState({ value: event.target.innerHTML });
-    }
+  handleChange(event) {
   }
   handleKeyDownEnter(event) {
     const { fieldName } = this.props;
@@ -58,14 +51,13 @@ class StringEditable extends Component {
         <Redactor
           ref="redactor"
           className={className}
-          readOnly={!isEditMode}
           tagName={tagName}
           value={value}
           onBlur={this.handleBlur}
-          onKeyDown={this.handleKeyDown}
-          onKeyDownEnter={this.handleKeyDownEnter}
+          onChange={this.handleChange}
         />
       );
+      // onKeyDownEnter={this.handleKeyDownEnter}
     }
     return createElement(
       tagName,

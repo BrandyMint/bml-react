@@ -1,37 +1,41 @@
 import { Component, PropTypes, createElement } from 'react';
 import { findDOMNode } from 'react-dom';
+import { ESC } from 'constants/keyCodes';
 
 import classnames from 'classnames';
 import MediumEditor from 'medium-editor';
 
 import './Redactor.css';
 
+// https://github.com/wangzuo/react-medium-editor/blob/master/lib/editor.js
+
 const OPTIONS = {
-  disableReturn: true,
+  // disableReturn: true,
   paste: {
+    forcePlainText: true,
     cleanPastedHTML: true,
+    cleanAttrs: ['class', 'style', 'dir'],
+    cleanTags: ['meta'],
   },
-  toolbar: false,
+  toolbar: {
+    allowMultiParagraphSelection: true,
+    buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote'],
+  },
 };
 
 class Redactor extends Component {
   componentDidMount() {
-    if (!this.props.readOnly) {
-      this.initEditor();
-    }
+    this.initEditor();
   }
-  shouldComponentUpdate(nextProps) {
-    return findDOMNode(this).innerHTML !== nextProps.value;
+  shouldComponentUpdate(nextProps, nextStates) {
+    // TODO
+    return false;
   }
   componentDidUpdate(prevProps) {
-    findDOMNode(this).innerHTML = this.props.value;
-
-    if (prevProps.readOnly !== this.props.readOnly) {
-      if (this.props.readOnly) {
-        this.destroyEditor();
-      } else {
-        this.initEditor();
-      }
+    if (this.mediumEditor) {
+      this.mediumEditor.setContent(this.props.value);
+    } else {
+      this.initEditor();
     }
   }
   componentWillUnmount() {
@@ -40,15 +44,27 @@ class Redactor extends Component {
   initEditor() {
     this.mediumEditor = new MediumEditor(findDOMNode(this), OPTIONS);
     this.mediumEditor.subscribe('blur', this.props.onBlur);
-    this.mediumEditor.subscribe('editableKeyup', this.props.onKeyDown);
-    this.mediumEditor.subscribe('editableKeydownEnter', this.props.onKeyDownEnter);
+    this.mediumEditor.subscribe('editableKeyup', (event) => {
+      if (event.keyCode === ESC) {
+        event.target.blur();
+        this.props.onCancel();
+      }
+    });
+    this.mediumEditor.subscribe('editableInput', this.props.onChange);
+    if (this.props.onKeyDownEnter) {
+      this.mediumEditor.subscribe('editableKeydownEnter', this.props.onKeyDownEnter);
+    }
   }
   destroyEditor() {
     if (!this.mediumEditor) return;
 
-    this.mediumEditor.unsubscribe('blur', this.props.onBlur);
-    this.mediumEditor.unsubscribe('editableKeyup', this.props.onKeyDown);
-    this.mediumEditor.unsubscribe('editableKeydownEnter', this.props.onKeyDownEnter);
+    // А зачем отписываться если мы ему делаем destroy?
+    //this.mediumEditor.unsubscribe('blur', this.props.onBlur);
+    //this.mediumEditor.unsubscribe('editableKeyup', handleKeyDown);
+    //this.mediumEditor.unsubscribe('editableInput', this.props.onChange);
+    //if (this.props.onKeyDownEnter) {
+      //this.mediumEditor.unsubscribe('editableKeydownEnter', this.props.onKeyDownEnter);
+    //}
     this.mediumEditor.destroy();
     this.mediumEditor = null;
   }
@@ -67,16 +83,15 @@ class Redactor extends Component {
 
 Redactor.propTypes = {
   className: PropTypes.string,
-  readOnly: PropTypes.bool,
   tagName: PropTypes.string,
   value: PropTypes.string,
   onBlur: PropTypes.func,
-  onKeyDown: PropTypes.func,
+  onCancel: PropTypes.func,
+  onChange: PropTypes.func,
   onKeyDownEnter: PropTypes.func,
 };
 
 Redactor.defaultProps = {
-  readOnly: true,
   tagName: 'div',
   value: '',
 };

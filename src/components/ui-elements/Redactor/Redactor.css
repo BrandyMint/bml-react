@@ -3,15 +3,23 @@
 
   &:hover {
     outline: 0px solid transparent;
-    background: rgba(70, 186, 249, .3);
+    background: rgba(70, 186, 249, .2);
     box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-    color: #fff;
+    /* color: #fff; */
   }
 
   &:focus {
     outline: 0px solid transparent;
-    background: rgba(70, 186, 249, .8);
+    background: rgba(70, 186, 249, .5);
     box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-    color: #fff;
+    /* color: #fff; */
   }
+
+  ::selection {
+    background: #ffb7b7; /* WebKit/Blink Browsers */
+  }
+}
+
+.medium-editor-toolbar {
+  z-index: 2000;
 }
