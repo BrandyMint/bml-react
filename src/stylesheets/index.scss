@@ -1,5 +1,7 @@
-@import 'bootstrap.scss';
+/*@import 'bootstrap.scss';*/
+// @import 'bootstrap.scss';
 @import '~react-widgets/dist/css/react-widgets.css';
+@import 'bootstrap.css';
 
 @import 'overwrites.scss';
 @import 'custom.scss';
@@ -7,11 +9,22 @@
 @import 'spacing.scss';
 
 @import 'theme2/index.scss';
+@import 'EditorModal.scss';
+// @import 'theme2/index.scss';
 
 @import 'body.scss';
 
-// Из theme2
-section {
-  position: relative;
-  overflow: hidden;
-}
+// Aciden
+
+@import '../fonts/lato/lato.css';
+@import '../fonts/opensans/opensans.css';
+@import '../fonts/raleway/raleway.css';
+@import 'corestyle/global.css';
+@import 'corestyle/mixins.css';
+@import 'corestyle/sections.css';
+@import 'corestyle/buttons.css';
+@import 'corestyle/spacing.css';
+@import 'corestyle/colours.css';
+@import 'corestyle/typography.css';
+@import 'blockstyle.css';
+@import 'themify-icons.css'
