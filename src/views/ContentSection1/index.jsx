@@ -2,6 +2,8 @@ import React from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
+import RichEditable from 'components/primitives/RichEditable';
+import Image from 'views/elements/Image';
 
 import './index.css';
 
@@ -13,23 +15,18 @@ const ContentSection1 = ({ content }) => (
         <StringEditable
           className="section-heading"
           data={content}
-          fieldName="headerText"
+          fieldName="header"
           tagName="h2"
         />
-        <StringEditable
+        <RichEditable
           className="lead"
           data={content}
           fieldName="leadText"
-          tagName="p"
+          tagName="div"
         />
       </div>
       <div className="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img
-          className="img-fluid"
-          height={content.image.height}
-          src={content.image.url}
-          width={content.image.width}
-        />
+        <Image {...content.image} />
       </div>
     </div>
   </div>

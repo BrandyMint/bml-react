@@ -10,8 +10,11 @@ export default class ViewsRepository {
   }
 
   getCompatibleViews(viewName) {
-    const view = this.getView(viewName);
-    return types[view.typeName] || [];
+    const view = this.getBlandView(viewName);
+    if (view) {
+      return types[view.typeName] || [];
+    }
+    return [];
   }
 
   getPrevView(viewName) {
@@ -46,8 +49,17 @@ export default class ViewsRepository {
     }
   }
 
+  getBlandView(viewName) {
+    return views[viewName];
+
+    if (!view) {
+      const error = new Error(`No view ${viewName} is registered`);
+      throw error;
+    }
+    return view;
+  }
   getView(viewName) {
-    const view = views[viewName];
+    const view = this.getBlandView(viewName);
 
     if (!view) {
       const error = new Error(`No view ${viewName} is registered`);

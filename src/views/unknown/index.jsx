@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({ block }) => (
+export default ({ view, uuid }) => (
   <div className="LBlock-placeholder">
-    Unknown view of block {block.view}
+    No such view {view} for block {uuid}
   </div>
 );

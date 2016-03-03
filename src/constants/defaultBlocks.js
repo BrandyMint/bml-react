@@ -84,7 +84,7 @@ export default [
     uuid: '440c3460-a7e8-0133-a838-746d04736cf8',
     view: 'ContentSection1',
     content: {
-      headerText: 'Отдельное спасибо <br />Death to the Stock Photo !',
+      header: 'Отдельное спасибо <br />Death to the Stock Photo !',
       leadText: 'Отдельное спасибо <a target=\'_blank\' href=\'http://join.deathtothestockphoto.com/\'>Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.',
       image: {
         url: '/assets/images/themes/t1/ipad.png',
@@ -135,7 +135,7 @@ export default [
     uuid: '440c9d50-a7e8-0133-a838-746d04736cf8',
     view: 'ContentSection2',
     content: {
-      headerText: '3D макеты на предметах<br /> от PSDCovers',
+      header: '3D макеты на предметах<br /> от PSDCovers',
       leadText: 'Преврати свой двумерный дизайн в высококачественные, трехмерные снимки за секунды используя бесплатные экшены в Photoshop от <a target=\'_blank\' href=\'http://www.psdcovers.com/\'>PSDCovers</a>!<br />Посетите их сайт чтобы скачать что-то восхитительное и увидить экшены в действии!',
       image: {
         url: '/assets/images/themes/t1/dog.png',
@@ -155,7 +155,7 @@ export default [
     uuid: '440d06f0-a7e8-0133-a838-746d04736cf8',
     view: 'ContentSection1',
     content: {
-      headerText: 'Шрифты Google Web и<br>иконки Font Awesome',
+      header: 'Шрифты Google Web и<br>иконки Font Awesome',
       leadText: 'Этот шаблон применяет \'Lato\' шрифт, часть <a target=\'_blank\' href=\'http://www.google.com/fonts\'>библиотеки Google Web Font</a>, также как и <a target=\'_blank\' href=\'http://fontawesome.io\'>иконки из Font Awesome</a>.',
       image: {
         url: '/assets/images/themes/t1/phones.png',

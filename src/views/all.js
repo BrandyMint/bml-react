@@ -5,6 +5,7 @@ import Navbar1 from './Navbar1';
 import GoogleMap1 from './GoogleMap1';
 import CTA1 from './CTA1';
 import Footer1 from './Footer1';
+import ContentSection0 from './ContentSection0';
 import ContentSection1 from './ContentSection1';
 import ContentSection2 from './ContentSection2';
 import ContentSection3 from './ContentSection3';
@@ -32,6 +33,7 @@ const list = {
   MustRead2,
   MustRead3,
   Footer1,
+  ContentSection0,
   ContentSection1,
   ContentSection2,
   ContentSection3,

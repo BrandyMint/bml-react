@@ -34,7 +34,7 @@ class LBlock extends Component {
       backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
     );
 
-    const ViewComponent = viewsRepository.getView(view) || UnknownView;
+    const ViewComponent = viewsRepository.getBlandView(view) || UnknownView;
 
     return (
       <div className="LBC" onMouseMove={onActive} onMouseEnter={onActive}>

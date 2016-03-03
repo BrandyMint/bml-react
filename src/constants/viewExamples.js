@@ -146,7 +146,7 @@ export default [
     rate: 2,
     defaultData: {
       content: {
-        headerText: 'Death to the Stock Photo: <br /> Special Thanks',
+        header: 'Death to the Stock Photo: <br /> Special Thanks',
         image: {
           url: '/assets/images/themes/t1/ipad.png',
           height: 354,

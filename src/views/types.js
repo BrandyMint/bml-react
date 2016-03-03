@@ -333,7 +333,7 @@ const Footer = {
 };
 
 const ContentSectionType = {
-  headerText: PropTypes.string.isRequired,
+  header: PropTypes.string.isRequired,
   image: PropTypes.object,
   leadText: PropTypes.string,
 };
@@ -351,7 +351,7 @@ const ContentSection = {
     fields: [
       {
         title: 'Заголовок',
-        key: 'headerText',
+        key: 'header',
         type: 'string',
         isRequired: true,
       },

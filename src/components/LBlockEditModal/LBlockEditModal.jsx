@@ -3,10 +3,10 @@ import React, { PropTypes } from 'react';
 import Modal from 'components/ui-elements/Modal';
 import LBlockEditForm from 'components/LBlockEditForm';
 
-const LBlockEditModal = ({ isVisible, onCancel, onDelete, onSave }) => (
+const LBlockEditModal = ({ block, isVisible, onCancel, onDelete, onSave }) => (
   <Modal show={isVisible} className="modal EditorModal LBlockEditModal">
     <Modal.Header closeButton onHide={onCancel}>
-      <Modal.Title>Редактирование блока {onCancel}</Modal.Title>
+      <Modal.Title>Редактирование блока {block.view}</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <LBlockEditForm />
