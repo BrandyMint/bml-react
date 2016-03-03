@@ -23,7 +23,8 @@
 @import 'corestyle/sections.css';
 @import 'corestyle/buttons.scss';
 @import 'corestyle/spacing.css';
-@import 'corestyle/colours.css';
-@import 'corestyle/typography.css';
+@import 'corestyle/default/colours.css';
+@import 'corestyle/image-bg/colours.scss';
+@import 'corestyle/typography.scss';
 @import 'blockstyle.css';
 @import 'themify-icons.css'

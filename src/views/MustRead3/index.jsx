@@ -15,57 +15,28 @@ class MustRead3 extends Component {
     const { content } = this.props;
     /* eslint-enable */
 
-const a= (
-  <section className="image-slider image-bg slider-all-controls height-70">
-    <ul className="slides">
-      <li className="image-bg">
-        <div className="container v-align-transform">
-          <div className="row text-center">
-            <div className="col-md-10 col-md-offset-1">
-              <h2 className="mb-xs-16">Как выбрать нишу<br className="hidden-sm" />и сделать на ней первые деньги?</h2>
-                <p className="lead mb40">
-                  Тысячи людей, каждый день начинающие свой бизнес, в 95% случаев проваливаются, наступая на одни и те же грабли!Эти грабли — неправильно выбранная ниша.
-                </p>
-                <a className="btn btn-lg btn-filled" href="#">Принять участие</a>
-                <ul className="list-inline MustRead3-buttons">
-                  {map(content.items, (link, index) =>
-                     (<li className="list-inline-item" key={index}>
-                       <a href={link.url}
-                         className="btn btn-shadow btn-primary text-uppercase btn-md"
-                       >{link.title}
-                       </a></li>
-                      )
-                  )}
-                </ul>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </section>
-  );
     return (
-      <section className="MustRead3 text-center">
+      <section className="BML-section-height-70 MustRead3 text-center image-bg">
         <div className="container vertical-center-rel">
           <div className="row">
-              <div className="col-md-7">
+              <div className="col-md-10 col-md-offset-1">
                 <StringEditable
-                  className="MustRead3-header"
+                  className="BML-h2 color-primary"
                   data={content}
                   fieldName="header"
-                  tagName="h1"
+                  tagName="h2"
                 />
                 <StringEditable
-                  className="MustRead3-subheader"
+                  className="lead BML-lead color-primary mb40"
                   data={content}
                   fieldName="subheader"
-                  tagName="div"
+                  tagName="p"
                 />
                 <ul className="list-inline MustRead3-buttons">
                   {map(content.items, (link, index) =>
                      (<li className="list-inline-item" key={index}>
                        <a href={link.url}
-                         className="btn btn-shadow btn-primary text-uppercase btn-md"
+                         className="BML-btn btn btn-lg btn-filled"
                        >{link.title}
                        </a></li>
                       )

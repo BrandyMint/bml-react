@@ -12,10 +12,14 @@ BLOCKSTYLE v0.4
  06. Maps
 
 
+/*!---------- 00. BASE ----------*/
 
+.BML-section-height-70 {
+  min-height: 600px;
+  height: 70vh;
+}
 
 /*!---------- 01. ICONS ----------*/
-
 .icon {
     font-size: 64px;
     display: inline-block;
