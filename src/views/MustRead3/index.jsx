@@ -27,7 +27,7 @@ class MustRead3 extends Component {
                   tagName="h2"
                 />
                 <StringEditable
-                  className="lead BML-lead color-primary mb40"
+                  className="BML-lead lead color-primary mb40"
                   data={content}
                   fieldName="subheader"
                   tagName="p"

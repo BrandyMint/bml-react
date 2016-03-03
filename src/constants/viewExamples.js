@@ -1,5 +1,20 @@
 export default [
   {
+    view: 'HeaderText',
+    title: 'Текст с заголовком',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        header: 'Заголовок',
+        text: 'текст',
+      }
+    },
+  },
+  {
     view: 'PlainHTML',
     title: 'Чистый HTML',
     image: {

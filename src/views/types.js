@@ -396,9 +396,42 @@ const PlainHtml = {
   }
 }
 
+const HeaderTextPropType = {
+  header: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+const HeaderText = {
+  typeName: 'HeaderText',
+  propTypes: {
+    content: PropTypes.shape(HeaderTextPropType).isRequired,
+    form: CustomPropTypes.formContent,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: false,
+    fields: [
+      {
+        title: 'Заголовок',
+        key: 'header',
+        type: 'text',
+        isRequired: true,
+      },
+      {
+        title: 'Текст',
+        key: 'text',
+        type: 'text',
+        isRequired: true,
+      },
+    ]
+  }
+};
+
 export const Types = {
   content,
   PlainHtml,
+  HeaderText,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,

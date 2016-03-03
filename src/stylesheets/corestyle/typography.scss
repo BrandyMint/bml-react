@@ -1,12 +1,16 @@
 /*!---------- 3. TYPOGRAPHY ----------*/
 
 
-.mixin-font-family {
+.mixin-font-family-header {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.mixin-font-family-text {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .BML-h1, .BML-h2 {
-  @extend .mixin-font-family;
+  @extend .mixin-font-family-header;
   margin-bottom: 24px;
   margin-top: 0;
   padding: 0;
@@ -14,7 +18,7 @@
 
 
 .BML-lead {
-  @extend .mixin-font-family;
+  @extend .mixin-font-family-text;
 }
 
 .LPage {
@@ -82,22 +86,22 @@
     }
   }
 
-  h2.BML-h2 {
+  .BML-h2 {
     font-size: 40px;
     line-height: 48px;
   }
 
-  h3.BML-h3 {
+  .BML-h3 {
     font-size: 32px;
     line-height: 40px;
   }
 
-  h4.BML-h4 {
+  .BML-h4 {
     font-size: 24px;
     line-height: 32px;
   }
 
-  h5.BML-h5 {
+  .BML-h5 {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -193,7 +197,7 @@
     font-weight: 400;
   }
 
-  p.lead {
+  .lead {
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
@@ -204,7 +208,7 @@
   }
 
   @media all and (max-width: 767px) {
-    p.lead {
+    .lead {
       font-size: 13px;
       line-height: 24px;
     }

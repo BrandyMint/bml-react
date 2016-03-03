@@ -13,6 +13,8 @@ import MustRead1 from './MustRead1';
 import MustRead2 from './MustRead2';
 import MustRead3 from './MustRead3';
 
+import HeaderText from './HeaderText';
+
 import FreeText from './FreeText';
 import PlainHTML from './PlainHTML';
 
@@ -23,6 +25,7 @@ const list = {
   GoogleMap1,
   FreeText,
   CTA1,
+  HeaderText,
   MustRead1,
   MustRead2,
   MustRead3,

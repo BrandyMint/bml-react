@@ -2,6 +2,7 @@
 * image-bg сделать автоматически устанавливаемым в Section/Block
 * автоматически устанавливать bg-secondary
 * вместо pb96 и pt96 сделать BML-section-padding
+* text-align регулируется через форму (может через допклассы)
 
 * Скрывать OperatorPanel если мы редактируем в Redactor
 * Добавить тестирование пререндера на teamcity
