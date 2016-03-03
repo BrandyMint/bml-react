@@ -371,8 +371,34 @@ const ContentSection = {
   },
 };
 
+const PlainHtmlPropType = {
+  html: PropTypes.string.isRequired,
+};
+
+const PlainHtml = {
+  typeName: 'PlainHTML',
+  propTypes: {
+    content: PropTypes.shape(PlainHtmlPropType).isRequired,
+    form: CustomPropTypes.formContent,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: false,
+    fields: [
+      {
+        title: 'Чистый HTML',
+        key: 'html',
+        type: 'text',
+        isRequired: true,
+      },
+    ]
+  }
+}
+
 export const Types = {
   content,
+  PlainHtml,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,

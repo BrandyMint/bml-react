@@ -1,5 +1,19 @@
 export default [
   {
+    view: 'PlainHTML',
+    title: 'Чистый HTML',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        html: '<h1>Заголовок</h1><p>текст</p>',
+      }
+    },
+  },
+  {
     view: 'FreeText',
     title: 'Текстовая страница',
     image: {
