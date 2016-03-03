@@ -1,5 +1,27 @@
 export default [
   {
+    view: 'HeaderList',
+    title: 'Список с заголовком',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        header: 'Заголовок',
+        items: [
+          {
+            title: 'Twitter',
+          },
+          {
+            title: 'GitHub',
+          },
+        ],
+      }
+    },
+  },
+  {
     view: 'HeaderText',
     title: 'Текст с заголовком',
     image: {

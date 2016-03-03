@@ -14,6 +14,7 @@ import MustRead2 from './MustRead2';
 import MustRead3 from './MustRead3';
 
 import HeaderText from './HeaderText';
+import HeaderList from './HeaderList';
 
 import FreeText from './FreeText';
 import PlainHTML from './PlainHTML';
@@ -26,6 +27,7 @@ const list = {
   FreeText,
   CTA1,
   HeaderText,
+  HeaderList,
   MustRead1,
   MustRead2,
   MustRead3,

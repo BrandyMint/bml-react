@@ -396,6 +396,53 @@ const PlainHtml = {
   }
 }
 
+const HeaderListPropType = {
+  header: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(
+    {
+      title: PropTypes.string.isRequired,
+    }
+  )).isRequired,
+};
+
+const HeaderList = {
+  typeName: 'HeaderList',
+  propTypes: {
+    content: PropTypes.shape(HeaderListPropType).isRequired,
+    form: CustomPropTypes.formContent,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: false,
+    fields: [
+      {
+        title: 'Заголовок',
+        key: 'header',
+        type: 'text',
+        isRequired: true,
+      },
+      {
+        title: 'Список',
+        key: 'items',
+        type: 'items',
+        isRequired: false,
+        itemSchema: {
+          limit: 30,
+          fields: [
+            {
+              title: 'Название',
+              key: 'title',
+              type: 'string',
+              isRequired: true,
+            },
+          ],
+        },
+      },
+    ]
+  }
+};
+
 const HeaderTextPropType = {
   header: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -432,6 +479,7 @@ export const Types = {
   content,
   PlainHtml,
   HeaderText,
+  HeaderList,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,

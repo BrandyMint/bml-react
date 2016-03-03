@@ -9,6 +9,11 @@
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.BML-text {
+  font-size: 13px;
+  line-height: 24px;
+}
+
 .BML-h1, .BML-h2 {
   @extend .mixin-font-family-header;
   margin-bottom: 24px;
