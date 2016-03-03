@@ -13,6 +13,8 @@ class PlainHTML extends Component {
     const tagName = 'div';
     const className = 'PlainHTML';
 
+    // return (<div>{html}</div>);
+
     return createElement(
       tagName,
       {

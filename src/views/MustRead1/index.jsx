@@ -9,7 +9,7 @@ import StringEditable from 'components/primitives/StringEditable';
 import './index.css';
 
 const MustRead1 = ({ content }) => (
-  <section className="MustRead2">
+  <section className="MustRead1">
     <div className="container vertical-center-rel">
       <div className="row">
         <div className="col-lg-12">
@@ -31,7 +31,7 @@ const MustRead1 = ({ content }) => (
                 <li key={index} className="list-inline-item">
                   <a
                     href={item.url}
-                    className="btn btn-primary btn-shadow text-uppercase btn-md"
+                    className="btn btn-lg btn-filled"
                   >
                   {item.title}
                   </a>

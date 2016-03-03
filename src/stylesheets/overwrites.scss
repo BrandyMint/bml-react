@@ -1,5 +1,12 @@
 html {
   min-height: 100%;
+  // http://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .modal-body {

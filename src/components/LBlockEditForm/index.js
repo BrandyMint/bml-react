@@ -9,7 +9,7 @@ import {
 
 import LBlockEditForm from './LBlockEditForm';
 
-const lBlockEditFormSelector = state => ({
+const selector = state => ({
   block: state.editBlockForm.block,
 });
 
@@ -20,4 +20,4 @@ const actions = {
   onFormChange: changeForm,
 };
 
-export default connect(lBlockEditFormSelector, actions)(LBlockEditForm);
+export default connect(selector, actions)(LBlockEditForm);

@@ -200,7 +200,7 @@ export default [
     },
   },
   {
-    view: 'MustRead1',
+    view: 'MustRead3',
     title: 'Заголовок',
     description: 'html raw description',
     image: {

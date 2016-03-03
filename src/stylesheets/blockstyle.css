@@ -785,18 +785,18 @@ button[type="submit"] .form-loading {
     margin-bottom: 24px;
 }
 
-.image-slider.height-70 .slides li {
+.height-70 .slides li {
     height: 70vh;
     min-height: 600px;
 }
 
 @media all and (max-width: 767px) {
-    .image-slider.height-70 .slides li {
+    .height-70 .slides li {
         height: auto;
         min-height: none;
         padding: 80px 0;
     }
-    .image-slider.height-70 .v-align-transform {
+    .height-70 .v-align-transform {
         top: 0;
         transform: none;
         -webkit-transform: none;

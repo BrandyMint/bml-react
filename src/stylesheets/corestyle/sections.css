@@ -1,16 +1,16 @@
 
 /*!---------- 5. SECTIONS ----------*/
 
-section.LBC-content,
-footer.BML-footer {
-    padding: 96px 0;
-    position: relative;
-    overflow: hidden;
-}
+/*section.LBC-content,*/
+/*footer.BML-footer {*/
+    /*padding: 96px 0;*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+/*}*/
 
-footer.BML-footer {
-    padding: 72px 0;
-}
+/*footer.BML-footer {*/
+    /*padding: 72px 0;*/
+/*}*/
 
 .fullscreen {
     height: 100vh;
@@ -146,4 +146,3 @@ footer.bg-dark li,
 .background-image-holder.fadeIn {
     opacity: 1;
 }
-

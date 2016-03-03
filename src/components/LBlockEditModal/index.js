@@ -9,15 +9,9 @@ import LBlockEditModal from './LBlockEditModal';
 
 import './LBlockEditModal.css';
 
-const currentModalSelector = state => state.modal.current;
-
-const isVisibleSelector = createSelector(
-  currentModalSelector,
-  currentModal => currentModal === EDIT_BLOCK
-);
-
-const lBlockEditModalSelector = createStructuredSelector({
-  isVisible: isVisibleSelector,
+const selector = state => ({
+  isVisible: state.modal.current == EDIT_BLOCK,
+  block: state.editBlockForm.block,
 });
 
 const actions = {
@@ -26,4 +20,4 @@ const actions = {
   onSave: submitEditingBlock,
 };
 
-export default connect(lBlockEditModalSelector, actions)(LBlockEditModal);
+export default connect(selector, actions)(LBlockEditModal);

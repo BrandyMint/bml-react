@@ -1,24 +1,6 @@
-/*!
-
-CORESTYLE v0.4
-
-// ------------------------------------------------
-
- 1. Global Styles
- 2. Mixins
- 3. Typography
- 4. Colours
- 5. Sections
- 6. Buttons
- 7. Spacing
-
-/*!---------- 1. GLOBAL STYLES ----------*/
-
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 13px;
-    line-height: 24px;
+    /*font-size: 13px;*/
+    /*line-height: 24px;*/
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #666;
     overflow-x: hidden;

@@ -36,7 +36,7 @@ class MustRead2 extends Component {
                   {map(content.items, (link, index) =>
                      (<li className="list-inline-item" key={index}>
                        <a href={link.url}
-                         className="btn btn-shadow btn-primary text-uppercase btn-md"
+                         className="btn btn-lg btn-filled"
                        >{link.title}
                        </a></li>
                       )
