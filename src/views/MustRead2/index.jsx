@@ -30,7 +30,7 @@ class MustRead2 extends Component {
                   className="MustRead2-subheader"
                   data={content}
                   fieldName="subheader"
-                  tagName="h3"
+                  tagName="div"
                 />
                 <ul className="list-inline MustRead2-buttons">
                   {map(content.items, (link, index) =>

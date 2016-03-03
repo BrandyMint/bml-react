@@ -12,6 +12,8 @@
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;
 
+  font-size: 1rem;
+  line-height: 1.5;
 
   @descendent actions {
     float: left;

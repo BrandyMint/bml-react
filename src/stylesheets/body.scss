@@ -1,5 +1,9 @@
 @import 'config';
 
+body {
+  font-size: 24px;
+}
+
 body.Editor {
   background: $dashboardBackground;
 }
