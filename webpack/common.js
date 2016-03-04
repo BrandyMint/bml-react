@@ -9,6 +9,7 @@ import postcssCalc from 'postcss-calc';
 import postcssSelectorNot from 'postcss-selector-not';
 
 const root = path.join(process.cwd(), 'src');
+const bower = path.join(process.cwd(), 'bower_components');
 const viewer = path.join(process.cwd(), 'initializers/viewer');
 const editor = path.join(process.cwd(), 'initializers/editor');
 
@@ -38,16 +39,17 @@ export default {
 
   resolve: {
     root,
+    bower,
     extensions: ['', '.js', '.jsx'],
   },
 
   loaders: [
     {
-      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      test: /\.woff(2)?(\?.*)?$/,
       loader: 'url-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]',
     },
     {
-      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      test: /\.(ttf|eot|svg)(\?.*)?$/,
       loader: 'file-loader?name=fonts/[name].[ext]',
     },
     {
