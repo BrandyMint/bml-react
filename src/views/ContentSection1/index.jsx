@@ -4,16 +4,14 @@ import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
 import Image from 'views/elements/Image';
-
-import './index.css';
+import Buttons from 'views/elements/Buttons';
 
 const ContentSection1 = ({ content }) => (
-  <div className="container">
+  <div className="BML-section-padding container">
     <div className="row">
       <div className="col-lg-5 col-sm-6">
-        <div className="clearfix" />
         <StringEditable
-          className="section-heading"
+          className="BML-h2 color-primary"
           data={content}
           fieldName="header"
           tagName="h2"
@@ -24,6 +22,7 @@ const ContentSection1 = ({ content }) => (
           fieldName="leadText"
           tagName="div"
         />
+        <Buttons buttons={content.links} className="mt40"/>
       </div>
       <div className="col-lg-5 col-lg-offset-2 col-sm-6">
         <Image {...content.image} />

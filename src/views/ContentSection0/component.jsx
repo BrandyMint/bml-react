@@ -18,14 +18,6 @@ class ContentSection0 extends Component {
     const { content } = this.props;
     /* eslint-enable */
 
-    const { links } = content;
-
-    const buttons = size(links) > 0 ? (
-      <div className="mt40">
-        <Buttons buttons={content.links} />
-      </div>
-    ) : null;
-
     return (
       <div className="BML-section-padding text-center">
         <div className="row mb40 mb-xs-0">
@@ -51,7 +43,7 @@ class ContentSection0 extends Component {
               fieldName="leadText"
               tagName="div"
             />
-            {buttons}
+            <Buttons buttons={content.links} className="mt40" />
           </div>
         </div>
       </div>

@@ -7,15 +7,15 @@ import { applyType } from 'views/utils';
 class View extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { text } = this.props.content;
+    const { html } = this.props.content;
     /* eslint-enable */
 
     return (
-      <div className="ViewTemplate">
-        {text}
+      <div className="BML-section-padding container">
+        {html}
       </div>
     );
   }
 }
 
-export default applyType(View, Types.someType);
+export default applyType(View, Types.PlainHtml);
