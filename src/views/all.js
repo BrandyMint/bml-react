@@ -20,7 +20,10 @@ import HeaderList from './HeaderList';
 import FreeText from './FreeText';
 import PlainHTML from './PlainHTML';
 
+import IconifyFeatures from './IconifyFeatures';
+
 const list = {
+  IconifyFeatures,
   PlainHTML,
   InlineForm1,
   Navbar1,

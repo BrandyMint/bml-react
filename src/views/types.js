@@ -507,7 +507,57 @@ const HeaderText = {
   }
 };
 
+const FeaturesPropType = {
+  header: PropTypes.string.isRequired,
+  features: PropTypes.arrayOf(CustomPropTypes.feature).isRequired,
+}
+
+const HeadedFeatures = {
+  typeName: 'HeadedFeatures',
+  propTypes: {
+    content: PropTypes.shape(FeaturesPropType).isRequired,
+    form: CustomPropTypes.formContent,
+    uuid: PropTypes.string.isRequired,
+  },
+  contentSchema: {
+    version: 1,
+    backgroundImage: false,
+    fields: [
+      {
+        title: 'Заголовок',
+        key: 'header',
+        type: 'text',
+        isRequired: true,
+      },
+      {
+        title: 'Возможности',
+        key: 'features',
+        type: 'items',
+        isRequired: true,
+        itemSchema: {
+          limit: 6,
+          fields: [
+            {
+              title: 'Возможность',
+              key: 'title',
+              type: 'string',
+              isRequired: true,
+            },
+            {
+              title: 'Класс иконки',
+              key: 'iconClass', // TODO Завести отдельный тип
+              type: 'string',
+              isRequired: true,
+            },
+          ],
+        },
+      },
+    ]
+  }
+}
+
 export const Types = {
+  HeadedFeatures,
   content,
   PlainHtml,
   HeaderText,

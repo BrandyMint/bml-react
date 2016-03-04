@@ -21,6 +21,36 @@ export default [
       }
     },
   },
+
+  {
+    view: 'IconifyFeatures',
+    title: 'Возможности иконками',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        header: 'Заголовок',
+        features: [
+          {
+            title: 'Возможность 1',
+            iconClass: 'ti-gallery',
+          },
+          {
+            title: 'Возможность 2',
+            iconClass: 'ti-pacakge',
+          },
+          {
+            title: 'Возможность 3',
+            iconClass: 'ti-layers',
+          }
+        ],
+      }
+    },
+  },
+
   {
     view: 'HeaderText',
     title: 'Текст с заголовком',
@@ -36,6 +66,7 @@ export default [
       }
     },
   },
+
   {
     view: 'PlainHTML',
     title: 'Чистый HTML',
@@ -134,6 +165,7 @@ export default [
       },
     },
   },
+
   {
     view: 'ContentSection1',
     title: 'Область с контентом',
