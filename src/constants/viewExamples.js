@@ -96,6 +96,44 @@ export default [
     },
   },
   {
+    view: 'Form1',
+    title: 'Форма с текстом',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    rate: 4,
+    defaultData: {
+      content: {
+        text: 'some text',
+      },
+      form: {
+        submitTitle: 'Подписаться',
+        destination: 'collection',
+        collection: 'default',
+        fields: [
+          {
+            title: '',
+            placeholder: 'Имя',
+            key: 'name',
+            inputType: 'text',
+          },
+          {
+            title: '',
+            placeholder: 'Емайл',
+            key: 'email',
+            inputType: 'email',
+          },
+        ],
+      },
+      nodeAttributes: {
+      },
+      meta: {
+      },
+    },
+  },
+  {
     view: 'InlineForm1',
     title: 'Однострочная форма',
     image: {

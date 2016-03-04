@@ -1,6 +1,7 @@
 import { prepareViews } from 'views/utils';
 
 import InlineForm1 from './InlineForm1';
+import Form1 from './Form1';
 import Navbar1 from './Navbar1';
 import GoogleMap1 from './GoogleMap1';
 import CTA1 from './CTA1';
@@ -24,18 +25,25 @@ import IconifyFeatures from './IconifyFeatures';
 
 const list = {
   IconifyFeatures,
+
   PlainHTML,
+  FreeText,
+
+  Form1,
   InlineForm1,
+
   Navbar1,
   GoogleMap1,
-  FreeText,
   CTA1,
   HeaderText,
   HeaderList,
+
   MustRead1,
   MustRead2,
   MustRead3,
+
   Footer1,
+
   ContentSection0,
   ContentSection1,
   ContentSection2,

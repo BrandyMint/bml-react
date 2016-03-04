@@ -105,12 +105,38 @@ const Navbar = {
   },
 };
 
+const FormWithText = {
+  typeName: 'FormWithText',
+
+  // Фактически это полное содержание block-а
+  propTypes: {
+    content: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+    }).isRequired,
+    form: CustomPropTypes.formContent.isRequired,
+    uuid: PropTypes.string.isRequired,
+  },
+
+  contentSchema: {
+    version: 1,
+    backgroundImage: false,
+    form: 'required',
+    fields: [
+      {
+        title: 'Текст',
+        key: 'text',
+        type: 'string',
+        isRequired: true,
+      },
+    ],
+  },
+};
+
 const InlineForm = {
   typeName: 'InlineForm',
 
   // Фактически это полное содержание block-а
   propTypes: {
-    variantUuid: PropTypes.string.isRequired,
     content: PropTypes.shape({
       title: PropTypes.string,
     }).isRequired,
@@ -562,6 +588,7 @@ export const Types = {
   PlainHtml,
   HeaderText,
   HeaderList,
+  FormWithText,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,
