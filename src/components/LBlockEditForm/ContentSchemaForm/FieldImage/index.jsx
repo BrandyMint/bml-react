@@ -1,23 +1,32 @@
 import React, { Component, PropTypes } from 'react';
+import FormGroup from '../FormGroup';
 
 class FieldImage extends Component {
   render() {
-    const { field, value } = this.props;
+    const { field, onChange, value } = this.props;
 
     const imageStyle = {
       maxWidth: '200px',
       maxHeight: '200px',
     };
 
+    const handleChange = (event) => {
+      onChange({ url: event.target.value});
+    }
+
     return (
-      <fieldset className="form-group">
-        <label htmlFor={field.key}>
-          {field.title}
-          </label>
-          <div>
-            <img src={value.url} style={imageStyle}/>
-          </div>
-      </fieldset>
+      <FormGroup fieldKey={field.key} title={field.title}>
+        <div>
+          <img src={value.url} style={imageStyle}/>
+          <input
+            className="form-control"
+            type="text"
+            id={field.key}
+            value={value.url}
+            onChange={handleChange}
+          />
+        </div>
+      </FormGroup>
     );
   }
 }
