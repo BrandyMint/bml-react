@@ -8,7 +8,7 @@ import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
 import Image from 'views/elements/Image';
-import Button from 'views/elements/Button';
+import Buttons from 'views/elements/Buttons';
 
 // import { Link } from 'react-router';
 
@@ -19,13 +19,13 @@ class ContentSection0 extends Component {
     /* eslint-enable */
 
     const { links } = content;
+
     const buttons = size(links) > 0 ? (
       <div className="mt40">
-        {map(content.links, (link, index) =>
-             (<Button {...link} key={index} />)
-            )}
+        <Buttons buttons={content.links} />
       </div>
     ) : null;
+
     return (
       <div className="BML-section-padding text-center">
         <div className="row mb40 mb-xs-0">

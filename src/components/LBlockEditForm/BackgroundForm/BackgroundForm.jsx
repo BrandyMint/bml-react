@@ -30,7 +30,7 @@ const ACTIVE_STYLES = {
 
 class BackgroundForm extends Component {
   render() {
-    const { backgroundImage, onSaveBackground } = this.props;
+    const { backgroundImage, onSaveBackground, onChange } = this.props;
 
     const backgroundImageUrl = backgroundImage.url;
     const styles = assign(
@@ -40,11 +40,23 @@ class BackgroundForm extends Component {
 
     const onDrop = (files) => onSaveBackground(files[0]);
 
+    const handleChangeUrl = (event) => {
+      onChange('uuid', null);
+      onChange('url', event.target.value );
+    }
+
     return (
       <div className="TabPage">
         <Dropzone style={styles} multiple={false} onDrop={onDrop} activeStyle={ACTIVE_STYLES}>
           <div className="Dropzone-title">Перетащите сюда фоновое изобрежение</div>
         </Dropzone>
+        <input
+          className="form-control"
+          type="text"
+          id="backgroundImageUrl"
+          value={backgroundImageUrl}
+          onChange={handleChangeUrl}
+        />
       </div>
     );
   }
@@ -58,6 +70,7 @@ BackgroundForm.propTypes = {
     height: PropTypes.number,
   }).isRequired,
   onSaveBackground: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default BackgroundForm;
