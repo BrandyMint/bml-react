@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import map from 'lodash/map';
+import size from 'lodash/size';
+
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
+
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
 import Image from 'views/elements/Image';
+import Button from 'views/elements/Button';
 
 // import { Link } from 'react-router';
 
@@ -13,8 +18,16 @@ class ContentSection0 extends Component {
     const { content } = this.props;
     /* eslint-enable */
 
+    const { links } = content;
+    const buttons = size(links) > 0 ? (
+      <div className="mt40">
+        {map(content.links, (link, index) =>
+             (<Button {...link} key={index} />)
+            )}
+      </div>
+    ) : null;
     return (
-      <div className="BML-section-padding bg-secondary text-center">
+      <div className="BML-section-padding text-center">
         <div className="row mb40 mb-xs-0">
           <div className="col-sm-12 text-center">
             <StringEditable
@@ -38,6 +51,7 @@ class ContentSection0 extends Component {
               fieldName="leadText"
               tagName="div"
             />
+            {buttons}
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ class LBlockEditForm extends Component {
         { schema.backgroundImage && (
           <Tab eventKey={4} title="Фон">
             <BackgroundForm
-              backgroundImage={block.backgroundImage}
+              backgroundImage={block.backgroundImage || {}}
               onChange={onBackgroundImageChange}
             />
           </Tab>)

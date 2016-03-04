@@ -1,6 +1,27 @@
 import { PropTypes } from 'react';
 import CustomPropTypes from 'constants/customPropTypes';
 
+const LinkTypeSchemaFields = [
+    {
+      title: 'Текст',
+      key: 'text',
+      type: 'string',
+      isRequired: true,
+    },
+    {
+      title: 'Ссылка',
+      key: 'href',
+      type: 'url',
+      isRequired: true,
+    },
+    {
+      title: 'Target',
+      key: 'target',
+      type: 'string',
+      isRequired: true,
+    },
+  ];
+
 const ContentContentType = {
   text: PropTypes.string.isRequired,
 };
@@ -64,7 +85,7 @@ const Navbar = {
         isRequired: false,
         itemSchema: {
           limit: 7,
-          fields: [
+          fields: [ // TODO заменить на CustomPropType.link
             {
               title: 'Название',
               key: 'title',
@@ -336,6 +357,7 @@ const ContentSectionType = {
   header: PropTypes.string.isRequired,
   image: PropTypes.object,
   leadText: PropTypes.string,
+  links: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
 };
 
 const ContentSection = {
@@ -366,6 +388,16 @@ const ContentSection = {
         key: 'image',
         type: 'image',
         isRequired: true,
+      },
+      {
+        title: 'Кнопки',
+        key: 'links',
+        type: 'items',
+        isRequired: false,
+        itemSchema: {
+          limit: 5,
+          fields: LinkTypeSchemaFields,
+        },
       },
     ],
   },

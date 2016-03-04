@@ -12,7 +12,7 @@ class FieldItems extends Component {
   render() {
     const { field, value, onChange } = this.props;
 
-    const items = value;
+    const items = value || [];
 
     const {
       title,
