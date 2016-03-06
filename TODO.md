@@ -25,6 +25,7 @@
 * [x] rename BlockView ViewComponent
 * [x] ЗАменить LPage в стилях на BML-section с целью уменьшения глубины путей в CSS
 * [x] BML-section-padding заменить на BML-section--padding. (5 минут, легко)
+* [ ] Переименовать block.view во viewName
 
 
 ## Фичи

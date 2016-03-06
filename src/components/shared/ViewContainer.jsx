@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import BlockViewBackground from 'components/shared/BlockViewBackground';
+import BackgroundVideo from 'views/shared/BackgroundVideo';
 
 import classnames from 'classnames';
 import get from 'lodash/get';
+import size from 'lodash/size';
+
+const TAG_NAME = 'section';
 
 class ViewContainer extends Component {
   render() {
@@ -23,14 +26,14 @@ class ViewContainer extends Component {
     const blockStyles = backgroundImageUrl ? { backgroundImage: `url("${backgroundImageUrl}")` } : {};
 
     return React.createElement(
-      tagName || 'section',
+      tagName || TAG_NAME,
       {
         className: blockClasses,
         id: blockId,
         style: blockStyles
       },
       [
-        <BlockViewBackground backgroundVideos={backgroundVideos} />,
+        size(backgroundVideos)>0 && <BackgroundVideo videos={backgroundVideos}/>,
         children
       ]
     )

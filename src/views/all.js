@@ -22,7 +22,7 @@ import PlainHTML from './PlainHTML';
 
 import IconifyFeatures from './IconifyFeatures';
 
-const list = {
+export const viewsList = {
   IconifyFeatures,
 
   PlainHTML,
@@ -50,5 +50,4 @@ const list = {
 };
 
 export const types = {}; // Автоматически заполняется через prepareViews
-
-export const views = prepareViews(list, types);
+export const views = prepareViews(viewsList, types);
