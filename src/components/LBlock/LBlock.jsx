@@ -27,7 +27,7 @@ class LBlock extends Component {
     const { nodeAttributes, view } = block;
 
     return (
-      <LBlockLayer block={block} onMouseMove={onActive} onMouseEnter={onActive}>
+      <LBlockLayer block={block} onActive={onActive}>
         <ViewComponent block={block} />
       </LBlockLayer>
     )

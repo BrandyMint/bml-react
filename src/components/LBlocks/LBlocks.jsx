@@ -43,8 +43,7 @@ class LBlocks extends Component {
     const renderSection = (block, index) => {
       const isActive = this.state.activeAddButtonUuid === block.uuid;
 
-      const showBeforeButton = true || // TODO
-        (blocks.length === 0) ||
+      const showBeforeButton = (blocks.length === 0) ||
         (
           (hasControlActivity || isActive) &&
             (currentBlockUuid === block.uuid || previousBlockUuid === currentBlockUuid) &&

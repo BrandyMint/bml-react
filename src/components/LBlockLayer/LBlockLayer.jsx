@@ -28,6 +28,7 @@ class LBlockLayer extends Component {
   onHover() {
     this.clearTimeout();
     this.setState({ isHovered: true });
+    this.props.onActive();
     this.unhoverTimeout = window.setTimeout(
       () => this.setState({ isHovered: false }),
       TIMEOUT
@@ -114,6 +115,7 @@ LBlockLayer.propTypes = {
   hasMultipleViews: PropTypes.bool,
   hasControlActivity: PropTypes.bool,
 
+  onActive: PropTypes.func.isRequired,
   onBlockPositionDown: PropTypes.func.isRequired,
   onBlockPositionUp: PropTypes.func.isRequired,
   onEditingStart: PropTypes.func.isRequired,
