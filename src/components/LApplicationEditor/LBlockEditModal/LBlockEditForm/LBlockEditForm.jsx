@@ -53,6 +53,13 @@ class LBlockEditForm extends Component {
             />
           </Tab>)
         }
+        <Tab eventKey={5} title="JSON">
+          <pre>
+            <code>
+              {JSON.stringify(block, undefined, 2)}
+            </code>
+          </pre>
+        </Tab>
       </Tabs>
     );
   }
