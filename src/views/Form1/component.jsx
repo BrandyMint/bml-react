@@ -18,7 +18,7 @@ class Form1 extends Component {
     return (
       <ViewContainer block={block} className="BML-section--padding container">
         <div className="row">
-          <div className="col-sm-6 col-md-5">
+          <div className="col-sm-6 col-md-5 col-md-offset-1">
             <RichEditable
               className="BML-lead"
               data={content}
@@ -26,7 +26,7 @@ class Form1 extends Component {
               tagName="div"
             />
           </div>
-          <div className="col-sm-6 col-md-5 col-md-offset-1">
+          <div className="col-sm-6 col-md-4 col-md-offset-1">
             <ContentForm {...form} />
           </div>
         </div>

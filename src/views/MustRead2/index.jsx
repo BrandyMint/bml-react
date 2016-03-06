@@ -11,7 +11,7 @@ import ViewContainer from 'components/shared/ViewContainer';
 import './index.css';
 
 const MustRead2 = ({ block }) => (
-  <ViewContainer block={ block } className="BML-section--height-70 image-bg">
+  <ViewContainer block={ block } className="BML-section--height-70">
     <div className="container vertical-center-rel">
       <div className="row">
         <div className="col-md-7">

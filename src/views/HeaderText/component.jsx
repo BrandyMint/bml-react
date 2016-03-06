@@ -13,7 +13,7 @@ class HeaderText extends Component {
     /* eslint-enable */
 
     return (
-      <ViewContainer block={ block } className="BML-section--padding bg-secondary text-center">
+      <ViewContainer block={ block } className="BML-section--padding text-center">
         <div className="container">
           <div className="row">
             <div className="col-sm-10 col-sm-offset-1">

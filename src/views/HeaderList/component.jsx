@@ -22,7 +22,7 @@ class View extends Component {
         'col-md-offset-1': index % 2 == 0
       })
     return (
-      <ViewContainer block={ block } className="BML-section--padding bg-secondary">
+      <ViewContainer block={ block } className="BML-section--padding">
         <div className="container">
           <div className="row mb64 mb-xs-24">
             <div className="col-md-10 col-md-offset-1 col-sm-12 text-center">

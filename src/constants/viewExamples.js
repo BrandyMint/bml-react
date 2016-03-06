@@ -40,7 +40,7 @@ export default [
           },
           {
             title: 'Возможность 2',
-            iconClass: 'ti-pacakge',
+            iconClass: 'ti-package',
           },
           {
             title: 'Возможность 3',

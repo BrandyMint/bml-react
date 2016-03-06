@@ -2,15 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import BackgroundVideo from 'views/shared/BackgroundVideo';
 
 import classnames from 'classnames';
-import get from 'lodash/get';
-import size from 'lodash/size';
+import { get, size } from 'lodash';
 
 const TAG_NAME = 'section';
 
 class ViewContainer extends Component {
   render() {
     const { children, block, className, tagName } = this.props;
-    const { nodeAttributes, uuid, view, backgroundVideos, backgroundImage } = block;
+    const { nodeAttributes, uuid, view, backgroundStyle, backgroundVideos, backgroundImage } = block;
+
+    console.log(backgroundStyle);
 
     const blockId = get('nodeAttributes.id') || uuid;
     const blockClasses = classnames(
@@ -18,6 +19,7 @@ class ViewContainer extends Component {
         'BML-section': true,
         [`BML-View-${view}`]: true,
       },
+      get(backgroundStyle, 'bgClasses'),
       className,
       get(nodeAttributes,'class'),
     );
