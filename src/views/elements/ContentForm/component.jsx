@@ -11,7 +11,7 @@ const Field = ({key, title, placeholder, inputType}, index) => {
         type={inputType}
         className="form-control"
         name={key}
-        id={`${name}-${index}`}
+        id={key}
         placeholder={placeholder}
       />
     </div>
