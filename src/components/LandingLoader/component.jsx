@@ -6,7 +6,7 @@ import {
   LOADING_STATE_LOADED,
 } from 'constants/loadingStates';
 
-class EditorApplication extends Component {
+class LandingLoader extends Component {
   componentDidMount() {
     this.props.loadVariant(this.props.params.variantUuid);
   }
@@ -27,7 +27,7 @@ class EditorApplication extends Component {
   }
 }
 
-EditorApplication.propTypes = {
+LandingLoader.propTypes = {
   loadVariant: PropTypes.func.isRequired,
   loadingState: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
@@ -36,4 +36,4 @@ EditorApplication.propTypes = {
   }).isRequired,
 };
 
-export default EditorApplication;
+export default LandingLoader;
