@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { FIELD_TYPES } from 'constants/fieldTypes';
-import { FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
+import { FIELD_COMPONENTS } from '../schemaFieldTypes';
 
 class Field extends Component {
   render() {

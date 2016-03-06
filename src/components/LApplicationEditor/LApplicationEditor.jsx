@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
 
-import LPage from 'components/LPage';
-import LBlockAddModal from 'components/LBlockAddModal';
-import LBlockEditModal from 'components/LBlockEditModal';
+import LPage from './LPage';
+import LBlockAddModal from './LBlockAddModal';
+import LBlockEditModal from './LBlockEditModal';
 
-import EditorLeftSidebar from 'components/EditorLeftSidebar';
-import EditorRightSidebar from 'components/EditorRightSidebar';
+import EditorLeftSidebar from './EditorLeftSidebar';
+import EditorRightSidebar from './EditorRightSidebar';
 
 import './index.css';
 

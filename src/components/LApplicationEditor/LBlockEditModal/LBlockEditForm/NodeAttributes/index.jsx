@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Attribute from 'components/LBlockEditForm/Attribute';
+import Attribute from './Attribute';
 import get from 'lodash/get';
 import partial from 'lodash/partial';
 

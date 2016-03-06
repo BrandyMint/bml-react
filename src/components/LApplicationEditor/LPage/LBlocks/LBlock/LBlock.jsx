@@ -6,8 +6,7 @@ import get from 'lodash/get';
 import assign from 'lodash/assign';
 import partial from 'lodash/partial';
 
-import LBlockLayer from 'components/LBlockLayer';
-import BlockViewBackground from 'components/BlockViewBackground';
+import LBlockLayer from './LBlockLayer';
 import { viewsRepository } from 'repositories/ViewsRepository';
 import UnknownView from 'views/unknown';
 

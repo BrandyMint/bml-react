@@ -1,13 +1,13 @@
 import * as F from 'constants/fieldTypes';
 
-import FieldString from 'components/LBlockEditForm/ContentSchemaForm/FieldString';
-import FieldNumber from 'components/LBlockEditForm/ContentSchemaForm/FieldNumber';
-import FieldText from 'components/LBlockEditForm/ContentSchemaForm/FieldText';
-import FieldImage from 'components/LBlockEditForm/ContentSchemaForm/FieldImage';
-import FieldLocation from 'components/LBlockEditForm/ContentSchemaForm/FieldLocation';
-import FieldDropdownList from 'components/LBlockEditForm/ContentSchemaForm/FieldDropdownList';
+import FieldString from './FieldString';
+import FieldNumber from './FieldNumber';
+import FieldText from './FieldText';
+import FieldImage from './FieldImage';
+import FieldLocation from './FieldLocation';
+import FieldDropdownList from './FieldDropdownList';
 
-import FieldItems from 'components/LBlockEditForm/ContentSchemaForm/FieldItems';
+import FieldItems from './FieldItems';
 
 export const FIELD_COMPONENTS = {
   [F.FIELD_TYPE_STRING]: FieldString,

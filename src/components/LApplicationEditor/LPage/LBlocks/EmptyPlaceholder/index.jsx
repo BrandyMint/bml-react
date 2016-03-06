@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import LBlockAddButton from 'components/LBlockAddButton';
+import LBlockAddButton from '../LBlockAddButton';
 
 import './index.css';
 

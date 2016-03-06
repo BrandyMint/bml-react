@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 import classnames from 'classnames';
 
-import LBlocks from 'components/LBlocks';
-import LFooter from 'components/LFooter';
+import LBlocks from './LBlocks';
+import LFooter from './LFooter';
 
 import './index.css';
 
 import {
   DEFAULT_FOOTER_STATE,
-} from 'components/LFooter/states';
+} from './LFooter/states';
 
 class LPage extends Component {
   constructor() {

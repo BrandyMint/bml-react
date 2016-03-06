@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Modal from 'components/ui-elements/Modal';
-import LBlockEditForm from 'components/LBlockEditForm';
+import LBlockEditForm from './LBlockEditForm';
 
 const LBlockEditModal = ({ block, isVisible, onCancel, onDelete, onSave }) => (
   <Modal show={isVisible} className="modal EditorModal LBlockEditModal">

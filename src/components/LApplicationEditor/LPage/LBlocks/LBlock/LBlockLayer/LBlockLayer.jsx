@@ -6,7 +6,7 @@ import { APP_ACTIVITY_TIMEOUT } from 'actions/application';
 
 import partial from 'lodash/partial';
 
-import LBlockLayerPanel from 'components/LBlockLayerPanel';
+import LBlockLayerPanel from './LBlockLayerPanel';
 
 import './LBlockLayer.css';
 

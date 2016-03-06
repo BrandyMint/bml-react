@@ -7,7 +7,7 @@ import IconMore from 'react-icons/lib/fa/chevron-down';  // 'react-icons/lib/md/
 import {
   FOOTER_CLOSED,
   FOOTER_OPEN,
-} from 'components/LFooter/states';
+} from './states';
 
 class LFooter extends Component {
   render() {

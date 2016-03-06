@@ -1,6 +1,6 @@
-import { FIELD_COMPONENTS } from 'constants/schemaFieldTypes';
-import CustomPropTypes from 'constants/customPropTypes';
 import React, { Component, PropTypes } from 'react';
+import { FIELD_COMPONENTS } from '../schemaFieldTypes';
+import CustomPropTypes from 'constants/customPropTypes';
 
 class FieldSubitem extends Component {
   render() {

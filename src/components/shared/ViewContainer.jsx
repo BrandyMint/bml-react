@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import BlockViewBackground from 'components/BlockViewBackground';
+import BlockViewBackground from 'components/shared/BlockViewBackground';
 
 import classnames from 'classnames';
 import get from 'lodash/get';

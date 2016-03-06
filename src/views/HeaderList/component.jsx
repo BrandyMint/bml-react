@@ -18,6 +18,7 @@ class View extends Component {
     const itemClass = (index) => classnames({
         'col-md-5': true,
         'col-sm-6': true,
+        'mb40': true,
         'col-md-offset-1': index % 2 == 0
       })
     return (
@@ -34,11 +35,13 @@ class View extends Component {
             </div>
           </div>
           <div className="row">
-            {map(content.items, (item, index) =>
-               <div key={index} className={itemClass(index)}>
-                <p className="mb24">{item.title}</p>
-              </div>
-             )}
+            <ol>
+              {map(content.items, (item, index) =>
+                 <li key={index} className={itemClass(index)}>
+                  {item.title}
+                </li>
+              )}
+            </ol>
           </div>
         </div>
       </ViewContainer>

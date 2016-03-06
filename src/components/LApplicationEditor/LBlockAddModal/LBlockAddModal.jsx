@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Modal from 'components/ui-elements/Modal';
-import LBlockAddForm from 'components/LBlockAddForm';
+import LBlockAddForm from './LBlockAddForm';
 
 const LBlockAddModal = ({ isVisible, onAdd, onCancel }) => (
   <Modal show={isVisible}>

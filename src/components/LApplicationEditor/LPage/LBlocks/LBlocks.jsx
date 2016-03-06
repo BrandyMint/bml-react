@@ -6,9 +6,9 @@ import map from 'lodash/map';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
-import LBlock from 'components/LBlock';
-import LBlockAddButton from 'components/LBlockAddButton';
-import EmptyPlaceholder from 'components/LBlocks/EmptyPlaceholder';
+import LBlock from './LBlock';
+import LBlockAddButton from './LBlockAddButton';
+import EmptyPlaceholder from './EmptyPlaceholder';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';

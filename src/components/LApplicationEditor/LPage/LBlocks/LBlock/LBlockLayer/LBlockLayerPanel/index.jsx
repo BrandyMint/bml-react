@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-import LBlockSettingsButton from 'components/LBlockSettingsButton';
-import LBlockViewChanger from 'components/LBlockViewChanger';
-import LBlockPositionChanger from 'components/LBlockPositionChanger';
+import LBlockSettingsButton from './LBlockSettingsButton';
+import LBlockViewChanger from './LBlockViewChanger';
+import LBlockPositionChanger from './LBlockPositionChanger';
 // import LBlockLayerViewInfo from 'components/LBlockLayerViewInfo';
 
 import './index.css';

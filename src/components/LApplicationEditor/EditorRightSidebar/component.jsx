@@ -5,7 +5,7 @@ import FullscreenIcon from 'react-icons/lib/md/desktop-windows';
 // import FullscreenEditor from 'react-icons/lib/fa/edit';
 // import FullscreenIcon from 'react-icons/lib/go/screen-full';
 import MobileIcon from 'react-icons/lib/go/device-mobile';
-import EditorSaveButton from 'components/EditorSaveButton';
+import EditorSaveButton from './EditorSaveButton';
 
 class EditorRightSidebar extends Component {
   render() {

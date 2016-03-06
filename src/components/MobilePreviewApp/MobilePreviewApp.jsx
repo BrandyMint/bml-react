@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
-import EditorRightSidebar from 'components/EditorRightSidebar';
+import EditorRightSidebar from 'components/LApplicationEditor/EditorRightSidebar';
 
 import './index.css';
 
