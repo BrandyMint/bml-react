@@ -4,13 +4,15 @@ import map from 'lodash/map';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
+import ViewContainer from 'components/shared/ViewContainer';
 
 // import { Link } from 'react-router';
 
 class View extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { content } = this.props;
+    const { block } = this.props;
+    const { content } = block;
     /* eslint-enable */
 
     const itemClass = (index) => classnames({
@@ -19,7 +21,7 @@ class View extends Component {
         'col-md-offset-1': index % 2 == 0
       })
     return (
-      <div className="BML-section-padding bg-secondary">
+      <ViewContainer block={ block } className="BML-section--padding bg-secondary">
         <div className="container">
           <div className="row mb64 mb-xs-24">
             <div className="col-md-10 col-md-offset-1 col-sm-12 text-center">
@@ -39,7 +41,7 @@ class View extends Component {
              )}
           </div>
         </div>
-      </div>
+      </ViewContainer>
     );
   }
 }

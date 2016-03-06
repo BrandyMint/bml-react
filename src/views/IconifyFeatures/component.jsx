@@ -4,6 +4,7 @@ import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
 import classnames from 'classnames'
 import map from 'lodash/map';
+import ViewContainer from 'components/shared/ViewContainer';
 
 const Feature = (props) => (
   <div className="feature text-center">
@@ -20,12 +21,13 @@ Feature.propTypes = {
 class IconifyFeatures extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { content } = this.props;
+    const { block } = this.props;
+    const { content } = block;
     const { header, features } = content;
     /* eslint-enable */
 
     return (
-      <div className="BML-section-padding container">
+      <ViewContainer block={block} className="BML-section--padding container">
         <div className="row mb40 mb-xs-0">
           <div className="col-sm-12 text-center">
             <StringEditable
@@ -43,7 +45,7 @@ class IconifyFeatures extends Component {
             </div>
           ))}
         </div>
-      </div>
+      </ViewContainer>
     );
   }
 }

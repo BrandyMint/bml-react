@@ -9,17 +9,19 @@ import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
 import Image from 'views/elements/Image';
 import Buttons from 'views/elements/Buttons';
+import ViewContainer from 'components/shared/ViewContainer';
 
 // import { Link } from 'react-router';
 
 class ContentSection0 extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { content } = this.props;
+    const { block } = this.props;
+    const { content } = block;
     /* eslint-enable */
 
     return (
-      <div className="BML-section-padding text-center">
+      <ViewContainer block={ block } className="BML-section--padding text-center">
         <div className="row mb40 mb-xs-0">
           <div className="col-sm-12 text-center">
             <StringEditable
@@ -46,7 +48,7 @@ class ContentSection0 extends Component {
             <Buttons buttons={content.links} className="mt40" />
           </div>
         </div>
-      </div>
+      </ViewContainer>
     );
   }
 }

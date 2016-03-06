@@ -6,7 +6,7 @@ import { viewsRepository } from 'repositories/ViewsRepository';
 const ViewComponent = ({ block }) => {
   const SectionComponent = viewsRepository.getView(block.view) || UnknownView;
 
-  return <SectionComponent {...block} />;
+  return <SectionComponent block={block} />;
 }
 
 ViewComponent.propTypes = {

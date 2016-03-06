@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
-
-// import { Link } from 'react-router';
+import ViewContainer from 'components/shared/ViewContainer';
 
 class View extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { html } = this.props.content;
+    const { block } = this.props;
+    const { html } = block.content;
     /* eslint-enable */
 
     return (
-      <div className="BML-section-padding container">
+      <ViewContainer block={ block } className="BML-section--padding container">
         {html}
-      </div>
+      </ViewContainer>
     );
   }
 }

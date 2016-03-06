@@ -9,16 +9,15 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import ViewContainer from 'components/shared/ViewContainer';
 
-import './index.css';
-
 class MustRead3 extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { content } = this.props;
+    const { block } = this.props;
+    const { content } = block;
     /* eslint-enable */
 
     return (
-      <ViewContainer {...this.props} className="BML-section-height-70 text-center image-bg">
+      <ViewContainer block={ block } className="BML-section--height-70 text-center image-bg">
         <div className="container vertical-center-rel">
           <div className="row">
               <div className="col-md-10 col-md-offset-1">

@@ -11,11 +11,12 @@ import ContentForm from 'views/elements/ContentForm';
 class Form1 extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { content, form } = this.props;
+    const { block } = this.props;
+    const { content, form } = block;
     /* eslint-enable */
 
     return (
-      <ViewContainer {...this.props} className="BML-section-padding container">
+      <ViewContainer block={block} className="BML-section--padding container">
         <div className="row">
           <div className="col-sm-6 col-md-5">
             <RichEditable

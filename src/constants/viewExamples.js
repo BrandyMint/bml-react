@@ -78,7 +78,10 @@ export default [
     defaultData: {
       content: {
         html: '<h1>Заголовок</h1><p>текст</p>',
-      }
+      },
+      nodeAttributes: {
+        class: 'container BML-section--padding',
+      },
     },
   },
   {

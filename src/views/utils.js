@@ -1,4 +1,5 @@
 import mapValues from 'lodash/mapValues';
+import invariant from 'invariant';
 
 /* eslint-disable no-param-reassign */
 
@@ -13,10 +14,8 @@ const registerView = (types, viewComponent, viewName) => {
   viewComponent.viewName = viewName;
 
   const typeName = viewComponent.typeName;
-  if (!typeName) {
-    const error = new Error(`View ${viewName} has no typeName`);
-    throw error;
-  }
+  invariant(typeName, `View ${viewName} has no typeName`);
+
   if (!types[typeName]) {
     types[typeName] = [];
   }

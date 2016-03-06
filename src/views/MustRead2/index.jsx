@@ -6,48 +6,41 @@ import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import map from 'lodash/map';
 import StringEditable from 'components/primitives/StringEditable';
+import ViewContainer from 'components/shared/ViewContainer';
 
 import './index.css';
 
-class MustRead2 extends Component {
-  render() {
-    /* eslint-disable react/prop-types */
-    const { content } = this.props;
-    /* eslint-enable */
-
-    return (
-      <section className="MustRead2">
-        <div className="container vertical-center-rel">
-          <div className="row">
-              <div className="col-md-7">
-                <StringEditable
-                  className="MustRead2-header"
-                  data={content}
-                  fieldName="header"
-                  tagName="h1"
-                />
-                <StringEditable
-                  className="MustRead2-subheader"
-                  data={content}
-                  fieldName="subheader"
-                  tagName="div"
-                />
-                <ul className="list-inline MustRead2-buttons">
-                  {map(content.items, (link, index) =>
-                     (<li className="list-inline-item" key={index}>
-                       <a href={link.url}
-                         className="btn btn-lg btn-filled"
-                       >{link.title}
-                       </a></li>
-                      )
-                  )}
+const MustRead2 = ({ block }) => (
+  <ViewContainer block={ block } >
+    <div className="container vertical-center-rel">
+      <div className="row">
+        <div className="col-md-7">
+          <StringEditable
+            className="MustRead2-header"
+            data={block.content}
+            fieldName="header"
+            tagName="h1"
+          />
+          <StringEditable
+            className="MustRead2-subheader"
+            data={block.content}
+            fieldName="subheader"
+            tagName="div"
+          />
+          <ul className="list-inline MustRead2-buttons">
+            {map(block.content.items, (link, index) =>
+                 (<li className="list-inline-item" key={index}>
+                   <a href={link.url}
+                   className="btn btn-lg btn-filled"
+                   >{link.title}
+                   </a></li>
+                   )
+                )}
                 </ul>
-              </div>
-          </div>
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </div>
+  </ViewContainer>
+);
 
 export default applyType(MustRead2, Types.mustRead);
