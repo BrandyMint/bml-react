@@ -306,22 +306,7 @@ export const MustRead = {
         isRequired: true,
         itemSchema: {
           limit: 5,
-          fields: [
-            {
-              title: 'Название',
-              key: 'title',
-              type: 'string',
-              defaultValue: 'Название',
-              isRequired: true,
-            },
-            {
-              title: 'Ссылка',
-              defaultValue: 'http://aydamaster.ru',
-              key: 'url',
-              type: 'url',
-              isRequired: true,
-            },
-          ],
+          fields: LinkTypeSchemaFields,
         },
       },
     ],

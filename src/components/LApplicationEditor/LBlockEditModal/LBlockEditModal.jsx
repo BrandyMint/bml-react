@@ -13,14 +13,14 @@ const LBlockEditModal = ({ block, isVisible, onCancel, onDelete, onSave }) => (
     </Modal.Body>
     <Modal.Footer>
       <button
-        className="btn btn-danger-outline"
+        className="btn btn-danger"
         type="button"
         onClick={onDelete}
       >
         Удалить
       </button>
       <button
-        className="btn btn-primary-outline"
+        className="btn btn-primary"
         type="button"
         onClick={onSave}
       >

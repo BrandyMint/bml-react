@@ -3,6 +3,8 @@ import map from 'lodash/map';
 import config from 'constants/config';
 import ContentFormSecrets from 'views/elements/ContentFormSecrets';
 
+const DEFAUT_FORM_ID = 'form';
+
 const Field = ({key, title, placeholder, inputType}, index) => {
   return (
     <div className="form-group" key={index}>
@@ -19,12 +21,12 @@ const Field = ({key, title, placeholder, inputType}, index) => {
 }
 
 const ContentForm = (props) => {
-  const { fields, method, url, submitTitle, variantUuid } = props;
+  const { id, fields, method, url, submitTitle, variantUuid } = props;
 
   const formMethod = method || 'POST';
   const action = url || config('postLeadUrl');
   return (
-    <form acceptCharset="UTF-8" action={action} method={formMethod}>
+    <form acceptCharset="UTF-8" action={action} id={id || DEFAUT_FORM_ID} method={formMethod}>
       <input name="utf8" type="hidden" value="✓" />
       <ContentFormSecrets />
       {map(fields, (field, index) => <Field key={index} {...field} />)}

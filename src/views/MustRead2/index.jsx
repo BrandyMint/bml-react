@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import map from 'lodash/map';
+
+import Buttons from 'views/elements/Buttons';
 import StringEditable from 'components/primitives/StringEditable';
 import ViewContainer from 'components/shared/ViewContainer';
 
@@ -27,16 +29,7 @@ const MustRead2 = ({ block }) => (
             fieldName="subheader"
             tagName="p"
           />
-          <ul className="list-inline MustRead2-buttons">
-            {map(block.content.items, (link, index) =>
-                 (<li className="list-inline-item" key={index}>
-                   <a href={link.url}
-                   className="btn btn-lg btn-filled"
-                   >{link.title}
-                   </a></li>
-                   )
-                )}
-                </ul>
+          <Buttons buttons={block.content.items} className="mt40"/>
         </div>
       </div>
     </div>

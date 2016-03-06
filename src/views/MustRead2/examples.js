@@ -13,8 +13,8 @@ export const sections = [
       subheader: 'Удобный конструктор сайта с автоматической аналитикой',
       items: [
         {
-          title: 'Вперед!',
-          url: '#form',
+          text: 'Вперед!',
+          href: '#form',
         },
       ],
     },

@@ -5,8 +5,9 @@ import React, { Component } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import map from 'lodash/map';
-import StringEditable from 'components/primitives/StringEditable';
 
+import Buttons from 'views/elements/Buttons';
+import StringEditable from 'components/primitives/StringEditable';
 import ViewContainer from 'components/shared/ViewContainer';
 
 class MustRead3 extends Component {
@@ -33,16 +34,7 @@ class MustRead3 extends Component {
                   fieldName="subheader"
                   tagName="p"
                 />
-                <ul className="list-inline MustRead3-buttons">
-                  {map(content.items, (link, index) =>
-                     (<li className="list-inline-item" key={index}>
-                       <a href={link.url}
-                         className="BML-btn btn btn-lg btn-filled"
-                       >{link.title}
-                       </a></li>
-                      )
-                  )}
-                </ul>
+                <Buttons buttons={content.items} className="mt40"/>
               </div>
           </div>
         </div>

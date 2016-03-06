@@ -4,6 +4,7 @@ import map from 'lodash/map';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 
+import Buttons from 'views/elements/Buttons';
 import StringEditable from 'components/primitives/StringEditable';
 import ViewContainer from 'components/shared/ViewContainer';
 
@@ -27,18 +28,7 @@ const MustRead1 = ({ block}) => (
               fieldName="subheader"
               tagName="p"
             />
-            <ul className="list-inline MustRead1-buttons">
-              {map(block.content.items, (item, index) =>
-                <li key={index} className="list-inline-item">
-                  <a
-                    href={item.url}
-                    className="BML-btn btn btn-lg btn-filled"
-                  >
-                  {item.title}
-                  </a>
-                </li>
-              )}
-            </ul>
+            <Buttons buttons={block.content.items} className="mt40"/>
           </div>
         </div>
       </div>

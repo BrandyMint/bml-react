@@ -11,8 +11,6 @@ class ViewContainer extends Component {
     const { children, block, className, tagName } = this.props;
     const { nodeAttributes, uuid, view, backgroundStyle, backgroundVideos, backgroundImage } = block;
 
-    console.log(backgroundStyle);
-
     const blockId = get('nodeAttributes.id') || uuid;
     const blockClasses = classnames(
       {
