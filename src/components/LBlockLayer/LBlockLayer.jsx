@@ -52,7 +52,6 @@ class LBlockLayer extends Component {
 
     const layerClasses = classnames({
       LBlockLayer: true,
-      'is-editing': true,
     });
 
     const { isHovered, isPanelHovered } = this.state;
@@ -71,46 +70,38 @@ class LBlockLayer extends Component {
 
     const { isTopNav } = block;
 
-    const themeClass = 'Theme2';
+    const SectionPanel = (
+      <ReactCSSTransitionGroup
+        component="div"
+        transitionName="animation"
+        transitionEnterTimeout={TRANSITION_TIMEOUT}
+        transitionLeaveTimeout={TRANSITION_TIMEOUT}
+      >
+      {!isTopNav && (isHovered || isPanelHovered) && (
+        <LBlockLayerPanel
+          ref="panel"
+          hasMultipleViews={hasMultipleViews}
+          hasMultipleBlocks={hasMultipleBlocks}
 
-    const blockClasses = classnames({
-      [block.view]: true,
-      [themeClass]: true,
-    });
+          onMouseEnter={onPanelMouseEnter}
+          onMouseLeave={onPanelMouseLeave}
+
+          onEditingStart={partial(onEditingStart, block)}
+
+          onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
+          onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
+
+          onBlockPositionDown={partial(onBlockPositionDown, block.uuid)}
+          onBlockPositionUp={partial(onBlockPositionUp, block.uuid)}
+        />
+      )}
+      </ReactCSSTransitionGroup>
+    )
 
     return (
-      <div
-        className={layerClasses}
-        onMouseMove={onMouseEnter}
-      >
-        <ReactCSSTransitionGroup
-          component="div"
-          transitionName="animation"
-          transitionEnterTimeout={TRANSITION_TIMEOUT}
-          transitionLeaveTimeout={TRANSITION_TIMEOUT}
-        >
-        {!isTopNav && (isHovered || isPanelHovered) && (
-          <LBlockLayerPanel
-            ref="panel"
-            hasMultipleViews={hasMultipleViews}
-            hasMultipleBlocks={hasMultipleBlocks}
-
-            onMouseEnter={onPanelMouseEnter}
-            onMouseLeave={onPanelMouseLeave}
-
-            onEditingStart={partial(onEditingStart, block)}
-
-            onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
-            onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
-
-            onBlockPositionDown={partial(onBlockPositionDown, block.uuid)}
-            onBlockPositionUp={partial(onBlockPositionUp, block.uuid)}
-          />
-        )}
-        </ReactCSSTransitionGroup>
-        <div className={blockClasses}>
-          {Children.only(children)}
-        </div>
+      <div className={layerClasses} onMouseMove={onMouseEnter} >
+        {SectionPanel}
+        {Children.only(children)}
       </div>
     );
   }

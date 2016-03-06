@@ -7,6 +7,8 @@ import { applyType } from 'views/utils';
 import map from 'lodash/map';
 import StringEditable from 'components/primitives/StringEditable';
 
+import ViewContainer from 'components/shared/ViewContainer';
+
 import './index.css';
 
 class MustRead3 extends Component {
@@ -16,7 +18,7 @@ class MustRead3 extends Component {
     /* eslint-enable */
 
     return (
-      <section className="BML-section-height-70 MustRead3 text-center image-bg">
+      <ViewContainer {...this.props} className="BML-section-height-70 text-center image-bg">
         <div className="container vertical-center-rel">
           <div className="row">
               <div className="col-md-10 col-md-offset-1">
@@ -45,7 +47,7 @@ class MustRead3 extends Component {
               </div>
           </div>
         </div>
-      </section>
+      </ViewContainer>
     );
   }
 }

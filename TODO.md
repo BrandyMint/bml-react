@@ -8,12 +8,19 @@
 * [x] Множественные кнопки в ContentSection
 * [x] Привести ContentSection1-3 к нормальному виду в десктопе
 * [x] возможность заменить изображение на прямой URL
+* [.] Form1
 * [ ] Тестовый Лендос с примером ВСЕХ вьюх.
 * [ ] Мобильные варианты для всех вьюх (ContentSection в первую очередь)
 * [ ] InlineForm gеревести на ContentForm
 
 ## Refactor
 
+* [ ] В SectionComponent передавать block отдельным полем, а не размазанным
+* [ ] В Preview режиме использовать стили viewer, а не editor
+* [ ] mv BlockView во viewer
+* [ ] ЗАменить LPage в стилях на BML-section с целью уменьшения глубины путей в
+    CSS
+* [ ] Выделить media query в переменные или миксины
 * [ ] Сохранение внешних ссылок в section/background
 * [ ] разбить типы на разные файлы (30 минут, легко)
 * [ ] BML-section-padding заменить на BML-section--padding. (5 минут, легко)

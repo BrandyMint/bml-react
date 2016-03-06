@@ -1,24 +1,28 @@
 import React, { Component, PropTypes } from 'react';
-import get from 'lodash/get';
+import size from 'lodash/size';
 import BackgroundVideo from 'views/shared/BackgroundVideo';
 
 class BlockViewBackground extends Component {
 
   render() {
-    const { block } = this.props;
+    const { backgroundVideos } = this.props;
 
-    const backgroundVideos = get(block, 'backgroundVideos') || [];
-
-    if (backgroundVideos.length === 0) {
-      return false;
+    // DEMO
+    //const backgroundVideos = [
+      //{ src: '/assets/video/video.mp4', type: 'video/mp4' },
+      //{ src: '/assets/video/video.webm', type: 'video/webm' },
+      //{ src: '/assets/video/video.ogv', type: 'video/ogg' },
+    //];
+    if (size(backgroundVideos) > 0 ) {
+      return (<BackgroundVideo videos={backgroundVideos}/>);
     }
 
-    return (<BackgroundVideo videos={backgroundVideos}/>);
+    return false;
   }
 }
 
 BlockViewBackground.propTypes = {
-  block: PropTypes.object.isRequired,
+  backgroundVideos: PropTypes.array.isRequired,
 };
 
 export default BlockViewBackground;
