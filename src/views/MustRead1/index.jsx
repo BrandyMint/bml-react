@@ -10,22 +10,22 @@ import ViewContainer from 'components/shared/ViewContainer';
 import './index.css';
 
 const MustRead1 = ({ block}) => (
-  <ViewContainer block={ block } >
+  <ViewContainer block={ block } className="BML-section--height-70">
     <div className="container vertical-center-rel">
       <div className="row">
         <div className="col-lg-12">
           <div className="MustRead1-message">
             <StringEditable
+              className="BML-h2 color-primary"
               data={block.content}
-              className="MustRead1-header color-primary"
               fieldName="header"
-              tagName="h1"
+              tagName="h2"
             />
             <StringEditable
+              className="BML-lead lead color-primary mb40"
               data={block.content}
-              className="MustRead1-subheader color-primary"
               fieldName="subheader"
-              tagName="div"
+              tagName="p"
             />
             <ul className="list-inline MustRead1-buttons">
               {map(block.content.items, (item, index) =>

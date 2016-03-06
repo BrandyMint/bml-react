@@ -11,21 +11,21 @@ import ViewContainer from 'components/shared/ViewContainer';
 import './index.css';
 
 const MustRead2 = ({ block }) => (
-  <ViewContainer block={ block } >
+  <ViewContainer block={ block } className="BML-section--height-70 image-bg">
     <div className="container vertical-center-rel">
       <div className="row">
         <div className="col-md-7">
           <StringEditable
-            className="MustRead2-header"
+            className="BML-h2 color-primary"
             data={block.content}
             fieldName="header"
-            tagName="h1"
+            tagName="h2"
           />
           <StringEditable
-            className="MustRead2-subheader"
+            className="BML-lead lead color-primary mb40"
             data={block.content}
             fieldName="subheader"
-            tagName="div"
+            tagName="p"
           />
           <ul className="list-inline MustRead2-buttons">
             {map(block.content.items, (link, index) =>
