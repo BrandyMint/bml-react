@@ -49,7 +49,7 @@ class Navbar1 extends Component {
 
   render() {
     /* eslint-disable react/prop-types */
-    const { content } = this.props;
+    const { block: { content } } = this.props;
 
     /* eslint-enable */
     // <nav className="navbar navbar-light bg-faded topnav" role="navigation">

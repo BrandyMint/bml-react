@@ -11,8 +11,10 @@ class View extends Component {
     /* eslint-enable */
 
     return (
-      <ViewContainer block={ block } className="BML-section--padding container">
-        {html}
+      <ViewContainer block={ block } className="BML-section--padding">
+        <div cassName="container">
+          {html}
+        </div>
       </ViewContainer>
     );
   }

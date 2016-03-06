@@ -27,7 +27,8 @@ class IconifyFeatures extends Component {
     /* eslint-enable */
 
     return (
-      <ViewContainer block={block} className="BML-section--padding container">
+      <ViewContainer block={block} className="BML-section--padding">
+      <div className="container">
         <div className="row mb40 mb-xs-0">
           <div className="col-sm-12 text-center">
             <StringEditable
@@ -44,6 +45,7 @@ class IconifyFeatures extends Component {
               <Feature {...feature} />
             </div>
           ))}
+          </div>
         </div>
       </ViewContainer>
     );

@@ -250,20 +250,7 @@ const CTA = {
         isRequired: true,
         itemSchema: {
           limit: 3,
-          fields: [
-            {
-              title: 'Название',
-              key: 'title',
-              type: 'string',
-              isRequired: true,
-            },
-            {
-              title: 'Ссылка',
-              key: 'url',
-              type: 'url',
-              isRequired: false,
-            },
-          ],
+          fields: LinkTypeSchemaFields,
         },
       },
     ],
@@ -344,20 +331,7 @@ const Footer = {
         isRequired: true,
         itemSchema: {
           limit: 12,
-          fields: [
-            {
-              title: 'Название',
-              key: 'title',
-              type: 'string',
-              isRequired: true,
-            },
-            {
-              title: 'Ссылка',
-              key: 'url',
-              type: 'url',
-              isRequired: true,
-            },
-          ],
+          fields: LinkTypeSchemaFields,
         },
       },
     ],

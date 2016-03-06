@@ -31,7 +31,7 @@ export const viewsList = {
   Form1,
   InlineForm1,
 
-  Navbar1,
+  //  Navbar1,
   GoogleMap1,
   CTA1,
   HeaderText,

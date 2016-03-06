@@ -10,8 +10,9 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import './index.css';
 
-const Footer1 = ({ block}) => (
-  <ViewContainer block={ block } className="BML-section--padding container" tagName="footer">
+const Footer1 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--padding" tagName="footer">
+  <div className="container">
     <div className="row">
       <div className="col-lg-12">
         <ul className="list-inline">
@@ -19,7 +20,7 @@ const Footer1 = ({ block}) => (
             reduce(block.content.items, (acc, item, index) => {
               acc.push((
                 <li className="list-inline-item" key={`${index}-item`}>
-                  <a href={item.url}>{item.title}</a>
+                  <a href={item.href}>{item.text}</a>
                 </li>
               ));
 
@@ -46,6 +47,7 @@ const Footer1 = ({ block}) => (
         />
       </div>
     </div>
+   </div>
   </ViewContainer>
 );
 

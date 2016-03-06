@@ -12,15 +12,17 @@ class View extends Component {
     /* eslint-enable */
 
     return (
-      <ViewContainer block={ block } className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <RichEditable
-              className="Text"
-              data={content}
-              fieldName="text"
-              tagName="div"
-            />
+      <ViewContainer block={ block }>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <RichEditable
+                className="Text"
+                data={content}
+                fieldName="text"
+                tagName="div"
+              />
+            </div>
           </div>
         </div>
       </ViewContainer>

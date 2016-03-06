@@ -29,6 +29,11 @@
 
 ## Refactor
 
+* [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо
+    сделать в ней паддинг
+* [ ] Восстановить InlineForm
+* [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов
+    в block
 * [ ] подключить стили к form-control вместо input
 * [ ] использовать button submit вместо input submit
 * [ ] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
