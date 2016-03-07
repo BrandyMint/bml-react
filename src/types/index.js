@@ -93,33 +93,6 @@ const Navbar = {
   },
 };
 
-const FormWithText = {
-  typeName: 'FormWithText',
-
-  // Фактически это полное содержание block-а
-  propTypes: {
-    content: PropTypes.shape({
-      text: PropTypes.string.isRequired,
-    }).isRequired,
-    form: formContentType.isRequired,
-    uuid: PropTypes.string.isRequired,
-  },
-
-  contentSchema: {
-    version: 1,
-    backgroundImage: false,
-    form: 'required',
-    fields: [
-      {
-        title: 'Текст',
-        key: 'text',
-        type: 'string',
-        isRequired: true,
-      },
-    ],
-  },
-};
-
 const InlineForm = {
   typeName: 'InlineForm',
 
@@ -308,58 +281,9 @@ const PlainHtml = {
   },
 };
 
-const HeaderListPropType = {
-  header: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.shape(
-    {
-      title: PropTypes.string.isRequired,
-    }
-  )).isRequired,
-};
-
-const HeaderList = {
-  typeName: 'HeaderList',
-  propTypes: {
-    content: PropTypes.shape(HeaderListPropType).isRequired,
-    form: formContentType,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: false,
-    fields: [
-      {
-        title: 'Заголовок',
-        key: 'header',
-        type: 'text',
-        isRequired: true,
-      },
-      {
-        title: 'Список',
-        key: 'items',
-        type: 'items',
-        isRequired: false,
-        itemSchema: {
-          limit: 30,
-          fields: [
-            {
-              title: 'Название',
-              key: 'title',
-              type: 'string',
-              isRequired: true,
-            },
-          ],
-        },
-      },
-    ],
-  },
-};
-
 const types = {
   content,
   PlainHtml,
-  HeaderList,
-  FormWithText,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,

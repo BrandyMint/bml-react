@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
+import ViewContainer from 'components/shared/ViewContainer';
+import applyType from 'views/types/apply';
 import classnames from 'classnames';
 import map from 'lodash/map';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
+
 import StringEditable from 'components/primitives/StringEditable';
-import ViewContainer from 'components/shared/ViewContainer';
 
-// import { Link } from 'react-router';
-
-class View extends Component {
+class HeaderList extends Component {
   render() {
     /* eslint-disable react/prop-types */
     const { block } = this.props;
@@ -38,7 +36,7 @@ class View extends Component {
           <div className="row">
             <ol>
               {map(content.items, (item, index) =>
-               <li key={index} className={itemClass(index)}> {item.title} </li>
+               <li key={index} className={itemClass(index)}>{item.title}</li>
               )}
             </ol>
           </div>
@@ -48,4 +46,4 @@ class View extends Component {
   }
 }
 
-export default applyType(View, Types.HeaderList);
+export default applyType.HeaderList(HeaderList);

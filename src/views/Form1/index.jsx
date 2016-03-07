@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import RichEditable from 'components/primitives/RichEditable';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
 import ViewContainer from 'components/shared/ViewContainer';
+import applyType from 'views/types/apply';
+
+import RichEditable from 'components/primitives/RichEditable';
 
 import ContentForm from 'views/elements/ContentForm';
 
@@ -37,4 +37,4 @@ class Form1 extends Component {
   }
 }
 
-export default applyType(Form1, Types.FormWithText);
+export default applyType.FormWithText(Form1);
