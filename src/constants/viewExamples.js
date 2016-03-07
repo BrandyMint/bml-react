@@ -1,5 +1,73 @@
 export default [
   {
+    view: 'HeaderList',
+    title: 'Список с заголовком',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        header: 'Заголовок',
+        items: [
+          {
+            title: 'Twitter',
+          },
+          {
+            title: 'GitHub',
+          },
+        ],
+      },
+    },
+  },
+
+  {
+    view: 'IconifyFeatures',
+    title: 'Возможности иконками',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        header: 'Заголовок',
+        features: [
+          {
+            title: 'Возможность 1',
+            iconClass: 'ti-gallery',
+          },
+          {
+            title: 'Возможность 2',
+            iconClass: 'ti-package',
+          },
+          {
+            title: 'Возможность 3',
+            iconClass: 'ti-layers',
+          },
+        ],
+      },
+    },
+  },
+
+  {
+    view: 'HeaderText',
+    title: 'Текст с заголовком',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    defaultData: {
+      content: {
+        header: 'Заголовок',
+        text: 'текст',
+      },
+    },
+  },
+
+  {
     view: 'PlainHTML',
     title: 'Чистый HTML',
     image: {
@@ -10,7 +78,10 @@ export default [
     defaultData: {
       content: {
         html: '<h1>Заголовок</h1><p>текст</p>',
-      }
+      },
+      nodeAttributes: {
+        class: 'container BML-section--padding',
+      },
     },
   },
   {
@@ -24,6 +95,44 @@ export default [
     defaultData: {
       content: {
         text: '<h1>Симпотичный заголовок</h1><p>и очень длинный текст</p>',
+      },
+    },
+  },
+  {
+    view: 'Form1',
+    title: 'Форма с текстом',
+    image: {
+      url: '/assets/images/themes/t1/intro-bg.jpg',
+      height: 100,
+      width: 100,
+    },
+    rate: 4,
+    defaultData: {
+      content: {
+        text: 'some text',
+      },
+      form: {
+        submitTitle: 'Подписаться',
+        destination: 'collection',
+        collection: 'default',
+        fields: [
+          {
+            title: '',
+            placeholder: 'Имя',
+            key: 'name',
+            inputType: 'text',
+          },
+          {
+            title: '',
+            placeholder: 'Емайл',
+            key: 'email',
+            inputType: 'email',
+          },
+        ],
+      },
+      nodeAttributes: {
+      },
+      meta: {
       },
     },
   },
@@ -97,6 +206,7 @@ export default [
       },
     },
   },
+
   {
     view: 'ContentSection1',
     title: 'Область с контентом',
@@ -109,7 +219,7 @@ export default [
     rate: 2,
     defaultData: {
       content: {
-        headerText: 'Death to the Stock Photo: <br /> Special Thanks',
+        header: 'Death to the Stock Photo: <br /> Special Thanks',
         image: {
           url: '/assets/images/themes/t1/ipad.png',
           height: 354,
@@ -200,7 +310,7 @@ export default [
     },
   },
   {
-    view: 'MustRead1',
+    view: 'MustRead3',
     title: 'Заголовок',
     description: 'html raw description',
     image: {

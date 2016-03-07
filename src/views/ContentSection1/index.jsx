@@ -2,37 +2,36 @@ import React from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
+import RichEditable from 'components/primitives/RichEditable';
+import Image from 'views/elements/Image';
+import Buttons from 'views/elements/Buttons';
+import ViewContainer from 'components/shared/ViewContainer';
 
-import './index.css';
-
-const ContentSection1 = ({ content }) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-5 col-sm-6">
-        <div className="clearfix" />
-        <StringEditable
-          className="section-heading"
-          data={content}
-          fieldName="headerText"
-          tagName="h2"
-        />
-        <StringEditable
-          className="lead"
-          data={content}
-          fieldName="leadText"
-          tagName="p"
-        />
-      </div>
-      <div className="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img
-          className="img-fluid"
-          height={content.image.height}
-          src={content.image.url}
-          width={content.image.width}
-        />
+const ContentSection1 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--padding">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-5 col-sm-6">
+          <StringEditable
+            className="BML-h2 color-primary"
+            data={block.content}
+            fieldName="header"
+            tagName="h2"
+          />
+          <RichEditable
+            className="lead"
+            data={block.content}
+            fieldName="leadText"
+            tagName="div"
+          />
+          <Buttons buttons={block.content.links} className="mt40"/>
+        </div>
+        <div className="col-lg-5 col-lg-offset-2 col-sm-6">
+          <Image {...block.content.image} />
+        </div>
       </div>
     </div>
-  </div>
+  </ViewContainer>
 );
 
 export default applyType(ContentSection1, Types.contentSection);

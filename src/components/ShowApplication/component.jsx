@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import map from 'lodash/map';
 
-import BlockView from 'components/BlockView';
+import ViewComponent from 'components/shared/ViewComponent';
 
 import './index.css';
 
@@ -12,7 +12,7 @@ class LApplication extends Component {
       <div className="LApplication">
         <div className="LApplication-content">
         {
-          map(blocks, (block, index) => (<BlockView block={block} key={index} />))
+          map(blocks, (block, index) => (<ViewComponent block={block} key={index} />))
         }
         </div>
       </div>

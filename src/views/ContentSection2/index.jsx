@@ -2,39 +2,37 @@ import React from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
+import RichEditable from 'components/primitives/RichEditable';
+import Image from 'views/elements/Image';
+import Buttons from 'views/elements/Buttons';
+import ViewContainer from 'components/shared/ViewContainer';
 
-import './index.css';
-
-const ContentSection2 = ({ content }) => (
-  <div className="content-section-b">
+const ContentSection2 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--padding">
     <div className="container">
       <div className="row">
         <div className="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
           <div className="clearfix" />
           <StringEditable
-            className="section-heading"
-            data={content}
-            fieldName="headerText"
+            className="BML-h2 color-primary"
+            data={block.content}
+            fieldName="header"
             tagName="h2"
           />
-          <StringEditable
+          <RichEditable
             className="lead"
-            data={content}
+            data={block.content}
             fieldName="leadText"
-            tagName="p"
+            tagName="div"
           />
+          <Buttons buttons={block.content.links} className="mt40"/>
         </div>
         <div className="col-lg-5 col-sm-pull-6 col-sm-6">
-          <img
-            className="img-fluid"
-            height={content.image.height}
-            src={content.image.url}
-            width={content.image.width}
-          />
+          <Image {...block.content.image} />
         </div>
       </div>
     </div>
-  </div>
+  </ViewContainer>
 );
 
 export default applyType(ContentSection2, Types.contentSection);

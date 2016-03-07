@@ -1,6 +1,7 @@
 import size from 'lodash/size';
 import findIndex from 'lodash/findIndex';
 import { views, types } from 'views/all';
+import invariant from 'invariant';
 
 export default class ViewsRepository {
   views = {};
@@ -10,8 +11,11 @@ export default class ViewsRepository {
   }
 
   getCompatibleViews(viewName) {
-    const view = this.getView(viewName);
-    return types[view.typeName] || [];
+    const view = this.getBlandView(viewName);
+    if (view) {
+      return types[view.typeName] || [];
+    }
+    return [];
   }
 
   getPrevView(viewName) {
@@ -19,10 +23,7 @@ export default class ViewsRepository {
     const viewsCount = size(views);
     if (viewsCount > 1) {
       const viewIndex = findIndex(views, { viewName });
-      if (viewIndex < 0) {
-        const error = new Error(`No index for view ${viewName}`);
-        throw error;
-      }
+      invariant(viewIndex >= 0, `No index for view ${viewName}`);
       const prevViewIndex = viewIndex > 0 ? viewIndex - 1 : viewsCount;
       const prevView = views[prevViewIndex];
 
@@ -35,10 +36,7 @@ export default class ViewsRepository {
     const viewsCount = size(views);
     if (viewsCount > 1) {
       const viewIndex = findIndex(views, { viewName });
-      if (viewIndex < 0) {
-        const error = new Error(`No index for view ${viewName}`);
-        throw error;
-      }
+      invariant(viewIndex >= 0, `No index for view ${viewName}`);
       const nextViewIndex = viewIndex + 1 !== viewsCount ? viewIndex + 1 : 0;
       const nextView = views[nextViewIndex];
 
@@ -46,13 +44,13 @@ export default class ViewsRepository {
     }
   }
 
+  getBlandView(viewName) {
+    return views[viewName];
+  }
   getView(viewName) {
-    const view = views[viewName];
+    const view = this.getBlandView(viewName);
 
-    if (!view) {
-      const error = new Error(`No view ${viewName} is registered`);
-      throw error;
-    }
+    invariant(view, `No view ${viewName} is registered`);
     return view;
   }
 }

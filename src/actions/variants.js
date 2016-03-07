@@ -2,6 +2,11 @@
 
 import { API_CALL } from 'middleware/API';
 
+import {
+  FULL_VIEWS_EXAMPLES_UUID,
+  FULL_VIEWS_EXAMPLES_SECTIONS,
+} from 'constants/fullViewsExamples';
+
 export const LANDING_VARIANT_UPDATE_REQUEST = 'LANDING_VARIANT_UPDATE_REQUEST';
 export const LANDING_VARIANT_UPDATE_SUCCESS = 'LANDING_VARIANT_UPDATE_SUCCESS';
 export const LANDING_VARIANT_UPDATE_FAILURE = 'LANDING_VARIANT_UPDATE_FAILURE';
@@ -15,6 +20,13 @@ export const loadVariant = (uuid) => (dispatch) => {
     return dispatch({
       type: LANDING_VARIANT_LOAD_SUCCESS,
       payload: { sections: [] },
+    });
+  }
+
+  if (uuid === FULL_VIEWS_EXAMPLES_UUID) {
+    return dispatch({
+      type: LANDING_VARIANT_LOAD_SUCCESS,
+      payload: { sections: FULL_VIEWS_EXAMPLES_SECTIONS },
     });
   }
 

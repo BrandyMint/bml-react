@@ -4,6 +4,7 @@ import map from 'lodash/map';
 import config from 'constants/config';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
+import ViewContainer from 'components/shared/ViewContainer';
 
 import './index.css';
 
@@ -12,12 +13,14 @@ class InlineForm1 extends Component {
 
   render() {
     /* eslint-disable react/prop-types */
-    const { variantUuid, content, form, uuid } = this.props;
+    const { block } = this.props;
+    const { variantUuid, content, form, uuid } = block;
     /* eslint-enable */
 
     const method = form.method || 'POST';
     const action = form.url || config('postLeadUrl');
     return (
+      <ViewContainer block={ block } >
       <form className="form-inline" acceptCharset="UTF-8" action={action} method={method}>
         <input name="utf8" type="hidden" value="✓" />
         <input
@@ -44,6 +47,7 @@ class InlineForm1 extends Component {
         })}
         <button type="submit" className="btn btn-primary">{form.submitTitle}</button>
       </form>
+    </ViewContainer>
     );
   }
 }

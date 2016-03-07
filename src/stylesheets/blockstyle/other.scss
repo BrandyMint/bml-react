@@ -1,0 +1,602 @@
+/*!
+
+BLOCKSTYLE v0.4
+
+// ------------------------------------------------
+
+ 01. Icons
+ 02. Forms
+ 03. Icon Features
+ 04. Sliders
+ 05. Image Blocks
+ 06. Maps
+
+
+/*!---------- 01. ICONS ----------*/
+.icon {
+    font-size: 64px;
+    display: inline-block;
+    color: #292929;
+}
+
+.image-bg.bg-light .icon {
+    color: #292929;
+}
+
+.image-bg .icon,
+.bg-dark .icon {
+    color: #fff;
+}
+
+.icon-lg {
+    font-size: 80px;
+}
+
+.icon-sm {
+    font-size: 32px;
+}
+
+.icon-xs {
+    font-size: 18px;
+}
+
+@media all and (max-width: 767px) {
+    .icon {
+        font-size: 48px;
+    }
+    .icon-lg {
+        font-size: 64px;
+    }
+    .icon-sm {
+        font-size: 18px;
+    }
+    .icon-xs {
+        font-size: 16px;
+    }
+}
+
+.embelish-icons {
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    transform: scale(10);
+    -webkit-transform: scale(10);
+    left: 50%;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+
+/*!---------- 03. ICON FEATURES ----------*/
+
+.feature.boxed {
+    padding: 32px;
+    background: #f8f8f8;
+}
+
+.feature.boxed.bg-dark {
+    background: #292929;
+}
+
+.bg-dark .feature.boxed {
+    background: #363636;
+}
+
+.bg-secondary .feature.boxed {
+    background: #fff;
+}
+
+.feature.bordered {
+    padding: 32px;
+    border: 1px solid #ccc;
+}
+
+.feature {
+    margin-bottom: 24px;
+}
+
+.feature p:last-child {
+    margin-bottom: 0;
+}
+
+@media all and (max-width: 767px) {
+    .feature.boxed,
+    .feature.bordered {
+        padding: 24px;
+    }
+}
+
+@media all and (max-width: 990px) {
+    .feature .icon-lg {
+        font-size: 40px;
+    }
+}
+
+.feature-1 i {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #47b475;
+}
+
+.feature-2 i {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #47b475;
+    text-align: center;
+    line-height: 80px;
+    color: #47b475;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+.feature-2 i:hover,
+.feature-2.filled i {
+    background: #47b475;
+    color: #fff;
+}
+
+.feature-3 {
+    overflow: hidden;
+}
+
+@media all and (min-width: 768px) {
+    .feature-3 {
+        min-height: 160px;
+    }
+}
+
+.feature-3 .left,
+.feature-3 .right {
+    display: inline-block;
+    float: left;
+}
+
+.feature-3 .left {
+    width: 15%;
+}
+
+.feature-3 .right {
+    width: 85%;
+}
+
+.feature-3 i {
+    color: #47b475;
+}
+
+.bg-primary .feature-3 i {
+    color: #fff;
+}
+
+.feature-4 .left {
+    width: 25%;
+}
+
+.feature-4 .right {
+    width: 75%;
+}
+
+.feature-color h1,
+.feature-color h2,
+.feature-color h3,
+.feature-color h4,
+.feature-color h5,
+.feature-color h6 {
+    color: #ffffff;
+}
+
+.feature-color p,
+.feature-color span,
+.feature-color li {
+    color: #ffffff;
+}
+
+.feature-color i {
+    color: #fff;
+    opacity: .7;
+}
+
+.feature-color:nth-of-type(1) {
+    background: #47b475;
+}
+
+.feature-color:nth-of-type(2) {
+    background: #40a269;
+}
+
+.feature-color:nth-of-type(3) {
+    background: #398f5d;
+}
+
+.feature-5 {
+    height: 33.333333vw;
+    padding: 0 48px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+@media all and (max-width: 1280px) {
+    .feature-5 {
+        height: auto;
+        padding: 80px 48px;
+    }
+    .feature-5 .v-align-transform {
+        top: 0;
+        transform: none;
+        -webkit-transform: none;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .feature-3 .left,
+    .feature-4 .left {
+        margin-bottom: 8px;
+    }
+    .feature-3 .left,
+    .feature-4 .left,
+    .feature-3 .right,
+    .feature-4 .right {
+        width: 100%;
+    }
+    .feature-5 {
+        padding: 40px 24px;
+    }
+}
+
+.image-bg .feature i {
+    color: #fff;
+}
+
+.image-bg .feature h1,
+.image-bg .feature h2,
+.image-bg .feature h3,
+.image-bg .feature h4,
+.image-bg .feature h5,
+.image-bg .feature h6 {
+    color: #ffffff;
+}
+
+.image-bg .feature p,
+.image-bg .feature span,
+.image-bg .feature li {
+    color: #ffffff;
+}
+
+.image-bg .feature.bordered {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.image-bg .feature.boxed {
+    background: rgba(34, 34, 34, 0.4);
+}
+
+.bg-light .feature.bordered {
+    border-color: rgba(34, 34, 34, 0.2);
+}
+
+
+/*!---------- 04. SLIDERS ----------*/
+
+.image-slider {
+    position: relative;
+}
+
+.image-slider .slides {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider .slides li {
+    position: relative;
+}
+
+.image-slider .slides li > img {
+    width: 100%;
+}
+
+.row .image-slider {
+    margin-bottom: 24px;
+}
+
+.height-70 .slides li {
+    height: 70vh;
+    min-height: 600px;
+}
+
+@media all and (max-width: 767px) {
+    .height-70 .slides li {
+        height: auto;
+        min-height: none;
+        padding: 80px 0;
+    }
+    .height-70 .v-align-transform {
+        top: 0;
+        transform: none;
+        -webkit-transform: none;
+    }
+}
+
+.flex-direction-nav a.flex-next {
+    right: 16px;
+}
+
+.flex-direction-nav a.flex-next:before,
+.flex-direction-nav a.flex-prev:before {
+    content: "\e649";
+    font-family: 'themify';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 24px;
+    color: #fff;
+}
+
+.flex-direction-nav a.flex-prev {
+    left: 16px;
+}
+
+.flex-direction-nav a.flex-prev:before {
+    content: "\e64a";
+}
+
+.flex-direction-nav a {
+    opacity: 1;
+    text-shadow: none;
+    color: rgba(0, 0, 0, 0);
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0;
+}
+
+.flex-control-nav li {
+    overflow: hidden;
+}
+
+.flex-control-nav li a {
+    background: none;
+    border: 2px solid #292929;
+    width: 10px;
+    height: 10px;
+}
+
+@media all and (max-width: 768px) {
+    .flex-direction-nav {
+        display: none;
+    }
+}
+
+.controls-inside .flex-control-nav {
+    bottom: 24px;
+    z-index: 10;
+}
+
+.controls-inside .flex-control-nav li a {
+    border-color: #fff;
+}
+
+.controls-inside .flex-control-nav li a.flex-active {
+    background: #fff;
+}
+
+.image-bg .flex-control-nav li a {
+    border-color: #fff;
+}
+
+.image-bg .flex-control-nav li a.flex-active {
+    background: #fff;
+}
+
+.slider-thumb-controls .flex-control-thumbs {
+    margin: 0;
+}
+
+.slider-thumb-controls .flex-direction-nav {
+    display: none;
+}
+
+@media all and (max-width: 767px) {
+    .slider-thumb-controls .flex-control-thumbs {
+        display: none;
+    }
+    .slider-thumb-controls .flex-direction-nav {
+        display: block;
+    }
+}
+
+.logo-carousel li {
+    text-align: center;
+}
+
+.logo-carousel li {
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    opacity: .5;
+}
+
+.logo-carousel li:hover {
+    opacity: 1;
+}
+
+.logo-carousel img {
+    max-height: 60px;
+}
+
+@media all and (max-width: 767px) {
+    .logo-carousel .slides li {
+        width: 100%;
+    }
+}
+
+.text-slider .flex-direction-nav li a:before {
+    color: #222;
+}
+
+.image-bg .text-slider .flex-direction-nav li a:before {
+    color: #fff;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    opacity: .5;
+}
+
+.image-bg .text-slider .flex-direction-nav li a:hover:before {
+    opacity: 1;
+}
+
+.text-slider .flex-direction-nav a.flex-prev {
+    left: -60px;
+}
+
+.text-slider .flex-direction-nav a.flex-next {
+    right: -60px;
+}
+
+.kenburns .slides li:nth-of-type(odd) .background-image-holder {
+    animation: kenBurnsEast 25s linear infinite alternate;
+    -webkit-animation: kenBurnsEast 25s linear infinite alternate;
+}
+
+.kenburns .slides li:nth-of-type(even) .background-image-holder {
+    animation: kenBurnsWest 25s linear infinite alternate;
+    -webkit-animation: kenBurnsWest 25s linear infinite alternate;
+}
+
+@keyframes kenBurnsEast {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(100px);
+        -webkit-transform: scale(1.2) translateX(100px);
+    }
+}
+
+@-webkit-keyframes kenBurnsEast {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(100px);
+        -webkit-transform: scale(1.2) translateX(100px);
+    }
+}
+
+@keyframes kenBurnsWest {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(-100px);
+        -webkit-transform: scale(1.2) translateX(-100px);
+    }
+}
+
+@-webkit-keyframes kenBurnsWest {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(-100px);
+        -webkit-transform: scale(1.2) translateX(-100px);
+    }
+}
+
+@media all and (max-width: 767px) {
+    .kenburns .slides li .background-image-holder {
+        animation: none !important;
+        -webkit-animation: none !important;
+    }
+}
+
+
+/*!---------- 05. IMAGE BLOCKS ----------*/
+
+.image-md {
+    max-height: 120px;
+}
+
+.image-small {
+    max-height: 80px;
+}
+
+.image-xs {
+    max-height: 50px;
+}
+
+.image-xxs {
+    max-height: 30px;
+}
+
+.fade-half {
+    opacity: 0.5;
+}
+
+.fade-1-4 {
+    opacity: 0.75;
+}
+
+.fade-3-4 {
+    opacity: 0.25;
+}
+
+
+
+
+
+/*!---------- 06. MAPS ----------*/
+
+.map-holder {
+    overflow: hidden;
+    position: relative;
+}
+
+.map-holder iframe {
+    border: none;
+    position: absolute;
+    width: 100%;
+    height: 180%;
+    top: -40%;
+    left: 0;
+    z-index: 1;
+}
+
+.map-holder:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.map-holder.interact:before {
+    width: 0;
+}
+
+.map-holder.inline {
+    height: 400px;
+    overflow: hidden;
+}
+
+.map-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}

@@ -1,4 +1,4 @@
-@import 'bootstrap.scss';
+@import '~bootstrap/dist/css/bootstrap.css';
 @import '~react-widgets/dist/css/react-widgets.css';
 
 @import 'overwrites.scss';
@@ -6,12 +6,30 @@
 @import 'animation.css';
 @import 'spacing.scss';
 
-@import 'theme2/index.scss';
+// @import 'theme2/index.scss';
 
 @import 'body.scss';
 
-// Из theme2
-section {
-  position: relative;
-  overflow: hidden;
-}
+@import 'bml_section.scss';
+
+// Aciden
+
+@import '../../bower_components/themify-icons/themify-icons.css';
+
+@import '../fonts/lato/lato.css';
+@import '../fonts/opensans/opensans.css';
+@import '../fonts/raleway/raleway.css';
+
+// CORESTYLE v0.4
+@import 'corestyle/global.css';
+@import 'corestyle/mixins.css';
+@import 'corestyle/aligns.css';
+@import 'corestyle/sections.css';
+@import 'corestyle/buttons.scss';
+@import 'corestyle/spacing.css';
+@import 'corestyle/default/colours.css';
+@import 'corestyle/image-bg/colours.scss';
+@import 'corestyle/typography.scss';
+
+@import 'blockstyle/index.scss';
+

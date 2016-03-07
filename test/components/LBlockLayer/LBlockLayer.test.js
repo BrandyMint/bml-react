@@ -4,7 +4,8 @@ import TestUtils from 'react-addons-test-utils';
 import assign from 'lodash/assign';
 import expect from 'expect';
 
-import LBlockLayer from 'components/LBlockLayer/LBlockLayer';
+import LBlockLayer
+  from 'components/LApplicationEditor/LPage/LBlocks/LBlock/LBlockLayer/LBlockLayer';
 
 const getProps = (extra = {}) =>
   assign({
