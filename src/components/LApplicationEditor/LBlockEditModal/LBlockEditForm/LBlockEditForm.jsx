@@ -21,7 +21,7 @@ class LBlockEditForm extends Component {
       onFormChange,
       } = this.props;
 
-    const schema = viewsRepository.getContentSchemaByViewName(block.view);
+    const schema = viewsRepository.getContentSchemaByViewName(block.viewName);
     return (
       <Tabs>
         <Tab eventKey={1} title="Содержание">

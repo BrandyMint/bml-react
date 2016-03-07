@@ -20,7 +20,6 @@
     "url": "https://github.com/BrandyMint/bml-react/issues"
   },
   "devDependencies": {
-    "bower-webpack-plugin": "^0.1.9",
     "app-module-path": "^1.0.5",
     "babel": "^6.5.2",
     "babel-core": "^6.5.2",
@@ -32,6 +31,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-root-import": "^3.2.2",
+    "bower": "^1.7.7",
+    "bower-webpack-plugin": "^0.1.9",
     "clean-webpack-plugin": "^0.1.6",
     "conventional-changelog": "^1.0.1",
     "copy-webpack-plugin": "^1.1.1",
