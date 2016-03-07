@@ -13,9 +13,9 @@
 * [x] возможность заменить изображение на прямой URL
 * [x] Form1
 * [x] Тестовый Лендос с примером ВСЕХ вьюх.
+* [x] Автоматическое вычисление стиля фона
 * [ ] Мобильные варианты для всех вьюх (ContentSection в первую очередь)
 * [ ] Buttons в мобильном варианте
-* [x] Автоматическое вычисление стиля фона
 * [ ] MustRead1/2
     * [x] С видео
     * [x] с Изображением
@@ -31,25 +31,22 @@
 
 ## Refactor (JS)
 
-* [ ] В названии типа полей для редактора писть FieldString вместо 'string'
-* [ ] ListItem в IconifyFeatures и в HeaderList выделить в один элемент у
-    которого может быть иконка, а может не быть.
-* [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо
-    сделать в ней паддинг
-* [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов
-    в block (см LinkSchemaFields)
-* [x] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
 * [.] разбить типы на разные файлы и починить наличие block-а в props-ах во views (30 минут, легко)
-* [.] Избавиться от typeName в views/types, уставливать его автоматически при
-    импорте
+* [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо сделать в ней паддинг
 * [ ] InlineForm, восстановить и перевести на ContentForm
+* [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов в block (см LinkSchemaFields)
+* [ ] ListItem в IconifyFeatures и в HeaderList выделить в один элемент у которого может быть иконка, а может не быть.
+* [x] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
+* [x] Избавиться от typeName в views/types, уставливать его автоматически при импорте
 * [x] разобраться с customPropType
-* [ ] разобраться с PropTypes.object
 * [x] В SectionComponent передавать block отдельным полем, а не размазанным
 * [x] rename BlockView ViewComponent
 * [x] ЗАменить LPage в стилях на BML-section с целью уменьшения глубины путей в CSS
 * [x] BML-section-padding заменить на BML-section--padding. (5 минут, легко)
 * [x] Переименовать block.view во viewName
+* [ ] разобраться с PropTypes.object
+* [ ] Фиксануть TODO-шки
+* [ ] В названии типа полей для редактора писть FieldString вместо 'string'
 
 
 ## Фичи
