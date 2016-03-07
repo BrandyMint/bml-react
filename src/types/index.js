@@ -1,8 +1,7 @@
+import { PropTypes } from 'react';
 import mapValues from 'lodash/mapValues';
 import { applyType } from 'views/utils';
-import formContentType from 'views/types/formContent';
-
-import { PropTypes } from 'react';
+import { propTypes as formContentType } from 'views/elements/ContentForm';
 
 // TODO перейдет в частные файлы
 

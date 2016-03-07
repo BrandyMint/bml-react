@@ -6,14 +6,14 @@ import RichEditable from 'components/primitives/RichEditable';
 
 import ContentForm from 'views/elements/ContentForm';
 
-// import { Link } from 'react-router';
-
 class Form1 extends Component {
   render() {
     /* eslint-disable react/prop-types */
     const { block } = this.props;
     const { content, form } = block;
     /* eslint-enable */
+
+    const formId = form.id || `${block.uuid}-form`;
 
     return (
       <ViewContainer block={block} className="BML-section--padding">
@@ -28,7 +28,7 @@ class Form1 extends Component {
               />
             </div>
             <div className="col-sm-6 col-md-4 col-md-offset-1">
-              <ContentForm {...form} />
+              <ContentForm {...form} id={formId} />
             </div>
           </div>
         </div>

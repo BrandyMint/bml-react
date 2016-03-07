@@ -1,10 +1,4 @@
-export const ShortInputTypes = [
-  'text',
-  'url',
-  'email',
-  'tel',
-  'number',
-];
+import ShortInputTypes from 'constants/usedInputTypes';
 
 export const Destinations = [
   'collection',
@@ -20,6 +14,16 @@ export default {
       isRequired: true,
     },
     /*
+      {
+        title: 'HTML-идентификатор',
+        key: 'id',
+        type: 'string',
+      },
+      {
+        title: 'HTML-имя формы',
+        key: 'name',
+        type: 'string',
+      },
     {
       title: 'Получатель',
       key: 'destination',
@@ -63,7 +67,7 @@ export default {
           },
           {
             title: 'Ключ',
-            key: 'key',
+            key: 'name',
             type: 'string',
             isRequired: true,
           },
