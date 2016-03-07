@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Types } from 'types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
 import ViewContainer from 'components/shared/ViewContainer';
@@ -37,4 +37,4 @@ class HeaderText extends Component {
   }
 }
 
-export default applyType(HeaderText, Types.HeaderText);
+export default applyType.HeaderText(HeaderText);

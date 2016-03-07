@@ -1,20 +1,17 @@
 import { PropTypes } from 'react';
 import blockPropType from './blockPropType';
 
-const FeatureType = {
-  title: PropTypes.string.isRequired,
-  iconClass: PropTypes.string.isRequired,
-};
+import Feature from 'views/elements/Feature';
 
-const ContentType = {
+const ContentProptypes = {
   header: PropTypes.string.isRequired,
   features: PropTypes.arrayOf(
-    PropTypes.shape(FeatureType)
+    PropTypes.shape(Feature.propType)
   ).isRequired,
 };
 
 export default {
-  propTypes: blockPropType(ContentType),
+  propTypes: blockPropType(ContentProptypes),
   contentSchema: {
     version: 1,
     backgroundImage: false,

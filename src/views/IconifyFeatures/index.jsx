@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import applyType from 'views/types/apply';
-import StringEditable from 'components/primitives/StringEditable';
+import React, { Component } from 'react';
 import map from 'lodash/map';
-import ViewContainer from 'components/shared/ViewContainer';
+import applyType from 'views/types/apply';
 
-import Feature from './Feature';
+import ViewContainer from 'components/shared/ViewContainer';
+import StringEditable from 'components/primitives/StringEditable';
+
+import Feature from 'views/elements/Feature';
 
 class IconifyFeatures extends Component {
   render() {

@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Feature = (props) => (
+const Feature = ({ iconClass, title }) => (
   <div className="feature text-center">
-    <i className={classnames('icon fade-3-4 inline-block mb16', props.iconClass)}></i>
-    <h4 className="BML-h4">{props.title}</h4>
+    <i className={classnames('icon fade-3-4 inline-block mb16', iconClass)}></i>
+    <h4 className="BML-h4">{title}</h4>
   </div>
 );
 

@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
 import ViewContainer from 'components/shared/ViewContainer';
 
 class View extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { block } = this.props;
-    const { html } = block.content;
+    const { block, block: { content } } = this.props;
     /* eslint-enable */
 
     return (
       <ViewContainer block={ block } className="BML-section--padding">
         <div cassName="container">
-          {html}
+          {content.html}
         </div>
       </ViewContainer>
     );
   }
 }
 
-export default applyType(View, Types.PlainHtml);
+export default applyType.MustRead(View);

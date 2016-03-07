@@ -7,27 +7,8 @@ import { PropTypes } from 'react';
 // TODO перейдет в частные файлы
 
 import CustomPropTypes from 'constants/customPropTypes';
+import LinkSchemaFields from 'schemaTypes/LinkFields';
 
-const LinkTypeSchemaFields = [
-  {
-    title: 'Текст',
-    key: 'text',
-    type: 'string',
-    isRequired: true,
-  },
-  {
-    title: 'Ссылка',
-    key: 'href',
-    type: 'url',
-    isRequired: true,
-  },
-  {
-    title: 'Target',
-    key: 'target',
-    type: 'string',
-    isRequired: true,
-  },
-];
 
 const ContentContentType = {
   text: PropTypes.string.isRequired,
@@ -257,50 +238,7 @@ const CTA = {
         isRequired: true,
         itemSchema: {
           limit: 3,
-          fields: LinkTypeSchemaFields,
-        },
-      },
-    ],
-  },
-};
-
-const MustReadContentType = {
-  header: PropTypes.string.isRequired,
-  subheader: PropTypes.string,
-  items: PropTypes.array.isRequired,
-};
-
-export const MustRead = {
-  typeName: 'MustRead',
-  propTypes: {
-    content: PropTypes.shape(MustReadContentType).isRequired,
-    form: formContentType,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: true,
-    fields: [
-      {
-        title: 'Заголовок',
-        key: 'header',
-        type: 'string',
-        isRequired: true,
-      },
-      {
-        title: 'Подзаголовок',
-        key: 'subheader',
-        type: 'text',
-        isRequired: false,
-      },
-      {
-        title: 'Кнопки',
-        key: 'items',
-        type: 'items',
-        isRequired: true,
-        itemSchema: {
-          limit: 5,
-          fields: LinkTypeSchemaFields,
+          fields: LinkSchemaFields,
         },
       },
     ],
@@ -338,7 +276,7 @@ const Footer = {
         isRequired: true,
         itemSchema: {
           limit: 12,
-          fields: LinkTypeSchemaFields,
+          fields: LinkSchemaFields,
         },
       },
     ],
@@ -388,7 +326,7 @@ const ContentSection = {
         isRequired: false,
         itemSchema: {
           limit: 5,
-          fields: LinkTypeSchemaFields,
+          fields: LinkSchemaFields,
         },
       },
     ],
@@ -467,49 +405,15 @@ const HeaderList = {
   },
 };
 
-const HeaderTextPropType = {
-  header: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-};
-
-const HeaderText = {
-  typeName: 'HeaderText',
-  propTypes: {
-    content: PropTypes.shape(HeaderTextPropType).isRequired,
-    form: formContentType,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: false,
-    fields: [
-      {
-        title: 'Заголовок',
-        key: 'header',
-        type: 'text',
-        isRequired: true,
-      },
-      {
-        title: 'Текст',
-        key: 'text',
-        type: 'text',
-        isRequired: true,
-      },
-    ],
-  },
-};
-
 const types = {
   content,
   PlainHtml,
-  HeaderText,
   HeaderList,
   FormWithText,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,
   cta: CTA,
-  mustRead: MustRead,
   footer: Footer,
   contentSection: ContentSection,
 };

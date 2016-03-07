@@ -34,10 +34,10 @@
 * [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо
     сделать в ней паддинг
 * [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов
-    в block
+    в block (см LinkSchemaFields)
 * [x] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
 * [.] разбить типы на разные файлы и починить наличие block-а в props-ах во views (30 минут, легко)
-* [ ] Избавиться от typeName в views/types, уставливать его автоматически при
+* [.] Избавиться от typeName в views/types, уставливать его автоматически при
     импорте
 * [ ] разобраться с customPropType
 * [x] В SectionComponent передавать block отдельным полем, а не размазанным
