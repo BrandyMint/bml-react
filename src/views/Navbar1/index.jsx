@@ -6,7 +6,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 
-import Link from 'views/shared/Link';
+import Link from 'views/elements/Link';
 import map from 'lodash/map';
 import './index.css';
 

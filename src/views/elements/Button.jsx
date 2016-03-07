@@ -1,20 +1,15 @@
-import React from 'react';
-import customPropTypes from 'constants/customPropTypes';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import Link from './Link';
 
-const Button = ({ text, href, className }) => {
-  const classNames = classnames('btn btn-lg btn-filled', className);
+const Button = (props) => {
+  const classNames = classnames('btn btn-lg btn-filled', props.className);
 
   return (
-    <a
-      className={classNames}
-      href={href || ''}
-    >
-      {text}
-    </a>
+    <Link {...props} className={classNames} />
   );
 };
 
-Button.propTypes = customPropTypes.LinkType;
+Button.propTypes = Link.propTypes;
 
 export default Button;

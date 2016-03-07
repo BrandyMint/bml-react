@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import { Types } from 'types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
 
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
@@ -14,8 +13,7 @@ import ViewContainer from 'components/shared/ViewContainer';
 class ContentSection0 extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { block } = this.props;
-    const { content } = block;
+    const { block, block: { content } } = this.props;
     /* eslint-enable */
 
     return (
@@ -51,4 +49,4 @@ class ContentSection0 extends Component {
   }
 }
 
-export default applyType(ContentSection0, Types.contentSection);
+export default applyType.ContentSection(ContentSection0);

@@ -25,8 +25,12 @@ class Buttons extends Component {
   }
 }
 
+export const buttonsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape(Button.propTypes)
+).isRequired;
+
 Buttons.propTypes = {
-  buttons: PropTypes.arrayOf(customPropTypes.link).isRequired,
+  buttons: buttonsPropTypes,
   className: PropTypes.string,
 };
 

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
-import StringEditable from 'components/primitives/StringEditable';
-import RichEditable from 'components/primitives/RichEditable';
+import ViewContainer from 'components/shared/ViewContainer';
+import applyType from 'views/types/apply';
+
 import Image from 'views/elements/Image';
 import Buttons from 'views/elements/Buttons';
-import ViewContainer from 'components/shared/ViewContainer';
+
+import StringEditable from 'components/primitives/StringEditable';
+import RichEditable from 'components/primitives/RichEditable';
 
 const ContentSection2 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--padding">
@@ -35,4 +36,4 @@ const ContentSection2 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType(ContentSection2, Types.contentSection);
+export default applyType.ContentSection(ContentSection2);

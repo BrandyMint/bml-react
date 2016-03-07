@@ -8,15 +8,6 @@ const location = PropTypes.shape({
 
 const inputType = PropTypes.oneOf(InputTypes);
 
-const LinkType = {
-  text: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  target: PropTypes.string,
-};
-
-const link = PropTypes.shape(LinkType);
-
 const fieldValue = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.number,
@@ -24,9 +15,7 @@ const fieldValue = PropTypes.oneOfType([
 ]);
 
 export default {
-  LinkType,
   location,
   fieldValue,
   inputType,
-  link,
 };

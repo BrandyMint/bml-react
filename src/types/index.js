@@ -37,8 +37,8 @@ const content = {
 };
 
 const NavbarContentType = {
-  logoLink: CustomPropTypes.link.isRequired,
-  items: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
+  //logoLink: CustomPropTypes.link.isRequired,
+  //items: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
 };
 
 const Navbar = {
@@ -283,56 +283,6 @@ const Footer = {
   },
 };
 
-const ContentSectionType = {
-  header: PropTypes.string.isRequired,
-  image: PropTypes.object,
-  leadText: PropTypes.string,
-  links: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
-};
-
-const ContentSection = {
-  typeName: 'ContentSection1',
-  propTypes: {
-    content: PropTypes.shape(ContentSectionType).isRequired,
-    form: formContentType,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: true,
-    fields: [
-      {
-        title: 'Заголовок',
-        key: 'header',
-        type: 'string',
-        isRequired: true,
-      },
-      {
-        title: 'Описание',
-        key: 'leadText',
-        type: 'text',
-        isRequired: true,
-      },
-      {
-        title: 'Картинка',
-        key: 'image',
-        type: 'image',
-        isRequired: true,
-      },
-      {
-        title: 'Кнопки',
-        key: 'links',
-        type: 'items',
-        isRequired: false,
-        itemSchema: {
-          limit: 5,
-          fields: LinkSchemaFields,
-        },
-      },
-    ],
-  },
-};
-
 const PlainHtmlPropType = {
   html: PropTypes.string.isRequired,
 };
@@ -415,7 +365,6 @@ const types = {
   googleMap: GoogleMap,
   cta: CTA,
   footer: Footer,
-  contentSection: ContentSection,
 };
 
 export const Types = mapValues(types, (value, key) => ({ ...value, typeName: value.typeName || key }));
