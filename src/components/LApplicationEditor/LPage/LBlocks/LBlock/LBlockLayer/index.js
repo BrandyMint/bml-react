@@ -14,7 +14,7 @@ import LBlockLayer from './LBlockLayer';
 
 const hasMultipleBlocksSelector = state => size(state.blocks) > 1;
 const hasMultipleViewsSelector = (state, props) =>
-  size(viewsRepository.getCompatibleViews(props.block.view)) > 1;
+  size(viewsRepository.getCompatibleViews(props.block.viewName)) > 1;
 
 const lBlockLayerSelector = createStructuredSelector({
   hasMultipleViews: hasMultipleViewsSelector,

@@ -7,9 +7,9 @@ export default (state, action) => {
 
   return map(state, (block) => {
     if (block.uuid === uuid) {
-      const nextView = viewsRepository.getNextView(block.view);
+      const nextView = viewsRepository.getNextView(block.viewName);
       if (nextView) {
-        return { ...block, view: nextView.viewName };
+        return { ...block, viewName: nextView.viewName };
       }
     }
 

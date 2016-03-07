@@ -4,7 +4,7 @@
 
 ## Вопросы:
 
-* [ ] Как правильно сделать backgroundResolver
+* [ ] Как правильно сделать backgroundResolver (aleksxor)
 
 ## Интерфейс:
 
@@ -31,7 +31,6 @@
 
 * [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо
     сделать в ней паддинг
-* [ ] Восстановить InlineForm
 * [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов
     в block
 * [ ] подключить стили к form-control вместо input
@@ -43,8 +42,8 @@
 * [x] rename BlockView ViewComponent
 * [x] ЗАменить LPage в стилях на BML-section с целью уменьшения глубины путей в CSS
 * [x] BML-section-padding заменить на BML-section--padding. (5 минут, легко)
-* [ ] Переименовать block.view во viewName
-    * [ ] InlineForm gеревести на ContentForm
+* [x] Переименовать block.view во viewName
+* [ ] InlineForm, восстановить и перевести на ContentForm
 
 
 ## Фичи

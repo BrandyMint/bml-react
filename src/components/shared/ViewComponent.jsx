@@ -4,7 +4,7 @@ import UnknownView from 'views/unknown';
 import { viewsRepository } from 'repositories/ViewsRepository';
 
 const ViewComponent = ({ block }) => {
-  const SectionComponent = viewsRepository.getView(block.view) || UnknownView;
+  const SectionComponent = viewsRepository.getView(block.viewName) || UnknownView;
 
   return <SectionComponent block={block} />;
 };

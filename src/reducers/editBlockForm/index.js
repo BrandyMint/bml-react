@@ -17,7 +17,7 @@ const initialState = {
   block: {
     uuid: '',
     type: '',
-    view: '',
+    viewName: '',
     content: {},
     nodeAttributes: {},
     background: {},

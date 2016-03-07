@@ -50,7 +50,7 @@ class LBlockLayerViewInfo extends Component {
     const { block } = this.props;
     const { show } = this.state;
 
-    const title = replace(block.view, /^B/, '');
+    const title = replace(block.viewName, /^B/, '');
 
     const classes = classnames({
       LBlockLayerViewInfo: true,

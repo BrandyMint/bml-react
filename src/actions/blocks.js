@@ -86,7 +86,7 @@ export const submitAddingBlock = () => (dispatch, getState) => {
         position,
         block: {
           uuid: uuid.v4(),
-          view: cloneDeep(example.view),
+          viewName: cloneDeep(example.viewName),
           ...cloneDeep(example.defaultData),
         },
       },

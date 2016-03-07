@@ -6,7 +6,7 @@ import LBlockEditForm from './LBlockEditForm';
 const LBlockEditModal = ({ block, isVisible, onCancel, onDelete, onSave }) => (
   <Modal show={isVisible} className="modal EditorModal LBlockEditModal">
     <Modal.Header closeButton onHide={onCancel}>
-      <Modal.Title>Редактирование блока {block.view}</Modal.Title>
+      <Modal.Title>Редактирование блока {block.viewName}</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <LBlockEditForm />

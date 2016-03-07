@@ -1,6 +1,6 @@
 export default [
   {
-    view: 'HeaderList',
+    viewName: 'HeaderList',
     title: 'Список с заголовком',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -23,7 +23,7 @@ export default [
   },
 
   {
-    view: 'IconifyFeatures',
+    viewName: 'IconifyFeatures',
     title: 'Возможности иконками',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -52,7 +52,7 @@ export default [
   },
 
   {
-    view: 'HeaderText',
+    viewName: 'HeaderText',
     title: 'Текст с заголовком',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -68,7 +68,7 @@ export default [
   },
 
   {
-    view: 'PlainHTML',
+    viewName: 'PlainHTML',
     title: 'Чистый HTML',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -85,7 +85,7 @@ export default [
     },
   },
   {
-    view: 'FreeText',
+    viewName: 'FreeText',
     title: 'Текстовая страница',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -99,7 +99,7 @@ export default [
     },
   },
   {
-    view: 'Form1',
+    viewName: 'Form1',
     title: 'Форма с текстом',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -137,7 +137,7 @@ export default [
     },
   },
   {
-    view: 'InlineForm1',
+    viewName: 'InlineForm1',
     title: 'Однострочная форма',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -174,7 +174,7 @@ export default [
     },
   },
   {
-    view: 'GoogleMap1',
+    viewName: 'GoogleMap1',
     title: 'Карта',
     description: 'Карта от karta.yandex.ru',
     image: {
@@ -208,7 +208,7 @@ export default [
   },
 
   {
-    view: 'ContentSection1',
+    viewName: 'ContentSection1',
     title: 'Область с контентом',
     description: 'raw description2',
     image: {
@@ -237,7 +237,7 @@ export default [
     },
   },
   {
-    view: 'CTA1',
+    viewName: 'CTA1',
     title: 'Кнопка действий',
     description: 'raw description22323',
     image: {
@@ -274,7 +274,7 @@ export default [
     },
   },
   {
-    view: 'Footer1',
+    viewName: 'Footer1',
     title: 'Подвал',
     description: 'raw description223',
     image: {
@@ -310,7 +310,7 @@ export default [
     },
   },
   {
-    view: 'MustRead3',
+    viewName: 'MustRead3',
     title: 'Заголовок',
     description: 'html raw description',
     image: {
@@ -360,7 +360,7 @@ export default [
     },
   },
   {
-    view: 'Navbar',
+    viewName: 'Navbar',
     title: 'Панель навигации',
     description: 'raw description',
     image: {
