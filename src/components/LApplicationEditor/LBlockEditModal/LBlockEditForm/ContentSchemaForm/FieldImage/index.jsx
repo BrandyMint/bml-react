@@ -11,8 +11,8 @@ class FieldImage extends Component {
     };
 
     const handleChange = (event) => {
-      onChange({ url: event.target.value});
-    }
+      onChange({ url: event.target.value });
+    };
 
     return (
       <FormGroup fieldKey={field.key} title={field.title}>

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import map from 'lodash/map';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 
@@ -10,7 +9,7 @@ import ViewContainer from 'components/shared/ViewContainer';
 
 import './index.css';
 
-const MustRead1 = ({ block}) => (
+const MustRead1 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--height-70">
     <div className="container vertical-center-rel">
       <div className="row">

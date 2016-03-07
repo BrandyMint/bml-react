@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import map from 'lodash/map';
-import size from 'lodash/size';
 
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';

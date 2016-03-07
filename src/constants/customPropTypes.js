@@ -20,7 +20,7 @@ const link = PropTypes.shape(LinkType);
 const FeatureType = {
   title: PropTypes.string.isRequired,
   iconClass: PropTypes.string.isRequired,
-}
+};
 
 const feature = PropTypes.shape(FeatureType);
 

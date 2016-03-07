@@ -27,15 +27,15 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
     hasImage,
     dark,
     secondary,
-  }
-}
+  };
+};
 
 export default (blocks) => {
   let prevBackgroundStyle = null;
 
-  return map(blocks, (block, index) => {
+  return map(blocks, (block) => {
     const backgroundStyle = getBackgroundStyle(block, prevBackgroundStyle);
     prevBackgroundStyle = backgroundStyle;
-    return {...block, backgroundStyle };
+    return { ...block, backgroundStyle };
   });
-}
+};

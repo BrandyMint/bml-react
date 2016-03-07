@@ -42,8 +42,8 @@ class BackgroundForm extends Component {
 
     const handleChangeUrl = (event) => {
       onChange('uuid', null);
-      onChange('url', event.target.value );
-    }
+      onChange('url', event.target.value);
+    };
 
     return (
       <div className="TabPage">

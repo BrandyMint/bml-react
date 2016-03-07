@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { createSelector, createStructuredSelector } from 'reselect';
 
 import { cancelEditingBlock, deleteEditingBlock, submitEditingBlock } from 'actions/blocks';
 
@@ -10,7 +9,7 @@ import LBlockEditModal from './LBlockEditModal';
 import './LBlockEditModal.css';
 
 const selector = state => ({
-  isVisible: state.modal.current == EDIT_BLOCK,
+  isVisible: state.modal.current === EDIT_BLOCK,
   block: state.editBlockForm.block,
 });
 

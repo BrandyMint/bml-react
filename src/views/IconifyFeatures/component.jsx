@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
-import classnames from 'classnames'
+import classnames from 'classnames';
 import map from 'lodash/map';
 import ViewContainer from 'components/shared/ViewContainer';
 
 const Feature = (props) => (
   <div className="feature text-center">
-    <i className={classnames("icon fade-3-4 inline-block mb16", props.iconClass)}></i>
+    <i className={classnames('icon fade-3-4 inline-block mb16', props.iconClass)}></i>
     <h4 className="BML-h4">{props.title}</h4>
   </div>
 );
@@ -16,14 +16,14 @@ const Feature = (props) => (
 Feature.propTypes = {
   title: PropTypes.string.isRequired,
   iconClass: PropTypes.string.isRequired,
-}
+};
 
 class IconifyFeatures extends Component {
   render() {
     /* eslint-disable react/prop-types */
     const { block } = this.props;
     const { content } = block;
-    const { header, features } = content;
+    const { features } = content;
     /* eslint-enable */
 
     return (

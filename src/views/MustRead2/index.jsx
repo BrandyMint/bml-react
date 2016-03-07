@@ -1,10 +1,9 @@
 // https://github.com/BinaryThumb/react-background-video/blob/master/src/index.js
 // https://gist.github.com/mikechau/5547c67d0dc2957e907d
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
-import map from 'lodash/map';
 
 import Buttons from 'views/elements/Buttons';
 import StringEditable from 'components/primitives/StringEditable';

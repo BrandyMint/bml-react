@@ -1,17 +1,13 @@
 import React, { PropTypes } from 'react';
 
-const Image = (props) => {
-  const { height, width, url } = props;
-
-  return (
+const Image = ({ height, width, url }) => (
   <img
     className="img-fluid"
     height={height}
     src={url}
     width={width}
-    />
-  )
-}
+  />
+);
 
 Image.propTypes = {
   url: PropTypes.string.isRequired,
@@ -19,6 +15,6 @@ Image.propTypes = {
   height: PropTypes.number,
   alt: PropTypes.string,
   title: PropTypes.string,
-}
+};
 
 export default Image;

@@ -2,25 +2,25 @@ import { PropTypes } from 'react';
 import CustomPropTypes from 'constants/customPropTypes';
 
 const LinkTypeSchemaFields = [
-    {
-      title: 'Текст',
-      key: 'text',
-      type: 'string',
-      isRequired: true,
-    },
-    {
-      title: 'Ссылка',
-      key: 'href',
-      type: 'url',
-      isRequired: true,
-    },
-    {
-      title: 'Target',
-      key: 'target',
-      type: 'string',
-      isRequired: true,
-    },
-  ];
+  {
+    title: 'Текст',
+    key: 'text',
+    type: 'string',
+    isRequired: true,
+  },
+  {
+    title: 'Ссылка',
+    key: 'href',
+    type: 'url',
+    isRequired: true,
+  },
+  {
+    title: 'Target',
+    key: 'target',
+    type: 'string',
+    isRequired: true,
+  },
+];
 
 const ContentContentType = {
   text: PropTypes.string.isRequired,
@@ -409,9 +409,9 @@ const PlainHtml = {
         type: 'text',
         isRequired: true,
       },
-    ]
-  }
-}
+    ],
+  },
+};
 
 const HeaderListPropType = {
   header: PropTypes.string.isRequired,
@@ -456,8 +456,8 @@ const HeaderList = {
           ],
         },
       },
-    ]
-  }
+    ],
+  },
 };
 
 const HeaderTextPropType = {
@@ -488,14 +488,14 @@ const HeaderText = {
         type: 'text',
         isRequired: true,
       },
-    ]
-  }
+    ],
+  },
 };
 
 const FeaturesPropType = {
   header: PropTypes.string.isRequired,
   features: PropTypes.arrayOf(CustomPropTypes.feature).isRequired,
-}
+};
 
 const HeadedFeatures = {
   typeName: 'HeadedFeatures',
@@ -537,9 +537,9 @@ const HeadedFeatures = {
           ],
         },
       },
-    ]
-  }
-}
+    ],
+  },
+};
 
 export const Types = {
   HeadedFeatures,

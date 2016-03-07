@@ -97,7 +97,7 @@ class LBlockLayer extends Component {
         />
       )}
       </ReactCSSTransitionGroup>
-    )
+    );
 
     return (
       <div className={layerClasses} onMouseMove={onMouseEnter} >

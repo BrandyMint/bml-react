@@ -9,7 +9,14 @@ const TAG_NAME = 'section';
 class ViewContainer extends Component {
   render() {
     const { children, block, className, tagName } = this.props;
-    const { nodeAttributes, uuid, view, backgroundStyle, backgroundVideos, backgroundImage } = block;
+    const {
+      nodeAttributes,
+      uuid,
+      view,
+      backgroundStyle,
+      backgroundVideos,
+      backgroundImage,
+    } = block;
 
     const blockId = get('nodeAttributes.id') || uuid;
     const blockClasses = classnames(
@@ -19,29 +26,32 @@ class ViewContainer extends Component {
       },
       get(backgroundStyle, 'bgClasses'),
       className,
-      get(nodeAttributes,'class'),
+      get(nodeAttributes, 'class'),
     );
 
     const backgroundImageUrl = get(backgroundImage, 'url');
-    const blockStyles = backgroundImageUrl ? { backgroundImage: `url("${backgroundImageUrl}")` } : {};
+    const blockStyles = backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` };
 
     return React.createElement(
       tagName || TAG_NAME,
       {
         className: blockClasses,
         id: blockId,
-        style: blockStyles
+        style: blockStyles,
       },
       [
-        size(backgroundVideos)>0 && <BackgroundVideo videos={backgroundVideos}/>,
-        children
+        size(backgroundVideos) > 0 && <BackgroundVideo videos={backgroundVideos}/>,
+        children,
       ]
-    )
+    );
   }
 }
 
 ViewContainer.propTypes = {
   block: PropTypes.object.isRequired, // TODO block PropType
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string.isRequired,
+  tagName: PropTypes.string,
 };
 
 export default ViewContainer;

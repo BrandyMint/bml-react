@@ -1,4 +1,7 @@
-import { defaultBackgroundUrl, defaultBackgroundVideos } from 'constants/defaults';
+import {
+  defaultBackgroundUrl,
+  defaultBackgroundVideos,
+} from 'constants/defaults';
 
 export const sections = [
   {
@@ -19,4 +22,4 @@ export const sections = [
       ],
     },
   },
-]
+];

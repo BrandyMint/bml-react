@@ -7,6 +7,6 @@ const PlainHTML = ({ block }) => (
   <ViewContainer block={ block }>
     <div dangerouslySetInnerHTML={{ __html: block.content.html }} />
   </ViewContainer>
-)
+);
 
 export default applyType(PlainHTML, Types.PlainHtml);

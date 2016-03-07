@@ -18,7 +18,7 @@ export default [
             title: 'GitHub',
           },
         ],
-      }
+      },
     },
   },
 
@@ -45,9 +45,9 @@ export default [
           {
             title: 'Возможность 3',
             iconClass: 'ti-layers',
-          }
+          },
         ],
-      }
+      },
     },
   },
 
@@ -63,7 +63,7 @@ export default [
       content: {
         header: 'Заголовок',
         text: 'текст',
-      }
+      },
     },
   },
 

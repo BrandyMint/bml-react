@@ -1,3 +1,4 @@
 src/react-icons/*
 test/react-server.js
 test/prerender-test.js
+src/**/examples.js

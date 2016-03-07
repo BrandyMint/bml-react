@@ -15,12 +15,13 @@ class View extends Component {
     const { content } = block;
     /* eslint-enable */
 
-    const itemClass = (index) => classnames({
+    const itemClass = (index) => classnames(
+      {
         'col-md-5': true,
         'col-sm-6': true,
-        'mb40': true,
-        'col-md-offset-1': index % 2 == 0
-      })
+        mb40: true,
+        'col-md-offset-1': index % 2 === 0,
+      });
     return (
       <ViewContainer block={ block } className="BML-section--padding">
         <div className="container">
@@ -37,9 +38,7 @@ class View extends Component {
           <div className="row">
             <ol>
               {map(content.items, (item, index) =>
-                 <li key={index} className={itemClass(index)}>
-                  {item.title}
-                </li>
+               <li key={index} className={itemClass(index)}> {item.title} </li>
               )}
             </ol>
           </div>

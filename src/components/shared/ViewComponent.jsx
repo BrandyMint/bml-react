@@ -7,7 +7,7 @@ const ViewComponent = ({ block }) => {
   const SectionComponent = viewsRepository.getView(block.view) || UnknownView;
 
   return <SectionComponent block={block} />;
-}
+};
 
 ViewComponent.propTypes = {
   block: PropTypes.object.isRequired,

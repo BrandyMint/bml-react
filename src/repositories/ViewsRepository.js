@@ -46,9 +46,6 @@ export default class ViewsRepository {
 
   getBlandView(viewName) {
     return views[viewName];
-
-    invariant(view, `No view ${viewName} is registered`);
-    return view;
   }
   getView(viewName) {
     const view = this.getBlandView(viewName);

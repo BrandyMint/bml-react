@@ -2,7 +2,7 @@ import { prepareViews } from 'views/utils';
 
 import InlineForm1 from './InlineForm1';
 import Form1 from './Form1';
-import Navbar1 from './Navbar1';
+// import Navbar1 from './Navbar1';
 import GoogleMap1 from './GoogleMap1';
 import CTA1 from './CTA1';
 import Footer1 from './Footer1';

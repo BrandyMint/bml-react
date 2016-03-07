@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import { Types } from 'views/types';
 import { applyType } from 'views/utils';
-import map from 'lodash/map';
 
 import Buttons from 'views/elements/Buttons';
 import StringEditable from 'components/primitives/StringEditable';
