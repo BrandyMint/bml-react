@@ -1,5 +1,5 @@
 import React from 'react';
-import { Types } from 'views/types';
+import { Types } from 'types';
 import { applyType } from 'views/utils';
 import ViewContainer from 'components/shared/ViewContainer';
 

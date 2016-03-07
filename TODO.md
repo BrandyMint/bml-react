@@ -23,21 +23,23 @@
     * [x] Светлый фон
     * [x] Заменить кнопки на Buttons
 
-## Ошибки
+## Refactor (CSS)
 
-* [x] Починить всплытие AddButton в LBlocks
+* [ ] подключить стили к form-control вместо input
+* [ ] использовать button submit вместо input submit
+* [ ] Выделить media query в переменные или миксины (15 минут, легко)
 
-## Refactor
+## Refactor (JS)
 
 * [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо
     сделать в ней паддинг
 * [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов
     в block
-* [ ] подключить стили к form-control вместо input
-* [ ] использовать button submit вместо input submit
-* [ ] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
-* [ ] разбить типы на разные файлы и починить наличие block-а в props-ах во views (30 минут, легко)
-* [ ] Выделить media query в переменные или миксины (15 минут, легко)
+* [x] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
+* [.] разбить типы на разные файлы и починить наличие block-а в props-ах во views (30 минут, легко)
+* [ ] Избавиться от typeName в views/types, уставливать его автоматически при
+    импорте
+* [ ] разобраться с customPropType
 * [x] В SectionComponent передавать block отдельным полем, а не размазанным
 * [x] rename BlockView ViewComponent
 * [x] ЗАменить LPage в стилях на BML-section с целью уменьшения глубины путей в CSS

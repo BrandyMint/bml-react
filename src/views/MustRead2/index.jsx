@@ -2,7 +2,7 @@
 // https://gist.github.com/mikechau/5547c67d0dc2957e907d
 
 import React from 'react';
-import { Types } from 'views/types';
+import { Types } from 'types';
 import { applyType } from 'views/utils';
 
 import Buttons from 'views/elements/Buttons';

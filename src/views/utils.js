@@ -3,6 +3,7 @@ import invariant from 'invariant';
 
 /* eslint-disable no-param-reassign */
 
+// TODO move to views/types/apply
 export const applyType = (component, type) => {
   component.propTypes = type.propTypes;
   component.typeName = type.typeName;

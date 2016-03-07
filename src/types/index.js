@@ -1,4 +1,11 @@
+import mapValues from 'lodash/mapValues';
+import { applyType } from 'views/utils';
+import formContentType from 'views/types/formContent';
+
 import { PropTypes } from 'react';
+
+// TODO перейдет в частные файлы
+
 import CustomPropTypes from 'constants/customPropTypes';
 
 const LinkTypeSchemaFields = [
@@ -59,7 +66,7 @@ const Navbar = {
   // Фактически это полное содержание block-а
   propTypes: {
     content: PropTypes.shape(NavbarContentType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -113,7 +120,7 @@ const FormWithText = {
     content: PropTypes.shape({
       text: PropTypes.string.isRequired,
     }).isRequired,
-    form: CustomPropTypes.formContent.isRequired,
+    form: formContentType.isRequired,
     uuid: PropTypes.string.isRequired,
   },
 
@@ -140,7 +147,7 @@ const InlineForm = {
     content: PropTypes.shape({
       title: PropTypes.string,
     }).isRequired,
-    form: CustomPropTypes.formContent.isRequired,
+    form: formContentType.isRequired,
     uuid: PropTypes.string.isRequired,
   },
 
@@ -174,7 +181,7 @@ const GoogleMap = {
   typeName: 'GoogleMap',
   propTypes: {
     content: PropTypes.shape(GoogleMapType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
 
@@ -230,7 +237,7 @@ const CTA = {
   typeName: 'CTA',
   propTypes: {
     content: PropTypes.shape(CTAContentType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -267,7 +274,7 @@ export const MustRead = {
   typeName: 'MustRead',
   propTypes: {
     content: PropTypes.shape(MustReadContentType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -311,7 +318,7 @@ const Footer = {
   // Фактически это полное содержание block-а
   propTypes: {
     content: PropTypes.shape(FooterType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -349,7 +356,7 @@ const ContentSection = {
   typeName: 'ContentSection1',
   propTypes: {
     content: PropTypes.shape(ContentSectionType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -396,7 +403,7 @@ const PlainHtml = {
   typeName: 'PlainHTML',
   propTypes: {
     content: PropTypes.shape(PlainHtmlPropType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -426,7 +433,7 @@ const HeaderList = {
   typeName: 'HeaderList',
   propTypes: {
     content: PropTypes.shape(HeaderListPropType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -469,7 +476,7 @@ const HeaderText = {
   typeName: 'HeaderText',
   propTypes: {
     content: PropTypes.shape(HeaderTextPropType).isRequired,
-    form: CustomPropTypes.formContent,
+    form: formContentType,
     uuid: PropTypes.string.isRequired,
   },
   contentSchema: {
@@ -492,57 +499,7 @@ const HeaderText = {
   },
 };
 
-const FeaturesPropType = {
-  header: PropTypes.string.isRequired,
-  features: PropTypes.arrayOf(CustomPropTypes.feature).isRequired,
-};
-
-const HeadedFeatures = {
-  typeName: 'HeadedFeatures',
-  propTypes: {
-    content: PropTypes.shape(FeaturesPropType).isRequired,
-    form: CustomPropTypes.formContent,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: false,
-    fields: [
-      {
-        title: 'Заголовок',
-        key: 'header',
-        type: 'text',
-        isRequired: true,
-      },
-      {
-        title: 'Возможности',
-        key: 'features',
-        type: 'items',
-        isRequired: true,
-        itemSchema: {
-          limit: 6,
-          fields: [
-            {
-              title: 'Возможность',
-              key: 'title',
-              type: 'string',
-              isRequired: true,
-            },
-            {
-              title: 'Класс иконки',
-              key: 'iconClass', // TODO Завести отдельный тип
-              type: 'string',
-              isRequired: true,
-            },
-          ],
-        },
-      },
-    ],
-  },
-};
-
-export const Types = {
-  HeadedFeatures,
+const types = {
   content,
   PlainHtml,
   HeaderText,
@@ -556,3 +513,5 @@ export const Types = {
   footer: Footer,
   contentSection: ContentSection,
 };
+
+export const Types = mapValues(types, (value, key) => ({ ...value, typeName: value.typeName || key }));

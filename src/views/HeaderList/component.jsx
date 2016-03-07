@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import map from 'lodash/map';
-import { Types } from 'views/types';
+import { Types } from 'types';
 import { applyType } from 'views/utils';
 import StringEditable from 'components/primitives/StringEditable';
 import ViewContainer from 'components/shared/ViewContainer';

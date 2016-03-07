@@ -2,7 +2,7 @@ import React from 'react';
 
 import reduce from 'lodash/reduce';
 import size from 'lodash/size';
-import { Types } from 'views/types';
+import { Types } from 'types';
 import { applyType } from 'views/utils';
 import ViewContainer from 'components/shared/ViewContainer';
 

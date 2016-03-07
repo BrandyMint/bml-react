@@ -47,6 +47,7 @@ export default class ViewsRepository {
   getBlandView(viewName) {
     return views[viewName];
   }
+
   getView(viewName) {
     const view = this.getBlandView(viewName);
 

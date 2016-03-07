@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RichEditable from 'components/primitives/RichEditable';
-import { Types } from 'views/types';
+import { Types } from 'types';
 import { applyType } from 'views/utils';
 import ViewContainer from 'components/shared/ViewContainer';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
-import { Types } from 'views/types';
+import { Types } from 'types';
 import { applyType } from 'views/utils';
 import ViewContainer from 'components/shared/ViewContainer';
 
