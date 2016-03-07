@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 
-import FormPropType from 'constants/formPropType';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 import each from 'lodash/each';
 import clone from 'lodash/clone';
 
-import FieldItem from '../FieldItem';
+import FieldItem from './FieldItem';
 
 class FieldItems extends Component {
   render() {
@@ -67,9 +66,17 @@ class FieldItems extends Component {
   }
 }
 
+
+const FieldPropType = {
+  title: PropTypes.string.isRequired,
+  key: PropTypes.string.isRequired,
+  isRequired: PropTypes.bool,
+  type: PropTypes.string.isRequired,
+};
+
 FieldItems.propTypes = {
-  field: FormPropType.fieldItemsField.isRequired,
-  value: PropTypes.array.isRequired,
+  field: PropTypes.shape(FieldPropType).isRequired,
+  value: PropTypes.array.isRequired, // items
   onChange: PropTypes.func.isRequired,
 };
 

@@ -119,13 +119,13 @@ export default [
           {
             title: '',
             placeholder: 'Имя',
-            key: 'name',
+            name: 'name',
             inputType: 'text',
           },
           {
             title: '',
             placeholder: 'Емайл',
-            key: 'email',
+            name: 'email',
             inputType: 'email',
           },
         ],
@@ -156,13 +156,13 @@ export default [
           {
             title: '',
             placeholder: 'Имя',
-            key: 'name',
+            name: 'name',
             inputType: 'text',
           },
           {
             title: '',
             placeholder: 'Емайл',
-            key: 'email',
+            name: 'email',
             inputType: 'email',
           },
         ],

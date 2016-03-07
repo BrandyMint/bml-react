@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { FIELD_BASIC_TYPES } from 'constants/fieldTypes';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 
-import FieldSubitem from '../FieldSubitem';
+import FieldSubitem from './FieldSubitem';
 
 import MdRemoveCircleOutline from 'react-icons/lib/md/remove-circle_outline';
 
@@ -24,16 +25,32 @@ class FieldItem extends Component {
           )
        )}
        <button className="btn btn-sm btn-danger" onClick={onRemove}>
-       <MdRemoveCircleOutline />
+         <MdRemoveCircleOutline />
        </button>
       </li>
     );
   }
 }
 
+export const FieldItemPropType = {
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isRequired: PropTypes.bool,
+  inputType: PropTypes.string.isRequired,
+}
+
+const itemSchemaFieldPropType = {
+  title: PropTypes.string.isRequired,
+  key: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(FIELD_BASIC_TYPES).isRequired,
+  isRequired: PropTypes.bool.isRequired,
+};
+
 FieldItem.propTypes = {
-  itemSchemaFields: PropTypes.array.isRequired,
-  item: PropTypes.object.isRequired,
+  itemSchemaFields: PropTypes.arrayOf(
+    PropTypes.shape(itemSchemaFieldPropType)
+  ).isRequired, // TODO какой у них тип?
+  item: PropTypes.shape(FieldItemPropType).isRequired, // Собственно значения
   onChange: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
 };

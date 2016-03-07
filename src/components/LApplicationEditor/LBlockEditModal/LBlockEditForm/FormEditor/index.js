@@ -3,7 +3,7 @@ import map from 'lodash/map';
 import partial from 'lodash/partial';
 import Field from '../ContentSchemaForm/Field';
 
-import formSchema from 'constants/formSchema';
+import formSchema from './formSchema';
 
 class FormEditor extends Component {
   static propTypes = {
