@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { FIELD_COMPONENTS } from '../../schemaFieldTypes';
 import CustomPropTypes from 'constants/customPropTypes';
 
@@ -9,9 +9,9 @@ const FieldSubitem = ({ field, value, onChange }) => {
       field={field}
       onChange={onChange}
       value={value}
-      />
+    />
   );
-}
+};
 
 const FieldValue = PropTypes.oneOfType([
   PropTypes.string,

@@ -10,6 +10,9 @@ const Button = (props) => {
   );
 };
 
-Button.propTypes = Link.propTypes;
+Button.propTypes = {
+  ...Link.propTypes,
+  className: PropTypes.string,
+};
 
 export default Button;

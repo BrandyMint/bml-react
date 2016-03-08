@@ -10,12 +10,16 @@ import EditorRightSidebar from './EditorRightSidebar';
 
 import './index.css';
 
-class LApplication extends Component {
+class EditorApp extends Component {
   render() {
     const { onActivity } = this.props;
     return (
       <BodyClassName className="Editor">
-        <div className="BML-App LApplicationEditor" onMouseMove={onActivity} onContextMenu={onActivity}>
+        <div
+          className="BML-App LApplicationEditor"
+          onMouseMove={onActivity}
+          onContextMenu={onActivity}
+        >
           <EditorLeftSidebar />
           <div className="LApplicationEditor-content">
             <LPage />
@@ -29,8 +33,8 @@ class LApplication extends Component {
   }
 }
 
-LApplication.propTypes = {
+EditorApp.propTypes = {
   onActivity: PropTypes.func.isRequired,
 };
 
-export default LApplication;
+export default EditorApp;

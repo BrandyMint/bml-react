@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import INPUT_TYPES from 'constants/inputTypes'
+import INPUT_TYPES from 'constants/inputTypes';
 
 // TODO перенести formName в context?
 const formName = 'form';

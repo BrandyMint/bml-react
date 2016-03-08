@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import map from 'lodash/map';
 import classnames from 'classnames';
 
@@ -14,7 +14,7 @@ const ShowApp = ({ blocks, className, children }) => {
       {children}
     </div>
   );
-}
+};
 
 ShowApp.propTypes = {
   blocks: PropTypes.array.isRequired,

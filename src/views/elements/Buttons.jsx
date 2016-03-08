@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import Button from 'views/elements/Button';
-import customPropTypes from 'constants/customPropTypes';
 import classnames from 'classnames';
 import map from 'lodash/map';
 import size from 'lodash/size';

@@ -92,4 +92,4 @@ class Navbar1 extends Component {
   }
 }
 
-export default applyType.Navbar(Navbar1);
+export default applyType.navbar(Navbar1);

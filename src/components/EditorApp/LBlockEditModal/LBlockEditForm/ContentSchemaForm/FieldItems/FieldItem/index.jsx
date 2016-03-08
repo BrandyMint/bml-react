@@ -37,7 +37,7 @@ export const FieldItemPropType = {
   name: PropTypes.string.isRequired,
   isRequired: PropTypes.bool,
   inputType: PropTypes.string.isRequired,
-}
+};
 
 const itemSchemaFieldPropType = {
   title: PropTypes.string.isRequired,

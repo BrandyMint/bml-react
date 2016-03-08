@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import applyType from 'views/types/apply';
 import ViewContainer from 'components/shared/ViewContainer';
 
@@ -24,7 +24,7 @@ const InlineForm1 = ({ block }) => {
           name="variant_uuid"
           type="hidden"
           value={variantUuid}
-          />
+        />
           { content.title && (<span className="InlineForm1-title">{content.title}</span>)}
           {map(form.fields, (field, index) => {
             const key = `${uuid}-${index}`;
@@ -37,7 +37,7 @@ const InlineForm1 = ({ block }) => {
                   name={field.key}
                   id={key}
                   placeholder={field.placeholder}
-                  />
+                />
                 </div>
                 );
           })}
@@ -45,6 +45,6 @@ const InlineForm1 = ({ block }) => {
         </form>
       </ViewContainer>
   );
-}
+};
 
 export default applyType.formWithText(InlineForm1);

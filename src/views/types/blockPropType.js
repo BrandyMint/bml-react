@@ -6,7 +6,8 @@ export default (contentType) => (
     block: PropTypes.shape(
       {
         content: PropTypes.shape(contentType).isRequired,
-        form: PropTypes.shape(formContentType), // TODO заглярывать в тип и если там form=required, то отмечать
+        // TODO заглярывать в тип и если там form=required, то отмечать как isRequired
+        form: PropTypes.shape(formContentType),
         uuid: PropTypes.string.isRequired,
       }
     ).isRequired,
