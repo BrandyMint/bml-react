@@ -2,6 +2,10 @@
 
 * [ ] BM-овский лендос в дизайне
 
+## Баги:
+
+* [ ] Пропадают кнопки при скролинге в редакторе
+
 ## Вопросы:
 
 * [ ] Как правильно сделать backgroundResolver (aleksxor)
@@ -10,6 +14,7 @@
 
 ## Фичи по блокам:
 
+* [ ] responsive image для изображения в телефоне
 * [ ] Цвет фона бывает 4-х видов: --image --primary --secondary --default
 * [ ] Восстановить Navbar
 * [ ] InlineForm, восстановить и перевести на ContentForm
@@ -31,6 +36,7 @@
 
 ## Refactor (JS)
 
+* [ ] компилировать альтернативный dist без ужатия JS и CSS (-develop) версия
 * [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
 * [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
 * [ ] move CustomPropTypes.location. в views/types/Map
