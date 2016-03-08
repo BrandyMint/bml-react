@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import Button from 'views/elements/Button';
-import customPropTypes from 'constants/customPropTypes';
 import classnames from 'classnames';
 import map from 'lodash/map';
 import size from 'lodash/size';
@@ -25,8 +24,12 @@ class Buttons extends Component {
   }
 }
 
+export const buttonsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape(Button.propTypes)
+).isRequired;
+
 Buttons.propTypes = {
-  buttons: PropTypes.arrayOf(customPropTypes.link).isRequired,
+  buttons: buttonsPropTypes,
   className: PropTypes.string,
 };
 

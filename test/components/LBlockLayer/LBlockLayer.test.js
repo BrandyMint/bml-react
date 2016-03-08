@@ -5,7 +5,7 @@ import assign from 'lodash/assign';
 import expect from 'expect';
 
 import LBlockLayer
-  from 'components/LApplicationEditor/LPage/LBlocks/LBlock/LBlockLayer/LBlockLayer';
+  from 'components/EditorApp/LPage/LBlocks/LBlock/LBlockLayer/LBlockLayer';
 
 const getProps = (extra = {}) =>
   assign({

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Types } from 'views/types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
 
 import Buttons from 'views/elements/Buttons';
 import StringEditable from 'components/primitives/StringEditable';
@@ -35,4 +34,4 @@ const MustRead1 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType(MustRead1, Types.mustRead);
+export default applyType.mustRead(MustRead1);

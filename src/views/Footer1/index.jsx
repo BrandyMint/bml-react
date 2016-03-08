@@ -1,9 +1,8 @@
 import React from 'react';
+import applyType from 'views/types/apply';
 
 import reduce from 'lodash/reduce';
 import size from 'lodash/size';
-import { Types } from 'views/types';
-import { applyType } from 'views/utils';
 import ViewContainer from 'components/shared/ViewContainer';
 
 import StringEditable from 'components/primitives/StringEditable';
@@ -42,7 +41,7 @@ const Footer1 = ({ block }) => (
         <StringEditable
           className="Footer1-copyright text-muted small"
           data={block.content}
-          fieldName="copyrightText"
+          fieldName="text"
           tagName="p"
         />
       </div>
@@ -51,4 +50,4 @@ const Footer1 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType(Footer1, Types.footer);
+export default applyType.textWithLinks(Footer1);

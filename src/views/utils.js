@@ -3,13 +3,6 @@ import invariant from 'invariant';
 
 /* eslint-disable no-param-reassign */
 
-export const applyType = (component, type) => {
-  component.propTypes = type.propTypes;
-  component.typeName = type.typeName;
-  component.contentSchema = type.contentSchema;
-  return component;
-};
-
 const registerView = (types, viewComponent, viewName) => {
   viewComponent.viewName = viewName;
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Types } from 'views/types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
+
 import classnames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 
-import Link from 'views/shared/Link';
+import Link from 'views/elements/Link';
 import map from 'lodash/map';
 import './index.css';
 
@@ -92,4 +92,4 @@ class Navbar1 extends Component {
   }
 }
 
-export default applyType(Navbar1, Types.navbar);
+export default applyType.navbar(Navbar1);

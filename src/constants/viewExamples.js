@@ -85,7 +85,7 @@ export default [
     },
   },
   {
-    viewName: 'FreeText',
+    viewName: 'PlainText',
     title: 'Текстовая страница',
     image: {
       url: '/assets/images/themes/t1/intro-bg.jpg',
@@ -94,7 +94,7 @@ export default [
     },
     defaultData: {
       content: {
-        text: '<h1>Симпотичный заголовок</h1><p>и очень длинный текст</p>',
+        text: '<h1>Симпатичный заголовок</h1><p>и очень длинный текст</p>',
       },
     },
   },
@@ -119,13 +119,13 @@ export default [
           {
             title: '',
             placeholder: 'Имя',
-            key: 'name',
+            name: 'name',
             inputType: 'text',
           },
           {
             title: '',
             placeholder: 'Емайл',
-            key: 'email',
+            name: 'email',
             inputType: 'email',
           },
         ],
@@ -156,13 +156,13 @@ export default [
           {
             title: '',
             placeholder: 'Имя',
-            key: 'name',
+            name: 'name',
             inputType: 'text',
           },
           {
             title: '',
             placeholder: 'Емайл',
-            key: 'email',
+            name: 'email',
             inputType: 'email',
           },
         ],
@@ -285,7 +285,7 @@ export default [
     rate: 5,
     defaultData: {
       content: {
-        copyrightText: 'Copyright © Your Company 2014. All Rights Reserved',
+        text: 'Copyright © Your Company 2014. All Rights Reserved',
         items: [
           {
             title: 'Home',

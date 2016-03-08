@@ -9,11 +9,11 @@ import 'editor_styles';
 import { createStore, browserHistory } from './store';
 
 import LandingLoader from 'components/LandingLoader';
-import LApplicationPreview from 'components/LApplicationPreview';
-import ShowApplication from 'components/ShowApplication';
+import DesktopPreviewApp from 'components/DesktopPreviewApp';
+import ShowApp from 'components/ShowApp';
 import MobilePreviewApp from 'components/MobilePreviewApp';
 import NoMatch from 'components/NoMatch';
-import LApplicationEditor from 'components/LApplicationEditor';
+import EditorApp from 'components/EditorApp';
 
 import initialState from 'constants/initialState';
 
@@ -26,11 +26,11 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/editor/:variantUuid" component={LandingLoader}>
-        <IndexRoute component={LApplicationEditor}/>
-        <Route path="preview" component={LApplicationPreview}/>
+        <IndexRoute component={EditorApp}/>
+        <Route path="preview" component={DesktopPreviewApp}/>
         <Route path="mobilePreview" component={MobilePreviewApp}/>
         {/* для preview из mobilePreview */}
-        <Route path="show" component={ShowApplication}/>
+        <Route path="show" component={ShowApp}/>
       </Route>
       <Route path="*" component={NoMatch} />
     </Router>

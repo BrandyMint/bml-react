@@ -6,16 +6,14 @@
 
 * [ ] Как правильно сделать backgroundResolver (aleksxor)
 
-## Интерфейс:
+## Фичи по блокам:
 
-* [x] Множественные кнопки в ContentSection
-* [x] Привести ContentSection1-3 к нормальному виду в десктопе
-* [x] возможность заменить изображение на прямой URL
-* [x] Form1
-* [x] Тестовый Лендос с примером ВСЕХ вьюх.
+* [ ] Цвет фона бывает 4-х видов: --image --primary --secondary --default
+* [ ] Восстановить Navbar
+* [ ] InlineForm, восстановить и перевести на ContentForm
+* [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо сделать в ней паддинг
 * [ ] Мобильные варианты для всех вьюх (ContentSection в первую очередь)
 * [ ] Buttons в мобильном варианте
-* [x] Автоматическое вычисление стиля фона
 * [ ] MustRead1/2
     * [x] С видео
     * [x] с Изображением
@@ -23,27 +21,34 @@
     * [x] Светлый фон
     * [x] Заменить кнопки на Buttons
 
-## Ошибки
+## Refactor (CSS)
 
-* [x] Починить всплытие AddButton в LBlocks
-
-## Refactor
-
-* [ ] возможно заменить CTA на ContentSection (то есть удалить CTA), либо
-    сделать в ней паддинг
-* [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов
-    в block
 * [ ] подключить стили к form-control вместо input
 * [ ] использовать button submit вместо input submit
-* [ ] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
-* [ ] разбить типы на разные файлы и починить наличие block-а в props-ах во views (30 минут, легко)
 * [ ] Выделить media query в переменные или миксины (15 минут, легко)
+
+## Refactor (JS)
+
+* [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
+* [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
+* [ ] move CustomPropTypes.location. в views/types/Map
+* [ ] Выделить набор типов для ссылки в отдельный тип input-а (Link), для того
+    чтобы сделать для него отдельную форму редактирования в редактори и
+    использовать для единичных ссылок (например в NavBar)
+* [ ] всякие buttons и items переименовать в links и сделать отдельным свойствов в block (см LinkSchemaFields)
+* [ ] ListItem в IconifyFeatures и в HeaderList выделить в один элемент у которого может быть иконка, а может не быть.
+* [x] разбить типы на разные файлы и починить наличие block-а в props-ах во views (30 минут, легко)
+* [x] заменить bg-image на BML-section--bgImage, dark на BML-section--dark
+* [x] Избавиться от typeName в views/types, уставливать его автоматически при импорте
+* [x] разобраться с customPropType
 * [x] В SectionComponent передавать block отдельным полем, а не размазанным
 * [x] rename BlockView ViewComponent
 * [x] ЗАменить LPage в стилях на BML-section с целью уменьшения глубины путей в CSS
 * [x] BML-section-padding заменить на BML-section--padding. (5 минут, легко)
 * [x] Переименовать block.view во viewName
-* [ ] InlineForm, восстановить и перевести на ContentForm
+* [ ] разобраться с PropTypes.object
+* [ ] Фиксануть TODO-шки
+* [ ] В названии типа полей для редактора писть FieldString вместо 'string'
 
 
 ## Фичи

@@ -10,7 +10,7 @@ import 'viewer_styles';
 
 import createStore from './store';
 import LandingLoader from 'components/LandingLoader';
-import ShowApplication from 'components/ShowApplication';
+import ShowApp from 'components/ShowApp';
 import initialState from 'constants/initialState';
 
 import config from 'constants/config';
@@ -32,7 +32,7 @@ global.ShowDemo = () => {
   return (
     <Provider store={store}>
       <LandingLoader params={ { variantUuid: config('variantUuid') } }>
-        <ShowApplication />
+        <ShowApp />
       </LandingLoader>
     </Provider>
   );
@@ -44,7 +44,7 @@ class Viewer extends Component {
 
     return (
       <Provider store={store}>
-        <ShowApplication />
+        <ShowApp />
       </Provider>
     );
   }
