@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
+
 import classnames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { TRANSITION_TIMEOUT } from 'constants/animation';
@@ -92,4 +92,4 @@ class Navbar1 extends Component {
   }
 }
 
-export default applyType(Navbar1, Types.navbar);
+export default applyType.Navbar(Navbar1);
