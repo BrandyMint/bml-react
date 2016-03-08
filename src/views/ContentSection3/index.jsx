@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Types } from 'types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
+
 import ViewContainer from 'components/shared/ViewContainer';
 
 import Buttons from 'views/elements/Buttons';
@@ -9,7 +9,7 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import './index.css';
 
-const CTA1 = ({ block }) => (
+const ContentSection3 = ({ block }) => (
   <ViewContainer block={block} className="BML-section--padding">
     <div className="container">
       <div className="row">
@@ -29,4 +29,4 @@ const CTA1 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType(CTA1, Types.cta);
+export default applyType.TextWithLinks(ContentSection3);

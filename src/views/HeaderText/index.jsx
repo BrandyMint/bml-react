@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Types } from 'types';
 import applyType from 'views/types/apply';
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';

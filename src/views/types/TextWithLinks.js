@@ -8,7 +8,7 @@ const ContentPropTypes = {
   items: buttonsPropTypes,
 };
 
-const Footer = {
+export default {
   // Фактически это полное содержание block-а
   propTypes: blockPropType(ContentPropTypes),
   contentSchema: {
@@ -34,5 +34,3 @@ const Footer = {
     ],
   },
 };
-
-

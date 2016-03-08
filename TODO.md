@@ -34,6 +34,7 @@
 
 ## Refactor (JS)
 
+* [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
 * [ ] move CustomPropTypes.location. в views/types/Map
 * [ ] Выделить набор типов для ссылки в отдельный тип input-а (Link), для того
     чтобы сделать для него отдельную форму редактирования в редактори и
