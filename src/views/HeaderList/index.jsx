@@ -46,4 +46,4 @@ class HeaderList extends Component {
   }
 }
 
-export default applyType.HeaderList(HeaderList);
+export default applyType.headerList(HeaderList);

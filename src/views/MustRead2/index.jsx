@@ -34,4 +34,4 @@ const MustRead2 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType.MustRead(MustRead2);
+export default applyType.mustRead(MustRead2);

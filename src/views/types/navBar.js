@@ -9,7 +9,7 @@ const ContentPropTypes = {
   items: buttonsPropTypes,
 };
 
-const Navbar = {
+export default {
   propTypes: blockPropType(ContentPropTypes),
   disableForm: true,
   contentSchema: {
@@ -41,5 +41,3 @@ const Navbar = {
     ],
   },
 };
-
-

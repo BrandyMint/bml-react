@@ -35,4 +35,4 @@ const ContentSection1 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType.ContentSection(ContentSection1);
+export default applyType.contentSection(ContentSection1);

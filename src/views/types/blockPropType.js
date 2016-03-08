@@ -10,5 +10,5 @@ export default (contentType) => (
         uuid: PropTypes.string.isRequired,
       }
     ).isRequired,
-  },
+  }
 );

@@ -1,6 +1,5 @@
 import { PropTypes } from 'react';
 import blockPropType from './blockPropType';
-import { applyType } from 'views/utils';
 
 const ContentPropTypes = {
   // Фактически это полное содержание block-а

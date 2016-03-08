@@ -29,4 +29,4 @@ const ContentSection3 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType.TextWithLinks(ContentSection3);
+export default applyType.textWithLinks(ContentSection3);

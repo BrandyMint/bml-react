@@ -41,4 +41,4 @@ class MustRead3 extends Component {
   }
 }
 
-export default applyType.MustRead(MustRead3);
+export default applyType.mustRead(MustRead3);

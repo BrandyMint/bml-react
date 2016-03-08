@@ -50,4 +50,4 @@ const Footer1 = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType.TextWithLinks(Footer1);
+export default applyType.textWithLinks(Footer1);

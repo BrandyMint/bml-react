@@ -8,4 +8,4 @@ const PlainHTML = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType.PlainHTML(PlainHTML);
+export default applyType.plainHTML(PlainHTML);

@@ -34,6 +34,7 @@
 
 ## Refactor (JS)
 
+* [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
 * [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
 * [ ] move CustomPropTypes.location. в views/types/Map
 * [ ] Выделить набор типов для ссылки в отдельный тип input-а (Link), для того

@@ -72,4 +72,4 @@ class GoogleMap1 extends Component {
   }
 }
 
-export default applyType.MapType(GoogleMap1);
+export default applyType.mapType(GoogleMap1);

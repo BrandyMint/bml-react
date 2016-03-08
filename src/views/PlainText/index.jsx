@@ -30,4 +30,4 @@ class PlainText extends Component {
   }
 }
 
-export default applyType.PlainText(PlainText);
+export default applyType.plainText(PlainText);

@@ -36,4 +36,4 @@ class HeaderText extends Component {
   }
 }
 
-export default applyType.HeaderText(HeaderText);
+export default applyType.headerText(HeaderText);

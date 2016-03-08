@@ -1,7 +1,5 @@
 import { PropTypes } from 'react';
 import blockPropType from './blockPropType';
-import { buttonsPropTypes } from 'views/elements/Buttons';
-import LinkSchemaFields from 'schemaTypes/LinkFields';
 import CustomPropTypes from 'constants/customPropTypes';
 
 const PlaceType = PropTypes.shape({
@@ -15,7 +13,7 @@ const ContentPropTypes = {
   places: PropTypes.arrayOf(PlaceType).isRequired,
 };
 
-const GoogleMap = {
+export default {
   propTypes: blockPropType(ContentPropTypes),
 
   contentSchema: {
@@ -60,5 +58,3 @@ const GoogleMap = {
     ],
   },
 };
-
-

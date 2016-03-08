@@ -49,4 +49,4 @@ class ContentSection0 extends Component {
   }
 }
 
-export default applyType.ContentSection(ContentSection0);
+export default applyType.contentSection(ContentSection0);

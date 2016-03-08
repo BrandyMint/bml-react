@@ -18,4 +18,4 @@ class View extends Component {
   }
 }
 
-export default applyType.MustRead(View);
+export default applyType.mustRead(View);

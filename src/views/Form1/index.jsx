@@ -37,4 +37,4 @@ class Form1 extends Component {
   }
 }
 
-export default applyType.FormWithText(Form1);
+export default applyType.formWithText(Form1);

@@ -40,4 +40,4 @@ class IconifyFeatures extends Component {
     );
   }
 }
-export default applyType.HeadedFeatures(IconifyFeatures);
+export default applyType.headedFeatures(IconifyFeatures);

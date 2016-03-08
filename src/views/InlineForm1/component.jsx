@@ -47,4 +47,4 @@ const InlineForm1 = ({ block }) => {
   );
 }
 
-export default applyType.FormWithText(InlineForm1);
+export default applyType.formWithText(InlineForm1);
