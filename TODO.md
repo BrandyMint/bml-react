@@ -5,6 +5,8 @@
 ## Вопросы:
 
 * [ ] Как правильно сделать backgroundResolver (aleksxor)
+* [ ] Каких видов будут фоны (aciden). Сейчас есть уже image-bg, bg-default,
+    bg-secondary, bg-primary
 
 ## Фичи по блокам:
 
