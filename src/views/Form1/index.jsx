@@ -6,6 +6,9 @@ import RichEditable from 'components/primitives/RichEditable';
 
 import ContentForm from 'views/elements/ContentForm';
 
+// Именно это ID используется для шорткатов с кнопок на форму
+const DEFAULT_FORM_ID = 'form';
+
 class Form1 extends Component {
   render() {
     /* eslint-disable react/prop-types */
@@ -13,7 +16,7 @@ class Form1 extends Component {
     const { content, form } = block;
     /* eslint-enable */
 
-    const formId = form.id || `${block.uuid}-form`;
+    const formId = form.id || DEFAULT_FORM_ID; //`${block.uuid}-form`;
 
     return (
       <ViewContainer block={block} className="BML-section--padding">

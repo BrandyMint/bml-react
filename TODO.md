@@ -67,6 +67,8 @@
 
 ## Пожелалки
 
+* [ ] smoothscroll - https://github.com/fisshy/react-scroll,
+    https://github.com/alicelieutier/smoothScroll
 * [ ] в схеме HeaderList использовать поле типа StringsList для редактирования
     списка в одном textarea через пробел
 * [ ] Возможность редавтирокть HeaderList из просмотра
