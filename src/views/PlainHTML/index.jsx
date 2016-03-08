@@ -1,6 +1,5 @@
 import React from 'react';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
+import applyType from 'views/types/apply';
 import ViewContainer from 'components/shared/ViewContainer';
 
 const PlainHTML = ({ block }) => (
@@ -9,4 +8,4 @@ const PlainHTML = ({ block }) => (
   </ViewContainer>
 );
 
-export default applyType(PlainHTML, Types.PlainHtml);
+export default applyType.PlainHTML(PlainHTML);

@@ -17,7 +17,7 @@ import MustRead3 from './MustRead3';
 import HeaderText from './HeaderText';
 import HeaderList from './HeaderList';
 
-import FreeText from './FreeText';
+import PlainText from './PlainText';
 import PlainHTML from './PlainHTML';
 
 import IconifyFeatures from './IconifyFeatures';
@@ -26,7 +26,7 @@ export const viewsList = {
   IconifyFeatures,
 
   PlainHTML,
-  FreeText,
+  PlainText,
 
   Form1,
   InlineForm1,

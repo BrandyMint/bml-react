@@ -9,32 +9,6 @@ import CustomPropTypes from 'constants/customPropTypes';
 import LinkSchemaFields from 'schemaTypes/LinkFields';
 
 
-const ContentContentType = {
-  text: PropTypes.string.isRequired,
-};
-
-const content = {
-  typeName: 'Content',
-
-  // Фактически это полное содержание block-а
-  propTypes: {
-    content: PropTypes.shape(ContentContentType).isRequired,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: false,
-    fields: [
-      {
-        title: 'Текст',
-        key: 'text',
-        type: 'text',
-        isRequired: true,
-      },
-    ],
-  },
-};
-
 const NavbarContentType = {
   //logoLink: CustomPropTypes.link.isRequired,
   //items: PropTypes.arrayOf(CustomPropTypes.link).isRequired,
@@ -217,77 +191,11 @@ const CTA = {
   },
 };
 
-const FooterType = {
-  copyrightText: PropTypes.string,
-  items: PropTypes.array.isRequired,
-};
-
-const Footer = {
-  typeName: 'Footer',
-
-  // Фактически это полное содержание block-а
-  propTypes: {
-    content: PropTypes.shape(FooterType).isRequired,
-    form: formContentType,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: true,
-    fields: [
-      {
-        title: 'Копирайт',
-        key: 'copyrightText',
-        type: 'string',
-        isRequired: false,
-      },
-      {
-        title: 'Ссылки в меню',
-        key: 'items',
-        type: 'items',
-        isRequired: true,
-        itemSchema: {
-          limit: 12,
-          fields: LinkSchemaFields,
-        },
-      },
-    ],
-  },
-};
-
-const PlainHtmlPropType = {
-  html: PropTypes.string.isRequired,
-};
-
-const PlainHtml = {
-  typeName: 'PlainHTML',
-  propTypes: {
-    content: PropTypes.shape(PlainHtmlPropType).isRequired,
-    form: formContentType,
-    uuid: PropTypes.string.isRequired,
-  },
-  contentSchema: {
-    version: 1,
-    backgroundImage: false,
-    fields: [
-      {
-        title: 'Чистый HTML',
-        key: 'html',
-        type: 'text',
-        isRequired: true,
-      },
-    ],
-  },
-};
-
 const types = {
-  content,
-  PlainHtml,
   inlineForm: InlineForm,
   navbar: Navbar,
   googleMap: GoogleMap,
   cta: CTA,
-  footer: Footer,
 };
 
 export const Types = mapValues(types, (value, key) => ({ ...value, typeName: value.typeName || key }));

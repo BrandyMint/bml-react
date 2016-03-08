@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Types } from 'types';
-import { applyType } from 'views/utils';
-import RichEditable from 'components/primitives/RichEditable';
+import applyType from 'views/types/apply';
 import ViewContainer from 'components/shared/ViewContainer';
 
-class View extends Component {
+import RichEditable from 'components/primitives/RichEditable';
+
+class PlainText extends Component {
   render() {
     /* eslint-disable react/prop-types */
     const { block } = this.props;
@@ -30,4 +30,4 @@ class View extends Component {
   }
 }
 
-export default applyType(View, Types.content);
+export default applyType.PlainText(PlainText);

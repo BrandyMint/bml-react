@@ -1,7 +1,7 @@
 export const sections = [
   {
     content: {
-      copyrightText: 'Copyright © BML landing 2016. All Rights Reserved',
+      text: 'Copyright © BML landing 2016. All Rights Reserved',
       items: [
         {
           text: 'Домой',
