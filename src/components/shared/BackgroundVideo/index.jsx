@@ -25,7 +25,7 @@ const containerStyles = {
   backgroundRepeat: 'no-repeat no-repeat',
 };
 
-const videoStyles = {
+const VIDEO_STYLES = {
   margin: 'auto',
   position: 'absolute',
   zIndex: -1,
@@ -37,12 +37,19 @@ const videoStyles = {
 };
 
 const videos = [
-  { src: 'assets/video/video.mp4', type: 'video/mp4' },
-  { src: 'assets/video/video.webm', type: 'video/webm' },
-  { src: 'assets/video/video.ogv', type: 'video/ogg' },
+  { src: '/assets/video/video.mp4', type: 'video/mp4' },
+  { src: '/assets/video/video.webm', type: 'video/webm' },
+  { src: '/assets/video/video.ogv', type: 'video/ogg' },
 ];
 
 class BackgroundVideo extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      style: undefined,
+    };
+  }
+
   static propTypes = {
     overlay: PropTypes.bool.isRequired,
     videos: PropTypes.arrayOf(
@@ -57,12 +64,18 @@ class BackgroundVideo extends Component {
     overlay: true,
   };
 
+  componentDidMount() {
+    setState({
+      style: assign( VIDEO_STYLES, { width: document.width })
+    });
+  }
+
   render() {
     const { videos, overlay } = this.props;
-    const vs = assign(videoStyles, { width: document.width });
+    const { style } = this.state;
     return (<div>
           <div style={containerStyles}>
-          <video autoPlay loop muted style={vs}>
+          <video autoPlay loop muted style={style}>
             {map(videos, (video, index) =>
               <source src={video.src} key={index} type={video.type} />
             )}

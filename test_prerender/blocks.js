@@ -143,7 +143,7 @@ module.exports = [
   },
   {
     uuid: '440d6ea0-a7e8-0133-a838-746d04736cf8',
-    viewName: 'CTA1',
+    viewName: 'ContentSection3',
     content: {
       text: 'Присоединяйся к нам в соцсетях!',
       items: [

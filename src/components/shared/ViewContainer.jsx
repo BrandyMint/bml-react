@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import BackgroundVideo from 'views/shared/BackgroundVideo';
+import BackgroundVideo from 'components/shared/BackgroundVideo';
 
 import classnames from 'classnames';
 import { get, size } from 'lodash';
