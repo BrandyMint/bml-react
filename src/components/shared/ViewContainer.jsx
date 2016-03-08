@@ -12,7 +12,7 @@ class ViewContainer extends Component {
     const {
       nodeAttributes,
       uuid,
-      view,
+      viewName,
       backgroundStyle,
       backgroundVideos,
       backgroundImage,
@@ -22,7 +22,7 @@ class ViewContainer extends Component {
     const blockClasses = classnames(
       {
         'BML-section': true,
-        [`BML-View-${view}`]: true,
+        [`BML-View-${viewName}`]: true,
       },
       get(backgroundStyle, 'bgClasses'),
       className,

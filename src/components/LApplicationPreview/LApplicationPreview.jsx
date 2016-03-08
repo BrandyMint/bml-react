@@ -1,29 +1,13 @@
-import React, { Component, PropTypes } from 'react';
-import map from 'lodash/map';
+import React, {  PropTypes } from 'react';
 
 import BubblePanel from './BubblePanel';
-import ViewComponent from 'components/shared/ViewComponent';
+import ShowApplication from 'components/ShowApplication';
 
-import './index.css';
+const PreviewApp = () => (
+  <ShowApplication className="BML-AppPreview">
+    <BubblePanel />
+  </ShowApplication>
+);
 
-class LApplication extends Component {
-  render() {
-    const { blocks } = this.props;
-    return (
-      <div className="LApplication">
-        <div className="LApplication-content">
-        {
-          map(blocks, (block, index) => (<ViewComponent block={block} key={index} />))
-        }
-        </div>
-        <BubblePanel />
-      </div>
-    );
-  }
-}
 
-LApplication.propTypes = {
-  blocks: PropTypes.array.isRequired,
-};
-
-export default LApplication;
+export default PreviewApp;

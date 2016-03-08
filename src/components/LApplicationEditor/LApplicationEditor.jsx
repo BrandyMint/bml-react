@@ -15,7 +15,7 @@ class LApplication extends Component {
     const { onActivity } = this.props;
     return (
       <BodyClassName className="Editor">
-        <div className="LApplicationEditor" onMouseMove={onActivity} onContextMenu={onActivity}>
+        <div className="BML-App LApplicationEditor" onMouseMove={onActivity} onContextMenu={onActivity}>
           <EditorLeftSidebar />
           <div className="LApplicationEditor-content">
             <LPage />

@@ -1,27 +1,23 @@
 import React, { Component, PropTypes } from 'react';
 import map from 'lodash/map';
+import classnames from 'classnames';
 
 import ViewComponent from 'components/shared/ViewComponent';
 
-import './index.css';
-
-class LApplication extends Component {
-  render() {
-    const { blocks } = this.props;
-    return (
-      <div className="LApplication">
-        <div className="LApplication-content">
-        {
-          map(blocks, (block, index) => (<ViewComponent block={block} key={index} />))
-        }
-        </div>
-      </div>
-    );
-  }
+const ShowApp = ({ blocks, className, children }) => {
+  const classNames = classnames(className, 'BML-App BML-AppShow');
+  return (
+    <div className={ classNames }>
+      {
+        map(blocks, (block, index) => (<ViewComponent block={block} key={index} />))
+      }
+      {children}
+    </div>
+  );
 }
 
-LApplication.propTypes = {
+ShowApp.propTypes = {
   blocks: PropTypes.array.isRequired,
 };
 
-export default LApplication;
+export default ShowApp;
