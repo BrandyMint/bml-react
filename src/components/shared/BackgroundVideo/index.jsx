@@ -43,13 +43,6 @@ const videos = [
 ];
 
 class BackgroundVideo extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      style: undefined,
-    };
-  }
-
   static propTypes = {
     overlay: PropTypes.bool.isRequired,
     videos: PropTypes.arrayOf(
@@ -64,9 +57,20 @@ class BackgroundVideo extends Component {
     overlay: true,
   };
 
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      style: undefined,
+    };
+  }
+
   componentDidMount() {
-    setState({
-      style: assign( VIDEO_STYLES, { width: document.width })
+    this.onMount();
+  }
+
+  onMount() {
+    this.setState({
+      style: assign(VIDEO_STYLES, { width: document.width }),
     });
   }
 
