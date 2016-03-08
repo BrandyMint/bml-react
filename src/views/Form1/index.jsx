@@ -16,7 +16,7 @@ class Form1 extends Component {
     const { content, form } = block;
     /* eslint-enable */
 
-    const formId = form.id || DEFAULT_FORM_ID; //`${block.uuid}-form`;
+    const formId = form.id || DEFAULT_FORM_ID; // `${block.uuid}-form`;
 
     return (
       <ViewContainer block={block} className="BML-section--padding">

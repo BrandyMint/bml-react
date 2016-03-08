@@ -27356,9 +27356,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// TODO formName в context для Field
+
 	var ContentForm = function ContentForm(props) {
 	  var id = props.id;
 	  var fields = props.fields;
+	  var name = props.name;
 	  var method = props.method;
 	  var url = props.url;
 	  var submitTitle = props.submitTitle;
@@ -27372,7 +27375,7 @@
 	    _react2.default.createElement('input', { name: 'utf8', type: 'hidden', value: '✓' }),
 	    _react2.default.createElement(_ContentFormSecrets2.default, null),
 	    (0, _map2.default)(fields, function (field, index) {
-	      return _react2.default.createElement(_Field2.default, _extends({ key: index }, field, { formName: name }));
+	      return _react2.default.createElement(_Field2.default, _extends({ key: index }, field));
 	    }),
 	    _react2.default.createElement(
 	      'button',
@@ -37872,7 +37875,7 @@
 	      var form = block.form;
 	      /* eslint-enable */
 
-	      var formId = form.id || DEFAULT_FORM_ID; //`${block.uuid}-form`;
+	      var formId = form.id || DEFAULT_FORM_ID; // `${block.uuid}-form`;
 
 	      return _react2.default.createElement(
 	        _ViewContainer2.default,
@@ -39235,8 +39238,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// TODO перенести formName в context?
-	var formName = 'form';
-
+	//
 	var Field = function Field(_ref) {
 	  var name = _ref.name;
 	  var title = _ref.title;
@@ -39254,7 +39256,6 @@
 	      type: inputType,
 	      className: 'form-control',
 	      name: name,
-	      id: formName + '-' + name,
 	      placeholder: placeholder
 	    })
 	  );
