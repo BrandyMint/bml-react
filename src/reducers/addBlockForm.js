@@ -1,7 +1,10 @@
 import createReducer from 'helpers/createReducer';
 
 import {
-  CANCEL_ADDING_BLOCK, SELECT_BLOCK_FOR_ADDING, START_ADDING_BLOCK, SUBMIT_ADDING_BLOCK,
+  CANCEL_ADDING_BLOCK,
+  SELECT_BLOCK_FOR_ADDING,
+  START_ADDING_BLOCK,
+  SUBMIT_ADDING_BLOCK,
 } from 'actions/blocks';
 
 const initialState = {

@@ -8,6 +8,7 @@ export default {
     selectedIndex: null,
     position: null,
   },
+  tracker: {},
   application: {
     exitUrl: '/',
 
