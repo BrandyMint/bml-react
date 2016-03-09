@@ -1,0 +1,31 @@
+@import 'config';
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.display-block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.right {
+  right: 0;
+}
+
+.relative {
+  position: relative;
+  z-index: $zIndexRelative;
+}
+
+.clearboth {
+  clear: both;
+}
+
+.disable-select {
+    user-select: none;
+}
+

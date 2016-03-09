@@ -2,6 +2,9 @@
 /* ==========================================================================
 07. SPACING & ALIGNMENT
 ========================================================================== */
+.new-row-md,
+.new-row-sm { margin-top: 40px; }
+
 /* margin */
 .m-a-0 { margin:        0 !important; }
 .m-t-0 { margin-top:    0 !important; }
@@ -36,9 +39,6 @@
 .m-x-lg { margin-right:  50px !important; margin-left:   50px !important; }
 .m-y-lg { margin-top:    50px !important; margin-bottom: 50px !important; }
 
-.new-row-md,
-.new-row-sm { margin-top: 40px; }
-
 /* padding */
 .p-a-0 { padding:        0 !important; }
 .p-t-0 { padding-top:    0 !important; }
@@ -71,48 +71,3 @@
 .p-l-lg { padding-left:   120px !important; }
 .p-x-lg { padding-right:  120px !important; padding-left:   120px !important; }
 .p-y-lg { padding-top:    120px !important; padding-bottom: 120px !important; }
-
-/* centering vertically section*/
-.vertical-center-abs, .vertical-center-rel{
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.vertical-center-abs {
-  position: absolute;
-}
-
-.vertical-center-rel {
-  position: relative;
-}
-
-/* centering vertically and horizontally */
-.vh-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-/* centering vertically content */
-.y-middle {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-}

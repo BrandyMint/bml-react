@@ -1,0 +1,18 @@
+.spread-children * {
+  display: inline-block;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.spread-children-large * {
+  display: inline-block;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+@media all and (max-width: 767px) {
+  .spread-children * {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}

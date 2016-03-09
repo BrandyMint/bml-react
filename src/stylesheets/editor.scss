@@ -1,5 +1,7 @@
-@import './index.scss';
-@import 'EditorModal.scss';
-@import 'Redactor.css';
-@import '~medium-editor/dist/css/medium-editor.css';
-@import '~medium-editor/dist/css/themes/bootstrap.css';
+@import './viewer.scss';
+@import './editor/Modal.scss';
+@import './editor/Redactor.css';
+@import './editor/Medium.css';
+@import './editor/Editor.scss';
+@import './preview/MobilePreviewBody.scss';
+@import './preview/MobileScreen.scss';

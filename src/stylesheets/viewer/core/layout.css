@@ -1,0 +1,23 @@
+/* В body нет смысла добавлять класы, потому что в body помимо лендинга живут и другие блоки, например редактор.
+ * лучше вешать все на класс основного контейнера, например BML-Application
+ * */
+
+body.boxed-layout {
+  background: #eee;
+}
+
+body.boxed-layout .main-container {
+  background: #fff;
+}
+
+body.boxed-layout,
+.boxed-layout .main-container {
+  max-width: 1366px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.main-container {
+  clear: both;
+}

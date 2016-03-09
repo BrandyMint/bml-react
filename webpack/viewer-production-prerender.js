@@ -17,7 +17,12 @@ const resolve = merge(
 );
 
 export default {
-  entry: { viewer: common.entry.viewer, },
+  entry: { 
+    viewer: common.entry.viewer, 
+    fonts: [
+      'stylesheets/fonts.css',
+    ]
+  },
 
   output: {
     path: path.join(process.cwd(), 'dist'),

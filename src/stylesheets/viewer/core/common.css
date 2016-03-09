@@ -1,0 +1,50 @@
+/*ul {*/
+  /*list-style: none;*/
+/*}*/
+
+ul.bullets {
+  list-style: inside;
+}
+
+hr.short-thick {
+  max-width: 50px;
+  border-top: 5px solid #ccc;
+  opacity: 1 !important;
+}
+
+.image-bg hr {
+  border-color: #fff;
+  opacity: .6;
+}
+
+.image-bg.bg-light hr {
+  border-color: #ccc;
+  opacity: 1;
+}
+
+.bg-dark hr {
+  border-color: #555;
+}
+
+.vnu {
+  display: inline;
+}
+
+.row-gapless > div[class*='col-'] {
+  padding: 0;
+}
+
+@media all and (max-width: 1100px) {
+  .col-md-push-1 {
+    left: 0;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .pull-left-sm {
+    float: left !important;
+  }
+  .overflow-hidden-xs {
+    overflow: hidden;
+  }
+}

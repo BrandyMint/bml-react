@@ -5,8 +5,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-// TODO Выделить только стили без редактирования
-import 'viewer_styles';
+import 'stylesheets/viewer';
 
 import createStore from './store';
 import LandingLoader from 'components/LandingLoader';

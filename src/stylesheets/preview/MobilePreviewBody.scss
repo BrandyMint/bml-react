@@ -1,0 +1,6 @@
+@import '../editor/config.scss';
+
+body.MobilePreviewBody {
+  /* background-image: linear-gradient(75deg, rgb(195, 41, 156), rgb(195, 41, 44)); */
+  background: $dashboardBackground;
+}

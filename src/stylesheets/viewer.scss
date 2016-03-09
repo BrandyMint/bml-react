@@ -1,0 +1,33 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~react-widgets/dist/css/react-widgets.css';
+
+@import 'shared/bootstrap_overwrites.scss';
+@import 'shared/OpacityIcon.scss';
+@import 'shared/IconLink.scss';
+@import 'shared/animation.css';
+@import 'shared/spacing-dash.scss';
+@import 'shared/spacing-acid.scss';
+@import 'shared/layout_alignments.scss';
+@import 'shared/ModalOpen.scss';
+
+@import 'viewer/overwrites.scss';
+@import 'viewer/BML-section.scss';
+@import 'viewer/BML-utils.scss';
+
+// CORESTYLE v0.4
+@import 'viewer/core/overwrites.scss';
+@import 'viewer/core/common.css';
+@import 'viewer/core/layout.css';
+@import 'viewer/core/utils.scss';
+@import 'viewer/core/list-inline.scss';
+// @import 'viewer/core/show-grid.scss';
+@import 'viewer/core/text-aligns.css';
+@import 'viewer/core/sections.css';
+@import 'viewer/core/buttons.scss';
+@import 'viewer/core/default/colours.css';
+@import 'viewer/core/image-bg/colours.scss';
+@import 'viewer/core/typography.scss';
+
+@import 'viewer/block/index.scss';
+
+@import 'fonts.css';

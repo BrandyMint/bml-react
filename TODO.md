@@ -11,6 +11,8 @@
 * [ ] Как правильно сделать backgroundResolver (aleksxor)
 * [ ] Каких видов будут фоны (aciden). Сейчас есть уже image-bg, bg-default,
     bg-secondary, bg-primary
+* [ ] Значения для media query (почему именно такие цифры)
+* [ ] Почему в spacing-acid в media-query классы через тире, а остальные без?
 
 ## Фичи по блокам:
 
@@ -31,6 +33,8 @@
 
 ## Refactor (CSS)
 
+* [ ] Вытащить viewer_fonts.css
+* [ ] Выделить из viewer.css стили от редактирования
 * [ ] подключить стили к form-control вместо input
 * [ ] использовать button submit вместо input submit
 * [ ] Выделить media query в переменные или миксины (15 минут, легко)

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const Image = ({ height, width, url }) => (
   <img
-    className="img-fluid"
+    className="BML-img-fluid"
     height={height}
     src={url}
     width={width}
