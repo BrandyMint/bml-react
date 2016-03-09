@@ -11,7 +11,7 @@ export default {
   application: {
     exitUrl: '/',
 
-    variantUuid: 'unknown',
+    variantUuid: null,
 
     loadingState: LOADING_STATE_NONE,
     isSaving: false,

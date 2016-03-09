@@ -8601,7 +8601,7 @@
 	  application: {
 	    exitUrl: '/',
 
-	    variantUuid: 'unknown',
+	    variantUuid: null,
 
 	    loadingState: _loadingStates.LOADING_STATE_NONE,
 	    isSaving: false,
