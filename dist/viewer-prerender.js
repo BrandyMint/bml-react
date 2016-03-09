@@ -35940,15 +35940,19 @@
 	  return document.referrer;
 	};
 
+	var safe_parse = function safe_parse(value) {
+	  return value ? JSON.parse(value) : undefined;
+	};
+
 	// TODO Может брыть из роутера?
 	var currentParams = function currentParams() {
 	  return _queryString2.default.parse(location.search);
 	};
 	var initialParams = function initialParams() {
-	  return JSON.parse(_cookie2.default.parse(document.cookie)[INITIAL_PARAMS]);
+	  return safe_parse(_cookie2.default.parse(document.cookie)[INITIAL_PARAMS]);
 	};
 	var initialReferrer = function initialReferrer() {
-	  return JSON.parse(_cookie2.default.parse(document.cookie)[INITIAL_REFERRER]);
+	  return safe_parse(_cookie2.default.parse(document.cookie)[INITIAL_REFERRER]);
 	};
 
 	var currentTracking = function currentTracking() {
