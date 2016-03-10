@@ -2,6 +2,8 @@
 
 import { API_CALL } from 'middleware/API';
 
+export const BLANK_LANDING_VARIANT_UUID = 'blank';
+
 import {
   FULL_VIEWS_EXAMPLES_UUID,
   FULL_VIEWS_EXAMPLES_SECTIONS,
@@ -16,10 +18,10 @@ export const LANDING_VARIANT_LOAD_SUCCESS = 'LANDING_VARIANT_LOAD_SUCCESS';
 export const LANDING_VARIANT_LOAD_FAILURE = 'LANDING_VARIANT_LOAD_FAILURE';
 
 export const loadVariant = (uuid) => (dispatch) => {
-  if (__FAKE_API__) {
+  if (__FAKE_API__ || uuid === BLANK_LANDING_VARIANT_UUID) {
     return dispatch({
       type: LANDING_VARIANT_LOAD_SUCCESS,
-      payload: { sections: [] },
+      payload: { uuid: BLANK_LANDING_VARIANT_UUID, sections: [] },
     });
   }
 

@@ -12,19 +12,19 @@ export const sections = [
         {
           "title": "",
           "placeholder": "ВВЕДИТЕ ВАШЕ ИМЯ",
-          "key": "name",
+          "name": "name",
           "inputType": "text"
         },
         {
           "title": "",
           "placeholder": "ВВЕДИТЕ ВАШ ЕМАЙЛ",
-          "key": "email",
+          "name": "email",
           "inputType": "email"
         },
         {
           "title": "",
           "placeholder": "ВВЕДИТЕ ВАШ ТЕЛЕФОН",
-          "key": "phone",
+          "name": "phone",
           "inputType": "tel"
         }
       ]

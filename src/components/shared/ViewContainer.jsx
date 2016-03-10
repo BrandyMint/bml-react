@@ -40,7 +40,7 @@ class ViewContainer extends Component {
         style: blockStyles,
       },
       [
-        size(backgroundVideos) > 0 && <BackgroundVideo videos={backgroundVideos}/>,
+        size(backgroundVideos) > 0 && <BackgroundVideo videos={backgroundVideos} key={1}/>,
         children,
       ]
     );
@@ -50,7 +50,7 @@ class ViewContainer extends Component {
 ViewContainer.propTypes = {
   block: PropTypes.object.isRequired, // TODO block PropType
   children: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   tagName: PropTypes.string,
 };
 

@@ -147,6 +147,7 @@ export default [
     rate: 4,
     defaultData: {
       content: {
+        text: '',
       },
       form: {
         submitTitle: 'Подписаться',

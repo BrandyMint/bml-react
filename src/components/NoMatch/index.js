@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router';
 import map from 'lodash/map';
 
+import { BLANK_LANDING_VARIANT_UUID } from 'actions/variants';
 import { EXAMPLE_LANDING_VARIANT_UUID } from 'constants/initialState';
 import { FULL_VIEWS_EXAMPLES_UUID } from 'constants/fullViewsExamples';
 
 const LANDINGS = [
+  {
+    uuid: BLANK_LANDING_VARIANT_UUID,
+    title: 'Пустой лендинг',
+  },
   {
     uuid: EXAMPLE_LANDING_VARIANT_UUID,
     title: `Пример лендинга из API ${EXAMPLE_LANDING_VARIANT_UUID}`,
