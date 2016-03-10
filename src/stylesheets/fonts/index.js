@@ -1,1 +1,1 @@
-import 'stylesheets/fonts.css';
+import 'stylesheets/fonts.scss';

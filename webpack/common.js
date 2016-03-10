@@ -7,6 +7,8 @@ import postcssMixins from 'postcss-sassy-mixins';
 import postcssSimpleVars from 'postcss-simple-vars';
 import postcssCalc from 'postcss-calc';
 import postcssSelectorNot from 'postcss-selector-not';
+import postcssReporter from 'postcss-reporter';
+import stylelint from 'stylelint';
 
 const root = path.join(process.cwd(), 'src');
 const bower = path.join(process.cwd(), 'bower_components');
@@ -19,7 +21,7 @@ export default {
   entry: {
     viewer,
     editor,
-    // fonts: path.join(process.cwd(), 'src/stylesheets/fonts'),
+    fonts: path.join(process.cwd(), 'src/stylesheets/fonts'),
     vendor: [
       'classnames',
       'react',
@@ -29,6 +31,7 @@ export default {
   },
 
   postcss: webpack => [
+    stylelint,
     postcssImport({ addDependencyTo: webpack, path: root }),
     postcssSimpleVars,
     postcssCalc,
@@ -36,6 +39,7 @@ export default {
     postcssNested,
     postcssMixins,
     postcssSelectorNot,
+    postcssReporter({ clearMessages: true }),
   ],
 
   resolve: {

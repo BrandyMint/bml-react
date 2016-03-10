@@ -1,7 +1,7 @@
 export const sections = [
   {
     content: {
-      title: 'Подписка',
+      text: 'Подписка',
     },
     form: {
       submitTitle: 'Подписаться',
@@ -9,13 +9,13 @@ export const sections = [
         {
           title: '',
           placeholder: 'Имя',
-          key: 'name',
+          name: 'name',
           inputType: 'text',
         },
         {
           title: '',
           placeholder: 'Емайл',
-          key: 'email',
+          name: 'email',
           inputType: 'email',
         },
       ],

@@ -1,4 +1,5 @@
-@component BackgroundVideo {
+@component BML-BackgroundVideo {
+
   @descendent overlay {
     /*------------------------------------------*/
     /*  Overlay Effect
@@ -17,7 +18,13 @@
   }
 }
 
+@media (max-width: 767px) {
+  .BML-BackgroundVideo {
+    display: none;
+  }
+}
+
 /* set filter as none for IE9+, because IE9+ support RGBa */
 :root .overlay {
-    filter: none\0/IE9;
+  filter: none\0/IE9;
 }

@@ -16,7 +16,7 @@ export default {
       {
         title: 'Текст',
         key: 'text',
-        type: 'string',
+        type: 'text',
         isRequired: true,
       },
     ],

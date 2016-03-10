@@ -26,7 +26,7 @@ export const loadVariant = (uuid) => (dispatch) => {
   if (uuid === FULL_VIEWS_EXAMPLES_UUID) {
     return dispatch({
       type: LANDING_VARIANT_LOAD_SUCCESS,
-      payload: { sections: FULL_VIEWS_EXAMPLES_SECTIONS },
+      payload: { uuid: FULL_VIEWS_EXAMPLES_UUID, sections: FULL_VIEWS_EXAMPLES_SECTIONS },
     });
   }
 

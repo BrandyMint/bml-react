@@ -77,17 +77,18 @@ class BackgroundVideo extends Component {
   render() {
     const { videos, overlay } = this.props;
     const { style } = this.state;
-    return (<div>
-          <div style={containerStyles}>
+    return (
+      <div className="BML-BackgroundVideo">
+        <div style={containerStyles}>
           <video autoPlay loop muted style={style}>
             {map(videos, (video, index) =>
               <source src={video.src} key={index} type={video.type} />
             )}
           </video>
         </div>
-        {overlay && <div key={2} className="BackgroundVideo-overlay" />}
-        </div>
-      );
+        {overlay && <div key={2} className="BML-BackgroundVideo-overlay" />}
+      </div>
+    );
   }
 }
 

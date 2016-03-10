@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 const Image = ({ height, width, url }) => (
   <img
     className="BML-img-fluid"
-    height={height}
     src={url}
+    height={height}
     width={width}
   />
 );

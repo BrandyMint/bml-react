@@ -30,6 +30,7 @@ export default {
   postcss: common.postcss,
 
   entry: {
+    fonts: common.entry.fonts,
     vendor: common.entry.vendor,
     editor: ['webpack-hot-middleware/client', common.entry.editor],
   },

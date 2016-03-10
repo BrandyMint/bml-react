@@ -1,5 +1,15 @@
 /*!---------- 02. FORMS ----------*/
 
+.BML-form {
+  &.form-inline {
+    .form-group {
+      margin-right: 25px;
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+  }
+}
 .BML-section {
   input,
   button,
@@ -140,6 +150,7 @@
 
   input[type="submit"],
   button[type="submit"] {
+    padding: 0 25px; // Например кнопка у InlineForm
     height: 50px;
     line-height: 48px;
     border: 2px solid #47b475;

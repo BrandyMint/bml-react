@@ -2,6 +2,10 @@
 
 $button-margin-h: 8px;
 
+button.BML-button-submit {
+  padding: 0 25px; // Например кнопка у InlineForm
+}
+
 .BML-buttons-group {
   margin-left: - $button-margin-h;
 }

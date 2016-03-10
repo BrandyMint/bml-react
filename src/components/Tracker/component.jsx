@@ -8,12 +8,12 @@ const INITIAL_REFERRER = 'initial_referrer';
 
 const currentReferrer = () => document.referrer;
 
-const safe_parse = (value) => value ? JSON.parse(value) : undefined;
+const safeParse = (value) => value ? JSON.parse(value) : undefined;
 
 // TODO Может брыть из роутера?
 const currentParams = () => query.parse(location.search);
-const initialParams = () => safe_parse(cookie.parse(document.cookie)[INITIAL_PARAMS]);
-const initialReferrer = () => safe_parse(cookie.parse(document.cookie)[INITIAL_REFERRER]);
+const initialParams = () => safeParse(cookie.parse(document.cookie)[INITIAL_PARAMS]);
+const initialReferrer = () => safeParse(cookie.parse(document.cookie)[INITIAL_REFERRER]);
 
 const currentTracking = () => (
   {
