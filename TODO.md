@@ -33,7 +33,7 @@
 
 ## Refactor (CSS)
 
-* [ ] Вытащить viewer_fonts.css
+* [x] Вытащить viewer_fonts.css
 * [ ] Выделить из viewer.css стили от редактирования
 * [ ] подключить стили к form-control вместо input
 * [ ] использовать button submit вместо input submit
