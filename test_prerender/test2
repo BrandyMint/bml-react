@@ -1,2 +1,2 @@
 echo 'Test prerender'
-cat test_prerender/prerender.js | node | grep BlockView > /dev/null && echo 'Ok'
+cat test_prerender/prerender.js | node | grep BML-App > /dev/null && echo 'Ok' || echo 'Fail'
