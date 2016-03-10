@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import 'stylesheets/viewer';
+import 'stylesheets/viewer.scss';
 
 import createStore from './store';
 import LandingLoader from 'components/LandingLoader';

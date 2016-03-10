@@ -8,6 +8,7 @@ import common from './common';
 
 const resolve = merge(
   {
+    // Специальные фейковые замены, чтобы во вьюхер не подтягивалась JS и CSS от редактора
     alias: {
       'components/ui-elements/Redactor': 'viewer/stubs/Redactor.js',
       'superagent': 'viewer/stubs/superagent.js',
@@ -19,9 +20,6 @@ const resolve = merge(
 export default {
   entry: { 
     viewer: common.entry.viewer, 
-    fonts: [
-      'stylesheets/fonts.css',
-    ]
   },
 
   output: {

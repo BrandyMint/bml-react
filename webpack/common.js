@@ -19,6 +19,7 @@ export default {
   entry: {
     viewer,
     editor,
+    // fonts: path.join(process.cwd(), 'src/stylesheets/fonts'),
     vendor: [
       'classnames',
       'react',
