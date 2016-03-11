@@ -33,12 +33,13 @@ export default {
   postcss: webpack => [
     stylelint,
     postcssImport({ addDependencyTo: webpack, path: root }),
+    postcssSelectorNot,
     postcssSimpleVars,
     postcssCalc,
     postcssBEM,
     postcssNested,
     postcssMixins,
-    postcssSelectorNot,
+    cssnano,
     postcssReporter({ clearMessages: true }),
   ],
 

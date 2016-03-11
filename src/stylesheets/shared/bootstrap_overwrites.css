@@ -1,6 +1,6 @@
 html {
   min-height: 100%;
-  // http://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+  /*// http://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
   font-size: 62.5%;
 }
 
@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  // Viewer
+  /*// Viewer*/
 
   font-size: 13px;
   line-height: 24px;
@@ -22,7 +22,7 @@ body {
   overflow: scroll;
 }
 
-// Из theme2
+/*// ÐÐ· theme2*/
 section {
   position: relative;
   overflow: hidden;
@@ -32,7 +32,7 @@ section {
   position: relative;
 }
 
-// Viewer
+/*// Viewer*/
 hr {
   border: none;
   border-top: 1px solid #ccc;
