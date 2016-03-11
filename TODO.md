@@ -35,6 +35,7 @@
 
 * [x] Вытащить viewer_fonts.css
 * [x] Отказаться от BML-lead
+* [ ] Вытащить цвета в один файл
 * [ ] Выделить из viewer.css стили от редактирования
 * [ ] подключить стили к form-control вместо input
 * [ ] использовать button submit вместо input submit
