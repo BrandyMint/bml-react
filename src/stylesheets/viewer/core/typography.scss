@@ -22,10 +22,6 @@
 }
 
 
-.BML-lead {
-  @extend .mixin-font-family-text;
-}
-
 .BML-section {
   .bold {
     font-weight: 600 !important;
@@ -203,6 +199,7 @@
   }
 
   .lead {
+    @extend .mixin-font-family-text;
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
