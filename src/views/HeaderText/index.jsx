@@ -23,7 +23,7 @@ class HeaderText extends Component {
                 tagName="h2"
               />
               <RichEditable
-                className="BML-lead lead mb40"
+                className="lead mb40"
                 data={content}
                 fieldName="text"
                 tagName="div"

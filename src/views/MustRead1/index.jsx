@@ -21,7 +21,7 @@ const MustRead1 = ({ block }) => (
               tagName="h2"
             />
             <StringEditable
-              className="BML-lead lead color-primary mb40"
+              className="lead color-primary mb40"
               data={block.content}
               fieldName="subheader"
               tagName="p"

@@ -11,7 +11,7 @@ const InlineForm1 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--padding text-center">
     <div className="container">
       <RichEditable
-        className="BML-lead"
+        className="lead mb40"
         data={block.content}
         fieldName="text"
         tagName="div"

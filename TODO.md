@@ -6,13 +6,13 @@
 
 * [ ] Пропадают кнопки при скролинге в редакторе
 
-## Вопросы:
+## Aciden
 
-* [ ] Как правильно сделать backgroundResolver (aleksxor)
 * [ ] Каких видов будут фоны (aciden). Сейчас есть уже image-bg, bg-default,
     bg-secondary, bg-primary
 * [ ] Значения для media query (почему именно такие цифры)
 * [ ] Почему в spacing-acid в media-query классы через тире, а остальные без?
+* [ ] подключить стили к form-control вместо input
 
 ## Фичи по блокам:
 
@@ -34,6 +34,7 @@
 ## Refactor (CSS)
 
 * [x] Вытащить viewer_fonts.css
+* [x] Отказаться от BML-lead
 * [ ] Выделить из viewer.css стили от редактирования
 * [ ] подключить стили к form-control вместо input
 * [ ] использовать button submit вместо input submit

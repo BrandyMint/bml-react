@@ -19,7 +19,6 @@ class Form1 extends Component {
           <div className="row">
             <div className="col-sm-6 col-md-5 col-md-offset-1">
               <RichEditable
-                className="BML-lead"
                 data={content}
                 fieldName="text"
                 tagName="div"
