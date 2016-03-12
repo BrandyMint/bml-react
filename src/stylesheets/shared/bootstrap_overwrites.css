@@ -8,12 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /*// Viewer*/
-
-  font-size: 13px;
-  line-height: 24px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #666;
   overflow-x: hidden;
 }
 
@@ -22,20 +16,7 @@ body {
   overflow: scroll;
 }
 
-/*// ÐÐ· theme2*/
-section {
-  position: relative;
-  overflow: hidden;
-}
-
 .container {
   position: relative;
 }
 
-/*// Viewer*/
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 0 0 24px 0;
-  width: 100%;
-}
