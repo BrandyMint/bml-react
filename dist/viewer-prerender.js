@@ -50252,6 +50252,7 @@
 		},
 		"devDependencies": {
 			"app-module-path": "^1.0.5",
+			"autoprefixer": "^6.3.3",
 			"babel": "^6.5.2",
 			"babel-core": "^6.5.2",
 			"babel-eslint": "^4.1.6",
@@ -50288,6 +50289,8 @@
 			"node-sass": "^3.4.2",
 			"postcss-bem": "^0.4.1",
 			"postcss-calc": "^5.2.0",
+			"postcss-custom-media": "^5.0.1",
+			"postcss-custom-properties": "^5.0.0",
 			"postcss-import": "^8.0.0",
 			"postcss-inline-comment": "^2.0.0",
 			"postcss-loader": "^0.8.0",

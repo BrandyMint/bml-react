@@ -2,6 +2,8 @@ import path from 'path';
 
 import postcssBEM from 'postcss-bem';
 import postcssNested from 'postcss-nested';
+import postcssCustomMedia from 'postcss-custom-media';
+import postcssCustomProperties from 'postcss-custom-properties';
 import postcssImport from 'postcss-import';
 import postcssMixins from 'postcss-sassy-mixins';
 import postcssSimpleVars from 'postcss-simple-vars';
@@ -9,6 +11,7 @@ import postcssCalc from 'postcss-calc';
 import postcssSelectorNot from 'postcss-selector-not';
 import postcssReporter from 'postcss-reporter';
 import stylelint from 'stylelint';
+import autoprefixer from 'autoprefixer';
 
 const root = path.join(process.cwd(), 'src');
 const bower = path.join(process.cwd(), 'bower_components');
@@ -39,7 +42,9 @@ export default {
     postcssBEM,
     postcssNested,
     postcssMixins,
-    cssnano,
+    postcssCustomProperties,
+    postcssCustomMedia,
+    autoprefixer,
     postcssReporter({ clearMessages: true }),
   ],
 
