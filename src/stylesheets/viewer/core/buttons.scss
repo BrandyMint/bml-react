@@ -93,7 +93,7 @@ button.BML-button-submit {
   .image-bg .btn,
   .image-bg .btn:visited {
     color: $colorWhite;
-    border-color: #fff;
+    border-color: $colorWhite;
   }
 
   .btn-white:hover,
@@ -109,7 +109,7 @@ button.BML-button-submit {
   }
 
   .image-bg .btn-filled:hover {
-    border-color: #fff;
+    border-color: $colorWhite;
   }
 
   .btn-rounded {
@@ -132,7 +132,7 @@ button.BML-button-submit {
 
   .bg-light .btn-filled,
   .bg-light .btn-filled:visited {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .btn:visited {
@@ -141,7 +141,7 @@ button.BML-button-submit {
 
   .btn-white:visited,
   .btn:visited:hover {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .btn-white:visited:hover {
@@ -149,11 +149,11 @@ button.BML-button-submit {
   }
 
   .btn-filled:visited {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .btn.bg-dark {
-    color: #fff;
+    color: $colorWhite;
     border-color: $colorDark;
   }
 
@@ -162,12 +162,12 @@ button.BML-button-submit {
   }
 
   .bg-primary .btn {
-    color: #fff;
-    border-color: #fff;
+    color: $colorWhite;
+    border-color: $colorWhite;
   }
 
   .bg-primary .btn:hover {
-    background: #fff;
+    background: $colorWhite;
     color: $colorPrimary;
   }
 }

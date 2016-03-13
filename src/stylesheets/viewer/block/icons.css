@@ -11,7 +11,7 @@
 
 .image-bg .icon,
 .bg-dark .icon {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .icon-lg {

@@ -1,6 +1,6 @@
 .feature.boxed {
     padding: 32px;
-    background: #f8f8f8;
+    background: $secondaryBackgroundColor;
 }
 
 .feature.boxed.bg-dark {
@@ -12,7 +12,7 @@
 }
 
 .bg-secondary .feature.boxed {
-    background: #fff;
+    background: $colorWhite;
 }
 
 .feature.bordered {
@@ -98,7 +98,7 @@
 }
 
 .bg-primary .feature-3 i {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .feature-4 .left {
@@ -115,17 +115,17 @@
 .feature-color h4,
 .feature-color h5,
 .feature-color h6 {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .feature-color p,
 .feature-color span,
 .feature-color li {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .feature-color i {
-    color: #fff;
+    color: $colorWhite;
     opacity: .7;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .image-bg .feature i {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .image-bg .feature h1,
@@ -187,13 +187,13 @@
 .image-bg .feature h4,
 .image-bg .feature h5,
 .image-bg .feature h6 {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .image-bg .feature p,
 .image-bg .feature span,
 .image-bg .feature li {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .image-bg .feature.bordered {

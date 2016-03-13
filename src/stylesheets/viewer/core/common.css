@@ -31,7 +31,7 @@ hr.short-thick {
 }
 
 .image-bg hr {
-  border-color: #fff;
+  border-color: $colorWhite;
   opacity: 0.6;
 }
 
