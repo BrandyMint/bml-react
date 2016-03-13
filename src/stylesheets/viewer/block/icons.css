@@ -2,16 +2,16 @@
 .icon {
     font-size: 64px;
     display: inline-block;
-    color: #292929;
+    color: $colorDark;
 }
 
 .image-bg.bg-light .icon {
-    color: #292929;
+    color: $colorDark;
 }
 
 .image-bg .icon,
 .bg-dark .icon {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .icon-lg {

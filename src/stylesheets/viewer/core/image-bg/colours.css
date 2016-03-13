@@ -1,33 +1,35 @@
 @import 'viewer/colors';
 
-.bg-primary {
+.image-bg {
+  .bg-primary {
     background: $colorPrimary !important;
-}
+  }
 
-.bg-secondary {
+  .bg-secondary {
     background: $secondaryBackgroundColor;
-}
+  }
 
-.bg-white {
+  .bg-white {
     background: $colorWhite;
-}
+  }
 
-.bg-dark {
+  .bg-dark {
     background: $backgroundColorDark;
-}
+  }
 
-.color-body {
+  .color-body {
     color: $colorBody;
-}
+  }
 
-.color-primary {
-    color: $colorPrimary !important;
-}
+  .color-primary {
+    color: $colorWhite !important;
+  }
 
-.color-red {
+  .color-red {
     color: $colorRed !important;
-}
+  }
 
-.color-white {
+  .color-white {
     color: $colorWhite;
+  }
 }

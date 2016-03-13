@@ -8,5 +8,5 @@
 }
 
 .show-grid:hover {
-  border-color: #222;
+  border-color: $colorGrayLight;
 }

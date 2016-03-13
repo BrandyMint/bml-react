@@ -5,13 +5,13 @@
 body {
   font-size: 13px;
   line-height: 24px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  @extend .font-family-text;
   /*color: $defaultTextColor;*/
 }
 
 hr {
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $colorHR;
   margin: 0 0 24px 0;
   width: 100%;
 }
@@ -26,22 +26,22 @@ ul.bullets {
 
 hr.short-thick {
   max-width: 50px;
-  border-top: 5px solid #ccc;
+  border-top: 5px solid $colorHR;
   opacity: 1 !important;
 }
 
 .image-bg hr {
-  border-color: #fff;
+  border-color: $colorWhite;
   opacity: 0.6;
 }
 
 .image-bg.bg-light hr {
-  border-color: #ccc;
+  border-color: $colorHR;
   opacity: 1;
 }
 
 .bg-dark hr {
-  border-color: #555;
+  border-color: $colorDarkHR;
 }
 
 .vnu {

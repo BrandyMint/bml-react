@@ -15,7 +15,7 @@
   button,
   select,
   textarea {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-input;
   }
 
   button,
@@ -28,7 +28,7 @@
   .bg-secondary input[type="text"],
   .bg-secondary textarea,
   .bg-secondary select {
-    background: #fff;
+    background: $colorWhite;
   }
 
   .input-lh {
@@ -40,10 +40,10 @@
   }
 
   .input-with-label span {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-input;
     font-size: 11px;
     text-transform: uppercase;
-    color: #292929;
+    color: $colorDark;
     letter-spacing: 1px;
     font-weight: 700;
     display: block;
@@ -51,7 +51,7 @@
   }
 
   input:not([type="submit"]) {
-    background: #f5f5f5;
+    background: $secondaryBackgroundColor;
     border: none;
     width: 100%;
     height: 50px;
@@ -68,84 +68,45 @@
 
   .image-bg.bg-light input.transparent,
   .image-bg.bg-light button.transparent {
-    border-color: #292929;
+    border-color: $colorDark;
   }
 
   input.transparent,
   button.transparent {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff !important;
+    color: $colorWhite !important;
   }
 
   input[type="text"]:focus,
   input[type="password"]:focus {
-    outline: 1px solid #ccc;
+    outline: 1px solid $colorInputOutlineFocus;
   }
 
   textarea {
     width: 100%;
     border: none;
-    background: #f5f5f5;
+    background: $secondaryBackgroundColor;
     margin-bottom: 24px;
     border-radius: 0;
     padding: 16px 20px;
   }
 
   textarea:focus {
-    outline: 1px solid #ccc;
+    outline: 1px solid $colorInputOutlineFocus;
   }
 
-  ::-webkit-input-placeholder {
+  ::placeholder {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #777;
+    color: $colorPlaceholder;
     font-size: 11px;
   }
 
-  :-moz-placeholder {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #777;
-    font-size: 11px;
-  }
-
-  ::-moz-placeholder {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #777;
-    font-size: 11px;
-  }
-
-  :-ms-input-placeholder {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #777;
-    font-size: 11px;
-  }
-
-  input.transparent::-webkit-input-placeholder,
-  button.transparent::-webkit-input-placeholder {
-    color: #fff;
-  }
-
-  input.transparent::-moz-input-placeholder,
-  button.transparent::-moz-input-placeholder {
-    color: #fff;
-  }
-
-  input.transparent:-moz-input-placeholder,
-  button.transparent:-moz-input-placeholder {
-    color: #fff;
-  }
-
-  input.transparent:-ms-input-placeholder,
-  button.transparent:-ms-input-placeholder {
-    color: #fff;
+  input.transparent:placeholder,
+  button.transparent:placeholder {
+    color: $colorWhite;
   }
 
   input[type="submit"],
@@ -153,9 +114,9 @@
     padding: 0 25px; // Например кнопка у InlineForm
     height: 50px;
     line-height: 48px;
-    border: 2px solid #47b475;
-    background: #47b475;
-    color: #fff;
+    border: 2px solid $colorPrimary;
+    background: $colorPrimary;
+    color: $colorPrimaryText;
     width: 100%;
     font-size: 11px;
     text-transform: uppercase;
@@ -166,8 +127,8 @@
 
   .bg-primary input[type="submit"],
   .bg-primary button[type="submit"] {
-    background: #fff;
-    color: #47b475;
+    background: $colorWhite;
+    color: $colorPrimary;
   }
 
   input[type="submit"]:focus,
@@ -178,17 +139,15 @@
   input[type="submit"].hollow,
   button[type="submit"].hollow {
     background: none;
-    border: 2px solid #47b475;
-    color: #47b475;
+    border: 2px solid $colorPrimary;
+    color: $colorPrimary;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
   }
 
   input[type="submit"].hollow:hover,
   button[type="submit"].hollow:hover {
-    background: #47b475;
-    color: #fff;
+    background: $colorPrimary;
+    color: $colorPrimaryText;
   }
 
   .select-option {
@@ -211,7 +170,7 @@
   }
 
   .select-option:focus i {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .select-option select {
@@ -220,7 +179,7 @@
 
   select {
     height: 50px;
-    background: #f5f5f5;
+    background: $secondaryBackgroundColor;
     width: 100%;
     border-radius: 0;
     border: none;
@@ -231,15 +190,13 @@
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #777;
+    color: $colorSelectText;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
     cursor: pointer;
   }
 
   select:focus {
-    background: #eee;
+    background: $backgroundSelectFocus;
   }
 
   select:active,
@@ -255,7 +212,7 @@
     width: 50px;
     height: 25px;
     border-radius: 25px;
-    border: 1px solid #47b475;
+    border: 1px solid $colorPrimary;
     cursor: pointer;
     user-select: none;
     margin-bottom: 24px;
@@ -267,21 +224,17 @@
     height: 19px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0);
-    border: 1px solid #47b475;
+    border: 1px solid $colorPrimary;
     position: relative;
     top: 2px;
     left: 2px;
     display: inline-block;
     transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
   }
 
   .checkbox-option.checked .inner {
     transform: translate3d(25px, 0, 0);
-    -webkit-transform: translate3d(25px, 0, 0);
-    -moz-transform: translate3d(25px, 0, 0);
-    background: #47b475;
+    background: $colorPrimary;
   }
 
   .checkbox-option input {
@@ -324,11 +277,10 @@
 
   .radio-option.checked .inner {
     transform: scale(1);
-    -webkit-transform: scale(1);
   }
 
   .radio-option.checked .inner {
-    background: #47b475;
+    background: $colorPrimary;
   }
 
   @media all and (min-width: 991px) {

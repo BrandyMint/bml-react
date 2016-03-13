@@ -54,7 +54,7 @@
     text-transform: none;
     line-height: 1;
     font-size: 24px;
-    color: #fff;
+    color: $colorWhite;
 }
 
 .flex-direction-nav a.flex-prev {
@@ -80,7 +80,7 @@
 
 .flex-control-nav li a {
     background: none;
-    border: 2px solid #292929;
+    border: 2px solid $colorDark;
     width: 10px;
     height: 10px;
 }
@@ -93,11 +93,11 @@
 
 
 .image-bg .flex-control-nav li a {
-    border-color: #fff;
+    border-color: $colorWhite;
 }
 
 .image-bg .flex-control-nav li a.flex-active {
-    background: #fff;
+    background: $colorWhite;
 }
 
 .slider-thumb-controls .flex-control-thumbs {
@@ -143,11 +143,11 @@
 }
 
 .text-slider .flex-direction-nav li a:before {
-    color: #222;
+    color: $colorGrayLight;
 }
 
 .image-bg .text-slider .flex-direction-nav li a:before {
-    color: #fff;
+    color: $colorWhite;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;

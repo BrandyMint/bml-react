@@ -1,9 +1,5 @@
 @import "stylesheets/editor/config";
 
-body.EditorApp {
-  background: $dashboardBackground;
-}
-
 @component LApplicationEditor {
   @descendent sidebar {
     position: fixed;
@@ -23,4 +19,9 @@ body.EditorApp {
     left: $dashboardSidebarWidth;
     right: 0;
   }
+}
+
+
+body.EditorApp {
+  background: $dashboardBackground;
 }

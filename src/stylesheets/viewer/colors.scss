@@ -1,3 +1,25 @@
+$colorRed: #e31d3b;
+$colorPrimary: #47b475;
+$colorWhite: #fff;
+$colorBody: #666;
+
+$colorDark: #292929;
+
+$colorGrayLight: #222;
+$colorPlaceholder: #777;
+
+$colorPrimaryBg: $colorPrimary;
+$colorPrimaryText: $colorWhite;
+
+// TODO Вычислять
+$colorPrimaryLight: #8ed3ab;
+
+$backgroundColorDark: $colorDark;
+
+$backgroundSelectFocus: #eee;
+
+$secondaryBackgroundColor: #f8f8f8;
+
 $defaultTextColor: #666;
 
 $defaultBackgroundColor: #fff;
@@ -7,24 +29,18 @@ $successTextColor: #fff;
 
 $errorBackgroundColor: #ce3838;
 
-/*
-#222
-#292929
-#363636
-#398f5d
-#40a269
-#434343
-#47b475
-#555
-#666
-#777
-#8ed3ab
-#c8c8c8
-#ccc
-#e31d3b
-#eee
-#f5f5f5
-#f8f8f8
-#fefefe
-#fff
-*/
+$colorFeature2: #40a269;
+$colorLinkHover: #398f5d;
+$colorFeature3: $colorLinkHover;
+
+$backgroundFeatureBoxed: #363636;
+$backgroundDarkButtonHover: #434343;
+
+$colorBlockquote: $colorPlaceholder;
+$colorSelectText: $colorPlaceholder;
+
+$colorInputOutlineFocus: #ccc;
+
+$colorBoder: #ccc;
+$colorHR: $colorBoder;
+$colorDarkHR: #555;

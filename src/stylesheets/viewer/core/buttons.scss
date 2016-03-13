@@ -19,8 +19,8 @@ button.BML-button-submit {
 .BML-section {
 
   .btn {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 2px solid #47b475;
+    @extend .font-family-input;
+    border: 2px solid $colorPrimary;
     padding: 0 26px;
     height: 40px;
     min-width: 150px;
@@ -30,11 +30,9 @@ button.BML-button-submit {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 0;
-    color: #47b475;
+    color: $colorPrimary;
     text-align: center;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
   }
 
   /*.btn:last-child,*/
@@ -43,8 +41,8 @@ button.BML-button-submit {
   /*}*/
 
   .btn:hover {
-    background: #47b475;
-    color: #fff;
+    background: $colorPrimary;
+    color: $colorWhite;
   }
 
   .btn-icon {
@@ -87,31 +85,31 @@ button.BML-button-submit {
   }
 
   .btn-filled {
-    background: #47b475;
-    color: #fff;
+    background: $colorPrimary;
+    color: $colorWhite;
   }
 
   .btn-white,
   .image-bg .btn,
   .image-bg .btn:visited {
-    color: #fff;
-    border-color: #fff;
+    color: $colorWhite;
+    border-color: $colorWhite;
   }
 
   .btn-white:hover,
   .image-bg .btn:hover,
   .image-bg .btn:visited:hover {
-    background: #fff;
-    color: #222;
+    background: $colorWhite;
+    color: $colorGrayLight;
   }
 
   .image-bg .btn.btn-filled,
   .image-bg .btn-filled:visited {
-    border-color: #47b475;
+    border-color: $colorPrimary;
   }
 
   .image-bg .btn-filled:hover {
-    border-color: #fff;
+    border-color: $colorWhite;
   }
 
   .btn-rounded {
@@ -123,53 +121,53 @@ button.BML-button-submit {
   }
 
   .bg-light .btn {
-    border-color: #222;
-    color: #222;
+    border-color: $colorGrayLight;
+    color: $colorGrayLight;
   }
 
   .bg-light .btn:visited,
   .bg-light .btn:visited:hover {
-    color: #222;
+    color: $colorGrayLight;
   }
 
   .bg-light .btn-filled,
   .bg-light .btn-filled:visited {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .btn:visited {
-    color: #47b475;
+    color: $colorPrimary;
   }
 
   .btn-white:visited,
   .btn:visited:hover {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .btn-white:visited:hover {
-    color: #222;
+    color: $colorGrayLight;
   }
 
   .btn-filled:visited {
-    color: #fff;
+    color: $colorWhite;
   }
 
   .btn.bg-dark {
-    color: #fff;
-    border-color: #292929;
+    color: $colorWhite;
+    border-color: $colorDark;
   }
 
   .btn.bg-dark:hover {
-    background: #434343;
+    background: $backgroundDarkButtonHover;
   }
 
   .bg-primary .btn {
-    color: #fff;
-    border-color: #fff;
+    color: $colorWhite;
+    border-color: $colorWhite;
   }
 
   .bg-primary .btn:hover {
-    background: #fff;
-    color: #47b475;
+    background: $colorWhite;
+    color: $colorPrimary;
   }
 }

@@ -36,7 +36,7 @@ footer.bg-dark h5,
 nav.bg-dark h6,
 footer.bg-dark h6,
 .bg-primary h6 {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .bg-dark p,
@@ -51,7 +51,7 @@ footer.bg-dark span,
 nav.bg-dark li,
 footer.bg-dark li,
 .bg-primary li {
-    color: #fefefe;
+    color: $colorWhite;
 }
 
 .overlay:before {
@@ -61,7 +61,7 @@ footer.bg-dark li,
     height: 100%;
     top: 0;
     left: 0;
-    background: #292929;
+    background: $colorDark;
     opacity: 0.3;
     z-index: $zIndexOverlayBefore;
 }
@@ -77,7 +77,7 @@ footer.bg-dark li,
     height: 100%;
     top: 0;
     left: 0;
-    background: #fff;
+    background: $colorWhite;
     opacity: 0.1;
     z-index: $zIndexOverlayBefore;
 }
@@ -88,13 +88,13 @@ footer.bg-dark li,
 .image-bg h4,
 .image-bg h5,
 .image-bg h6 {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .image-bg p,
 .image-bg span,
 .image-bg li {
-    color: #fff;
+    color: $colorWhite;
 }
 
 .image-bg .container,
@@ -115,7 +115,7 @@ footer.bg-dark li,
     top: 0;
     left: 0;
     z-index: $zIndexBase;
-    background: #292929;
+    background: $backgroundColorDark;
     background-size: cover !important;
     background-position: 50% 50% !important;
     transition: all 0.3s ease;
@@ -127,7 +127,7 @@ footer.bg-dark li,
 }
 
 .background-multiply .background-image-holder {
-    background-color: #47b475 !important;
+    background-color: $colorPrimary !important;
     background-blend-mode: multiply;
 }
 
