@@ -20,7 +20,7 @@ button.BML-button-submit {
 
   .btn {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 2px solid #47b475;
+    border: 2px solid $colorPrimary;
     padding: 0 26px;
     height: 40px;
     min-width: 150px;
@@ -30,11 +30,9 @@ button.BML-button-submit {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 0;
-    color: #47b475;
+    color: $colorPrimary;
     text-align: center;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
   }
 
   /*.btn:last-child,*/
@@ -43,8 +41,8 @@ button.BML-button-submit {
   /*}*/
 
   .btn:hover {
-    background: #47b475;
-    color: #fff;
+    background: $colorPrimary;
+    color: $colorWhite;
   }
 
   .btn-icon {
@@ -87,27 +85,27 @@ button.BML-button-submit {
   }
 
   .btn-filled {
-    background: #47b475;
-    color: #fff;
+    background: $colorPrimary;
+    color: $colorWhite;
   }
 
   .btn-white,
   .image-bg .btn,
   .image-bg .btn:visited {
-    color: #fff;
+    color: $colorWhite;
     border-color: #fff;
   }
 
   .btn-white:hover,
   .image-bg .btn:hover,
   .image-bg .btn:visited:hover {
-    background: #fff;
+    background: $colorWhite;
     color: #222;
   }
 
   .image-bg .btn.btn-filled,
   .image-bg .btn-filled:visited {
-    border-color: #47b475;
+    border-color: $colorPrimary;
   }
 
   .image-bg .btn-filled:hover {
@@ -138,7 +136,7 @@ button.BML-button-submit {
   }
 
   .btn:visited {
-    color: #47b475;
+    color: $colorPrimary;
   }
 
   .btn-white:visited,
@@ -170,6 +168,6 @@ button.BML-button-submit {
 
   .bg-primary .btn:hover {
     background: #fff;
-    color: #47b475;
+    color: $colorPrimary;
   }
 }

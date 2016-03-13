@@ -115,7 +115,7 @@ footer.bg-dark li,
     top: 0;
     left: 0;
     z-index: $zIndexBase;
-    background: #292929;
+    background: $backgroundColorDark;
     background-size: cover !important;
     background-position: 50% 50% !important;
     transition: all 0.3s ease;
@@ -127,7 +127,7 @@ footer.bg-dark li,
 }
 
 .background-multiply .background-image-holder {
-    background-color: #47b475 !important;
+    background-color: $colorPrimary !important;
     background-blend-mode: multiply;
 }
 

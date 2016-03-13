@@ -230,7 +230,7 @@
 
   a {
     font-weight: 600;
-    color: #47b475;
+    color: $colorPrimary;
     transition: all 0.3s ease;
     cursor: poitner;
   }
@@ -247,16 +247,16 @@
   }
 
   .bg-light a {
-    color: #47b475;
+    color: $colorPrimary;
   }
 
   .bg-light a:hover {
-    color: #47b475;
+    color: $colorPrimary;
     opacity: 1;
   }
 
   a:hover {
-    color: #398f5d;
+    color: $colorLinkHover;
     text-decoration: none;
   }
 
@@ -269,7 +269,7 @@
     letter-spacing: 2px;
     font-weight: 700;
     letter-spacing: 1px;
-    background: #47b475;
+    background: $colorPrimary;
     border-radius: 0;
     padding: 6px 12px;
     font-size: 10px;
@@ -290,7 +290,7 @@
 
   .bg-secondary blockquote {
     background: #fff;
-    border-color: #47b475;
+    border-color: $colorPrimary;
   }
 
   blockquote .author {
