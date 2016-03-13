@@ -1,21 +1,11 @@
 /*!---------- 3. TYPOGRAPHY ----------*/
-
-
-.mixin-font-family-header {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.mixin-font-family-text {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 .BML-text {
   font-size: 13px;
   line-height: 24px;
 }
 
 .BML-h1, .BML-h2 {
-  @extend .mixin-font-family-header;
+  @extend .font-family-header;
   margin-bottom: 24px;
   margin-top: 0;
   padding: 0;
@@ -184,7 +174,7 @@
   }
 
   .bold-h6 {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-header;
     font-size: 12px;
     line-height: 24px;
     font-weight: 400;
@@ -199,7 +189,7 @@
   }
 
   .lead {
-    @extend .mixin-font-family-text;
+    @extend .font-family-text;
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
@@ -261,7 +251,7 @@
   }
 
   .label {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-header;
     font-size: 12px;
     line-height: 24px;
     font-weight: 400;
@@ -278,7 +268,7 @@
 
   blockquote {
     overflow: hidden;
-    font-family: "Merriweather", "Georgia", Times New Roman, Times, serif;
+    @extend .font-family-quote;
     font-size: 20px;
     line-height: 40px;
     font-style: italic;
@@ -301,7 +291,7 @@
   }
 
   .number {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-number;
   }
 
   .columns-2 {

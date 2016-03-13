@@ -15,7 +15,7 @@
   button,
   select,
   textarea {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-input;
   }
 
   button,
@@ -40,7 +40,7 @@
   }
 
   .input-with-label span {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @extend .font-family-input;
     font-size: 11px;
     text-transform: uppercase;
     color: $colorDark;
