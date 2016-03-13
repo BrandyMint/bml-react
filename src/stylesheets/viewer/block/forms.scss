@@ -43,7 +43,7 @@
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11px;
     text-transform: uppercase;
-    color: #292929;
+    color: $colorDark;
     letter-spacing: 1px;
     font-weight: 700;
     display: block;
@@ -68,7 +68,7 @@
 
   .image-bg.bg-light input.transparent,
   .image-bg.bg-light button.transparent {
-    border-color: #292929;
+    border-color: $colorDark;
   }
 
   input.transparent,

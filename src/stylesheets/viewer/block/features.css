@@ -4,7 +4,7 @@
 }
 
 .feature.boxed.bg-dark {
-    background: #292929;
+    background: $colorDark;
 }
 
 .bg-dark .feature.boxed {

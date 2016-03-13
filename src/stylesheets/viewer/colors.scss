@@ -3,12 +3,14 @@ $colorPrimary: #47b475;
 $colorWhite: #fff;
 $colorBody: #666;
 
+$colorDark: #292929;
+
 $colorPlaceholder: #777;
 
 $colorPrimaryBg: $colorPrimary;
 $colorPrimaryText: $colorWhite;
 
-$backgroundColorDark: #292929;
+$backgroundColorDark: $colorDark;
 
 $secondaryBackgroundColor: #f8f8f8;
 
