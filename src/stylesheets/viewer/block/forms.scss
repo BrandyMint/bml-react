@@ -80,7 +80,7 @@
 
   input[type="text"]:focus,
   input[type="password"]:focus {
-    outline: 1px solid #ccc;
+    outline: 1px solid $colorInputOutlineFocus;
   }
 
   textarea {
@@ -93,7 +93,7 @@
   }
 
   textarea:focus {
-    outline: 1px solid #ccc;
+    outline: 1px solid $colorInputOutlineFocus;
   }
 
   ::placeholder {
@@ -190,15 +190,13 @@
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #777;
+    color: $colorSelectText;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
     cursor: pointer;
   }
 
   select:focus {
-    background: #eee;
+    background: $backgroundSelectFocus;
   }
 
   select:active,

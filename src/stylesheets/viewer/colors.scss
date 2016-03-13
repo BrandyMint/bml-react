@@ -11,9 +11,12 @@ $colorPlaceholder: #777;
 $colorPrimaryBg: $colorPrimary;
 $colorPrimaryText: $colorWhite;
 
-$colorPrimaryLight: #8ed3ab; // TODO Вычислять
+// TODO Вычислять
+$colorPrimaryLight: #8ed3ab;
 
 $backgroundColorDark: $colorDark;
+
+$backgroundSelectFocus: #eee;
 
 $secondaryBackgroundColor: #f8f8f8;
 
@@ -33,12 +36,11 @@ $colorFeature3: $colorLinkHover;
 $backgroundFeatureBoxed: #363636;
 $backgroundDarkButtonHover: #434343;
 
+$colorBlockquote: $colorPlaceholder;
+$colorSelectText: $colorPlaceholder;
 
-/*
-#555
-#666
-#777
-#ccc
-#eee
-#fff
-*/
+$colorInputOutlineFocus: #ccc;
+
+$colorBoder: #ccc;
+$colorHR: $colorBoder;
+$colorDarkHR: #555;

@@ -4,6 +4,7 @@ body.EditorApp {
   background: $dashboardBackground;
 }
 
+
 @component LApplicationEditor {
   @descendent sidebar {
     position: fixed;
