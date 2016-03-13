@@ -1,4 +1,4 @@
-@import 'stylesheets/assets.scss';
+@import "stylesheets/assets";
 
 @component MobilePreview {
   margin: auto;
@@ -8,7 +8,6 @@
   width: 532px;
   display: block;
   background: url($devicePhone) left top / 100% no-repeat;
-
 
   @descendent viewport {
     width: 375px;

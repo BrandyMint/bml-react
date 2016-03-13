@@ -1,15 +1,10 @@
 @component MustRead1 {
-  /*padding-top: 50px;*/
-  /*padding-bottom: 50px;*/
   text-align: center;
   min-height: 500px;
   height: 700px;
 
-
   @descendent message {
     position: relative;
-    /*padding-top: 20%;*/
-    /*padding-bottom: 20%;*/
   }
 
   @descendent header {
@@ -30,9 +25,11 @@
     @descendent message {
       padding-bottom: 15%;
     }
+
     @descendent header {
       font-size: 3em;
     }
+
     ul.MustRead1-buttons > li {
       display: block;
       margin-bottom: 20px;
@@ -41,8 +38,10 @@
         margin-bottom: 0;
       }
     }
+
     @descendent divider {
       width: 100%;
     }
   }
 }
+

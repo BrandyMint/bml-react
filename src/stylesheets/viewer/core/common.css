@@ -6,7 +6,7 @@ body {
   font-size: 13px;
   line-height: 24px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: $defaultTextColor;
+  /*color: $defaultTextColor;*/
 }
 
 hr {
@@ -32,7 +32,7 @@ hr.short-thick {
 
 .image-bg hr {
   border-color: #fff;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .image-bg.bg-light hr {

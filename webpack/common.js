@@ -14,7 +14,6 @@ import stylelint from 'stylelint';
 import autoprefixer from 'autoprefixer';
 
 const root = path.join(process.cwd(), 'src');
-const bower = path.join(process.cwd(), 'bower_components');
 const viewer = path.join(process.cwd(), 'initializers/viewer');
 const editor = path.join(process.cwd(), 'initializers/editor');
 
@@ -34,10 +33,10 @@ export default {
   },
 
   postcss: webpack => [
-    stylelint,
     postcssImport({ addDependencyTo: webpack, path: root }),
     postcssSelectorNot,
     postcssSimpleVars,
+    stylelint,
     postcssCalc,
     postcssBEM,
     postcssNested,
@@ -50,7 +49,6 @@ export default {
 
   resolve: {
     root,
-    bower,
     extensions: ['', '.js', '.jsx'],
   },
 

@@ -1,5 +1,7 @@
-@import 'stylesheets/editor/config.scss';
+@import "stylesheets/editor/config";
+
 /* http://stackoverflow.com/questions/4804581/css-expand-child-div-height-to-parents-height */
+
 @component LBC {
   display: table;
   width: 100%;

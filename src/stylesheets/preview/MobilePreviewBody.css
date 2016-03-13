@@ -1,4 +1,4 @@
-@import '../editor/config.scss';
+@import '../editor/config';
 
 body.MobilePreviewBody {
   /* background-image: linear-gradient(75deg, rgb(195, 41, 156), rgb(195, 41, 44)); */

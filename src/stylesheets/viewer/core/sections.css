@@ -67,7 +67,7 @@ footer.bg-dark li,
 }
 
 .overlay-heavy:before {
-    opacity: .6;
+    opacity: 0.6;
 }
 
 .bg-light.overlay:before {

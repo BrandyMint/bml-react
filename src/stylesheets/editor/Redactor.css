@@ -1,17 +1,17 @@
 @component Redactor {
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     outline: 0px solid transparent;
-    background: rgba(70, 186, 249, .2);
-    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    background: rgba(70, 186, 249, 0.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     /* color: #fff; */
   }
 
   &:focus {
     outline: 0px solid transparent;
-    background: rgba(70, 186, 249, .5);
-    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    background: rgba(70, 186, 249, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     /* color: #fff; */
   }
 
