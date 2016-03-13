@@ -1,0 +1,12 @@
+.controls-inside .flex-control-nav {
+  bottom: 24px;
+  z-index: $zIndexControlsInside;
+}
+
+.controls-inside .flex-control-nav li a {
+  border-color: $defaultBackgroundColor;
+}
+
+.controls-inside .flex-control-nav li a.flex-active {
+  background: $defaultBackgroundColor;
+}

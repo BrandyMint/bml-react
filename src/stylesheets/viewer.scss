@@ -1,6 +1,8 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~react-widgets/dist/css/react-widgets.css';
 
+@import 'viewer/colors';
+
 @import 'shared/bootstrap_overwrites';
 @import 'shared/OpacityIcon';
 @import 'shared/IconLink';
@@ -10,12 +12,15 @@
 @import 'shared/layout_alignments';
 @import 'shared/ModalOpen';
 
+@import 'viewer/zindexes';
+
 @import 'viewer/BML-section';
 @import 'viewer/BML-utils';
 
 // CORESTYLE v0.4
 @import 'viewer/core/common';
 @import 'viewer/core/utils';
+@import 'viewer/core/utils/fade';
 @import 'viewer/core/utils/list-inline';
 // @import 'viewer/core/show-grid';
 @import 'viewer/core/utils/text-aligns';

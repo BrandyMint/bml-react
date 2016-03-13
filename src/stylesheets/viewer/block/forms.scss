@@ -204,11 +204,9 @@
     font-size: 18px;
     right: 20px;
     top: 14px;
-    z-index: 2;
+    z-index: $zIndexFormSelectOption;
     pointer-events: none;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
     cursor: pointer;
   }
 
@@ -259,11 +257,6 @@
     border-radius: 25px;
     border: 1px solid #47b475;
     cursor: pointer;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     margin-bottom: 24px;
   }
@@ -379,10 +372,10 @@
 
   .form-error,
   .form-success {
-    background: #58ce38;
+    background: $successBackgroundColor;
     padding: 12px;
     width: 80%;
-    color: #fff;
+    color: $successTextColor;
     clear: both;
     display: block;
     max-width: 700px;
@@ -393,41 +386,23 @@
   }
 
   .form-error {
-    background: #ce3838;
+    background: $errorBackgroundColor;
   }
 
   .form-error a,
   .form-success a {
     display: block;
-    color: #fff;
+    color: $successTextColor;
   }
 
   .attempted-submit .field-error {
-    outline: 1px solid #ce3838 !important;
+    outline: 1px solid $errorBackgroundColor !important;
   }
 
   form iframe.mail-list-form {
     display: none;
   }
 
-  .form-loading {
-    border: 3px solid #fff;
-    border-radius: 30px;
-    height: 30px;
-    left: 50%;
-    margin: -15px 0 0 -15px;
-    opacity: 0;
-    margin: 0px auto;
-    top: 50%;
-    width: 30px;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation: pulsate 1s ease-out;
-    -moz-animation-iteration-count: infinite;
-    animation: pulsate 1s ease-out;
-    animation-iteration-count: infinite;
-    z-index: 99999;
-  }
 
   @keyframes pulsate {
     0% {
@@ -455,19 +430,6 @@
       transform: scale(1.2);
       opacity: 0;
     }
-  }
-
-  button[type="submit"] .form-loading {
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    top: 9px;
-    position: relative;
-    left: 0;
-  }
-
-  .btn-white .form-loading {
-    border: 3px solid #c8c8c8;
   }
 
   @media all and (max-width: 767px) {

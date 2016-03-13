@@ -63,7 +63,7 @@ footer.bg-dark li,
     left: 0;
     background: #292929;
     opacity: 0.3;
-    z-index: 2;
+    z-index: $zIndexOverlayBefore;
 }
 
 .overlay-heavy:before {
@@ -79,7 +79,7 @@ footer.bg-dark li,
     left: 0;
     background: #fff;
     opacity: 0.1;
-    z-index: 2;
+    z-index: $zIndexOverlayBefore;
 }
 
 .image-bg h1,
@@ -100,12 +100,12 @@ footer.bg-dark li,
 .image-bg .container,
 .image-bg div[class*='col-'] {
     position: relative;
-    z-index: 3;
+    z-index: $zIndexUnderRelative;
 }
 
 .container.image-bg .row {
     position: relative;
-    z-index: 3;
+    z-index: $zIndexUnderRelative;
 }
 
 .background-image-holder {
@@ -114,13 +114,11 @@ footer.bg-dark li,
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: $zIndexBase;
     background: #292929;
     background-size: cover !important;
     background-position: 50% 50% !important;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
     opacity: 0;
 }
 

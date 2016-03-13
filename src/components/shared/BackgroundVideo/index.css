@@ -25,6 +25,6 @@
 
 /* set filter as none for IE9+, because IE9+ support RGBa */
 
-:root .overlay {
+:root .BML-BackgroundVideo-overlay {
   filter: none\0/IE9;
 }
