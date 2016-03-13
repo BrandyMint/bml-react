@@ -36148,7 +36148,8 @@
 	  left: '50%',
 	  transform: 'translate(-50%, -50%)',
 	  visibility: 'visible',
-	  height: 'auto'
+	  height: 'auto',
+	  width: 'auto'
 	};
 
 	var videos = [{ src: '/assets/video/video.mp4', type: 'video/mp4' }, { src: '/assets/video/video.webm', type: 'video/webm' }, { src: '/assets/video/video.ogv', type: 'video/ogg' }];

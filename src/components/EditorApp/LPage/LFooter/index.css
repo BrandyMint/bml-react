@@ -13,7 +13,11 @@
     cursor: pointer;
 
     color: #ccc;
-    &:visited, &:link, &:focus, &:active {
+
+    &:visited,
+    &:link,
+    &:focus,
+    &:active {
       color: #ccc;
     }
 

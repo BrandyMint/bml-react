@@ -3,7 +3,7 @@
   top: 10px;
   left: 15px;
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   z-index: $bubbleZindex;
 
   @descendent actions {

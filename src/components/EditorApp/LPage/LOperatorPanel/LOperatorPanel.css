@@ -1,4 +1,4 @@
-@import 'stylesheets/editor/config.scss';
+@import "stylesheets/editor/config";
 
 @component LOperatorPanel {
   position: fixed;

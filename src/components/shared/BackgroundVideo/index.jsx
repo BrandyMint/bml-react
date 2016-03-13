@@ -34,6 +34,7 @@ const VIDEO_STYLES = {
   transform: 'translate(-50%, -50%)',
   visibility: 'visible',
   height: 'auto',
+  width: 'auto',
 };
 
 const videos = [

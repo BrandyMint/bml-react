@@ -1,4 +1,4 @@
-@import 'stylesheets/editor/config.scss';
+@import "stylesheets/editor/config";
 
 /*
  * http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
@@ -45,6 +45,7 @@
     background: rgba(110, 110, 110, 1);
     box-shadow: 10px 10px 10px 15px rgba(0, 0, 0, 0.3);
     border-top: #666 solid 2px;
+
     @when closed {
       bottom: $editorFooterClosedBottom;
     }
