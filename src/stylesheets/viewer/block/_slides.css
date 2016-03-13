@@ -143,7 +143,7 @@
 }
 
 .text-slider .flex-direction-nav li a:before {
-    color: #222;
+    color: $colorGrayLight;
 }
 
 .image-bg .text-slider .flex-direction-nav li a:before {

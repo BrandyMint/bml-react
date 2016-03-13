@@ -100,7 +100,7 @@ button.BML-button-submit {
   .image-bg .btn:hover,
   .image-bg .btn:visited:hover {
     background: $colorWhite;
-    color: #222;
+    color: $colorGrayLight;
   }
 
   .image-bg .btn.btn-filled,
@@ -121,13 +121,13 @@ button.BML-button-submit {
   }
 
   .bg-light .btn {
-    border-color: #222;
-    color: #222;
+    border-color: $colorGrayLight;
+    color: $colorGrayLight;
   }
 
   .bg-light .btn:visited,
   .bg-light .btn:visited:hover {
-    color: #222;
+    color: $colorGrayLight;
   }
 
   .bg-light .btn-filled,
@@ -145,7 +145,7 @@ button.BML-button-submit {
   }
 
   .btn-white:visited:hover {
-    color: #222;
+    color: $colorGrayLight;
   }
 
   .btn-filled:visited {
@@ -158,7 +158,7 @@ button.BML-button-submit {
   }
 
   .btn.bg-dark:hover {
-    background: #434343;
+    background: $backgroundDarkButtonHover;
   }
 
   .bg-primary .btn {

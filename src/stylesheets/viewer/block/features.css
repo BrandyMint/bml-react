@@ -8,7 +8,7 @@
 }
 
 .bg-dark .feature.boxed {
-    background: #363636;
+    background: $backgroundFeatureBoxed;
 }
 
 .bg-secondary .feature.boxed {
