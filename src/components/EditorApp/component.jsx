@@ -17,7 +17,7 @@ class EditorApp extends Component {
     const { onActivity } = this.props;
     return (
       <Tracker>
-        <BodyClassName className="Editor">
+        <BodyClassName className="EditorApp">
           <div
             className="BML-App LApplicationEditor"
             onMouseMove={onActivity}

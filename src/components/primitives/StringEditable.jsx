@@ -1,6 +1,8 @@
 import React, { Component, PropTypes, createElement } from 'react';
 import { findDOMNode } from 'react-dom';
 
+import classnames from 'classnames';
+
 import get from 'lodash/get';
 import bind from 'lodash/bind';
 import shouldPureComponentUpdate from 'react-pure-render/function';
@@ -60,11 +62,12 @@ class StringEditable extends Component {
     const { value } = this.state;
 
     if (isEditMode) {
+      const classes = classnames(className, 'Redactor');
       return (
         <Editor
           ref="redactor"
           tag={tagName}
-          className={className}
+          className={classes}
           text={value}
           onBlur={this.handleBlur}
           options={MEDIUM_OPTIONS}

@@ -1,11 +1,13 @@
 import React, { Component, PropTypes, createElement } from 'react';
 import { findDOMNode } from 'react-dom';
 
+import classnames from 'classnames';
+
 import get from 'lodash/get';
 import bind from 'lodash/bind';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 
-import Editor from 'react-medium-editor';
+import MediumEditor from 'react-medium-editor';
 
 const getValue = (props) => get(props.data, props.fieldName, '');
 
@@ -52,12 +54,14 @@ class RichEditable extends Component {
     const { isEditMode } = this.context;
     const { value } = this.state;
 
+
     if (isEditMode) {
+      const classes = classnames(className, 'Redactor');
       return (
-        <Editor
+        <MediumEditor
           ref="redactor"
           tag={tagName}
-          className={className}
+          className={classes}
           text={value}
           onBlur={this.handleBlur}
           options={MEDIUM_OPTIONS}

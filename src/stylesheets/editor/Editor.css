@@ -1,5 +1,0 @@
-@import 'editor/config';
-
-body.Editor {
-  background: $dashboardBackground;
-}
