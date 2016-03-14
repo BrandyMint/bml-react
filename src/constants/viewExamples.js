@@ -238,43 +238,6 @@ export default [
     },
   },
   {
-    viewName: 'CTA1',
-    title: 'Кнопка действий',
-    description: 'raw description22323',
-    image: {
-      url: '/assets/images/themes/t1/intro-bg.jpg',
-      height: 100,
-      width: 100,
-    },
-    rate: 3,
-    defaultData: {
-      content: {
-        items: [
-          {
-            title: 'Twitter',
-            url: 'twitter.com',
-          },
-          {
-            title: 'GitHub',
-            url: 'github.com',
-          },
-        ],
-        text: 'Connect to Start BML:',
-      },
-      backgroundImage: {
-        uuid: null,
-        url: '/assets/images/themes/t1/banner-bg.jpg',
-        width: null,
-        height: null,
-      },
-      nodeAttributes: {
-        id: '44086800-a7e8-0133-a838-746d04736cf8',
-        class: '',
-      },
-      meta: {},
-    },
-  },
-  {
     viewName: 'Footer1',
     title: 'Подвал',
     description: 'raw description223',
