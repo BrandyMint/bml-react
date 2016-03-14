@@ -48028,7 +48028,6 @@
 			"classnames": "^2.2.3",
 			"cookie": "^0.2.3",
 			"google-map-react": "^0.10.6",
-			"i": "^0.3.4",
 			"invariant": "^2.2.1",
 			"json-loader": "^0.5.4",
 			"lodash": "^4.0.0",
