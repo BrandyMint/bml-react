@@ -8577,8 +8577,8 @@
 	  exitUrl: '/#exit',
 	  apiUrl: 'http://api.bmland.dev:3008/v1',
 	  postLeadUrl: 'http://bmland.dev:3008/leads',
-	  //apiUrl: 'http://api.3008.vkontraste.ru/v1',
-	  //postLeadUrl: 'http://3008.vkontraste.ru/leads',
+	  // apiUrl: 'http://api.3008.vkontraste.ru/v1',
+	  // postLeadUrl: 'http://3008.vkontraste.ru/leads',
 	  apiKey: 'demoApiKey',
 	  variantUuid: _initialState.EXAMPLE_LANDING_VARIANT_UUID
 	};
