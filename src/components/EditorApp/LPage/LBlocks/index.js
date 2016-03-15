@@ -4,7 +4,7 @@ import backgroundResolver from 'helpers/backgroundResolver';
 
 import { startAddingBlock } from 'actions/blocks';
 
-import component from './LBlocks';
+import component from './component';
 
 const selector = createStructuredSelector({
   blocks: state => backgroundResolver(state.blocks),

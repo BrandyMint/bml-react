@@ -4,8 +4,6 @@ import LBlockAddButton from '../LBlockAddButton';
 import LBlock from '../LBlock';
 
 import partial from 'lodash/partial';
-import { TRANSITION_TIMEOUT } from 'constants/animation';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class LBlockSection extends Component {
   render() {

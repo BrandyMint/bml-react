@@ -1,16 +1,14 @@
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { TRANSITION_TIMEOUT } from 'constants/animation';
-import { APP_ACTIVITY_TIMEOUT } from 'actions/application';
 
+import Animated from 'components/primitives/Animated';
 import partial from 'lodash/partial';
 
 import LBlockLayerPanel from './LBlockLayerPanel';
 
 import './LBlockLayer.css';
 
-const TIMEOUT = APP_ACTIVITY_TIMEOUT;
+const TIMEOUT = 300;
 
 class LBlockLayer extends Component {
   constructor(props) {
@@ -73,31 +71,26 @@ class LBlockLayer extends Component {
     const { isTopNav } = block;
 
     const SectionPanel = (
-      <ReactCSSTransitionGroup
-        component="div"
-        transitionName="animation"
-        transitionEnterTimeout={TRANSITION_TIMEOUT}
-        transitionLeaveTimeout={TRANSITION_TIMEOUT}
-      >
-      {!isTopNav && (isHovered || isPanelHovered) && (
-        <LBlockLayerPanel
-          ref="panel"
-          hasMultipleViews={hasMultipleViews}
-          hasMultipleBlocks={hasMultipleBlocks}
+      <Animated>
+        {!isTopNav && (isHovered || isPanelHovered) && (
+          <LBlockLayerPanel
+            ref="panel"
+            hasMultipleViews={hasMultipleViews}
+            hasMultipleBlocks={hasMultipleBlocks}
 
-          onMouseEnter={onPanelMouseEnter}
-          onMouseLeave={onPanelMouseLeave}
+            onMouseEnter={onPanelMouseEnter}
+            onMouseLeave={onPanelMouseLeave}
 
-          onEditingStart={partial(onEditingStart, block)}
+            onEditingStart={partial(onEditingStart, block)}
 
-          onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
-          onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
+            onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
+            onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
 
-          onBlockPositionDown={partial(onBlockPositionDown, block.uuid)}
-          onBlockPositionUp={partial(onBlockPositionUp, block.uuid)}
-        />
-      )}
-      </ReactCSSTransitionGroup>
+            onBlockPositionDown={partial(onBlockPositionDown, block.uuid)}
+            onBlockPositionUp={partial(onBlockPositionUp, block.uuid)}
+          />
+        )}
+      </Animated>
     );
 
     return (
