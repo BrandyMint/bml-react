@@ -5,6 +5,7 @@ import { changeContent } from 'actions/blocks';
 import LBlock from './LBlock';
 
 const selector = createStructuredSelector({
+  // TODO Перетащить непосредственно на примитивы
   isEditMode: state => state.application.isEditMode,
 });
 

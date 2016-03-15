@@ -1,30 +1,17 @@
 import React, { PropTypes, Component } from 'react';
 
-import './LBlocks.css';
-
 import map from 'lodash/map';
-import bind from 'lodash/bind';
 import partial from 'lodash/partial';
 import isEmpty from 'lodash/isEmpty';
 
 import EmptyPlaceholder from './EmptyPlaceholder';
-
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { TRANSITION_TIMEOUT } from 'constants/animation';
-import shouldPureComponentUpdate from 'react-pure-render/function';
-
 import LBlockSection from './LBlockSection';
 
+import './LBlocks.css';
+
 class LBlocks extends Component {
-  shouldComponentUpdate = shouldPureComponentUpdate;
-
   render() {
-    const {
-      blocks,
-      onAddBlock,
-    } = this.props;
-
-    let previousBlockUuid = null;
+    const { blocks, onAddBlock } = this.props;
 
     if (isEmpty(blocks)) {
       return (
@@ -37,18 +24,8 @@ class LBlocks extends Component {
 
     return (
       <div className="LBlocks">
-          {map(blocks, (block, index) => {
-            const uuid = previousBlockUuid
-            previousBlockUuid = block.uuid
-            return (<LBlockSection
-              block={block}
-              index={index}
-              key={block.uuid}
-              blocksLength={block.length}
-              previousBlockUuid={uuid} />)
-          })
-        }
-        </div>
+        {map(blocks, (block, index) => <LBlockSection block={block} index={index} key={block.uuid} />) }
+      </div>
     );
   }
 }

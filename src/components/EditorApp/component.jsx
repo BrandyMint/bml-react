@@ -14,15 +14,10 @@ import './index.css';
 
 class EditorApp extends Component {
   render() {
-    const { onActivity } = this.props;
     return (
       <Tracker>
         <BodyClassName className="EditorApp">
-          <div
-            className="BML-App LApplicationEditor"
-            onMouseMove={onActivity}
-            onContextMenu={onActivity}
-          >
+          <div className="BML-App LApplicationEditor">
             <EditorLeftSidebar />
             <div className="LApplicationEditor-content">
               <LPage />
@@ -36,9 +31,5 @@ class EditorApp extends Component {
     );
   }
 }
-
-EditorApp.propTypes = {
-  onActivity: PropTypes.func.isRequired,
-};
 
 export default EditorApp;

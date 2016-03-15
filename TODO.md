@@ -41,6 +41,18 @@
 
 ## Refactor (JS)
 
+* [ ] Выделить
+      <ReactCSSTransitionGroup
+        component="div"
+        transitionName="animation"
+        transitionEnterTimeout={TRANSITION_TIMEOUT}
+        transitionLeaveTimeout={TRANSITION_TIMEOUT}
+* [ ] TODO Перетащить непосредственно на примитивы
+* [ ] вместо blocks хранить в стейте и в API site
+* [ ] backgroundResolver применять только:
+      * [ ] При чтении сайта из API
+      * [ ] При добавлении нового блока
+      * [ ] При изменении фоновых параметров блока
 * [ ] AddButton перенести в Layer
 * [ ] компилировать альтернативный dist без ужатия JS и CSS (-develop) версия
 * [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples

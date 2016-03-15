@@ -14,7 +14,7 @@ class EmptyPlaceholder extends Component {
             </h2>
             <span>Добавьте что-нибудь.</span>
           </div>
-          <LBlockAddButton onClick={onAddBlock} />
+          <LBlockAddButton />
         </div>
     );
   }

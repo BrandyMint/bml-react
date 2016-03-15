@@ -1,12 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-
-import './index.css';
-
 import partial from 'lodash/partial';
 
 import LBlockLayer from './LBlockLayer';
-
 import ViewComponent from 'components/shared/ViewComponent';
+
+import './index.css';
 
 class LBlock extends Component {
   getChildContext() {
@@ -17,11 +15,12 @@ class LBlock extends Component {
       onContentChange: partial(onContentChange, block.uuid),
     };
   }
+
   render() {
     const { block, onActive } = this.props;
 
     return (
-      <LBlockLayer block={block} onActive={onActive}>
+      <LBlockLayer block={block} >
         <ViewComponent block={block} />
       </LBlockLayer>
     );
@@ -31,7 +30,6 @@ class LBlock extends Component {
 LBlock.propTypes = {
   block:           PropTypes.object.isRequired, // TODO block shape
   onContentChange: PropTypes.func.isRequired,
-  onActive:        PropTypes.func.isRequired,
 };
 
 LBlock.childContextTypes = {

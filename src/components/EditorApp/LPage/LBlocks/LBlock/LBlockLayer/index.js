@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import { setCurrentBlock } from 'actions/blocks';
+
 import size from 'lodash/size';
 
 import { viewsRepository } from 'repositories/ViewsRepository';
@@ -19,7 +21,6 @@ const hasMultipleViewsSelector = (state, props) =>
 const lBlockLayerSelector = createStructuredSelector({
   hasMultipleViews: hasMultipleViewsSelector,
   hasMultipleBlocks: hasMultipleBlocksSelector,
-  hasControlActivity: state => state.application.controlActivityTimeoutId > 0,
 });
 
 const actions = {
@@ -28,6 +29,8 @@ const actions = {
   onViewSwitchPrev: switchPrevView,
   onBlockPositionUp: upBlockPosition,
   onEditingStart: startEditing,
+
+  onCurrentBlock: setCurrentBlock,
 };
 
 export default connect(lBlockLayerSelector, actions)(LBlockLayer);
