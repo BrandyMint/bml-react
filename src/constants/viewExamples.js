@@ -289,19 +289,16 @@ export default [
         subheader: 'My little friend!',
         items: [
           {
-            title: 'Twitter',
-            icon: 'twitter',
-            url: 'twitter.com',
+            text: 'Twitter',
+            href: 'twitter.com',
           },
           {
-            title: 'GitHub',
-            icon: 'github',
-            url: 'github.com',
+            text: 'GitHub',
+            href: 'github.com',
           },
           {
-            title: 'LinkedIn',
-            icon: 'linkedin',
-            url: 'linkedin.com',
+            text: 'LinkedIn',
+            href: 'linkedin.com',
           },
         ],
       },

@@ -29,14 +29,14 @@ class LBlock extends Component {
 }
 
 LBlock.propTypes = {
-  block: PropTypes.object.isRequired, // TODO block shape
+  block:           PropTypes.object.isRequired, // TODO block shape
   onContentChange: PropTypes.func.isRequired,
-  onActive: PropTypes.func.isRequired,
+  onActive:        PropTypes.func.isRequired,
 };
 
 LBlock.childContextTypes = {
   onContentChange: PropTypes.func,
-  isEditMode: PropTypes.bool.isRequired,
+  isEditMode:      PropTypes.bool.isRequired,
 };
 
 export default LBlock;

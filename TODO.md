@@ -41,6 +41,7 @@
 
 ## Refactor (JS)
 
+* [ ] AddButton перенести в Layer
 * [ ] компилировать альтернативный dist без ужатия JS и CSS (-develop) версия
 * [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
 * [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
