@@ -4,8 +4,6 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 const LBlockAddFormItem = ({
-  description,
-  image,
   isSelected,
   title,
 
