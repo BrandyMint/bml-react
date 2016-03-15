@@ -47,8 +47,8 @@
         transitionName="animation"
         transitionEnterTimeout={TRANSITION_TIMEOUT}
         transitionLeaveTimeout={TRANSITION_TIMEOUT}
-* [ ] TODO Перетащить непосредственно на примитивы
 * [ ] вместо blocks хранить в стейте и в API site
+* [ ] Обязательный футер
 * [ ] backgroundResolver применять только:
       * [ ] При чтении сайта из API
       * [ ] При добавлении нового блока
