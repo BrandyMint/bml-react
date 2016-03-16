@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 
 import LPage from './LPage';
@@ -9,36 +9,30 @@ import EditorLeftSidebar from './EditorLeftSidebar';
 import EditorRightSidebar from './EditorRightSidebar';
 
 import Tracker from 'components/Tracker';
+import ActivityController from 'components/ActivityController';
 
 import './index.css';
 
 class EditorApp extends Component {
   render() {
-    const { onActivity } = this.props;
     return (
       <Tracker>
-        <BodyClassName className="EditorApp">
-          <div
-            className="BML-App LApplicationEditor"
-            onMouseMove={onActivity}
-            onContextMenu={onActivity}
-          >
-            <EditorLeftSidebar />
-            <div className="LApplicationEditor-content">
-              <LPage />
+        <ActivityController>
+          <BodyClassName className="EditorApp">
+            <div className="BML-App LApplicationEditor">
+              <EditorLeftSidebar />
+              <div className="LApplicationEditor-content">
+                <LPage />
+              </div>
+              <EditorRightSidebar />
+              <LBlockAddModal />
+              <LBlockEditModal />
             </div>
-            <EditorRightSidebar />
-            <LBlockAddModal />
-            <LBlockEditModal />
-          </div>
-        </BodyClassName>
+          </BodyClassName>
+        </ActivityController>
       </Tracker>
     );
   }
 }
-
-EditorApp.propTypes = {
-  onActivity: PropTypes.func.isRequired,
-};
 
 export default EditorApp;

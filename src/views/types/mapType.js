@@ -1,14 +1,18 @@
 import { PropTypes } from 'react';
 import blockPropType from './blockPropType';
-import CustomPropTypes from 'constants/customPropTypes';
+
+export const MapLocationType = PropTypes.shape({
+  lng: PropTypes.number.isRequired,
+  lat: PropTypes.number.isRequired,
+});
 
 const PlaceType = PropTypes.shape({
-  location: CustomPropTypes.location.isRequired,
+  location: MapLocationType.isRequired,
   title: PropTypes.string,
 });
 
 const ContentPropTypes = {
-  center: CustomPropTypes.location.isRequired,
+  center: MapLocationType.isRequired,
   zoom: PropTypes.number.isRequired,
   places: PropTypes.arrayOf(PlaceType).isRequired,
 };

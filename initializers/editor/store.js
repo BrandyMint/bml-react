@@ -28,7 +28,7 @@ const customCreateStore = (initialState) => {
   if (window) {
     window.logger = logger;
   }
-  middlewares.push(logger);
+  // middlewares.push(logger);
 
   const createStoreWithMiddleware = compose(
     applyMiddleware(...middlewares),

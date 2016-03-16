@@ -41,10 +41,19 @@
 
 ## Refactor (JS)
 
+* [x] глобальный onMouseMove в AddButton
+* [.] backgroundResolver применять только:
+      * [x] При чтении сайта из API
+      * [x] При добавлении нового блока
+      * [x] При изменении фоновых параметров блока
+      * [ ] Данные фона передаются через backgroundMeta
+      * [ ] если meta не изменяется, то ссылка на нее тоже не меняется
+* [ ] вместо blocks хранить в стейте и в API ветку site
+* [ ] Обязательный футер со Сделано на ...
 * [ ] компилировать альтернативный dist без ужатия JS и CSS (-develop) версия
-* [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
+* [x] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
 * [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
-* [ ] move CustomPropTypes.location. в views/types/Map
+* [x] move CustomPropTypes.location. в views/types/Map
 * [ ] Выделить набор типов для ссылки в отдельный тип input-а (Link), для того
     чтобы сделать для него отдельную форму редактирования в редактори и
     использовать для единичных ссылок (например в NavBar)
@@ -62,6 +71,7 @@
 * [ ] разобраться с PropTypes.object
 * [ ] Фиксануть TODO-шки
 * [ ] В названии типа полей для редактора писть FieldString вместо 'string'
+* [x] Описать initialState в ветках (начиная с reducers/application) (30 минут, сложно)
 
 
 ## Фичи
@@ -88,7 +98,6 @@
 * [ ] Во StringEditable (а может и RichEditable) превращать перевод строки в
     <br>
 * [ ] В Preview режиме использовать стили viewer, а не editor
-* [ ] Описать initialState в ветках (начиная с reducers/application) (30 минут, сложно)
 * [ ] text-align регулируется через форму (может через допклассы)
 * [ ] Скрывать OperatorPanel если мы редактируем в Redactor
 * [ ] Добавить тестирование пререндера на teamcity

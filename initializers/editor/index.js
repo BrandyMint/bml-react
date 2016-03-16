@@ -20,6 +20,8 @@ import initialState from 'constants/initialState';
 import { semverInit } from 'lib/semver';
 semverInit();
 
+initialState.application.isEditMode = true;
+
 const store = createStore(initialState);
 
 ReactDOM.render(

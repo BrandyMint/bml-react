@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import component from './component';
 
 const selector = createStructuredSelector({
-  blocks: state => state.blocks,
+  isEditMode: state => state.application.isEditMode,
 });
 
 const actions = { };

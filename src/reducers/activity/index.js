@@ -1,13 +1,16 @@
 import createReducer from 'helpers/createReducer';
 
 import {
-  SAVE_TRACKING_INFO,
-} from 'actions/tracker';
+  ON_ACTIVITY,
+} from 'actions/activity';
 
-export const initialState = { };
+const initialState = {
+  controlTimer: null,
+  isActive: false,
+};
 
 const handlers = {
-  [SAVE_TRACKING_INFO]: (state, action) => (
+  [ON_ACTIVITY]: (state, action) => (
     {
       ...state,
       ...action.payload,

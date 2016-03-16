@@ -4,9 +4,7 @@ import { changeContent } from 'actions/blocks';
 
 import LBlock from './LBlock';
 
-const selector = createStructuredSelector({
-  isEditMode: state => state.application.isEditMode,
-});
+const selector = createStructuredSelector({});
 
 const actions = {
   onContentChange: changeContent,

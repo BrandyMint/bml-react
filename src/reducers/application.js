@@ -1,11 +1,6 @@
 import createReducer from 'helpers/createReducer';
 
 import {
-  APP_ACTIVITY_ON,
-  APP_ACTIVITY_OFF,
-} from 'actions/application';
-
-import {
   LANDING_VARIANT_UPDATE_SUCCESS,
   LANDING_VARIANT_UPDATE_FAILURE,
   LANDING_VARIANT_UPDATE_REQUEST,
@@ -30,13 +25,23 @@ import {
   CURRENT_BLOCK,
 } from 'actions/blocks';
 
-import initialState from 'constants/initialState';
-
 import {
+  LOADING_STATE_NONE,
   LOADING_STATE_LOADING,
   LOADING_STATE_FAILURE,
   LOADING_STATE_LOADED,
 } from 'constants/loadingStates';
+
+export const initialState = {
+  exitUrl: '/',
+  variantUuid: null,
+
+  loadingState: LOADING_STATE_NONE,
+
+  isEditMode: false,
+  isSaving: false,
+  hasUnsavedChanges: false,
+};
 
 const unsavedChanges = value => state => ({
   ...state, hasUnsavedChanges: value,
@@ -46,24 +51,12 @@ const savingChanges = value => state => ({
   ...state, isSaving: value,
 });
 
-const appActivityOff = state => ({
-  ...state,
-  controlActivityTimeoutId: null,
-});
-
-const appActivityOn = (state, action) => ({
-  ...state, controlActivityTimeoutId: action.payload.timeoutId,
-});
-
 const currentBlock = (state, action) => ({
   ...state, currentBlockUuid: action.payload.uuid,
 });
 
 const handlers = {
   [CURRENT_BLOCK]: currentBlock,
-
-  [APP_ACTIVITY_ON]: appActivityOn,
-  [APP_ACTIVITY_OFF]: appActivityOff,
 
   [LANDING_VARIANT_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),
   [LANDING_VARIANT_LOAD_FAILURE]: state => ({ ...state, loadingState: LOADING_STATE_FAILURE }),
@@ -87,4 +80,4 @@ const handlers = {
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
 };
 
-export default createReducer(initialState.application, handlers);
+export default createReducer(initialState, handlers);
