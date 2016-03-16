@@ -1,23 +1,17 @@
-import { LOADING_STATE_NONE } from 'constants/loadingStates';
+import { initialState as modalInitialState } from 'reducers/modal';
+import { initialState as trackerInitialState } from 'reducers/tracker';
+import { initialState as blocksInitialState } from 'reducers/blocks';
+import { initialState as applicationInitialState } from 'reducers/application';
+import { initialState as activityInitialState } from 'reducers/activity';
+import { initialState as addBlockFormInitialState } from 'reducers/addBlockForm';
+import { initialState as editBlockFormInitialState } from 'reducers/editBlockForm';
 
-// TODO брать initialState-ы веток из reducer-ов
 export default {
-  addBlockForm: {
-    selectedIndex: null,
-    position: null,
-  },
-  tracker: {},
-  application: {
-    exitUrl: '/',
-
-    variantUuid: null,
-
-    loadingState: LOADING_STATE_NONE,
-    isSaving: false,
-    hasUnsavedChanges: false,
-  },
-  blocks: [], // Blocks,
-  modal: {
-    current: null,
-  },
+  tracker: trackerInitialState,
+  application: applicationInitialState,
+  blocks: blocksInitialState,
+  modal: modalInitialState,
+  activity: activityInitialState,
+  addBlockForm: addBlockFormInitialState,
+  editBlockForm: editBlockFormInitialState,
 };

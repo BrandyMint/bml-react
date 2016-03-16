@@ -13,7 +13,7 @@ import {
   CHANGE_FORM,
 } from 'actions/editBlockForm';
 
-const initialState = {
+export const initialState = {
   block: {
     uuid: '',
     type: '',

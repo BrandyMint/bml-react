@@ -14,7 +14,7 @@ import {
 export const ADD_BLOCK = 'addBlock';
 export const EDIT_BLOCK = 'editBlock';
 
-const initialState = {
+export const initialState = {
   current: null,
 };
 

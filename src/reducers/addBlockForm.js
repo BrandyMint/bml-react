@@ -7,7 +7,7 @@ import {
   SUBMIT_ADDING_BLOCK,
 } from 'actions/blocks';
 
-const initialState = {
+export const initialState = {
   selectedIndex: null,
   position: null,
 };

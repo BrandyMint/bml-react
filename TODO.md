@@ -70,6 +70,7 @@
 * [ ] разобраться с PropTypes.object
 * [ ] Фиксануть TODO-шки
 * [ ] В названии типа полей для редактора писть FieldString вместо 'string'
+* [x] Описать initialState в ветках (начиная с reducers/application) (30 минут, сложно)
 
 
 ## Фичи
@@ -96,7 +97,6 @@
 * [ ] Во StringEditable (а может и RichEditable) превращать перевод строки в
     <br>
 * [ ] В Preview режиме использовать стили viewer, а не editor
-* [ ] Описать initialState в ветках (начиная с reducers/application) (30 минут, сложно)
 * [ ] text-align регулируется через форму (может через допклассы)
 * [ ] Скрывать OperatorPanel если мы редактируем в Redactor
 * [ ] Добавить тестирование пререндера на teamcity

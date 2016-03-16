@@ -25,13 +25,22 @@ import {
   CURRENT_BLOCK,
 } from 'actions/blocks';
 
-import initialState from 'constants/initialState';
-
 import {
+  LOADING_STATE_NONE,
   LOADING_STATE_LOADING,
   LOADING_STATE_FAILURE,
   LOADING_STATE_LOADED,
 } from 'constants/loadingStates';
+
+export const initialState = {
+  exitUrl: '/',
+
+  variantUuid: null,
+
+  loadingState: LOADING_STATE_NONE,
+  isSaving: false,
+  hasUnsavedChanges: false,
+};
 
 const unsavedChanges = value => state => ({
   ...state, hasUnsavedChanges: value,
@@ -70,4 +79,4 @@ const handlers = {
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
 };
 
-export default createReducer(initialState.application, handlers);
+export default createReducer(initialState, handlers);

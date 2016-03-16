@@ -27,7 +27,7 @@ import {
   DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
-const initialState = [];
+export const initialState = [];
 
 const handlers = {
   [UP_BLOCK_POSITION]: upBlockPosition,
