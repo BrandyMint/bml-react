@@ -10,7 +10,7 @@ class LBlockSection extends Component {
     // Пример placholer AddButton (<div style={{ height: 30, backgroundColor: '#000' }} />) : null;
 
     return (
-      <div className="LBlocks-section">
+      <div>
         <LBlock block={block} />
         <LBlockAddButton index={index + 1} />
       </div>

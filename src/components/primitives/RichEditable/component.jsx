@@ -53,7 +53,6 @@ class RichEditable extends Component {
     const { className, tagName, isEditMode } = this.props;
     const { value } = this.state;
 
-
     if (isEditMode) {
       const classes = classnames(className, 'Redactor');
       return (

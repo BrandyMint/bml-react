@@ -34,10 +34,11 @@ import {
 
 export const initialState = {
   exitUrl: '/',
-
   variantUuid: null,
 
   loadingState: LOADING_STATE_NONE,
+
+  isEditMode: false,
   isSaving: false,
   hasUnsavedChanges: false,
 };

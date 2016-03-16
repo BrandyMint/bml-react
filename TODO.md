@@ -42,7 +42,7 @@
 ## Refactor (JS)
 
 * [ ] глобальный onMouseMove в AddButton
-* [ ] вместо blocks хранить в стейте и в API site
+* [ ] вместо blocks хранить в стейте и в API ветку site
 * [ ] Обязательный футер со Сделано на ...
 * [ ] backgroundResolver применять только:
       * [ ] При чтении сайта из API
