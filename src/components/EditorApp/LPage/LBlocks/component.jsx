@@ -12,8 +12,6 @@ class LBlocks extends Component {
   render() {
     const { blocks } = this.props;
 
-    console.log('LBlocks',  Date.now());
-
     if (isEmpty(blocks)) {
       return (<EmptyPlaceholder />);
     }

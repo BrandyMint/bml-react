@@ -1,8 +1,10 @@
-export default (state, action) => {
+import backgroundResolver from 'helpers/backgroundResolver';
+
+export default (blocks, action) => {
   const { block, position } = action.payload;
-  const newState = [...state];
+  const newState = [...blocks];
 
   newState.splice(position, 0, block);
 
-  return newState;
+  return backgroundResolver(newState);
 };
