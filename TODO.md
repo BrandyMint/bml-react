@@ -52,7 +52,7 @@
 * [ ] компилировать альтернативный dist без ужатия JS и CSS (-develop) версия
 * [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
 * [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
-* [ ] move CustomPropTypes.location. в views/types/Map
+* [x] move CustomPropTypes.location. в views/types/Map
 * [ ] Выделить набор типов для ссылки в отдельный тип input-а (Link), для того
     чтобы сделать для него отдельную форму редактирования в редактори и
     использовать для единичных ссылок (например в NavBar)

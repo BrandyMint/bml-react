@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { FIELD_COMPONENTS } from '../../schemaFieldTypes';
-import CustomPropTypes from 'constants/customPropTypes';
+import { MapLocationType } from 'views/types/mapType';
 
 const FieldSubitem = ({ field, value, onChange }) => {
   const FieldComponent = FIELD_COMPONENTS[field.type];
@@ -16,7 +16,7 @@ const FieldSubitem = ({ field, value, onChange }) => {
 const FieldValue = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.number,
-  CustomPropTypes.location,
+  MapLocationType,
 ]);
 
 FieldSubitem.propTypes = {

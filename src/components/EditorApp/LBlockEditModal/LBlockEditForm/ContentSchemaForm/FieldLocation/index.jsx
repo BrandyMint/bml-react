@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import CustomPropTypes from 'constants/customPropTypes';
+import { MapLocationType } from 'views/types/mapType';
 import assign from 'lodash/assign';
 import FormGroup from '../FormGroup';
 
@@ -12,7 +12,7 @@ export default class FieldLocation extends Component {
       key: PropTypes.string.isRequired,
       isRequired: PropTypes.bool.isRequired,
     }),
-    value: CustomPropTypes.location.isRequired,
+    value: MapLocationType.isRequired,
     onChange: PropTypes.func.isRequired,
   };
 
