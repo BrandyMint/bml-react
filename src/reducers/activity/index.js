@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   controlTimer: null,
+  isActive: false,
 };
 
 const handlers = {

@@ -41,16 +41,15 @@
 
 ## Refactor (JS)
 
-* [ ] глобальный onMouseMove в AddButton
-* [ ] вместо blocks хранить в стейте и в API ветку site
-* [ ] Обязательный футер со Сделано на ...
-* [ ] backgroundResolver применять только:
-      * [ ] При чтении сайта из API
+* [x] глобальный onMouseMove в AddButton
+* [.] backgroundResolver применять только:
+      * [.] При чтении сайта из API
       * [ ] При добавлении нового блока
       * [ ] При изменении фоновых параметров блока
-* [ ] AddButton перенести в Layer
+* [ ] вместо blocks хранить в стейте и в API ветку site
+* [ ] Обязательный футер со Сделано на ...
 * [ ] компилировать альтернативный dist без ужатия JS и CSS (-develop) версия
-* [ ] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
+* [x] Разобраться с руганью ч консоли http://3000.vkontraste.ru/editor/fullViewsExamples
 * [ ] Чем ContentSection3 (без картинки) отличается от FreeText с кнопками?
 * [x] move CustomPropTypes.location. в views/types/Map
 * [ ] Выделить набор типов для ссылки в отдельный тип input-а (Link), для того

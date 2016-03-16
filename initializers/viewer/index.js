@@ -12,6 +12,8 @@ import LandingLoader from 'components/LandingLoader';
 import ShowApp from 'components/ShowApp';
 import initialState from 'constants/initialState';
 
+import backgroundResolver from 'helpers/backgroundResolver';
+
 import config from 'constants/config';
 
 import { semverInit } from 'lib/semver';
@@ -39,7 +41,10 @@ global.ShowDemo = () => {
 
 class Viewer extends Component {
   render() {
-    const store = createStore(this.props);
+    let state = this.props;
+    state.blocks = backgroundResolver(state.blocks);
+
+    const store = createStore(state);
 
     return (
       <Provider store={store}>

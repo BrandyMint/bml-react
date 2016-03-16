@@ -9,6 +9,7 @@ import EditorLeftSidebar from './EditorLeftSidebar';
 import EditorRightSidebar from './EditorRightSidebar';
 
 import Tracker from 'components/Tracker';
+import ActivityController from 'components/ActivityController';
 
 import './index.css';
 
@@ -16,17 +17,19 @@ class EditorApp extends Component {
   render() {
     return (
       <Tracker>
-        <BodyClassName className="EditorApp">
-          <div className="BML-App LApplicationEditor">
-            <EditorLeftSidebar />
-            <div className="LApplicationEditor-content">
-              <LPage />
+        <ActivityController>
+          <BodyClassName className="EditorApp">
+            <div className="BML-App LApplicationEditor">
+              <EditorLeftSidebar />
+              <div className="LApplicationEditor-content">
+                <LPage />
+              </div>
+              <EditorRightSidebar />
+              <LBlockAddModal />
+              <LBlockEditModal />
             </div>
-            <EditorRightSidebar />
-            <LBlockAddModal />
-            <LBlockEditModal />
-          </div>
-        </BodyClassName>
+          </BodyClassName>
+        </ActivityController>
       </Tracker>
     );
   }
