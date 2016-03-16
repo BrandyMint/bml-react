@@ -41,14 +41,9 @@
 
 ## Refactor (JS)
 
-* [ ] Выделить
-      <ReactCSSTransitionGroup
-        component="div"
-        transitionName="animation"
-        transitionEnterTimeout={TRANSITION_TIMEOUT}
-        transitionLeaveTimeout={TRANSITION_TIMEOUT}
+* [ ] глобальный onMouseMove в AddButton
 * [ ] вместо blocks хранить в стейте и в API site
-* [ ] Обязательный футер
+* [ ] Обязательный футер со Сделано на ...
 * [ ] backgroundResolver применять только:
       * [ ] При чтении сайта из API
       * [ ] При добавлении нового блока

@@ -3,8 +3,6 @@ import React, { PropTypes, Component } from 'react';
 import LBlockAddButton from '../LBlockAddButton';
 import LBlock from '../LBlock';
 
-import partial from 'lodash/partial';
-
 class LBlockSection extends Component {
   render() {
     const { block, index } = this.props;
@@ -14,15 +12,15 @@ class LBlockSection extends Component {
     return (
       <div className="LBlocks-section">
         <LBlock block={block} />
-        <LBlockAddButton index={index+1} />
+        <LBlockAddButton index={index + 1} />
       </div>
     );
-  };
+  }
 }
 
 LBlockSection.propTypes = {
   block: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired,
-}
+};
 
 export default LBlockSection;

@@ -20,14 +20,16 @@ class LBlocks extends Component {
         <div className="LBlocks">
           <EmptyPlaceholder
             onAddBlock={partial(onAddBlock, 0)}
-            />
-        </div>)
+          />
+        </div>);
     }
 
     return (
       <div className="LBlocks">
       <Animated >
-        {map(blocks, (block, index) => <LBlockSection block={block} index={index} key={block.uuid} />) }
+        {map(blocks, (block, index) =>
+           <LBlockSection block={block} index={index} key={block.uuid} />
+        )}
       </Animated>
       </div>
     );

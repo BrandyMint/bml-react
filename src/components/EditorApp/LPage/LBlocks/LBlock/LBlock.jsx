@@ -16,7 +16,7 @@ class LBlock extends Component {
   }
 
   render() {
-    const { block, onActive } = this.props;
+    const { block } = this.props;
 
     return (
       <LBlockLayer block={block} >
@@ -27,7 +27,7 @@ class LBlock extends Component {
 }
 
 LBlock.propTypes = {
-  block:           PropTypes.object.isRequired, // TODO block shape
+  block: PropTypes.object.isRequired, // TODO block shape
   onContentChange: PropTypes.func.isRequired,
 };
 

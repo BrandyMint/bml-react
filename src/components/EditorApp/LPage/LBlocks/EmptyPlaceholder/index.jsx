@@ -1,11 +1,10 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import LBlockAddButton from '../LBlockAddButton';
 
 import './index.css';
 
 class EmptyPlaceholder extends Component {
   render() {
-    const { onAddBlock } = this.props;
     return (
         <div>
           <div className="LBlocksEmptyPlaceholder">
@@ -19,9 +18,5 @@ class EmptyPlaceholder extends Component {
     );
   }
 }
-
-EmptyPlaceholder.propTypes = {
-  onAddBlock: PropTypes.func.isRequired,
-};
 
 export default EmptyPlaceholder;

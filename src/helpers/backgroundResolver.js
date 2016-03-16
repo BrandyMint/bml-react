@@ -33,7 +33,6 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
 export default (blocks) => {
   let prevBackgroundStyle = null;
 
-  console.log('backgroundResolver', blocks);
   return map(blocks, (block) => {
     const backgroundStyle = getBackgroundStyle(block, prevBackgroundStyle);
     prevBackgroundStyle = backgroundStyle;

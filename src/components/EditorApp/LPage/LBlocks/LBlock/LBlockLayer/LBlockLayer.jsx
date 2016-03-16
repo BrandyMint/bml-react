@@ -114,8 +114,6 @@ LBlockLayer.propTypes = {
   onEditingStart: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
-
-  onCurrentBlock:  PropTypes.func.isRequired,
 };
 
 export default LBlockLayer;
