@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import config from 'constants/config';
 
 class ContentFormSecrets extends Component {
   constructor(props, context) {
@@ -21,6 +22,8 @@ class ContentFormSecrets extends Component {
     const { cookie } = this.state;
 
     const tracking = JSON.stringify(tracker);
+
+    const viewerUid = config('viewerUid');
     return (
       <div>
         <input
@@ -38,6 +41,13 @@ class ContentFormSecrets extends Component {
           type="hidden"
           value={variantUuid}
         />
+        {viewerUid &&
+          <input
+            name="viewer_uid"
+            type="hidden"
+            value={viewerUid}
+          />
+          }
       </div>
     );
   }
