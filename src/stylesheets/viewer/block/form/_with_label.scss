@@ -1,0 +1,10 @@
+.input-with-label span {
+  @extend .font-family-input;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $colorDark;
+  letter-spacing: 1px;
+  font-weight: 700;
+  display: block;
+  cursor: default;
+}
