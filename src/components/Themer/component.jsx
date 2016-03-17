@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react';
-import classnames from 'classnames';
+import BodyClassName from 'react-body-classname';
 
 const Themer = ({ className, theme, children }) => {
-  const classNames = classnames(className, theme.class);
   return (
-    <div className={classNames}>
-      {children}
-    </div>
+    <BodyClassName className={theme.class}>
+      <div className={className}>
+        {children}
+      </div>
+    </BodyClassName>
   );
 };
 
