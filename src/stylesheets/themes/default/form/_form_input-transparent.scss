@@ -1,0 +1,17 @@
+.image-bg.bg-light input.transparent,
+.image-bg.bg-light button.transparent {
+  border-color: $colorDark;
+}
+
+input.transparent,
+button.transparent {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: $colorWhite !important;
+}
+
+input.transparent:placeholder,
+button.transparent:placeholder {
+  color: $colorWhite;
+}
+

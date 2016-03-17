@@ -1,0 +1,29 @@
+blockquote {
+  overflow: hidden;
+  font-family: $font-family-quote;
+  font-size: 20px;
+  line-height: 40px;
+  font-style: italic;
+  background: $secondaryBackgroundColor;
+  padding: 32px;
+  color: $colorBlockquote;
+  font-weight: 300;
+}
+
+.bg-secondary blockquote {
+  background: $colorWhite;
+  border-color: $colorPrimary;
+}
+
+blockquote .author {
+  font-size: 12px;
+  display: block;
+  float: right;
+  margin-top: 16px;
+}
+@media all and (max-width: 767px) {
+  blockquote {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}

@@ -1,0 +1,19 @@
+.list-inline {
+  margin-left: 0;
+}
+
+.list-inline > li {
+  padding: 0 8px;
+}
+
+.list-inline > li:last-child {
+  padding-right: 0;
+}
+
+.list-inline > li:first-child {
+  padding-left: 0;
+}
+
+.bg-primary .list-inline i {
+  opacity: 0.9;
+}

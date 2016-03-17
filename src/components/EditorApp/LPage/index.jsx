@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import classnames from 'classnames';
+import Themer from 'components/Themer';
 
 import LBlocks from './LBlocks';
 import LFooter from './LFooter';
@@ -37,14 +38,14 @@ class LPage extends Component {
     // const contentStyles = { width: document.width - 80 };
 
     return (
-      <div className={classes}>
+      <Themer className={classes}>
         <div className="LPage-content">
           <LBlocks />
         </div>
         { false && (<div className={footerClasses}>
           <LFooter state={footerState} onChangeState={onChangeState}/>
         </div>)}
-      </div>
+      </Themer>
     );
   }
 }

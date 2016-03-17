@@ -1,0 +1,28 @@
+$colorLinkHover: darken($colorPrimary, 10%);
+
+$colorBlockquote: $colorPlaceholder;
+$colorSelectText: $colorPlaceholder;
+
+$defaultBackgroundColor: $colorWhite;
+$backgroundColorDark: $colorDark;
+
+$colorPrimaryBg: $colorPrimary;
+$colorPrimaryText: $colorWhite;
+
+$colorInputOutlineFocus: $colorBoder;
+$colorHR: $colorBoder;
+
+// form states
+
+// $successBackgroundColor: #58ce38;
+// $successTextColor: $colorWhite;
+// $errorBackgroundColor: #ce3838;
+
+// $colorFeature2: #40a269;
+// $colorFeature3: $colorLinkHover;
+// $backgroundFeatureBoxed: #363636;
+
+// $colorRed: #e31d3b;
+/*.color-primary {*/
+  /*color: $colorPrimary !important;*/
+/*}*/

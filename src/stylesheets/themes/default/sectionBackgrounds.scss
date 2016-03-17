@@ -1,0 +1,50 @@
+@import 'themes/mixins';
+
+.bg-primary {
+  background: $colorPrimary !important;
+  color: $colorWhite;
+  @include submitElements {
+    border: 2px solid $colorPrimary;
+    background: $colorWhite;
+    color: $colorPrimary;
+  }
+}
+
+.bg-light.bg--even {
+  background: $secondaryBackgroundColor;
+  color: $colorBody;
+  @include headerElements {
+    color: $colorPrimary;
+  }
+  @include inputElements {
+    background: $colorWhite;
+  }
+}
+
+.bg-light {
+  background: $colorWhite;
+  color: $colorBody;
+
+  @include headerElements {
+    color: $colorPrimary;
+  }
+
+  @include submitElements {
+    border: 2px solid $colorPrimary;
+    background: $colorPrimary;
+    color: $colorPrimaryText;
+  }
+
+  @include inputElements {
+    color: $colorDarkHR;
+  }
+}
+
+.bg-dark {
+  background: $backgroundColorDark;
+  color: $colorWhite;
+}
+
+.image-bg {
+  color: $colorWhite;
+}

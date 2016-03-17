@@ -1,0 +1,15 @@
+@media all and (min-width: 991px) {
+  input.col-md-6,
+  button.col-md-6 {
+    width: 49%;
+    float: left;
+  }
+  input.col-md-6:first-of-type,
+  button.col-md-6:first-of-type {
+    margin-right: 1%;
+  }
+  input.col-md-6:last-of-type,
+  button.col-md-6:last-of-type {
+    margin-left: 1%;
+  }
+}

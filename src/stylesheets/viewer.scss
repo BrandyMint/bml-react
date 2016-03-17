@@ -2,35 +2,21 @@
 @import '~react-widgets/dist/css/react-widgets.css';
 
 @import 'shared/media';
-@import 'viewer/colors';
 
-@import 'shared/bootstrap_overwrites';
-@import 'shared/OpacityIcon';
-@import 'shared/IconLink';
-@import 'shared/animation';
-@import 'shared/spacing-dash';
-@import 'shared/spacing-acid';
-@import 'shared/layout_alignments';
-@import 'shared/ModalOpen';
+@import 'viewer/bootstrap_overwrites';
+@import 'viewer/animation';
+@import 'viewer/spacing-dash';
+@import 'viewer/spacing-acid';
+@import 'viewer/layout_alignments';
+@import 'viewer/OpacityIcon';
+@import 'viewer/IconLink';
+@import 'viewer/ModalOpen';
 
 @import 'viewer/zindexes';
-
 @import 'viewer/BML-section';
 @import 'viewer/BML-utils';
+@import 'viewer/utils/index.scss'; // TODO Пернести в BML-utils
+@import 'viewer/core';
 
-// CORESTYLE v0.4
-@import 'viewer/core/common';
-@import 'viewer/core/utils';
-@import 'viewer/core/utils/fade';
-@import 'viewer/core/utils/list-inline';
-// @import 'viewer/core/show-grid';
-@import 'viewer/core/utils/text-aligns';
-@import 'viewer/core/sections';
-@import 'viewer/core/buttons';
-@import 'viewer/core/default/colours';
-@import 'viewer/core/image-bg/colours';
-@import 'viewer/core/typography';
-
-@import 'viewer/block/index';
-
-// @import 'fonts';
+@import 'themes/green';
+@import 'themes/red';
