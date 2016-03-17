@@ -1,10 +1,13 @@
-export default [
+const Themes = [
   {
-    title: 'green',
-    css: 'green.css',
+    name: 'green',
+    class: 'Theme-green',
   },
   {
-    title: 'blue',
-    css: 'blue.css',
+    name: 'red',
+    class: 'Theme-red',
   },
 ];
+
+export const DefaultTheme = Themes[0];
+export default Themes;

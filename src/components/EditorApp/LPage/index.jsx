@@ -37,7 +37,6 @@ class LPage extends Component {
 
     // const contentStyles = { width: document.width - 80 };
 
-    console.log('LPage');
     return (
       <Themer className={classes}>
         <div className="LPage-content">

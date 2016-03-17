@@ -1,11 +1,16 @@
 import createReducer from 'helpers/createReducer';
 
-import Themes from 'constants/themes';
+import { CHANGE_THEME } from 'actions/site';
+import { DefaultTheme } from 'constants/themes';
+
+import changeTheme from './handlers/changeTheme';
 
 export const initialState = {
-  theme: Themes[0],
+  theme: DefaultTheme,
 };
 
-const handlers = { };
+const handlers = {
+  [CHANGE_THEME]: changeTheme,
+};
 
 export default createReducer(initialState, handlers);

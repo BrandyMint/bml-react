@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Themer = ({ className, children }) => {
-  const classNames = classnames(className, 'Theme-green');
-  console.log("Themer", classNames);
+const Themer = ({ className, theme, children }) => {
+  const classNames = classnames(className, theme.class);
   return (
     <div className={classNames}>
       {children}
@@ -14,7 +13,7 @@ const Themer = ({ className, children }) => {
 Themer.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  theme: PropTypes.object.isRequired,
 };
 
 export default Themer;
-
