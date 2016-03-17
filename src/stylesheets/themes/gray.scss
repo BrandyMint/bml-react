@@ -1,0 +1,9 @@
+.Theme-gray {
+  @import './fonts';
+  @import './gray/colors';
+  @import './default/body';
+  @import './colorDefinitions';
+  @import './default/index';
+
+  @include body;
+}
