@@ -19,6 +19,7 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
       'image-bg': hasImage,
       'bg-secondary': secondary,
       'bg-dark': dark,
+      'bg-common': !dark,
     }
   );
 

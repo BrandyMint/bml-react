@@ -1,4 +1,7 @@
-/*!---------- 02. FORMS ----------*/
+@import 'viewer/backgroundMixins';
+@import 'viewer/buttonMixin';
+
+$inputHeight: 50px;
 
 .form-input-mixin {
   background: $secondaryBackgroundColor;
@@ -13,9 +16,7 @@
 
 .BML-form {
   @import 'form/placeholder';
-}
 
-.BML-form {
   &.form-inline {
     .form-group {
       margin-right: 25px;
@@ -35,7 +36,7 @@
   input:not([type="submit"]) {
     @extend .form-input-mixin;
 
-    height: 50px;
+    height: $inputHeight;
     padding-left: 20px;
     font-weight: 500;
   }
@@ -45,15 +46,17 @@
     padding: 16px 20px;
   }
 
-  input[type="submit"],
-  button[type="submit"] {
-    padding: 0 25px; // Например кнопка у InlineForm
-    height: 50px;
+  @include submit {
+		// Например кнопка у InlineForm
+    padding: 0 25px;
+    height: $inputHeight;
     line-height: 48px;
-    border: 2px solid $colorPrimary;
-    background: $colorPrimary;
-    color: $colorPrimaryText;
     width: 100%;
+
+    /*border: 2px solid $colorPrimary;*/
+    /*background: $colorPrimary;*/
+    /*color: $colorPrimaryText;*/
+
     font-size: 11px;
     text-transform: uppercase;
     font-weight: bold;
@@ -63,27 +66,35 @@
       outline: none;
     }
   }
+}
 
-  .bg-primary  {
-    input[type="submit"],
-    button[type="submit"] {
-      background: $colorWhite;
-      color: $colorPrimary;
-    }
+@include withBackgroundCommon {
+  @include submit {
+    border: 2px solid $colorPrimary;
+    background: $colorPrimary;
+    color: $colorPrimaryText;
   }
+}
 
-  .bg-secondary {
-    input:not([type="submit"]),
-    textarea,
-    select {
-      background: $colorWhite;
-    }
+@include withBackgroundPrimary {
+  @include submit {
+    border: 2px solid $colorPrimary;
+    background: $colorWhite;
+    color: $colorPrimary;
   }
+}
 
-  .image-bg {
-    input:not([type="submit"]),
-    textarea {
-      color: #555;
-    }
+@include withBackgroundSecondary {
+  input:not([type="submit"]),
+  textarea,
+  select {
+    background: $colorWhite;
+  }
+}
+
+@include withBackgroundDark {
+  input:not([type="submit"]),
+  textarea {
+    color: $colorDarkHR;
   }
 }
