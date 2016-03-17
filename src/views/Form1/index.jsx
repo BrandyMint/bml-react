@@ -20,6 +20,7 @@ class Form1 extends Component {
             <div className="col-sm-6 col-md-5 col-md-offset-1">
               <RichEditable
                 data={content}
+                className="headers-margin-top"
                 fieldName="text"
                 tagName="div"
               />

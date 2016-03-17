@@ -1,5 +1,5 @@
 .icon {
-    font-size: 64px;
+    font-size: 6.4rem;
     display: inline-block;
     color: $colorDark;
 }
@@ -14,29 +14,29 @@
 }
 
 .icon-lg {
-    font-size: 80px;
+    font-size: 8.0rem;
 }
 
 .icon-sm {
-    font-size: 32px;
+    font-size: 3.2rem;
 }
 
 .icon-xs {
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 @media all and (max-width: 767px) {
     .icon {
-        font-size: 48px;
+        font-size: 4.8rem;
     }
     .icon-lg {
-        font-size: 64px;
+        font-size: 6.4rem;
     }
     .icon-sm {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
     .icon-xs {
-        font-size: 16px;
+        font-size: 1.6rem;
     }
 }
 

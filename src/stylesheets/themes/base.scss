@@ -1,42 +1,7 @@
-$base-font-size: 1.5em;
-$base-line-height: 1.25 * $base-font-size;
+$base: 0.8rem; // Половина размера шрифта
+$golden: 1.617;
+$base-line-height: $base * 4; // 24rem
 
-$ratio: 1.3;
-
-$type-settings: (
-  -1: (
-    font-size: $base-font-size / $ratio,
-    line-height: $base-line-height
-  ),
-  0: (
-    font-size: $base-font-size,
-    line-height: $base-line-height
-  ),
-  1: (
-    font-size: $base-font-size * $ratio,
-    line-height: $base-line-height
-  ),
-  2: (
-    font-size: $base-font-size * $ratio * 2,
-    line-height: $base-line-height
-  ),
-  3: (
-    font-size: $base-font-size * $ratio * 3,
-    line-height: $base-line-height
-  )
-);
-
-@function type-scale($level) {
-  @return map-get(
-    map-get($type-settings, $level), 'font-size');
-}
-
-@function line-height($level) {
-  @return map-get(
-    map-get($type-settings, $level), 'line-height');
-}
-
-@mixin type-setting($level) {
-  font-size: type-scale($level);
-  line-height: line-height($level);
+@function base($n) {
+  @return $n * $base;
 }

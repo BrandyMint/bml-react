@@ -1,13 +1,13 @@
 blockquote {
   overflow: hidden;
   font-family: $font-family-quote;
-  font-size: 20px;
-  line-height: 40px;
+  font-size: 1.0em;
+  font-weight: 300;
+  line-height: 1.8em;
   font-style: italic;
   background: $secondaryBackgroundColor;
-  padding: 32px;
+  // padding: 3.2em;
   color: $colorBlockquote;
-  font-weight: 300;
 }
 
 .bg-secondary blockquote {
@@ -16,14 +16,15 @@ blockquote {
 }
 
 blockquote .author {
-  font-size: 12px;
+  font-size: 1.2rem;
   display: block;
   float: right;
-  margin-top: 16px;
+  margin-top: 1.6rem;
 }
+
 @media all and (max-width: 767px) {
   blockquote {
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
   }
 }

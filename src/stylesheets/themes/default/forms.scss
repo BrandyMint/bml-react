@@ -1,6 +1,6 @@
 @import 'themes/mixins';
 
-$inputHeight: 50px;
+$inputHeight: 5.0rem;
 
 .form-input-mixin {
   background: $secondaryBackgroundColor;
@@ -10,7 +10,7 @@ $inputHeight: 50px;
   &:focus {
     outline: 1px solid $colorInputOutlineFocus;
   }
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }
 
 .BML-form {
@@ -18,7 +18,7 @@ $inputHeight: 50px;
 
   &.form-inline {
     .form-group {
-      margin-right: 25px;
+      margin-right: 2.5rem;
       &:last-of-type {
         margin-right: 0px;
       }
@@ -36,23 +36,23 @@ $inputHeight: 50px;
     @extend .form-input-mixin;
 
     height: $inputHeight;
-    padding-left: 20px;
+    padding-left: 2.0rem;
     font-weight: 500;
   }
 
   textarea {
     @extend .form-input-mixin;
-    padding: 16px 20px;
+    padding: 1.6rem 20px;
   }
 
   @include submitElements {
 		// Например кнопка у InlineForm
     padding: 0 25px;
     height: $inputHeight;
-    line-height: 48px;
+    line-height: 4.8rem;
     width: 100%;
 
-    font-size: 11px;
+    font-size: 1.1rem;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;

@@ -1,5 +1,5 @@
 .feature.boxed {
-    padding: 32px;
+    padding: 3.2rem;
     background: $secondaryBackgroundColor;
 }
 
@@ -16,12 +16,12 @@
 }
 
 .feature.bordered {
-    padding: 32px;
+    padding: 3.2rem;
     border: 1px solid $colorBorder;
 }
 
 .feature {
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
 }
 
 .feature p:last-child {
@@ -31,33 +31,33 @@
 @media all and (max-width: 767px) {
     .feature.boxed,
     .feature.bordered {
-        padding: 24px;
+        padding: 2.4rem;
     }
 }
 
 @media all and (max-width: 990px) {
     .feature .icon-lg {
-        font-size: 40px;
+        font-size: 4.0rem;
     }
 }
 
 .feature-1 i {
     display: inline-block;
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
     color: $colorPrimary;
 }
 
 .feature-2 i {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 8.0rem;
+    height: 8.0rem;
     border: 1px solid $colorPrimary;
     text-align: center;
-    line-height: 80px;
+    line-height: 8.0rem;
     color: $colorPrimary;
     border-radius: 50%;
     margin: 0 auto;
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -152,7 +152,7 @@
 @media all and (max-width: 1280px) {
     .feature-5 {
         height: auto;
-        padding: 80px 48px;
+        padding: 8.0rem 48px;
     }
     .feature-5 .v-align-transform {
         top: 0;
@@ -173,7 +173,7 @@
         width: 100%;
     }
     .feature-5 {
-        padding: 40px 24px;
+        padding: 4.0rem 24px;
     }
 }
 

@@ -1,19 +1,19 @@
 .checkbox-option,
 .radio-option {
   display: inline-block;
-  width: 50px;
-  height: 25px;
-  border-radius: 25px;
+  width: 5.0rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
   border: 1px solid $colorPrimary;
   cursor: pointer;
   user-select: none;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }
 
 .checkbox-option .inner,
 .radio-option .inner {
-  width: 19px;
-  height: 19px;
+  width: 1.9rem;
+  height: 1.9rem;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0);
   border: 1px solid $colorPrimary;
@@ -37,13 +37,13 @@
 }
 
 .radio-option {
-  width: 25px;
-  height: 25px;
+  width: 2.5rem;
+  height: 2.5rem;
   text-align: left;
 }
 
 .radio-option:nth-of-type(n+2) {
-  margin-left: 24px;
+  margin-left: 2.4rem;
 }
 
 .radio-option input {
@@ -55,15 +55,15 @@
 
 .radio-option .inner {
   border: none;
-  width: 19px;
-  height: 19px;
+  width: 1.9rem;
+  height: 1.9rem;
   left: 2px;
   transform: scale(0);
 }
 
 .radio-option + span {
   display: inline-block;
-  line-height: 25px;
+  line-height: 2.5rem;
 }
 
 .radio-option.checked .inner {
