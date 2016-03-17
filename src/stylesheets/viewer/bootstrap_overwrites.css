@@ -1,6 +1,6 @@
 html {
-  min-height: 100%;
   /*// http://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
+  min-height: 100%;
   font-size: 62.5%;
 }
 
@@ -19,4 +19,3 @@ body {
 .container {
   position: relative;
 }
-

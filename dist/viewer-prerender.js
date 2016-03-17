@@ -36409,6 +36409,12 @@
 	}, {
 	  name: 'red',
 	  class: 'Theme-red'
+	}, {
+	  name: 'blue',
+	  class: 'Theme-blue'
+	}, {
+	  name: 'gray',
+	  class: 'Theme-gray'
 	}];
 
 	var DefaultTheme = exports.DefaultTheme = Themes[0];
