@@ -1,0 +1,12 @@
+h1.large {
+  font-size: 72px;
+  line-height: 80px;
+  font-weight: 100;
+}
+
+@media all and (max-width: 990px) {
+  h1.large {
+    font-size: 56px;
+    line-height: 64px;
+  }
+}

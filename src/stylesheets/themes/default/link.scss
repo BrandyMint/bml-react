@@ -1,0 +1,42 @@
+a,
+a:visited,
+a:focus,
+a:active,
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+a {
+  font-weight: 600;
+  color: $colorPrimary;
+  transition: all 0.3s ease;
+  cursor: poitner;
+}
+
+.image-bg a,
+.bg-primary a {
+  color: $colorWhite;
+}
+
+.image-bg a:hover,
+.bg-primary a:hover {
+  color: $colorWhite;
+  opacity: .9;
+}
+
+.bg-light a {
+  color: $colorPrimary;
+}
+
+.bg-light a:hover {
+  color: $colorPrimary;
+  opacity: 1;
+}
+
+a:hover {
+  color: $colorLinkHover;
+  text-decoration: none;
+}
+
+

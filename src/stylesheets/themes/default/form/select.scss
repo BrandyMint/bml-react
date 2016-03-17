@@ -1,6 +1,6 @@
 select {
   appearance: none; // TODO Зачем?
-  @extend .font-family-input;
+  font-family: $font-family-input;
   height: 50px;
   background: $secondaryBackgroundColor;
   width: 100%;

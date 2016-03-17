@@ -35,7 +35,6 @@
     .height-70 .v-align-transform {
         top: 0;
         transform: none;
-        -webkit-transform: none;
     }
 }
 

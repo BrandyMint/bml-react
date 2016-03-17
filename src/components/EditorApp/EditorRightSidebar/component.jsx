@@ -7,6 +7,8 @@ import FullscreenIcon from 'react-icons/lib/md/desktop-windows';
 import MobileIcon from 'react-icons/lib/go/device-mobile';
 import EditorSaveButton from './EditorSaveButton';
 
+import ColorStyleSelector from './ColorStyleSelector';
+
 class EditorRightSidebar extends Component {
   render() {
     const { variantUuid } = this.props;
@@ -18,6 +20,7 @@ class EditorRightSidebar extends Component {
         <Link to={`/editor/${variantUuid}/mobilePreview`} className="IconLink">
           <MobileIcon />
         </Link>
+        <ColorStyleSelector />
         <div className="EditorRightSidebar-bottom">
           <EditorSaveButton />
         </div>

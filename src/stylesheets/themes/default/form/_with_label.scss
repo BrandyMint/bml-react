@@ -1,5 +1,5 @@
 .input-with-label span {
-  @extend .font-family-input;
+  font-family: $font-family-input;
   font-size: 11px;
   text-transform: uppercase;
   color: $colorDark;

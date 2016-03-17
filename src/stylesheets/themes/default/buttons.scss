@@ -19,7 +19,7 @@ button.BML-button-submit {
 .BML-section {
 
   .btn {
-    @extend .font-family-input;
+    font-family: $font-family-input;
     border: 2px solid $colorPrimary;
     padding: 0 26px;
     height: 40px;

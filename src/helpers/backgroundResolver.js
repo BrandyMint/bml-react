@@ -5,21 +5,21 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
   const hasImage = get(block, 'backgroundImage.url') || size(block.backgroundVideos) > 0;
 
   let dark = false;
-  let secondary = false;
+  let even = false;
 
   if (hasImage) {
     dark = true; // Фоны с картинками всегда считаются за темные
   } else {
     dark = false;
-    secondary = prevBackgroundStyle && !prevBackgroundStyle.secondary && !prevBackgroundStyle.dark;
+    even = prevBackgroundStyle && !prevBackgroundStyle.even && !prevBackgroundStyle.dark;
   }
 
   const bgClasses = classnames(
     {
       'image-bg': hasImage,
-      'bg-secondary': secondary,
+      'bg--even': even,
       'bg-dark': dark,
-      'bg-common': !dark,
+      'bg-light': !dark,
     }
   );
 
@@ -27,7 +27,7 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
     bgClasses,
     hasImage,
     dark,
-    secondary,
+    even,
   };
 };
 

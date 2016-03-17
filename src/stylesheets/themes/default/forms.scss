@@ -1,5 +1,4 @@
-@import 'viewer/backgroundMixins';
-@import 'viewer/buttonMixin';
+@import 'themes/mixins';
 
 $inputHeight: 50px;
 
@@ -30,7 +29,7 @@ $inputHeight: 50px;
   button,
   textarea {
     appearance: none;
-    @extend .font-family-input;
+    font-family: $font-family-input;
   }
 
   input:not([type="submit"]) {
@@ -46,16 +45,12 @@ $inputHeight: 50px;
     padding: 16px 20px;
   }
 
-  @include submit {
+  @include submitElements {
 		// Например кнопка у InlineForm
     padding: 0 25px;
     height: $inputHeight;
     line-height: 48px;
     width: 100%;
-
-    /*border: 2px solid $colorPrimary;*/
-    /*background: $colorPrimary;*/
-    /*color: $colorPrimaryText;*/
 
     font-size: 11px;
     text-transform: uppercase;
@@ -65,36 +60,5 @@ $inputHeight: 50px;
     &:focus {
       outline: none;
     }
-  }
-}
-
-@include withBackgroundCommon {
-  @include submit {
-    border: 2px solid $colorPrimary;
-    background: $colorPrimary;
-    color: $colorPrimaryText;
-  }
-}
-
-@include withBackgroundPrimary {
-  @include submit {
-    border: 2px solid $colorPrimary;
-    background: $colorWhite;
-    color: $colorPrimary;
-  }
-}
-
-@include withBackgroundSecondary {
-  input:not([type="submit"]),
-  textarea,
-  select {
-    background: $colorWhite;
-  }
-}
-
-@include withBackgroundDark {
-  input:not([type="submit"]),
-  textarea {
-    color: $colorDarkHR;
   }
 }
