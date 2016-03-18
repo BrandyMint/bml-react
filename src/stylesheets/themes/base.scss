@@ -1,0 +1,7 @@
+$base: 0.8rem; // Половина размера шрифта
+$golden: 1.617;
+$base-line-height: $base * 4; // 24rem
+
+@function base($n) {
+  @return $n * $base;
+}

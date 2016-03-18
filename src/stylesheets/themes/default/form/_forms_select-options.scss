@@ -1,16 +1,16 @@
 .select-option {
   position: relative;
   cursor: pointer;
-  height: 50px;
+  height: 5.0rem;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }
 
 .select-option i {
   position: absolute;
-  font-size: 18px;
-  right: 20px;
-  top: 14px;
+  font-size: 1.8rem;
+  right: 2.0rem;
+  top: 1.4rem;
   z-index: $zIndexFormSelectOption;
   pointer-events: none;
   transition: all 0.3s ease;

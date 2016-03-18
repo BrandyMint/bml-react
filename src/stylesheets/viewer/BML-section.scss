@@ -1,5 +1,5 @@
 .BML-section {
-  min-height: 50px;
+  min-height: base(6);
   // Покрайней мере в редакторе должна быть такая высота, чтобы хотябы панель была видна
   // Также в PlainHTML
 }
@@ -9,17 +9,17 @@
 }
 
 .BML-section--height-70 {
-  min-height: 600px;
+  min-height: base(75);
   height: 70vh;
 }
 
 .BML-section--padding {
-  padding-bottom: 96px;
-  padding-top: 96px;
+  padding-bottom: base(12);
+  padding-top: base(12);
 }
 
 @media all and (max-width: 767px) {
   .BML-section--padding {
-    padding: 80px 0;
+    padding: base(10) 0;
   }
 }

@@ -11,6 +11,8 @@ import EditorRightSidebar from './EditorRightSidebar';
 import Tracker from 'components/Tracker';
 import ActivityController from 'components/ActivityController';
 
+import BaselineGrid from 'components/BaselineGrid';
+
 import './index.css';
 
 class EditorApp extends Component {
@@ -22,6 +24,7 @@ class EditorApp extends Component {
             <div className="BML-App LApplicationEditor">
               <EditorLeftSidebar />
               <div className="LApplicationEditor-content">
+								<BaselineGrid />
                 <LPage />
               </div>
               <EditorRightSidebar />

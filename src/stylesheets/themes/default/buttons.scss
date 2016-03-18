@@ -1,19 +1,17 @@
 /*!---------- 6. BUTTONS ----------*/
 
-$button-margin-h: 8px;
-
 button.BML-button-submit {
-  padding: 0 25px; // Например кнопка у InlineForm
+  padding: 0 2.5rem; // Например кнопка у InlineForm
 }
 
 .BML-buttons-group {
-  margin-left: - $button-margin-h;
+  margin-left: -0.8rem;
 }
 
 .BML-button-item {
-  margin-left: $button-margin-h;
-  margin-right: $button-margin-h;
-  margin-bottom: 24px;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  margin-bottom: 2.4rem;
 }
 
 .BML-section {
@@ -21,11 +19,11 @@ button.BML-button-submit {
   .btn {
     font-family: $font-family-input;
     border: 2px solid $colorPrimary;
-    padding: 0 26px;
-    height: 40px;
+    padding: 0 2.6rem;
+    height: 4.0rem;
     min-width: 150px;
-    line-height: 36px;
-    font-size: 12px;
+    line-height: 3.6rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -46,41 +44,41 @@ button.BML-button-submit {
   }
 
   .btn-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 4.0rem;
+    height: 4.0rem;
+    font-size: 2.0rem;
     min-width: 0;
     padding: 0;
-    line-height: 38px;
+    line-height: 3.8rem;
   }
 
   .btn-lg {
-    height: 50px;
-    line-height: 46px;
+    height: 5.0rem;
+    line-height: 4.6rem;
     min-width: 200px;
   }
 
   .btn-icon.btn-lg {
-    width: 50px;
-    height: 50px;
-    line-height: 49px;
-    font-size: 24px;
+    width: 5.0rem;
+    height: 5.0rem;
+    line-height: 4.9rem;
+    font-size: 2.4rem;
     min-width: 0;
   }
 
   .btn-icon.btn-sm {
-    width: 30px;
-    height: 30px;
-    line-height: 29px;
-    font-size: 13px;
+    width: 3.0rem;
+    height: 3.0rem;
+    line-height: 2.9rem;
+    font-size: 1.3rem;
     min-width: 0;
     padding: 0 0 0 1px!important;
   }
 
   .btn-sm {
-    height: 30px;
-    font-size: 11px;
-    line-height: 27px;
+    height: 3.0rem;
+    font-size: 1.1rem;
+    line-height: 2.7rem;
     min-width: 0;
   }
 
@@ -113,11 +111,11 @@ button.BML-button-submit {
   }
 
   .btn-rounded {
-    border-radius: 25px;
+    border-radius: 2.5rem;
   }
 
   body.btn-rounded .btn {
-    border-radius: 25px !important;
+    border-radius: 2.5rem !important;
   }
 
   .bg-light .btn {

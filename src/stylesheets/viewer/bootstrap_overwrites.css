@@ -1,19 +1,17 @@
 html {
-  /*// http://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
+  /* http://www.sitepoint.com/understanding-and-using-rem-units-in-css */
   min-height: 100%;
-  font-size: 62.5%;
+  font-size: 62.5%;  /* 62.5% of 16px = 10px */
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  overflow-x: hidden;
-}
+  font-size: 16px; /* fallback */
+  font-size: 1.6rem; /* = 16px */
 
-.modal-body {
-  max-height: 500px;
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .container {
