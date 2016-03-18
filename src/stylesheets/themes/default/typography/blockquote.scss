@@ -12,23 +12,23 @@ blockquote {
   background: rgba(220, 220, 220, 0.2);
   // padding: 3.2em;
   color: $colorBlockquote;
-}
 
-.bg-secondary blockquote {
-  background: $colorWhite;
-  border-color: $colorPrimary;
-}
+  & .blockquote--author {
+    font-size: 1.2rem;
+    display: block;
+    float: right;
+    margin-top: 1.6rem;
+  }
 
-blockquote .author {
-  font-size: 1.2rem;
-  display: block;
-  float: right;
-  margin-top: 1.6rem;
+  .bg-secondary & {
+    background: $colorWhite;
+    border-color: $colorPrimary;
+  }
 }
 
 @media all and (max-width: 767px) {
   blockquote {
-    font-size: 1.6rem;
-    line-height: 3.2rem;
+    font-size: 0.8em;
+    line-height: 1.6em;
   }
 }

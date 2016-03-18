@@ -4,7 +4,7 @@ $featureColor2: #40a269;
 $featureColor3: $colorLinkHover;
 
 .feature {
-  margin-bottom: 2.4rem;
+  margin-bottom: 4rem; // 4rem чтобы в мобильном (друг на дружке) варианте было растнояние между ними
 
   &.feature--boxed {
     padding: 3.2rem;
@@ -22,7 +22,12 @@ $featureColor3: $colorLinkHover;
     padding: 3.2rem;
     border: 1px solid $colorBorder;
   }
+}
 
+.feature-text {
+  font-size: 1.5em;
+  color: $colorDark;
+  font-weight: 300;
 }
 
 @media all and (max-width: 767px) {

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 const Feature = ({ iconClass, title }) => (
   <div className="feature text-center">
     <i className={classnames('icon fade-3-4 inline-block mb16', iconClass)}></i>
-    <div className="lead">{title}</div>
+    <div className="feature-text">{title}</div>
   </div>
 );
 
