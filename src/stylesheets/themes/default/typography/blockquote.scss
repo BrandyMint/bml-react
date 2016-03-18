@@ -5,7 +5,11 @@ blockquote {
   font-weight: 300;
   line-height: 1.8em;
   font-style: italic;
-  background: $secondaryBackgroundColor;
+
+  // Делаем фон прозрачным чтобы:
+  // 1. Смотрелся на любых светлых оттенках
+  // 2. Оцвечивался при фокусировании в редакторе
+  background: rgba(220, 220, 220, 0.2);
   // padding: 3.2em;
   color: $colorBlockquote;
 }

@@ -1,0 +1,217 @@
+$featureDarkedBoxedBackground: #363636;
+$featureLightenBoxedBackground: #f8f8f8;
+$featureColor2: #40a269;
+$featureColor3: $colorLinkHover;
+
+.feature {
+  margin-bottom: 2.4rem;
+
+  &.feature--boxed {
+    padding: 3.2rem;
+    background: $featureLightenBoxedBackground;
+    &.feature--dark {
+      background: $colorDark;
+    }
+  }
+
+  & p:last-child {
+    margin-bottom: 0;
+  }
+
+  &.feature--bordered {
+    padding: 3.2rem;
+    border: 1px solid $colorBorder;
+  }
+
+}
+
+@media all and (max-width: 767px) {
+  .feature {
+    .feature--boxed, .feature--bordered {
+      padding: 2.4rem;
+    }
+  }
+}
+
+@media all and (max-width: 990px) {
+  .feature .icon-lg {
+    font-size: 4.0rem;
+  }
+}
+
+.feature-1 i {
+  display: inline-block;
+  margin-bottom: 1.6rem;
+  color: $colorPrimary;
+}
+
+.feature-2 i {
+  display: block;
+  width: 8.0rem;
+  height: 8.0rem;
+  border: 1px solid $colorPrimary;
+  text-align: center;
+  line-height: 8.0rem;
+  color: $colorPrimary;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 2.4rem;
+  transition: all 0.3s ease;
+}
+
+.feature-2 i:hover,
+.feature-2.feature--filled i {
+  background: $colorPrimaryBg;
+  color: $colorPrimaryText;
+}
+
+.feature-3 {
+  overflow: hidden;
+}
+
+@media all and (min-width: 768px) {
+  .feature-3 {
+    min-height: 160px;
+  }
+}
+
+.feature-3 {
+  .left,
+  .right {
+    display: inline-block;
+    float: left;
+  }
+
+  .left {
+    width: 15%;
+  }
+
+  .right {
+    width: 85%;
+  }
+
+  i {
+    color: $colorPrimary;
+  }
+
+  .bg-primary & i {
+    color: $colorWhite;
+  }
+}
+
+.feature-4 .left {
+  width: 25%;
+}
+
+.feature-4 .right {
+  width: 75%;
+}
+
+.feature-color {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  li,
+  i {
+    color: $colorWhite;
+  }
+
+  i {
+    opacity: .7;
+  }
+
+  &:nth-of-type(1) {
+    background: $colorPrimary;
+  }
+
+  &:nth-of-type(2) {
+    background: $featureColor2;
+  }
+
+  &:nth-of-type(3) {
+    background: $featureColor3;
+  }
+}
+
+.feature-5 {
+  height: 33.333333vw;
+  padding: 0 48px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+
+@media all and (max-width: 1280px) {
+  .feature-5 {
+    height: auto;
+    padding: 8.0rem 48px;
+  }
+  .feature-5 .v-align-transform {
+    top: 0;
+    transform: none;
+    -webkit-transform: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .feature-3 .left,
+  .feature-4 .left {
+    margin-bottom: 8px;
+  }
+  .feature-3 .left,
+  .feature-4 .left,
+  .feature-3 .right,
+  .feature-4 .right {
+    width: 100%;
+  }
+  .feature-5 {
+    padding: 4.0rem 24px;
+  }
+}
+
+.image-bg {
+  .feature {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    i,
+    p,
+    span,
+    li {
+      color: $colorWhite;
+    }
+
+    &.feature--bordered {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    &.feature--boxed {
+      background: rgba(34, 34, 34, 0.4);
+    }
+  }
+}
+
+.bg-light {
+  .feature.feature--bordered {
+    border-color: rgba(34, 34, 34, 0.2);
+  }
+}
+
+.bg-dark {
+  .feature.feature--boxed {
+    background: $featureDarkedBoxedBackground;
+  }
+}
+
+.bg-secondary {
+  .feature.feature--boxed {
+    background: $colorWhite;
+  }
+}
