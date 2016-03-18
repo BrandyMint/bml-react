@@ -33,10 +33,10 @@ class HeaderList extends Component {
               />
             </div>
           </div>
-          <div className="row">
-            <ol>
+          <div className="columns-2">
+            <ol style={{ "list-style-position": 'inside' }}>
               {map(content.items, (item, index) =>
-               <li key={index} className={itemClass(index)}>{item.title}</li>
+               <li key={index} className={'mb40'}>{item.title}</li>
               )}
             </ol>
           </div>
