@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import findIndex from 'lodash/findIndex';
 import size from 'lodash/size';
+import Icon from 'react-icons/lib/md/all-inclusive';
 
 import Themes from 'constants/themes';
 
@@ -14,9 +15,13 @@ class ColorStyleSelector extends Component {
     const nextIndex = index + 1 !== size(Themes) ? index + 1 : 0;
     const nextTheme = Themes[nextIndex];
 
-    const onClick = () => changeTheme(nextTheme);
+    const onClick = (event) => {
+      event.preventDefault();
+      changeTheme(nextTheme);
+      return false;
+    }
 
-    return <a onClick={onClick}>{theme.name || 'Unknown'}</a>;
+    return <a href="#" onClick={onClick} title={theme.name} className="IconLink"><Icon /></a>;
   }
 }
 

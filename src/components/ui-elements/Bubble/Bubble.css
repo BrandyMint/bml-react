@@ -1,9 +1,13 @@
 $bubbleHeight: 40px;
 $bubbleSmallWidth: 40px;
-$bubbleBackground: rgba(255, 255, 255, 0.6);
+$bubbleBackground: rgba(20, 20, 20, 0.3);
 $bubbleProcessingBackground: rgba(255, 225, 125, 0.8);
 $bubbleBackgroundHover: rgba(70, 186, 249, 0.8);
 $bubbleTextColor: #fff;
+$borderColor: #ebebeb;
+$hoverShadowColor: rgba(0, 0, 0, 0.1);
+$opacity: 0.5;
+$hoverBorderColor: #1eabf8;
 
 @component Bubble {
   cursor: pointer;
@@ -15,8 +19,8 @@ $bubbleTextColor: #fff;
   border-radius: calc($bubbleHeight / 2);
 
   background-color: $bubbleBackground;
-  border: 1px solid #ebebeb;
-  color: #666;
+  border: 1px solid $borderColor;
+  color: $bubbleTextColor;
 
   font-size: 1rem;
   line-height: 1.5;
@@ -25,20 +29,20 @@ $bubbleTextColor: #fff;
   word-spacing: 0;
   text-align: center;
   user-select: none;
-  opacity: 1;
+  opacity: $opacity;
 
   &:link,
   &:visited {
-    color: #666;
-    opacity: 0.5;
+    color: $bubbleTextColor;
+    opacity: $opacity;
   }
 
   &:focus,
   &:hover {
-    border: 1px solid #1eabf8;
+    border: 1px solid $hoverBorderColor;
     background-color: $bubbleBackgroundHover;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    color: #fff;
+    box-shadow: 0 0 8px $hoverShadowColor;
+    color: $bubbleTextColor;
     opacity: 1;
   }
 
@@ -49,13 +53,13 @@ $bubbleTextColor: #fff;
 
   @when processing {
     background-color: $bubbleProcessingBackground;
-    border: 1px solid #ebebeb;
-    color: #666;
+    border: 1px solid $borderColor;
+    color: $bubbleTextColor;
     &:focus,
     &:hover {
       background-color: $bubbleProcessingBackground;
-      border: 1px solid #ebebeb;
-      color: #666;
+      border: 1px solid $borderColor;
+      color: $bubbleTextColor;
     }
   }
 

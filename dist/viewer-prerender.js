@@ -37572,7 +37572,7 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
-	  title: "Содержимое с изображением (по-центру)",
+	  title: "Текст с изображением (по-центру)",
 	  icon: 'ti-layout-media-center',
 	  content: {
 	    header: 'Отдельное спасибо <br />Death to the Stock Photo !',
@@ -37719,7 +37719,7 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
-	  title: "Содержимое с изображением",
+	  title: "Текст с изображением",
 	  icon: 'ti-layout-media-right',
 	  description: 'Изображение справа',
 	  content: {
@@ -37826,7 +37826,7 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
-	  title: "Содержимое с изображением",
+	  title: "Текст с изображением",
 	  icon: 'ti-layout-media-left',
 	  description: "Изображение слева",
 	  content: {
@@ -37935,7 +37935,7 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
-	  title: "Содержимое с кнопками",
+	  title: "Текст с кнопками",
 	  icon: 'ti-layout-media-overlay-alt-2',
 	  content: {
 	    text: 'Присоединяйся к нам в соцсетях!',

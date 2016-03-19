@@ -8,7 +8,7 @@ import LBlockLayerPanel from './LBlockLayerPanel';
 
 import './LBlockLayer.css';
 
-const TIMEOUT = 300;
+const TIMEOUT = 500;
 
 class LBlockLayer extends Component {
   constructor(props) {
