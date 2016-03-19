@@ -8,18 +8,29 @@ import MobileIcon from 'react-icons/lib/go/device-mobile';
 import EditorSaveButton from './EditorSaveButton';
 
 import ColorStyleSelector from './ColorStyleSelector';
+import ReactTooltip from 'react-tooltip';
 
 class EditorRightSidebar extends Component {
   render() {
     const { variantUuid } = this.props;
     return (
       <div className="EditorRightSidebar">
-        <Link to={`/editor/${variantUuid}/preview`} className="IconLink">
+        <Link
+          to={`/editor/${variantUuid}/preview`}
+          data-tip="Предпросмотр сайта на экране компьютера"
+          className="IconLink"
+        >
           <FullscreenIcon />
         </Link>
-        <Link to={`/editor/${variantUuid}/mobilePreview`} className="IconLink">
+        <ReactTooltip />
+        <Link
+          to={`/editor/${variantUuid}/mobilePreview`}
+          data-tip="Предпросмотр сайта на экране телефона"
+          className="IconLink"
+        >
           <MobileIcon />
         </Link>
+        <ReactTooltip />
         <ColorStyleSelector />
         <div className="EditorRightSidebar-bottom">
           <EditorSaveButton />

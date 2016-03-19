@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import CheckIcon from 'react-icons/lib/md/check';
 import SpinnerIcon from 'react-icons/lib/fa/spinner';
 import SaveIcon from 'react-icons/lib/md/save';
+import ReactTooltip from 'react-tooltip';
 
 class EditorSaveButtom extends Component {
   render() {
@@ -20,13 +21,29 @@ class EditorSaveButtom extends Component {
 
     if (hasUnsavedChanges) {
       return (
-        <a href="#" onClick={onSaveChanges} className="IconLink IconRed">
-          <SaveIcon />
-        </a>
+        <div>
+          <a href="#"
+            data-tip="Есть измениня. Сохраняйте."
+            onClick={onSaveChanges}
+            className="IconLink IconRed"
+          >
+            <SaveIcon />
+          </a>
+          <ReactTooltip />
+        </div>
       );
     }
 
-    return (<CheckIcon className="OpacityIcon" />);
+    return (
+      <div>
+        <CheckIcon
+          data-multiline
+          data-place="left"
+          data-tip="Нет изменений.<br>Сохранять нечего."
+          className="OpacityIcon"
+        />
+        <ReactTooltip />
+      </div>);
   }
 }
 

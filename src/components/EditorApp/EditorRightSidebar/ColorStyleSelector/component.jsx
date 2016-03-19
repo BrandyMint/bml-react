@@ -4,6 +4,7 @@ import size from 'lodash/size';
 import Icon from 'react-icons/lib/md/all-inclusive';
 
 import Themes from 'constants/themes';
+import ReactTooltip from 'react-tooltip';
 
 class ColorStyleSelector extends Component {
   render() {
@@ -19,9 +20,21 @@ class ColorStyleSelector extends Component {
       event.preventDefault();
       changeTheme(nextTheme);
       return false;
-    }
+    };
 
-    return <a href="#" onClick={onClick} title={theme.name} className="IconLink"><Icon /></a>;
+    return (<div>
+      <a
+        href="#"
+        onClick={onClick}
+        title={theme.name}
+        data-tip={"Переключатель стиля"}
+        className="IconLink"
+      >
+        <Icon />
+      </a>
+      <ReactTooltip />
+    </div>
+    );
   }
 }
 
