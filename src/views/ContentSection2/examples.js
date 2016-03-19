@@ -2,7 +2,7 @@ import { defaultBoxImage2 } from 'constants/defaults';
 
 export const sections = [
   {
-    title: "Содержимое с изображением",
+    title: "Текст с изображением",
     icon: 'ti-layout-media-left',
     description: "Изображение слева",
     content: {

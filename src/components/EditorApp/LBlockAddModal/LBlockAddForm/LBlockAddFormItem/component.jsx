@@ -7,9 +7,7 @@ const DEFAULT_ICON = 'ti-layout-width-default-alt';
 
 const LBlockAddFormItem = ({ example, onAdd }) => {
   const { title, viewName } = example;
-
   const onClick = () => onAdd(example);
-
   const classNames = classnames(example.icon || DEFAULT_ICON, 'LBlockAddFormItem-icon');
 
   return (

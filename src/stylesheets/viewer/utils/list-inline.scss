@@ -17,3 +17,18 @@
 .bg-primary .list-inline i {
   opacity: 0.9;
 }
+
+// http://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element
+ol.list-unbreakable {
+  li {
+    display: inline-block;
+  }
+}
+
+// http://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element
+ol.list-unbreakable-fake {
+  -webkit-column-break-inside: avoid; /* Chrome, Safari */
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
+  display:table;                      /* Actually FF 20+ */
+}

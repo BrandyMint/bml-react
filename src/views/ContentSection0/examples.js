@@ -2,7 +2,7 @@ import { defaultBoxImage } from 'constants/defaults';
 
 export const sections = [
   {
-    title: "Содержимое с изображением (по-центру)",
+    title: "Текст с изображением (по-центру)",
     icon: 'ti-layout-media-center',
     content: {
       header: 'Отдельное спасибо <br />Death to the Stock Photo !',

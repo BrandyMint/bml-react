@@ -2,7 +2,7 @@ import { defaultBackgroundUrl2 } from 'constants/defaults';
 
 export const sections = [
   {
-    title: "Содержимое с кнопками",
+    title: "Текст с кнопками",
     icon: 'ti-layout-media-overlay-alt-2',
     content: {
       text: 'Присоединяйся к нам в соцсетях!',
