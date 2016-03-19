@@ -7,6 +7,7 @@
     "build": "NODE_ENV=production node -r babel-core/register ./webpack/build.js",
     "start": "node -r babel-register ./initializers/server/index.js",
     "lint": "eslint --ext .js --ext .jsx src initializers test",
+    "fix": "eslint --fix --ext .js --ext .jsx src initializers test",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
     "screenshot": "node ./screenshoter.js http://localhost:3000/preview 960x720 src/assets/images/screenshot.png"
