@@ -48678,7 +48678,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.1.0",
+		"version": "0.2.1",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
@@ -48720,12 +48720,14 @@
 			"ejs": "^2.3.4",
 			"eslint": "^1.10.3",
 			"eslint-config-airbnb": "^5.0.0",
+			"eslint-loader": "^1.3.0",
 			"eslint-plugin-react": "^3.16.1",
 			"expect": "^1.13.4",
 			"express": "^4.13.3",
 			"extract-text-webpack-plugin": "^1.0.1",
 			"file-loader": "^0.8.5",
 			"html-webpack-plugin": "^2.8.1",
+			"i": "^0.3.4",
 			"jsdom": "^8.0.1",
 			"less": "^2.5.3",
 			"less-loader": "^2.2.2",
