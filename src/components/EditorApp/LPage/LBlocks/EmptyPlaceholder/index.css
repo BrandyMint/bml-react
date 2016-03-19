@@ -1,6 +1,7 @@
 .LBlocksEmptyPlaceholder {
   text-align: center;
-  padding: 2em;
+  padding: 6em;
+  margin-top: -1em;
 }
 
 .LBlocksEmptyPlaceholder-header {

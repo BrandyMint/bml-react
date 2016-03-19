@@ -9,7 +9,7 @@ class EmptyPlaceholder extends Component {
         <div>
           <div className="LBlocksEmptyPlaceholder">
             <h2 className="LBlocksEmptyPlaceholder-header">
-              Лендинг не содержит никаких элеметов.
+              Сайт не содержит никаких элеметов.
             </h2>
             <span>Добавьте что-нибудь.</span>
           </div>
