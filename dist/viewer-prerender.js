@@ -38641,8 +38641,7 @@
 	                        key: index,
 	                        className: 'mb40'
 	                      },
-	                      item.title,
-	                      '>'
+	                      item.title
 	                    );
 	                  })
 	                )
