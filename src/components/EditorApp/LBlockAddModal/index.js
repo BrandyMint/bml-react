@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { createSelector, createStructuredSelector } from 'reselect';
 
-import { cancelAddingBlock, submitAddingBlock } from 'actions/blocks';
+import { cancelAddingBlock } from 'actions/blocks';
 
 import { ADD_BLOCK } from 'reducers/modal';
 
-import LBlockAddModal from './LBlockAddModal';
+import component from './component';
 
 const currentModalSelector = state => state.modal.current;
 const isVisibleSelector = createSelector(
@@ -13,13 +13,12 @@ const isVisibleSelector = createSelector(
   currentModal => currentModal === ADD_BLOCK
 );
 
-const lBlockAddModalSelector = createStructuredSelector({
+const selector = createStructuredSelector({
   isVisible: isVisibleSelector,
 });
 
 const actions = {
-  onAdd: submitAddingBlock,
   onCancel: cancelAddingBlock,
 };
 
-export default connect(lBlockAddModalSelector, actions)(LBlockAddModal);
+export default connect(selector, actions)(component);
