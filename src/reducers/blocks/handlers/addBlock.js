@@ -11,6 +11,8 @@ export default (blocks, action) => {
     uuid: uuid.v4(),
     viewName: example.viewName,
     content: cloneDeep(example.content),
+    backgroundImage: cloneDeep(example.backgroundImage),
+    backgroundVideos: cloneDeep(example.backgroundVideos),
   };
 
   newState.splice(position, 0, block);

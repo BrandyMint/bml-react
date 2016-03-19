@@ -1,5 +1,7 @@
 export const sections = [
   {
+    title: 'Карта',
+    icon: 'ti-map-alt',
     content: {
       center: {
         lat: 59.938043,

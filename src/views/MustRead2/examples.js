@@ -1,10 +1,10 @@
-import {
-  defaultBackgroundUrl,
-  defaultBackgroundVideos,
-} from 'constants/defaults';
+import { defaultBackgroundUrl } from 'constants/defaults';
 
 export const sections = [
   {
+    title: 'Блок внимания',
+    icon: 'ti-layout-cta-right',
+    description: 'Правый',
     backgroundImage: {
       uuid: null,
       url: defaultBackgroundUrl,

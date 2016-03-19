@@ -1,5 +1,7 @@
 export const sections = [
   {
+    title: 'Горизонтальная форма',
+    icon: 'ti-layout-menu-separated',
     content: {
       text: 'Подписка',
     },

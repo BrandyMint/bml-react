@@ -1,5 +1,7 @@
 export const sections = [
   {
+    title: 'Возможности с иконками',
+    icon: 'ti-view-list-alt',
     "content": {
       "header": "Для кого?",
       "features": [

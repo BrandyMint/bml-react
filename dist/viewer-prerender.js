@@ -36878,6 +36878,9 @@
 	};
 	exports.default = BackgroundVideo;
 
+	// https://github.com/BinaryThumb/react-background-video/blob/master/src/index.js
+	// https://gist.github.com/mikechau/5547c67d0dc2957e907d
+
 /***/ },
 /* 351 */
 /***/ function(module, exports, __webpack_require__) {
@@ -37091,7 +37094,9 @@
 	  var block = {
 	    uuid: _uuid2.default.v4(),
 	    viewName: example.viewName,
-	    content: (0, _cloneDeep2.default)(example.content)
+	    content: (0, _cloneDeep2.default)(example.content),
+	    backgroundImage: (0, _cloneDeep2.default)(example.backgroundImage),
+	    backgroundVideos: (0, _cloneDeep2.default)(example.backgroundVideos)
 	  };
 
 	  newState.splice(position, 0, block);
@@ -37567,6 +37572,8 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: "Содержимое с изображением (по-центру)",
+	  icon: 'ti-layout-media-center',
 	  content: {
 	    header: 'Отдельное спасибо <br />Death to the Stock Photo !',
 	    leadText: 'Отдельное спасибо <a target=\'_blank\' href=\'http://join.deathtothestockphoto.com/\'>Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.',
@@ -37712,6 +37719,9 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: "Содержимое с изображением",
+	  icon: 'ti-layout-media-right',
+	  description: 'Изображение справа',
 	  content: {
 	    header: 'Отдельное спасибо <br />Death to the Stock Photo !',
 	    leadText: 'Отдельное спасибо <a target=\'_blank\' href=\'http://join.deathtothestockphoto.com/\'>Death to the Stock Photo</a> за предоставленные фотографии которые Вы видите в этом шаблоне. <br />Посетите их сайт и получите доступ к огрмному количеству качественных фото.',
@@ -37816,6 +37826,9 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: "Содержимое с изображением",
+	  icon: 'ti-layout-media-left',
+	  description: "Изображение слева",
 	  content: {
 	    header: '3D макеты на предметах<br /> от PSDCovers',
 	    leadText: 'Преврати свой двумерный дизайн в высококачественные, трехмерные снимки за секунды используя бесплатные экшены в Photoshop от <a target=\'_blank\' href=\'http://www.psdcovers.com/\'>PSDCovers</a>!<br />Посетите их сайт чтобы скачать что-то восхитительное и увидить экшены в действии!',
@@ -37922,6 +37935,8 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: "Содержимое с кнопками",
+	  icon: 'ti-layout-media-overlay-alt-2',
 	  content: {
 	    text: 'Присоединяйся к нам в соцсетях!',
 	    items: [{
@@ -38014,6 +38029,9 @@
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Небольшой текст с ссылками',
+	  icon: 'ti-menu',
+	  description: 'Подвал',
 	  content: {
 	    text: 'Copyright © BML landing 2016. All Rights Reserved',
 	    items: [{
@@ -38127,12 +38145,14 @@
 /* 381 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Вертикальная форма',
+	  icon: 'ti-layout-menu-v',
 	  "content": {
 	    "text": "<h3>УСЛОВИЯ УЧАСТИЯ:</h3><p>1. Вы регистрируетесь в форме ниже</p><p>2. Обновляете свой статус в \"ВКонтакте\" или Facebook, оставив комментарий под формой регистрации:</p><p>\"Я иду на бесплатный мастер-класс Бизнес Молодости в Челябинске «Как выбрать нишу и сделать на ней первые деньги?» http://molodost.bz/region_3marta_chelyabinsk\"</p>",
 	    "leadText": "<p>werwerewr</p><p><br></p><br>"
@@ -38263,6 +38283,8 @@
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Карта',
+	  icon: 'ti-map-alt',
 	  content: {
 	    center: {
 	      lat: 59.938043,
@@ -38487,12 +38509,14 @@
 /* 386 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Список с выделенным заголовком',
+	  icon: 'ti-list-ol',
 	  content: {
 	    header: "10 вопросов по выбору ниши ответы\nна которые вы узнаете за 2 часа",
 	    items: [{
@@ -38639,12 +38663,14 @@
 /* 388 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Текст с выделенным заголовком',
+	  icon: 'ti-layout-media-overlay',
 	  "content": {
 	    "header": "Инвестируй 2 часа времени и познакомься с участниками сообщества в Челябинске",
 	    "text": "Ведущие мастер-класса расскажут вам, как они пришли в Бизнес Молодость.<br/>как они выбрали свою нишу и какие техники использовали."
@@ -38748,12 +38774,14 @@
 /* 390 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Возможности с иконками',
+	  icon: 'ti-view-list-alt',
 	  "content": {
 	    "header": "Для кого?",
 	    "features": [{
@@ -38942,6 +38970,8 @@
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Горизонтальная форма',
+	  icon: 'ti-layout-menu-separated',
 	  content: {
 	    text: 'Подписка'
 	  },
@@ -39003,6 +39033,9 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: 'Блок внимания',
+	  icon: 'ti-layout-cta-left',
+	  description: 'Левый',
 	  content: {
 	    header: 'Посадочная страница со взрывной эффективностью!',
 	    subheader: 'Удобный конструктор сайта с автоматической аналитикой',
@@ -39012,6 +39045,9 @@
 	    }]
 	  }
 	}, {
+	  title: 'Блок внимания (с фоном)',
+	  icon: 'ti-layout-cta-left',
+	  description: 'Левый с фоновым изображением',
 	  content: {
 	    header: 'На все 100%',
 	    subheader: 'Шаблон для посадочной страницы',
@@ -39078,24 +39114,20 @@
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-lg-12' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'MustRead1-message' },
-	            _react2.default.createElement(_StringEditable2.default, {
-	              className: 'BML-h2 color-primary',
-	              data: block.content,
-	              fieldName: 'header',
-	              tagName: 'h2'
-	            }),
-	            _react2.default.createElement(_StringEditable2.default, {
-	              className: 'lead color-primary mb40',
-	              data: block.content,
-	              fieldName: 'subheader',
-	              tagName: 'p'
-	            }),
-	            _react2.default.createElement(_Buttons2.default, { buttons: block.content.items, className: 'mt40' })
-	          )
+	          { className: 'col-md-7' },
+	          _react2.default.createElement(_StringEditable2.default, {
+	            className: 'BML-h2 color-primary',
+	            data: block.content,
+	            fieldName: 'header',
+	            tagName: 'h2'
+	          }),
+	          _react2.default.createElement(_StringEditable2.default, {
+	            className: 'lead color-primary mb40',
+	            data: block.content,
+	            fieldName: 'subheader',
+	            tagName: 'p'
+	          }),
+	          _react2.default.createElement(_Buttons2.default, { buttons: block.content.items, className: 'mt40' })
 	        )
 	      )
 	    )
@@ -39118,6 +39150,9 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: 'Блок внимания',
+	  icon: 'ti-layout-cta-right',
+	  description: 'Правый',
 	  backgroundImage: {
 	    uuid: null,
 	    url: _defaults.defaultBackgroundUrl,
@@ -39168,9 +39203,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// https://github.com/BinaryThumb/react-background-video/blob/master/src/index.js
-	// https://gist.github.com/mikechau/5547c67d0dc2957e907d
-
 	var MustRead2 = function MustRead2(_ref) {
 	  var block = _ref.block;
 	  return _react2.default.createElement(
@@ -39178,13 +39210,13 @@
 	    { block: block, className: 'BML-section--height-70' },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'container vertical-center-rel' },
+	      { className: 'container vertical-center-rel text-right' },
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-md-7' },
+	          { className: 'col-md-7 col-md-offset-5' },
 	          _react2.default.createElement(_StringEditable2.default, {
 	            className: 'BML-h2 color-primary',
 	            data: block.content,
@@ -39220,6 +39252,8 @@
 	var _defaults = __webpack_require__(62);
 
 	var sections = exports.sections = [{
+	  title: 'Блок внимания (по-центру) с видео',
+	  icon: 'ti-layout-cta-center',
 	  backgroundVideos: _defaults.defaultBackgroundVideos,
 	  backgroundImage: {
 	    uuid: null,
@@ -39368,6 +39402,8 @@
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: "Чистый HTML",
+	  icon: 'ti-hand-stop',
 	  content: {
 	    html: '<div class="container"><h1>Заголовок</h1><p>Пример чистого HTML</p></div>'
 	  }
@@ -39418,6 +39454,8 @@
 	  value: true
 	});
 	var sections = exports.sections = [{
+	  title: 'Текстовая страница',
+	  icon: 'ti-clipboard',
 	  content: {
 	    text: '<h1>Симпатичный заголовок</h1><p>и очень длинный текст</p>'
 	  },

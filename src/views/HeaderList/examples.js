@@ -1,5 +1,7 @@
 export const sections = [
   {
+    title: 'Список с выделенным заголовком',
+    icon: 'ti-list-ol',
     content: {
       header: "10 вопросов по выбору ниши ответы\nна которые вы узнаете за 2 часа",
       items: [

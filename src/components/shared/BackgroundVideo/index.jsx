@@ -94,3 +94,6 @@ class BackgroundVideo extends Component {
 }
 
 export default BackgroundVideo;
+
+// https://github.com/BinaryThumb/react-background-video/blob/master/src/index.js
+// https://gist.github.com/mikechau/5547c67d0dc2957e907d

@@ -2,6 +2,8 @@ import { defaultBackgroundUrl, defaultBackgroundVideos } from 'constants/default
 
 export const sections = [
   {
+    title: 'Блок внимания (по-центру) с видео',
+    icon: 'ti-layout-cta-center',
     backgroundVideos: defaultBackgroundVideos,
     backgroundImage: {
       uuid: null,
