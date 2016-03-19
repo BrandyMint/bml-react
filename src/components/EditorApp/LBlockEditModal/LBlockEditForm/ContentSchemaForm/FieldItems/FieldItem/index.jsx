@@ -32,13 +32,6 @@ class FieldItem extends Component {
   }
 }
 
-export const FieldItemPropType = {
-  title: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isRequired: PropTypes.bool,
-  inputType: PropTypes.string.isRequired,
-};
-
 const itemSchemaFieldPropType = {
   title: PropTypes.string.isRequired,
   key: PropTypes.string.isRequired,
@@ -50,7 +43,7 @@ FieldItem.propTypes = {
   itemSchemaFields: PropTypes.arrayOf(
     PropTypes.shape(itemSchemaFieldPropType)
   ).isRequired, // TODO какой у них тип?
-  item: PropTypes.shape(FieldItemPropType).isRequired, // Собственно значения
+  item: PropTypes.object.isRequired, // Собственно значение поля согласно схеме
   onChange: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
 };

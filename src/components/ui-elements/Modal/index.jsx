@@ -7,21 +7,12 @@ import Header from './ModalHeader';
 import Title from './ModalTitle';
 
 class Modal extends Component {
-  componentDidUpdate(prevProps) {
-    if (prevProps.show !== this.props.show) {
-      if (this.props.show) {
-        document.body.classList.add('modal-open');
-      } else {
-        document.body.classList.remove('modal-open');
-      }
-    }
-  }
   render() {
     const { children, show, className } = this.props;
 
     if (show) {
       return (
-        <BodyClassName className="Modal-Open">
+        <BodyClassName className="modal-open">
           <span>
             <div className={className} style={{ display: show ? 'block' : 'none' }}>
               <div className="modal-dialog">

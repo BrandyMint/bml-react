@@ -5,6 +5,10 @@
     font-size: 14px;
   }
 
+  .modal-body {
+    height: 70vh;
+  }
+
   .form-control {
     font-size: 14px;
   }

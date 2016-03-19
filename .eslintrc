@@ -11,7 +11,7 @@
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
     "react/no-multi-comp": 1,
-    "no-console": 2,
+    "no-console": 1,
     "no-shadow": 1,
     "consistent-return": 1
   },
