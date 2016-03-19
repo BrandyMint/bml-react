@@ -5,6 +5,6 @@ import { changeTheme } from 'actions/site';
 
 const actions = { changeTheme };
 
-const state = state => state.site;
+const selector = state => state.site;
 
-export default connect(state, actions)(component);
+export default connect(selector, actions)(component);

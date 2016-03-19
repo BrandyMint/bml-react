@@ -26,8 +26,8 @@ class LPage extends Component {
       [`is-footer-${footerState}`]: true,
     });
 
-    const onChangeState = (footerState) => {
-      this.setState({ footer: footerState });
+    const onChangeState = (newFooterState) => {
+      this.setState({ footer: newFooterState });
     };
 
     const footerClasses = classnames({

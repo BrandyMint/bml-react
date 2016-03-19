@@ -37,7 +37,7 @@ const VIDEO_STYLES = {
   width: 'auto',
 };
 
-const videos = [
+const SAMPLE_VIDEOS = [
   { src: '/assets/video/video.mp4', type: 'video/mp4' },
   { src: '/assets/video/video.webm', type: 'video/webm' },
   { src: '/assets/video/video.ogv', type: 'video/ogg' },
@@ -54,7 +54,7 @@ class BackgroundVideo extends Component {
     ),
   };
   static defaultProps = {
-    videos,
+    videos: SAMPLE_VIDEOS,
     overlay: true,
   };
 

@@ -36,11 +36,11 @@ class FieldItems extends Component {
         </label>
         <ol className="FieldItems">
           {map(items, (item, index) => {
-            const onChangeItem = (index, key, value) => {
-              items[index][key] = value;
+            const onChangeItem = (fieldKey, fieldValue) => {
+              items[index][fieldKey] = fieldValue;
               onChange(items);
             };
-            const onRemoveItem = (index) => {
+            const onRemoveItem = () => {
               items.splice(index, 1);
               onChange(items);
             };
@@ -49,8 +49,8 @@ class FieldItems extends Component {
                 item={item}
                 key={index}
                 itemSchemaFields={itemSchema.fields}
-                onChange={partial(onChangeItem, index)}
-                onRemove={partial(onRemoveItem, index)}
+                onChange={partial(onChangeItem)}
+                onRemove={partial(onRemoveItem)}
               />
             );
           }

@@ -89,10 +89,10 @@ export default () => next => action => {
   const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
   const onError = rawData => {
-    const payload = get(rawData, 'data.body') || {};
+    const errorPayload = get(rawData, 'data.body') || {};
 
     const data = {
-      payload,
+      payload: errorPayload,
       type: failureType,
       meta: { httpCode: rawData.error.status },
       error: true,
@@ -102,8 +102,8 @@ export default () => next => action => {
   };
 
   const onSuccess = rawData => {
-    const payload = get(rawData, 'body') || {};
-    const data = { payload, type: successType };
+    const successPayload = get(rawData, 'body') || {};
+    const data = { payload: successPayload, type: successType };
 
     next(nextAction(action, data));
   };

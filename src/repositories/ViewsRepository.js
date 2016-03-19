@@ -19,26 +19,26 @@ export default class ViewsRepository {
   }
 
   getPrevView(viewName) {
-    const views = this.getCompatibleViews(viewName);
-    const viewsCount = size(views);
+    const compatibleViews = this.getCompatibleViews(viewName);
+    const viewsCount = size(compatibleViews);
     if (viewsCount > 1) {
-      const viewIndex = findIndex(views, { viewName });
+      const viewIndex = findIndex(compatibleViews, { viewName });
       invariant(viewIndex >= 0, `No index for view ${viewName}`);
       const prevViewIndex = viewIndex > 0 ? viewIndex - 1 : viewsCount;
-      const prevView = views[prevViewIndex];
+      const prevView = compatibleViews[prevViewIndex];
 
       return prevView;
     }
   }
 
   getNextView(viewName) {
-    const views = this.getCompatibleViews(viewName);
-    const viewsCount = size(views);
+    const compatibleViews = this.getCompatibleViews(viewName);
+    const viewsCount = size(compatibleViews);
     if (viewsCount > 1) {
-      const viewIndex = findIndex(views, { viewName });
+      const viewIndex = findIndex(compatibleViews, { viewName });
       invariant(viewIndex >= 0, `No index for view ${viewName}`);
       const nextViewIndex = viewIndex + 1 !== viewsCount ? viewIndex + 1 : 0;
-      const nextView = views[nextViewIndex];
+      const nextView = compatibleViews[nextViewIndex];
 
       return nextView;
     }

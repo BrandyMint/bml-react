@@ -2,6 +2,10 @@ import path from 'path';
 import webpack from 'webpack';
 import concat from 'lodash/concat';
 
+// import WebpackErrorNotificationPlugin from 'webpack-error-notification';
+// import WebpackBuildNotifierPlugin from 'webpack-build-notifier';
+// import WebpackNotifierPlugin from 'webpack-notifier';
+
 import common from './common';
 import config from '/initializers/config';
 
@@ -52,6 +56,9 @@ export default {
       __ENV__: '"development"',
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    // new WebpackNotifierPlugin({alwaysNotify: true}),
+    // new WebpackErrorNotificationPlugin(),
+    // new WebpackBuildNotifierPlugin(),
   ],
 
   resolve: common.resolve,
