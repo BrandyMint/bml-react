@@ -8167,13 +8167,13 @@
 	  }, {
 	    key: 'getPrevView',
 	    value: function getPrevView(viewName) {
-	      var views = this.getCompatibleViews(viewName);
-	      var viewsCount = (0, _size2.default)(views);
+	      var compatibleViews = this.getCompatibleViews(viewName);
+	      var viewsCount = (0, _size2.default)(compatibleViews);
 	      if (viewsCount > 1) {
-	        var viewIndex = (0, _findIndex2.default)(views, { viewName: viewName });
+	        var viewIndex = (0, _findIndex2.default)(compatibleViews, { viewName: viewName });
 	        (0, _invariant2.default)(viewIndex >= 0, 'No index for view ' + viewName);
 	        var prevViewIndex = viewIndex > 0 ? viewIndex - 1 : viewsCount;
-	        var prevView = views[prevViewIndex];
+	        var prevView = compatibleViews[prevViewIndex];
 
 	        return prevView;
 	      }
@@ -8181,13 +8181,13 @@
 	  }, {
 	    key: 'getNextView',
 	    value: function getNextView(viewName) {
-	      var views = this.getCompatibleViews(viewName);
-	      var viewsCount = (0, _size2.default)(views);
+	      var compatibleViews = this.getCompatibleViews(viewName);
+	      var viewsCount = (0, _size2.default)(compatibleViews);
 	      if (viewsCount > 1) {
-	        var viewIndex = (0, _findIndex2.default)(views, { viewName: viewName });
+	        var viewIndex = (0, _findIndex2.default)(compatibleViews, { viewName: viewName });
 	        (0, _invariant2.default)(viewIndex >= 0, 'No index for view ' + viewName);
 	        var nextViewIndex = viewIndex + 1 !== viewsCount ? viewIndex + 1 : 0;
-	        var nextView = views[nextViewIndex];
+	        var nextView = compatibleViews[nextViewIndex];
 
 	        return nextView;
 	      }
@@ -27105,10 +27105,10 @@
 	      var apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
 	      var onError = function onError(rawData) {
-	        var payload = (0, _get2.default)(rawData, 'data.body') || {};
+	        var errorPayload = (0, _get2.default)(rawData, 'data.body') || {};
 
 	        var data = {
-	          payload: payload,
+	          payload: errorPayload,
 	          type: failureType,
 	          meta: { httpCode: rawData.error.status },
 	          error: true
@@ -27118,8 +27118,8 @@
 	      };
 
 	      var onSuccess = function onSuccess(rawData) {
-	        var payload = (0, _get2.default)(rawData, 'body') || {};
-	        var data = { payload: payload, type: successType };
+	        var successPayload = (0, _get2.default)(rawData, 'body') || {};
+	        var data = { payload: successPayload, type: successType };
 
 	        next(nextAction(action, data));
 	      };
@@ -36268,11 +36268,11 @@
 
 	var actions = {};
 
-	var state = function state(_state) {
-	  return _state.site;
+	var selector = function selector(state) {
+	  return state.site;
 	};
 
-	exports.default = (0, _reactRedux.connect)(state, actions)(_component2.default);
+	exports.default = (0, _reactRedux.connect)(selector, actions)(_component2.default);
 
 /***/ },
 /* 346 */
@@ -36807,7 +36807,7 @@
 	  width: 'auto'
 	};
 
-	var videos = [{ src: '/assets/video/video.mp4', type: 'video/mp4' }, { src: '/assets/video/video.webm', type: 'video/webm' }, { src: '/assets/video/video.ogv', type: 'video/ogg' }];
+	var SAMPLE_VIDEOS = [{ src: '/assets/video/video.mp4', type: 'video/mp4' }, { src: '/assets/video/video.webm', type: 'video/webm' }, { src: '/assets/video/video.ogv', type: 'video/ogg' }];
 
 	var BackgroundVideo = function (_Component) {
 	  _inherits(BackgroundVideo, _Component);
@@ -36873,7 +36873,7 @@
 	  }))
 	};
 	BackgroundVideo.defaultProps = {
-	  videos: videos,
+	  videos: SAMPLE_VIDEOS,
 	  overlay: true
 	};
 	exports.default = BackgroundVideo;
@@ -48685,6 +48685,7 @@
 			"build": "NODE_ENV=production node -r babel-core/register ./webpack/build.js",
 			"start": "node -r babel-register ./initializers/server/index.js",
 			"lint": "eslint --ext .js --ext .jsx src initializers test",
+			"fix": "eslint --fix --ext .js --ext .jsx src initializers test",
 			"test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
 			"test:watch": "npm test -- --watch",
 			"screenshot": "node ./screenshoter.js http://localhost:3000/preview 960x720 src/assets/images/screenshot.png"
