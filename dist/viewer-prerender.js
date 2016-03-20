@@ -48795,6 +48795,7 @@
 			"react-redux": "^4.0.6",
 			"react-router": "^2.0.0",
 			"react-router-redux": "^3.0.0",
+			"react-tooltip": "^1.1.4",
 			"react-widgets": "^3.1.7",
 			"redux": "^3.0.5",
 			"redux-thunk": "^1.0.3",
