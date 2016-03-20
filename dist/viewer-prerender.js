@@ -48678,7 +48678,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.2.1",
+		"version": "0.2.2",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
