@@ -1,13 +1,21 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
+import Icon from 'react-icons/lib/md/exit-to_app';
 
 import config from 'constants/config';
 
-import ExitIcon from 'react-icons/lib/go/graph';
-
 const ExitLink = () => (
-  <a href={config('exitUrl')} rel="external" className="IconLink">
-    <ExitIcon />
-  </a>
+  <div>
+    <a
+      href={config('exitUrl')}
+      rel="external"
+      data-tip="Выход из конструктора"
+      className="IconLink"
+    >
+      <Icon />
+    </a>
+    <ReactTooltip />
+  </div>
 );
 
 export default ExitLink;

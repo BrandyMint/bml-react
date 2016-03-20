@@ -6,7 +6,6 @@ class BubbleIcon extends Component {
   render() {
     const { children } = this.props;
     const props = this.props;
-
     return (
      <Bubble hasIcon {...props}>
        <span className="Bubble-icon">

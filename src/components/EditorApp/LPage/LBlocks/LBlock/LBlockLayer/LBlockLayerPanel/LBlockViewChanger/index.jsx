@@ -1,26 +1,26 @@
 import React, { PropTypes } from 'react';
 
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
+import ReactTooltip from 'react-tooltip';
+
+import Icon from 'react-icons/lib/md/autorenew';
+
 import './LBlockViewChanger.css';
 
-import BubbleIcon from 'components/ui-elements/BubbleIcon';
-
-import IconRight from 'react-icons/lib/go/chevron-right';
-import IconLeft from 'react-icons/lib/go/chevron-left';
-
-const LBlockViewChanger = ({ onViewSwitchNext, onViewSwitchPrev }) => (
+const LBlockViewChanger = ({ onViewSwitchNext }) => (
   <div className="LBlockViewChanger">
-    <BubbleIcon onClick={onViewSwitchPrev}>
-      <IconLeft />
-    </BubbleIcon>
-    <BubbleIcon onClick={onViewSwitchNext}>
-      <IconRight />
-    </BubbleIcon>
+    <div data-tip="Смена вида">
+      <BubbleIcon onClick={onViewSwitchNext}>
+        <Icon />
+      </BubbleIcon>
+    </div>
+    <ReactTooltip />
   </div>
 );
 
 LBlockViewChanger.propTypes = {
   onViewSwitchNext: PropTypes.func.isRequired,
-  onViewSwitchPrev: PropTypes.func.isRequired,
+  // onViewSwitchPrev: PropTypes.func.isRequired,
 };
 
 export default LBlockViewChanger;

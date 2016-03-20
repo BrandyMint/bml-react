@@ -13,6 +13,7 @@
   bottom: 0;
 
   .IconLink {
+    line-height: 48px;
     display: block;
     margin-bottom: 0.2em;
   }
