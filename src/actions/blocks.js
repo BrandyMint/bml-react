@@ -76,9 +76,9 @@ export const submitAddingBlock = (example) => (dispatch, getState) => {
   });
 };
 
-export const changeContent = (uuid, fieldName, value) => ({
+export const changeContent = (uuid, path, value) => ({
   type: CHANGE_BLOCK_CONTENT,
-  payload: { fieldName, uuid, value },
+  payload: { path, uuid, value },
 });
 
 export const changeNodeAttributes = (uuid, fieldName, value) => ({
