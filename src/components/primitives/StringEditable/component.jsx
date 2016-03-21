@@ -61,7 +61,8 @@ class StringEditable extends Component {
     }
   }
   render() {
-    const { className, tagName, isEditMode } = this.props;
+    const { className, tagName } = this.props;
+    const { isEditMode } = this.context;
     const { value } = this.state;
 
     if (isEditMode) {
@@ -93,7 +94,6 @@ StringEditable.propTypes = {
   data: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   tagName: PropTypes.string,
-  isEditMode: PropTypes.bool,
 };
 
 StringEditable.defaultProps = {
@@ -101,6 +101,7 @@ StringEditable.defaultProps = {
 };
 
 StringEditable.contextTypes = {
+  isEditMode: PropTypes.bool,
   onContentChange: PropTypes.func,
 };
 

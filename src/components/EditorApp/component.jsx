@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
 
 import LPage from './LPage';
@@ -17,6 +17,10 @@ import StateToolbar from './StateToolbar';
 import BaselineGrid from 'components/BaselineGrid';
 
 class EditorApp extends Component {
+  getChildContext() {
+    return { isEditMode: true };
+  }
+
   render() {
     return (
       <Tracker>
@@ -40,5 +44,9 @@ class EditorApp extends Component {
     );
   }
 }
+
+EditorApp.childContextTypes = {
+  isEditMode: PropTypes.bool.isRequired,
+};
 
 export default EditorApp;
