@@ -38,7 +38,9 @@ class StringEditable extends Component {
     };
   }
   componentDidMount() {
-    this.refs.redactor.medium.subscribe('editableKeydownEnter', this.handleKeyDownEnter);
+    if (this.context.isEditMode) {
+      this.refs.redactor.medium.subscribe('editableKeydownEnter', this.handleKeyDownEnter);
+    }
   }
   componentWillReceiveProps(nextProps) {
     if (getValue(this.props) !== getValue(nextProps)) {

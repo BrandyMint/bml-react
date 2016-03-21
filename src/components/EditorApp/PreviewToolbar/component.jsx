@@ -8,8 +8,8 @@ const PreviewToolbar = () => (
   <Toolbar
     vertical="top"
     horizontal="right"
-    Lead={DesktopPreviewBubble}
-    Items={[<MobilePreviewBubble />]}
+    Lead={MobilePreviewBubble}
+    Items={[<DesktopPreviewBubble />]}
   />
 );
 
