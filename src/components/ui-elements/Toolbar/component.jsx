@@ -6,17 +6,21 @@ import './index.scss';
 
 import classnames from 'classnames';
 
-const POSITIONS = ['top-right', 'top-left', 'bottom-right', 'bottom-left'];
+const VERTICAL_POSITIONS = ['top', 'bottom'];
+const HORIZONTAL_POSITIONS = ['right', 'left'];
 
 class Toolbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { active: false }
+    this.state = { active: false };
   }
 
   render() {
-    const { position, Items, Lead } = this.props;
-    const classes = classnames('Toolbar', { [`Toolbar--${position}`]: true });
+    const { vertical, horizontal, Items, Lead } = this.props;
+    const classes = classnames('Toolbar', {
+      [`Toolbar--${vertical}`]: true,
+      [`Toolbar--${horizontal}`]: true,
+    });
     const onEnter = () => this.setState({ active: true });
     const onLeave = () => this.setState({ active: false });
 
@@ -25,10 +29,10 @@ class Toolbar extends Component {
     ));
     return (
       <ul className={ classes } onMouseEnter={onEnter} onMouseLeave={onLeave}>
-        <li className="Toolbar-item">
-          <Lead />
-        </li>
         <Animated>
+          <li className="Toolbar-item">
+            <Lead />
+          </li>
           {hideableItems}
         </Animated>
       </ul>
@@ -37,9 +41,10 @@ class Toolbar extends Component {
 }
 
 Toolbar.propTypes = {
-  position: PropTypes.oneOf(POSITIONS).isRequired,
+  vertical: PropTypes.oneOf(VERTICAL_POSITIONS).isRequired,
+  horizontal: PropTypes.oneOf(HORIZONTAL_POSITIONS).isRequired,
   Lead: PropTypes.func.isRequired,
-  Items: PropTypes.array.isRequired,
-}
+  Items: PropTypes.array,
+};
 
 export default Toolbar;

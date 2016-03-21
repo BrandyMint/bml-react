@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import Icon from 'react-icons/lib/go/device-mobile';
 import { Link } from 'react-router';
 import SuperBubble from 'components/ui-elements/SuperBubble';
-import ReactTooltip from 'react-tooltip';
 
 const MobilePreviewBubble = ({ variantUuid }) => (
   <Link
@@ -13,7 +12,6 @@ const MobilePreviewBubble = ({ variantUuid }) => (
     <SuperBubble>
       <Icon className="SuperBubble--icon"/>
     </SuperBubble>
-    <ReactTooltip />
   </Link>
 );
 

@@ -1,16 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 
+import SuperBubble from 'components/ui-elements/SuperBubble';
+
 import CheckIcon from 'react-icons/lib/md/check';
 import SpinnerIcon from 'react-icons/lib/fa/spinner';
 import SaveIcon from 'react-icons/lib/md/save';
-import ReactTooltip from 'react-tooltip';
 
 class EditorSaveButtom extends Component {
   render() {
     const { isSaving, hasUnsavedChanges } = this.props;
 
     if (isSaving) {
-      return (<SpinnerIcon />);
+      return (<SuperBubble className="SuperBubble--blue">
+                <SpinnerIcon className="SuperBubble--icon" />
+              </SuperBubble>);
     }
 
     const onSaveChanges = (event) => {
@@ -21,29 +24,27 @@ class EditorSaveButtom extends Component {
 
     if (hasUnsavedChanges) {
       return (
-        <div>
-          <a href="#"
-            data-tip="Есть измениня. Сохраняйте."
-            onClick={onSaveChanges}
-            className="IconLink IconRed"
-          >
-            <SaveIcon />
-          </a>
-          <ReactTooltip />
-        </div>
+        <a href="#"
+          data-tip="Есть измениня. Сохраняйте."
+          onClick={onSaveChanges}
+          clasName="IconLink"
+        >
+          <SuperBubble className="SuperBubble--red">
+            <SaveIcon className="SuperBubble--icon"/>
+          </SuperBubble>
+        </a>
       );
     }
 
     return (
-      <div>
+      <SuperBubble >
         <CheckIcon
           data-multiline
           data-place="left"
           data-tip="Нет изменений.<br>Сохранять нечего."
-          className="OpacityIcon"
+          className="SuperBubble--icon"
         />
-        <ReactTooltip />
-      </div>);
+      </SuperBubble>);
   }
 }
 

@@ -1,10 +1,10 @@
-@import "stylesheets/editor/config";
+@import "src/stylesheets/shared/zindexes";
 
-@component LBlockLayerPanel {
+.LBlockLayerPanel {
   position: absolute;
-  top: 10px;
-  left: 15px;
-  z-index: $bubbleZindex;
+  top: 15px;
+  left: 95px; // Значительно правее левого тулбара
+  z-index: $zindexBlockToolbar;
   user-select: none;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -15,7 +15,7 @@
   font-size: 1rem;
   line-height: 1.5;
 
-  @descendent actions {
+  &-actions {
     float: left;
 
     & > * {

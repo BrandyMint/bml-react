@@ -5,17 +5,16 @@ import LPage from './LPage';
 import LBlockAddModal from './LBlockAddModal';
 import LBlockEditModal from './LBlockEditModal';
 
-import EditorLeftSidebar from './EditorLeftSidebar';
-import EditorRightSidebar from './EditorRightSidebar';
+import ReactTooltip from 'react-tooltip';
 
 import Tracker from 'components/Tracker';
 import ActivityController from 'components/ActivityController';
+
+import LeftToolbar from './LeftToolbar';
 import PreviewToolbar from './PreviewToolbar';
 import StateToolbar from './StateToolbar';
 
 import BaselineGrid from 'components/BaselineGrid';
-
-import './index.css';
 
 class EditorApp extends Component {
   render() {
@@ -24,14 +23,16 @@ class EditorApp extends Component {
         <ActivityController>
           <BodyClassName className="EditorApp">
             <div className="BML-App LApplicationEditor">
-              <EditorLeftSidebar />
               <div className="LApplicationEditor-content">
 								<BaselineGrid />
                 <LPage />
               </div>
+              <LeftToolbar />
               <PreviewToolbar />
+              <StateToolbar />
               <LBlockAddModal />
               <LBlockEditModal />
+              <ReactTooltip />
             </div>
           </BodyClassName>
         </ActivityController>

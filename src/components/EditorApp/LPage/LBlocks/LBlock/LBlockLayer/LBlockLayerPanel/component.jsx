@@ -5,7 +5,7 @@ import LBlockViewChanger from './LBlockViewChanger';
 import LBlockPositionChanger from './LBlockPositionChanger';
 // import LBlockLayerViewInfo from 'components/LBlockLayerViewInfo';
 
-import './index.css';
+import './index.scss';
 
 class LBlockLayerPanel extends Component {
 

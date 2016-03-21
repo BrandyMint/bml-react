@@ -3,8 +3,4 @@
   &:hover {
     color: #999;
   }
-
-  &.IconRed {
-    color: red;
-  }
 }

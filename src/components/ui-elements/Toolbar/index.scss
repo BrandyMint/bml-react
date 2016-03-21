@@ -5,28 +5,31 @@
 	z-index: $zindexToolbar;
 	will-change: transform;
   list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-left: 0;
 
   &-item {
-    margin-bottom: 0.8em;
+    margin-bottom: 1em;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  &--top-right {
+  &--top{
     top: 30px;
-    right: 30px;
   }
 
-  &--top-left {
-    top: 30px;
+  &--bottom{
+    bottom: 30px;
+  }
+
+  &--left {
     left: 30px;
   }
 
-  &--bottom-right {
-    bottom: 30px;
+  &--right {
     right: 30px;
   }
 
-  &--bottom-left {
-    bottom: 30px;
-    left: 30px;
-  }
 }

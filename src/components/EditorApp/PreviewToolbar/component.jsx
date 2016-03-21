@@ -6,7 +6,8 @@ import MobilePreviewBubble from './MobilePreviewBubble';
 
 const PreviewToolbar = () => (
   <Toolbar
-    position="top-right"
+    vertical="top"
+    horizontal="right"
     Lead={DesktopPreviewBubble}
     Items={[<MobilePreviewBubble />]}
   />

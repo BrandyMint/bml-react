@@ -2,6 +2,13 @@
 @import './editor/config';
 @import './editor/Modal';
 @import './editor/Redactor';
+@import './editor/IconLink';
 @import './editor/Medium';
 @import './preview/MobilePreviewBody';
 @import './preview/MobileScreen';
+
+/* stylelint-disable-line rule-non-nested-empty-line-before */
+
+body.EditorApp {
+  background: $dashboardBackground;
+}
