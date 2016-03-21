@@ -31,7 +31,7 @@ class IconifyFeatures extends Component {
           <div className="row">
             {map(features, (feature, index) => (
               <div className="col-sm-4" key={index}>
-                <Feature {...feature} />
+                <Feature content={content} path={`features[${index}]`} />
               </div>
             ))}
           </div>
