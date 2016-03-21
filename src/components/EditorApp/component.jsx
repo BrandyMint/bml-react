@@ -10,6 +10,8 @@ import EditorRightSidebar from './EditorRightSidebar';
 
 import Tracker from 'components/Tracker';
 import ActivityController from 'components/ActivityController';
+import PreviewToolbar from './PreviewToolbar';
+import StateToolbar from './StateToolbar';
 
 import BaselineGrid from 'components/BaselineGrid';
 
@@ -27,7 +29,7 @@ class EditorApp extends Component {
 								<BaselineGrid />
                 <LPage />
               </div>
-              <EditorRightSidebar />
+              <PreviewToolbar />
               <LBlockAddModal />
               <LBlockEditModal />
             </div>

@@ -1,0 +1,32 @@
+@import 'src/stylesheets/shared/zindexes.scss';
+
+.Toolbar {
+	position: fixed;
+	z-index: $zindexToolbar;
+	will-change: transform;
+  list-style: none;
+
+  &-item {
+    margin-bottom: 0.8em;
+  }
+
+  &--top-right {
+    top: 30px;
+    right: 30px;
+  }
+
+  &--top-left {
+    top: 30px;
+    left: 30px;
+  }
+
+  &--bottom-right {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  &--bottom-left {
+    bottom: 30px;
+    left: 30px;
+  }
+}

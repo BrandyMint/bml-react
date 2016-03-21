@@ -40,7 +40,6 @@ class EditorRightSidebar extends Component {
   }
 }
 
-
 EditorRightSidebar.propTypes = {
   variantUuid: PropTypes.string.isRequired,
 };
