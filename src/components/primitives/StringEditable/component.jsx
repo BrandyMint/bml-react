@@ -13,6 +13,10 @@ const getValue = (props) => get(props.data, props.fieldName, '');
 
 const MEDIUM_OPTIONS = {
   disableReturn: true,
+  placeholder: {
+    text: 'Напишите здесь что-нибудь..',
+    hideOnClick: true,
+  },
   paste: {
     forcePlainText: true,
     cleanPastedHTML: true,

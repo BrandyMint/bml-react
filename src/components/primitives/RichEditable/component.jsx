@@ -17,6 +17,10 @@ const MEDIUM_OPTIONS = {
     cleanAttrs: ['class', 'style', 'dir'],
     cleanTags: ['meta'],
   },
+  placeholder: {
+    text: 'Напишите здесь что-нибудь..',
+    hideOnClick: true,
+  },
   toolbar: {
     allowMultiParagraphSelection: false,
     static: true,

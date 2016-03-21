@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 
-import CheckIcon from 'react-icons/lib/md/check';
+// import CheckIcon from 'react-icons/lib/md/check';
 import SpinnerIcon from 'react-icons/lib/fa/spinner';
 import SaveIcon from 'react-icons/lib/md/save';
 
@@ -36,15 +36,7 @@ class EditorSaveButtom extends Component {
       );
     }
 
-    return (
-      <SuperBubble >
-        <CheckIcon
-          data-multiline
-          data-place="left"
-          data-tip="Нет изменений.<br>Сохранять нечего."
-          className="SuperBubble--icon"
-        />
-      </SuperBubble>);
+    return false;
   }
 }
 
