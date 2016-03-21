@@ -36556,7 +36556,9 @@
 	  _createClass(StringEditable, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      this.refs.redactor.medium.subscribe('editableKeydownEnter', this.handleKeyDownEnter);
+	      if (this.context.isEditMode) {
+	        this.refs.redactor.medium.subscribe('editableKeydownEnter', this.handleKeyDownEnter);
+	      }
 	    }
 	  }, {
 	    key: 'componentWillReceiveProps',
@@ -48571,7 +48573,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.0",
+		"version": "0.3.1",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
