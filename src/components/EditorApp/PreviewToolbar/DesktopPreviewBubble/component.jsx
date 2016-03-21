@@ -6,7 +6,7 @@ import SuperBubble from 'components/ui-elements/SuperBubble';
 const DesktopPreviewBubble = ({ variantUuid }) => (
   <Link
     to={`/editor/${variantUuid}/preview`}
-    data-tip="Предпросмотр сайта на экране компьютера"
+    data-tip="Предпросмотр на полный экран"
     className="IconLink"
   >
     <SuperBubble>

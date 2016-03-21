@@ -6,7 +6,7 @@ import SuperBubble from 'components/ui-elements/SuperBubble';
 const MobilePreviewBubble = ({ variantUuid }) => (
   <Link
     to={`/editor/${variantUuid}/mobilePreview`}
-    data-tip="Предпросмотр сайта на экране телефона"
+    data-tip="Предпросмотр на экране телефона"
     className="IconLink"
   >
     <SuperBubble>

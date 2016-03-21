@@ -31,6 +31,13 @@ $bubbleShadow: 0px 0px 32px 0px rgba(250, 250, 250, 0.2);
   // border: 1px solid rgba(250, 250, 250, 0.2);
   box-shadow: $bubbleShadow;
 
+  &--unobtrusive {
+    opacity: 0.3;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   &--icon {
     content: "";
     position: absolute;

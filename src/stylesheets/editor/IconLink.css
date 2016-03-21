@@ -1,5 +1,9 @@
 .IconLink {
   color: #666;
+
+  /* Для центрирования тултипа */
+
+  display: inline-block;
   &:hover {
     color: #999;
   }

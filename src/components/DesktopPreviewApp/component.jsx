@@ -1,13 +1,14 @@
 import React from 'react';
 
-import BubblePanel from './BubblePanel';
+import PreviewToolbar from './PreviewToolbar';
 import ShowApp from 'components/ShowApp';
+import ReactTooltip from 'react-tooltip';
 
 const DesktopPreviewApp = () => (
   <ShowApp className="BML-AppPreview">
-    <BubblePanel />
+    <PreviewToolbar />
+    <ReactTooltip />
   </ShowApp>
 );
-
 
 export default DesktopPreviewApp;

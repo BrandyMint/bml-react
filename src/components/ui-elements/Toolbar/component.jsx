@@ -28,7 +28,7 @@ class Toolbar extends Component {
       <li className="Toolbar-item" key={index}>{item}</li>
     ));
     return (
-      <ul className={ classes } onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      <ul className={ classes } onMouseOver={onEnter} onMouseEnter={onEnter} onMouseLeave={onLeave}>
         <Animated>
           <li className="Toolbar-item">
             <Lead />

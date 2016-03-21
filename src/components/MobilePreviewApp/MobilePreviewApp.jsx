@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
+import ReactTooltip from 'react-tooltip';
+import PreviewToolbar from 'components/DesktopPreviewApp/PreviewToolbar';
 
 import './index.css';
 
@@ -13,6 +15,8 @@ class App extends Component {
           <div className="MobilePreview-viewport">
             <iframe id="iframe" className="MobileScreen" src={src} width={375} height={667} />
           </div>
+          <PreviewToolbar mobile />
+          <ReactTooltip />
         </div>
       </BodyClassName>
     );
