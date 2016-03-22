@@ -38131,6 +38131,8 @@
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(2);
@@ -38201,7 +38203,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'col-sm-6 col-md-4 col-md-offset-1' },
-	              _react2.default.createElement(_ContentForm2.default, form)
+	              _react2.default.createElement(_ContentForm2.default, _extends({}, form, { className: 'form-stack' }))
 	            )
 	          )
 	        )
@@ -48618,7 +48620,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.3",
+		"version": "0.3.4",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
