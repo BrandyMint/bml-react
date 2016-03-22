@@ -1928,7 +1928,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var getBackgroundStyle = function getBackgroundStyle(block, prevBackgroundStyle) {
-	  (0, _invariant2.default)(block, "Block is undefined");
+	  (0, _invariant2.default)(block, 'Block is undefined');
 	
 	  var hasImage = (0, _lodash.get)(block, 'backgroundImage.url') || (0, _lodash.size)(block.backgroundVideos) > 0;
 	
@@ -48632,7 +48632,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.8",
+		"version": "0.3.9",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
