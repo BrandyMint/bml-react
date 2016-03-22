@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import invariant from 'invariant';
 
 const getBackgroundStyle = (block, prevBackgroundStyle) => {
-  invariant(block, "Block is undefined");
+  invariant(block, 'Block is undefined');
 
   const hasImage = get(block, 'backgroundImage.url') || size(block.backgroundVideos) > 0;
 
