@@ -1,17 +1,24 @@
 import semver from 'lib/semver';
-import assign from 'lodash/assign'
+import assign from 'lodash/assign';
 
-const bugsnagInit = () => {
-  if (global) {
-    return;
-  }
+const METADATA = {
+  frontApp: {
+    version: semver.version,
+  },
+};
 
-  if (window && window.Bugsnag) {
+const bugsnagInit = (event) => {
+  if (window.Bugsnag) {
     window.Bugsnag.metaData = assign(
       window.Bugsnag.metaData || {},
-      { frontApp: { version: semver.version, } },
+      METADATA,
     );
+  } else {
+    /* eslint-disable no-console */
+    console.log('No Bugsnag in window');
   }
 };
 
-bugsnagInit();
+if (document) {
+  document.addEventListener('DOMContentLoaded', bugsnagInit);
+}

@@ -36948,7 +36948,7 @@
 /* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+	'use strict';
 	
 	var _semver = __webpack_require__(205);
 	
@@ -36960,18 +36960,19 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var bugsnagInit = function bugsnagInit() {
-	  if (global) {
-	    return;
-	  }
+	var METADATA = { frontApp: { version: _semver2.default.version } };
 	
-	  if (window && window.Bugsnag) {
-	    window.Bugsnag.metaData = (0, _assign2.default)(window.Bugsnag.metaData || {}, { frontApp: { version: _semver2.default.version } });
+	var bugsnagInit = function bugsnagInit(event) {
+	  if (window.Bugsnag) {
+	    Bugsnag.metaData = (0, _assign2.default)(Bugsnag.metaData || {}, METADATA);
+	  } else {
+	    console.log("No Bugsnag in window");
 	  }
 	};
 	
-	bugsnagInit();
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+	if (document) {
+	  document.addEventListener("DOMContentLoaded", bugsnagInit);
+	}
 
 /***/ },
 /* 357 */
