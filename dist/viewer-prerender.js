@@ -36960,18 +36960,23 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var METADATA = { frontApp: { version: _semver2.default.version } };
+	var METADATA = {
+	  frontApp: {
+	    version: _semver2.default.version
+	  }
+	};
 	
-	var bugsnagInit = function bugsnagInit(event) {
+	var bugsnagInit = function bugsnagInit() {
 	  if (window.Bugsnag) {
-	    Bugsnag.metaData = (0, _assign2.default)(Bugsnag.metaData || {}, METADATA);
+	    window.Bugsnag.metaData = (0, _assign2.default)(window.Bugsnag.metaData || {}, METADATA);
 	  } else {
-	    console.log("No Bugsnag in window");
+	    /* eslint-disable no-console */
+	    console.log('No Bugsnag in window');
 	  }
 	};
 	
 	if (document) {
-	  document.addEventListener("DOMContentLoaded", bugsnagInit);
+	  document.addEventListener('DOMContentLoaded', bugsnagInit);
 	}
 
 /***/ },
@@ -48621,7 +48626,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.5",
+		"version": "0.3.6",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
