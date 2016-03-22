@@ -7,7 +7,7 @@ const METADATA = {
   },
 };
 
-const bugsnagInit = (event) => {
+const bugsnagInit = () => {
   if (window.Bugsnag) {
     window.Bugsnag.metaData = assign(
       window.Bugsnag.metaData || {},
