@@ -1,18 +1,5 @@
 import semverUtils from 'semver-utils';
-
 import { version } from '../../package.json';
 
-export const semver = semverUtils.parse(version);
-
-/* eslint-disable no-console */
-export const semverInit = () => {
-  if (global) {
-    global.AppVersion = semver.version;
-  } else {
-    window.AppVersion = semver.version;
-    console.log(`Start application ${semver}`);
-  }
-};
-/* eslint-enable */
-
+const semver = semverUtils.parse(version);
 export default semver;

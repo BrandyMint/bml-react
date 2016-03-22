@@ -16,9 +16,8 @@ import backgroundResolver from 'helpers/backgroundResolver';
 
 import config from 'constants/config';
 
-import { semverInit } from 'lib/semver';
-semverInit();
-
+import 'lib/bugsnag';
+import 'lib/semverInit';
 
 // CLIENT устанавливается когда комплиируем Demo-вариантт для dist-а
 // false когда компилируем вариант для prerender-а

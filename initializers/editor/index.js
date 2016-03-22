@@ -17,8 +17,8 @@ import EditorApp from 'components/EditorApp';
 
 import initialState from 'constants/initialState';
 
-import { semverInit } from 'lib/semver';
-semverInit();
+import 'lib/bugsnag';
+import 'lib/semverInit';
 
 const store = createStore(initialState);
 

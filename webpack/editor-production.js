@@ -34,6 +34,7 @@ const loaders = concat(
 )
 
 export default {
+  devtool: 'source-map',
   postcss: common.postcss,
 
   entry: common.entry,

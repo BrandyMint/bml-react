@@ -18,8 +18,9 @@ const resolve = merge(
 );
 
 export default {
-  entry: { 
-    viewer: common.entry.viewer, 
+  devtool: 'source-map',
+  entry: {
+    viewer: common.entry.viewer,
   },
 
   output: {
