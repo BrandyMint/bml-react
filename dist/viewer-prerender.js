@@ -27607,6 +27607,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var DEFAULT_TEXT = 'Установите текст';
+	
 	var Link = function Link(_ref) {
 	  var text = _ref.text;
 	  var href = _ref.href;
@@ -27621,7 +27623,7 @@
 	      target: target,
 	      title: title
 	    },
-	    text
+	    text || DEFAULT_TEXT
 	  );
 	};
 	
@@ -36944,7 +36946,7 @@
 /* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
 	var _semver = __webpack_require__(205);
 	
@@ -36952,13 +36954,22 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	if (window && window.Bugsnag) {
-	  window.Bugsnag.metaData = {
-	    app: {
-	      version: _semver2.default.version
-	    }
-	  };
-	}
+	var bugsnagInit = function bugsnagInit() {
+	  if (global) {
+	    return;
+	  }
+	
+	  if (window && window.Bugsnag) {
+	    window.Bugsnag.metaData = {
+	      app: {
+	        version: _semver2.default.version
+	      }
+	    };
+	  }
+	};
+	
+	bugsnagInit();
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 357 */
