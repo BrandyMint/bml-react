@@ -1,4 +1,5 @@
 import semver from 'lib/semver';
+import assign from 'lodash/assign'
 
 const bugsnagInit = () => {
   if (global) {
@@ -6,11 +7,10 @@ const bugsnagInit = () => {
   }
 
   if (window && window.Bugsnag) {
-    window.Bugsnag.metaData = {
-      app: {
-        version: semver.version,
-      },
-    };
+    window.Bugsnag.metaData = assign(
+      window.Bugsnag.metaData || {},
+      { frontApp: { version: semver.version, } },
+    );
   }
 };
 
