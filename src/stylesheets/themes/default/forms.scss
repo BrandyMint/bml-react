@@ -10,11 +10,18 @@ $inputHeight: 5.0rem;
   &:focus {
     outline: 1px solid $colorInputOutlineFocus;
   }
-  margin-bottom: 2.4rem;
 }
 
 .BML-form {
   @import 'form/placeholder';
+
+  &.form-stack {
+    input,
+    button,
+    textarea {
+      margin-bottom: 2.4rem;
+    }
+  }
 
   &.form-inline {
     .form-group {

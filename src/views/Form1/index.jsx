@@ -26,7 +26,7 @@ class Form1 extends Component {
               />
             </div>
             <div className="col-sm-6 col-md-4 col-md-offset-1">
-              <ContentForm {...form} />
+              <ContentForm {...form} className="form-stack"/>
             </div>
           </div>
         </div>
