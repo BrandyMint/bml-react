@@ -3,9 +3,9 @@ import ViewContainer from 'components/shared/ViewContainer';
 import applyType from 'views/types/apply';
 import map from 'lodash/map';
 
-// Multicolumn lists http://alistapart.com/article/multicolumnlists
-
 import StringEditable from 'components/primitives/StringEditable';
+
+// Multicolumn lists http://alistapart.com/article/multicolumnlists
 
 class HeaderList extends Component {
   render() {
@@ -33,12 +33,13 @@ class HeaderList extends Component {
                <div className="columns-2">
                  <ol className="list-inside">
                    {map(content.items, (item, index) =>
-                    <li
-                      key={index}
-                      className={'mb40'}
-                    >
-                      {item.title}
-                    </li>
+                      <StringEditable
+                        key={index}
+                        className="mb40"
+                        data={content}
+                        fieldName={`items[${index}].title`}
+                        tagName="li"
+                      />
                    )}
                  </ol>
                </div>
@@ -50,5 +51,4 @@ class HeaderList extends Component {
     );
   }
 }
-
 export default applyType.headerList(HeaderList);

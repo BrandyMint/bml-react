@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import partial from 'lodash/partial';
-import ReactTooltip from 'react-tooltip';
 
 import PlusIcon from 'react-icons/lib/fa/plus';
 
@@ -16,7 +15,6 @@ const LBlockAddButton = ({ onAddBlock, index }) => (
     >
       <PlusIcon className="Icon"/>
     </div>
-    <ReactTooltip />
   </div>
 );
 

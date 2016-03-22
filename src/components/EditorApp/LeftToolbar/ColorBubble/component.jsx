@@ -3,8 +3,9 @@ import findIndex from 'lodash/findIndex';
 import size from 'lodash/size';
 import Icon from 'react-icons/lib/md/all-inclusive';
 
+import SuperBubble from 'components/ui-elements/SuperBubble';
+
 import Themes from 'constants/themes';
-import ReactTooltip from 'react-tooltip';
 
 class ColorStyleSelector extends Component {
   render() {
@@ -27,12 +28,13 @@ class ColorStyleSelector extends Component {
         href="#"
         onClick={onClick}
         title={theme.name}
-        data-tip={"Переключатель стиля"}
+        data-tip="Сменить цветовую схему"
         className="IconLink"
       >
-        <Icon />
+        <SuperBubble>
+          <Icon className="SuperBubble--icon"/>
+        </SuperBubble>
       </a>
-      <ReactTooltip />
     </div>
     );
   }

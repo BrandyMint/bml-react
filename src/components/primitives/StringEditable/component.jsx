@@ -13,6 +13,10 @@ const getValue = (props) => get(props.data, props.fieldName, '');
 
 const MEDIUM_OPTIONS = {
   disableReturn: true,
+  placeholder: {
+    text: 'Напишите здесь что-нибудь..',
+    hideOnClick: true,
+  },
   paste: {
     forcePlainText: true,
     cleanPastedHTML: true,
@@ -33,31 +37,37 @@ class StringEditable extends Component {
       value: getValue(props),
     };
   }
+  componentDidMount() {
+    if (this.context.isEditMode) {
+      this.refs.redactor.medium.subscribe('editableKeydownEnter', this.handleKeyDownEnter);
+    }
+  }
   componentWillReceiveProps(nextProps) {
     if (getValue(this.props) !== getValue(nextProps)) {
       this.setState({ value: getValue(nextProps) });
     }
   }
   shouldComponentUpdate = shouldPureComponentUpdate;
+  getContent() {
+    return findDOMNode(this.refs.redactor).innerHTML;
+  }
   handleKeyDownEnter(event) {
-    const { fieldName } = this.props;
-    const { onContentChange } = this.context;
-
     event.target.blur();
-    onContentChange(fieldName, event.target.innerHTML);
+    // event.target.innerHTML
+    this.handleBlur();
   }
   handleBlur() {
     const { fieldName } = this.props;
     const { onContentChange } = this.context;
-
-    const content = findDOMNode(this.refs.redactor).innerHTML;
+    const content = this.getContent();
 
     if (this.state.value !== content) {
       onContentChange(fieldName, content);
     }
   }
   render() {
-    const { className, tagName, isEditMode } = this.props;
+    const { className, tagName } = this.props;
+    const { isEditMode } = this.context;
     const { value } = this.state;
 
     if (isEditMode) {
@@ -72,7 +82,6 @@ class StringEditable extends Component {
           options={MEDIUM_OPTIONS}
         />
       );
-      // onKeyDownEnter={this.handleKeyDownEnter}
     }
     return createElement(
       tagName,
@@ -89,7 +98,6 @@ StringEditable.propTypes = {
   data: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   tagName: PropTypes.string,
-  isEditMode: PropTypes.bool,
 };
 
 StringEditable.defaultProps = {
@@ -97,6 +105,7 @@ StringEditable.defaultProps = {
 };
 
 StringEditable.contextTypes = {
+  isEditMode: PropTypes.bool,
   onContentChange: PropTypes.func,
 };
 

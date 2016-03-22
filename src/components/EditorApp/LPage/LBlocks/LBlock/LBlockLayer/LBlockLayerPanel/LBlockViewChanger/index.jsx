@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
-import ReactTooltip from 'react-tooltip';
 
 import Icon from 'react-icons/lib/md/autorenew';
 
@@ -14,7 +13,6 @@ const LBlockViewChanger = ({ onViewSwitchNext }) => (
         <Icon />
       </BubbleIcon>
     </div>
-    <ReactTooltip />
   </div>
 );
 

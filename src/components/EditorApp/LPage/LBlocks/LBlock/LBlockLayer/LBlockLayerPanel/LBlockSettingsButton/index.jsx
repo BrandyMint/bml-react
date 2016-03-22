@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 import './LBlockSettingsButton.css';
-import ReactTooltip from 'react-tooltip';
 
 import FaCog from 'react-icons/lib/fa/cog';
 
@@ -14,7 +13,6 @@ const LBlockSettingsButton = ({ onEditingStart }) => (
         <FaCog />
       </BubbleIcon>
     </div>
-    <ReactTooltip />
   </div>
 );
 

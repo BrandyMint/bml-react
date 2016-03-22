@@ -17,6 +17,10 @@ const MEDIUM_OPTIONS = {
     cleanAttrs: ['class', 'style', 'dir'],
     cleanTags: ['meta'],
   },
+  placeholder: {
+    text: 'Напишите здесь что-нибудь..',
+    hideOnClick: true,
+  },
   toolbar: {
     allowMultiParagraphSelection: false,
     static: true,
@@ -50,7 +54,8 @@ class RichEditable extends Component {
     }
   }
   render() {
-    const { className, tagName, isEditMode } = this.props;
+    const { className, tagName } = this.props;
+    const { isEditMode } = this.context;
     const { value } = this.state;
 
     if (isEditMode) {
@@ -81,7 +86,6 @@ RichEditable.propTypes = {
   data: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   tagName: PropTypes.string,
-  isEditMode: PropTypes.bool,
 };
 
 RichEditable.defaultProps = {
@@ -89,6 +93,7 @@ RichEditable.defaultProps = {
 };
 
 RichEditable.contextTypes = {
+  isEditMode: PropTypes.bool,
   onContentChange: PropTypes.func,
 };
 
