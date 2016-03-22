@@ -41,9 +41,9 @@ global.ShowDemo = () => {
 class Viewer extends Component {
   render() {
     const state = this.props;
-    state.blocks = backgroundResolver(state.blocks);
+    const newState = {...state, blocks: backgroundResolver(state.blocks)};
 
-    const store = createStore(state);
+    const store = createStore(newState);
 
     return (
       <Provider store={store}>
