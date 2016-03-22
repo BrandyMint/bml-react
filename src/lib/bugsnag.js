@@ -1,3 +1,5 @@
+/* global __CLIENT__ */
+
 import semver from 'lib/semver';
 import assign from 'lodash/assign';
 
@@ -19,6 +21,6 @@ const bugsnagInit = () => {
   }
 };
 
-if (document) {
+if (__CLIENT__) {
   document.addEventListener('DOMContentLoaded', bugsnagInit);
 }

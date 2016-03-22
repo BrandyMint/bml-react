@@ -36960,6 +36960,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	/* global __CLIENT__ */
+	
 	var METADATA = {
 	  frontApp: {
 	    version: _semver2.default.version
@@ -36975,7 +36977,7 @@
 	  }
 	};
 	
-	if (document) {
+	if (false) {
 	  document.addEventListener('DOMContentLoaded', bugsnagInit);
 	}
 
