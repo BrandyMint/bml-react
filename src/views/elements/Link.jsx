@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+const DEFAULT_TEXT = 'Установите текст';
+
 const Link = ({ text, href, title, target, className }) =>
   (
     <a
@@ -8,7 +10,7 @@ const Link = ({ text, href, title, target, className }) =>
       target={target}
       title={title}
     >
-      {text}
+      {text || DEFAULT_TEXT}
     </a>
   );
 
