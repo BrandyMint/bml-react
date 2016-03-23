@@ -6,7 +6,7 @@ import SuperBubble from 'components/ui-elements/SuperBubble';
 import SpinnerIcon from 'react-icons/lib/fa/spinner';
 import SaveIcon from 'react-icons/lib/md/save';
 
-class EditorSaveButtom extends Component {
+class StateBubble extends Component {
   render() {
     const { isSaving, hasUnsavedChanges } = this.props;
 
@@ -40,10 +40,10 @@ class EditorSaveButtom extends Component {
   }
 }
 
-EditorSaveButtom.propTypes = {
+StateBubble.propTypes = {
   isSaving: PropTypes.bool.isRequired,
   hasUnsavedChanges: PropTypes.bool.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
 };
 
-export default EditorSaveButtom;
+export default StateBubble;
