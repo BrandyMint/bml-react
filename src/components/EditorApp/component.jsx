@@ -15,6 +15,8 @@ import PreviewToolbar from './PreviewToolbar';
 
 import BaselineGrid from 'components/BaselineGrid';
 
+import './index.scss';
+
 class EditorApp extends Component {
   getChildContext() {
     return { isEditMode: true };
@@ -25,17 +27,21 @@ class EditorApp extends Component {
       <Tracker>
         <ActivityController>
           <BodyClassName className="EditorApp">
-            <div className="BML-App LApplicationEditor">
-              <div className="LApplicationEditor-content">
-								<BaselineGrid />
+
+            <div>
+              <div className="EditorApp-content">
+                <BaselineGrid />
                 <LPage />
               </div>
+
               <LeftToolbar />
               <PreviewToolbar />
               <LBlockAddModal />
               <LBlockEditModal />
+
               <ReactTooltip />
             </div>
+
           </BodyClassName>
         </ActivityController>
       </Tracker>
