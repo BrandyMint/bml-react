@@ -10,7 +10,7 @@ const DesktopPreviewBubble = ({ variantUuid }) => (
     className="IconLink"
   >
     <SuperBubble>
-      <Icon className="SuperBubble--icon"/>
+      <Icon className="SuperBubble--icon" />
     </SuperBubble>
   </Link>
 );

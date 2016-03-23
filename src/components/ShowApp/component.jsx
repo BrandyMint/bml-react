@@ -15,6 +15,7 @@ const ShowApp = ({ children, className }) => (
 );
 
 ShowApp.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element), // Например сюда передаются Toolbar-ы при preview
 };
 

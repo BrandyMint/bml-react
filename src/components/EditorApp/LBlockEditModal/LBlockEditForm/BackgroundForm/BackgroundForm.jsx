@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import assign from 'lodash/assign';
 
 import Dropzone from 'react-dropzone';
@@ -28,39 +28,36 @@ const ACTIVE_STYLES = {
   backgroundColor: '#999',
 };
 
-class BackgroundForm extends Component {
-  render() {
-    const { backgroundImage, onSaveBackground, onChange } = this.props;
+const BackgroundForm = ({ backgroundImage, onSaveBackground, onChange }) => {
+  const backgroundImageUrl = backgroundImage.url;
 
-    const backgroundImageUrl = backgroundImage.url;
-    const styles = assign(
-      DEFAULT_STYLES,
-      backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
-    );
+  const styles = assign(
+    DEFAULT_STYLES,
+    backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
+  );
 
-    const onDrop = (files) => onSaveBackground(files[0]);
+  const onDrop = (files) => onSaveBackground(files[0]);
 
-    const handleChangeUrl = (event) => {
-      onChange('uuid', null);
-      onChange('url', event.target.value);
-    };
+  const handleChangeUrl = (event) => {
+    onChange('uuid', null);
+    onChange('url', event.target.value);
+  };
 
-    return (
-      <div className="TabPage">
-        <Dropzone style={styles} multiple={false} onDrop={onDrop} activeStyle={ACTIVE_STYLES}>
-          <div className="Dropzone-title">Перетащите сюда фоновое изобрежение</div>
-        </Dropzone>
-        <input
-          className="form-control"
-          type="text"
-          id="backgroundImageUrl"
-          value={backgroundImageUrl}
-          onChange={handleChangeUrl}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="TabPage">
+      <Dropzone style={styles} multiple={false} onDrop={onDrop} activeStyle={ACTIVE_STYLES}>
+        <div className="Dropzone-title">Перетащите сюда фоновое изобрежение</div>
+      </Dropzone>
+      <input
+        className="form-control"
+        type="text"
+        id="backgroundImageUrl"
+        value={backgroundImageUrl}
+        onChange={handleChangeUrl}
+      />
+    </div>
+  );
+};
 
 BackgroundForm.propTypes = {
   backgroundImage: PropTypes.shape({

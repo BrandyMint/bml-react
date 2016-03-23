@@ -18,7 +18,7 @@ const LBlockAddButton = ({ onAddBlock, index, blocksCount }) => (
       data-tip="Нажмите чтобы выбрать и<br>добавить сюда новый блок"
       onClick={partial(onAddBlock, index)}
     >
-      <PlusIcon className="Icon"/>
+      <PlusIcon className="Icon" />
     </div>
   </div>
 );

@@ -13,7 +13,7 @@ const ExitBubble = ({ variantUuid }) => (
     className="IconLink"
   >
     <SuperBubble className="SuperBubble--unobtrusive">
-      <Icon className="SuperBubble--icon"/>
+      <Icon className="SuperBubble--icon" />
     </SuperBubble>
   </Link>
 );

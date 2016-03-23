@@ -26,7 +26,7 @@ const ContentSection2 = ({ block }) => (
             fieldName="leadText"
             tagName="div"
           />
-          <Buttons buttons={block.content.links} className="mt40"/>
+          <Buttons buttons={block.content.links} className="mt40" />
         </div>
         <div className="col-lg-5 col-sm-pull-6 col-sm-6">
           <Image {...block.content.image} />

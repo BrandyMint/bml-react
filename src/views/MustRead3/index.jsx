@@ -32,7 +32,7 @@ class MustRead3 extends Component {
                   fieldName="subheader"
                   tagName="p"
                 />
-                <Buttons buttons={content.items} className="mt40"/>
+                <Buttons buttons={content.items} className="mt40" />
               </div>
           </div>
         </div>

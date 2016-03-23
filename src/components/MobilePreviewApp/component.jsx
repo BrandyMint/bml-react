@@ -1,6 +1,6 @@
 /* global __ENV__ */
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
 import ShowApp from 'components/ShowApp';
 
@@ -26,43 +26,40 @@ const useFrame = __ENV__ !== 'development';
 const IFRAME_WIDTH = 375;
 const IFRAME_HEIGHT = 667;
 
-class App extends Component {
-  render() {
-    const { variantUuid } = this.props;
-    const src = `/editor/${variantUuid}/show`;
+const App = ({ variantUuid }) => {
+  const src = `/editor/${variantUuid}/show`;
 
-    const Screen = useFrame ? (
-      <Frame
-        className="Mobile-iframe"
-        width={IFRAME_WIDTH}
-        height={IFRAME_HEIGHT}
-      >
-        <link rel="stylesheet" media="all" href={ViewerStyleUrl} />
-        <link rel="stylesheet" media="all" href={FontsStyleUrl} />
-        <ShowApp className="BML-AppPreview" />
-      </Frame>
-    ) : (
-    <iframe
+  const Screen = useFrame ? (
+    <Frame
       className="Mobile-iframe"
       width={IFRAME_WIDTH}
       height={IFRAME_HEIGHT}
-      src={src}
-    />
-    );
+    >
+      <link rel="stylesheet" media="all" href={ViewerStyleUrl} />
+      <link rel="stylesheet" media="all" href={FontsStyleUrl} />
+      <ShowApp className="BML-AppPreview" />
+    </Frame>
+  ) : (
+  <iframe
+    className="Mobile-iframe"
+    width={IFRAME_WIDTH}
+    height={IFRAME_HEIGHT}
+    src={src}
+  />
+  );
 
-    return (
-      <BodyClassName className="MobilePreviewBody">
-        <div className="MobilePreview">
-          <div className="MobilePreview-viewport">
-            {Screen}
-          </div>
-          <PreviewToolbar mobile />
-          <ReactTooltip />
+  return (
+    <BodyClassName className="MobilePreviewBody">
+      <div className="MobilePreview">
+        <div className="MobilePreview-viewport">
+          {Screen}
         </div>
-      </BodyClassName>
-    );
-  }
-}
+        <PreviewToolbar mobile />
+        <ReactTooltip />
+      </div>
+    </BodyClassName>
+  );
+};
 
 App.propTypes = {
   variantUuid: PropTypes.string.isRequired,

@@ -14,7 +14,7 @@ const ExitBubble = () => (
     className="IconLink"
   >
     <SuperBubble>
-      <Icon className="SuperBubble--icon"/>
+      <Icon className="SuperBubble--icon" />
     </SuperBubble>
   </a>
 );

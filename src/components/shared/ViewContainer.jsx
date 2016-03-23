@@ -40,7 +40,7 @@ class ViewContainer extends Component {
         style: blockStyles,
       },
       [
-        size(backgroundVideos) > 0 && <BackgroundVideo videos={backgroundVideos} key={1}/>,
+        size(backgroundVideos) > 0 && <BackgroundVideo videos={backgroundVideos} key={1} />,
         children,
       ]
     );

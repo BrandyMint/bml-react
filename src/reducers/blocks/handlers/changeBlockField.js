@@ -5,7 +5,7 @@ import backgroundResolver from 'helpers/backgroundResolver';
 export default key => (state, action) => {
   const { path, uuid, value } = action.payload;
 
-  const blocks = map(state, (block) =>
+  const blocks = map(state, (block) => (
     block.uuid === uuid
       ? set(
           { ...block, [key]: { ...block[key] } },
@@ -13,6 +13,7 @@ export default key => (state, action) => {
           value
         )
       : block
+      )
   );
 
   return backgroundResolver(blocks);

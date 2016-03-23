@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import LBlockSettingsButton from './LBlockSettingsButton';
 import LBlockViewChanger from './LBlockViewChanger';
@@ -7,46 +7,40 @@ import LBlockPositionChanger from './LBlockPositionChanger';
 
 import './index.scss';
 
-class LBlockLayerPanel extends Component {
+const LBlockLayerPanel = (
+  {
+    hasMultipleViews,
+    hasMultipleBlocks,
 
-  render() {
-    const {
-      hasMultipleViews,
-      hasMultipleBlocks,
+    onEditingStart,
 
-      onEditingStart,
+    onViewSwitchNext,
+    onViewSwitchPrev,
 
-      onViewSwitchNext,
-      onViewSwitchPrev,
+    onMouseEnter,
+    onMouseLeave,
 
-      onMouseEnter,
-      onMouseLeave,
-
-      onBlockPositionDown,
-      onBlockPositionUp,
-    } = this.props;
-
-    return (
-      <div onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter} className="LBlockLayerPanel">
-        <div className="LBlockLayerPanel-actions">
-          <LBlockSettingsButton onEditingStart={onEditingStart} />
-          {hasMultipleViews &&
-            <LBlockViewChanger
-              onViewSwitchNext={onViewSwitchNext}
-              onViewSwitchPrev={onViewSwitchPrev}
-            />
-          }
-          {hasMultipleBlocks &&
-            <LBlockPositionChanger
-              onBlockPositionDown={onBlockPositionDown}
-              onBlockPositionUp={onBlockPositionUp}
-            />
-          }
-        </div>
+    onBlockPositionDown,
+    onBlockPositionUp,
+  }) => (
+    <div onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter} className="LBlockLayerPanel">
+      <div className="LBlockLayerPanel-actions">
+        <LBlockSettingsButton onEditingStart={onEditingStart} />
+        {hasMultipleViews &&
+          <LBlockViewChanger
+            onViewSwitchNext={onViewSwitchNext}
+            onViewSwitchPrev={onViewSwitchPrev}
+          />
+        }
+        {hasMultipleBlocks &&
+          <LBlockPositionChanger
+            onBlockPositionDown={onBlockPositionDown}
+            onBlockPositionUp={onBlockPositionUp}
+          />
+        }
       </div>
-    );
-  }
-}
+    </div>
+  );
 
 LBlockLayerPanel.propTypes = {
   onEditingStart: PropTypes.func.isRequired,

@@ -10,7 +10,7 @@ const PreviewToolbar = ({ mobile }) => (
     vertical="top"
     horizontal="right"
     Lead={ExitBubble}
-    Items={[mobile ? <DesktopPreviewBubble/> : <MobilePreviewBubble />]}
+    Items={[mobile ? <DesktopPreviewBubble /> : <MobilePreviewBubble />]}
   />
 );
 

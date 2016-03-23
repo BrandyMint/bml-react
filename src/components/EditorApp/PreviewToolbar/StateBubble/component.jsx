@@ -30,7 +30,7 @@ class StateBubble extends Component {
           clasName="IconLink"
         >
           <SuperBubble className="SuperBubble--red">
-            <SaveIcon className="SuperBubble--icon"/>
+            <SaveIcon className="SuperBubble--icon" />
           </SuperBubble>
         </a>
       );

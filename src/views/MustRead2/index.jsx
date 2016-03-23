@@ -24,7 +24,7 @@ const MustRead2 = ({ block }) => (
             fieldName="subheader"
             tagName="p"
           />
-          <Buttons buttons={block.content.items} className="mt40"/>
+          <Buttons buttons={block.content.items} className="mt40" />
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ class FieldItems extends Component {
     } = field;
 
     const blankItem = {};
-    each(itemSchema.fields, (f) => blankItem[f.key] = f.defaultValue || '');
+    each(itemSchema.fields, (f) => (blankItem[f.key] = f.defaultValue || ''));
 
     const onClickAdd = () => {
       items.push(clone(blankItem));

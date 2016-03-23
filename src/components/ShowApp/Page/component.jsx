@@ -30,6 +30,7 @@ const Page = ({ blocks, isBoxed, className }) => {
 };
 
 Page.propTypes = {
+  className: PropTypes.string,
   blocks: PropTypes.array.isRequired,
   isBoxed: PropTypes.bool.isRequired,
 };

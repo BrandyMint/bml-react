@@ -8,7 +8,7 @@ const INITIAL_REFERRER = 'initial_referrer';
 
 const currentReferrer = () => document.referrer;
 
-const safeParse = (value) => value ? JSON.parse(value) : undefined;
+const safeParse = (value) => (value ? JSON.parse(value) : void(0));
 
 // TODO Может брыть из роутера?
 const currentParams = () => query.parse(location.search);
