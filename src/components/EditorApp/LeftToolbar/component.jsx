@@ -8,7 +8,6 @@ const LeftToolbar = () => (
     vertical="top"
     horizontal="left"
     Lead={ColorBubble}
-    Items={[<ColorBubble />]}
   />
 );
 
