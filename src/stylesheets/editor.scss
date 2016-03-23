@@ -6,10 +6,45 @@
 @import './editor/Medium';
 @import './preview/MobilePreviewBody';
 @import './preview/MobileScreen';
+// @import './shared/pageBackground';
+
+@mixin angled-background {
+  $angeledShiftColor: rgba(255, 255, 255, .2);
+
+  // Зеленоватый
+  // $angeledBgColor: #ac0;
+
+  $angeledBgColor: #bbb;
+
+	background-size: 50px 50px;
+	background-color: $angeledBgColor;
+  background-image: -webkit-linear-gradient(45deg, $angeledShiftColor 25%, transparent 25%,
+                    transparent 50%, $angeledShiftColor 50%, $angeledShiftColor 75%,
+                    transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, $angeledShiftColor 25%, transparent 25%,
+                    transparent 50%, $angeledShiftColor 50%, $angeledShiftColor 75%,
+                    transparent 75%, transparent);
+	background-image: linear-gradient(45deg, $angeledShiftColor 25%, transparent 25%,
+										transparent 50%, $angeledShiftColor 50%, $angeledShiftColor 75%,
+										transparent 75%, transparent);
+  -pie-background: linear-gradient(45deg, $angeledShiftColor 25%, transparent 25%,
+                   transparent 50%, $angeledShiftColor 50%, $angeledShiftColor 75%,
+                   transparent 75%, transparent) 0 0 / 50px 50px #ac0;
+  behavior: url(/pie/PIE.htc);
+}
 
 /* stylelint-disable-line rule-non-nested-empty-line-before */
 
 body.EditorApp {
-  background: $dashboardBackground;
+  @include angled-background;
+  /*background:*/
+		/*radial-gradient(black 15%, transparent 16%) 0 0,*/
+		/*radial-gradient(black 15%, transparent 16%) 8px 8px,*/
+		/*radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,*/
+		/*radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;*/
+	/*background-color:#282828;*/
+	/*background-size:16px 16px;*/
+
+  // background: $dashboardBackground;
   min-height: 500px;
 }

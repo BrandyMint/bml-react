@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-
 import LBlockAddButton from '../LBlockAddButton';
 import LBlock from '../LBlock';
 
@@ -12,7 +11,7 @@ class LBlockSection extends Component {
     return (
       <div>
         <LBlock block={block} />
-        <LBlockAddButton index={index + 1} />
+        <LBlockAddButton index={index + 1}/>
       </div>
     );
   }

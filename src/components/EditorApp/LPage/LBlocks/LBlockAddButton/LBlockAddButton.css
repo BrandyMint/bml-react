@@ -1,5 +1,8 @@
 @import "stylesheets/editor/config";
 
+$height: 60px;
+$width: 60px;
+
 @component LBlockAddButton {
   z-index: $bubbleZindex;
   width: 100%;
@@ -9,8 +12,8 @@
   cursor: pointer;
 
   @descendent handle {
-    width: 60px;
-    height: 60px;
+    width: $width;
+    height: $height;
     margin: auto;
     position: absolute;
     top: 3px;
@@ -29,6 +32,10 @@
     font-size: 40px;
     opacity: 0.4;
     transform: scale(0.55);
+  }
+
+  @modifier last {
+    margin-bottom: calc($height * 1.5);
   }
 
   &:hover {

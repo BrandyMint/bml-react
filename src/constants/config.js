@@ -1,5 +1,6 @@
 import get from 'lodash/get';
-export const EXAMPLE_LANDING_VARIANT_UUID = '10ba27fa-0628-44fd-af24-8430eea47ca7';
+
+export const EXAMPLE_LANDING_VARIANT_UUID = '7a5eecef-9cbd-4a52-bfcc-111a848edfa2';
 
 const defaults = {
   exitUrl: '/#exit',
@@ -7,7 +8,7 @@ const defaults = {
   // postLeadUrl: 'http://bmland.dev:3008/leads',
   apiUrl: 'http://api.3008.vkontraste.ru/v1',
   postLeadUrl: 'http://3008.vkontraste.ru/leads',
-  apiKey: '4f37a3c949e009777e761c2b5ced51f2',
+  apiKey: 'test',
   variantUuid: EXAMPLE_LANDING_VARIANT_UUID,
 };
 

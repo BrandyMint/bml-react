@@ -3,7 +3,7 @@ import { startAddingBlock } from 'actions/blocks';
 
 import component from './component';
 
-const selector = () => ({});
+const selector = ({ blocks }) => ({ blocksCount: blocks.length });
 
 const actions = {
   onAddBlock: startAddingBlock,
