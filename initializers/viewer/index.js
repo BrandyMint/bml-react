@@ -1,7 +1,7 @@
 /* global __CLIENT__ */
 
 import 'babel-polyfill';
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -38,19 +38,16 @@ global.ShowDemo = () => {
   );
 };
 
-class Viewer extends Component {
-  render() {
-    const state = this.props;
-    const newState = { ...state, blocks: backgroundResolver(state.blocks) };
+const Viewer = (state) => {
+  const newState = { ...state, blocks: backgroundResolver(state.blocks) };
 
-    const store = createStore(newState);
+  const store = createStore(newState);
 
-    return (
-      <Provider store={store}>
-        <ShowApp />
-      </Provider>
-    );
-  }
-}
+  return (
+    <Provider store={store}>
+      <ShowApp />
+    </Provider>
+  );
+};
 
 global.Viewer = Viewer;

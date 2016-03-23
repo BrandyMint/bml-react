@@ -1,4 +1,2 @@
-src/react-icons/*
-test/react-server.js
-test/prerender-test.js
-src/**/examples.js
+test/mockStore.js
+src/views/*/examples.js

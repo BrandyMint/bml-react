@@ -22,16 +22,15 @@ const getProps = (extra = {}) =>
     onViewSwitchPrev: expect.createSpy(),
   }, extra);
 
-let props;
+const props = getProps({
+  isEditMode: true,
+});
+
 let output;
 
 describe('Components: LBlockLayer', () => {
   describe('enabled edit mode', () => {
     beforeEach(() => {
-      props = getProps({
-        isEditMode: true,
-      });
-
       output = TestUtils.renderIntoDocument(<LBlockLayer {...props} />);
     });
 
