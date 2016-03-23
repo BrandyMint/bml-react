@@ -2,6 +2,7 @@ import React from 'react';
 import applyType from 'views/types/apply';
 import ViewContainer from 'components/shared/ViewContainer';
 
+/* eslint-disable react/prop-types */
 const PlainHTML = ({ block }) => (
   <ViewContainer block={ block }>
     <div dangerouslySetInnerHTML={{ __html: block.content.html }} />

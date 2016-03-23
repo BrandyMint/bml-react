@@ -36,6 +36,8 @@ LBlockEditModal.propTypes = {
   onCancel: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
+
+  block: PropTypes.object.isRequired,
 };
 
 export default LBlockEditModal;

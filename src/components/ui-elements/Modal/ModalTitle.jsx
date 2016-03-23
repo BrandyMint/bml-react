@@ -9,7 +9,7 @@ const ModalTitle = ({ children, className }) => (
 
 ModalTitle.propTypes = {
   children: PropTypes.element.isRequired,
-  className: Protypes.string,
+  className: PropTypes.string,
 };
 
 export default ModalTitle;

@@ -9,6 +9,7 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import './index.css';
 
+/* eslint-disable react/prop-types */
 const ContentSection3 = ({ block }) => (
   <ViewContainer block={block} className="BML-section--padding">
     <div className="container">

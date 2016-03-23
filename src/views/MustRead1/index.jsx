@@ -7,6 +7,7 @@ import ViewContainer from 'components/shared/ViewContainer';
 
 import './index.css';
 
+/* eslint-disable react/prop-types */
 const MustRead1 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--height-70">
     <div className="container vertical-center-rel">

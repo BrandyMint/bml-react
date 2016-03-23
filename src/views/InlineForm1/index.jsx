@@ -7,6 +7,7 @@ import RichEditable from 'components/primitives/RichEditable';
 
 import './index.css';
 
+/* eslint-disable react/prop-types */
 const InlineForm1 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--padding text-center">
     <div className="container">

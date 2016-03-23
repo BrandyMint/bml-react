@@ -8,6 +8,7 @@ import Buttons from 'views/elements/Buttons';
 import StringEditable from 'components/primitives/StringEditable';
 import RichEditable from 'components/primitives/RichEditable';
 
+/* eslint-disable react/prop-types */
 const ContentSection1 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--padding">
     <div className="container">

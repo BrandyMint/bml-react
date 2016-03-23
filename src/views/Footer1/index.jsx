@@ -9,6 +9,7 @@ import StringEditable from 'components/primitives/StringEditable';
 
 import './index.css';
 
+/* eslint-disable react/prop-types */
 const Footer1 = ({ block }) => (
   <ViewContainer block={ block } className="BML-section--padding" tagName="footer">
   <div className="container">

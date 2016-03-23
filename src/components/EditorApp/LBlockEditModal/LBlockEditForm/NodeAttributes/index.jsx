@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import Attribute from './Attribute';
 import get from 'lodash/get';
@@ -24,5 +24,10 @@ const NodeAttributes = ({ attributes, onChange }) => (
     />
   </div>
 );
+
+NodeAttributes.propTypes = {
+  attributes: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default NodeAttributes;

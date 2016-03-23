@@ -32,12 +32,12 @@ const Attribute = ({
 };
 
 Attribute.propTypes = {
-  attribue: PropTypes.string,
+  attribute: PropTypes.string,
   title: PropTypes.string.isRequired,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   description: PropTypes.string,
   placeholder: PropTypes.string,
-}
+};
 
 export default Attribute;
