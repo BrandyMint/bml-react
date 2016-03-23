@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import applyType from 'views/types/apply';
-import StringEditable from 'components/primitives/StringEditable';
-import RichEditable from 'components/primitives/RichEditable';
-import ViewContainer from 'components/shared/ViewContainer';
+import StringEditable from 'views/elements/StringEditable';
+import RichEditable from 'views/elements/RichEditable';
+import ViewContainer from 'views/elements/ViewContainer';
 
 class HeaderText extends Component {
   render() {

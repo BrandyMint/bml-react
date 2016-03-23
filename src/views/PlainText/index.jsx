@@ -1,8 +1,8 @@
 import React from 'react';
 import applyType from 'views/types/apply';
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 
-import RichEditable from 'components/primitives/RichEditable';
+import RichEditable from 'views/elements/RichEditable';
 
 /* eslint-disable react/prop-types */
 const PlainText = ({ block }) => (

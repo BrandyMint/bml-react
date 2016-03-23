@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import applyType from 'views/types/apply';
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 
 class View extends Component {
   render() {
