@@ -17,7 +17,7 @@ class LBlocks extends Component {
     }
 
     return (
-      <Animated >
+      <Animated>
         {map(blocks, (block, index) =>
            <LBlockSection block={block} index={index} key={block.uuid} />
         )}

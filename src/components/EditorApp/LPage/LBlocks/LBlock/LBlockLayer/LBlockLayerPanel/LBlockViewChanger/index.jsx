@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
-import Icon from 'react-icons/lib/md/autorenew';
+import Icon from 'react-icons/lib/md/shuffle';
 
 import './LBlockViewChanger.css';
 

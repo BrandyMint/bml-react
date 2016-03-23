@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import classnames from 'classnames';
 import Themer from 'components/Themer';
@@ -9,9 +9,11 @@ import './index.css';
 
 class LPage extends Component {
   render() {
+    const { isBoxed } = this.props;
+
     const classes = classnames({
       LPage: true,
-      'boxed-layout': true,
+      'boxed-layout': isBoxed,
     });
 
     return (
@@ -21,5 +23,9 @@ class LPage extends Component {
     );
   }
 }
+
+LPage.propTypes = {
+  isBoxed: PropTypes.bool.isRequired,
+};
 
 export default LPage;

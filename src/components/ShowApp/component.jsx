@@ -5,17 +5,16 @@ import Themer from 'components/Themer';
 
 import Page from './Page';
 
-const ShowApp = ({ blocks, children, className }) => (
+const ShowApp = ({ children, className }) => (
   <Tracker>
     <Themer>
-      <Page blocks={blocks} className={className} />
+      <Page className={className} />
       {children}
     </Themer>
   </Tracker>
 );
 
 ShowApp.propTypes = {
-  blocks: PropTypes.array.isRequired,
   children: PropTypes.arrayOf(PropTypes.element), // Например сюда передаются Toolbar-ы при preview
 };
 
