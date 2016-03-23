@@ -18,3 +18,12 @@
     overflow: hidden;
   }
 }
+
+iframe.Mobile-iframe {
+  border: 0;
+  background-color: black;
+  background-image: url("/assets/images/loading-bubbles.svg");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

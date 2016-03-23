@@ -12,7 +12,6 @@ import ActivityController from 'components/ActivityController';
 
 import LeftToolbar from './LeftToolbar';
 import PreviewToolbar from './PreviewToolbar';
-import StateToolbar from './StateToolbar';
 
 import BaselineGrid from 'components/BaselineGrid';
 
@@ -33,7 +32,6 @@ class EditorApp extends Component {
               </div>
               <LeftToolbar />
               <PreviewToolbar />
-              <StateToolbar />
               <LBlockAddModal />
               <LBlockEditModal />
               <ReactTooltip />

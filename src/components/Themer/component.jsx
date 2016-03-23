@@ -1,13 +1,11 @@
 import React, { PropTypes } from 'react';
-import BodyClassName from 'react-body-classname';
+import classnames from 'classnames';
 
 const Themer = ({ className, theme, children }) =>
   (
-    <BodyClassName className={theme.class}>
-      <div className={className}>
-        {children}
+    <div className={classnames(className, theme.class)}>
+      {children}
       </div>
-    </BodyClassName>
   );
 
 Themer.propTypes = {

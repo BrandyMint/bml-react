@@ -7,8 +7,8 @@ import ViewComponent from 'components/shared/ViewComponent';
 
 import './index.scss';
 
-const Page = ({ blocks, className }) => {
-  const classNames = classnames(className, 'BML-App BML-AppShow');
+const Page = ({ blocks, isBoxed, className }) => {
+  const classNames = classnames(className, 'BML-App BML-AppShow', { 'boxed-layout': isBoxed });
 
   if (size(blocks) > 0) {
     return (
@@ -17,7 +17,6 @@ const Page = ({ blocks, className }) => {
       </div>
     );
   }
-
 
   return (
     <div className={classNames}>
@@ -32,6 +31,7 @@ const Page = ({ blocks, className }) => {
 
 Page.propTypes = {
   blocks: PropTypes.array.isRequired,
+  isBoxed: PropTypes.bool.isRequired,
 };
 
 export default Page;

@@ -1,15 +1,15 @@
 import React from 'react';
 import Toolbar from 'components/ui-elements/Toolbar';
 
-import ExitBubble from './ExitBubble';
 import ColorBubble from './ColorBubble';
+import BoxedBubble from './BoxedBubble';
 
 const LeftToolbar = () => (
   <Toolbar
     vertical="top"
     horizontal="left"
-    Lead={ExitBubble}
-    Items={[<ColorBubble />]}
+    Lead={ColorBubble}
+    Items={[<BoxedBubble />]}
   />
 );
 

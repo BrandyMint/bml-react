@@ -1,0 +1,5 @@
+@import '../editor/config';
+
+body.MobilePreviewBody {
+  @include angled-background;
+}

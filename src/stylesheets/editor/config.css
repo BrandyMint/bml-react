@@ -12,7 +12,9 @@ $editorFooterBg: #333;
 $editorFooterClosedBottom: -110px;
 
 $dashboardSidebarWidth: 50px;
-$dashboardBackground: #111;
+
+/* TODO Заменить на фоновый цвет страницы сайта */
+$dashboardBackground: #666;
 $dashboardTextColor: #ccc;
 
 $sidebarPadding: 12px 4px;

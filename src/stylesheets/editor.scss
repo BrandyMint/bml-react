@@ -1,15 +1,15 @@
 @import './shared/media';
+@import './shared/angeled-background';
 @import './editor/config';
 @import './editor/Modal';
 @import './editor/Redactor';
 @import './editor/IconLink';
 @import './editor/Medium';
-@import './preview/MobilePreviewBody';
-@import './preview/MobileScreen';
+@import './editor/MobilePreviewBody';
 
 /* stylelint-disable-line rule-non-nested-empty-line-before */
 
 body.EditorApp {
-  background: $dashboardBackground;
+  @include angled-background;
   min-height: 500px;
 }

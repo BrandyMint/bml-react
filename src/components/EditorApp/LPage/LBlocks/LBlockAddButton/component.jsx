@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
+
 import partial from 'lodash/partial';
 
 import PlusIcon from 'react-icons/lib/fa/plus';
 
 import './LBlockAddButton.css';
 
-const LBlockAddButton = ({ onAddBlock, index }) => (
-  <div className="LBlockAddButton">
+const LBlockAddButton = ({ onAddBlock, index, blocksCount }) => (
+  <div className={classnames('LBlockAddButton',
+                   { 'LBlockAddButton--last': blocksCount === index }
+                  )}
+  >
     <div
       className="LBlockAddButton-handle"
       data-multiline
@@ -21,6 +26,7 @@ const LBlockAddButton = ({ onAddBlock, index }) => (
 LBlockAddButton.propTypes = {
   onAddBlock: PropTypes.func.isRequired,
   index: PropTypes.number,
+  blocksCount: PropTypes.number.isRequired,
 };
 
 export default LBlockAddButton;
