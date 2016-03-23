@@ -19,21 +19,6 @@
   }
 }
 
-.Mobile-spinner {
-	height: 0;
-	padding-top: 62px;
-	width: 62px;
-	overflow: hidden;
-	margin: 0 auto;
-	background: #000;
-	-webkit-mask-image: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%7C%00%00%00%7C%…1%C0E%AC%C9%7F%02%0C%00%D2%CD%DF%E4%CF%CD%84%C8%00%00%00%00IEND%AEB%60%82");
-	-webkit-mask-size: 62px 62px;
-	-webkit-animation-name: rotate;
-	-webkit-animation-duration: 1.5s;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
-}
-
 iframe.Mobile-iframe {
   border: 0;
   background-color: black;

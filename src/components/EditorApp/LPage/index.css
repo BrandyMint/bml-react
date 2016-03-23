@@ -1,9 +1,5 @@
 @import "stylesheets/editor/config";
 
-/*
- * http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
- */
-
 @component LPage {
   min-height: 100%;
 }
