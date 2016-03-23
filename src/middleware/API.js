@@ -108,5 +108,5 @@ export default () => next => action => {
     next(nextAction(action, data));
   };
 
-  apiRequest.subscribe(onSuccess, onError);
+  return apiRequest.subscribe(onSuccess, onError);
 };

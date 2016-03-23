@@ -9,6 +9,6 @@ const UnknownView = ({ view, uuid }) => (
 UnknownView.propTypes = {
   view: PropTypes.object.isRequired,
   uuid: PropTypes.string.isRequired,
-}
+};
 
 export default UnknownView;

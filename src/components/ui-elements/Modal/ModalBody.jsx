@@ -10,6 +10,6 @@ const ModalBody = ({ children, className }) => (
 ModalBody.propTypes = {
   children: PropTypes.object.isRequired,
   className: PropTypes.string,
-}
+};
 
 export default ModalBody;

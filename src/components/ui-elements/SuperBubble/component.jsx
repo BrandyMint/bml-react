@@ -11,13 +11,16 @@ class SuperBubble extends Component {
         [`data-${attr}`]: true,
       }), {});
     }
+    return {};
   }
+
   handleClick(ev) {
     if (this.props.onClick) {
       ev.preventDefault();
       this.props.onClick();
     }
   }
+
   render() {
     const { children, className, count, data, text, url } = this.props;
     const bubbleClasses = classNames('SuperBubble', {

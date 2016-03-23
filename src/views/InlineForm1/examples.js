@@ -25,4 +25,4 @@ export const sections = [
     nodeAttributes: {},
     meta: {},
   },
-]
+];

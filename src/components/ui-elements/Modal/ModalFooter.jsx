@@ -10,6 +10,6 @@ const ModalFooter = ({ children, className }) => (
 ModalFooter.propTypes = {
   children: PropTypes.element,
   className: PropTypes.string,
-}
+};
 
 export default ModalFooter;

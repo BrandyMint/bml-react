@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Attribute = ({
   attribute,
@@ -30,5 +30,14 @@ const Attribute = ({
     </fieldset>
   );
 };
+
+Attribute.propTypes = {
+  attribue: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  description: PropTypes.string,
+  placeholder: PropTypes.string,
+}
 
 export default Attribute;

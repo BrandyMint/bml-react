@@ -29,6 +29,8 @@ export default class ViewsRepository {
 
       return prevView;
     }
+
+    return void(0);
   }
 
   getNextView(viewName) {
@@ -42,6 +44,8 @@ export default class ViewsRepository {
 
       return nextView;
     }
+
+    return void(0);
   }
 
   getBlandView(viewName) {
