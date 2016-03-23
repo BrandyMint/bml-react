@@ -5,6 +5,11 @@ import PreviewToolbar from 'components/DesktopPreviewApp/PreviewToolbar';
 
 import './index.css';
 
+
+// Специфика фотографии телефона
+const IFRAME_WIDTH = 375;
+const IFRAME_HEIGHT = 667;
+
 class App extends Component {
   render() {
     const { variantUuid } = this.props;
@@ -13,7 +18,14 @@ class App extends Component {
       <BodyClassName className="MobilePreviewBody">
         <div className="MobilePreview">
           <div className="MobilePreview-viewport">
-            <iframe id="iframe" className="MobileScreen" src={src} width={375} height={667} />
+            <iframe
+              id="iframe"
+              className="Mobile-iframe"
+              frameBorder={0}
+              src={src}
+              width={IFRAME_WIDTH}
+              height={IFRAME_HEIGHT}
+            />
           </div>
           <PreviewToolbar mobile />
           <ReactTooltip />
