@@ -12,17 +12,17 @@ const HORIZONTAL_POSITIONS = ['right', 'left'];
 class Toolbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { active: false };
+    this.state = { active: props.open };
   }
 
   render() {
-    const { vertical, horizontal, Items, Lead } = this.props;
+    const { vertical, horizontal, Items, Lead, open } = this.props;
     const classes = classnames('Toolbar', {
       [`Toolbar--${vertical}`]: true,
       [`Toolbar--${horizontal}`]: true,
     });
     const onEnter = () => this.setState({ active: true });
-    const onLeave = () => this.setState({ active: false });
+    const onLeave = () => this.setState({ active: open });
 
     const hideableItems = this.state.active && map(Items, (item, index) => (
       <li className="Toolbar-item" key={index}>{item}</li>
@@ -40,7 +40,12 @@ class Toolbar extends Component {
   }
 }
 
+Toolbar.defaultProps = {
+  open: false,
+};
+
 Toolbar.propTypes = {
+  open: PropTypes.bool,
   vertical: PropTypes.oneOf(VERTICAL_POSITIONS).isRequired,
   horizontal: PropTypes.oneOf(HORIZONTAL_POSITIONS).isRequired,
   Lead: PropTypes.func.isRequired,

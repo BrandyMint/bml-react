@@ -22,9 +22,10 @@ class SuperBubble extends Component {
   }
 
   render() {
-    const { children, className, count, data, text, url } = this.props;
+    const { children, className, active, count, data, text, url } = this.props;
     const bubbleClasses = classNames('SuperBubble', {
       'SuperBubble--with-text': !!text,
+      'SuperBubble--active': active,
     }, className);
 
 
@@ -46,6 +47,7 @@ class SuperBubble extends Component {
 }
 
 SuperBubble.propTypes = {
+  active: PropTypes.bool,
   className: PropTypes.string,
   count: PropTypes.number,
   data: PropTypes.array,

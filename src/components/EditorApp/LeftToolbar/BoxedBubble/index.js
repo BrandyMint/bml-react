@@ -5,6 +5,6 @@ import { toggleBoxedLayout } from 'actions/site';
 
 const actions = { toggleBoxedLayout };
 
-const selector = state => state.site;
+const selector = ({ site }) => ({ isBoxed: site.isBoxed });
 
 export default connect(selector, actions)(component);

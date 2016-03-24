@@ -5,7 +5,7 @@ import ShowApp from 'components/ShowApp';
 import ReactTooltip from 'react-tooltip';
 
 const DesktopPreviewApp = () => (
-  <ShowApp className="BML-AppPreview">
+  <ShowApp>
     <PreviewToolbar />
     <ReactTooltip />
   </ShowApp>

@@ -9,11 +9,12 @@ import './index.css';
 
 class LPage extends Component {
   render() {
-    const { isBoxed } = this.props;
+    const { isBoxed, zoom } = this.props;
 
     const classes = classnames({
       LPage: true,
       'boxed-layout': isBoxed,
+      'LPage--scale': zoom,
     });
 
     return (
@@ -26,6 +27,7 @@ class LPage extends Component {
 
 LPage.propTypes = {
   isBoxed: PropTypes.bool.isRequired,
+  zoom: PropTypes.bool.isRequired,
 };
 
 export default LPage;
