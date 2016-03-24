@@ -13,8 +13,10 @@ import invariant from 'invariant';
 
 const CONTENT_TYPE = 'application/json';
 
-const validateRawData = ({ type }) => {
-  invariant(type === CONTENT_TYPE, `Unsupported response content type ${type}`);
+const validateRawData = (rawData) => {
+  if (rawData.type !== CONTENT_TYPE) {
+    console.log(`Unsupported response content type "${rawData.type}"`, rawData);
+  }
 };
 
 const apiCall = (
@@ -96,7 +98,6 @@ export default () => next => action => {
   const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
   const onError = rawData => {
-    validateRawData(rawData);
     const errorPayload = get(rawData, 'data.body') || {};
 
     const data = {
