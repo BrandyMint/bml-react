@@ -1,6 +1,10 @@
 import createReducer from 'helpers/createReducer';
 
 import {
+  CHANGE_ZOOM,
+} from 'actions/application';
+
+import {
   LANDING_VARIANT_UPDATE_SUCCESS,
   LANDING_VARIANT_UPDATE_FAILURE,
   LANDING_VARIANT_UPDATE_REQUEST,
@@ -41,6 +45,8 @@ export const initialState = {
   isEditMode: false,
   isSaving: false,
   hasUnsavedChanges: false,
+
+  zoom: false,
 };
 
 const unsavedChanges = value => state => ({
@@ -56,6 +62,7 @@ const currentBlock = (state, action) => ({
 });
 
 const handlers = {
+  [CHANGE_ZOOM]: (state, { payload }) => ({ ...state, zoom: payload }),
   [CURRENT_BLOCK]: currentBlock,
 
   [LANDING_VARIANT_LOAD_REQUEST]: state => ({ ...state, loadingState: LOADING_STATE_LOADING }),

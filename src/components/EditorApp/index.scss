@@ -6,3 +6,10 @@ body.EditorApp {
   @include angled-background;
   min-height: 500px;
 }
+
+.EditorApp-content {
+  // Для поддержки LPage--scale
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

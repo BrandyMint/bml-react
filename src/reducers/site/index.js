@@ -18,7 +18,6 @@ export const initialState = {
 const handlers = {
   [CHANGE_THEME]: changeTheme,
   [TOGGLE_BOXED_LAYOUT]: toggleBoxedLayout,
-
 };
 
 export default createReducer(initialState, handlers);

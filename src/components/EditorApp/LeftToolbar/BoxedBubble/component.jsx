@@ -25,7 +25,7 @@ class BoxedBubble extends Component {
         data-tip=""
         className="IconLink"
       >
-        <SuperBubble>
+        <SuperBubble active={isBoxed}>
           <Icon className="SuperBubble--icon" />
         </SuperBubble>
       </a>
