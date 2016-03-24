@@ -36154,10 +36154,10 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  if (window !== undefined) {
-	    window.AppVersion = _semver2.default.version;
-	  } else {
+	  if (typeof window === 'undefined') {
 	    global.AppVersion = _semver2.default.version;
+	  } else {
+	    window.AppVersion = _semver2.default.version;
 	  }
 	
 	  console.log('Start application ' + _semver2.default);
