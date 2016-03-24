@@ -1,7 +1,12 @@
 @import "stylesheets/editor/config";
 
-@component LPage {
+.LPage {
+
+  /*
+   * В случае если блок невысокие, то с этим параметром LPage становится на
+   * всю высоту и появляется лишниее пустое место вокруг которого тень
   min-height: 100%;
+  */
   transition: transform 0.2s ease-in-out;
 }
 

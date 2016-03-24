@@ -1,4 +1,3 @@
-import assign from 'lodash/assign';
 import get from 'lodash/get';
 import merge from 'lodash/merge';
 import keys from 'lodash/keys';
@@ -9,6 +8,14 @@ import Rx from 'rx';
 import request from 'superagent';
 
 import config from 'constants/config';
+
+import invariant from 'invariant';
+
+const CONTENT_TYPE = 'application/json';
+
+const validateRawData = ({ type }) => {
+  invariant(type === CONTENT_TYPE, `Unsupported response content type ${type}`);
+};
 
 const apiCall = (
   url = null,
@@ -35,7 +42,7 @@ const apiCall = (
 
   const completeHeaders = hasAttach ?
     headers :
-    assign(headers, { 'Content-Type': 'application/json' });
+    { ...headers, 'Content-Type': 'application/json' };
 
   const req = request
     [HTTPMethod](apiUrl + endpoint);
@@ -78,17 +85,18 @@ export default () => next => action => {
   const apiKey = config('apiKey');
   // const apiKey = get(store.getState(), 'application.api_key');
 
-  const completeHeaders = assign(
-    {},
-    apiKey ? { 'X-Api-Key': apiKey } : {},
-    headers
-  );
+  const completeHeaders = { ...headers, Accept: CONTENT_TYPE };
+
+  if (apiKey) {
+    completeHeaders['X-Api-Key'] = apiKey;
+  }
 
   next(nextAction(action, { type: requestType }));
 
   const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
   const onError = rawData => {
+    validateRawData(rawData);
     const errorPayload = get(rawData, 'data.body') || {};
 
     const data = {
@@ -102,6 +110,7 @@ export default () => next => action => {
   };
 
   const onSuccess = rawData => {
+    validateRawData(rawData);
     const successPayload = get(rawData, 'body') || {};
     const data = { payload: successPayload, type: successType };
 

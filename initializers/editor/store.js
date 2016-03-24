@@ -32,6 +32,8 @@ const createStoreWithMiddleware = compose(
 
 export const store = createStoreWithMiddleware(finalReducers, initialState);
 
+if (window) { window.store = store; }
+
 if (__ENV__ === 'development') {
   if (module.hot) {
     module.hot.accept('reducers', () => (
