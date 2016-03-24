@@ -18,9 +18,13 @@ const hasMultipleBlocksSelector = state => size(state.blocks) > 1;
 const hasMultipleViewsSelector = (state, props) =>
   size(viewsRepository.getCompatibleViews(props.block.viewName)) > 1;
 
-const lBlockLayerSelector = createStructuredSelector({
+const isEnableSelector = ({ application }) =>
+  !application.zoom;
+
+const selector = createStructuredSelector({
   hasMultipleViews: hasMultipleViewsSelector,
   hasMultipleBlocks: hasMultipleBlocksSelector,
+  enablePanel: isEnableSelector,
 });
 
 const actions = {
@@ -33,4 +37,4 @@ const actions = {
   onCurrentBlock: setCurrentBlock,
 };
 
-export default connect(lBlockLayerSelector, actions)(LBlockLayer);
+export default connect(selector, actions)(LBlockLayer);

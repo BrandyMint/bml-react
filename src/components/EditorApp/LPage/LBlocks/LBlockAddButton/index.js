@@ -3,7 +3,10 @@ import { startAddingBlock } from 'actions/blocks';
 
 import component from './component';
 
-const selector = ({ blocks }) => ({ blocksCount: blocks.length });
+const selector = ({ blocks, application }) => ({
+  blocksCount: blocks.length,
+  enable: !application.zoom,
+});
 
 const actions = {
   onAddBlock: startAddingBlock,

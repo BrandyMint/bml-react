@@ -47,6 +47,7 @@ class LBlockLayer extends Component {
   render() {
     const {
       block, children, hasMultipleBlocks, hasMultipleViews,
+      enablePanel,
       onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
     } = this.props;
 
@@ -72,7 +73,7 @@ class LBlockLayer extends Component {
 
     const SectionPanel = (
       <Animated>
-        {!isTopNav && (isHovered || isPanelHovered) && (
+        {!isTopNav && enablePanel && (isHovered || isPanelHovered) && (
           <LBlockLayerPanel
             block={block}
             hasMultipleViews={hasMultipleViews}
@@ -107,6 +108,7 @@ LBlockLayer.propTypes = {
   children: PropTypes.node,
   hasMultipleBlocks: PropTypes.bool,
   hasMultipleViews: PropTypes.bool,
+  enablePanel: PropTypes.bool,
 
   // onActive: PropTypes.func.isRequired,
   onBlockPositionDown: PropTypes.func.isRequired,

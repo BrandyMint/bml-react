@@ -66,11 +66,11 @@ class StringEditable extends Component {
     }
   }
   render() {
-    const { className, tagName } = this.props;
+    const { className, tagName, enable } = this.props;
     const { isEditMode } = this.context;
     const { value } = this.state;
 
-    if (isEditMode) {
+    if (isEditMode && enable) {
       const classes = classnames(className, 'Redactor');
       return (
         <Editor
@@ -98,10 +98,12 @@ StringEditable.propTypes = {
   data: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   tagName: PropTypes.string,
+  enable: PropTypes.bool.isRequired,
 };
 
 StringEditable.defaultProps = {
   tagName: 'div',
+  enable: true,
 };
 
 StringEditable.contextTypes = {

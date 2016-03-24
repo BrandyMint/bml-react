@@ -5,7 +5,7 @@ import Themer from 'components/Themer';
 
 import LBlocks from './LBlocks';
 
-import './index.css';
+import './index.scss';
 
 class LPage extends Component {
   render() {

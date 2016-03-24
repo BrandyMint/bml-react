@@ -54,11 +54,11 @@ class RichEditable extends Component {
     }
   }
   render() {
-    const { className, tagName } = this.props;
+    const { className, tagName, enable } = this.props;
     const { isEditMode } = this.context;
     const { value } = this.state;
 
-    if (isEditMode) {
+    if (enable && isEditMode) {
       const classes = classnames(className, 'Redactor');
       return (
         <MediumEditor
@@ -86,10 +86,12 @@ RichEditable.propTypes = {
   data: PropTypes.object.isRequired,
   fieldName: PropTypes.string.isRequired,
   tagName: PropTypes.string,
+  enable: PropTypes.bool.isRequired,
 };
 
 RichEditable.defaultProps = {
   tagName: 'div',
+  enable: true,
 };
 
 RichEditable.contextTypes = {
