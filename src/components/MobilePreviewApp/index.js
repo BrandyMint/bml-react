@@ -1,3 +1,5 @@
-import MobilePreviewApp from './MobilePreviewApp';
+import { connect } from 'react-redux';
+import component from './component';
 
-export default MobilePreviewApp;
+const selector = state => state.application;
+export default connect(selector)(component);

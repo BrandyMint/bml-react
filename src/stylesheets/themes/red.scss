@@ -1,0 +1,9 @@
+.Theme-red {
+  @import './fonts';
+  @import './red/colors';
+  @import './default/body';
+  @import './colorDefinitions';
+  @import './default/index';
+
+  @include body;
+}

@@ -1,0 +1,71 @@
+@import 'themes/mixins';
+
+$inputHeight: 5.0rem;
+
+.form-input-mixin {
+  background: $secondaryBackgroundColor;
+  border: none;
+  width: 100%;
+  border-radius: 0;
+  &:focus {
+    outline: 1px solid $colorInputOutlineFocus;
+  }
+}
+
+.BML-form {
+  @import 'form/placeholder';
+
+  &.form-stack {
+    input,
+    button,
+    textarea {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &.form-inline {
+    .form-group {
+      margin-right: 2.5rem;
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  input,
+  button,
+  textarea {
+    appearance: none;
+    font-family: $font-family-input;
+  }
+
+  input:not([type="submit"]) {
+    @extend .form-input-mixin;
+
+    height: $inputHeight;
+    padding-left: 2.0rem;
+    font-weight: 500;
+  }
+
+  textarea {
+    @extend .form-input-mixin;
+    padding: 1.6rem 20px;
+  }
+
+  @include submitElements {
+		// Например кнопка у InlineForm
+    padding: 0 25px;
+    height: $inputHeight;
+    line-height: 4.8rem;
+    width: 100%;
+
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 0 !important;
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,15 +1,16 @@
 import findIndex from 'lodash/findIndex';
+import backgroundResolver from 'helpers/backgroundResolver';
 
-export default (state, action) => {
+export default (blocks, action) => {
   const { uuid } = action.payload;
-  const blockIndex = findIndex(state, { uuid });
+  const blockIndex = findIndex(blocks, { uuid });
 
   if (blockIndex !== -1) {
     return [
-      ...state.slice(0, blockIndex),
-      ...state.slice(blockIndex + 1),
+      ...blocks.slice(0, blockIndex),
+      ...blocks.slice(blockIndex + 1),
     ];
   }
 
-  return state;
+  return backgroundResolver(blocks);
 };

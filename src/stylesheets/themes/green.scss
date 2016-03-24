@@ -1,0 +1,9 @@
+.Theme-green {
+  @import './fonts';
+  @import './green/colors';
+  @import './default/body';
+  @import './colorDefinitions';
+  @import './default/index';
+
+  @include body;
+}

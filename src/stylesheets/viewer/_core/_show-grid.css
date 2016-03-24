@@ -1,0 +1,12 @@
+.show-grid {
+  border: 1px dashed rgba(255, 255, 255, 0);
+  padding: 8px;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  cursor: default;
+}
+
+.show-grid:hover {
+  border-color: $colorGrayLight;
+}

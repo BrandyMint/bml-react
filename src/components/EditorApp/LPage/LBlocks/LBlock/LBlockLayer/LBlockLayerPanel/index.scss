@@ -1,0 +1,25 @@
+@import "src/stylesheets/shared/zindexes";
+
+.LBlockLayerPanel {
+  position: absolute;
+  top: 15px;
+  left: 95px; // Значительно правее левого тулбара
+  z-index: $zindexBlockToolbar;
+  user-select: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;
+
+  font-size: 1rem;
+  line-height: 1.5;
+
+  &-actions {
+    float: left;
+
+    & > * {
+      display: inline-block;
+    }
+  }
+}

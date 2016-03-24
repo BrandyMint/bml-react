@@ -1,0 +1,11 @@
+{
+  "name": "bml-react",
+  "dependencies": {
+    "themify-icons": "^0.1.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

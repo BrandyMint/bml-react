@@ -1,0 +1,34 @@
+blockquote {
+  overflow: hidden;
+  font-family: $font-family-quote;
+  font-size: 1.0em;
+  font-weight: 300;
+  line-height: 1.8em;
+  font-style: italic;
+
+  // Делаем фон прозрачным чтобы:
+  // 1. Смотрелся на любых светлых оттенках
+  // 2. Оцвечивался при фокусировании в редакторе
+  background: rgba(220, 220, 220, 0.2);
+  // padding: 3.2em;
+  color: $colorBlockquote;
+
+  & .blockquote--author {
+    font-size: 1.2rem;
+    display: block;
+    float: right;
+    margin-top: 1.6rem;
+  }
+
+  .bg-secondary & {
+    background: $colorWhite;
+    border-color: $colorPrimary;
+  }
+}
+
+@media all and (max-width: 767px) {
+  blockquote {
+    font-size: 0.8em;
+    line-height: 1.6em;
+  }
+}

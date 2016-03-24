@@ -1,0 +1,17 @@
+
+
+.BML-section {
+  @import "./lead";
+  @import "./headers";
+  @import "./blockquote";
+  @import "./lists";
+
+  @media all and (max-width: 767px) {
+    p {
+      font-size: 1.2rem;
+    }
+    br {
+      display: none;
+    }
+  }
+}

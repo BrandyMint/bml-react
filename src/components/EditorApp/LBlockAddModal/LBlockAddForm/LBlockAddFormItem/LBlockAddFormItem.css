@@ -1,0 +1,26 @@
+@component LBlockAddFormItem {
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  @descendent title {
+    padding: 15px 20px;
+    font-size: 18px;
+    line-height: 48px;
+  }
+
+  @descendent icon {
+    margin-right: 20px;
+    font-size: 32px;
+    vertical-align: middle;
+  }
+
+  @descendent content {
+    padding: 10px 0;
+  }
+}
+

@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default ({ block }) => (
+const UnknownView = ({ view, uuid }) => (
   <div className="LBlock-placeholder">
-    Unknown view of block {block.view}
+    No such view {view} for block {uuid}
   </div>
 );
+
+UnknownView.propTypes = {
+  view: PropTypes.object.isRequired,
+  uuid: PropTypes.string.isRequired,
+};
+
+export default UnknownView;

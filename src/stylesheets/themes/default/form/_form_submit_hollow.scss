@@ -1,0 +1,13 @@
+input[type="submit"].hollow,
+button[type="submit"].hollow {
+  background: none;
+  border: 2px solid $colorPrimary;
+  color: $colorPrimary;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"].hollow:hover,
+button[type="submit"].hollow:hover {
+  background: $colorPrimary;
+  color: $colorPrimaryText;
+}

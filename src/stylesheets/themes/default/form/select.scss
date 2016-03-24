@@ -1,0 +1,32 @@
+select {
+  appearance: none; // TODO Зачем?
+  font-family: $font-family-input;
+  height: 5.0rem;
+  background: $secondaryBackgroundColor;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  padding-left: 2.0rem;
+  position: relative;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $colorSelectText;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+select:focus {
+  background: $backgroundSelectFocus;
+}
+
+select:active,
+select:focus,
+select:hover {
+  outline: none;
+  border: none;
+}
+
+

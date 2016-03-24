@@ -1,0 +1,33 @@
+@mixin headerElements {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @content
+  }
+}
+
+@mixin inputElements {
+  input:not([type="submit"]),
+  select,
+  textarea {
+    @content
+  }
+}
+
+@mixin textElements {
+  p,
+  span,
+  li {
+    @content
+  }
+}
+
+@mixin submitElements {
+  input[type="submit"],
+  button[type="submit"] {
+    @content
+  }
+}

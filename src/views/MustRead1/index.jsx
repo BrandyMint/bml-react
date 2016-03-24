@@ -1,47 +1,35 @@
 import React from 'react';
+import applyType from 'views/types/apply';
 
-import map from 'lodash/map';
-import { Types, makeView } from 'views/types';
-
-import StringEditable from 'components/primitives/StringEditable';
+import Buttons from 'views/elements/Buttons';
+import StringEditable from 'views/elements/StringEditable';
+import ViewContainer from 'views/elements/ViewContainer';
 
 import './index.css';
 
-const MustRead1 = ({ content }) => (
-  <section className="MustRead2">
+/* eslint-disable react/prop-types */
+const MustRead1 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--height-70">
     <div className="container vertical-center-rel">
       <div className="row">
-        <div className="col-lg-12">
-          <div className="MustRead1-message">
-            <StringEditable
-              data={content}
-              className="MustRead1-header text-white"
-              fieldName="header"
-              tagName="h1"
-            />
-            <StringEditable
-              data={content}
-              className="MustRead1-subheader text-white"
-              fieldName="subheader"
-              tagName="h3"
-            />
-            <ul className="list-inline MustRead1-buttons">
-              {map(content.items, (item, index) =>
-                <li key={index} className="list-inline-item">
-                  <a
-                    href={item.url}
-                    className="btn btn-primary btn-shadow text-uppercase btn-md"
-                  >
-                  {item.title}
-                  </a>
-                </li>
-              )}
-            </ul>
-          </div>
+        <div className="col-md-7">
+          <StringEditable
+            className="BML-h2 color-primary"
+            data={block.content}
+            fieldName="header"
+            tagName="h2"
+          />
+          <StringEditable
+            className="lead color-primary mb40"
+            data={block.content}
+            fieldName="subheader"
+            tagName="p"
+          />
+          <Buttons buttons={block.content.items} className="mt40" />
         </div>
       </div>
     </div>
-  </section>
+  </ViewContainer>
 );
 
-export default makeView(MustRead1, Types.mustRead);
+export default applyType.mustRead(MustRead1);

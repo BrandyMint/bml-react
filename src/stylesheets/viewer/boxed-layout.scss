@@ -1,0 +1,7 @@
+.boxed-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // border: 1px solid #eee; // rgba(10, 10, 10, 0.8); // TODO Както привязывать к primary-color или secondary-color или фону
+  box-shadow: 0 0 64px rgba(30, 30, 30, 0.3);
+}

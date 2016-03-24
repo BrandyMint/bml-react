@@ -4,9 +4,9 @@ import morgan from 'morgan';
 import webpack from 'webpack';
 import webpackDev from 'webpack-dev-middleware';
 import webpackHot from 'webpack-hot-middleware';
-import webpackConfig from '../webpack/development';
+import webpackConfig from '/webpack/development';
 
-import config from '../config';
+import config from '/initializers/config';
 import render from './render';
 
 const application = express();
@@ -16,6 +16,7 @@ application.set('views', __dirname);
 application.set('view engine', 'ejs');
 application.use(morgan('combined'));
 application.use('/assets', express.static(config.STATIC_ASSETS_PATH));
+application.use('/dist', express.static('dist'));
 application.use(webpackDev(compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: { colors: true },

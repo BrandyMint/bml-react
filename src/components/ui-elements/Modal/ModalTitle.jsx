@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 const ModalTitle = ({ children, className }) => (
@@ -6,5 +6,10 @@ const ModalTitle = ({ children, className }) => (
     {children}
   </h4>
 );
+
+ModalTitle.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
 
 export default ModalTitle;

@@ -1,15 +1,10 @@
-import uuid from 'uuid';
-
-import get from 'lodash/get';
-
-import VIEW_EXAMPLES from 'constants/viewExamples';
+import invariant from 'invariant';
 
 export const CHANGE_BLOCK_CONTENT = 'CHANGE_BLOCK_CONTENT';
 export const CHANGE_BLOCK_NODE_ATTRIBUTES = 'CHANGE_BLOCK_NODE_ATTRIBUTES';
 
 export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
-export const SELECT_BLOCK_FOR_ADDING = 'SELECT_BLOCK_FOR_ADDING';
 
 export const START_EDITING_BLOCK = 'START_EDITING_BLOCK';
 export const DELETE_EDITING_BLOCK = 'DELETE_EDITING_BLOCK';
@@ -62,50 +57,35 @@ export const deleteEditingBlock = () => (dispatch, getState) => {
   const { editBlockForm } = getState();
   const { uuid } = editBlockForm.block;
 
-  if (uuid) {
-    return dispatch({
-      type: DELETE_EDITING_BLOCK,
-      payload: { uuid },
-    });
-  }
+  invariant(uuid, 'No uuid for deletion');
+
+  return dispatch({
+    type: DELETE_EDITING_BLOCK,
+    payload: { uuid },
+  });
 };
 
-export const submitAddingBlock = () => (dispatch, getState) => {
+export const submitAddingBlock = (example) => (dispatch, getState) => {
   const { addBlockForm } = getState();
-  const { position, selectedIndex } = addBlockForm;
+  const { position } = addBlockForm;
 
-  if (selectedIndex === null) return;
-
-  const example = get(VIEW_EXAMPLES, selectedIndex);
-
-  if (example) {
-    return dispatch({
-      type: SUBMIT_ADDING_BLOCK,
-      payload: {
-        position,
-        block: {
-          uuid: uuid.v4(),
-          view: example.view,
-          ...example.defaultData,
-        },
-      },
-    });
-  }
+  return dispatch({
+    type: SUBMIT_ADDING_BLOCK,
+    payload: {
+      position,
+      example,
+    },
+  });
 };
 
-export const changeContent = (uuid, fieldName, value) => ({
+export const changeContent = (uuid, path, value) => ({
   type: CHANGE_BLOCK_CONTENT,
-  payload: { fieldName, uuid, value },
+  payload: { path, uuid, value },
 });
 
 export const changeNodeAttributes = (uuid, fieldName, value) => ({
   type: CHANGE_BLOCK_NODE_ATTRIBUTES,
   payload: { fieldName, uuid, value },
-});
-
-export const selectBlockForAdding = (index) => ({
-  type: SELECT_BLOCK_FOR_ADDING,
-  payload: { index },
 });
 
 export const downBlockPosition = (uuid) => ({

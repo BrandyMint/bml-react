@@ -1,13 +1,19 @@
-import addBlockForm from './addBlockForm';
 import application from './application';
 import blocks from './blocks';
-import editBlockForm from './editBlockForm';
+import site from './site';
 import modal from './modal';
+import tracker from './tracker';
+import activity from './activity';
+import addBlockForm from './addBlockForm';
+import editBlockForm from './editBlockForm';
 
 export default {
-  addBlockForm,
+  tracker,
   application,
   blocks,
-  editBlockForm,
+  site,
   modal,
+  activity,
+  addBlockForm,
+  editBlockForm,
 };

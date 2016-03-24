@@ -1,0 +1,9 @@
+.Theme-blue {
+  @import './fonts';
+  @import './blue/colors';
+  @import './default/body';
+  @import './colorDefinitions';
+  @import './default/index';
+
+  @include body;
+}

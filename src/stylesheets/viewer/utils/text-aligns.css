@@ -1,0 +1,21 @@
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+
+@media all and (max-width: 767px) {
+  .text-left-xs {
+    text-align: left !important;
+  }
+}
+@media all and (max-width: 767px) {
+  .text-center-xs {
+    text-align: center !important;
+  }
+}
+

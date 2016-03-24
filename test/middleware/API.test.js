@@ -43,7 +43,7 @@ describe('Middleware: API', () => {
   it('should create success action when request has been done', done => {
     const response = { some: 'response' };
 
-    nock(config.api.url)
+    nock(config('apiUrl'))
       .get(action[API_CALL].endpoint)
       .reply(200, response);
 
@@ -65,7 +65,7 @@ describe('Middleware: API', () => {
   it('should create failure action when request has been failed', done => {
     const error = { some: 'error' };
 
-    nock(config.api.url)
+    nock(config('apiUrl'))
       .get(action[API_CALL].endpoint)
       .reply(400, error);
 
@@ -91,7 +91,7 @@ describe('Middleware: API', () => {
     const actionWithQuery =
      { [API_CALL]: assign({ query }, action[API_CALL]) };
 
-    nock(config.api.url)
+    nock(config('apiUrl'))
       .get(action[API_CALL].endpoint)
       .query(query)
       .reply(200, response);
@@ -116,7 +116,7 @@ describe('Middleware: API', () => {
     const postAction =
       { [API_CALL]: assign({ method: 'post' }, action[API_CALL]) };
 
-    nock(config.api.url)
+    nock(config('apiUrl'))
       .post(action[API_CALL].endpoint)
       .reply(200, response);
 

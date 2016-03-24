@@ -1,8 +1,9 @@
-@component InlineForm1 {
+.InlineForm1.Theme2 {
   padding: 3em;
   text-align: center;
-  @descendent title {
+
+  .InlineForm1-title {
     text-transform: uppercase;
-    margin-right: 2em
+    margin-right: 2em;
   }
 }

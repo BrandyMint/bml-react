@@ -1,0 +1,9 @@
+@component LBlockViewChanger {
+  float: left;
+
+  .Bubble {
+    float: left;
+    margin-right: 10px;
+  }
+}
+

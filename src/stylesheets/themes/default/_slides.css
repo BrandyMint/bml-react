@@ -1,0 +1,227 @@
+/*!---------- 04. SLIDERS ----------*/
+
+.image-slider {
+    position: relative;
+}
+
+.image-slider .slides {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider .slides li {
+    position: relative;
+}
+
+.image-slider .slides li > img {
+    width: 100%;
+}
+
+.row .image-slider {
+    margin-bottom: 2.4rem;
+}
+
+.height-70 .slides li {
+    height: 70vh;
+    min-height: 600px;
+}
+
+@media all and (max-width: 767px) {
+    .height-70 .slides li {
+        height: auto;
+        min-height: none;
+        padding: 8.0rem 0;
+    }
+    .height-70 .v-align-transform {
+        top: 0;
+        transform: none;
+    }
+}
+
+.flex-direction-nav a.flex-next {
+    right: 1.6rem;
+}
+
+.flex-direction-nav a.flex-next:before,
+.flex-direction-nav a.flex-prev:before {
+    content: "\e649";
+    font-family: 'themify';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 2.4rem;
+    color: $colorWhite;
+}
+
+.flex-direction-nav a.flex-prev {
+    left: 1.6rem;
+}
+
+.flex-direction-nav a.flex-prev:before {
+    content: "\e64a";
+}
+
+.flex-direction-nav a {
+    opacity: 1;
+    text-shadow: none;
+    color: rgba(0, 0, 0, 0);
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: -12px 0 0;
+}
+
+.flex-control-nav li {
+    overflow: hidden;
+}
+
+.flex-control-nav li a {
+    background: none;
+    border: 2px solid $colorDark;
+    width: 1.0rem;
+    height: 1.0rem;
+}
+
+@media all and (max-width: 768px) {
+    .flex-direction-nav {
+        display: none;
+    }
+}
+
+
+.image-bg .flex-control-nav li a {
+    border-color: $colorWhite;
+}
+
+.image-bg .flex-control-nav li a.flex-active {
+    background: $colorWhite;
+}
+
+.slider-thumb-controls .flex-control-thumbs {
+    margin: 0;
+}
+
+.slider-thumb-controls .flex-direction-nav {
+    display: none;
+}
+
+@media all and (max-width: 767px) {
+    .slider-thumb-controls .flex-control-thumbs {
+        display: none;
+    }
+    .slider-thumb-controls .flex-direction-nav {
+        display: block;
+    }
+}
+
+.logo-carousel li {
+    text-align: center;
+}
+
+.logo-carousel li {
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    opacity: .5;
+}
+
+.logo-carousel li:hover {
+    opacity: 1;
+}
+
+.logo-carousel img {
+    max-height: 6.0rem;
+}
+
+@media all and (max-width: 767px) {
+    .logo-carousel .slides li {
+        width: 100%;
+    }
+}
+
+.text-slider .flex-direction-nav li a:before {
+    color: $colorGrayLight;
+}
+
+.image-bg .text-slider .flex-direction-nav li a:before {
+    color: $colorWhite;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    opacity: .5;
+}
+
+.image-bg .text-slider .flex-direction-nav li a:hover:before {
+    opacity: 1;
+}
+
+.text-slider .flex-direction-nav a.flex-prev {
+    left: -60px;
+}
+
+.text-slider .flex-direction-nav a.flex-next {
+    right: -60px;
+}
+
+.kenburns .slides li:nth-of-type(odd) .background-image-holder {
+    animation: kenBurnsEast 25s linear infinite alternate;
+    -webkit-animation: kenBurnsEast 25s linear infinite alternate;
+}
+
+.kenburns .slides li:nth-of-type(even) .background-image-holder {
+    animation: kenBurnsWest 25s linear infinite alternate;
+    -webkit-animation: kenBurnsWest 25s linear infinite alternate;
+}
+
+@keyframes kenBurnsEast {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(100px);
+        -webkit-transform: scale(1.2) translateX(100px);
+    }
+}
+
+@-webkit-keyframes kenBurnsEast {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(100px);
+        -webkit-transform: scale(1.2) translateX(100px);
+    }
+}
+
+@keyframes kenBurnsWest {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(-100px);
+        -webkit-transform: scale(1.2) translateX(-100px);
+    }
+}
+
+@-webkit-keyframes kenBurnsWest {
+    from {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+    to {
+        transform: scale(1.2) translateX(-100px);
+        -webkit-transform: scale(1.2) translateX(-100px);
+    }
+}
+
+@media all and (max-width: 767px) {
+    .kenburns .slides li .background-image-holder {
+        animation: none !important;
+        -webkit-animation: none !important;
+    }
+}

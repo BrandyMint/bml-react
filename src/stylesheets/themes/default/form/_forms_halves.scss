@@ -1,0 +1,34 @@
+form.thirds input,
+form.thirds button {
+  width: 32%;
+  float: left;
+  margin-left: 1%;
+  margin-bottom: 1.6rem;
+}
+
+form.halves input,
+form.halves button {
+  width: 46%;
+  float: left;
+  margin-left: 2.5%;
+  margin-bottom: 1.6rem;
+}
+
+form.halves p,
+form.thirds p,
+form.halves span,
+form.thirds span {
+  clear: both;
+}
+
+@media all and (max-width: 767px) {
+  form.thirds input,
+  form.halves input,
+  form.thirds button,
+  form.halves button {
+    width: 100%;
+    margin-bottom: 8px;
+    float: left;
+    margin-left: 0;
+  }
+}

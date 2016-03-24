@@ -11,13 +11,14 @@ import request from 'superagent';
 import config from 'constants/config';
 
 const apiCall = (
-  url = config.api.url,
+  url = null,
   endpoint = '',
   method = 'GET',
   payload = {},
   headers = {},
   attach = {},
 ) => {
+  const apiUrl = url || config('apiUrl');
   const subject = new Rx.Subject();
   const HTTPMethod = method.toLowerCase();
 
@@ -37,11 +38,11 @@ const apiCall = (
     assign(headers, { 'Content-Type': 'application/json' });
 
   const req = request
-    [HTTPMethod](url + endpoint);
+    [HTTPMethod](apiUrl + endpoint);
 
   if (!isEmpty(payload)) {
     const sendMethod = (HTTPMethod === 'post' || HTTPMethod === 'put') ? 'send' : 'payload';
-    const sendArguments = (HTTPMethod, payload) =>
+    const sendArguments =
       (HTTPMethod === 'put' || HTTPMethod === 'post') ?
         JSON.stringify(payload) :
         qs.stringify(payload, { arrayFormat: 'brackets' });
@@ -67,13 +68,15 @@ const nextAction = (action, data) => {
   return next;
 };
 
-export default store => next => action => {
+// export default store => next => action => {
+export default () => next => action => {
   if (!get(action, API_CALL)) return next(action);
 
   const { endpoint, headers, method, payload, types, url, attach } = action[API_CALL];
   const [requestType, successType, failureType] = types;
 
-  const apiKey = get(store.getState(), 'application.api_key');
+  const apiKey = config('apiKey');
+  // const apiKey = get(store.getState(), 'application.api_key');
 
   const completeHeaders = assign(
     {},
@@ -86,10 +89,10 @@ export default store => next => action => {
   const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
   const onError = rawData => {
-    const payload = get(rawData, 'data.body') || {};
+    const errorPayload = get(rawData, 'data.body') || {};
 
     const data = {
-      payload,
+      payload: errorPayload,
       type: failureType,
       meta: { httpCode: rawData.error.status },
       error: true,
@@ -99,11 +102,11 @@ export default store => next => action => {
   };
 
   const onSuccess = rawData => {
-    const payload = get(rawData, 'body') || {};
-    const data = { payload, type: successType };
+    const successPayload = get(rawData, 'body') || {};
+    const data = { payload: successPayload, type: successType };
 
     next(nextAction(action, data));
   };
 
-  apiRequest.subscribe(onSuccess, onError);
+  return apiRequest.subscribe(onSuccess, onError);
 };

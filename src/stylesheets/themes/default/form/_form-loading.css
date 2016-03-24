@@ -1,0 +1,28 @@
+button[type="submit"] .form-loading {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-block;
+  top: 9px;
+  position: relative;
+  left: 0;
+}
+
+.btn-white .form-loading {
+  border: 3px solid $colorGrayLight;
+}
+
+.form-loading {
+  border: 3px solid $colorWhite;
+  border-radius: 3.0rem;
+  height: 3.0rem;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  margin: 0px auto;
+  top: 50%;
+  width: 3.0rem;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  z-index: $zIndexUnderForms;
+}
+

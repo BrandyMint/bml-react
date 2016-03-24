@@ -1,38 +1,25 @@
-import React, { Component } from 'react';
-import map from 'lodash/map';
+import React from 'react';
+import applyType from 'views/types/apply';
+import ViewContainer from 'views/elements/ViewContainer';
 
-import { Types, makeView } from 'views/types';
+import ContentForm from 'views/elements/ContentForm';
+import RichEditable from 'views/elements/RichEditable';
 
 import './index.css';
 
-class InlineForm1 extends Component {
-  static propTypes = Types.inlineForm.propTypes;
+/* eslint-disable react/prop-types */
+const InlineForm1 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--padding text-center">
+    <div className="container">
+      <RichEditable
+        className="lead mb40"
+        data={block.content}
+        fieldName="text"
+        tagName="div"
+      />
+    </div>
+    <ContentForm {...block.form} className="form-inline" />
+  </ViewContainer>
+);
 
-  render() {
-    /* eslint-disable react/prop-types */
-    const { content, form, uuid } = this.props;
-    /* eslint-enable */
-    return (
-      <form className="form-inline">
-        { content.title && (<span className="InlineForm1-title">{content.title}</span>)}
-        {map(form.fields, (field, index) => {
-          const key = `${uuid}-${index}`;
-          return (
-            <div className="form-group" key={index}>
-              <label htmlFor={key}>{field.title}</label>
-              <input
-                type={field.inputType}
-                className="form-control"
-                id={key}
-                placeholder={field.placeholder}
-              />
-            </div>
-          );
-        })}
-        <button type="submit" className="btn btn-primary">{form.submitTitle}</button>
-      </form>
-    );
-  }
-}
-
-export default makeView(InlineForm1, Types.inlineForm);
+export default applyType.formWithText(InlineForm1);

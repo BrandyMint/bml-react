@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import { Link } from 'react-router';
 
 import bind from 'lodash/bind';
 
@@ -18,7 +19,7 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, hasIcon, text, url, isProcessing } = this.props;
+    const { children, hasIcon, text, to, isProcessing } = this.props;
     const bubbleClasses = classnames({
       Bubble: true,
       'Bubble--withText': !!text,
@@ -26,15 +27,25 @@ class Bubble extends Component {
       'is-processing': isProcessing,
     });
 
+    if (to) {
+      return (
+        <Link
+          className={bubbleClasses}
+          to={to}
+        >
+          {!!text && <span className="Bubble-text">{text}</span>}
+          {children}
+        </Link>
+      );
+    }
     return (
-      <a
+      <span
         className={bubbleClasses}
-        href={url || '#'}
         onClick={this.handleClick}
       >
         {!!text && <span className="Bubble-text">{text}</span>}
         {children}
-      </a>
+      </span>
     );
   }
 }
@@ -44,6 +55,7 @@ Bubble.propTypes = {
   hasIcon: PropTypes.bool,
   onClick: PropTypes.func,
   text: PropTypes.string,
+  to: PropTypes.string,
   url: PropTypes.string,
   isProcessing: PropTypes.bool,
 };
