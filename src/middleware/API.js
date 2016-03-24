@@ -9,12 +9,11 @@ import request from 'superagent';
 
 import config from 'constants/config';
 
-import invariant from 'invariant';
-
 const CONTENT_TYPE = 'application/json';
 
 const validateRawData = (rawData) => {
   if (rawData.type !== CONTENT_TYPE) {
+    /* eslint-disable no-console */
     console.log(`Unsupported response content type "${rawData.type}"`, rawData);
   }
 };
