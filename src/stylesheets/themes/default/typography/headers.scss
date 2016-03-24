@@ -1,0 +1,93 @@
+h1, h2 {
+  font-family: $font-family-header;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+table {
+  margin-bottom: 2.4rem;
+  margin-top: 0;
+  padding: 0;
+}
+
+$line-space: 0.8rem;
+
+@mixin headerFont($n) {
+  font-size: $n;
+  line-height: $n + $line-space;
+  font-weight: 300;
+}
+
+h1 {
+  @include headerFont(5.6rem);
+}
+
+h2 {
+  @include headerFont(4rem);
+}
+
+h3 {
+  @include headerFont(3.2rem);
+}
+
+h4 {
+  @include headerFont(2.4rem);
+}
+
+h5 {
+  @include headerFont(1.6rem);
+  font-weight: 400;
+}
+
+h6 {
+  @include headerFont(1.2rem);
+  font-weight: 700;
+}
+
+p {
+  line-height: $golden;
+}
+
+@media all and (max-width: 767px) {
+  h1,
+  h1.large,
+  .h1 {
+    font-size: 3.2rem;
+    line-height: 4.0rem;
+    font-weight: 300;
+  }
+  h2 {
+    font-size: 3.2rem;
+    line-height: 4.0rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+  h5 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+  }
+  h6,
+  .h6 {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+  }
+}
+
+/*p,*/
+/*span {*/
+/*font-weight: 400;*/
+/*}*/

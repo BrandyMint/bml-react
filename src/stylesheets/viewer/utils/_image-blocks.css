@@ -1,0 +1,17 @@
+/*!---------- 05. IMAGE BLOCKS ----------*/
+
+.image-md {
+    max-height: 120px;
+}
+
+.image-small {
+    max-height: 80px;
+}
+
+.image-xs {
+    max-height: 50px;
+}
+
+.image-xxs {
+    max-height: 30px;
+}

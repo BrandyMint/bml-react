@@ -8,6 +8,11 @@ import changeBlockField from './handlers/changeBlockField';
 import addBlock from './handlers/addBlock';
 import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
+import successLoad from './handlers/successLoad';
+
+import {
+  LANDING_VARIANT_LOAD_SUCCESS,
+} from 'actions/variants';
 
 import {
   UP_BLOCK_POSITION,
@@ -23,13 +28,15 @@ import {
   DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
-const initialState = [];
+export const initialState = [];
 
 const handlers = {
   [UP_BLOCK_POSITION]: upBlockPosition,
   [DOWN_BLOCK_POSITION]: downBlockPosition,
   [SWITCH_NEXT_VIEW]: switchNextView,
   [SWITCH_PREV_VIEW]: switchPrevView,
+
+  [LANDING_VARIANT_LOAD_SUCCESS]: successLoad,
 
   [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
   [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),

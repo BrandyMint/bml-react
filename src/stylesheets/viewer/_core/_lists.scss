@@ -1,0 +1,18 @@
+
+/*!---------- 3.1. TYPOGRAPHY - LISTS ----------*/
+
+ul[data-bullet] li {
+  line-height: 32px;
+}
+
+ul[data-bullet] li i:first-child {
+  margin-right: 16px;
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  display: inline-block;
+}
+
+ul.lead li {
+  font-size: 16px;
+  line-height: 40px;
+}

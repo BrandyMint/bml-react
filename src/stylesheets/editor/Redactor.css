@@ -1,0 +1,20 @@
+.Redactor {
+  transition: all 0.3s;
+
+  &:hover {
+    outline: 0px solid transparent;
+    background: rgba(70, 186, 249, 0.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: 0px solid transparent;
+    background: rgba(70, 186, 249, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  ::selection {
+    background: $selectionColor; /* WebKit/Blink Browsers */
+  }
+}
+

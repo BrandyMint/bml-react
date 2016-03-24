@@ -1,0 +1,75 @@
+.checkbox-option,
+.radio-option {
+  display: inline-block;
+  width: 5.0rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  border: 1px solid $colorPrimary;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 2.4rem;
+}
+
+.checkbox-option .inner,
+.radio-option .inner {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid $colorPrimary;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.checkbox-option.checked .inner {
+  transform: translate3d(25px, 0, 0);
+  background: $colorPrimary;
+}
+
+.checkbox-option input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.radio-option {
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: left;
+}
+
+.radio-option:nth-of-type(n+2) {
+  margin-left: 2.4rem;
+}
+
+.radio-option input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.radio-option .inner {
+  border: none;
+  width: 1.9rem;
+  height: 1.9rem;
+  left: 2px;
+  transform: scale(0);
+}
+
+.radio-option + span {
+  display: inline-block;
+  line-height: 2.5rem;
+}
+
+.radio-option.checked .inner {
+  transform: scale(1);
+}
+
+.radio-option.checked .inner {
+  background: $colorPrimary;
+}

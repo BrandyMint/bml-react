@@ -1,0 +1,43 @@
+/*!---------- 06. MAPS ----------*/
+
+.map-holder {
+    overflow: hidden;
+    position: relative;
+}
+
+.map-holder iframe {
+    border: none;
+    position: absolute;
+    width: 100%;
+    height: 180%;
+    top: -40%;
+    left: 0;
+    z-index: $zIndexMapsHolder;
+}
+
+.map-holder:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: $zIndexMapsBefore;
+}
+
+.map-holder.interact:before {
+    width: 0;
+}
+
+.map-holder.inline {
+    height: 400px;
+    overflow: hidden;
+}
+
+.map-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+

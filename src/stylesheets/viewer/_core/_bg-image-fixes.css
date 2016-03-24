@@ -1,0 +1,10 @@
+.image-bg .container,
+.image-bg div[class*='col-'] {
+    position: relative;
+    z-index: $zIndexUnderRelative;
+}
+
+.container.image-bg .row {
+  position: relative;
+  z-index: $zIndexUnderRelative;
+}

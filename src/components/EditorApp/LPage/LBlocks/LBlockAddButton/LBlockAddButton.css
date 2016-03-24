@@ -1,0 +1,53 @@
+@import "stylesheets/editor/config";
+
+$height: 60px;
+$width: 60px;
+
+@component LBlockAddButton {
+  z-index: $bubbleZindex;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: all 0.25s ease;
+  cursor: pointer;
+
+  @descendent handle {
+    width: $width;
+    height: $height;
+    margin: auto;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ebebeb;
+    border-radius: 100em;
+    transition: all 0.25s ease;
+  }
+
+  .Icon {
+    transition: all 0.25s ease;
+    margin-top: 9px;
+    font-size: 40px;
+    opacity: 0.4;
+    transform: scale(0.55);
+  }
+
+  @modifier last {
+    margin-bottom: calc($height * 1.5);
+  }
+
+  &:hover {
+    .LBlockAddButton-handle {
+      border: 1px solid #1eabf8;
+      background: rgba(70, 186, 249, 0.8);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .Icon {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}

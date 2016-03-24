@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 const ModalFooter = ({ children, className }) => (
@@ -6,5 +6,10 @@ const ModalFooter = ({ children, className }) => (
     {children}
   </div>
 );
+
+ModalFooter.propTypes = {
+  children: PropTypes.element,
+  className: PropTypes.string,
+};
 
 export default ModalFooter;

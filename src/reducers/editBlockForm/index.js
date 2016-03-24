@@ -9,15 +9,15 @@ import {
 import {
   CHANGE_NODE_ATTRIBUTE,
   CHANGE_CONTENT_FIELD,
-  CHANGE_BACKGROUND,
+  CHANGE_BACKGROUND_IMAGE,
   CHANGE_FORM,
 } from 'actions/editBlockForm';
 
-const initialState = {
+export const initialState = {
   block: {
     uuid: '',
     type: '',
-    view: '',
+    viewName: '',
     content: {},
     nodeAttributes: {},
     background: {},
@@ -35,7 +35,7 @@ const handlers = {
   [CANCEL_EDITING_BLOCK]: () => initialState,
 
   [CHANGE_CONTENT_FIELD]: changeBlockField('content'),
-  [CHANGE_BACKGROUND]: changeBlockField('background'),
+  [CHANGE_BACKGROUND_IMAGE]: changeBlockField('backgroundImage'),
   [CHANGE_FORM]: changeBlockField('form'),
   [CHANGE_NODE_ATTRIBUTE]: changeBlockField('nodeAttributes'),
 };

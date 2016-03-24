@@ -1,1 +1,2 @@
-src/react-icons/*
+test/mockStore.js
+src/views/*/examples.js

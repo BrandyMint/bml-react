@@ -1,18 +1,21 @@
 import map from 'lodash/map';
+import backgroundResolver from 'helpers/backgroundResolver';
 
-import { viewsRepository } from 'views/all';
+import { viewsRepository } from 'repositories/ViewsRepository';
 
 export default (state, action) => {
   const { uuid } = action.payload;
 
-  return map(state, (block) => {
+  const blocks = map(state, (block) => {
     if (block.uuid === uuid) {
-      const prevView = viewsRepository.getNextView(block.view);
+      const prevView = viewsRepository.getPrevView(block.viewName);
       if (prevView) {
-        return { ...block, view: prevView.name };
+        return { ...block, viewName: prevView.viewName };
       }
     }
 
     return block;
   });
+
+  return backgroundResolver(blocks);
 };

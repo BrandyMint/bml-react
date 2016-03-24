@@ -1,0 +1,5 @@
+@import "stylesheets/editor/config";
+
+@component LPage {
+  min-height: 100%;
+}

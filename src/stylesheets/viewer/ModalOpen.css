@@ -1,0 +1,24 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+/* http://stackoverflow.com/questions/24166568/set-bootstrap-modal-body-height-by-percentage */
+
+/*When the modal fills the screen it has an even 2.5% on top and bottom*/
+/*Centers the modal*/
+.modal-dialog {
+  margin: 7vh auto;
+}
+
+/*Sets the maximum height of the entire modal to 95% of the screen height*/
+/*.modal-content {*/
+  /*max-height: 85vh;*/
+  /*overflow: scroll;*/
+/*}*/
+
+/*Sets the maximum height of the modal body to 90% of the screen height*/
+.modal-body {
+	overflow: scroll;
+  max-height: 80vh;
+	min-height: 300px;
+}

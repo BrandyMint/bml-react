@@ -1,6 +1,4 @@
-body.MobilePreviewBody {
-  background-image: linear-gradient(75deg, rgb(195, 41, 156), rgb(195, 41, 44));
-}
+@import "stylesheets/assets";
 
 @component MobilePreview {
   margin: auto;
@@ -9,7 +7,7 @@ body.MobilePreviewBody {
   height: 1000px;
   width: 532px;
   display: block;
-  background: url("/assets/images/iphone6-white.png") left top / 100% no-repeat;
+  background: url($devicePhone) left top / 100% no-repeat;
 
   @descendent viewport {
     width: 375px;
@@ -19,4 +17,13 @@ body.MobilePreviewBody {
     margin-top: 107px;
     overflow: hidden;
   }
+}
+
+iframe.Mobile-iframe {
+  border: 0;
+  background-color: black;
+  background-image: url("/assets/images/loading-bubbles.svg");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }

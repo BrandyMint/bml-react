@@ -1,0 +1,7 @@
+@component LBlockPositionChanger {
+  .Bubble {
+    float: left;
+    margin-right: 10px;
+  }
+}
+

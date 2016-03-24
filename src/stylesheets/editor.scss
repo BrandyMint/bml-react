@@ -1,0 +1,15 @@
+@import './shared/media';
+@import './shared/angeled-background';
+@import './editor/config';
+@import './editor/Modal';
+@import './editor/Redactor';
+@import './editor/IconLink';
+@import './editor/Medium';
+@import './editor/MobilePreviewBody';
+
+/* stylelint-disable-line rule-non-nested-empty-line-before */
+
+body.EditorApp {
+  @include angled-background;
+  min-height: 500px;
+}

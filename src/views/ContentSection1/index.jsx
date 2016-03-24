@@ -1,38 +1,39 @@
 import React from 'react';
-import { Types, makeView } from 'views/types';
-import StringEditable from 'components/primitives/StringEditable';
+import applyType from 'views/types/apply';
+import ViewContainer from 'views/elements/ViewContainer';
 
-import './index.css';
+import Image from 'views/elements/Image';
+import Buttons from 'views/elements/Buttons';
 
-const ContentSection1 = ({ content }) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-5 col-sm-6">
-        <hr className="section-heading-spacer" />
-        <div className="clearfix" />
-        <StringEditable
-          className="section-heading"
-          data={content}
-          fieldName="headerText"
-          tagName="h2"
-        />
-        <StringEditable
-          className="lead"
-          data={content}
-          fieldName="leadText"
-          tagName="p"
-        />
-      </div>
-      <div className="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img
-          className="img-fluid"
-          height={content.image.height}
-          src={content.image.url}
-          width={content.image.width}
-        />
+import StringEditable from 'views/elements/StringEditable';
+import RichEditable from 'views/elements/RichEditable';
+
+/* eslint-disable react/prop-types */
+const ContentSection1 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--padding">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-5 col-sm-6">
+          <StringEditable
+            className="BML-h2 color-primary"
+            data={block.content}
+            fieldName="header"
+            tagName="h2"
+          />
+          <RichEditable
+            className="lead"
+            data={block.content}
+            fieldName="leadText"
+            tagName="div"
+          />
+          <Buttons buttons={block.content.links} className="mt40" />
+        </div>
+        <div className="col-lg-5 col-lg-offset-2 col-sm-6">
+          <Image {...block.content.image} />
+        </div>
       </div>
     </div>
-  </div>
+  </ViewContainer>
 );
 
-export default makeView(ContentSection1, Types.contentSection);
+export default applyType.contentSection(ContentSection1);

@@ -1,40 +1,40 @@
 import React from 'react';
-import { Types, makeView } from 'views/types';
-import StringEditable from 'components/primitives/StringEditable';
+import ViewContainer from 'views/elements/ViewContainer';
+import applyType from 'views/types/apply';
 
-import './index.css';
+import Image from 'views/elements/Image';
+import Buttons from 'views/elements/Buttons';
 
-const ContentSection2 = ({ content }) => (
-  <div className="content-section-b">
+import StringEditable from 'views/elements/StringEditable';
+import RichEditable from 'views/elements/RichEditable';
+
+/* eslint-disable react/prop-types */
+const ContentSection2 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--padding">
     <div className="container">
       <div className="row">
         <div className="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
-          <hr className="section-heading-spacer" />
           <div className="clearfix" />
           <StringEditable
-            className="section-heading"
-            data={content}
-            fieldName="headerText"
+            className="BML-h2 color-primary"
+            data={block.content}
+            fieldName="header"
             tagName="h2"
           />
-          <StringEditable
+          <RichEditable
             className="lead"
-            data={content}
+            data={block.content}
             fieldName="leadText"
-            tagName="p"
+            tagName="div"
           />
+          <Buttons buttons={block.content.links} className="mt40" />
         </div>
         <div className="col-lg-5 col-sm-pull-6 col-sm-6">
-          <img
-            className="img-fluid"
-            height={content.image.height}
-            src={content.image.url}
-            width={content.image.width}
-          />
+          <Image {...block.content.image} />
         </div>
       </div>
     </div>
-  </div>
+  </ViewContainer>
 );
 
-export default makeView(ContentSection2, Types.contentSection);
+export default applyType.contentSection(ContentSection2);

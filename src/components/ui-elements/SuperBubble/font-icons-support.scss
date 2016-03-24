@@ -1,0 +1,46 @@
+&:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  font-family: "KioskPublicIcons";
+  left: $bubbleSmallWidth / 4;
+  width: $bubbleSmallWidth / 2;
+  height: $bubbleSmallWidth / 2;
+  margin-top: $bubbleHeight / -4;
+  line-height: $bubbleHeight / 2;
+  color: #fff;
+}
+
+&--cart {
+  &:before {
+    background-image: url(#{$images-path}/cart_icon.svg);
+  }
+}
+
+&--wishlist {
+  &:before {
+    content: "";
+    font-size: 25px;
+  }
+}
+
+&--cabinet {
+  &:before {
+    content: "";
+    font-size: 25px;
+  }
+}
+
+&--operator {
+  &:before {
+    content: "";
+    font-size: 25px;
+  }
+}
+
+&--design {
+  &:before {
+    content: "";
+    font-size: 25px;
+  }
+}

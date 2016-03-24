@@ -18,6 +18,9 @@ const ModalHeader = ({ children, className, closeButton, onHide }) => (
 
 ModalHeader.propTypes = {
   closeButton: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  className: PropTypes.string,
+  onHide: PropTypes.func,
 };
 
 export default ModalHeader;

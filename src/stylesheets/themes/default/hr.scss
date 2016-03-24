@@ -1,0 +1,26 @@
+hr {
+  border: none;
+  border-top: 1px solid $colorHR;
+  margin: 0 0 24px 0;
+  width: 100%;
+}
+
+hr.short-thick {
+  max-width: 5.0rem;
+  border-top: 5px solid $colorHR;
+  opacity: 1 !important;
+}
+
+.image-bg hr {
+  border-color: $colorWhite;
+  opacity: 0.6;
+}
+
+.image-bg.bg-light hr {
+  border-color: $colorHR;
+  opacity: 1;
+}
+
+.bg-dark hr {
+  border-color: $colorDarkHR;
+}

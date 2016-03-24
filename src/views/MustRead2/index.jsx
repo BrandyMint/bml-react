@@ -1,53 +1,35 @@
-// https://github.com/BinaryThumb/react-background-video/blob/master/src/index.js
-// https://gist.github.com/mikechau/5547c67d0dc2957e907d
+import React from 'react';
+import applyType from 'views/types/apply';
 
-import React, { Component, PropTypes } from 'react';
-import { Types, makeView } from 'views/types';
-import map from 'lodash/map';
-import StringEditable from 'components/primitives/StringEditable';
+import Buttons from 'views/elements/Buttons';
+import StringEditable from 'views/elements/StringEditable';
+import ViewContainer from 'views/elements/ViewContainer';
 
 import './index.css';
 
-class MustRead2 extends Component {
-  render() {
-    const { content } = this.props;
-    return (
-      <section className="MustRead2">
-        <div className="container vertical-center-rel">
-          <div className="row">
-              <div className="col-md-7">
-                <StringEditable
-                  className="MustRead2-header"
-                  data={content}
-                  fieldName="header"
-                  tagName="h1"
-                />
-                <StringEditable
-                  className="MustRead2-subheader"
-                  data={content}
-                  fieldName="subheader"
-                  tagName="h3"
-                />
-                <ul className="list-inline MustRead2-buttons">
-                  {map(content.items, (link, index) =>
-                     (<li className="list-inline-item" key={index}>
-                       <a href={link.url}
-                         className="btn btn-shadow btn-primary text-uppercase btn-md"
-                       >{link.title}
-                       </a></li>
-                      )
-                  )}
-                </ul>
-              </div>
-          </div>
+/* eslint-disable react/prop-types */
+const MustRead2 = ({ block }) => (
+  <ViewContainer block={ block } className="BML-section--height-70">
+    <div className="container vertical-center-rel text-right">
+      <div className="row">
+        <div className="col-md-7 col-md-offset-5">
+          <StringEditable
+            className="BML-h2 color-primary"
+            data={block.content}
+            fieldName="header"
+            tagName="h2"
+          />
+          <StringEditable
+            className="lead color-primary mb40"
+            data={block.content}
+            fieldName="subheader"
+            tagName="p"
+          />
+          <Buttons buttons={block.content.items} className="mt40" />
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </div>
+  </ViewContainer>
+);
 
-MustRead2.propTypes = {
-  content: PropTypes.string,
-};
-
-export default makeView(MustRead2, Types.mustRead);
+export default applyType.mustRead(MustRead2);

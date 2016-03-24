@@ -4,7 +4,8 @@ import TestUtils from 'react-addons-test-utils';
 import assign from 'lodash/assign';
 import expect from 'expect';
 
-import LBlockLayer from 'components/LBlockLayer/LBlockLayer';
+import LBlockLayer
+  from 'components/EditorApp/LPage/LBlocks/LBlock/LBlockLayer/LBlockLayer';
 
 const getProps = (extra = {}) =>
   assign({
@@ -21,16 +22,15 @@ const getProps = (extra = {}) =>
     onViewSwitchPrev: expect.createSpy(),
   }, extra);
 
-let props;
+const props = getProps({
+  isEditMode: true,
+});
+
 let output;
 
 describe('Components: LBlockLayer', () => {
   describe('enabled edit mode', () => {
     beforeEach(() => {
-      props = getProps({
-        isEditMode: true,
-      });
-
       output = TestUtils.renderIntoDocument(<LBlockLayer {...props} />);
     });
 

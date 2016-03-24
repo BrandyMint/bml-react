@@ -1,0 +1,14 @@
+.Theme-gray {
+  $font-family-header: Helvetica, Arial, sans-serif;
+  $font-family-text:   Helvetica, Arial, sans-serif;
+  $font-family-quote:  Times New Roman, Times, serif;
+  $font-family-number: Helvetica, Arial, sans-serif;
+  $font-family-input:  Helvetica, Arial, sans-serif;
+
+  @import './gray/colors';
+  @import './default/body';
+  @import './colorDefinitions';
+  @import './default/index';
+
+  @include body;
+}
