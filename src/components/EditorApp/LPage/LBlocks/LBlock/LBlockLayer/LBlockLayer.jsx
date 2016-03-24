@@ -74,7 +74,6 @@ class LBlockLayer extends Component {
       <Animated>
         {!isTopNav && (isHovered || isPanelHovered) && (
           <LBlockLayerPanel
-            ref="panel"
             block={block}
             hasMultipleViews={hasMultipleViews}
             hasMultipleBlocks={hasMultipleBlocks}

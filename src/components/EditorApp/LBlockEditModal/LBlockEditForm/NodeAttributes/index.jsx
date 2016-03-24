@@ -4,7 +4,7 @@ import Attribute from './Attribute';
 import get from 'lodash/get';
 import partial from 'lodash/partial';
 
-const NodeAttributes = ({ attributes, onChange }) => (
+const NodeAttributes = ({ attributes = {}, onChange }) => (
   <div className="TabPage">
     <Attribute
       attribute="id"
@@ -26,7 +26,7 @@ const NodeAttributes = ({ attributes, onChange }) => (
 );
 
 NodeAttributes.propTypes = {
-  attributes: PropTypes.object.isRequired,
+  attributes: PropTypes.object,
   onChange: PropTypes.func.isRequired,
 };
 

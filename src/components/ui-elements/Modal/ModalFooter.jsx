@@ -8,7 +8,7 @@ const ModalFooter = ({ children, className }) => (
 );
 
 ModalFooter.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
