@@ -5,8 +5,8 @@ import React from 'react';
 import applyType from 'views/types/apply';
 
 import Buttons from 'views/elements/Buttons';
-import StringEditable from 'components/primitives/StringEditable';
-import ViewContainer from 'components/shared/ViewContainer';
+import StringEditable from 'views/elements/StringEditable';
+import ViewContainer from 'views/elements/ViewContainer';
 
 /* eslint-disable react/prop-types */
 const MustRead3 = ({ block }) => (

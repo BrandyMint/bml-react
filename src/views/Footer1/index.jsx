@@ -3,9 +3,9 @@ import applyType from 'views/types/apply';
 
 import reduce from 'lodash/reduce';
 import size from 'lodash/size';
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 
-import StringEditable from 'components/primitives/StringEditable';
+import StringEditable from 'views/elements/StringEditable';
 
 import './index.css';
 

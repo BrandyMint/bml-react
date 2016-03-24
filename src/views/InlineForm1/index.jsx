@@ -1,9 +1,9 @@
 import React from 'react';
 import applyType from 'views/types/apply';
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 
 import ContentForm from 'views/elements/ContentForm';
-import RichEditable from 'components/primitives/RichEditable';
+import RichEditable from 'views/elements/RichEditable';
 
 import './index.css';
 

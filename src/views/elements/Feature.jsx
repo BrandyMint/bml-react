@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import get from 'lodash/get';
 
-import StringEditable from 'components/primitives/StringEditable';
+import StringEditable from 'views/elements/StringEditable';
 
 const classes = (content, path) =>
   classnames(

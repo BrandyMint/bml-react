@@ -2,10 +2,10 @@ import React from 'react';
 
 import applyType from 'views/types/apply';
 
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 
 import Buttons from 'views/elements/Buttons';
-import StringEditable from 'components/primitives/StringEditable';
+import StringEditable from 'views/elements/StringEditable';
 
 import './index.css';
 

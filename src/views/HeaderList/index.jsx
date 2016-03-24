@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 import applyType from 'views/types/apply';
 import map from 'lodash/map';
 
-import StringEditable from 'components/primitives/StringEditable';
+import StringEditable from 'views/elements/StringEditable';
 
 // Multicolumn lists http://alistapart.com/article/multicolumnlists
 

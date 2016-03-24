@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import map from 'lodash/map';
 import applyType from 'views/types/apply';
 
-import ViewContainer from 'components/shared/ViewContainer';
-import StringEditable from 'components/primitives/StringEditable';
+import ViewContainer from 'views/elements/ViewContainer';
+import StringEditable from 'views/elements/StringEditable';
 
 import Feature from 'views/elements/Feature';
 

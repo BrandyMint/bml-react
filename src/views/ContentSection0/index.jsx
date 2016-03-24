@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ViewContainer from 'components/shared/ViewContainer';
+import ViewContainer from 'views/elements/ViewContainer';
 import applyType from 'views/types/apply';
 
 import Image from 'views/elements/Image';
 import Buttons from 'views/elements/Buttons';
 
-import StringEditable from 'components/primitives/StringEditable';
-import RichEditable from 'components/primitives/RichEditable';
+import StringEditable from 'views/elements/StringEditable';
+import RichEditable from 'views/elements/RichEditable';
 
 // import { Link } from 'react-router';
 
