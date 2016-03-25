@@ -21,7 +21,7 @@ class ScaleBubble extends Component {
       <a
         href="#"
         onClick={onClick}
-        data-tip=""
+        data-tip="Обзор всего сайта сразу"
         className="IconLink"
       >
         <SuperBubble active={zoom}>

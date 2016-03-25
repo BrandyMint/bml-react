@@ -5,6 +5,10 @@ import NarrowIcon from 'react-icons/lib/md/panorama-vertical';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 
+const Tips = {
+  false: 'Узкая страница. Сделать на всю ширину экрана',
+  true: 'Широкая страница. Сделать узкой',
+};
 
 class BoxedBubble extends Component {
   render() {
@@ -22,7 +26,7 @@ class BoxedBubble extends Component {
       <a
         href="#"
         onClick={onClick}
-        data-tip=""
+        data-tip={Tips[is_boxed]}
         className="IconLink"
       >
         <SuperBubble active={is_boxed}>
