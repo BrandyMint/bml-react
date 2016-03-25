@@ -1,4 +1,5 @@
 import createReducer from 'helpers/createReducer';
+import { DefaultTheme } from 'constants/themes';
 
 import {
   CHANGE_THEME,
@@ -9,19 +10,17 @@ import {
   LANDING_VARIANT_LOAD_SUCCESS,
 } from 'actions/variants';
 
-import { DefaultTheme } from 'constants/themes';
-
 import changeTheme from './handlers/changeTheme';
 import toggleBoxedLayout from './handlers/toggleBoxedLayout';
 
 export const initialState = {
-  theme: DefaultTheme, // TODO change to theme_name
+  theme_name: DefaultTheme.name,
   is_boxed: true,
   public_url: null,
 };
 
 // theme_name, is_boxed, public_url
-const successLoad = (state, { payload }) => ({ ...payload, theme: DefaultTheme });
+const successLoad = (state, { payload }) => ({...payload, theme_name: payload.theme_name || DefaultTheme.name});
 
 const handlers = {
   [CHANGE_THEME]: changeTheme,

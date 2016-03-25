@@ -8,27 +8,29 @@ import StateBubble from 'components/EditorApp/Bubbles/StateBubble';
 import ColorBubble from 'components/EditorApp/Bubbles/ColorBubble';
 import BoxedBubble from 'components/EditorApp/Bubbles/BoxedBubble';
 
-const list = [<BoxedBubble />, <ColorBubble />]
+const list = [<BoxedBubble />, <ColorBubble />];
 
 const LeftToolbar = ({ open, hasUnsavedChanges }) => {
-
   if (hasUnsavedChanges) {
-    return (<Toolbar
+    return (
+      <Toolbar
         open={open}
         vertical="top"
         horizontal="left"
         Lead={StateBubble}
         Items={concat(list, <ExitBubble />)}
       />
-      );
+    );
   }
-  return ( <Toolbar
+  return (
+    <Toolbar
       open={open}
       vertical="top"
       horizontal="left"
       Lead={ExitBubble}
       Items={list}
-    />);
+    />
+  );
 };
 
 LeftToolbar.propTypes = {

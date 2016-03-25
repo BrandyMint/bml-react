@@ -1,25 +1,19 @@
 import React, { Component, PropTypes } from 'react';
-import findIndex from 'lodash/findIndex';
-import size from 'lodash/size';
 import Icon from 'react-icons/lib/md/all-inclusive';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 
-import Themes from 'constants/themes';
+import { ThemesRepo } from 'constants/themes';
 
 class ColorStyleSelector extends Component {
   render() {
-    const { theme, changeTheme } = this.props;
+    const { theme_name, changeTheme } = this.props;
 
-    const { name } = theme;
-
-    const index = findIndex(Themes, { name });
-    const nextIndex = index + 1 !== size(Themes) ? index + 1 : 0;
-    const nextTheme = Themes[nextIndex];
+    const nextTheme = ThemesRepo.findNext(theme_name);
 
     const onClick = (event) => {
       event.preventDefault();
-      changeTheme(nextTheme);
+      changeTheme(nextTheme.name);
       return false;
     };
 
@@ -27,7 +21,7 @@ class ColorStyleSelector extends Component {
       <a
         href="#"
         onClick={onClick}
-        title={theme.name}
+        title={theme_name}
         data-tip="Сменить цветовую схему"
         className="IconLink"
       >
@@ -41,7 +35,7 @@ class ColorStyleSelector extends Component {
 }
 
 ColorStyleSelector.propTypes = {
-  theme: PropTypes.object.isRequired,
+  theme_name: PropTypes.string.isRequired,
   changeTheme: PropTypes.func.isRequired,
 };
 

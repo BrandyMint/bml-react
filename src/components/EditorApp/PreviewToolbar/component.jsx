@@ -6,17 +6,15 @@ import MobilePreviewBubble from 'components/EditorApp/Bubbles/MobilePreviewBubbl
 import ScaleBubble from 'components/EditorApp/Bubbles/ScaleBubble';
 import PublicLinkBubble from 'components/EditorApp/Bubbles/PublicLinkBubble';
 
-const PreviewToolbar = ({ open }) => {
-  return (
-    <Toolbar
-      open={open}
-      vertical="top"
-      horizontal="right"
-      Lead={MobilePreviewBubble}
-      Items={[<DesktopPreviewBubble />, <ScaleBubble />, <PublicLinkBubble />]}
-    />
-  );
-};
+const PreviewToolbar = ({ open }) => (
+  <Toolbar
+    open={open}
+    vertical="top"
+    horizontal="right"
+    Lead={MobilePreviewBubble}
+    Items={[<DesktopPreviewBubble />, <ScaleBubble />, <PublicLinkBubble />]}
+  />
+);
 
 PreviewToolbar.propTypes = {
   open: PropTypes.bool.isRequired,

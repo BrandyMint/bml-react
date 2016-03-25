@@ -1,4 +1,4 @@
 export default (state, { payload }) => {
-  const theme = payload;
-  return { ...state, theme };
+  const theme_name = payload;
+  return { ...state, theme_name };
 };
