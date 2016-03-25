@@ -23,6 +23,7 @@ class EditorApp extends Component {
   }
 
   render() {
+    console.log(new Date());
     return (
       <Tracker>
         <ActivityController>
