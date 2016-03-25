@@ -1,26 +1,5 @@
 @import 'src/stylesheets/grid.scss';
-
-$bubbleHeight: 48px;
-$bubbleWidth: 48px;
-$bubbleBlueBackground: rgba(blue, 0.8);
-$bubbleBlueBackgroundHover: lighten($bubbleBlueBackground, 10%);
-
-$bubbleRedBackground: rgba(red, 0.8);
-$bubbleRedBackgroundHover: lighten($bubbleRedBackground, 10%);
-
-$bubbleBackground: rgba(black, 0.8);
-$bubbleBackgroundHover: lighten($bubbleBackground, 10%);
-$bubbleTextColor: #fff;
-$bubbleCountSize: 30px;
-$bubbleCountTextColor: #fff;
-$bubbleCountBackground: #00aeff;
-$bubbleShadow: 0px 0px 32px 0px rgba(250, 250, 250, 0.2);
-
-$bubbleActiveBg: #fff;
-$bubbleActiveColor: #000;
-
-$bubbleBgHoverShadow: rgba(250, 250, 250, 0.4);
-$bubbleBgActiveShadow: rgba(25, 25, 25, 0.2);
+@import './config';
 
 .SuperBubble {
   display: inline-block;

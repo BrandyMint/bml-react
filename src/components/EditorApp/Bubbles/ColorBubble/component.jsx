@@ -1,13 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import Icon from 'react-icons/lib/md/all-inclusive';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
+import ColorSubBubble from 'components/ui-elements/ColorSubBubble';
 
 import { ThemesRepo } from 'constants/themes';
 
 class ColorStyleSelector extends Component {
   render() {
     const { theme_name, changeTheme } = this.props;
+
+    const theme = ThemesRepo.find(theme_name);
 
     const nextTheme = ThemesRepo.findNext(theme_name);
 
@@ -26,7 +28,7 @@ class ColorStyleSelector extends Component {
         className="IconLink"
       >
         <SuperBubble>
-          <Icon className="SuperBubble--icon" />
+          <ColorSubBubble color={theme.color} />
         </SuperBubble>
       </a>
     </div>

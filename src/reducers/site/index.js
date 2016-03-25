@@ -20,7 +20,8 @@ export const initialState = {
 };
 
 // theme_name, is_boxed, public_url
-const successLoad = (state, { payload }) => ({...payload, theme_name: payload.theme_name || DefaultTheme.name});
+const successLoad = (state, { payload }) =>
+  ({ ...payload, theme_name: payload.theme_name || DefaultTheme.name });
 
 const handlers = {
   [CHANGE_THEME]: changeTheme,

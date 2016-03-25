@@ -24,7 +24,7 @@ const LeftToolbar = ({ open, hasUnsavedChanges }) => {
   }
   return (
     <Toolbar
-      open={open}
+      open={open || true}
       vertical="top"
       horizontal="left"
       Lead={ExitBubble}
