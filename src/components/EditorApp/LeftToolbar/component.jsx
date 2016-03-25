@@ -3,6 +3,7 @@ import Toolbar from 'components/ui-elements/Toolbar';
 import concat from 'lodash/concat';
 
 import ExitBubble from 'components/EditorApp/Bubbles/ExitBubble';
+import RestoreBubble from 'components/EditorApp/Bubbles/RestoreBubble';
 import StateBubble from 'components/EditorApp/Bubbles/StateBubble';
 
 import ColorBubble from 'components/EditorApp/Bubbles/ColorBubble';
@@ -18,7 +19,7 @@ const LeftToolbar = ({ open, hasUnsavedChanges }) => {
         vertical="top"
         horizontal="left"
         Lead={StateBubble}
-        Items={concat(list, <ExitBubble />)}
+        Items={concat(list, <RestoreBubble />)}
       />
     );
   }
