@@ -48,6 +48,7 @@ export const loadVariant = (uuid) => (dispatch) => {
 export const saveChanges = () => (dispatch, getState) => {
   const {
     blocks,
+    site,
     application: { variantUuid: uuid },
   } = getState();
 
@@ -55,7 +56,7 @@ export const saveChanges = () => (dispatch, getState) => {
     [API_CALL]: {
       endpoint: `/variants/${uuid}`,
       method: 'PUT',
-      payload: { blocks },
+      payload: { ...site, blocks },
       types: [
         LANDING_VARIANT_UPDATE_REQUEST,
         LANDING_VARIANT_UPDATE_SUCCESS,

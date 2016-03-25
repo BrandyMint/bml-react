@@ -5,6 +5,11 @@ import {
 } from 'actions/application';
 
 import {
+  CHANGE_THEME,
+  TOGGLE_BOXED_LAYOUT,
+} from 'actions/site';
+
+import {
   LANDING_VARIANT_UPDATE_SUCCESS,
   LANDING_VARIANT_UPDATE_FAILURE,
   LANDING_VARIANT_UPDATE_REQUEST,
@@ -85,6 +90,8 @@ const handlers = {
   [SUBMIT_EDITING_BLOCK]: unsavedChanges(true),
   [CHANGE_BLOCK_CONTENT]: unsavedChanges(true),
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
+  [CHANGE_THEME]: unsavedChanges(true),
+  [TOGGLE_BOXED_LAYOUT]: unsavedChanges(true),
 };
 
 export default createReducer(initialState, handlers);
