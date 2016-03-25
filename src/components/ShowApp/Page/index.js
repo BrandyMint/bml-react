@@ -6,7 +6,7 @@ import component from './component';
 
 const selector = createStructuredSelector({
   blocks: state => backgroundResolver(state.blocks),
-  isBoxed: state => state.site.isBoxed,
+  is_boxed: state => state.site.is_boxed,
 });
 
 export default connect(selector)(component);

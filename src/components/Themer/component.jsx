@@ -1,17 +1,19 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Themer = ({ className, theme, children }) =>
+import { ThemesRepo } from 'constants/themes';
+
+const Themer = ({ className, theme_name, children }) =>
   (
-    <div className={classnames(className, theme.class)}>
+    <div className={classnames(className, ThemesRepo.find(theme_name).class)}>
       {children}
-      </div>
+    </div>
   );
 
 Themer.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  theme: PropTypes.object.isRequired,
+  theme_name: PropTypes.string.isRequired,
 };
 
 export default Themer;

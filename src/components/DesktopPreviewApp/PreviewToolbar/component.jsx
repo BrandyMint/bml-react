@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 import Toolbar from 'components/ui-elements/Toolbar';
 
 import ExitBubble from './ExitBubble';
-import MobilePreviewBubble from 'components/EditorApp/PreviewToolbar/MobilePreviewBubble';
-import DesktopPreviewBubble from 'components/EditorApp/PreviewToolbar/DesktopPreviewBubble';
+import MobilePreviewBubble from 'components/EditorApp/Bubbles/MobilePreviewBubble';
+import DesktopPreviewBubble from 'components/EditorApp/Bubbles/DesktopPreviewBubble';
 
 const PreviewToolbar = ({ mobile }) => (
   <Toolbar

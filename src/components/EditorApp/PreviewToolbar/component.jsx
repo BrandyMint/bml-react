@@ -1,35 +1,23 @@
 import React, { PropTypes } from 'react';
 import Toolbar from 'components/ui-elements/Toolbar';
 
-import ExitBubble from './ExitBubble';
-import StateBubble from './StateBubble';
-import DesktopPreviewBubble from './DesktopPreviewBubble';
-import MobilePreviewBubble from './MobilePreviewBubble';
+import DesktopPreviewBubble from 'components/EditorApp/Bubbles/DesktopPreviewBubble';
+import MobilePreviewBubble from 'components/EditorApp/Bubbles/MobilePreviewBubble';
+import ScaleBubble from 'components/EditorApp/Bubbles/ScaleBubble';
+import PublicLinkBubble from 'components/EditorApp/Bubbles/PublicLinkBubble';
 
-const PreviewToolbar = ({ hasUnsavedChanges }) => {
-  if (hasUnsavedChanges) {
-    return (
-      <Toolbar
-        vertical="top"
-        horizontal="right"
-        Lead={StateBubble}
-        Items={[<MobilePreviewBubble />, <DesktopPreviewBubble />, <ExitBubble />]}
-      />
-    );
-  }
-
-  return (
-    <Toolbar
-      vertical="top"
-      horizontal="right"
-      Lead={ExitBubble}
-      Items={[<MobilePreviewBubble />, <DesktopPreviewBubble />]}
-    />
-  );
-};
+const PreviewToolbar = ({ open }) => (
+  <Toolbar
+    open={open}
+    vertical="top"
+    horizontal="right"
+    Lead={MobilePreviewBubble}
+    Items={[<DesktopPreviewBubble />, <ScaleBubble />, <PublicLinkBubble />]}
+  />
+);
 
 PreviewToolbar.propTypes = {
-  hasUnsavedChanges: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired,
 };
 
 export default PreviewToolbar;

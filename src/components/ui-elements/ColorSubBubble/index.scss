@@ -1,0 +1,13 @@
+@import 'src/components/ui-elements/SuperBubble/config';
+
+$diameter: $bubbleSize / 2;
+$offset: ($bubbleSize - $diameter) / 2;
+
+.ColorSubBubble {
+  top: $offset;
+  left: $offset;
+  position: relative;
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+}

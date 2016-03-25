@@ -7,8 +7,8 @@ import ViewComponent from 'components/shared/ViewComponent';
 
 import './index.scss';
 
-const Page = ({ blocks, isBoxed, className }) => {
-  const classNames = classnames(className, { 'boxed-layout': isBoxed });
+const Page = ({ blocks, is_boxed, className }) => {
+  const classNames = classnames(className, { 'boxed-layout': is_boxed });
 
   if (size(blocks) > 0) {
     return (
@@ -32,7 +32,7 @@ const Page = ({ blocks, isBoxed, className }) => {
 Page.propTypes = {
   className: PropTypes.string,
   blocks: PropTypes.array.isRequired,
-  isBoxed: PropTypes.bool.isRequired,
+  is_boxed: PropTypes.bool.isRequired,
 };
 
 export default Page;
