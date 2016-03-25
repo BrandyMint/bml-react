@@ -15,6 +15,8 @@ import MobilePreviewApp from 'components/MobilePreviewApp';
 import NoMatch from 'components/NoMatch';
 import EditorApp from 'components/EditorApp';
 
+import DnDTest from 'components/DndTest';
+
 import 'lib/bugsnag';
 import 'lib/semverInit';
 
@@ -28,6 +30,7 @@ ReactDOM.render(
         {/* для preview из mobilePreview */}
         <Route path="show" component={ShowApp} />
       </Route>
+      <Route path="dnd" component={DnDTest} />
       <Route path="*" component={NoMatch} />
     </Router>
   </Provider>,

@@ -30,7 +30,10 @@ const NoMatch = () => (
           <Link to={`/editor/${l.uuid}`}>{l.title}</Link>
         </li>
       )}
-     </ul>
+      <li>
+        <Link to="/dnd/">Тестирование DnD</Link>
+      </li>
+    </ul>
   </div>
 );
 
