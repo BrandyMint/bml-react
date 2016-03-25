@@ -16,10 +16,10 @@ class LBlock extends Component {
   }
 
   render() {
-    const { block } = this.props;
+    const { block, isDragging } = this.props;
 
     return (
-      <LBlockLayer block={block} >
+      <LBlockLayer block={block} isDragging={isDragging}>
         <ViewComponent block={block} />
       </LBlockLayer>
     );
@@ -29,6 +29,7 @@ class LBlock extends Component {
 LBlock.propTypes = {
   block: PropTypes.object.isRequired, // TODO block shape
   onContentChange: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool,
 };
 
 LBlock.childContextTypes = {

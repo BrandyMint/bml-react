@@ -1,10 +1,14 @@
-import React, { PropTypes, Component } from 'react';
-import LBlockAddButton from '../LBlockAddButton';
-import LBlock from '../LBlock';
-import DropTypes from 'constants/DropTypes';
-import { DragDropContext } from 'react-dnd';
+import React, { Component, PropTypes } from 'react';
 import { DragSource, DropTarget } from 'react-dnd';
 
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
+
+const WIDTH = 200;
+
+const Types = {
+  BLOCK: 'block',
+};
 
 const blockSource = {
   beginDrag(props) {
@@ -20,7 +24,7 @@ const blockSource = {
     // When dropped on a compatible target, do something
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
-    console.log("endDrag", item.id, dropResult.listId);
+		console.log("endDrag", item.id, dropResult.listId);
     // CardActions.moveCardToList(item.id, dropResult.listId);
   }
 };
@@ -49,29 +53,44 @@ const collect = (connect, monitor) => (
   }
 );
 
-@DropTarget(DropTypes.BLOCK, blockTarget, connect => ({
+@DropTarget(Types.BLOCK, blockTarget, connect => ({
   connectDropTarget: connect.dropTarget()
 }))
-@DragSource(DropTypes.BLOCK, blockSource, collect)
-class LBlockSection extends Component {
+@DragSource(Types.BLOCK, blockSource, collect)
+class Block extends Component {
   render() {
-    const { block, index } = this.props;
+    const { id } = this.props;
     const { isDragging, connectDragSource, connectDropTarget } = this.props;
-
-    // Пример placholer AddButton (<div style={{ height: 30, backgroundColor: '#000' }} />) : null;
-
+    const opacity = isDragging ? 0 : 1;
     return connectDragSource(connectDropTarget(
-      <div>
-        <LBlock block={block} isDragging={isDragging} />
-        <LBlockAddButton index={index + 1} />
-      </div>
-    ));
+      <div style={{padding: 10, margin: 10, width: WIDTH, cursor: 'move', opacity: opacity, backgroundColor: '#eee'}}>
+        I am a draggable card number {id}
+        </div>
+    )
+    );
   }
 }
 
-LBlockSection.propTypes = {
-  block: PropTypes.object.isRequired,
-  index: PropTypes.number.isRequired,
+const blocksTarget = {
+  drop() {
+  }
 };
 
-export default LBlockSection;
+const Blocks = [1,2,3,4,5];
+
+@DragDropContext(HTML5Backend)
+@DropTarget(Types.BLOCK, blocksTarget, connect => ({
+  connectDropTarget: connect.dropTarget()
+}))
+class App extends Component {
+  render() {
+		const { connectDropTarget } = this.props;
+    return connectDropTarget(
+      <div style={{width: WIDTH}}>
+        {Blocks.map(block => (<Block id={block} key={block}/>))}
+      </div>
+    );
+  }
+}
+
+export default App;
