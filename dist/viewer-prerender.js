@@ -27060,6 +27060,8 @@
 	  isSaving: false,
 	  hasUnsavedChanges: false,
 	
+	  originalSite: { site: {}, blocks: [] },
+	
 	  zoom: false
 	};
 	
@@ -27091,13 +27093,21 @@
 	  return _extends({}, state, { loadingState: _loadingStates.LOADING_STATE_FAILURE });
 	}), _defineProperty(_handlers, _variants.LANDING_VARIANT_LOAD_SUCCESS, function (state, _ref2) {
 	  var payload = _ref2.payload;
-	  return _extends({}, state, { loadingState: _loadingStates.LOADING_STATE_LOADED, variantUuid: payload.uuid });
-	}), _defineProperty(_handlers, _variants.LANDING_VARIANT_UPDATE_REQUEST, savingChanges(true)), _defineProperty(_handlers, _variants.LANDING_VARIANT_UPDATE_FAILURE, savingChanges(false)), _defineProperty(_handlers, _variants.LANDING_VARIANT_UPDATE_SUCCESS, function (state) {
+	  return _extends({}, state, {
+	    loadingState: _loadingStates.LOADING_STATE_LOADED,
+	    variantUuid: payload.uuid,
+	    originalSite: payload
+	  });
+	}), _defineProperty(_handlers, _variants.LANDING_VARIANT_UPDATE_REQUEST, savingChanges(true)), _defineProperty(_handlers, _variants.LANDING_VARIANT_UPDATE_FAILURE, savingChanges(false)), _defineProperty(_handlers, _variants.LANDING_VARIANT_UPDATE_SUCCESS, function (state, _ref3) {
+	  var payload = _ref3.payload;
 	  return _extends({}, state, {
 	    isSaving: false,
-	    hasUnsavedChanges: false
+	    hasUnsavedChanges: false,
+	    originalSite: payload
 	  });
-	}), _defineProperty(_handlers, _blocks.DOWN_BLOCK_POSITION, unsavedChanges(true)), _defineProperty(_handlers, _blocks.UP_BLOCK_POSITION, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SWITCH_NEXT_VIEW, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SWITCH_PREV_VIEW, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SUBMIT_ADDING_BLOCK, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SUBMIT_EDITING_BLOCK, unsavedChanges(true)), _defineProperty(_handlers, _blocks.CHANGE_BLOCK_CONTENT, unsavedChanges(true)), _defineProperty(_handlers, _blocks.DELETE_EDITING_BLOCK, unsavedChanges(true)), _defineProperty(_handlers, _site.CHANGE_THEME, unsavedChanges(true)), _defineProperty(_handlers, _site.TOGGLE_BOXED_LAYOUT, unsavedChanges(true)), _handlers);
+	}), _defineProperty(_handlers, _blocks.DOWN_BLOCK_POSITION, unsavedChanges(true)), _defineProperty(_handlers, _blocks.UP_BLOCK_POSITION, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SWITCH_NEXT_VIEW, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SWITCH_PREV_VIEW, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SUBMIT_ADDING_BLOCK, unsavedChanges(true)), _defineProperty(_handlers, _blocks.SUBMIT_EDITING_BLOCK, unsavedChanges(true)), _defineProperty(_handlers, _blocks.CHANGE_BLOCK_CONTENT, unsavedChanges(true)), _defineProperty(_handlers, _blocks.DELETE_EDITING_BLOCK, unsavedChanges(true)), _defineProperty(_handlers, _site.CHANGE_THEME, unsavedChanges(true)), _defineProperty(_handlers, _site.TOGGLE_BOXED_LAYOUT, unsavedChanges(true)), _defineProperty(_handlers, _application.RESTORE_SITE, function (state) {
+	  return state;
+	}), _handlers);
 	
 	exports.default = (0, _createReducer2.default)(initialState, handlers);
 
@@ -35377,11 +35387,18 @@
 	  value: true
 	});
 	var CHANGE_ZOOM = exports.CHANGE_ZOOM = 'CHANGE_ZOOM';
+	var RESTORE_SITE = exports.RESTORE_SITE = 'RESTORE_SITE';
 	
 	var changeZoom = exports.changeZoom = function changeZoom(flag) {
 	  return {
 	    type: CHANGE_ZOOM,
 	    payload: flag
+	  };
+	};
+	
+	var restoreSite = exports.restoreSite = function restoreSite() {
+	  return {
+	    type: RESTORE_SITE
 	  };
 	};
 
@@ -48094,7 +48111,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.14",
+		"version": "0.3.15",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
