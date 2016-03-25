@@ -5,12 +5,16 @@ export default (blocks, action) => {
   const { uuid } = action.payload;
   const blockIndex = findIndex(blocks, { uuid });
 
+  let newBlocks;
+
   if (blockIndex !== -1) {
-    return [
+    newBlocks = [
       ...blocks.slice(0, blockIndex),
       ...blocks.slice(blockIndex + 1),
     ];
+  } else {
+    newBlocks = blocks;
   }
 
-  return backgroundResolver(blocks);
+  return backgroundResolver(newBlocks);
 };

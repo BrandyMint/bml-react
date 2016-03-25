@@ -36396,11 +36396,15 @@
 	
 	  var blockIndex = (0, _findIndex2.default)(blocks, { uuid: uuid });
 	
+	  var newBlocks = void 0;
+	
 	  if (blockIndex !== -1) {
-	    return [].concat(_toConsumableArray(blocks.slice(0, blockIndex)), _toConsumableArray(blocks.slice(blockIndex + 1)));
+	    newBlocks = [].concat(_toConsumableArray(blocks.slice(0, blockIndex)), _toConsumableArray(blocks.slice(blockIndex + 1)));
+	  } else {
+	    newBlocks = blocks;
 	  }
 	
-	  return (0, _backgroundResolver2.default)(blocks);
+	  return (0, _backgroundResolver2.default)(newBlocks);
 	};
 
 /***/ },
