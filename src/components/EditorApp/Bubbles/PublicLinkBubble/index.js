@@ -1,9 +1,6 @@
 import { connect } from 'react-redux';
 import component from './component';
 
-const selector = ({ application }) => ({
-  open: application.zoom,
-  hasUnsavedChanges: application.hasUnsavedChanges,
-});
+const selector = ({ site }) => ({ public_url: site.public_url });
 
 export default connect(selector)(component);

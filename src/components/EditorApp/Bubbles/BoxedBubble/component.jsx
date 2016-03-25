@@ -8,15 +8,15 @@ import SuperBubble from 'components/ui-elements/SuperBubble';
 
 class BoxedBubble extends Component {
   render() {
-    const { isBoxed, toggleBoxedLayout } = this.props;
+    const { is_boxed, toggleBoxedLayout } = this.props;
 
     const onClick = (event) => {
       event.preventDefault();
-      toggleBoxedLayout(!isBoxed);
+      toggleBoxedLayout(!is_boxed);
       return false;
     };
 
-    const Icon = isBoxed ? WideIcon : NarrowIcon;
+    const Icon = is_boxed ? WideIcon : NarrowIcon;
 
     return (<div>
       <a
@@ -25,7 +25,7 @@ class BoxedBubble extends Component {
         data-tip=""
         className="IconLink"
       >
-        <SuperBubble active={isBoxed}>
+        <SuperBubble active={is_boxed}>
           <Icon className="SuperBubble--icon" />
         </SuperBubble>
       </a>
@@ -35,7 +35,7 @@ class BoxedBubble extends Component {
 }
 
 BoxedBubble.propTypes = {
-  isBoxed: PropTypes.bool.isRequired,
+  is_boxed: PropTypes.bool.isRequired,
   toggleBoxedLayout: PropTypes.func.isRequired,
 };
 

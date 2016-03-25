@@ -1,1 +1,1 @@
-export default (state, { payload }) => ({ ...state, isBoxed: payload });
+export default (state, { payload }) => ({ ...state, is_boxed: payload });
