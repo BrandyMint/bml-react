@@ -3,8 +3,11 @@ import component from './component';
 
 import { restoreSite } from 'actions/application';
 
-const actions = { restoreSite };
+const selector = ({ application }) => ({
+  originalSite: application.originalSite,
+  hasUnsavedChanges: application.hasUnsavedChanges,
+});
 
-const selector = ({ application }) => ({ hasUnsavedChanges: application.hasUnsavedChanges });
+const actions = { restoreSite };
 
 export default connect(selector, actions)(component);

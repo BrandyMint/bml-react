@@ -6,6 +6,7 @@ export const changeZoom = (flag) => ({
   payload: flag,
 });
 
-export const restoreSite = () => ({
+export const restoreSite = (originalSite) => ({
   type: RESTORE_SITE,
+  payload: originalSite,
 });

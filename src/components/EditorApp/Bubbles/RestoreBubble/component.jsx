@@ -7,11 +7,12 @@ class RestoreBubble extends Component {
   render() {
     const {
       restoreSite,
+      originalSite,
     } = this.props;
 
     const onClick = (event) => {
       event.preventDefault();
-      restoreSite();
+      restoreSite(originalSite);
       return false;
     };
 
@@ -33,6 +34,11 @@ class RestoreBubble extends Component {
 
 RestoreBubble.propTypes = {
   restoreSite: PropTypes.func.isRequired,
+  originalSite: PropTypes.shape({
+    sections: PropTypes.array.isRequired,
+    theme_name: PropTypes.string.isRequired,
+    is_boxed: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default RestoreBubble;

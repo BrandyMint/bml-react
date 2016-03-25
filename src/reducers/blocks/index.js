@@ -10,6 +10,12 @@ import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
 import successLoad from './handlers/successLoad';
 
+import backgroundResolver from 'helpers/backgroundResolver';
+
+import {
+  RESTORE_SITE,
+} from 'actions/application';
+
 import {
   LANDING_VARIANT_LOAD_SUCCESS,
 } from 'actions/variants';
@@ -30,6 +36,9 @@ import {
 
 export const initialState = [];
 
+const restoreSite = (state, { payload }) =>
+  backgroundResolver(payload.sections);
+
 const handlers = {
   [UP_BLOCK_POSITION]: upBlockPosition,
   [DOWN_BLOCK_POSITION]: downBlockPosition,
@@ -44,6 +53,7 @@ const handlers = {
   [SUBMIT_ADDING_BLOCK]: addBlock,
   [SUBMIT_EDITING_BLOCK]: updateBlock,
   [DELETE_EDITING_BLOCK]: deleteBlock,
+  [RESTORE_SITE]: restoreSite,
 };
 
 export default createReducer(initialState, handlers);

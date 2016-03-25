@@ -52,7 +52,7 @@ export const initialState = {
   isSaving: false,
   hasUnsavedChanges: false,
 
-  originalSite: { site: {}, blocks: [] },
+  originalSite: { sections: [] },
 
   zoom: false,
 };
@@ -101,7 +101,7 @@ const handlers = {
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
   [CHANGE_THEME]: unsavedChanges(true),
   [TOGGLE_BOXED_LAYOUT]: unsavedChanges(true),
-  [RESTORE_SITE]: (state) => state,
+  [RESTORE_SITE]: unsavedChanges(false),
 };
 
 export default createReducer(initialState, handlers);
