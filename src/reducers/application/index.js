@@ -42,6 +42,8 @@ import {
   LOADING_STATE_LOADED,
 } from 'constants/loadingStates';
 
+import BLANK_SITE from 'constants/blankSite';
+
 export const initialState = {
   exitUrl: '/',
   variantUuid: null,
@@ -52,7 +54,7 @@ export const initialState = {
   isSaving: false,
   hasUnsavedChanges: false,
 
-  originalSite: { sections: [] },
+  originalSite: BLANK_SITE,
 
   zoom: false,
 };

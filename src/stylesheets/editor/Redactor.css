@@ -1,16 +1,18 @@
+$glowColor: rgba(70, 186, 249, 0.2);
+
 .Redactor {
   transition: all 0.3s;
 
-  &:hover {
-    outline: 0px solid transparent;
-    background: rgba(70, 186, 249, 0.2);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  }
-
+  &:hover,
   &:focus {
-    outline: 0px solid transparent;
-    background: rgba(70, 186, 249, 0.5);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    background-color: $glowColor;
+
+    box-shadow: 0 0 16px rgba(80, 186, 249, 0.4) !important;
+
+    // Специально на случай редактирования кнопок (ссылок с классом .btn)
+    cursor: auto;
+
+    outline: 1px solid $glowColor !important;
   }
 
   ::selection {
