@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import Animated from 'components/primitives/Animated';
 import map from 'lodash/map';
+import concat from 'lodash/concat';
 
 import './index.scss';
 
@@ -16,7 +17,7 @@ class Toolbar extends Component {
   }
 
   render() {
-    const { vertical, horizontal, Items, Lead, open } = this.props;
+    const { vertical, horizontal, Items, Lead, hide, open } = this.props;
     const classes = classnames('Toolbar', {
       [`Toolbar--${vertical}`]: true,
       [`Toolbar--${horizontal}`]: true,
@@ -24,16 +25,20 @@ class Toolbar extends Component {
     const onEnter = () => this.setState({ active: true });
     const onLeave = () => this.setState({ active: open });
 
-    const hideableItems = this.state.active && map(Items, (item, index) => (
+    const hideableItems = map(Items, (item, index) => (
       <li className="Toolbar-item" key={index}>{item}</li>
     ));
+
+    const mainItem = (
+      <li className="Toolbar-item" key="main">
+        <Lead />
+      </li>
+    );
+    const content = this.state.active ? concat(mainItem, hideableItems) : mainItem;
     return (
       <ul className={ classes } onMouseOver={onEnter} onMouseEnter={onEnter} onMouseLeave={onLeave}>
         <Animated>
-          <li className="Toolbar-item">
-            <Lead />
-          </li>
-          {hideableItems}
+          {!hide && content}
         </Animated>
       </ul>
     );
@@ -46,6 +51,7 @@ Toolbar.defaultProps = {
 
 Toolbar.propTypes = {
   open: PropTypes.bool,
+  hide: PropTypes.bool,
   vertical: PropTypes.oneOf(VERTICAL_POSITIONS).isRequired,
   horizontal: PropTypes.oneOf(HORIZONTAL_POSITIONS).isRequired,
   Lead: PropTypes.func.isRequired,
