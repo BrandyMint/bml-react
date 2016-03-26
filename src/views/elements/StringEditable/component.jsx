@@ -9,7 +9,7 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 
 import Editor from 'react-medium-editor';
 
-const getValue = (props) => get(props.data, props.fieldName, '');
+const getValue = (props) => get(props.data, props.path, '');
 
 const MEDIUM_OPTIONS = {
   disableReturn: true,
@@ -57,25 +57,30 @@ class StringEditable extends Component {
     this.handleBlur();
   }
   handleBlur() {
-    const { fieldName } = this.props;
+    const path = this.props.path || this.props.fieldName;
+
     const { onContentChange } = this.context;
     const content = this.getContent();
 
     if (this.state.value !== content) {
-      onContentChange(fieldName, content);
+      onContentChange(path, content);
     }
   }
   render() {
-    const { className, tagName, enable } = this.props;
+    const { className, enable } = this.props;
     const { isEditMode } = this.context;
     const { value } = this.state;
 
+    const element = this.props.element || this.props.tagName;
+
     if (isEditMode && enable) {
+      // TODO Выделить в отдельный класс и перенести туда
+      // context-зависимые вещи
       const classes = classnames(className, 'Redactor');
       return (
         <Editor
           ref="redactor"
-          tag={tagName}
+          tag={element}
           className={classes}
           text={value}
           onBlur={this.handleBlur}
@@ -84,7 +89,7 @@ class StringEditable extends Component {
       );
     }
     return createElement(
-      tagName,
+      element,
       {
         className,
         dangerouslySetInnerHTML: { __html: value },
@@ -95,20 +100,22 @@ class StringEditable extends Component {
 
 StringEditable.propTypes = {
   className: PropTypes.string,
-  data: PropTypes.object.isRequired,
-  fieldName: PropTypes.string.isRequired,
-  tagName: PropTypes.string,
+  // data: PropTypes.object.isRequired,
+  fieldName: PropTypes.string,
+  path: PropTypes.string.isRequired,
+  // tagName: PropTypes.string,
   enable: PropTypes.bool.isRequired,
 };
 
 StringEditable.defaultProps = {
-  tagName: 'div',
+  element: 'div',
   enable: true,
 };
 
 StringEditable.contextTypes = {
   isEditMode: PropTypes.bool,
   onContentChange: PropTypes.func,
+  block: PropTypes.object, // Нужен только в режиме редактирования
 };
 
 export default StringEditable;

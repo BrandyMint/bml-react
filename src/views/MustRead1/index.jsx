@@ -14,16 +14,14 @@ const MustRead1 = ({ block }) => (
       <div className="row">
         <div className="col-md-7">
           <StringEditable
+            element={React.DOM.h2}
+            path="header"
             className="BML-h2 color-primary"
-            data={block.content}
-            fieldName="header"
-            tagName="h2"
           />
           <StringEditable
+            element={React.DOM.h2}
+            path="subheader"
             className="lead color-primary mb40"
-            data={block.content}
-            fieldName="subheader"
-            tagName="p"
           />
           <Buttons buttons={block.content.items} className="mt40" />
         </div>

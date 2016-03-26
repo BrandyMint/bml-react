@@ -27,8 +27,8 @@ export const initialState = {
 const successLoad = (state, { payload }) =>
   ({ ...payload, theme_name: ThemesRepo.find(payload.theme_name).name });
 
-const restoreSite = (state, { payload: { theme_name, title, is_boxed } }) => (
-  { theme_name, title, is_boxed }
+const restoreSite = (state, { payload: { theme_name, title, is_boxed, public_url } }) => (
+  { theme_name, title, is_boxed, public_url }
 );
 
 const handlers = {

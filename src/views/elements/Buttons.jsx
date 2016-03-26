@@ -16,11 +16,13 @@ class Buttons extends Component {
     // <ul className="list-inline MustRead3-buttons">
     // (<li className="list-inline-item" key={index}>
 
-    return (<div className={classNames}>
-            {map(buttons, (button, index) =>
-                 (<Button {...button} key={index} className="BML-button-item" />))
-            }
-            </div>);
+    return (
+      <div className={classNames}>
+        {map(buttons, (button, index) =>
+          (<Button {...button} key={index} className="BML-button-item" />)
+        )}
+      </div>
+    );
   }
 }
 
