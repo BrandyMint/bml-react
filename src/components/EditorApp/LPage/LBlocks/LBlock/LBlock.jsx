@@ -6,6 +6,8 @@ import ViewComponent from 'components/shared/ViewComponent';
 
 import './index.css';
 
+
+// TODO Можно отказаться в мользу LBlockLayer
 class LBlock extends Component {
   getChildContext() {
     const { block, onContentChange } = this.props;

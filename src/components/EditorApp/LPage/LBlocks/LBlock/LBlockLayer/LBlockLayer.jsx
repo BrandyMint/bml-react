@@ -71,7 +71,7 @@ class LBlockLayer extends Component {
 
     const { isTopNav } = block;
 
-    const SectionPanel = (
+    const SectionPanel = ( // TODO Вынести в отдельный компонент
       <Animated>
         {!isTopNav && enablePanel && (isHovered || isPanelHovered) && (
           <LBlockLayerPanel

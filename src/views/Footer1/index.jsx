@@ -5,7 +5,7 @@ import reduce from 'lodash/reduce';
 import size from 'lodash/size';
 import ViewContainer from 'views/elements/ViewContainer';
 
-import StringEditable from 'views/elements/StringEditable';
+import Editable from 'views/elements/Editable';
 
 import './index.css';
 
@@ -39,11 +39,10 @@ const Footer1 = ({ block }) => (
             }, [])
           }
         </ul>
-        <StringEditable
+        <Editable
+          element="p"
+          path="text"
           className="Footer1-copyright text-muted small"
-          data={block.content}
-          fieldName="text"
-          tagName="p"
         />
       </div>
     </div>

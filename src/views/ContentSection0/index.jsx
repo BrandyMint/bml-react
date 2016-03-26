@@ -3,12 +3,10 @@ import ViewContainer from 'views/elements/ViewContainer';
 import applyType from 'views/types/apply';
 
 import Image from 'views/elements/Image';
-import Buttons from 'views/elements/Buttons';
 
-import StringEditable from 'views/elements/StringEditable';
-import RichEditable from 'views/elements/RichEditable';
-
-// import { Link } from 'react-router';
+import EditableButtons from 'views/elements/EditableButtons';
+import Editable from 'views/elements/Editable';
+import { RICH_OPTIONS } from 'views/elements/Editable/options';
 
 class ContentSection0 extends Component {
   render() {
@@ -20,11 +18,10 @@ class ContentSection0 extends Component {
       <ViewContainer block={ block } className="BML-section--padding text-center">
         <div className="row mb40 mb-xs-0">
           <div className="col-sm-12 text-center">
-            <StringEditable
+            <Editable
+              element="h2"
+              path="header"
               className="BML-h2 color-primary"
-              data={content}
-              fieldName="header"
-              tagName="h2"
             />
           </div>
         </div>
@@ -35,13 +32,12 @@ class ContentSection0 extends Component {
         </div>
         <div className="row">
           <div className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-            <RichEditable
+            <Editable
+              path="leadText"
               className="lead"
-              data={content}
-              fieldName="leadText"
-              tagName="div"
+              options={RICH_OPTIONS}
             />
-            <Buttons buttons={content.links} className="mt40" />
+            <EditableButtons path="links" className="mt40" />
           </div>
         </div>
       </ViewContainer>

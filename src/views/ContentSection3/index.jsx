@@ -4,8 +4,8 @@ import applyType from 'views/types/apply';
 
 import ViewContainer from 'views/elements/ViewContainer';
 
-import Buttons from 'views/elements/Buttons';
-import StringEditable from 'views/elements/StringEditable';
+import EditableButtons from 'views/elements/EditableButtons';
+import Editable from 'views/elements/Editable';
 
 import './index.css';
 
@@ -15,15 +15,14 @@ const ContentSection3 = ({ block }) => (
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
-          <StringEditable
-            data={block.content}
+          <Editable
+            element="h2"
+            path="text"
             className="color-primary"
-            fieldName="text"
-            tagName="h2"
           />
         </div>
         <div className="col-lg-6">
-          <Buttons buttons={block.content.items} className="CTA1-social-buttons" />
+          <EditableButtons path="items" className="CTA1-social-buttons" />
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import applyType from 'views/types/apply';
 
-import Buttons from 'views/elements/Buttons';
-import StringEditable from 'views/elements/StringEditable';
+import EditableButtons from 'views/elements/EditableButtons';
+import Editable from 'views/elements/Editable';
 import ViewContainer from 'views/elements/ViewContainer';
 
 import './index.css';
@@ -13,19 +13,20 @@ const MustRead1 = ({ block }) => (
     <div className="container vertical-center-rel">
       <div className="row">
         <div className="col-md-7">
-          <StringEditable
+          <Editable
+            element="h2"
+            path="header"
             className="BML-h2 color-primary"
-            data={block.content}
-            fieldName="header"
-            tagName="h2"
           />
-          <StringEditable
+          <Editable
+            element="p"
+            path="subheader"
             className="lead color-primary mb40"
-            data={block.content}
-            fieldName="subheader"
-            tagName="p"
           />
-          <Buttons buttons={block.content.items} className="mt40" />
+          <EditableButtons
+            path="items"
+            className="mt40"
+          />
         </div>
       </div>
     </div>

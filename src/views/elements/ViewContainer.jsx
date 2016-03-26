@@ -7,6 +7,11 @@ import { get, size } from 'lodash';
 const TAG_NAME = 'section';
 
 class ViewContainer extends Component {
+  getChildContext() {
+    const { block } = this.props;
+    return { block };
+  }
+
   render() {
     const { children, block, className, tagName } = this.props;
     const {
@@ -52,6 +57,10 @@ ViewContainer.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   tagName: PropTypes.string,
+};
+
+ViewContainer.childContextTypes = {
+  block: PropTypes.object.isRequired,
 };
 
 export default ViewContainer;
