@@ -13,6 +13,8 @@ import postcssReporter from 'postcss-reporter';
 import stylelint from 'stylelint';
 import autoprefixer from 'autoprefixer';
 
+// https://github.com/aaronj1335/webpack-postcss-tools
+
 const root = path.join(process.cwd(), 'src');
 const viewer = path.join(process.cwd(), 'initializers/viewer');
 const editor = path.join(process.cwd(), 'initializers/editor');
@@ -33,17 +35,17 @@ export default {
   },
 
   postcss: webpack => [
-    postcssImport({ addDependencyTo: webpack, path: root }),
+    postcssImport({ addDependencyTo: webpack, path: root }), // SUITE
     postcssSelectorNot,
     postcssSimpleVars,
     stylelint,
-    postcssCalc,
+    postcssCalc, // SUITE
     postcssBEM,
     postcssNested,
     postcssMixins,
-    postcssCustomProperties,
-    postcssCustomMedia,
-    autoprefixer,
+    postcssCustomProperties, // SUITE
+    postcssCustomMedia, // SUITE
+    autoprefixer, // SUITE
     postcssReporter({ clearMessages: true }),
   ],
 
