@@ -25,6 +25,7 @@ const selector = createStructuredSelector({
   hasMultipleViews: hasMultipleViewsSelector,
   hasMultipleBlocks: hasMultipleBlocksSelector,
   enablePanel: isEnableSelector,
+  blocksCount: state => size(state.blocks),
 });
 
 const actions = {

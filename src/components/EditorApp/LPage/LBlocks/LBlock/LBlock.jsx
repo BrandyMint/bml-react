@@ -18,10 +18,10 @@ class LBlock extends Component {
   }
 
   render() {
-    const { block } = this.props;
+    const { block, index } = this.props;
 
     return (
-      <LBlockLayer block={block} >
+      <LBlockLayer block={block} index={index} >
         <ViewComponent block={block} />
       </LBlockLayer>
     );
@@ -29,6 +29,7 @@ class LBlock extends Component {
 }
 
 LBlock.propTypes = {
+  index: PropTypes.number.isRequired,
   block: PropTypes.object.isRequired, // TODO block shape
   onContentChange: PropTypes.func.isRequired,
 };

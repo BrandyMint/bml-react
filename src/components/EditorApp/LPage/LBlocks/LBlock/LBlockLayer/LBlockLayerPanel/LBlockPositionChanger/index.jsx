@@ -9,22 +9,26 @@ import IconDown from 'react-icons/lib/go/chevron-down';
 
 const LBlockPositionChanger = ({ onBlockPositionUp, onBlockPositionDown }) => (
   <div className="LBlockPositionChanger">
-    <span data-tip="Переместить блок наверх">
-      <BubbleIcon onClick={onBlockPositionUp}>
-        <IconUp />
-      </BubbleIcon>
-    </span>
-    <span data-tip="Переместить блок вниз">
-      <BubbleIcon onClick={onBlockPositionDown}>
-        <IconDown />
-      </BubbleIcon>
-    </span>
+    { onBlockPositionUp &&
+      (<span data-tip="Переместить блок наверх">
+        <BubbleIcon onClick={onBlockPositionUp}>
+          <IconUp />
+        </BubbleIcon>
+      </span>)
+      }
+   { onBlockPositionDown &&
+      (<span data-tip="Переместить блок вниз">
+        <BubbleIcon onClick={onBlockPositionDown}>
+          <IconDown />
+        </BubbleIcon>
+      </span>)
+    }
   </div>
 );
 
 LBlockPositionChanger.propTypes = {
-  onBlockPositionDown: PropTypes.func.isRequired,
-  onBlockPositionUp: PropTypes.func.isRequired,
+  onBlockPositionDown: PropTypes.func,
+  onBlockPositionUp: PropTypes.func,
 };
 
 export default LBlockPositionChanger;

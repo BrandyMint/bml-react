@@ -46,6 +46,7 @@ class LBlockLayer extends Component {
 
   render() {
     const {
+      index, blocksCount,
       block, children, hasMultipleBlocks, hasMultipleViews,
       enablePanel,
       onBlockPositionDown, onBlockPositionUp, onEditingStart, onViewSwitchNext, onViewSwitchPrev,
@@ -71,6 +72,9 @@ class LBlockLayer extends Component {
 
     const { isTopNav } = block;
 
+    const enableMoveUp = index > 0;
+    const enableMoveDown = index < blocksCount - 1;
+
     const SectionPanel = ( // TODO Вынести в отдельный компонент
       <Animated>
         {!isTopNav && enablePanel && (isHovered || isPanelHovered) && (
@@ -87,8 +91,8 @@ class LBlockLayer extends Component {
             onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
             onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
 
-            onBlockPositionDown={partial(onBlockPositionDown, block.uuid)}
-            onBlockPositionUp={partial(onBlockPositionUp, block.uuid)}
+            onBlockPositionDown={enableMoveDown && partial(onBlockPositionDown, block.uuid)}
+            onBlockPositionUp={enableMoveUp && partial(onBlockPositionUp, block.uuid)}
           />
         )}
       </Animated>
@@ -104,8 +108,11 @@ class LBlockLayer extends Component {
 }
 
 LBlockLayer.propTypes = {
-  block: PropTypes.object,
+  block: PropTypes.object.isRequired,
   children: PropTypes.node,
+
+  blocksCount: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   hasMultipleBlocks: PropTypes.bool,
   hasMultipleViews: PropTypes.bool,
   enablePanel: PropTypes.bool,

@@ -10,7 +10,7 @@ class LBlockSection extends Component {
 
     return (
       <div>
-        <LBlock block={block} />
+        <LBlock block={block} index={index} />
         <LBlockAddButton index={index + 1} />
       </div>
     );

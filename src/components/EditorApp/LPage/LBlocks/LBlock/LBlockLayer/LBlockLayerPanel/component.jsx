@@ -32,7 +32,7 @@ const LBlockLayerPanel = (
             onViewSwitchPrev={onViewSwitchPrev}
           />
         }
-        {hasMultipleBlocks &&
+        {hasMultipleBlocks && (onBlockPositionUp || onBlockPositionDown) &&
           <LBlockPositionChanger
             onBlockPositionDown={onBlockPositionDown}
             onBlockPositionUp={onBlockPositionUp}
@@ -48,8 +48,8 @@ LBlockLayerPanel.propTypes = {
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
 
-  onBlockPositionUp: PropTypes.func.isRequired,
-  onBlockPositionDown: PropTypes.func.isRequired,
+  onBlockPositionUp: PropTypes.func,
+  onBlockPositionDown: PropTypes.func,
 
   hasMultipleBlocks: PropTypes.bool.isRequired,
   hasMultipleViews: PropTypes.bool.isRequired,
