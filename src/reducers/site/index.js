@@ -17,10 +17,13 @@ import {
 import changeTheme from './handlers/changeTheme';
 import toggleBoxedLayout from './handlers/toggleBoxedLayout';
 
+
+// TODO брать из blankSite без sections
 export const initialState = {
   theme_name: DefaultTheme.name,
-  is_boxed: true,
+  is_boxed: false,
   public_url: null,
+  titel: 'No title',
 };
 
 // theme_name, is_boxed, public_url

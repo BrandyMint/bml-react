@@ -9,7 +9,6 @@ import './index.scss';
 
 const Page = ({ blocks, is_boxed, className }) => {
   const classNames = classnames(className, { 'boxed-layout': is_boxed });
-
   if (size(blocks) > 0) {
     return (
       <div className={classNames}>

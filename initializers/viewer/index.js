@@ -39,8 +39,16 @@ global.ShowDemo = () => {
   );
 };
 
-const Viewer = (state) => {
-  const newState = { ...state, blocks: backgroundResolver(state.blocks) };
+const Viewer = (variant) => {
+  const newState = {
+    application: {
+      variantUuid: variant.uuid,
+    },
+    site: { ...variant },
+    blocks: backgroundResolver(variant.sections),
+  };
+
+  delete newState.site.sections;
 
   const store = createStore(newState);
 

@@ -138,8 +138,16 @@
 	  );
 	};
 	
-	var Viewer = function Viewer(state) {
-	  var newState = _extends({}, state, { blocks: (0, _backgroundResolver2.default)(state.blocks) });
+	var Viewer = function Viewer(variant) {
+	  var newState = {
+	    application: {
+	      variantUuid: variant.uuid
+	    },
+	    site: _extends({}, variant),
+	    blocks: (0, _backgroundResolver2.default)(variant.sections)
+	  };
+	
+	  delete newState.site.sections;
 	
 	  var store = (0, _store2.default)(newState);
 	
@@ -27079,8 +27087,9 @@
 	exports.default = {
 	  sections: [],
 	  public_url: '#unknown',
-	  is_boxed: true,
-	  theme_name: 'default'
+	  is_boxed: false,
+	  theme_name: 'default',
+	  title: 'No title'
 	};
 
 /***/ },
@@ -36121,7 +36130,6 @@
 	  var className = _ref.className;
 	
 	  var classNames = (0, _classnames2.default)(className, { 'boxed-layout': is_boxed });
-	
 	  if ((0, _size2.default)(blocks) > 0) {
 	    return _react2.default.createElement(
 	      'div',
@@ -37336,10 +37344,12 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
+	// TODO брать из blankSite без sections
 	var initialState = exports.initialState = {
 	  theme_name: _themes.DefaultTheme.name,
-	  is_boxed: true,
-	  public_url: null
+	  is_boxed: false,
+	  public_url: null,
+	  titel: 'No title'
 	};
 	
 	// theme_name, is_boxed, public_url
