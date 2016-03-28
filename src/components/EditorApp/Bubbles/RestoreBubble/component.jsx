@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import SuperBubble from 'components/ui-elements/SuperBubble';
+import { translate } from 'react-i18next';
 
 import Icon from 'react-icons/lib/md/settings-backup_restore';
 
 class RestoreBubble extends Component {
   render() {
     const {
+      t,
       restoreSite,
       originalSite,
     } = this.props;
@@ -20,7 +22,7 @@ class RestoreBubble extends Component {
       <a
         href="#"
         onClick={onClick}
-        data-tip="Отменить все изменения"
+        data-tip={t('tips:reset_changes')}
         className="IconLink"
       >
         <SuperBubble>
@@ -33,6 +35,7 @@ class RestoreBubble extends Component {
 }
 
 RestoreBubble.propTypes = {
+  t: PropTypes.func.isRequired,
   restoreSite: PropTypes.func.isRequired,
   originalSite: PropTypes.shape({
     sections: PropTypes.array.isRequired,
@@ -41,4 +44,4 @@ RestoreBubble.propTypes = {
   }).isRequired,
 };
 
-export default RestoreBubble;
+export default translate('')(RestoreBubble);

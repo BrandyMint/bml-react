@@ -12,8 +12,6 @@ i18n
     fallbackLng: 'en',
     defaultNS: 'common',
     ns: ['common'],
-    interpolationPrefix: '%{',
-    interpolationSuffix: '}',
     // returnObjects: true,
     resources: i18nResources,
   });

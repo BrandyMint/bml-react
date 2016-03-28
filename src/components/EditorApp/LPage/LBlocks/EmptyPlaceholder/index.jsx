@@ -4,7 +4,6 @@ import { translate } from 'react-i18next';
 
 import './index.css';
 
-@translate('empty_placeholder')
 class EmptyPlaceholder extends Component {
   render() {
     const { t } = this.props;
@@ -26,4 +25,4 @@ EmptyPlaceholder.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default EmptyPlaceholder;
+export default translate('')(EmptyPlaceholder);

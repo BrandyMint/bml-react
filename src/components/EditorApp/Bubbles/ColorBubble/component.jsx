@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { translate } from 'react-i18next';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 import ColorSubBubble from 'components/ui-elements/ColorSubBubble';
@@ -7,7 +8,7 @@ import { ThemesRepo } from 'constants/themes';
 
 class ColorStyleSelector extends Component {
   render() {
-    const { theme_name, changeTheme } = this.props;
+    const { t, theme_name, changeTheme } = this.props;
 
     const theme = ThemesRepo.find(theme_name);
 
@@ -24,7 +25,7 @@ class ColorStyleSelector extends Component {
         href="#"
         onClick={onClick}
         title={theme_name}
-        data-tip="Сменить цветовую схему"
+        data-tip={t('tips:color_schema_change')}
         className="IconLink"
       >
         <SuperBubble>
@@ -37,8 +38,9 @@ class ColorStyleSelector extends Component {
 }
 
 ColorStyleSelector.propTypes = {
+  t: PropTypes.func.isRequired,
   theme_name: PropTypes.string.isRequired,
   changeTheme: PropTypes.func.isRequired,
 };
 
-export default ColorStyleSelector;
+export default translate('')(ColorStyleSelector);

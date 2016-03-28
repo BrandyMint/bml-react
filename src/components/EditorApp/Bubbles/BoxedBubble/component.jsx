@@ -1,18 +1,14 @@
 import React, { Component, PropTypes } from 'react';
+import { translate } from 'react-i18next';
 
 import WideIcon from 'react-icons/lib/md/panorama-horizontal';
 import NarrowIcon from 'react-icons/lib/md/panorama-vertical';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 
-const Tips = {
-  false: 'Узкая страница. Сделать на всю ширину экрана',
-  true: 'Широкая страница. Сделать узкой',
-};
-
 class BoxedBubble extends Component {
   render() {
-    const { is_boxed, toggleBoxedLayout } = this.props;
+    const { t, is_boxed, toggleBoxedLayout } = this.props;
 
     const onClick = (event) => {
       event.preventDefault();
@@ -26,7 +22,7 @@ class BoxedBubble extends Component {
       <a
         href="#"
         onClick={onClick}
-        data-tip={Tips[is_boxed]}
+        data-tip={t(is_boxed ? 'tips:is_boxed.on' : 'tips:is_boxed.off')}
         className="IconLink"
       >
         <SuperBubble active={is_boxed}>
@@ -39,8 +35,9 @@ class BoxedBubble extends Component {
 }
 
 BoxedBubble.propTypes = {
+  t: PropTypes.func.isRequired,
   is_boxed: PropTypes.bool.isRequired,
   toggleBoxedLayout: PropTypes.func.isRequired,
 };
 
-export default BoxedBubble;
+export default translate('')(BoxedBubble);

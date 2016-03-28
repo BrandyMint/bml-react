@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
+import { translate } from 'react-i18next';
 
 // import CheckIcon from 'react-icons/lib/md/check';
 import SpinnerIcon from 'react-icons/lib/fa/spinner';
@@ -8,7 +9,7 @@ import SaveIcon from 'react-icons/lib/md/save';
 
 class StateBubble extends Component {
   render() {
-    const { isSaving, hasUnsavedChanges } = this.props;
+    const { t, isSaving, hasUnsavedChanges } = this.props;
 
     if (isSaving) {
       return (<SuperBubble className="SuperBubble--blue">
@@ -25,7 +26,7 @@ class StateBubble extends Component {
     if (hasUnsavedChanges) {
       return (
         <a href="#"
-          data-tip="Есть измениня. Сохраняйте."
+          data-tip={t('tips:have_changes')}
           onClick={onSaveChanges}
           clasName="IconLink"
         >
@@ -41,9 +42,10 @@ class StateBubble extends Component {
 }
 
 StateBubble.propTypes = {
+  t: PropTypes.func.isRequired,
   isSaving: PropTypes.bool.isRequired,
   hasUnsavedChanges: PropTypes.bool.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
 };
 
-export default StateBubble;
+export default translate('')(StateBubble);

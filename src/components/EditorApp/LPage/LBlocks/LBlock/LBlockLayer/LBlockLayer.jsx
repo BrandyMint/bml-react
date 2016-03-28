@@ -91,8 +91,12 @@ class LBlockLayer extends Component {
             onViewSwitchNext={partial(onViewSwitchNext, block.uuid)}
             onViewSwitchPrev={partial(onViewSwitchPrev, block.uuid)}
 
-            onBlockPositionDown={enableMoveDown && partial(onBlockPositionDown, block.uuid)}
-            onBlockPositionUp={enableMoveUp && partial(onBlockPositionUp, block.uuid)}
+            onBlockPositionDown={
+              enableMoveDown ? partial(onBlockPositionDown, block.uuid) : undefined
+            }
+            onBlockPositionUp={
+              enableMoveUp ? partial(onBlockPositionUp, block.uuid) : undefined
+            }
           />
         )}
       </Animated>
@@ -118,8 +122,9 @@ LBlockLayer.propTypes = {
   enablePanel: PropTypes.bool,
 
   // onActive: PropTypes.func.isRequired,
-  onBlockPositionDown: PropTypes.func.isRequired,
-  onBlockPositionUp: PropTypes.func.isRequired,
+  onBlockPositionDown: PropTypes.func,
+  onBlockPositionUp: PropTypes.func,
+
   onEditingStart: PropTypes.func.isRequired,
   onViewSwitchNext: PropTypes.func.isRequired,
   onViewSwitchPrev: PropTypes.func.isRequired,
