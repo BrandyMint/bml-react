@@ -1,9 +1,9 @@
 /* stylelint-disable-line rule-non-nested-empty-line-before */
 
-@import 'src/stylesheets/shared/angeled-background';
+// @import 'src/stylesheets/shared/angeled-background';
 
 body.EditorApp {
-  @include angled-background;
+  // @include angled-background;
   min-height: 500px;
 }
 
