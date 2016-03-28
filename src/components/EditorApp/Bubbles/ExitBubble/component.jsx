@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 
@@ -6,11 +7,11 @@ import Icon from 'react-icons/lib/md/close';
 
 import config from 'constants/config';
 
-const ExitBubble = () => (
+const ExitBubble = ({ t }) => (
   <a
     href={config('exitUrl')}
     rel="external"
-    data-tip="Выход из конструктора"
+    data-tip={t('tips:exit_bubble')}
     className="IconLink"
   >
     <SuperBubble>
@@ -19,4 +20,4 @@ const ExitBubble = () => (
   </a>
 );
 
-export default ExitBubble;
+export default translate('')(ExitBubble);

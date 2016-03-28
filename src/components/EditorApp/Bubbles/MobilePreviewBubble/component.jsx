@@ -2,11 +2,12 @@ import React, { PropTypes } from 'react';
 import Icon from 'react-icons/lib/go/device-mobile';
 import { Link } from 'react-router';
 import SuperBubble from 'components/ui-elements/SuperBubble';
+import { translate } from 'react-i18next';
 
-const MobilePreviewBubble = ({ variantUuid }) => (
+const MobilePreviewBubble = ({ t, variantUuid }) => (
   <Link
     to={`/editor/${variantUuid}/mobilePreview`}
-    data-tip="Предпросмотр на экране телефона"
+    data-tip={t('tips:mobile_preview')}
     className="IconLink"
   >
     <SuperBubble>
@@ -16,7 +17,8 @@ const MobilePreviewBubble = ({ variantUuid }) => (
 );
 
 MobilePreviewBubble.propTypes = {
+  t: PropTypes.func.isRequired,
   variantUuid: PropTypes.string.isRequired,
 };
 
-export default MobilePreviewBubble;
+export default translate('')(MobilePreviewBubble);

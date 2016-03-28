@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { translate } from 'react-i18next';
 
 import OnIcon from 'react-icons/lib/md/zoom-in';
 import OffIcon from 'react-icons/lib/md/zoom-out';
@@ -7,7 +8,7 @@ import SuperBubble from 'components/ui-elements/SuperBubble';
 
 class ScaleBubble extends Component {
   render() {
-    const { zoom, changeZoom } = this.props;
+    const { t, zoom, changeZoom } = this.props;
 
     const onClick = (event) => {
       event.preventDefault();
@@ -21,7 +22,7 @@ class ScaleBubble extends Component {
       <a
         href="#"
         onClick={onClick}
-        data-tip="Обзор всего сайта сразу"
+        data-tip={t('tips:scale_bubble')}
         className="IconLink"
       >
         <SuperBubble active={zoom}>
@@ -34,8 +35,9 @@ class ScaleBubble extends Component {
 }
 
 ScaleBubble.propTypes = {
+  t: PropTypes.func.isRequired,
   zoom: PropTypes.bool.isRequired,
   changeZoom: PropTypes.func.isRequired,
 };
 
-export default ScaleBubble;
+export default translate('')(ScaleBubble);

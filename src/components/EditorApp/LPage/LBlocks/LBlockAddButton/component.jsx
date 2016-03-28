@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { translate } from 'react-i18next';
 import classnames from 'classnames';
 
 import partial from 'lodash/partial';
@@ -8,6 +9,7 @@ import PlusIcon from 'react-icons/lib/fa/plus';
 import './LBlockAddButton.css';
 
 const LBlockAddButton = ({
+  t,
   onAddBlock,
   index,
   enable,
@@ -25,7 +27,7 @@ const LBlockAddButton = ({
       <div
         className="LBlockAddButton-handle"
         data-multiline
-        data-tip="Нажмите чтобы выбрать и<br>добавить сюда новый блок"
+        data-tip={t('tips:add_button')}
         onClick={partial(onAddBlock, index)}
       >
         <PlusIcon className="Icon" />
@@ -35,6 +37,7 @@ const LBlockAddButton = ({
 };
 
 LBlockAddButton.propTypes = {
+  t: PropTypes.func.isRequired,
   onAddBlock: PropTypes.func.isRequired,
   index: PropTypes.number,
   blocksCount: PropTypes.number.isRequired,
@@ -45,4 +48,4 @@ LBlockAddButton.defaultProps = {
   enable: true,
 };
 
-export default LBlockAddButton;
+export default translate('')(LBlockAddButton);
