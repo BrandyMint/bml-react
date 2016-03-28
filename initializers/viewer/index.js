@@ -18,6 +18,7 @@ import config from 'constants/config';
 
 import 'lib/bugsnag';
 import 'lib/semverInit';
+import 'lib/i18n';
 
 // CLIENT устанавливается когда комплиируем Demo-вариантт для dist-а
 // false когда компилируем вариант для prerender-а
