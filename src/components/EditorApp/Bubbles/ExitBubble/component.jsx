@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { translate } from 'react-i18next';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
@@ -19,5 +19,9 @@ const ExitBubble = ({ t }) => (
     </SuperBubble>
   </a>
 );
+
+ExitBubble.propTypes = {
+  t: PropTypes.func.isRequired,
+}
 
 export default translate('')(ExitBubble);
