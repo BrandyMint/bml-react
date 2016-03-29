@@ -36792,8 +36792,6 @@
 	  fallbackLng: 'en',
 	  defaultNS: 'common',
 	  ns: ['common'],
-	  interpolationPrefix: '%{',
-	  interpolationSuffix: '}',
 	  // returnObjects: true,
 	  resources: i18nResources
 	});
@@ -49148,7 +49146,7 @@
 /* 648 */
 /***/ function(module, exports) {
 
-	module.exports = {"en":{"empty_placeholder":{"title":"The site is empty","details":"Add some blocks"}},"ru":{"empty_placeholder":{"title":"Сайт не содержит никаких элементов","details":"Добавьте что-нибудь"}}}
+	module.exports = {"en":{"empty_placeholder":{"title":"The site is empty","details":"Add some blocks"}},"ru":{"empty_placeholder":{"title":"Сайт не содержит никаких элементов","details":"Добавьте что-нибудь"},"tips":{"have_changes":"Есть изменения. Сохраняйте","exit_from_preview":"Переход в конструктор","block_settings":"Настройка блока","reset_changes":"Отменить все изменения","color_schema_change":"Сменить цветовую схему","change_block_view":"Смена вида","is_boxed":{"on":"Широкая страница. Сделать узкой","off":"Узкая страница. Сделать широкой"},"open_public_link":"Открыть сайт в новом окне","mobile_preview":"Предпросмотр на экране телефона","scale_bubble":"Обзор всего сайта сразу","exit_bubble":"Выход из конструктора","desktop_preview_bubble":"Предпросмотр на полный экран","add_button":" Нажмите чтобы выбрать и<br>добавить сюда новый блок","move_block_up":"Переместить блок наверх","move_block_down":"Переместить блок вниз"}}}
 
 /***/ },
 /* 649 */
@@ -50904,7 +50902,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.18",
+		"version": "0.3.19",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
