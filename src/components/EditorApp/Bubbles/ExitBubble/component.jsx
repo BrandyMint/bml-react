@@ -22,6 +22,6 @@ const ExitBubble = ({ t }) => (
 
 ExitBubble.propTypes = {
   t: PropTypes.func.isRequired,
-}
+};
 
 export default translate('')(ExitBubble);
