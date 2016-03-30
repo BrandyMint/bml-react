@@ -7,4 +7,5 @@ export default [
   'email',
   'tel',
   'number',
+  'dropdownList',
 ];

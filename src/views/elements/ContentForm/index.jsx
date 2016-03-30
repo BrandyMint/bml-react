@@ -3,6 +3,7 @@ import map from 'lodash/map';
 import config from 'constants/config';
 import ContentFormSecrets from './ContentFormSecrets';
 import Field from './Field';
+import FieldWrapper from './FieldWrapper';
 import classnames from 'classnames';
 
 // Именно это ID используется для шорткатов с кнопок на форму
@@ -31,11 +32,10 @@ const ContentForm = (props) => {
       <ContentFormSecrets />
       {children}
       {map(fields, (field, index) =>
-          <div className="form-group" key={index}>
-            { field.title && (<label htmlFor={field.name}>{field.title}</label>)}
-            <Field {...field} />
-          </div>
-          )}
+         <FieldWrapper key={index} {...field}>
+           <Field {...field} />
+         </FieldWrapper>
+       )}
       <div className="form-group">
         <button type="submit" className="BML-button-submit">{submitTitle}</button>
       </div>
