@@ -3,10 +3,10 @@ import find from 'lodash/find';
 
 import {
   changeNodeAttribute,
-  changeContentField,
+  changeContent,
   changeBackgroundImage,
   changeForm,
-} from 'actions/editBlockForm';
+} from 'actions/blocks';
 
 import LBlockEditForm from './LBlockEditForm';
 
@@ -15,10 +15,10 @@ const selector = state => ({
 });
 
 const actions = {
-  onNodeAttributeChange: changeNodeAttribute,
-  onContentChange: changeContentField,
-  onBackgroundImageChange: changeBackgroundImage,
-  onFormChange: changeForm,
+  changeNodeAttribute,
+  changeContent,
+  changeBackgroundImage,
+  changeForm,
 };
 
 export default connect(selector, actions)(LBlockEditForm);

@@ -1,9 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import assign from 'lodash/assign';
 import get from 'lodash/get';
 
 import Dropzone from 'react-dropzone';
-import 'components/ui-elements/Dropzone/Dropzone.css';
+
+import './index.scss';
 
 const WIDTH = 500;
 const HEIGHT = 400;
@@ -29,37 +30,60 @@ const ACTIVE_STYLES = {
   backgroundColor: '#999',
 };
 
-const BackgroundForm = ({ block, uploadBackground, onChange }) => {
-  const { backgroundImage, uuid } = block;
-  const backgroundImageUrl = get(backgroundImage, 'url');
+class BackgroundForm extends Component {
+  constructor() {
+    super();
+    this.openDropZone = this.openDropZone.bind(this);
+  }
 
-  const styles = assign(
-    DEFAULT_STYLES,
-    backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
-  );
+  openDropZone() {
+    this.refs.dropzone.open();
+  }
 
-  const onDrop = (files) => uploadBackground(files[0], { uuid });
+  render() {
+    const { block, uploadBackground, onChange } = this.props;
+    const { backgroundImage, uuid } = block;
+    const backgroundImageUrl = get(backgroundImage, 'url');
 
-  const handleChangeUrl = (event) => {
-    onChange('uuid', null);
-    onChange('url', event.target.value);
-  };
+    const styles = assign(
+      DEFAULT_STYLES,
+      backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
+    );
 
-  return (
-    <div className="TabPage">
-      <Dropzone style={styles} multiple={false} onDrop={onDrop} activeStyle={ACTIVE_STYLES}>
-        <div className="Dropzone-title">Перетащите сюда фоновое изобрежение</div>
-      </Dropzone>
-      <input
-        className="form-control"
-        type="text"
-        id="backgroundImageUrl"
-        value={backgroundImageUrl}
-        onChange={handleChangeUrl}
-      />
-    </div>
-  );
-};
+    const onDrop = (files) => uploadBackground(files[0], { uuid });
+
+    const handleChangeUrl = (event) => {
+      onChange('uuid', null);
+      onChange('url', event.target.value);
+    };
+
+    return (
+      <div className="TabPage">
+        <Dropzone
+          style={styles}
+          multiple={false}
+          accept="image/*"
+          onDrop={onDrop}
+          ref="dropzone"
+          activeStyle={ACTIVE_STYLES}
+        >
+          <div className="Dropzone-title">
+            Перетащите сюда фоновое изобрежение
+            <br />
+            или кликните чтобы загрузить
+          </div>
+        </Dropzone>
+        <input
+          className="form-control"
+          type="text"
+          id="backgroundImageUrl"
+          value={backgroundImageUrl}
+          onChange={handleChangeUrl}
+        />
+     </div>
+    );
+  }
+}
 
 BackgroundForm.propTypes = {
   block: PropTypes.shape({

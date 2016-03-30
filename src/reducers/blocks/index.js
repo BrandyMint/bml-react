@@ -34,6 +34,8 @@ import {
 
   CHANGE_BLOCK_CONTENT,
   CHANGE_BLOCK_NODE_ATTRIBUTES,
+  CHANGE_BLOCK_FORM,
+  CHANGE_BLOCK_BACKGROUND_IMAGE,
 
   SUBMIT_ADDING_BLOCK,
   CANCEL_EDITING_BLOCK,
@@ -55,6 +57,8 @@ const handlers = {
 
   [CHANGE_BLOCK_CONTENT]: changeBlockField('content'),
   [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),
+  [CHANGE_BLOCK_BACKGROUND_IMAGE]: changeBlockField('backgroundImage'),
+  [CHANGE_BLOCK_FORM]: changeBlockField('form'),
 
   [SUBMIT_ADDING_BLOCK]: addBlock,
   [CANCEL_EDITING_BLOCK]: updateBlock,

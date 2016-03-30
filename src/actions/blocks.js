@@ -2,6 +2,8 @@ import invariant from 'invariant';
 
 export const CHANGE_BLOCK_CONTENT = 'CHANGE_BLOCK_CONTENT';
 export const CHANGE_BLOCK_NODE_ATTRIBUTES = 'CHANGE_BLOCK_NODE_ATTRIBUTES';
+export const CHANGE_BLOCK_FORM = 'CHANGE_BLOCK_FORM';
+export const CHANGE_BLOCK_BACKGROUND_IMAGE = 'CHANGE_BLOCK_BACKGROUND_IMAGE';
 
 export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
@@ -84,9 +86,19 @@ export const changeContent = (uuid, path, value) => ({
   payload: { path, uuid, value },
 });
 
-export const changeNodeAttributes = (uuid, fieldName, value) => ({
+export const changeNodeAttribute = (uuid, path, value) => ({
   type: CHANGE_BLOCK_NODE_ATTRIBUTES,
-  payload: { fieldName, uuid, value },
+  payload: { path, uuid, value },
+});
+
+export const changeBackgroundImage = (uuid, path, value) => ({
+  type: CHANGE_BLOCK_BACKGROUND_IMAGE,
+  payload: { path, uuid, value },
+});
+
+export const changeForm = (uuid, path, value) => ({
+  type: CHANGE_BLOCK_FORM,
+  payload: { path, uuid, value },
 });
 
 export const downBlockPosition = (uuid) => ({

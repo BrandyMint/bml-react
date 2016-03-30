@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
 import { translate } from 'react-i18next';
+import partial from 'lodash/partial';
 
 import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
@@ -17,11 +19,18 @@ class LBlockEditForm extends Component {
     const {
       t,
       block,
-      onNodeAttributeChange,
-      onContentChange,
-      onBackgroundImageChange,
-      onFormChange,
+      changeForm,
+      changeBackgroundImage,
+      changeContent,
+      changeNodeAttribute,
     } = this.props;
+
+    const { uuid } = block;
+
+    const onContentChange = partial(changeContent, uuid);
+    const onFormChange = partial(changeForm, uuid);
+    const onNodeAttributeChange = partial(changeNodeAttribute, uuid);
+    const onBackgroundImageChange = partial(changeBackgroundImage, uuid);
 
     const schema = viewsRepository.getContentSchemaByViewName(block.viewName);
     return (
@@ -70,10 +79,10 @@ class LBlockEditForm extends Component {
 LBlockEditForm.propTypes = {
   t: PropTypes.func.isRequired,
   block: PropTypes.object.isRequired,
-  onNodeAttributeChange: PropTypes.func.isRequired,
-  onContentChange: PropTypes.func.isRequired,
-  onBackgroundImageChange: PropTypes.func.isRequired,
-  onFormChange: PropTypes.func.isRequired,
+  changeNodeAttribute: PropTypes.func.isRequired,
+  changeContent: PropTypes.func.isRequired,
+  changeBackgroundImage: PropTypes.func.isRequired,
+  changeForm: PropTypes.func.isRequired,
 };
 
 export default translate('block_edit_form')(LBlockEditForm);

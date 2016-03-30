@@ -31,6 +31,9 @@ import {
   SWITCH_PREV_VIEW,
 
   CHANGE_BLOCK_CONTENT,
+  CHANGE_BLOCK_FORM,
+  CHANGE_BLOCK_BACKGROUND_IMAGE,
+  CHANGE_BLOCK_NODE_ATTRIBUTES,
 
   SUBMIT_ADDING_BLOCK,
   SUBMIT_EDITING_BLOCK,
@@ -105,7 +108,12 @@ const handlers = {
   [SWITCH_PREV_VIEW]: unsavedChanges(true),
   [SUBMIT_ADDING_BLOCK]: unsavedChanges(true),
   [SUBMIT_EDITING_BLOCK]: unsavedChanges(true),
+
   [CHANGE_BLOCK_CONTENT]: unsavedChanges(true),
+  [CHANGE_BLOCK_FORM]: unsavedChanges(true),
+  [CHANGE_BLOCK_NODE_ATTRIBUTES]: unsavedChanges(true),
+  [CHANGE_BLOCK_BACKGROUND_IMAGE]: unsavedChanges(true),
+
   [DELETE_EDITING_BLOCK]: unsavedChanges(true),
   [CHANGE_THEME]: unsavedChanges(true),
   [TOGGLE_BOXED_LAYOUT]: unsavedChanges(true),
