@@ -8,7 +8,9 @@ import { ThemesRepo } from 'constants/themes';
 
 class ColorStyleSelector extends Component {
   render() {
-    const { t, theme_name, changeTheme } = this.props;
+    const { t, enable, theme_name, changeTheme } = this.props;
+
+    if (!enable) { return false; }
 
     const theme = ThemesRepo.find(theme_name);
 
@@ -41,6 +43,7 @@ ColorStyleSelector.propTypes = {
   t: PropTypes.func.isRequired,
   theme_name: PropTypes.string.isRequired,
   changeTheme: PropTypes.func.isRequired,
+  enable: PropTypes.bool.isRequired,
 };
 
 export default translate('')(ColorStyleSelector);

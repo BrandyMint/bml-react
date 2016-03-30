@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import component from './component';
+import size from 'lodash/size';
 
-const selector = ({ application }) => ({
-  open: application.zoom,
+const selector = (state) => ({
+  open: state.application.zoom,
+  enable: size(state.blocks) > 0,
 });
 
 export default connect(selector)(component);

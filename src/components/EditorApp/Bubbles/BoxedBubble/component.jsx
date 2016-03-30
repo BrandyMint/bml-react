@@ -8,7 +8,8 @@ import SuperBubble from 'components/ui-elements/SuperBubble';
 
 class BoxedBubble extends Component {
   render() {
-    const { t, is_boxed, toggleBoxedLayout } = this.props;
+    const { enable, t, is_boxed, toggleBoxedLayout } = this.props;
+    if (!enable) { return false; }
 
     const onClick = (event) => {
       event.preventDefault();
@@ -38,6 +39,7 @@ BoxedBubble.propTypes = {
   t: PropTypes.func.isRequired,
   is_boxed: PropTypes.bool.isRequired,
   toggleBoxedLayout: PropTypes.func.isRequired,
+  enable: PropTypes.bool.isRequired,
 };
 
 export default translate('')(BoxedBubble);

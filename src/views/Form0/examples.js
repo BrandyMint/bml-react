@@ -52,7 +52,8 @@ export const sections = [
           'placeholder': '',
           'name': 'category',
           'inputType': 'dropdownList',
-          'dictionaryKey': 'categories'
+          'dictionaryKey': 'categories',
+          'entities': ["Дети", "Фитнесс", "Спортсмены", "Атлеты", "Мастера", "Команды"]
         }
       ]
     },
