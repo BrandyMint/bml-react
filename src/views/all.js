@@ -2,6 +2,7 @@ import { prepareViews } from 'views/utils';
 
 import InlineForm1 from './InlineForm1';
 import Form1 from './Form1';
+import Form0 from './Form0';
 // import Navbar1 from './Navbar1';
 import GoogleMap1 from './GoogleMap1';
 import Footer1 from './Footer1';
@@ -30,6 +31,7 @@ export const viewsList = {
   PlainText,
 
   Form1,
+  Form0,
   InlineForm1,
 
   // Navbar1,

@@ -1,6 +1,6 @@
 export const sections = [
   {
-    title: 'Вертикальная форма справа',
+    title: 'Вертикальная форма снизу',
     icon: 'ti-layout-menu-v',
     'content': {
       'text': '<h3>УСЛОВИЯ УЧАСТИЯ:</h3><p>1. Вы регистрируетесь в форме ниже</p><p>2. Обновляете свой статус в "ВКонтакте" или Facebook, оставив комментарий под формой регистрации:</p><p>"Я иду на бесплатный мастер-класс Бизнес Молодости в Челябинске «Как выбрать нишу и сделать на ней первые деньги?» http://molodost.bz/region_3marta_chelyabinsk"</p>',
@@ -28,6 +28,12 @@ export const sections = [
           'placeholder': 'ВВЕДИТЕ ВАШ ТЕЛЕФОН',
           'name': 'phone',
           'inputType': 'tel'
+        },
+        {
+          'title': '',
+          'placeholder': 'ГОРОД',
+          'name': 'city',
+          'inputType': 'dropdownList'
         }
       ]
     },
