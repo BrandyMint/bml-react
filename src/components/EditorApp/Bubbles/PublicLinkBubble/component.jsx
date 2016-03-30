@@ -12,6 +12,8 @@ class PublicLinkBubble extends Component {
   render() {
     const { t, public_url } = this.props;
 
+    if (!public_url) { return false }
+
     return (<div>
       <a
         href={public_url}
@@ -30,7 +32,7 @@ class PublicLinkBubble extends Component {
 
 PublicLinkBubble.propTypes = {
   t: PropTypes.func.isRequired,
-  public_url: PropTypes.string.isRequired,
+  public_url: PropTypes.string, // url can be blank if it is new variant
 };
 
 export default translate('')(PublicLinkBubble);

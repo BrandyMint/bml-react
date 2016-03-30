@@ -3,6 +3,10 @@ import component from './component';
 import urlParse from 'url-parse';
 
 const selector = ({ site: { public_url }, application: { variantUuid } }) => {
+  if (!public_url) {
+    return { public_url: undefined };
+  }
+
   const url = urlParse(public_url);
 
   url.query = `variant_uuid=${variantUuid}`;
