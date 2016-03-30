@@ -25,4 +25,4 @@ EmptyPlaceholder.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default translate('')(EmptyPlaceholder);
+export default translate('empty_placeholder')(EmptyPlaceholder);
