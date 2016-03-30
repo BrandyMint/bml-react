@@ -33,7 +33,26 @@ export const sections = [
           'title': '',
           'placeholder': 'ГОРОД',
           'name': 'city',
-          'inputType': 'dropdownList'
+          'inputType': 'text'
+        },
+        {
+          'title': '',
+          'placeholder': 'КОМАНДА',
+          'name': 'team',
+          'inputType': 'text'
+        },
+        {
+          'title': '',
+          'placeholder': 'КЛУБ',
+          'name': 'club',
+          'inputType': 'text'
+        },
+        {
+          'title': 'Категория',
+          'placeholder': '',
+          'name': 'category',
+          'inputType': 'dropdownList',
+          'dictionaryKey': 'categories'
         }
       ]
     },

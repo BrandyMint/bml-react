@@ -1,28 +1,44 @@
 import React, { PropTypes, Component } from 'react';
 import includes from 'lodash/includes';
 import INPUT_TYPES from 'constants/inputTypes';
+import FIELD_TYPES, { DROPDOWN_TYPE } from './fieldTypes';
+import invariant from 'invariant';
 
-import DropdownList from 'react-widgets/lib/DropdownList';
+import Select from './Select';
 
 class Field extends Component {
   render() {
-    const { name, placeholder, inputType } = this.props;
+    const { name, placeholder, inputType, dictionaryKey, defaultValue } = this.props;
 
     if (includes(INPUT_TYPES, inputType)) {
       return (
-        <input
-          type={inputType}
-          name={name}
-          placeholder={placeholder}
-          className="form-control"
-        />);
+          <input
+            type={inputType}
+            name={name}
+            placeholder={placeholder}
+            className="form-control"
+          />
+        );
     }
 
+    // TODO вытащить в ветку dictionaries
+    const dictionaries = {
+      categories: ['Дети', 'Фитнесс', 'Спортсмены', 'Атлеты', 'Мастера', 'Команды'],
+    };
+
+    const entities = dictionaries[dictionaryKey];
+    invariant(entities, `No entities for dictionary${dictionaryKey}`);
+
     // TODO const
-    if (inputType === 'dropdownList') {
-      const defaultValue = undefined;
-      const entities = ['a', 'b'];
-      return <DropdownList defaultValue={defaultValue} data={entities} />;
+    if (inputType === DROPDOWN_TYPE) {
+      return (
+          <Select
+            name={name}
+            placeholder={placeholder}
+            defaultValue={defaultValue}
+            options={entities}
+          />
+        );
     }
 
     return undefined;
@@ -30,9 +46,12 @@ class Field extends Component {
 }
 
 Field.propTypes = {
+  title: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  inputType: PropTypes.oneOf(INPUT_TYPES).isRequired,
+  inputType: PropTypes.oneOf(FIELD_TYPES).isRequired,
+  dictionaryKey: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 export default Field;

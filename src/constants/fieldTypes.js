@@ -1,3 +1,5 @@
+// Типы используемые в редакторе
+
 import concat from 'lodash/concat';
 
 export const FIELD_TYPE_STRING = 'string';
