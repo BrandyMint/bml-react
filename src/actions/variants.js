@@ -2,7 +2,6 @@
 
 import { API_CALL } from 'middleware/API';
 import BLANK_SITE from 'constants/blankSite';
-
 export const BLANK_LANDING_VARIANT_UUID = 'blank';
 
 import {
@@ -56,6 +55,21 @@ export const saveChanges = () => (dispatch, getState) => {
     site,
     application: { variantUuid: uuid },
   } = getState();
+
+  if (uuid === BLANK_LANDING_VARIANT_UUID || !uuid) {
+    return dispatch({
+      [API_CALL]: {
+        endpoint: '/variants/',
+        method: 'POST',
+        payload: { ...site, blocks },
+        types: [
+          LANDING_VARIANT_UPDATE_REQUEST,
+          LANDING_VARIANT_UPDATE_SUCCESS,
+          LANDING_VARIANT_UPDATE_FAILURE,
+        ],
+      },
+    });
+  }
 
   return dispatch({
     [API_CALL]: {

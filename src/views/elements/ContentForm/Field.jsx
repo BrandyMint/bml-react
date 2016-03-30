@@ -7,7 +7,6 @@ import DropdownList from 'react-widgets/lib/DropdownList';
 class Field extends Component {
   render() {
     const { name, placeholder, inputType } = this.props;
-    console.log(inputType);
 
     if (includes(INPUT_TYPES, inputType)) {
       return (
