@@ -1,29 +1,30 @@
 import React, { PropTypes } from 'react';
+import { translate } from 'react-i18next';
 import { FIELD_BASIC_TYPES } from 'constants/fieldTypes';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 
 import FieldSubitem from './FieldSubitem';
 
-import MdRemoveCircleOutline from 'react-icons/lib/md/remove-circle_outline';
+import './index.scss';
 
-const FieldItem = ({ item, itemSchemaFields, onChange, onRemove }) =>
+const FieldItem = ({ t, item, itemSchemaFields, onChange, onRemove }) =>
 (
-  <li>
-  {
-    map(itemSchemaFields, (field, index) =>
-      (
-        <FieldSubitem
-          key={index}
-          field={field}
-          value={item[field.key]}
-          onChange={partial(onChange, field.key)}
-        />
-      )
-   )}
-   <button className="btn btn-sm btn-danger" onClick={onRemove}>
-     <MdRemoveCircleOutline />
-   </button>
+  <li className="Editor-FieldItem">
+    {
+      map(itemSchemaFields, (field, index) =>
+        (
+          <FieldSubitem
+            key={index}
+            field={field}
+            value={item[field.key]}
+            onChange={partial(onChange, field.key)}
+          />
+        )
+     )}
+     <button className="btn btn-sm btn-danger" onClick={onRemove}>
+       {t('remove')}
+     </button>
   </li>
 );
 
@@ -35,6 +36,7 @@ const itemSchemaFieldPropType = {
 };
 
 FieldItem.propTypes = {
+  t: PropTypes.func.isRequired,
   itemSchemaFields: PropTypes.arrayOf(
     PropTypes.shape(itemSchemaFieldPropType)
   ).isRequired, // TODO какой у них тип?
@@ -43,4 +45,4 @@ FieldItem.propTypes = {
   onRemove: PropTypes.func.isRequired,
 };
 
-export default FieldItem;
+export default translate('field_item')(FieldItem);

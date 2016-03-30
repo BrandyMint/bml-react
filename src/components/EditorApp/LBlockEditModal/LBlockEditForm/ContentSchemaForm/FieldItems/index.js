@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { translate } from 'react-i18next';
 
 import map from 'lodash/map';
 import partial from 'lodash/partial';
@@ -9,7 +10,7 @@ import FieldItem from './FieldItem';
 
 class FieldItems extends Component {
   render() {
-    const { field, value, onChange } = this.props;
+    const { t, field, value, onChange } = this.props;
 
     const items = value || [];
 
@@ -58,7 +59,7 @@ class FieldItems extends Component {
         </ol>
         <div className="pull-xs-right">
           <button name="add" onClick={onClickAdd} className="btn btn-success btn-sm">
-            Добавить
+            {t('add')}
           </button>
         </div>
       </fieldset>
@@ -75,9 +76,10 @@ const FieldPropType = {
 };
 
 FieldItems.propTypes = {
+  t: PropTypes.func.isRequired,
   field: PropTypes.shape(FieldPropType).isRequired,
   value: PropTypes.array.isRequired, // items
   onChange: PropTypes.func.isRequired,
 };
 
-export default FieldItems;
+export default translate('field_items')(FieldItems);
