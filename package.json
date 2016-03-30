@@ -127,6 +127,7 @@
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.0",
+    "react-scroll": "^1.0.4",
     "react-tooltip": "^1.1.4",
     "react-widgets": "^3.1.7",
     "redux": "^3.0.5",

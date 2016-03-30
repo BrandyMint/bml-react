@@ -1,7 +1,7 @@
 ## Цель:
 
-* [ ] BM-овский лендос в дизайне
-
+* [ ] https://github.com/milosjanda/react-scroll-up
+* [ ] https://github.com/anorudes/React-Scroll-Effect
 
 ## Блоки:
 
