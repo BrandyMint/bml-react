@@ -135,6 +135,7 @@
     "rx": "^4.0.7",
     "semver-utils": "^1.1.1",
     "superagent": "^1.7.1",
+    "url-parse": "^1.1.0",
     "uuid": "^2.0.1"
   }
 }
