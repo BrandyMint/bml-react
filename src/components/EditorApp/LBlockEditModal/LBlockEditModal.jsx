@@ -1,36 +1,39 @@
 import React, { PropTypes } from 'react';
+import { translate } from 'react-i18next';
 
 import Modal from 'components/ui-elements/Modal';
 import LBlockEditForm from './LBlockEditForm';
 
-const LBlockEditModal = ({ block, isVisible, onCancel, onDelete, onSave }) => (
+const LBlockEditModal = ({ t, block, isVisible, onCancel, onDelete, onSave }) => (
   <Modal show={isVisible} className="modal EditorModal LBlockEditModal">
     <Modal.Header closeButton onHide={onCancel}>
-      <Modal.Title>Редактирование блока {block.viewName}</Modal.Title>
+      <Modal.Title>{t('title', { name: block.viewName })}</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <LBlockEditForm />
     </Modal.Body>
     <Modal.Footer>
       <button
-        className="btn btn-danger"
+        className="btn btn-danger pull-left"
         type="button"
         onClick={onDelete}
       >
-        Удалить
+        {t('remove_block')}
       </button>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary pull-right"
         type="button"
         onClick={onSave}
       >
-        OK
+        {t('ok')}
       </button>
     </Modal.Footer>
   </Modal>
 );
 
 LBlockEditModal.propTypes = {
+  t: PropTypes.func.isRequired,
+
   isVisible: PropTypes.bool.isRequired,
 
   onCancel: PropTypes.func.isRequired,
@@ -40,4 +43,4 @@ LBlockEditModal.propTypes = {
   block: PropTypes.object.isRequired,
 };
 
-export default LBlockEditModal;
+export default translate('block_edit_modal')(LBlockEditModal);
