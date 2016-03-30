@@ -33,7 +33,12 @@ const ACTIVE_STYLES = {
 class BackgroundForm extends Component {
   constructor() {
     super();
+    this.state = { imageUrl: undefined };
     this.openDropZone = this.openDropZone.bind(this);
+  }
+
+  componentWillReceiveProps() {
+    this.setState({ imageUrl: undefined });
   }
 
   openDropZone() {
@@ -43,16 +48,26 @@ class BackgroundForm extends Component {
   render() {
     const { block, uploadBackground, onChange } = this.props;
     const { backgroundImage, uuid } = block;
-    const backgroundImageUrl = get(backgroundImage, 'url');
+    const { imageUrl } = this.state;
+    const backgroundImageUrl = imageUrl || get(backgroundImage, 'url');
 
     const styles = assign(
       DEFAULT_STYLES,
       backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
     );
 
-    const onDrop = (files) => uploadBackground(files[0], { uuid });
+    const onDrop = (files) => {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.setState({ imageUrl: e.target.result });
+      };
+      reader.readAsDataURL(file);
+      uploadBackground(file, { uuid });
+    };
 
     const handleChangeUrl = (event) => {
+      this.setState({ imageUrl: undefined });
       onChange('uuid', null);
       onChange('url', event.target.value);
     };
