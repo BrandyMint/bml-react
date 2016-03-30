@@ -80,7 +80,7 @@ const nextAction = (action, data) => {
 export default () => next => action => {
   if (!get(action, API_CALL)) return next(action);
 
-  const { endpoint, headers, method, payload, types, url, attach } = action[API_CALL];
+  const { endpoint, headers, method, payload, types, url, attach, crossPayload } = action[API_CALL];
   const [requestType, successType, failureType] = types;
 
   const apiKey = config('apiKey');
@@ -92,7 +92,7 @@ export default () => next => action => {
     completeHeaders['X-Api-Key'] = apiKey;
   }
 
-  next(nextAction(action, { type: requestType }));
+  next(nextAction(action, { crossPayload, type: requestType }));
 
   const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
 
@@ -100,6 +100,7 @@ export default () => next => action => {
     const errorPayload = get(rawData, 'data.body') || {};
 
     const data = {
+      crossPayload,
       payload: errorPayload,
       type: failureType,
       meta: { httpCode: rawData.error.status },
@@ -112,7 +113,7 @@ export default () => next => action => {
   const onSuccess = rawData => {
     validateRawData(rawData);
     const successPayload = get(rawData, 'body') || {};
-    const data = { payload: successPayload, type: successType };
+    const data = { crossPayload, payload: successPayload, type: successType };
 
     next(nextAction(action, data));
   };

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import assign from 'lodash/assign';
+import get from 'lodash/get';
 
 import Dropzone from 'react-dropzone';
 import 'components/ui-elements/Dropzone/Dropzone.css';
@@ -28,15 +29,16 @@ const ACTIVE_STYLES = {
   backgroundColor: '#999',
 };
 
-const BackgroundForm = ({ backgroundImage, onSaveBackground, onChange }) => {
-  const backgroundImageUrl = backgroundImage.url;
+const BackgroundForm = ({ block, uploadBackground, onChange }) => {
+  const { backgroundImage, uuid } = block;
+  const backgroundImageUrl = get(backgroundImage, 'url');
 
   const styles = assign(
     DEFAULT_STYLES,
     backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` },
   );
 
-  const onDrop = (files) => onSaveBackground(files[0]);
+  const onDrop = (files) => uploadBackground(files[0], { uuid });
 
   const handleChangeUrl = (event) => {
     onChange('uuid', null);
@@ -60,13 +62,16 @@ const BackgroundForm = ({ backgroundImage, onSaveBackground, onChange }) => {
 };
 
 BackgroundForm.propTypes = {
-  backgroundImage: PropTypes.shape({
-    uuid: PropTypes.string,
-    url: PropTypes.string,
-    width: PropTypes.number,
-    height: PropTypes.number,
+  block: PropTypes.shape({
+    backgroundImage: PropTypes.shape({
+      uuid: PropTypes.string,
+      url: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
+    uuid: PropTypes.string.isRequired,
   }).isRequired,
-  onSaveBackground: PropTypes.func.isRequired,
+  uploadBackground: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 

@@ -21,7 +21,7 @@ class LBlockEditForm extends Component {
       onContentChange,
       onBackgroundImageChange,
       onFormChange,
-      } = this.props;
+    } = this.props;
 
     const schema = viewsRepository.getContentSchemaByViewName(block.viewName);
     return (
@@ -50,7 +50,7 @@ class LBlockEditForm extends Component {
         { schema.backgroundImage && (
           <Tab eventKey={4} title={t('background')}>
             <BackgroundForm
-              backgroundImage={block.backgroundImage || {}}
+              block={block}
               onChange={onBackgroundImageChange}
             />
           </Tab>)

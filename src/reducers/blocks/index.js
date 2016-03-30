@@ -10,7 +10,13 @@ import updateBlock from './handlers/updateBlock';
 import deleteBlock from './handlers/deleteBlock';
 import successLoad from './handlers/successLoad';
 
+import updateBackground from './handlers/updateBackground';
+
 import backgroundResolver from 'helpers/backgroundResolver';
+
+import {
+  BACKGROUND_UPLOAD_SUCCESS,
+} from 'actions/variants';
 
 import {
   RESTORE_SITE,
@@ -30,7 +36,7 @@ import {
   CHANGE_BLOCK_NODE_ATTRIBUTES,
 
   SUBMIT_ADDING_BLOCK,
-  SUBMIT_EDITING_BLOCK,
+  CANCEL_EDITING_BLOCK,
   DELETE_EDITING_BLOCK,
 } from 'actions/blocks';
 
@@ -51,9 +57,15 @@ const handlers = {
   [CHANGE_BLOCK_NODE_ATTRIBUTES]: changeBlockField('nodeAttributes'),
 
   [SUBMIT_ADDING_BLOCK]: addBlock,
-  [SUBMIT_EDITING_BLOCK]: updateBlock,
+  [CANCEL_EDITING_BLOCK]: updateBlock,
   [DELETE_EDITING_BLOCK]: deleteBlock,
   [RESTORE_SITE]: restoreSite,
+
+  // Помечать блок загружаемым
+  // [BACKGROUND_UPLOAD_REQUEST]: (state, { payload, crossPayload }) => {
+  // debugger;
+  // },
+  [BACKGROUND_UPLOAD_SUCCESS]: updateBackground,
 };
 
 export default createReducer(initialState, handlers);

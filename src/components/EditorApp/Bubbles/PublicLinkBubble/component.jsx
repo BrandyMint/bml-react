@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 // react-icons/lib/md/present-to-all
 // react-icons/lib/md/settings-system-daydream
 //
-import Icon from 'react-icons/lib/md/ondemand-video';
+import Icon from 'react-icons/lib/fa/external-link';
 
 import SuperBubble from 'components/ui-elements/SuperBubble';
 
@@ -12,7 +12,7 @@ class PublicLinkBubble extends Component {
   render() {
     const { t, public_url } = this.props;
 
-    if (!public_url) { return false }
+    if (!public_url) { return false; }
 
     return (<div>
       <a

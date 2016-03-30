@@ -10,7 +10,7 @@ import './LBlockEditModal.css';
 
 const selector = state => ({
   isVisible: state.modal.current === EDIT_BLOCK,
-  block: state.editBlockForm.block,
+  savedBlock: state.editBlockForm.block,
 });
 
 const actions = {

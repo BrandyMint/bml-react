@@ -2,11 +2,12 @@ import { Component, PropTypes } from 'react';
 
 class ActivityController extends Component {
   componentDidMount() {
-    window.addEventListener('mousemove', this.props.startActivity);
+    // Временно отключил, так как всеравно этим никто не пользуется
+    // window.addEventListener('mousemove', this.props.startActivity);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('mousemove', this.props.startActivity);
+    // window.removeEventListener('mousemove', this.props.startActivity);
   }
 
   render() {

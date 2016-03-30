@@ -49,8 +49,9 @@ export const submitEditingBlock = () => (dispatch, getState) => {
   });
 };
 
-export const cancelEditingBlock = () => ({
+export const cancelEditingBlock = (block) => ({
   type: CANCEL_EDITING_BLOCK,
+  payload: { block },
 });
 
 export const deleteEditingBlock = () => (dispatch, getState) => {

@@ -17,6 +17,10 @@ export const LANDING_VARIANT_LOAD_REQUEST = 'LANDING_VARIANT_LOAD_REQUEST';
 export const LANDING_VARIANT_LOAD_SUCCESS = 'LANDING_VARIANT_LOAD_SUCCESS';
 export const LANDING_VARIANT_LOAD_FAILURE = 'LANDING_VARIANT_LOAD_FAILURE';
 
+export const BACKGROUND_UPLOAD_REQUEST = 'BACKGROUND_UPLOAD_REQUEST';
+export const BACKGROUND_UPLOAD_SUCCESS = 'BACKGROUND_UPLOAD_SUCCESS';
+export const BACKGROUND_UPLOAD_FAILURE = 'BACKGROUND_UPLOAD_FAILURE';
+
 export const loadVariant = (uuid) => (dispatch) => {
   if (__FAKE_API__ || uuid === BLANK_LANDING_VARIANT_UUID) {
     return dispatch({
@@ -85,16 +89,17 @@ export const saveChanges = () => (dispatch, getState) => {
   });
 };
 
-export const saveImage = (image) => (dispatch) => {
+export const uploadBackground = (image, crossPayload) => (dispatch) => {
   dispatch({
     [API_CALL]: {
+      crossPayload,
       endpoint: '/images/',
       method: 'POST',
       attach: { file: image },
       types: [
-        LANDING_VARIANT_UPDATE_REQUEST,
-        LANDING_VARIANT_UPDATE_SUCCESS,
-        LANDING_VARIANT_UPDATE_FAILURE,
+        BACKGROUND_UPLOAD_REQUEST,
+        BACKGROUND_UPLOAD_SUCCESS,
+        BACKGROUND_UPLOAD_FAILURE,
       ],
     },
   });

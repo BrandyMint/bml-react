@@ -4,11 +4,6 @@ export const CHANGE_BLOCK_BRANCH = 'CHANGE_BLOCK_BRANCH';
 export const CHANGE_BACKGROUND_IMAGE = 'CHANGE_BACKGROUND_IMAGE';
 export const CHANGE_FORM = 'CHANGE_FORM';
 
-export const ChangeBlockBranch = (block, path, value) => ({
-  type: CHANGE_BACKGROUND_IMAGE,
-  payload: { block, path, value },
-});
-
 export const changeNodeAttribute = (name, value) => ({
   type: CHANGE_NODE_ATTRIBUTE,
   payload: { name, value },

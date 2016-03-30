@@ -18,6 +18,10 @@ import {
   LANDING_VARIANT_LOAD_REQUEST,
   LANDING_VARIANT_LOAD_SUCCESS,
   LANDING_VARIANT_LOAD_FAILURE,
+
+  BACKGROUND_UPLOAD_REQUEST,
+  BACKGROUND_UPLOAD_SUCCESS,
+  BACKGROUND_UPLOAD_FAILURE,
 } from 'actions/variants';
 
 import {
@@ -94,6 +98,7 @@ const handlers = {
   [LANDING_VARIANT_UPDATE_REQUEST]: savingChanges(true),
   [LANDING_VARIANT_UPDATE_FAILURE]: savingChanges(false),
   [LANDING_VARIANT_UPDATE_SUCCESS]: successUpdate,
+
   [DOWN_BLOCK_POSITION]: unsavedChanges(true),
   [UP_BLOCK_POSITION]: unsavedChanges(true),
   [SWITCH_NEXT_VIEW]: unsavedChanges(true),
@@ -105,6 +110,10 @@ const handlers = {
   [CHANGE_THEME]: unsavedChanges(true),
   [TOGGLE_BOXED_LAYOUT]: unsavedChanges(true),
   [RESTORE_SITE]: unsavedChanges(false),
+
+  [BACKGROUND_UPLOAD_REQUEST]: state => ({ ...state, backgroundUploading: true }),
+  [BACKGROUND_UPLOAD_SUCCESS]: state => ({ ...state, backgroundUploading: false }),
+  [BACKGROUND_UPLOAD_FAILURE]: state => ({ ...state, backgroundUploading: false }),
 };
 
 export default createReducer(initialState, handlers);

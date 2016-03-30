@@ -20,15 +20,15 @@ export const initialState = {
     viewName: '',
     content: {},
     nodeAttributes: {},
-    background: {},
+    backgroundImage: {},
     meta: {},
   },
 };
 
 const handlers = {
-  [START_EDITING_BLOCK]: (state, action) => ({
+  [START_EDITING_BLOCK]: (state, { payload }) => ({
     ...state,
-    block: action.payload.block,
+    block: payload.block,
   }),
 
   [SUBMIT_EDITING_BLOCK]: () => initialState,
