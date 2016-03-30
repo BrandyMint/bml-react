@@ -35,7 +35,12 @@ class ViewContainer extends Component {
     );
 
     const backgroundImageUrl = get(backgroundImage, 'url');
-    const blockStyles = backgroundImageUrl && { backgroundImage: `url("${backgroundImageUrl}")` };
+    const blockStyles = backgroundImageUrl && {
+      backgroundImage: `url("${backgroundImageUrl}")`,
+      // Чтобы небольшие картинки типа http://info.wodcast.com/wp-content/uploads/2015/06/Stadium2_1024.png
+      // были на всю ширину
+      backgroundSize: 'cover',
+    };
 
     return React.createElement(
       tagName || TAG_NAME,

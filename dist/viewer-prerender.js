@@ -536,7 +536,12 @@
 	      }, 'BML-View-' + viewName, true), (0, _lodash.get)(backgroundStyle, 'bgClasses'), className, (0, _lodash.get)(nodeAttributes, 'class'));
 	
 	      var backgroundImageUrl = (0, _lodash.get)(backgroundImage, 'url');
-	      var blockStyles = backgroundImageUrl && { backgroundImage: 'url("' + backgroundImageUrl + '")' };
+	      var blockStyles = backgroundImageUrl && {
+	        backgroundImage: 'url("' + backgroundImageUrl + '")',
+	        // Чтобы небольшие картинки типа http://info.wodcast.com/wp-content/uploads/2015/06/Stadium2_1024.png
+	        // были на всю ширину
+	        backgroundSize: 'cover'
+	      };
 	
 	      return _react2.default.createElement(tagName || TAG_NAME, {
 	        className: blockClasses,
@@ -51185,7 +51190,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.21",
+		"version": "0.3.22",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
