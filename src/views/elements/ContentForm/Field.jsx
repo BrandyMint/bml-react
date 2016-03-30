@@ -1,22 +1,36 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import includes from 'lodash/includes';
 import INPUT_TYPES from 'constants/inputTypes';
 
-// TODO перенести formName в context?
-//
-const Field = ({ name, title, placeholder, inputType }) => (
-  <div className="form-group">
-    { title && (<label htmlFor={name}>{title}</label>)}
-    <input
-      type={inputType}
-      className="form-control"
-      name={name}
-      placeholder={placeholder}
-    />
-  </div>
-);
+import DropdownList from 'react-widgets/lib/DropdownList';
+
+class Field extends Component {
+  render() {
+    const { name, placeholder, inputType } = this.props;
+    console.log(inputType);
+
+    if (includes(INPUT_TYPES, inputType)) {
+      return (
+        <input
+          type={inputType}
+          name={name}
+          placeholder={placeholder}
+          className="form-control"
+        />);
+    }
+
+    // TODO const
+    if (inputType === 'dropdownList') {
+      const defaultValue = undefined;
+      const entities = ['a', 'b'];
+      return <DropdownList defaultValue={defaultValue} data={entities} />;
+    }
+
+    return undefined;
+  }
+}
 
 Field.propTypes = {
-  title: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   inputType: PropTypes.oneOf(INPUT_TYPES).isRequired,

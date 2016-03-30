@@ -14,7 +14,7 @@ class ExitBubble extends Component {
     return (
       <Link
         to={`/editor/${variantUuid}`}
-        data-tip={t('exit_from_preview')}
+        data-tip={t('tips:exit_from_preview')}
         className="IconLink"
       >
         <SuperBubble className="SuperBubble--unobtrusive">

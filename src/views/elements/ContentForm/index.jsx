@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import map from 'lodash/map';
 import config from 'constants/config';
-import ContentFormSecrets from 'views/elements/ContentFormSecrets';
+import ContentFormSecrets from './ContentFormSecrets';
 import Field from './Field';
 import classnames from 'classnames';
 
@@ -30,7 +30,12 @@ const ContentForm = (props) => {
       <input name="utf8" type="hidden" value="✓" />
       <ContentFormSecrets />
       {children}
-      {map(fields, (field, index) => <Field key={index} {...field} />)}
+      {map(fields, (field, index) =>
+          <div className="form-group" key={index}>
+            { field.title && (<label htmlFor={field.name}>{field.title}</label>)}
+            <Field {...field} />
+          </div>
+          )}
       <div className="form-group">
         <button type="submit" className="BML-button-submit">{submitTitle}</button>
       </div>
