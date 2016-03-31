@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import map from 'lodash/map';
 
-import styles from './index.css';
+import './index.css';
 
 const VIDEO_TYPES = [
   'video/mp4',
