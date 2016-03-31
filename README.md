@@ -1,5 +1,11 @@
 # bml-react
 
+Галерея: https://github.com/KyleAMathews/react-component-gallery
+Вариант 2: http://neptunian.github.io/react-photo-gallery/
+Parallax: http://matthiasak.github.io/parallax-lazy-loading-background-images/A
+* http://lkazberova.github.io/react-photo-feed/#
+* https://github.com/milworm/react-progress-2
+
 #### Сборка dist
 ```
 npm run build
