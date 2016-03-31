@@ -1,8 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import map from 'lodash/map';
-import assign from 'lodash/assign';
 
-import './index.css';
+import styles from './index.css';
 
 const VIDEO_TYPES = [
   'video/mp4',
@@ -25,7 +24,7 @@ const containerStyles = {
   backgroundRepeat: 'no-repeat no-repeat',
 };
 
-const VIDEO_STYLES = {
+const videoStyle = {
   margin: 'auto',
   position: 'absolute',
   zIndex: -1,
@@ -34,7 +33,7 @@ const VIDEO_STYLES = {
   transform: 'translate(-50%, -50%)',
   visibility: 'visible',
   height: 'auto',
-  width: 'auto',
+  minWidth: '100%',
 };
 
 const SAMPLE_VIDEOS = [
@@ -58,30 +57,12 @@ class BackgroundVideo extends Component {
     overlay: true,
   };
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      style: undefined,
-    };
-  }
-
-  componentDidMount() {
-    this.onMount();
-  }
-
-  onMount() {
-    this.setState({
-      style: assign(VIDEO_STYLES, { width: document.width }),
-    });
-  }
-
   render() {
     const { videos, overlay } = this.props;
-    const { style } = this.state;
     return (
       <div className="BML-BackgroundVideo">
         <div style={containerStyles}>
-          <video autoPlay loop muted style={style}>
+          <video autoPlay loop muted style={videoStyle} className="BML-BackgroundVideo-video">
             {map(videos, (video, index) =>
               <source src={video.src} key={index} type={video.type} />
             )}
