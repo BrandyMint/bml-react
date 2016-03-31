@@ -37,8 +37,10 @@ class BackgroundForm extends Component {
     this.openDropZone = this.openDropZone.bind(this);
   }
 
-  componentWillReceiveProps() {
-    this.setState({ imageUrl: undefined });
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.block.backgroundImage !== this.props.block.backgroundImage) {
+      this.setState({ imageUrl: undefined });
+    }
   }
 
   openDropZone() {
@@ -67,7 +69,6 @@ class BackgroundForm extends Component {
     };
 
     const handleChangeUrl = (event) => {
-      this.setState({ imageUrl: undefined });
       onChange('uuid', null);
       onChange('url', event.target.value);
     };
