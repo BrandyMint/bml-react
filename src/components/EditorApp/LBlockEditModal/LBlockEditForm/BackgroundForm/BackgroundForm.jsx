@@ -69,7 +69,9 @@ class BackgroundForm extends Component {
     };
 
     const handleChangeUrl = (event) => {
-      onChange('uuid', null);
+      if (event.target.value !== backgroundImageUrl) {
+        onChange('uuid', null);
+      }
       onChange('url', event.target.value);
     };
 
