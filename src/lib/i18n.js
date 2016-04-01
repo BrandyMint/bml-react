@@ -8,7 +8,6 @@ const i18nResources = require(
 i18n
   .use(LanguageDetector)
   .init({
-    debug: true,
     fallbackLng: 'en',
     defaultNS: 'common',
     ns: ['common'],

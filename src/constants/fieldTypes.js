@@ -4,6 +4,7 @@ import concat from 'lodash/concat';
 
 export const FIELD_TYPE_STRING = 'string';
 export const FIELD_TYPE_NUMBER = 'number';
+export const FIELD_TYPE_CHECKBOX = 'checkbox';
 export const FIELD_TYPE_URL = 'url';
 export const FIELD_TYPE_HTML = 'html';
 export const FIELD_TYPE_TEXT = 'text';
@@ -16,6 +17,7 @@ export const FIELD_TYPE_ITEMS = 'items';
 
 export const FIELD_BASIC_TYPES = [
   FIELD_TYPE_STRING,
+  FIELD_TYPE_CHECKBOX,
   FIELD_TYPE_NUMBER,
   FIELD_TYPE_URL,
   FIELD_TYPE_TEXT,

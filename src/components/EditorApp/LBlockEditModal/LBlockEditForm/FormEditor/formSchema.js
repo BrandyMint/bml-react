@@ -81,6 +81,12 @@ export default {
             isRequired: true,
           },
           {
+            title: 'Обязательное?',
+            key: 'isRequired',
+            type: 'checkbox',
+            isRequired: true,
+          },
+          {
             title: 'Данные справочника (только для dropdownList)',
             key: 'entities',
             type: 'entities',
