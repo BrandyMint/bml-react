@@ -22,6 +22,7 @@ export default class FieldString extends Component {
         <input
           className="form-control"
           type="text"
+          ref="input"
           id={field.key}
           value={value}
           onChange={handleChange}

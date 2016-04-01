@@ -19,8 +19,14 @@ Option.propTypes = {
   data: OptionData.isRequired,
 };
 
-const Select = ({ name, multiple, required, options }) => (
-  <select name={name} multiple={multiple} required={required} className="form-control">
+const Select = ({ name, multiple, required, options, onBlur }) => (
+  <select
+    name={name}
+    multiple={multiple}
+    required={required}
+    onBlur={onBlur}
+    className="form-control"
+  >
     {map(options, (option, index) => <Option key={index} data={option} />)}
   </select>
 );
@@ -30,6 +36,7 @@ Select.propTypes = {
   multiple: PropTypes.bool,
   required: PropTypes.bool,
   options: PropTypes.arrayOf(OptionData).isRequired,
+  onBlur: PropTypes.func,
 };
 
 export default Select;

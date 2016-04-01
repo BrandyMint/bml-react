@@ -16,6 +16,7 @@ class Field extends Component {
       dictionaryKey,
       isRequired,
       defaultValue,
+      onBlur,
     } = this.props;
 
     if (includes(INPUT_TYPES, inputType)) {
@@ -26,6 +27,7 @@ class Field extends Component {
             name={name}
             placeholder={placeholder}
             className="form-control"
+            onBlur={onBlur}
           />
         );
     }
@@ -42,6 +44,7 @@ class Field extends Component {
             placeholder={placeholder}
             defaultValue={defaultValue}
             options={entities}
+            onBlur={onBlur}
           />
         );
     }
@@ -59,6 +62,7 @@ Field.propTypes = {
   defaultValue: PropTypes.string,
   entities: PropTypes.array,
   isRequired: PropTypes.bool,
+  onBlur: PropTypes.func,
 };
 
 export default Field;
