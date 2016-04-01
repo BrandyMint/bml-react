@@ -5,12 +5,23 @@ import ViewContainer from 'views/elements/ViewContainer';
 import GoogleMap from 'google-map-react';
 
 import map from 'lodash/map';
-import Place from './place.jsx';
+import filter from 'lodash/filter';
 
+import Place from './place.jsx';
 import { K_SIZE } from './styles.js';
 import './index.css';
 
 const DEFAULT_PLACE_TEXT = '·';
+
+const createMapOptions = () => (
+  {
+    panControl: false,
+    mapTypeControl: false,
+    scrollwheel: false,
+  }
+);
+
+const validPlace = ({ location }) => (location && location.lng && location.lat);
 
 class GoogleMap1 extends Component {
   static defaultProps = {
@@ -37,14 +48,7 @@ class GoogleMap1 extends Component {
     const { center, zoom, places } = block.content;
     /* eslint-enable */
 
-    const createMapOptions = () => (
-      {
-        panControl: false,
-        mapTypeControl: false,
-        scrollwheel: false,
-      }
-    );
-
+    const selectedPlaces = filter(places, validPlace);
     return (
       <ViewContainer block={ block }>
         <GoogleMap
@@ -58,14 +62,14 @@ class GoogleMap1 extends Component {
           // hover algorithm explained at x_distance_hover example
           hoverDistance={K_SIZE / 2}
         >
-          {map(places, (place, index) =>
-           <Place
-             key={index}
-             lat={place.location.lat}
-             lng={place.location.lng}
-             text={place.title || DEFAULT_PLACE_TEXT}
-           />
-          )}
+        {map(selectedPlaces, (place, index) =>
+          <Place
+            key={index}
+            lat={place.location.lat}
+            lng={place.location.lng}
+            text={place.title || DEFAULT_PLACE_TEXT}
+          />
+         )}
         </GoogleMap>
       </ViewContainer>
     );
