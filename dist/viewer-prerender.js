@@ -36738,7 +36738,6 @@
 	var i18nResources = __webpack_require__(651);
 	
 	_i18next2.default.use(_i18nextBrowserLanguagedetector2.default).init({
-	  debug: true,
 	  fallbackLng: 'en',
 	  defaultNS: 'common',
 	  ns: ['common'],
@@ -39578,12 +39577,14 @@
 	      var placeholder = _props.placeholder;
 	      var inputType = _props.inputType;
 	      var dictionaryKey = _props.dictionaryKey;
+	      var isRequired = _props.isRequired;
 	      var defaultValue = _props.defaultValue;
 	
 	
 	      if ((0, _includes2.default)(_inputTypes2.default, inputType)) {
 	        return _react2.default.createElement('input', {
 	          type: inputType,
+	          required: isRequired,
 	          name: name,
 	          placeholder: placeholder,
 	          className: 'form-control'
@@ -39618,7 +39619,8 @@
 	  inputType: _react.PropTypes.oneOf(_fieldTypes2.default).isRequired,
 	  dictionaryKey: _react.PropTypes.string,
 	  defaultValue: _react.PropTypes.string,
-	  entities: _react.PropTypes.array
+	  entities: _react.PropTypes.array,
+	  isRequired: _react.PropTypes.bool
 	};
 	
 	exports.default = Field;
@@ -51179,7 +51181,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.26",
+		"version": "0.3.27",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
@@ -51282,6 +51284,7 @@
 			"i18next-browser-languagedetector": "^0.2.2",
 			"i18next-resource-store-loader": "^0.1.1",
 			"invariant": "^2.2.1",
+			"joi-validation-strategy": "^0.3.3",
 			"json-loader": "^0.5.4",
 			"lodash": "^4.0.0",
 			"medium-editor": "^5.14.4",
@@ -51307,6 +51310,7 @@
 			"react-router": "^2.0.0",
 			"react-router-redux": "^4.0.0",
 			"react-tooltip": "^1.1.4",
+			"react-validation-mixin": "^5.3.4",
 			"react-widgets": "^3.1.7",
 			"redux": "^3.0.5",
 			"redux-thunk": "^2.0.1",
