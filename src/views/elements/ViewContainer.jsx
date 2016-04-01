@@ -40,6 +40,7 @@ class ViewContainer extends Component {
       // Чтобы небольшие картинки типа http://info.wodcast.com/wp-content/uploads/2015/06/Stadium2_1024.png
       // были на всю ширину
       backgroundSize: 'cover',
+      backgroundPosition: 'center',
     };
 
     return React.createElement(
