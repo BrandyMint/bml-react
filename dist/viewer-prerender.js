@@ -572,7 +572,8 @@
 	        backgroundImage: 'url("' + backgroundImageUrl + '")',
 	        // Чтобы небольшие картинки типа http://info.wodcast.com/wp-content/uploads/2015/06/Stadium2_1024.png
 	        // были на всю ширину
-	        backgroundSize: 'cover'
+	        backgroundSize: 'cover',
+	        backgroundPosition: 'center'
 	      };
 	
 	      return _react2.default.createElement(tagName || TAG_NAME, {
@@ -51178,7 +51179,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.25",
+		"version": "0.3.26",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
