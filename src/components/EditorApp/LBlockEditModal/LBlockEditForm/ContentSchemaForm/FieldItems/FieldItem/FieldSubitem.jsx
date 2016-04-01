@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { FIELD_COMPONENTS } from '../../schemaFieldTypes';
+import { FIELD_TYPES } from 'constants/fieldTypes';
 import { MapLocationType } from 'views/types/mapType';
 
 const FieldSubitem = ({ field, value, onChange }) => {
@@ -13,14 +14,22 @@ const FieldSubitem = ({ field, value, onChange }) => {
   );
 };
 
+
+// Все типы принимаемые Fields-ами
+//
 const FieldValue = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.number,
+  PropTypes.array,
   MapLocationType,
 ]);
 
+export const FieldSubitemPropTypes = {
+  type: PropTypes.oneOf(FIELD_TYPES).isRequired,
+};
+
 FieldSubitem.propTypes = {
-  field: PropTypes.object.isRequired, // TODO какой?
+  field: PropTypes.shape(FieldSubitemPropTypes).isRequired, // TODO какой?
   onChange: PropTypes.func.isRequired,
   value: FieldValue,
 };

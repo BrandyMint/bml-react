@@ -10,6 +10,7 @@ export const FIELD_TYPE_TEXT = 'text';
 export const FIELD_TYPE_IMAGE = 'image';
 export const FIELD_TYPE_LOCATION = 'location';
 export const FIELD_TYPE_DROPWODN_LIST = 'dropdownList';
+export const FIELD_TYPE_ENTITIES = 'entities';
 
 export const FIELD_TYPE_ITEMS = 'items';
 
@@ -21,6 +22,7 @@ export const FIELD_BASIC_TYPES = [
   FIELD_TYPE_IMAGE,
   FIELD_TYPE_LOCATION,
   FIELD_TYPE_DROPWODN_LIST,
+  FIELD_TYPE_ENTITIES,
 ];
 
 export const FIELD_TYPES = concat(FIELD_BASIC_TYPES, [FIELD_TYPE_ITEMS]);

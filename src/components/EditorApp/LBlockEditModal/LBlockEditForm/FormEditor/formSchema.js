@@ -5,6 +5,8 @@ export const Destinations = [
   'POST',
 ];
 
+
+// Схема описывает форму для создания application (пользоватльской формы)
 export default {
   fields: [
     {
@@ -77,6 +79,12 @@ export default {
             type: 'dropdownList',
             data: ShortInputTypes,
             isRequired: true,
+          },
+          {
+            title: 'Данные справочника (только для dropdownList)',
+            key: 'entities',
+            type: 'entities',
+            isRequired: false,
           },
         ],
       },
