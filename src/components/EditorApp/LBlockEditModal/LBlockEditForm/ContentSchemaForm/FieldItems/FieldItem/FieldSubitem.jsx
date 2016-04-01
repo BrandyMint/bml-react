@@ -18,9 +18,11 @@ const FieldSubitem = ({ field, value, onChange }) => {
 // Все типы принимаемые Fields-ами
 //
 const FieldValue = PropTypes.oneOfType([
+  PropTypes.bool,
   PropTypes.string,
   PropTypes.number,
   PropTypes.array,
+  PropTypes.object,
   MapLocationType,
 ]);
 

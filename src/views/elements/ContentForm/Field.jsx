@@ -8,12 +8,21 @@ import Select from './Select';
 
 class Field extends Component {
   render() {
-    const { name, entities, placeholder, inputType, dictionaryKey, defaultValue } = this.props;
+    const {
+      name,
+      entities,
+      placeholder,
+      inputType,
+      dictionaryKey,
+      isRequired,
+      defaultValue,
+    } = this.props;
 
     if (includes(INPUT_TYPES, inputType)) {
       return (
           <input
             type={inputType}
+            required={isRequired}
             name={name}
             placeholder={placeholder}
             className="form-control"
@@ -49,6 +58,7 @@ Field.propTypes = {
   dictionaryKey: PropTypes.string,
   defaultValue: PropTypes.string,
   entities: PropTypes.array,
+  isRequired: PropTypes.bool,
 };
 
 export default Field;

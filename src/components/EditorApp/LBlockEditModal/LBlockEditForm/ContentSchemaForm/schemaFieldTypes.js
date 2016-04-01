@@ -1,6 +1,7 @@
 import * as F from 'constants/fieldTypes';
 
 import FieldString from './FieldString';
+import FieldCheckbox from './FieldCheckbox';
 import FieldNumber from './FieldNumber';
 import FieldText from './FieldText';
 import FieldImage from './FieldImage';
@@ -11,6 +12,7 @@ import FieldEntities from './FieldEntities';
 import FieldItems from './FieldItems';
 
 export const FIELD_COMPONENTS = {
+  [F.FIELD_TYPE_CHECKBOX]: FieldCheckbox,
   [F.FIELD_TYPE_STRING]: FieldString,
   [F.FIELD_TYPE_NUMBER]: FieldNumber,
   [F.FIELD_TYPE_URL]: FieldString,
