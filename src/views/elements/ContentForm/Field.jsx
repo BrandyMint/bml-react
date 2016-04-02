@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import includes from 'lodash/includes';
 import INPUT_TYPES from 'constants/inputTypes';
 import FIELD_TYPES, { DROPDOWN_TYPE } from './fieldTypes';
-// import invariant from 'invariant';
+import InputElement from 'react-input-mask';
 
 import Select from './Select';
 
@@ -16,12 +16,14 @@ class Field extends Component {
       dictionaryKey,
       isRequired,
       defaultValue,
+      mask,
       onBlur,
     } = this.props;
 
     if (includes(INPUT_TYPES, inputType)) {
       return (
-          <input
+          <InputElement
+            mask={mask}
             type={inputType}
             required={isRequired}
             name={name}
@@ -54,6 +56,7 @@ class Field extends Component {
 }
 
 Field.propTypes = {
+  mask: PropTypes.string,
   title: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,

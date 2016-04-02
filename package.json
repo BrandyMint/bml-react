@@ -121,6 +121,7 @@
     "react-i18next": "^1.2.1",
     "react-icon-base": "^1.0.0",
     "react-icons": "brandymint/react-icons",
+    "react-input-mask": "git://github.com/dapi/react-input-mask.git#fix/available_to_prerender",
     "react-medium-editor": "^1.6.3",
     "react-mixin": "^3.0.3",
     "react-pure-render": "^1.0.2",

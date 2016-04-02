@@ -74,11 +74,25 @@ export default {
             isRequired: true,
           },
           {
+            title: 'Подсказка',
+            key: 'hint',
+            type: 'string',
+            isRequired: false,
+          },
+          {
             title: 'Тип',
             key: 'inputType',
             type: 'dropdownList',
             data: ShortInputTypes,
             isRequired: true,
+          },
+          {
+            title: 'Маска',
+            key: 'mask',
+            type: 'string',
+            placeholder: 'Например: +7 (999) 999-99-99',
+            hint: '<a href="http://sanniassin.github.io/react-input-mask/demo.html" target="_blank">Примеры масок</a>',
+            isRequired: false,
           },
           {
             title: 'Обязательное?',
