@@ -7050,7 +7050,7 @@
 	  );
 	};
 	
-	var fieldValidator = function fieldValidator(field) {
+	var fieldRules = function fieldRules(field) {
 	  var schema = [];
 	
 	  if (field.isRequired) {
@@ -7059,12 +7059,21 @@
 	  if (field.inputType === 'email') {
 	    schema.push('email');
 	  }
+	
+	  if ((0, _lodash.isEmpty)(schema)) {
+	    return undefined;
+	  }
 	  // inputType === 'tel'
 	  return (0, _lodash.join)(schema, '|');
 	};
 	
 	var fieldsValidator = function fieldsValidator(result, field) {
-	  return _extends({}, result, _defineProperty({}, field.name, fieldValidator(field)));
+	  var rules = fieldRules(field);
+	  if (rules) {
+	    return _extends({}, result, _defineProperty({}, field.name, rules));
+	  }
+	
+	  return result;
 	};
 	
 	var validatorJsTypesgenerator = function validatorJsTypesgenerator(fields) {
@@ -52339,7 +52348,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.28",
+		"version": "0.3.29",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
