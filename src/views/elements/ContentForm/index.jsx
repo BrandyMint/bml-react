@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import { map, reduce, join } from 'lodash';
+import { map, reduce, join, isEmpty } from 'lodash';
 import config from 'constants/config';
 import ContentFormSecrets from './ContentFormSecrets';
 import Field from './Field';
@@ -15,19 +15,25 @@ const DEFAULT_METHOD = 'POST';
 
 const renderHelpText = (message) => <p className="help-block text-danger">{message}</p>;
 
-const fieldValidator = (field) => {
+const fieldRules = (field) => {
   const schema = [];
 
   if (field.isRequired) { schema.push('required'); }
   if (field.inputType === 'email') { schema.push('email'); }
+
+  if (isEmpty(schema)) {
+    return undefined;
+  }
   // inputType === 'tel'
   return join(schema, '|');
 };
 
-const fieldsValidator = (result, field) => ({
-  ...result,
-  [field.name]: fieldValidator(field),
-});
+const fieldsValidator = (result, field) => {
+  const rules = fieldRules(field);
+  if (rules) { return { ...result, [field.name]: rules }; }
+
+  return result;
+};
 
 const validatorJsTypesgenerator = (fields) => (
   strategy.createSchema(

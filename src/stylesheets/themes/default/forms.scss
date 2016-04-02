@@ -69,3 +69,15 @@ $inputHeight: 5.0rem;
     }
   }
 }
+
+$inputErrorTextColor: rgb(169, 68, 66);
+.form-group.has-error {
+  input.form-control {
+    color: $inputErrorTextColor;
+    outline: 5px solid rgba(169, 68, 66, 0.2) !important;
+    ::-webkit-input-placeholder,
+    ::placeholder {
+      color: $inputErrorTextColor;
+    }
+  }
+}
