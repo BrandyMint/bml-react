@@ -18,13 +18,14 @@ export default class FieldString extends Component {
     const handleChange = (event) => onChange(event.target.value);
 
     return (
-      <FormGroup fieldKey={field.key} title={field.title}>
+      <FormGroup fieldKey={field.key} hint={field.hint} title={field.title}>
         <input
           className="form-control"
           type="text"
           ref="input"
           id={field.key}
           value={value}
+          placeholder={field.placeholder}
           onChange={handleChange}
         />
       </FormGroup>
