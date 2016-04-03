@@ -63,6 +63,7 @@ const apiCall = (
 
   req
     .set(completeHeaders)
+    .withCredentials()
     .end(onEnd);
 
   return subject;
