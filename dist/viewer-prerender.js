@@ -7131,7 +7131,6 @@
 	    value: function render() {
 	      var _props = this.props;
 	      var isValid = _props.isValid;
-	      var handleValidation = _props.handleValidation;
 	      var getValidationMessages = _props.getValidationMessages;
 	      var _props2 = this.props;
 	      var children = _props2.children;
@@ -7167,10 +7166,7 @@
 	          return _react2.default.createElement(
 	            _FieldWrapper2.default,
 	            _extends({ key: index }, field, { hasError: !isValid(field.name) }),
-	            _react2.default.createElement(_Field2.default, _extends({}, field, {
-	              ref: field.name,
-	              onBlur: handleValidation(field.name)
-	            })),
+	            _react2.default.createElement(_Field2.default, _extends({}, field, { ref: field.name })),
 	            renderHelpText(getValidationMessages(field.name))
 	          );
 	        }),

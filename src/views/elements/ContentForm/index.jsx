@@ -79,7 +79,7 @@ class ContentForm extends Component {
   }
 
   render() {
-    const { isValid, handleValidation, getValidationMessages } = this.props;
+    const { isValid, getValidationMessages } = this.props;
     const { children, id, fields, name, method, url, submitTitle, className } = this.props;
 
     const classes = classnames('BML-form', className);
@@ -102,10 +102,7 @@ class ContentForm extends Component {
         {children}
         {map(fields, (field, index) =>
            <FieldWrapper key={index} {...field} hasError={!isValid(field.name)}>
-             <Field {...field}
-               ref={field.name}
-               onBlur={handleValidation(field.name)}
-             />
+             <Field {...field} ref={field.name} />
              {renderHelpText(getValidationMessages(field.name))}
              </FieldWrapper>
           )}
