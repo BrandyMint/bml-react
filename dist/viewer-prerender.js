@@ -28054,7 +28054,7 @@
 	    return req.attach(key, attach[key]);
 	  });
 	
-	  req.set(completeHeaders).end(onEnd);
+	  req.set(completeHeaders).withCredentials().end(onEnd);
 	
 	  return subject;
 	};
@@ -52348,7 +52348,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.29",
+		"version": "0.3.31",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
