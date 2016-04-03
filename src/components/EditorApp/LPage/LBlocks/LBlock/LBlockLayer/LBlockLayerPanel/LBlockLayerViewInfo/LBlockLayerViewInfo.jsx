@@ -38,7 +38,8 @@ class LBlockLayerViewInfo extends Component {
   }
 
   show() {
-    this.setTimer();
+    // TODO: Таймер можно ставить только после монтирования
+    // this.setTimer();
     this.setState({ show: true });
   }
 
