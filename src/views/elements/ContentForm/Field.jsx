@@ -17,7 +17,6 @@ class Field extends Component {
       isRequired,
       defaultValue,
       mask,
-      formatChars,
       onBlur,
     } = this.props;
 
