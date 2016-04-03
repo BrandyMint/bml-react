@@ -39073,7 +39073,8 @@
 	      'title': '',
 	      'placeholder': 'ВВЕДИТЕ ВАШ ТЕЛЕФОН',
 	      'name': 'phone',
-	      'inputType': 'tel'
+	      'inputType': 'tel',
+	      'mask': '+7 (999) 999-99-99'
 	    }, {
 	      'title': '',
 	      'placeholder': 'ГОРОД',
@@ -39206,7 +39207,8 @@
 	      'title': '',
 	      'placeholder': 'ВВЕДИТЕ ВАШ ТЕЛЕФОН',
 	      'name': 'phone',
-	      'inputType': 'tel'
+	      'inputType': 'tel',
+	      'mask': '+7 (999) 999-99-99'
 	    }]
 	  }
 	}];
@@ -40763,6 +40765,7 @@
 	
 	Field.propTypes = {
 	  mask: _react.PropTypes.string,
+	  formatChars: _react.PropTypes.object,
 	  title: _react.PropTypes.string,
 	  name: _react.PropTypes.string.isRequired,
 	  placeholder: _react.PropTypes.string.isRequired,
@@ -40822,7 +40825,7 @@
 	FieldWrapper.propTypes = {
 	  name: _react.PropTypes.string.isRequired,
 	  title: _react.PropTypes.string,
-	  hint: _react.PropTypes.stirng,
+	  hint: _react.PropTypes.string,
 	  children: _react.PropTypes.node.isRequired,
 	  hasError: _react.PropTypes.bool.isRequired
 	};
@@ -52353,7 +52356,7 @@
 
 	module.exports = {
 		"name": "bml-react",
-		"version": "0.3.31",
+		"version": "0.3.32",
 		"description": "Awesome BML front-end",
 		"license": "UPL-1.0",
 		"scripts": {
