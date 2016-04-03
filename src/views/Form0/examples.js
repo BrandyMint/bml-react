@@ -27,7 +27,8 @@ export const sections = [
           'title': '',
           'placeholder': 'ВВЕДИТЕ ВАШ ТЕЛЕФОН',
           'name': 'phone',
-          'inputType': 'tel'
+          'inputType': 'tel',
+          'mask': '+7 (999) 999-99-99'
         },
         {
           'title': '',

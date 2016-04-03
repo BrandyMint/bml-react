@@ -14,7 +14,7 @@ const FieldWrapper = ({ children, title, hint, hasError, name }) => (
 FieldWrapper.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
-  hint: PropTypes.stirng,
+  hint: PropTypes.string,
   children: PropTypes.node.isRequired,
   hasError: PropTypes.bool.isRequired,
 };

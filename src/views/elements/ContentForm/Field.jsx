@@ -17,6 +17,7 @@ class Field extends Component {
       isRequired,
       defaultValue,
       mask,
+      formatChars,
       onBlur,
     } = this.props;
 
@@ -57,6 +58,7 @@ class Field extends Component {
 
 Field.propTypes = {
   mask: PropTypes.string,
+  formatChars: PropTypes.object,
   title: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
