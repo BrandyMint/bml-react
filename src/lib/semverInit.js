@@ -1,14 +1,15 @@
-import semver from 'lib/semver';
+/* global __VERSION__ */
 
 /* eslint-disable no-console */
 const semverInit = () => {
+  const version = __VERSION__;
   if (typeof window === 'undefined') {
-    global.AppVersion = semver.version;
+    global.BMLVersion = __VERSION__;
   } else {
-    window.AppVersion = semver.version;
+    window.BMLVersion = __VERSION__;
   }
 
-  console.log(`Start BML application v${semver}`);
+  console.log(`Start BML v${version}`);
 };
 /* eslint-enable */
 

@@ -1,11 +1,11 @@
+/* global __VERSION__ */
 /* global __CLIENT__ */
 
-import semver from 'lib/semver';
 import assign from 'lodash/assign';
 
 const METADATA = {
-  frontApp: {
-    version: semver.version,
+  BMLApp: {
+    version: __VERSION__,
   },
 };
 

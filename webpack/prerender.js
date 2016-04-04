@@ -9,6 +9,8 @@ import StatsPlugin from 'stats-webpack-plugin';
 
 import common from './common';
 
+const VERSION = require('../package').version;
+
 const resolve = merge(
   {
     // Специальные фейковые замены, чтобы во вьюхер не подтягивалась JS и CSS от редактора
@@ -39,6 +41,7 @@ export default {
     new CleanWebpackPlugin(BUILD_DIR, { root: process.cwd() }),
     new webpack.NormalModuleReplacementPlugin(/\.(s?css|less)$/, 'node-noop'),
     new webpack.DefinePlugin({
+      __VERSION__: `"${VERSION}"`,
       __CLIENT__: false,
       __SERVER__: true,
       __FAKE_API__: false,

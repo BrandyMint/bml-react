@@ -26,12 +26,6 @@ export default {
     viewer,
     editor,
     fonts: path.join(process.cwd(), 'src/stylesheets/fonts'),
-    //vendor: [
-      //'classnames',
-      //'react',
-      //'react-dom',
-      //'redux',
-    //],
   },
 
   postcss: webpack => [
@@ -76,7 +70,7 @@ export default {
     },
     {
       test: /\.jpg/,
-      loader: 'file-loader?limit=10000!img&name=[path][name].[ext]?[hash]&progressive=true',
+      loader: 'file-loader?limit=10000!img&properties=true&name=[path][name].[ext]?[hash]',
     },
     {
       test: /\.gif$/,

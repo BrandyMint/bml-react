@@ -136,7 +136,6 @@
     "redux-thunk": "^2.0.1",
     "reselect": "^2.2.1",
     "rx": "^4.1.0",
-    "semver-utils": "^1.1.1",
     "stats-webpack-plugin": "^0.3.1",
     "superagent": "^1.8.3",
     "url-parse": "^1.1.1",

@@ -11,6 +11,8 @@ import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import common from './common';
 import done from './done';
 
+const VERSION = require('../package').version;
+
 const loaders = concat(
   common.loaders,
   [
@@ -62,6 +64,7 @@ export default {
     ]),
     new ExtractTextPlugin('[name].css'),
     new webpack.DefinePlugin({
+      __VERSION__: `"${VERSION}"`,
       __CLIENT__: true,
       __SERVER__: false,
       __FAKE_API__: false,
