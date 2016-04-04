@@ -19,6 +19,8 @@
     "consistent-return": 1
   },
   "plugins": [
-    "react"
+    "react",
+    "immutable",
+    "json"
   ]
 }
