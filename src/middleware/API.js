@@ -43,8 +43,7 @@ const apiCall = ({
     headers :
     { ...headers, 'Content-Type': 'application/json' };
 
-  const req = request
-    [HTTPMethod](apiUrl + endpoint);
+  const req = request[HTTPMethod](apiUrl + endpoint);
 
   if (!isEmpty(payload)) {
     const sendMethod = (HTTPMethod === 'post' || HTTPMethod === 'put') ? 'send' : 'payload';
