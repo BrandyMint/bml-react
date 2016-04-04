@@ -7,9 +7,8 @@ const semverInit = () => {
     global.BMLVersion = __VERSION__;
   } else {
     window.BMLVersion = __VERSION__;
+    console.log(`Start BML v${version}`);
   }
-
-  console.log(`Start BML v${version}`);
 };
 /* eslint-enable */
 

@@ -1,2 +1,2 @@
-echo 'Test Viewer existence'
-node -r ./dist/viewer-prerender.js -e 'console.log(global.Viewer)' | grep '\[Function' && echo 'Ok'
+echo -n 'Test Viewer existence: '
+node -r ./dist-prerender/viewer-prerender.js -e 'console.log(global.Viewer)' | grep '\[Function' > /dev/null && echo ' Ok'

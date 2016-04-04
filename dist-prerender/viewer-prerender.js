@@ -21987,9 +21987,8 @@
 	    global.BMLVersion = ("0.3.33");
 	  } else {
 	    window.BMLVersion = ("0.3.33");
+	    console.log('Start BML v' + version);
 	  }
-	
-	  console.log('Start BML v' + version);
 	};
 	/* eslint-enable */
 	
