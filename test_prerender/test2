@@ -1,2 +1,2 @@
-echo 'Test prerender'
-cat test_prerender/prerender.js | node | grep BML-App > /dev/null && echo 'Ok' || echo 'Fail'
+echo -n 'Test prerender: '
+cat test_prerender/prerender.js | node | grep Theme-green | grep "<div" > /dev/null && echo ' Ok' || echo ' Fail'

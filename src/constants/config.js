@@ -1,6 +1,6 @@
 import get from 'lodash/get';
 
-export const EXAMPLE_LANDING_VARIANT_UUID = '7a5eecef-9cbd-4a52-bfcc-111a848edfa2';
+export const EXAMPLE_LANDING_VARIANT_UUID = 'example';
 
 const defaults = {
   exitUrl: '/#exit',

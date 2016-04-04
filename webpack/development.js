@@ -9,6 +9,9 @@ import concat from 'lodash/concat';
 import common from './common';
 import config from '/initializers/config';
 
+const VERSION = process.env.npm_package_version;
+// const VERSION = require('../package').version;
+
 const loaders = concat(
   common.loaders,
   [
@@ -29,14 +32,13 @@ const loaders = concat(
 )
 
 export default {
-  devtool: 'eval',
+  devtool: 'eval-source-map',
 
   postcss: common.postcss,
 
   entry: {
     fonts: common.entry.fonts,
     viewer: path.join(process.cwd(), 'src/stylesheets/viewer.scss'),
-    vendor: common.entry.vendor,
     editor: ['webpack-hot-middleware/client', common.entry.editor],
   },
 
@@ -50,12 +52,12 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
+      __VERSION__: `"${VERSION}"`,
       __CLIENT__: true,
       __SERVER__: false,
       __FAKE_API__: false,
       __ENV__: '"development"',
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     // new WebpackNotifierPlugin({alwaysNotify: true}),
     // new WebpackErrorNotificationPlugin(),
     // new WebpackBuildNotifierPlugin(),

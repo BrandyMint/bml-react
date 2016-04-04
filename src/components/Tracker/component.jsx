@@ -1,7 +1,7 @@
 import { Component, PropTypes } from 'react';
 import cookie from 'cookie';
 
-import query from 'query-string';
+import qs from 'qs';
 
 const INITIAL_PARAMS = 'initial_params';
 const INITIAL_REFERRER = 'initial_referrer';
@@ -11,7 +11,7 @@ const currentReferrer = () => document.referrer;
 const safeParse = (value) => (value ? JSON.parse(value) : void(0));
 
 // TODO Может брыть из роутера?
-const currentParams = () => query.parse(location.search);
+const currentParams = () => qs.parse(location.search);
 const initialParams = () => safeParse(cookie.parse(document.cookie)[INITIAL_PARAMS]);
 const initialReferrer = () => safeParse(cookie.parse(document.cookie)[INITIAL_REFERRER]);
 

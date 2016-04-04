@@ -1,6 +1,9 @@
 import React, { PropTypes, Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import { map, reduce, join, isEmpty } from 'lodash';
+import map from 'lodash/map';
+import reduce from 'lodash/reduce';
+import join from 'lodash/join';
+import isEmpty from 'lodash/isEmpty';
 import config from 'constants/config';
 import ContentFormSecrets from './ContentFormSecrets';
 import Field from './Field';

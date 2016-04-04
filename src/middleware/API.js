@@ -1,10 +1,8 @@
 import get from 'lodash/get';
 import merge from 'lodash/merge';
-import keys from 'lodash/keys';
 import isEmpty from 'lodash/isEmpty';
 
 import qs from 'qs';
-import Rx from 'rx';
 import request from 'superagent';
 
 import config from 'constants/config';
@@ -18,24 +16,24 @@ const validateRawData = (rawData) => {
   }
 };
 
-const apiCall = (
+const apiCall = ({
   url = null,
   endpoint = '',
   method = 'GET',
   payload = {},
   headers = {},
   attach = {},
-) => {
+  onSuccess,
+  onError,
+}) => {
   const apiUrl = url || config('apiUrl');
-  const subject = new Rx.Subject();
   const HTTPMethod = method.toLowerCase();
 
   const onEnd = (error, data) => {
     if (error) {
-      subject.onError({ data, error });
+      onError({ data, error });
     } else {
-      subject.onNext(data);
-      subject.onCompleted();
+      onSuccess(data);
     }
   };
 
@@ -55,18 +53,15 @@ const apiCall = (
         JSON.stringify(payload) :
         qs.stringify(payload, { arrayFormat: 'brackets' });
 
-    req
-      [sendMethod](sendArguments);
+    req[sendMethod](sendArguments);
   }
 
-  keys(attach).forEach(key => req.attach(key, attach[key]));
+  Object.keys(attach).forEach(key => req.attach(key, attach[key]));
 
   req
     .set(completeHeaders)
     .withCredentials()
     .end(onEnd);
-
-  return subject;
 };
 
 export const API_CALL = 'API_CALL';
@@ -95,8 +90,6 @@ export default () => next => action => {
 
   next(nextAction(action, { crossPayload, type: requestType }));
 
-  const apiRequest = apiCall(url, endpoint, method, payload, completeHeaders, attach);
-
   const onError = rawData => {
     const errorPayload = get(rawData, 'data.body') || {};
 
@@ -119,5 +112,7 @@ export default () => next => action => {
     next(nextAction(action, data));
   };
 
-  return apiRequest.subscribe(onSuccess, onError);
+  apiCall({ url, endpoint, method, payload, completeHeaders, attach, onSuccess, onError });
+
+  return undefined;
 };
