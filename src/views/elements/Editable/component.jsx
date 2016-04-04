@@ -1,7 +1,7 @@
 import React, { Component, PropTypes, createElement } from 'react';
 import get from 'lodash/get';
 
-import EditableEditor from './Editor';
+import EditableEditor from 'views/elements/Editable/Editor';
 
 class Editable extends Component {
   getValue() {

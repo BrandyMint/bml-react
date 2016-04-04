@@ -1,6 +1,9 @@
 import uuid from 'uuid';
 import { viewsList } from 'views/all';
-import { map, keys, flatten, compact } from 'lodash';
+import map from 'lodash/map';
+import keys from 'lodash/keys';
+import flatten from 'lodash/flatten';
+import compact from 'lodash/compact';
 
 export const FULL_VIEWS_EXAMPLES_UUID = 'fullViewsExamples';
 

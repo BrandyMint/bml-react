@@ -1,4 +1,6 @@
-import { map, size, get } from 'lodash';
+import map from 'lodash/map';
+import size from 'lodash/size';
+import get from 'lodash/get';
 import classnames from 'classnames';
 import invariant from 'invariant';
 

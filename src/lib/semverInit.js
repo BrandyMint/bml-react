@@ -8,7 +8,7 @@ const semverInit = () => {
     window.AppVersion = semver.version;
   }
 
-  console.log(`Start application ${semver}`);
+  console.log(`Start BML application v${semver}`);
 };
 /* eslint-enable */
 

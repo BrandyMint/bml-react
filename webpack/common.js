@@ -26,12 +26,12 @@ export default {
     viewer,
     editor,
     fonts: path.join(process.cwd(), 'src/stylesheets/fonts'),
-    vendor: [
-      'classnames',
-      'react',
-      'react-dom',
-      'redux',
-    ],
+    //vendor: [
+      //'classnames',
+      //'react',
+      //'react-dom',
+      //'redux',
+    //],
   },
 
   postcss: webpack => [
@@ -54,14 +54,20 @@ export default {
     extensions: ['', '.js', '.jsx'],
   },
 
+	// { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml&name=public/fonts/[name].[ext]' },
+	// { test: /\.woff$/, loader: 'url?limit=65000&mimetype=application/font-woff&name=public/fonts/[name].[ext]' },
+	// { test: /\.woff2$/, loader: 'url?limit=65000&mimetype=application/font-woff2&name=public/fonts/[name].[ext]' },
+	// { test: /\.[ot]tf$/, loader: 'url?limit=65000&mimetype=application/octet-stream&name=public/fonts/[name].[ext]' },
+	// { test: /\.eot$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject&name=public/fonts/[name].[ext]' }
+
   loaders: [
     {
       test: /\.woff(2)?(\?.*)?$/,
-      loader: 'url-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]',
+      loader: 'file-loader?limit=10000&minetype=application/font-woff&name=fonts/[name].[ext]?[hash]',
     },
     {
       test: /\.(ttf|eot|svg)(\?.*)?$/,
-      loader: 'file-loader?name=fonts/[name].[ext]',
+      loader: 'file-loader?name=fonts/[name].[ext]?[hash]',
     },
     {
       test: /\.jsx?$/,
@@ -69,8 +75,12 @@ export default {
       include: [root, editor, viewer, path.join(process.cwd(), 'node_modules/react-icons')],
     },
     {
+      test: /\.jpg/,
+      loader: 'file-loader?limit=10000!img&name=[path][name].[ext]?[hash]&progressive=true',
+    },
+    {
       test: /\.gif$/,
-      loader: 'url-loader?mimetype=image/png',
+      loader: 'file-loader?mimetype=image/png&name=[path][name].[ext]?[hash]',
     },
     {
       test: /\.json/,

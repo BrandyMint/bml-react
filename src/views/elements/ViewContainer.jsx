@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import BackgroundVideo from 'components/shared/BackgroundVideo';
+import BackgroundVideo from './BackgroundVideo';
 
 import classnames from 'classnames';
-import { get, size } from 'lodash';
+import get from 'lodash/get';
+import size from 'lodash/size';
 
 const TAG_NAME = 'section';
 
