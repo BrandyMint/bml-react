@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import FormGroup from '../FormGroup';
+
+import TextField from 'material-ui/lib/text-field';
 
 export default class FieldString extends Component {
   static propTypes = {
@@ -18,17 +19,14 @@ export default class FieldString extends Component {
     const handleChange = (event) => onChange(event.target.value);
 
     return (
-      <FormGroup fieldKey={field.key} hint={field.hint} title={field.title}>
-        <input
-          className="form-control"
-          type="text"
-          ref="input"
-          id={field.key}
-          value={value}
-          placeholder={field.placeholder}
-          onChange={handleChange}
-        />
-      </FormGroup>
+      <TextField
+        hintText={field.placeholder}
+        fullWidth
+        floatingLabelText={field.title}
+        id={field.key}
+        value={value}
+        onChange={handleChange}
+      />
     );
   }
 }

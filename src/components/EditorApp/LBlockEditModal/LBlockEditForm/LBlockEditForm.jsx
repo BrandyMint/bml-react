@@ -35,14 +35,14 @@ class LBlockEditForm extends Component {
     const schema = viewsRepository.getContentSchemaByViewName(block.viewName);
 
     const tabs = [
-      <Tab label={t('content')}>
+      <Tab key={1} label={t('content')}>
         <ContentSchemaForm
           schema={schema}
           content={block.content}
           onChange={onContentChange}
         />
       </Tab>,
-      <Tab label={t('element')}>
+      <Tab key={2} label={t('element')}>
         <NodeAttributes
           attributes={block.nodeAttributes}
           onChange={onNodeAttributeChange}
@@ -50,7 +50,7 @@ class LBlockEditForm extends Component {
       </Tab>,
     ];
     if (schema.form) {
-      tabs.push( <Tab label={t('form')}>
+      tabs.push( <Tab key={3} label={t('form')}>
           <FormEditor
             formContent={block.form}
             onChange={onFormChange}
@@ -58,7 +58,7 @@ class LBlockEditForm extends Component {
         </Tab>);
     }
     if (schema.backgroundImage) {
-      tabs.push( <Tab label={t('background')}>
+      tabs.push( <Tab key={4} label={t('background')}>
         <BackgroundForm
           block={block}
           onChange={onBackgroundImageChange}
@@ -67,7 +67,7 @@ class LBlockEditForm extends Component {
     }
 
     tabs.push(
-      <Tab label={t('data')}>
+      <Tab label={t('data')} key={5}>
         <pre>
           <code className="LBlockEditForm-code">
             {JSON.stringify(block, undefined, 2)}

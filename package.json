@@ -134,7 +134,6 @@
     "react-transform-hmr": "^1.0.4",
     "react-validation-mixin": "^5.3.4",
     "react-validatorjs-strategy": "^0.1.10",
-    "react-widgets": "^3.2.1",
     "redux": "^3.3.1",
     "redux-thunk": "^2.0.1",
     "reselect": "^2.2.1",

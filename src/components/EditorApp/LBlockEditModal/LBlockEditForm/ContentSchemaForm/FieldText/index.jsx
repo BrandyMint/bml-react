@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import TextField from 'material-ui/lib/text-field';
 
 class FieldText extends Component {
   render() {
@@ -7,20 +8,16 @@ class FieldText extends Component {
     const handleChange = (event) => onChange(event.target.value);
 
     return (
-      <fieldset className="form-group">
-        <label htmlFor={field.key}>
-          {field.title}
-        </label>
-        <textarea
-          className="form-control"
-          type="text"
-          rows="5"
-          styles={ { height: 'auto' } }
-          id={field.key}
-          value={value}
-          onChange={handleChange}
-        />
-      </fieldset>
+      <TextField
+        fullWidth
+        hintText={field.placeholder}
+        floatingLabelText={field.title}
+        id={field.key}
+        value={value}
+        multiLine
+        rows={4}
+        onChange={handleChange}
+      />
     );
   }
 }

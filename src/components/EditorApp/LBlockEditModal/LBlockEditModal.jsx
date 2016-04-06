@@ -32,6 +32,8 @@ const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave 
       open={isVisible}
       modal={false}
       actions={actions}
+      repositionOnUpdate
+      autoDetectWindowHeight={false}
       autoScrollBodyContent
       onRequestClose={onCancel}
     >
