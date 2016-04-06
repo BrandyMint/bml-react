@@ -10,7 +10,6 @@ const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave 
   const actions = [
     <FlatButton
       label={t('delete')}
-      secondary
       onTouchTap={onDelete}
     />,
     <FlatButton

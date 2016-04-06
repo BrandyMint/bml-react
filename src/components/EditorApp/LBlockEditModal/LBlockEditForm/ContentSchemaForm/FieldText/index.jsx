@@ -13,7 +13,7 @@ class FieldText extends Component {
         hintText={field.placeholder}
         floatingLabelText={field.title}
         id={field.key}
-        value={value}
+        defaultValue={value}
         multiLine
         rows={4}
         onChange={handleChange}

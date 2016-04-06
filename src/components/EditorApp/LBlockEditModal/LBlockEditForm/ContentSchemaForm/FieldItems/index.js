@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
+import FlatButton from 'material-ui/lib/flat-button';
 
 import map from 'lodash/map';
 import partial from 'lodash/partial';
@@ -58,9 +59,7 @@ class FieldItems extends Component {
           )}
         </ol>
         <div className="pull-xs-right">
-          <button name="add" onClick={onClickAdd} className="btn btn-success btn-sm">
-            {t('add')}
-          </button>
+          <FlatButton primary onClick={onClickAdd} label={t('add')} />
         </div>
       </fieldset>
     );

@@ -3,6 +3,8 @@ import { translate } from 'react-i18next';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 
+import FlatButton from 'material-ui/lib/flat-button';
+
 import FieldSubitem, { FieldSubitemPropTypes } from './FieldSubitem';
 
 import './index.scss';
@@ -18,10 +20,8 @@ const FieldItem = ({ t, item, itemSchemaFields, onChange, onRemove }) => (
             onChange={partial(onChange, field.key)}
           />
         )
-     )}
-     <button className="btn btn-sm btn-danger" onClick={onRemove}>
-       {t('remove')}
-     </button>
+      )}
+    <FlatButton label={t('remove')} onClick={onRemove} />
   </li>
 );
 

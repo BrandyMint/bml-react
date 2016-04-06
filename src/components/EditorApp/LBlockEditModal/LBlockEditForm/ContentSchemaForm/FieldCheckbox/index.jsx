@@ -19,11 +19,13 @@ export default class FieldCheckbox extends Component {
     const handleChange = (event) => onChange(!! event.target.checked);
 
     return (
-      <Checkbox
-        label={field.title}
-        defaultChecked={value}
-        onChange={handleChange}
-      />
+      <div className="m-b-md m-t-md">
+        <Checkbox
+          label={field.title}
+          defaultChecked={value}
+          onChange={handleChange}
+        />
+      </div>
     );
   }
 }
