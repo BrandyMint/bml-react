@@ -1,36 +1,44 @@
 import React, { PropTypes } from 'react';
 import { translate } from 'react-i18next';
-import partial from 'lodash/partial';
 
-import Modal from 'components/ui-elements/Modal';
+import FlatButton from 'material-ui/lib/flat-button';
+import Dialog from 'material-ui/lib/dialog';
+// import Modal from 'components/ui-elements/Modal';
 import LBlockEditForm from './LBlockEditForm';
 
-const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave }) => (
-  <Modal show={isVisible} className="modal EditorModal LBlockEditModal">
-    <Modal.Header closeButton onHide={partial(onCancel, savedBlock)}>
-      <Modal.Title>{t('title', { name: savedBlock.viewName })}</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
+const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave }) => {
+  const actions = [
+    <FlatButton
+      label={t('delete')}
+      secondary
+      onTouchTap={onDelete}
+    />,
+    <FlatButton
+      label={t('cancel')}
+      secondary
+      onTouchTap={onCancel}
+    />,
+    <FlatButton
+      label={t('submit')}
+      primary
+      keyboardFocused
+      onTouchTap={onSave}
+    />,
+  ];
+
+  return (
+    <Dialog
+      title={t('title', { name: savedBlock.viewName })}
+      open={isVisible}
+      modal={false}
+      actions={actions}
+      autoScrollBodyContent
+      onRequestClose={onCancel}
+    >
       <LBlockEditForm />
-    </Modal.Body>
-    <Modal.Footer>
-      <button
-        className="btn btn-danger pull-left"
-        type="button"
-        onClick={onDelete}
-      >
-        {t('remove_block')}
-      </button>
-      <button
-        className="btn btn-primary pull-right"
-        type="button"
-        onClick={onSave}
-      >
-        {t('ok')}
-      </button>
-    </Modal.Footer>
-  </Modal>
-);
+    </Dialog>
+  );
+};
 
 LBlockEditModal.propTypes = {
   t: PropTypes.func.isRequired,
