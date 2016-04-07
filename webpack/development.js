@@ -37,6 +37,7 @@ export default {
   postcss: common.postcss,
 
   entry: {
+    perf: path.join(process.cwd(), 'src/lib/perf'),
     fonts: common.entry.fonts,
     viewer: path.join(process.cwd(), 'src/stylesheets/viewer.scss'),
     editor: ['webpack-hot-middleware/client', common.entry.editor],

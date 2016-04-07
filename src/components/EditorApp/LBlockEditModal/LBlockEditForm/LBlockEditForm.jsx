@@ -12,9 +12,18 @@ import BackgroundForm from './BackgroundForm';
 import FormEditor from './FormEditor';
 import { viewsRepository } from 'repositories/ViewsRepository';
 
+import BlockDebug from './BlockDebug';
+
 import './LBlockEditForm.css';
 
 class LBlockEditForm extends Component {
+  shouldComponentUpdate() {
+    // Продиводействуем внешним изменениям. Потому что во время редактирования блока
+    // меняется только то, что мы меняем в этом редакторе и на не зачем получать эти изменения
+    // заново сверху
+    return false;
+  }
+
   render() {
     const {
       t,
@@ -75,11 +84,7 @@ class LBlockEditForm extends Component {
 
     tabs.push(
       <Tab label={t('data')} key={5}>
-        <pre>
-          <code className="LBlockEditForm-code">
-            {JSON.stringify(block, undefined, 2)}
-          </code>
-        </pre>
+        <BlockDebug block={block} />
       </Tab>
     );
 

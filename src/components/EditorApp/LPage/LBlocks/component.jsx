@@ -9,6 +9,11 @@ import LBlockSection from './LBlockSection';
 import Animated from 'components/primitives/Animated';
 
 class LBlocks extends Component {
+  shouldComponentUpdate(nextProps) {
+    const should = this.props.blocks !== nextProps.blocks;
+    console.log('LBlocks', should);
+    return should;
+  }
   render() {
     const { blocks } = this.props;
 

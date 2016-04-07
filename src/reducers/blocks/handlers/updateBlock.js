@@ -1,8 +1,12 @@
-import map from 'lodash/map';
+import update from 'helpers/smartUpdate';
+
 import backgroundResolver from 'helpers/backgroundResolver';
 
-export default (state, { payload: { block } }) => {
-  const blocks = map(state, (_block) => (block.uuid === _block.uuid ? block : _block));
+export default (blocks, { payload: { block } }) => {
 
-  return backgroundResolver(blocks);
+  const selector = (a, b) => a.uuid === b.uuid;
+
+  const newBlocks = update(blocks, block, selector);
+
+  return backgroundResolver(newBlocks);
 };

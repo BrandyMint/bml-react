@@ -3,6 +3,12 @@ import LBlockAddButton from '../LBlockAddButton';
 import LBlock from '../LBlock';
 
 class LBlockSection extends Component {
+  shouldComponentUpdate(nextProps) {
+    const should = this.props.block !== nextProps.block || this.props.index !== nextProps.index;
+    console.log('BlockSection', this.props.block.uuid, should);
+    return should;
+  }
+
   render() {
     const { block, index } = this.props;
 
