@@ -1,6 +1,10 @@
 ## Цель:
 
-* [ ] BM-овский лендос в дизайне
+## Localize
+
+* src/components/EditorApp/LBlockEditModal/LBlockEditForm/NodeAttributes/index.jsx
+
+* [x] BM-овский лендос в дизайне
 
 ## Оптимизация viewer
 

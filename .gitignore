@@ -1,7 +1,8 @@
 node_modules
 web_modules
-*.swp
 bower_components
+*.swp
 .DS_Store
 npm-debug.log
 tags
+dist/stats.json
