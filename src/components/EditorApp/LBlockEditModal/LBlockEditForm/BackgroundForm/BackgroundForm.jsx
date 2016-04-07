@@ -43,6 +43,14 @@ class BackgroundForm extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    const { backgroundImage, uuid } = this.props.block;
+    const should = nextProps.backgroundImage !== backgroundImage ||
+      nextProps.uuid !== uuid;
+
+    return should;
+  }
+
   openDropZone() {
     this.refs.dropzone.open();
   }

@@ -15,12 +15,13 @@ class FormEditor extends Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.formContent !== this.props.formContent;
+    const should = nextProps.formContent !== this.props.formContent;
+
+    return should;
   }
 
   render() {
     const { formContent, onChange } = this.props;
-    console.log("FormEditor", new Date());
 
     return (
       <div className="FormEditor">

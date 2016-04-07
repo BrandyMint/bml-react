@@ -3,7 +3,8 @@ import BackgroundForm from './BackgroundForm';
 
 import { uploadBackground } from 'actions/variants';
 
-const mapStateToProps = state => state;
+const empty = {};
+const mapStateToProps = () => empty;
 
 const actions = { uploadBackground };
 

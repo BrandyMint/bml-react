@@ -18,7 +18,6 @@ import './LBlockEditForm.css';
 
 class LBlockEditForm extends Component {
   render() {
-    console.log("EditForm", new Date());
     const {
       t,
       block,
