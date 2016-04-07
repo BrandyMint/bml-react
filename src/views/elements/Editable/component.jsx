@@ -7,6 +7,7 @@ class Editable extends Component {
   getValue() {
     return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
+
   createEditorElement() {
     return (
       <EditableEditor

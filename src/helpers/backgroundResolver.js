@@ -28,20 +28,22 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
     }
   );
 
-  return {
+  const backgroundStyle = {
     bgClasses,
     hasImage,
     dark,
     even,
   };
+
+  return { ...block, backgroundStyle };
 };
 
 export default (blocks) => {
   let prevBackgroundStyle = null;
 
   return map(blocks, (block) => {
-    const backgroundStyle = getBackgroundStyle(block, prevBackgroundStyle);
-    prevBackgroundStyle = backgroundStyle;
-    return { ...block, backgroundStyle };
+    const newBlock = getBackgroundStyle(block, prevBackgroundStyle);
+    prevBackgroundStyle = newBlock.backgroundStyle;
+    return newBlock;
   });
 };
