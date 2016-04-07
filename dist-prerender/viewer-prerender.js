@@ -1719,7 +1719,7 @@
 	
 	  return (0, _map2.default)(blocks, function (block) {
 	    var newBlock = getBackgroundStyle(block, prevBackgroundStyle);
-	    prevBackgroundStyle = block.backgroundStyle;
+	    prevBackgroundStyle = newBlock.backgroundStyle;
 	    return newBlock;
 	  });
 	};

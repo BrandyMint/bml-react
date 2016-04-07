@@ -7,6 +7,9 @@ import Dialog from 'material-ui/lib/dialog';
 import LBlockEditForm from './LBlockEditForm';
 
 const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave }) => {
+
+  const handleCancel = () => onCancel(savedBlock);
+
   const actions = [
     <FlatButton
       label={t('delete')}
@@ -15,7 +18,7 @@ const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave 
     <FlatButton
       label={t('cancel')}
       secondary
-      onTouchTap={onCancel}
+      onTouchTap={handleCancel}
     />,
     <FlatButton
       label={t('submit')}
@@ -34,9 +37,9 @@ const LBlockEditModal = ({ t, savedBlock, isVisible, onCancel, onDelete, onSave 
       repositionOnUpdate
       autoDetectWindowHeight={false}
       autoScrollBodyContent
-      onRequestClose={onCancel}
+      onRequestClose={handleCancel}
     >
-      <LBlockEditForm />
+      {isVisible && <LBlockEditForm />}
     </Dialog>
   );
 };

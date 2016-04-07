@@ -25,6 +25,12 @@ class LBlockEditForm extends Component {
       changeNodeAttribute,
     } = this.props;
 
+    // When material modal is closing animated here is not block
+    //
+    if (!block) {
+      return false;
+    }
+
     const { uuid } = block;
 
     const onContentChange = partial(changeContent, uuid);
@@ -82,7 +88,7 @@ class LBlockEditForm extends Component {
 
 LBlockEditForm.propTypes = {
   t: PropTypes.func.isRequired,
-  block: PropTypes.object.isRequired,
+  block: PropTypes.object,
   changeNodeAttribute: PropTypes.func.isRequired,
   changeContent: PropTypes.func.isRequired,
   changeBackgroundImage: PropTypes.func.isRequired,

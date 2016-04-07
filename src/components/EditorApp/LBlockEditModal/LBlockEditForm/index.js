@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import find from 'lodash/find';
+import { createSelector } from 'reselect';
 
 import {
   changeNodeAttribute,
@@ -10,9 +11,15 @@ import {
 
 import LBlockEditForm from './LBlockEditForm';
 
-const selector = state => ({
-  block: find(state.blocks, { uuid: state.editBlockForm.block.uuid }),
-});
+const blocksSelector = (state) => state.blocks;
+const blockUuidSelector = (state) => state.editBlockForm.block.uuid;
+const editBlockSelector = (blocks, uuid) => ( { block: find(blocks, { uuid }) } );
+
+const selector = createSelector(
+  blocksSelector,
+  blockUuidSelector,
+  editBlockSelector,
+);
 
 const actions = {
   changeNodeAttribute,
