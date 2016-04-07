@@ -22010,7 +22010,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.3.34")
+	    version: ("0.3.35")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -22038,11 +22038,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.3.34");
+	  var version = ("0.3.35");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.3.34");
+	    global.BMLVersion = ("0.3.35");
 	  } else {
-	    window.BMLVersion = ("0.3.34");
+	    window.BMLVersion = ("0.3.35");
 	    console.log('Start BML v' + version);
 	  }
 	};
@@ -22425,7 +22425,6 @@
 	
 	exports.default = function (blocks, _ref) {
 	  var block = _ref.payload.block;
-	
 	
 	  var selector = function selector(a, b) {
 	    return a.uuid === b.uuid;

@@ -25,7 +25,7 @@ class FormEditor extends Component {
             field={field}
             key={index}
             value={formContent[field.key]}
-            onChange={partial(onChange, field.key)}
+            onChange={partial(onChange)}
           />
          )
         )}

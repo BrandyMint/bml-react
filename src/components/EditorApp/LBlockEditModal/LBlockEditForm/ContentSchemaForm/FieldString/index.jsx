@@ -24,7 +24,7 @@ export default class FieldString extends Component {
         fullWidth
         floatingLabelText={field.title}
         id={field.key}
-        value={value}
+        defaultValue={value}
         onChange={handleChange}
       />
     );

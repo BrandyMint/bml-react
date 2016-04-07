@@ -12,7 +12,6 @@ class ContentSchemaForm extends Component {
   shouldComponentUpdate(nextProps) {
     const should = this.props.schema !== nextProps.schema ||
       this.props.content !== nextProps.content
-    console.log('ContentSchemaForm', should);
     return should;
   }
   render() {
