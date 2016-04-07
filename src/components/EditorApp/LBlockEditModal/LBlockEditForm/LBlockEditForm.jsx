@@ -19,6 +19,7 @@ class LBlockEditForm extends Component {
     const {
       t,
       block,
+      onChange,
       changeForm,
       changeBackgroundImage,
       changeContent,
@@ -82,13 +83,14 @@ class LBlockEditForm extends Component {
       </Tab>
     );
 
-    return (<Tabs>{tabs}</Tabs>);
+    return (<Tabs onChange={onChange}>{tabs}</Tabs>);
   }
 }
 
 LBlockEditForm.propTypes = {
   t: PropTypes.func.isRequired,
   block: PropTypes.object,
+  onChange: PropTypes.func,
   changeNodeAttribute: PropTypes.func.isRequired,
   changeContent: PropTypes.func.isRequired,
   changeBackgroundImage: PropTypes.func.isRequired,
