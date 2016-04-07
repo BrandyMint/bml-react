@@ -14,6 +14,7 @@ export default {
       key: 'submitTitle',
       type: 'string',
       isRequired: true,
+      defaultValue: 'SUBMIT',
     },
     /*
       {
@@ -46,6 +47,7 @@ export default {
       key: 'url',
       type: 'string',
       isRequired: false,
+      defaultValue: '',
     },
     {
       title: 'UUID коллекции',
@@ -53,6 +55,7 @@ export default {
       type: 'string',
       hint: 'Оставьте пустым, чтобы данные формы попали в заявки',
       isRequired: false,
+      defaultValue: '',
     },
     {
       title: 'Поля',
@@ -67,24 +70,28 @@ export default {
             key: 'title',
             type: 'string',
             isRequired: false,
+            defaultValue: 'FIELD NAME',
           },
           {
             title: 'Placeholder',
             key: 'placeholder',
             type: 'string',
             isRequired: false,
+            defaultValue: '',
           },
           {
             title: 'Ключ',
             key: 'name',
             type: 'string',
             isRequired: true,
+            defaultValue: 'field_key',
           },
           {
             title: 'Подсказка',
             key: 'hint',
             type: 'string',
             isRequired: false,
+            defaultValue: '',
           },
           {
             title: 'Тип',
@@ -92,6 +99,7 @@ export default {
             type: 'dropdownList',
             data: ShortInputTypes,
             isRequired: true,
+            defaultValue: ShortInputTypes[0],
           },
           {
             title: 'Маска',
@@ -100,18 +108,21 @@ export default {
             placeholder: 'Например: +7 (999) 999-99-99',
             hint: '<a href="http://sanniassin.github.io/react-input-mask/demo.html" target="_blank">Примеры масок</a>',
             isRequired: false,
+            defaultValue: '',
           },
           {
             title: 'Обязательное?',
             key: 'isRequired',
             type: 'checkbox',
             isRequired: true,
+            defaultValue: true,
           },
           {
             title: 'Данные справочника (только для dropdownList)',
             key: 'entities',
             type: 'entities',
             isRequired: false,
+            defaultValue: [],
           },
         ],
       },

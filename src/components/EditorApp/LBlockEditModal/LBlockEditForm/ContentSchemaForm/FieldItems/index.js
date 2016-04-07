@@ -9,6 +9,13 @@ import clone from 'lodash/clone';
 
 import FieldItem from './FieldItem';
 
+const BLANK_ITEM = {
+  inputType: 'text',
+  isRequired: false,
+  entities: [],
+  title: 'FIELD', // TODO i18n
+};
+
 class FieldItems extends Component {
   render() {
     const { t, field, value, onChange } = this.props;
@@ -21,11 +28,11 @@ class FieldItems extends Component {
       itemSchema,
     } = field;
 
-    const blankItem = {};
+    const blankItem = clone(BLANK_ITEM);
     each(itemSchema.fields, (f) => (blankItem[f.key] = f.defaultValue || ''));
 
     const onClickAdd = () => {
-      items.push(clone(blankItem));
+      items.push(blankItem);
       onChange(items);
     };
 

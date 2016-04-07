@@ -17,14 +17,8 @@ import BlockDebug from './BlockDebug';
 import './LBlockEditForm.css';
 
 class LBlockEditForm extends Component {
-  shouldComponentUpdate() {
-    // Продиводействуем внешним изменениям. Потому что во время редактирования блока
-    // меняется только то, что мы меняем в этом редакторе и на не зачем получать эти изменения
-    // заново сверху
-    return false;
-  }
-
   render() {
+    console.log("EditForm", new Date());
     const {
       t,
       block,

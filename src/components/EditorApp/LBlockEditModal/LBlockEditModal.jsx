@@ -7,11 +7,11 @@ import Dialog from 'material-ui/lib/dialog';
 import LBlockEditForm from './LBlockEditForm';
 
 class LBlockEditModal extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    // Продиводействуем внешним изменениям. Потому что во время редактирования блока
-    // меняется только то, что мы меняем в блоке
-    return this.state !== nextState || nextProps.isVisible !== this.props.isVisible;
-  }
+  //shouldComponentUpdate(nextProps, nextState) {
+    //// Продиводействуем внешним изменениям. Потому что во время редактирования блока
+    //// меняется только то, что мы меняем в блоке
+    //return this.state !== nextState || nextProps.isVisible !== this.props.isVisible;
+  //}
 
   render () {
     const { t, savedBlock, isVisible, onCancel, onDelete, onSave } = this.props;

@@ -13,9 +13,14 @@ class FormEditor extends Component {
     formContent: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
   };
-  shouldComponentUpdate() { return false; }
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.formContent !== this.props.formContent;
+  }
+
   render() {
     const { formContent, onChange } = this.props;
+    console.log("FormEditor", new Date());
 
     return (
       <div className="FormEditor">

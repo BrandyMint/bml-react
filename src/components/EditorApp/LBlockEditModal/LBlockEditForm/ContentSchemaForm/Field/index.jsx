@@ -7,8 +7,12 @@ import { FIELD_TYPES } from 'constants/fieldTypes';
 
 class Field extends Component {
   shouldComponentUpdate(nextProps) {
-    return this.props.field !== nextProps.field ||
+    // TODO починить изменение FieldItems
+    //
+    const should = true || this.props.field !== nextProps.field ||
       this.props.value !== nextProps.value;
+
+    return should;
   }
   render() {
     const { field, value, onChange } = this.props;
