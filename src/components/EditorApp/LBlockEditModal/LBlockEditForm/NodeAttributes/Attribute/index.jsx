@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
+import TextField from 'material-ui/lib/text-field';
+
 const Attribute = ({
-  attribute,
-  description,
   placeholder,
   title,
   value,
@@ -12,22 +12,13 @@ const Attribute = ({
   const handleChange = (event) => onChange(event.target.value);
 
   return (
-    <fieldset className="form-group">
-      <label htmlFor={attribute}>
-        {title}
-      </label>
-      <input
-        className="form-control"
-        type="text"
-        id={attribute}
-        placeholder={placeholder}
-        value={value}
-        onChange={handleChange}
-      />
-      {description &&
-        <small className="text-muted">{description}</small>
-      }
-    </fieldset>
+    <TextField
+      hintText={placeholder}
+      fullWidth
+      floatingLabelText={title}
+      value={value}
+      onChange={handleChange}
+    />
   );
 };
 

@@ -16,6 +16,20 @@ import MobilePreviewApp from 'components/MobilePreviewApp';
 import NoMatch from 'components/NoMatch';
 import EditorApp from 'components/EditorApp';
 
+// import Perf from 'react-addons-perf';
+// window.React = React;
+// window.Perf = Perf;
+
+
+// metarial-ui
+// This dependency is temporary and will eventually go away.
+import injectTapEventPlugin from 'react-tap-event-plugin';
+// Needed for onTouchTap
+// // http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
+
+
 import 'lib/bugsnag';
 import 'lib/semverInit';
 

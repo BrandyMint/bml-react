@@ -1,23 +1,27 @@
+import { translate } from 'react-i18next';
 import React, { PropTypes } from 'react';
 
-import Modal from 'components/ui-elements/Modal';
+import Dialog from 'material-ui/lib/dialog';
+
 import LBlockAddForm from './LBlockAddForm';
 
-const LBlockAddModal = ({ isVisible, onCancel }) => (
-  <Modal show={isVisible}>
-    <Modal.Header closeButton onHide={onCancel}>
-      <Modal.Title>Выберите блок для вставки</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <LBlockAddForm />
-    </Modal.Body>
-  </Modal>
+const LBlockAddModal = ({ t, isVisible, onCancel }) => (
+  <Dialog
+    title={t('title')}
+    open={isVisible}
+    modal={false}
+    autoScrollBodyContent
+    onRequestClose={onCancel}
+  >
+    <LBlockAddForm />
+  </Dialog>
 );
 
 LBlockAddModal.propTypes = {
+  t: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
 
   onCancel: PropTypes.func.isRequired,
 };
 
-export default LBlockAddModal;
+export default translate('block_add_modal')(LBlockAddModal);

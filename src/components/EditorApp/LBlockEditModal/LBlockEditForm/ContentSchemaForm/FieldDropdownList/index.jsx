@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import FormGroup from '../FormGroup';
 
-import DropdownList from 'react-widgets/lib/DropdownList';
+import SelectField from 'material-ui/lib/select-field';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 
 export default class FieldDropdownList extends Component {
   static propTypes = {
@@ -18,15 +18,22 @@ export default class FieldDropdownList extends Component {
   render() {
     const { field, value, onChange } = this.props;
 
+    const items = field.data.map(
+      (item, index) =>
+        <MenuItem value={item} primaryText={item} key={index} />
+    );
+
+    const handleChange = (e, v) => onChange(field.data[v]);
+
     return (
-      <FormGroup fieldKey={field.key} title={field.title}>
-        <DropdownList
-          data={field.data}
-          id={field.key}
-          defaultValue={value || field.defaultValue}
-          onChange={onChange}
-        />
-      </FormGroup>
+      <SelectField
+        value={value}
+        onChange={handleChange}
+        floatingLabelText={field.title}
+        hintText={field.title}
+      >
+        {items}
+      </SelectField>
     );
   }
 }

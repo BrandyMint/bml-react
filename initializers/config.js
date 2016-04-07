@@ -1,4 +1,4 @@
-export const PORT = 3000;
+export const PORT = process.env.PORT || 3000;
 export const PUBLIC_PATH = 'public';
 export const ASSETS_PUBLIC_PATH = '/assets';
 export const STATIC_ASSETS_PATH = 'src/assets';

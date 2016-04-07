@@ -78,7 +78,6 @@ EditableEditor.propTypes = {
 
 EditableEditor.defaultProps = {
   element: 'div',
-  enable: true,
   defaultValue: DEFAULT_VALUE,
   options: EditorOptions.string,
 };

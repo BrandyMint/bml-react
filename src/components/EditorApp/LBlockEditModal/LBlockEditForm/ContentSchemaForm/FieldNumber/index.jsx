@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import FormGroup from '../FormGroup';
+
+import TextField from 'material-ui/lib/text-field';
 
 export default class FieldNumber extends Component {
   static propTypes = {
@@ -17,25 +18,21 @@ export default class FieldNumber extends Component {
 
   render() {
     const { field, value, onChange } = this.props;
-    const { title, key, min, max, step } = field;
+    // const { key, min, max, step } = field;
 
     const handleChange = (event) => {
       onChange(parseInt(event.target.value, 10));
     };
 
     return (
-      <FormGroup fieldKey={key} title={title}>
-        <input
-          className="form-control"
-          type="number"
-          id={key}
-          min={min}
-          max={max}
-          step={step}
-          value={value}
-          onChange={handleChange}
-        />
-      </FormGroup>
+      <TextField
+        hintText={field.placeholder}
+        fullWidth
+        floatingLabelText={field.title}
+        id={field.key}
+        value={value}
+        onChange={handleChange}
+      />
     );
   }
 }

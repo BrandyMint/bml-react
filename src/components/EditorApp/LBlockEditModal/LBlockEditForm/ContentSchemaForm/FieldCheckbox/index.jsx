@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Checkbox from 'material-ui/lib/checkbox';
+
 export default class FieldCheckbox extends Component {
   static propTypes = {
     field: PropTypes.shape({
@@ -13,21 +15,16 @@ export default class FieldCheckbox extends Component {
 
   render() {
     const { field, value, onChange } = this.props;
-    const { title, key } = field;
 
     const handleChange = (event) => onChange(!! event.target.checked);
 
     return (
-      <div className="checkbox">
-        <label>
-          <input
-            type="checkbox"
-            checked={value}
-            id={key}
-            onChange={handleChange}
-          />
-          {title}
-        </label>
+      <div className="m-b-md m-t-md">
+        <Checkbox
+          label={field.title}
+          defaultChecked={value}
+          onChange={handleChange}
+        />
       </div>
     );
   }

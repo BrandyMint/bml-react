@@ -66,10 +66,13 @@ export const initialState = {
   zoom: false,
 };
 
-const unsavedChanges = value => state => ({
-  ...state, hasUnsavedChanges: value,
-});
+const unsavedChanges = value => state => {
+  if (state.hasUnsavedChanges === value) {
+    return state;
+  }
 
+  return { ...state, hasUnsavedChanges: value };
+}
 const savingChanges = value => state => ({
   ...state, isSaving: value,
 });

@@ -66,13 +66,6 @@ export default {
   resolve: common.resolve,
 
   module: {
-    preLoaders: [
-      {
-        test: /\.jsx?$/,
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-      },
-    ],
     loaders: loaders,
   },
 };
