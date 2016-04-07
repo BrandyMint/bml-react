@@ -28,7 +28,7 @@ class FieldEntities extends Component {
           rows="7"
           styles={ { height: 'auto' } }
           id={field.key}
-          value={textareaValue}
+          defaultValue={textareaValue}
           onChange={handleChange}
         />
       </fieldset>

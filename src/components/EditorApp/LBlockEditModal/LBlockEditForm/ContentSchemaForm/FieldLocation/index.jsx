@@ -38,7 +38,7 @@ export default class FieldLocation extends Component {
               type="number"
               step={ STEP }
               id={`${key}-lat`}
-              value={value.lat}
+              defaultValue={value.lat}
               onChange={handleChangeLat}
             />
             <small className="text-muted">Широта</small>
@@ -49,7 +49,7 @@ export default class FieldLocation extends Component {
               type="number"
               step={ STEP }
               id={key}
-              value={value.lng}
+              defaultValue={value.lng}
               onChange={handleChangeLng}
             />
             <small className="text-muted">Долгота</small>
