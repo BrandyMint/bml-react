@@ -1,29 +1,39 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Attribute from './Attribute';
 import get from 'lodash/get';
 import partial from 'lodash/partial';
 
-const NodeAttributes = ({ attributes = {}, onChange }) => (
-  <div className="TabPage">
-    <Attribute
-      attribute="id"
-      description="Аттрибут id у тега блока"
-      placeholder="Введите идентификатор блока"
-      title="Идентификатор блока (якорь)"
-      value={get(attributes, 'id')}
-      onChange={partial(onChange, 'id')}
-    />
-    <Attribute
-      attribute="class"
-      description="Аттрибут class у тега блока"
-      placeholder="Введите название класса у блока"
-      title="Класс блока"
-      value={get(attributes, 'class')}
-      onChange={partial(onChange, 'class')}
-    />
-  </div>
-);
+class NodeAttributes extends Component {
+  shouldComponentUpdate(nextProps) {
+    return this.props.attributes !== nextProps.attributes;
+  }
+
+  render() {
+    const { attributes = {}, onChange } = this.props;
+
+    return (
+      <div className="TabPage">
+        <Attribute
+          attribute="id"
+          description="Аттрибут id у тега блока"
+          placeholder="Введите идентификатор блока"
+          title="Идентификатор блока (якорь)"
+          value={get(attributes, 'id')}
+          onChange={partial(onChange, 'id')}
+        />
+        <Attribute
+          attribute="class"
+          description="Аттрибут class у тега блока"
+          placeholder="Введите название класса у блока"
+          title="Класс блока"
+          value={get(attributes, 'class')}
+          onChange={partial(onChange, 'class')}
+        />
+      </div>
+    );
+  }
+}
 
 NodeAttributes.propTypes = {
   attributes: PropTypes.object,

@@ -1,5 +1,5 @@
-import map from 'lodash/map';
 import size from 'lodash/size';
+import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import classnames from 'classnames';
 import invariant from 'invariant';
@@ -35,15 +35,36 @@ const getBackgroundStyle = (block, prevBackgroundStyle) => {
     even,
   };
 
-  return { ...block, backgroundStyle };
+  return backgroundStyle;
 };
 
 export default (blocks) => {
+  let hasChanges = false;
+
+  const newBlocks = [];
+
   let prevBackgroundStyle = null;
 
-  return map(blocks, (block) => {
-    const newBlock = getBackgroundStyle(block, prevBackgroundStyle);
-    prevBackgroundStyle = newBlock.backgroundStyle;
-    return newBlock;
-  });
+  const func = (block) => {
+    const wasBackgroundStyle = block.backgroundStyle;
+    const backgroundStyle = getBackgroundStyle(block, prevBackgroundStyle);
+    prevBackgroundStyle = backgroundStyle;
+
+    if (isEqual(wasBackgroundStyle, backgroundStyle)) {
+      newBlocks.push(block);
+      return;
+    }
+
+    hasChanges = true;
+    const newBlock = { ...block, backgroundStyle };
+    newBlocks.push(newBlock);
+  };
+
+  blocks.forEach(func);
+
+  if (hasChanges) {
+    return newBlocks;
+  }
+
+  return blocks;
 };

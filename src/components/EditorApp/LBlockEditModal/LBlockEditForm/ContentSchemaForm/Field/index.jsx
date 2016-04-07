@@ -1,16 +1,22 @@
 import React, { Component, PropTypes } from 'react';
+import partial from 'lodash/partial';
+
 import { FIELD_BASIC_TYPES } from 'constants/fieldTypes';
 import { FIELD_COMPONENTS } from '../schemaFieldTypes';
 import { FIELD_TYPES } from 'constants/fieldTypes';
 
 class Field extends Component {
+  shouldComponentUpdate(nextProps) {
+    return this.props.field !== nextProps.field ||
+      this.props.value !== nextProps.value;
+  }
   render() {
     const { field, value, onChange } = this.props;
     const FieldComponent = FIELD_COMPONENTS[field.type];
     return (
       <FieldComponent
         field={field}
-        onChange={onChange}
+        onChange={partial(onChange, field.key)}
         value={value}
       />
     );
