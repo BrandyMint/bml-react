@@ -48,6 +48,13 @@ export default {
       isRequired: false,
     },
     {
+      title: 'UUID коллекции',
+      key: 'collectionUuid',
+      type: 'string',
+      hint: 'Оставьте пустым, чтобы данные формы попали в заявки',
+      isRequired: false,
+    },
+    {
       title: 'Поля',
       key: 'fields',
       type: 'items',

@@ -18,7 +18,7 @@ class ContentFormSecrets extends Component {
     });
   }
   render() {
-    const { tracker, variantUuid } = this.props;
+    const { tracker, collectionUuid, variantUuid } = this.props;
     const { cookie } = this.state;
 
     const tracking = JSON.stringify(tracker);
@@ -26,6 +26,7 @@ class ContentFormSecrets extends Component {
     const viewerUid = config('viewerUid');
     return (
       <div>
+        <input name="utf8" type="hidden" value="✓" />
         <input
           name="tracking"
           type="hidden"
@@ -41,6 +42,13 @@ class ContentFormSecrets extends Component {
           type="hidden"
           value={variantUuid}
         />
+        {collectionUuid &&
+          <input
+            name="collection_uuid"
+            type="hidden"
+            value={collectionUuid}
+          />
+          }
         {viewerUid &&
           <input
             name="viewer_uid"
@@ -54,6 +62,7 @@ class ContentFormSecrets extends Component {
 }
 
 ContentFormSecrets.propTypes = {
+  collectionUuid: PropTypes.string,
   variantUuid: PropTypes.string.isRequired,
   tracker: PropTypes.object.isRequired,
 };

@@ -83,7 +83,7 @@ class ContentForm extends Component {
 
   render() {
     const { isValid, getValidationMessages } = this.props;
-    const { children, id, fields, name, method, url, submitTitle, className } = this.props;
+    const { children, id, fields, name, method, url, collectionUuid, submitTitle, className } = this.props;
 
     const classes = classnames('BML-form', className);
 
@@ -100,18 +100,17 @@ class ContentForm extends Component {
         method={formMethod}
         className={classes}
       >
-        <input name="utf8" type="hidden" value="✓" />
-        <ContentFormSecrets />
+        <ContentFormSecrets collectionUuid={collectionUuid} />
         {children}
         {map(fields, (field, index) =>
            <FieldWrapper key={index} {...field} hasError={!isValid(field.name)}>
              <Field {...field} ref={field.name} />
              {renderHelpText(getValidationMessages(field.name))}
-             </FieldWrapper>
-          )}
-          <div className="form-group">
-            <button type="submit" className="BML-button-submit">{submitTitle}</button>
-          </div>
+           </FieldWrapper>
+        )}
+        <div className="form-group">
+          <button type="submit" className="BML-button-submit">{submitTitle}</button>
+        </div>
       </form>
     );
   }
@@ -131,6 +130,7 @@ export const propTypes = {
   submitTitle: PropTypes.string.isRequired,
   method: PropTypes.string,
   url: PropTypes.string,
+  collectionUuid: PropTypes.string,
   fields: PropTypes.arrayOf(
     PropTypes.shape(Field.propTypes)
   ).isRequired,

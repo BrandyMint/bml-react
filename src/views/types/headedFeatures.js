@@ -40,6 +40,7 @@ export default {
               title: 'Класс иконки',
               key: 'iconClass', // TODO Завести отдельный тип
               type: 'string',
+              hint: 'Используйте название иконки из <a href="https://themify.me/themify-icons" target="_blank">этого списка</a>',
               isRequired: true,
             },
           ],
