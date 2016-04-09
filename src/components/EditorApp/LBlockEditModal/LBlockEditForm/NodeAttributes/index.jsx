@@ -6,7 +6,8 @@ import partial from 'lodash/partial';
 
 class NodeAttributes extends Component {
   shouldComponentUpdate(nextProps) {
-    return this.props.attributes !== nextProps.attributes;
+    const should =  this.props.attributes !== nextProps.attributes;
+    return should;
   }
 
   render() {

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import EditableEditor from 'views/elements/Editable/Editor';
+import EditorOptions from 'views/elements/Editable/options';
 
 import Buttons from 'views/elements/Buttons';
 
@@ -26,10 +27,12 @@ class EditableButtons extends Component {
   createEditorElement() {
     const buttons = this.getButtons();
     const classNames = classnames('BML-buttons-group', this.props.className);
+
     return (<div className={classNames}>
               {map(buttons, (button, index) =>
                 <EditableEditor
                   key={index}
+                  options={EditorOptions.button}
                   className="btn btn-lg btn-filled BML-button-item"
                   element="a"
                   value={this.getButtonText(index)}

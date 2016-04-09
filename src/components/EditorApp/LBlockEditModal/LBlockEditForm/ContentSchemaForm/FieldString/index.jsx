@@ -13,6 +13,11 @@ export default class FieldString extends Component {
     onChange: PropTypes.func.isRequired,
   };
 
+  shouldComponentUpdate(nextProps) {
+    const should = this.props.field !== nextProps.field;
+
+    return should;
+  }
   render() {
     const { field, value, onChange } = this.props;
 
@@ -25,7 +30,7 @@ export default class FieldString extends Component {
         floatingLabelText={field.title}
         id={field.key}
         defaultValue={value}
-        onChange={handleChange}
+        onBlur={handleChange}
       />
     );
   }

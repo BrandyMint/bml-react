@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/lib/text-field';
 
 class FieldText extends Component {
+  shouldComponentUpdate(nextProps) {
+    const should = this.props.field !== nextProps.field;
+
+    return should;
+  }
   render() {
     const { field, value, onChange } = this.props;
 
@@ -16,7 +21,7 @@ class FieldText extends Component {
         defaultValue={value}
         multiLine
         rows={4}
-        onChange={handleChange}
+        onBlur={handleChange}
       />
     );
   }

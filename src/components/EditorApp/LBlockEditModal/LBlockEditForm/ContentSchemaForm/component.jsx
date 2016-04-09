@@ -10,16 +10,16 @@ import Field from './Field';
 
 class ContentSchemaForm extends Component {
   shouldComponentUpdate(nextProps) {
-    const should = this.props.schema !== nextProps.schema ||
+    const should = this.props.schemaFields !== nextProps.schemaFields ||
       this.props.content !== nextProps.content
     return should;
   }
   render() {
-    const { content, schema, onChange } = this.props;
+    const { content, schemaFields, onChange } = this.props;
 
     return (
       <div className="ContentFormBuilder">
-        {map(schema.fields, (field, index) =>
+        {map(schemaFields, (field, index) =>
           (
             <Field
               field={field}
@@ -35,7 +35,7 @@ class ContentSchemaForm extends Component {
 }
 
 ContentSchemaForm.propTypes = {
-  schema: PropTypes.object.isRequired, // TODO schema propType
+  schemaFields: PropTypes.array.isRequired,
   content: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 };

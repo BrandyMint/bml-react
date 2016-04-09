@@ -25,7 +25,6 @@ const LeftToolbar = ({ open, hasUnsavedChanges, toggleMenu, isMenuOpen }) => {
   if (isMenuOpen) {
     return <noscript />;
   }
-  console.log(style.left);
   return (
     <FloatingActionButton style={style} backgroundColor="#000" onTouchTap={toggleMenu}>
         <MenuIcon />

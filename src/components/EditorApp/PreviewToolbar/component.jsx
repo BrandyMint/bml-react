@@ -14,8 +14,10 @@ const STYLE = { position: 'fixed', bottom: 32, right: 32 };
 const PreviewToolbar = ({ enable, open, startAddingBlock }) => {
   if (!enable) { return <noscript />; }
 
+  const onTouchTap = () => startAddingBlock();
+
   return (
-    <FloatingActionButton style={STYLE} onTouchTap={startAddingBlock}>
+    <FloatingActionButton style={STYLE} onTouchTap={onTouchTap}>
         <ContentAdd />
       </FloatingActionButton>
     );
