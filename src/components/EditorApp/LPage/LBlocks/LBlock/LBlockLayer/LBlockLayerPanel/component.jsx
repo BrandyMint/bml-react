@@ -25,19 +25,13 @@ const LBlockLayerPanel = (
   }) => (
     <div onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter} className="LBlockLayerPanel">
       <div className="LBlockLayerPanel-actions">
-        <LBlockSettingsButton onEditingStart={onEditingStart} />
         {hasMultipleViews &&
           <LBlockViewChanger
             onViewSwitchNext={onViewSwitchNext}
             onViewSwitchPrev={onViewSwitchPrev}
           />
         }
-        {hasMultipleBlocks && (onBlockPositionUp || onBlockPositionDown) &&
-          <LBlockPositionChanger
-            onBlockPositionDown={onBlockPositionDown}
-            onBlockPositionUp={onBlockPositionUp}
-          />
-        }
+        <LBlockSettingsButton onEditingStart={onEditingStart} />
       </div>
     </div>
   );

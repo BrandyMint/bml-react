@@ -26,7 +26,7 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import IconButton from 'material-ui/lib/icon-button';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 
-import IconBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
+import IconBack from 'material-ui/lib/svg-icons/navigation/menu';
 import IconAdd from 'material-ui/lib/svg-icons/action/view-day';
 import IconSave from 'material-ui/lib/svg-icons/content/save';
 import IconDevice from 'material-ui/lib/svg-icons/action/important-devices';

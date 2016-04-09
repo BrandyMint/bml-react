@@ -13,8 +13,8 @@ class LBlockSettingsButton extends Component {
 
     return (
         <div className="LBlockSettingsButton">
-          <div data-tip={t('tips:block_settings')}>
-            <BubbleIcon onClick={onEditingStart}>
+          <div>
+            <BubbleIcon onClick={onEditingStart} text={t('tips:block_settings')}>
               <FaCog />
             </BubbleIcon>
           </div>

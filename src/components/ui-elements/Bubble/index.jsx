@@ -33,8 +33,8 @@ class Bubble extends Component {
           className={bubbleClasses}
           to={to}
         >
-          {!!text && <span className="Bubble-text">{text}</span>}
           {children}
+          {!!text && <span className="Bubble-text">{text}</span>}
         </Link>
       );
     }
@@ -43,8 +43,8 @@ class Bubble extends Component {
         className={bubbleClasses}
         onClick={this.handleClick}
       >
-        {!!text && <span className="Bubble-text">{text}</span>}
         {children}
+        {!!text && <span className="Bubble-text">{text}</span>}
       </span>
     );
   }
