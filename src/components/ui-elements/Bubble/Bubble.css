@@ -76,6 +76,7 @@ $hoverBorderColor: #1eabf8;
     margin-top: 2px;
     display: inline-block;
   }
+
   @descendent icon {
     vertical-align: middle;
     text-align: center;

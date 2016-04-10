@@ -3,6 +3,8 @@ const KEY_S = 83;
 const KEY_W = 87;
 const KEY_O = 79;
 
+/* eslint-disable no-console */
+
 const keydown = (e) => {
   // S - 83
   // W - 87

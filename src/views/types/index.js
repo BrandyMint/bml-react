@@ -9,6 +9,7 @@ import plainText from './plainText';
 import textWithLinks from './textWithLinks';
 import navBar from './navBar';
 import mapType from './mapType';
+import leaderBoard from './leaderBoard';
 
 export default {
   headedFeatures,
@@ -22,4 +23,5 @@ export default {
   textWithLinks,
   navBar,
   mapType,
+  leaderBoard,
 };

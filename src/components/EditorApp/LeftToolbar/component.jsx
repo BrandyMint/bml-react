@@ -20,6 +20,7 @@ const LeftToolbar = ({ toggleMenu, enable }) => {
 
 LeftToolbar.propTypes = {
   enable: PropTypes.bool.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default LeftToolbar;

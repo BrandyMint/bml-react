@@ -25,11 +25,6 @@ class FieldItems extends Component {
     this.onChangeItem = this.onChangeItem.bind(this);
     this.onRemoveItem = this.onRemoveItem.bind(this);
   }
-  buildBlankItem() {
-    const blankItem = clone(BLANK_ITEM);
-    each(this.props.field.itemSchema.fields, (f) => (blankItem[f.key] = f.defaultValue || ''));
-    return blankItem;
-  }
   onClickAdd() {
     const items = this.props.value;
     const newItems = [
@@ -41,9 +36,7 @@ class FieldItems extends Component {
 
   onChangeItem(index, fieldKey, fieldValue) {
     const items = this.props.value;
-    const newItems = [
-      ...items
-    ];
+    const newItems = [ ...items ];
     const item = newItems[index];
     newItems[index] = {...item, [fieldKey]: fieldValue};
     this.props.onChange(items);
@@ -58,8 +51,14 @@ class FieldItems extends Component {
     this.props.onChange(newItems);
   }
 
+  buildBlankItem() {
+    const blankItem = clone(BLANK_ITEM);
+    each(this.props.field.itemSchema.fields, (f) => (blankItem[f.key] = f.defaultValue || ''));
+    return blankItem;
+  }
+
   render() {
-    const { t, field, value, onChange } = this.props;
+    const { t, field, value } = this.props;
 
     const items = value || [];
 

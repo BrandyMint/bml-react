@@ -31,7 +31,7 @@ class LBlockEditForm extends Component {
       this.onBackgroundImageChange = partial(changeBackgroundImage, uuid);
 
       this.schema = viewsRepository.getContentSchemaByViewName(viewName);
-    };
+    }
   }
 
   shouldComponentUpdate(nextProps) {

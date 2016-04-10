@@ -17,7 +17,7 @@ const selector = createSelector(
     theme_name: site.theme_name,
     zoom: application.zoom,
     isMenuOpen: application.isMenuOpen,
-    variantUuid: application.variantUuid
+    variantUuid: application.variantUuid,
   })
 
 );

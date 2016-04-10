@@ -1,4 +1,4 @@
-import ShortInputTypes from 'constants/usedInputTypes';
+import UserInputTypes from 'views/elements/ContentForm/inputTypes';
 
 export const Destinations = [
   'collection',
@@ -97,9 +97,9 @@ export default {
             title: 'Тип',
             key: 'inputType',
             type: 'dropdownList',
-            data: ShortInputTypes,
+            data: UserInputTypes,
             isRequired: true,
-            defaultValue: ShortInputTypes[0],
+            defaultValue: UserInputTypes[0],
           },
           {
             title: 'Маска',

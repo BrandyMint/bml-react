@@ -1,7 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import includes from 'lodash/includes';
-import INPUT_TYPES from 'constants/inputTypes';
-import FIELD_TYPES, { DROPDOWN_TYPE } from './fieldTypes';
+import UserInputTypes, { DROPDOWN_INPUT_TYPE } from './inputTypes';
 import InputElement from 'react-input-mask';
 
 import Select from './Select';
@@ -20,25 +18,10 @@ class Field extends Component {
       onBlur,
     } = this.props;
 
-    if (includes(INPUT_TYPES, inputType)) {
-      return (
-          <InputElement
-            mask={mask}
-            type={inputType}
-            required={isRequired}
-            name={name}
-            placeholder={placeholder}
-            className="form-control"
-            onBlur={onBlur}
-          />
-        );
-    }
+    if (inputType === DROPDOWN_INPUT_TYPE) {
+      // const entities = dictionaries[dictionaryKey];
+      // invariant(entities, `No entities for dictionary${dictionaryKey}`);
 
-    // const entities = dictionaries[dictionaryKey];
-    // invariant(entities, `No entities for dictionary${dictionaryKey}`);
-
-    // TODO const
-    if (inputType === DROPDOWN_TYPE) {
       return (
           <Select
             name={name}
@@ -51,7 +34,28 @@ class Field extends Component {
         );
     }
 
-    return undefined;
+    if (inputType === 'checkbox') {
+      return (
+        <input
+          name={name}
+          type="checkbox"
+          defaultChecked={defaultValue}
+        />
+      );
+    }
+
+    return (
+      <InputElement
+        mask={mask}
+        type={inputType}
+        required={isRequired}
+        name={name}
+        placeholder={placeholder}
+        className="form-control"
+        onBlur={onBlur}
+      />
+    );
+
   }
 }
 
@@ -61,7 +65,7 @@ Field.propTypes = {
   title: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  inputType: PropTypes.oneOf(FIELD_TYPES).isRequired,
+  inputType: PropTypes.oneOf(UserInputTypes).isRequired,
   dictionaryKey: PropTypes.string,
   defaultValue: PropTypes.string,
   entities: PropTypes.array,

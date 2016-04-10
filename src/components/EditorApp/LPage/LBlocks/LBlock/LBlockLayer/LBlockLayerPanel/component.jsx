@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import LBlockSettingsButton from './LBlockSettingsButton';
 import LBlockViewChanger from './LBlockViewChanger';
-import LBlockPositionChanger from './LBlockPositionChanger';
+// import LBlockPositionChanger from './LBlockPositionChanger';
 // import LBlockLayerViewInfo from 'components/LBlockLayerViewInfo';
 
 import './index.scss';
@@ -10,7 +10,6 @@ import './index.scss';
 const LBlockLayerPanel = (
   {
     hasMultipleViews,
-    hasMultipleBlocks,
 
     onEditingStart,
 
@@ -19,9 +18,6 @@ const LBlockLayerPanel = (
 
     onMouseEnter,
     onMouseLeave,
-
-    onBlockPositionDown,
-    onBlockPositionUp,
   }) => (
     <div onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter} className="LBlockLayerPanel">
       <div className="LBlockLayerPanel-actions">
