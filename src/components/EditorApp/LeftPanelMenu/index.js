@@ -12,6 +12,7 @@ const selector = createSelector(
   siteSelector,
   applicationSelector,
   (site, application) => ({
+    hasUnsavedChanges: application.hasUnsavedChanges,
     is_boxed: site.is_boxed,
     theme_name: site.theme_name,
     zoom: application.zoom,
