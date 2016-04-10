@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
-import FlatButton from 'material-ui/lib/flat-button';
+import RaisedButton from 'material-ui/lib/raised-button';
 
 import map from 'lodash/map';
 import partial from 'lodash/partial';
@@ -17,6 +17,47 @@ const BLANK_ITEM = {
 };
 
 class FieldItems extends Component {
+  constructor(props) {
+    super(props);
+
+    this.blankItem = this.buildBlankItem();
+    this.onClickAdd   = this.onClickAdd.bind(this);
+    this.onChangeItem = this.onChangeItem.bind(this);
+    this.onRemoveItem = this.onRemoveItem.bind(this);
+  }
+  buildBlankItem() {
+    const blankItem = clone(BLANK_ITEM);
+    each(this.props.field.itemSchema.fields, (f) => (blankItem[f.key] = f.defaultValue || ''));
+    return blankItem;
+  }
+  onClickAdd() {
+    const items = this.props.value;
+    const newItems = [
+      ...items,
+      this.blankItem,
+    ]
+    this.props.onChange(newItems);
+  }
+
+  onChangeItem(index, fieldKey, fieldValue) {
+    const items = this.props.value;
+    const newItems = [
+      ...items
+    ];
+    const item = newItems[index];
+    newItems[index] = {...item, [fieldKey]: fieldValue};
+    this.props.onChange(items);
+  }
+
+  onRemoveItem(index) {
+    const items = this.props.value;
+    const newItems = [
+      ...items.slice(0, index),
+      ...items.slice(index + 1),
+    ];
+    this.props.onChange(newItems);
+  }
+
   render() {
     const { t, field, value, onChange } = this.props;
 
@@ -28,14 +69,6 @@ class FieldItems extends Component {
       itemSchema,
     } = field;
 
-    const blankItem = clone(BLANK_ITEM);
-    each(itemSchema.fields, (f) => (blankItem[f.key] = f.defaultValue || ''));
-
-    const onClickAdd = () => {
-      items.push(blankItem);
-      onChange(items);
-    };
-
     return (
       <fieldset className="form-group">
         <label htmlFor={key}>
@@ -45,28 +78,20 @@ class FieldItems extends Component {
         </label>
         <ol className="FieldItems">
           {map(items, (item, index) => {
-            const onChangeItem = (fieldKey, fieldValue) => {
-              items[index][fieldKey] = fieldValue;
-              onChange(items);
-            };
-            const onRemoveItem = () => {
-              items.splice(index, 1);
-              onChange(items);
-            };
             return (
               <FieldItem
                 item={item}
                 key={index}
                 itemSchemaFields={itemSchema.fields}
-                onChange={partial(onChangeItem)}
-                onRemove={partial(onRemoveItem)}
+                onChange={partial(this.onChangeItem, index)}
+                onRemove={partial(this.onRemoveItem, index)}
               />
             );
           }
           )}
         </ol>
         <div className="pull-xs-right">
-          <FlatButton primary onClick={onClickAdd} label={t('add')} />
+          <RaisedButton primary onClick={this.onClickAdd} label={t('add')} />
         </div>
       </fieldset>
     );

@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 
-import FlatButton from 'material-ui/lib/flat-button';
+import RaisedButton from 'material-ui/lib/raised-button';
 
 import FieldSubitem, { FieldSubitemPropTypes } from './FieldSubitem';
 
@@ -21,7 +21,7 @@ const FieldItem = ({ t, item, itemSchemaFields, onChange, onRemove }) => (
           />
         )
       )}
-    <FlatButton label={t('remove')} onClick={onRemove} />
+    <RaisedButton label={t('remove')} onClick={onRemove} />
   </li>
 );
 

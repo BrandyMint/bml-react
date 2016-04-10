@@ -3,6 +3,8 @@ import createReducer from 'helpers/createReducer';
 import {
   CHANGE_ZOOM,
   RESTORE_SITE,
+  TOGGLE_MENU,
+  CLOSE_MENU,
 } from 'actions/application';
 
 import {
@@ -59,6 +61,7 @@ export const initialState = {
 
   isEditMode: false,
   isSaving: false,
+  isMenuOpen: false,
   hasUnsavedChanges: false,
 
   originalSite: BLANK_SITE,
@@ -86,6 +89,16 @@ const successUpdate = (state, { payload }) => ({
   isSaving: false,
   hasUnsavedChanges: false,
   originalSite: payload,
+});
+
+const toggleMenu = (state) => ({
+  ...state,
+  isMenuOpen: !state.isMenuOpen,
+});
+
+const closeMenu = (state) => ({
+  ...state,
+  isMenuOpen: false,
 });
 
 const handlers = {
@@ -121,6 +134,9 @@ const handlers = {
   [CHANGE_THEME]: unsavedChanges(true),
   [TOGGLE_BOXED_LAYOUT]: unsavedChanges(true),
   [RESTORE_SITE]: unsavedChanges(false),
+
+  [TOGGLE_MENU]: toggleMenu,
+  [CLOSE_MENU]: closeMenu,
 
   [BACKGROUND_UPLOAD_REQUEST]: state => ({ ...state, backgroundUploading: true }),
   [BACKGROUND_UPLOAD_SUCCESS]: state => ({ ...state, backgroundUploading: false }),

@@ -18,8 +18,8 @@ const hasMultipleBlocksSelector = state => size(state.blocks) > 1;
 const hasMultipleViewsSelector = (state, props) =>
   size(viewsRepository.getCompatibleViews(props.block.viewName)) > 1;
 
-const isEnableSelector = ({ application }) =>
-  !application.zoom;
+const isEnableSelector = ({ application, modal }) =>
+  (!application.zoom && !modal.current);
 
 const selector = createStructuredSelector({
   hasMultipleViews: hasMultipleViewsSelector,

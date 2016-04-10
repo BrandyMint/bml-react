@@ -6,7 +6,7 @@ export const changeTheme = (theme_name) => ({
   payload: theme_name,
 });
 
-export const toggleBoxedLayout = (flag) => ({
+export const switchBoxedLayout = (flag) => ({
   type: TOGGLE_BOXED_LAYOUT,
   payload: flag,
 });

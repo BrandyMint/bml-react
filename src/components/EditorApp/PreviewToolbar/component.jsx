@@ -6,22 +6,27 @@ import MobilePreviewBubble from 'components/EditorApp/Bubbles/MobilePreviewBubbl
 import ScaleBubble from 'components/EditorApp/Bubbles/ScaleBubble';
 import PublicLinkBubble from 'components/EditorApp/Bubbles/PublicLinkBubble';
 
-const PreviewToolbar = ({ enable, open }) => {
+import FloatingActionButton from 'material-ui/lib/floating-action-button';
+import ContentAdd from 'material-ui/lib/svg-icons/content/add';
+
+const STYLE = { position: 'fixed', bottom: 32, right: 32 };
+
+const PreviewToolbar = ({ enable, open, startAddingBlock }) => {
   if (!enable) { return <noscript />; }
 
+  const onTouchTap = () => startAddingBlock();
+
   return (
-    <Toolbar
-      open={open}
-      vertical="top"
-      horizontal="right"
-      Lead={MobilePreviewBubble}
-      Items={[<DesktopPreviewBubble />, <ScaleBubble />, <PublicLinkBubble />]}
-    />);
+    <FloatingActionButton style={STYLE} onTouchTap={onTouchTap}>
+        <ContentAdd />
+      </FloatingActionButton>
+    );
 };
 
 PreviewToolbar.propTypes = {
   open: PropTypes.bool.isRequired,
   enable: PropTypes.bool.isRequired,
+  startAddingBlock: PropTypes.func.isRequired,
 };
 
 export default PreviewToolbar;

@@ -1,3 +1,4 @@
+/* global __ENV__ */
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,7 +17,10 @@ import MobilePreviewApp from 'components/MobilePreviewApp';
 import NoMatch from 'components/NoMatch';
 import EditorApp from 'components/EditorApp';
 
-// import 'lib/perf';
+if (__ENV__ === 'development') {
+  window.React = React;
+  require('lib/perf');
+}
 
 // metarial-ui
 // This dependency is temporary and will eventually go away.

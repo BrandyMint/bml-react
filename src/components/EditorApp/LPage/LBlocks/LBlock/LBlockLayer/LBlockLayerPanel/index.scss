@@ -2,8 +2,8 @@
 
 .LBlockLayerPanel {
   position: absolute;
-  top: 15px;
-  left: 95px; // Значительно правее левого тулбара
+  top: 45px;
+  right: 95px; // Левее правной нижнеей кнопка добалвения блока
   z-index: $zindexBlockToolbar;
   user-select: none;
   -webkit-touch-callout: none; /* iOS Safari */
