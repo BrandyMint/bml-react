@@ -21,16 +21,11 @@ class LBlockEditModal extends Component {
   }
 
   render () {
-    const { t, savedBlock, isVisible, onCancel, onDelete, onSave } = this.props;
+    const { t, savedBlock, isVisible, onCancel, onSave } = this.props;
 
     const handleCancel = () => onCancel(savedBlock);
 
     const actions = [
-      <FlatButton
-        label={t('delete')}
-        onTouchTap={onDelete}
-        className="pull-left"
-      />,
       <FlatButton
         label={t('cancel')}
         secondary
@@ -72,7 +67,6 @@ LBlockEditModal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
 
   onCancel: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
 
   savedBlock: PropTypes.object.isRequired,

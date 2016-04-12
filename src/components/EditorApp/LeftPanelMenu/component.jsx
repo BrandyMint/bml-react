@@ -11,9 +11,11 @@ import Divider from 'material-ui/lib/divider';
 
 import IconMenu     from 'material-ui/lib/svg-icons/navigation/menu';
 
-import IconBack from 'material-ui/lib/svg-icons/communication/contacts';
+import IconExit from 'material-ui/lib/svg-icons/action/exit-to-app';
 import IconPhone from 'material-ui/lib/svg-icons/hardware/phone-android';
 import IconStyle from 'material-ui/lib/svg-icons/image/style';
+
+import ListItem from 'material-ui/lib/lists/list-item';
 
 import SaveMenuItem from './SaveMenuItem';
 
@@ -54,14 +56,13 @@ class LeftPanelMenu extends Component {
     return (
       <LeftNav
         docked={false}
-        width={250}
+        width={290}
         open={isMenuOpen}
         onRequestChange={toggleMenu}
       >
-        <MenuItem onTouchTap={closeMenu} primaryText="&nbsp;" rightIcon={<IconMenu />} />
+      <MenuItem onTouchTap={closeMenu} primaryText="&nbsp;" rightIcon={<IconMenu />} />
         <Divider />
-        <SaveMenuItem />
-        <MenuItem primaryText={t('preview')} onTouchTap={goPreview} leftIcon={<IconPhone />} />
+        <ListItem primaryText={t('preview')} secondaryText={t('preview_hint')} onTouchTap={goPreview} leftIcon={<IconPhone />} />
         <MenuItem primaryText={t('wide')} onTouchTap={partial(switchBoxedLayout, !is_boxed)} checked={!is_boxed}  insetChildren />
         <MenuItem
           leftIcon={<IconStyle />}
@@ -71,7 +72,9 @@ class LeftPanelMenu extends Component {
         />
 
         <Divider />
-        <MenuItem primaryText={t('data')} href={config('exitUrl')} leftIcon={<IconBack />} />
+        <SaveMenuItem />
+        <Divider />
+        <ListItem secondaryText={t('data')} primaryText={t('exit')} href={config('exitUrl')} leftIcon={<IconExit />} />
       </LeftNav>
     );
   }

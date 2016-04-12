@@ -90,7 +90,7 @@ class Content extends Component {
       tables,
       this.state.currentEvent,
       this.state.currentDivision,
-      true,
+      false,
     );
 
     return (

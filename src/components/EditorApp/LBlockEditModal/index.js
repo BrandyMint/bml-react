@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { cancelEditingBlock, deleteEditingBlock, submitEditingBlock } from 'actions/blocks';
+import { cancelEditingBlock, submitEditingBlock } from 'actions/blocks';
 
 import { EDIT_BLOCK } from 'reducers/modal';
 
@@ -15,7 +15,6 @@ const selector = state => ({
 
 const actions = {
   onCancel: cancelEditingBlock,
-  onDelete: deleteEditingBlock,
   onSave: submitEditingBlock,
 };
 
