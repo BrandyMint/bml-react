@@ -1,5 +1,3 @@
-import invariant from 'invariant';
-
 export const CHANGE_BLOCK_CONTENT = 'CHANGE_BLOCK_CONTENT';
 export const CHANGE_BLOCK_NODE_ATTRIBUTES = 'CHANGE_BLOCK_NODE_ATTRIBUTES';
 export const CHANGE_BLOCK_FORM = 'CHANGE_BLOCK_FORM';
@@ -56,17 +54,10 @@ export const cancelEditingBlock = (block) => ({
   payload: { block },
 });
 
-export const deleteEditingBlock = () => (dispatch, getState) => {
-  const { editBlockForm } = getState();
-  const { uuid } = editBlockForm.block;
-
-  invariant(uuid, 'No uuid for deletion');
-
-  return dispatch({
-    type: DELETE_EDITING_BLOCK,
-    payload: { uuid },
-  });
-};
+export const deleteEditingBlock = (uuid) => ({
+  type: DELETE_EDITING_BLOCK,
+  payload: { uuid },
+});
 
 export const submitAddingBlock = (example) => (dispatch, getState) => {
   const { addBlockForm } = getState();

@@ -1,20 +1,10 @@
-@import "stylesheets/editor/config";
+.LBlock {
+  position: relative;
+}
 
-@component LBC {
-  display: table;
-  width: 100%;
-
-  @descendent content {
-    display: table-cell;
-  }
-
-  @descendent panel {
-    display: table-cell;
-    text-align: center;
-    vertical-align: top;
-    font-size: 20px;
-    color: #555;
-    width: 40px;
-    background: $dashboardBackground;
+.LPage--scale {
+  .LBlock {
+    margin-top: 56px;
+    margin-bottom: 56px;
   }
 }
