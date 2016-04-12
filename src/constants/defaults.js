@@ -20,3 +20,9 @@ export const defaultBackgroundVideos = [
   { src: '/assets/video/video.webm', type: 'video/webm' },
   { src: '/assets/video/video.ogv', type: 'video/ogg' },
 ];
+
+export const defaultLogoImage = {
+  url: 'http://www.wodcast.com/images/event_logos/1276.png',
+  width: 204,
+  height: 190,
+};

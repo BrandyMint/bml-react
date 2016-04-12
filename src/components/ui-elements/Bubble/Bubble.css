@@ -51,6 +51,12 @@ $hoverBorderColor: #1eabf8;
     padding-top: 3px;
   }
 
+  @modifier withText {
+    .Bubble-icon {
+      padding-left: 10px;
+    }
+  }
+
   @when processing {
     background-color: $bubbleProcessingBackground;
     border: 1px solid $borderColor;
@@ -61,6 +67,14 @@ $hoverBorderColor: #1eabf8;
       border: 1px solid $borderColor;
       color: $bubbleTextColor;
     }
+  }
+
+  @descendent text {
+    padding: 0 15px 0 6px;
+    vertical-align: middle;
+    font-size: 16px;
+    margin-top: 2px;
+    display: inline-block;
   }
 
   @descendent icon {

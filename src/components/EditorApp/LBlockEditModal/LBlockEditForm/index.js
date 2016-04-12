@@ -12,8 +12,11 @@ import {
 import LBlockEditForm from './LBlockEditForm';
 
 const blocksSelector = (state) => state.blocks;
-const blockUuidSelector = (state) => state.editBlockForm.block.uuid;
-const editBlockSelector = (blocks, uuid) => ( { block: find(blocks, { uuid }) } );
+const blockUuidSelector = (state) => state.editBlockForm;
+const editBlockSelector = (blocks, editBlockForm) => {
+  const block = find(blocks, { uuid: editBlockForm.block.uuid });
+  return ( { block } );
+};
 
 const selector = createSelector(
   blocksSelector,

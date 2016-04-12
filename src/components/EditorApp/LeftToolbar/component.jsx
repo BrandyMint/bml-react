@@ -1,42 +1,26 @@
 import React, { PropTypes } from 'react';
-import Toolbar from 'components/ui-elements/Toolbar';
-import concat from 'lodash/concat';
 
-import ExitBubble from 'components/EditorApp/Bubbles/ExitBubble';
-import RestoreBubble from 'components/EditorApp/Bubbles/RestoreBubble';
-import StateBubble from 'components/EditorApp/Bubbles/StateBubble';
+import FloatingActionButton from 'material-ui/lib/floating-action-button';
+import MenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
 
-import ColorBubble from 'components/EditorApp/Bubbles/ColorBubble';
-import BoxedBubble from 'components/EditorApp/Bubbles/BoxedBubble';
+const STYLE = { position: 'fixed', top: 32, left: 32 };
 
-const list = [<BoxedBubble />, <ColorBubble />];
+const LeftToolbar = ({ toggleMenu, enable }) => {
 
-const LeftToolbar = ({ open, hasUnsavedChanges }) => {
-  if (hasUnsavedChanges) {
+  if (enable) {
     return (
-      <Toolbar
-        open={open}
-        vertical="top"
-        horizontal="left"
-        Lead={StateBubble}
-        Items={concat(list, <RestoreBubble />)}
-      />
-    );
+      <FloatingActionButton style={STYLE} backgroundColor="#000" onTouchTap={toggleMenu}>
+          <MenuIcon />
+        </FloatingActionButton>
+      );
   }
-  return (
-    <Toolbar
-      open={open || true}
-      vertical="top"
-      horizontal="left"
-      Lead={ExitBubble}
-      Items={list}
-    />
-  );
+
+  return <noscript />;
 };
 
 LeftToolbar.propTypes = {
-  open: PropTypes.bool.isRequired,
-  hasUnsavedChanges: PropTypes.bool.isRequired,
+  enable: PropTypes.bool.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default LeftToolbar;

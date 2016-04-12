@@ -12,7 +12,11 @@ export default (blocks, action) => {
     uuid: uuid.v4(),
   };
 
-  newState.splice(position, 0, block);
+  if (position) {
+    newState.splice(position, 0, block);
+  } else {
+    newState.push(block);
+  }
 
   return backgroundResolver(newState);
 };

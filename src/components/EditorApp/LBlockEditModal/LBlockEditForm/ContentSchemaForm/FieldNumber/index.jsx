@@ -31,7 +31,7 @@ export default class FieldNumber extends Component {
         floatingLabelText={field.title}
         id={field.key}
         defaultValue={value}
-        onChange={handleChange}
+        onBlur={handleChange}
       />
     );
   }

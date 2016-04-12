@@ -9,7 +9,7 @@ class Field extends Component {
   shouldComponentUpdate(nextProps) {
     // TODO починить изменение FieldItems
     //
-    const should = true || this.props.field !== nextProps.field ||
+    const should = this.props.field !== nextProps.field ||
       this.props.value !== nextProps.value;
 
     return should;

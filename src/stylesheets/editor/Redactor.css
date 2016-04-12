@@ -5,6 +5,37 @@ $glowColor: rgba(70, 186, 249, 0.2);
 
   &:hover,
   &:focus {
+    // Специально на случай редактирования кнопок (ссылок с классом .btn)
+    cursor: auto;
+
+    // Без этого не хочет включаться режим редактирования в Safari
+    // на кнопках у которых user-select: none
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+
+  &:hover {
+    box-shadow: 0 0 16px rgba(80, 186, 249, 0.4) !important;
+    outline: 1px solid $glowColor !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0 !important;
+    outline: 0px !important;
+  }
+
+  ::selection {
+    background: $selectionColor; /* WebKit/Blink Browsers */
+  }
+}
+
+.Redactor-old {
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
     background-color: $glowColor;
 
     box-shadow: 0 0 16px rgba(80, 186, 249, 0.4) !important;

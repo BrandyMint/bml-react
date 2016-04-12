@@ -17,15 +17,34 @@ import BlockDebug from './BlockDebug';
 import './LBlockEditForm.css';
 
 class LBlockEditForm extends Component {
+
+  constructor(props) {
+    super(props);
+
+    if (props.block) {
+      const { viewName, uuid } = props.block;
+      const { changeContent, changeForm, changeNodeAttribute, changeBackgroundImage } = props;
+
+      this.onContentChange = partial(changeContent, uuid);
+      this.onFormChange = partial(changeForm, uuid);
+      this.onNodeAttributeChange = partial(changeNodeAttribute, uuid);
+      this.onBackgroundImageChange = partial(changeBackgroundImage, uuid);
+
+      this.schema = viewsRepository.getContentSchemaByViewName(viewName);
+    }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    const should = nextProps.block !== this.props.block;
+
+    return should;
+  }
+
   render() {
     const {
       t,
       block,
       onChange,
-      changeForm,
-      changeBackgroundImage,
-      changeContent,
-      changeNodeAttribute,
     } = this.props;
 
     // When material modal is closing animated here is not block
@@ -34,43 +53,34 @@ class LBlockEditForm extends Component {
       return false;
     }
 
-    const { uuid } = block;
-
-    const onContentChange = partial(changeContent, uuid);
-    const onFormChange = partial(changeForm, uuid);
-    const onNodeAttributeChange = partial(changeNodeAttribute, uuid);
-    const onBackgroundImageChange = partial(changeBackgroundImage, uuid);
-
-    const schema = viewsRepository.getContentSchemaByViewName(block.viewName);
-
     const tabs = [
       <Tab key={1} label={t('content')}>
         <ContentSchemaForm
-          schema={schema}
+          schemaFields={this.schema.fields}
           content={block.content}
-          onChange={onContentChange}
+          onChange={this.onContentChange}
         />
       </Tab>,
       <Tab key={2} label={t('element')}>
         <NodeAttributes
           attributes={block.nodeAttributes}
-          onChange={onNodeAttributeChange}
+          onChange={this.onNodeAttributeChange}
         />
       </Tab>,
     ];
-    if (schema.form) {
+    if (this.schema.form) {
       tabs.push( <Tab key={3} label={t('form')}>
           <FormEditor
             formContent={block.form}
-            onChange={onFormChange}
+            onChange={this.onFormChange}
           />
         </Tab>);
     }
-    if (schema.backgroundImage) {
+    if (this.schema.backgroundImage) {
       tabs.push( <Tab key={4} label={t('background')}>
         <BackgroundForm
           block={block}
-          onChange={onBackgroundImageChange}
+          onChange={this.onBackgroundImageChange}
         />
       </Tab>);
     }

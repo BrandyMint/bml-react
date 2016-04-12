@@ -13,6 +13,13 @@ class LBlockEditModal extends Component {
     //return this.state !== nextState || nextProps.isVisible !== this.props.isVisible;
   //}
 
+  shouldComponentUpdate(nextProps) {
+    const should = nextProps.isVisible !== this.props.isVisible  ||
+      nextProps.savedBlock !== this.props.savedBlock;
+
+    return should;
+  }
+
   render () {
     const { t, savedBlock, isVisible, onCancel, onDelete, onSave } = this.props;
 

@@ -4,6 +4,7 @@ export default [
     key: 'text',
     type: 'string',
     isRequired: true,
+    defaultValue: 'BUTTON',
   },
   {
     title: 'Ссылка',

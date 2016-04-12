@@ -4,7 +4,7 @@ import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 
 import EmptyPlaceholder from './EmptyPlaceholder';
-import LBlockSection from './LBlockSection';
+import LBlock from './LBlock';
 
 import Animated from 'components/primitives/Animated';
 
@@ -20,10 +20,11 @@ class LBlocks extends Component {
       return (<EmptyPlaceholder />);
     }
 
+    // TODO Избавиться от передачи index. Лучше в тех местах где нужен index брать через redux список блоков
     return (
       <Animated>
         {map(blocks, (block, index) =>
-           <LBlockSection block={block} index={index} key={block.uuid} />
+           <LBlock block={block} index={index} key={block.uuid} />
         )}
       </Animated>
     );

@@ -24,6 +24,8 @@ import PlainHTML from './PlainHTML';
 
 import IconifyFeatures from './IconifyFeatures';
 
+import LeaderBoard from './LeaderBoard';
+
 export const viewsList = {
   IconifyFeatures,
 
@@ -49,6 +51,8 @@ export const viewsList = {
   ContentSection1,
   ContentSection2,
   ContentSection3,
+
+  LeaderBoard,
 };
 
 export const types = {}; // Автоматически заполняется через prepareViews

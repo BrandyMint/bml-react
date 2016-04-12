@@ -1,8 +1,11 @@
 ## Цель:
 
+* [ ] Переводы en/ru синхронизировать
+
 ## Localize
 
 * src/components/EditorApp/LBlockEditModal/LBlockEditForm/NodeAttributes/index.jsx
+* [ ] LeaderBoard
 
 * [x] BM-овский лендос в дизайне
 

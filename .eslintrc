@@ -10,7 +10,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "max-len": ["error", 120, 4, {"ignoreUrls": true}],
+    "max-len": ["error", 160, 4, {"ignoreUrls": true}],
     "camelcase": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-uses-react": 2,
@@ -19,7 +19,9 @@
     "react/no-multi-comp": 1,
     "no-console": 1,
     "no-shadow": 1,
-    "consistent-return": 1
+    "consistent-return": 1,
+    "no-unused-vars": 1,
+    "react/jsx-space-before-closing": 1
   },
   "plugins": [
     "react",
