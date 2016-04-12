@@ -44,7 +44,6 @@ const data = {
   ],
 };
 
-
 export const sections = [
   {
     title: 'Рейтинговая таблица',
