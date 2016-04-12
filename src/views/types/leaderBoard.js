@@ -24,7 +24,7 @@ export const DataPropTypes = {
 const ContentPropTypes = {
   title: PropTypes.string,
   logo: PropTypes.object,
-  collection_uuid: PropTypes.string,
+  source_collection_uuid: PropTypes.string,
   data: PropTypes.shape(DataPropTypes).isRequired,
 };
 
@@ -49,7 +49,7 @@ export default {
       },
       {
         title: 'Источник результатов',
-        key: 'collection_uuid',
+        key: 'source_collection_uuid',
         type: 'string',
         isRequired: true,
         defaultValue: '',

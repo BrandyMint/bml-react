@@ -7015,7 +7015,7 @@
 	var ContentPropTypes = {
 	  title: _react.PropTypes.string,
 	  logo: _react.PropTypes.object,
-	  collection_uuid: _react.PropTypes.string,
+	  source_collection_uuid: _react.PropTypes.string,
 	  data: _react.PropTypes.shape(DataPropTypes).isRequired
 	};
 	
@@ -7037,7 +7037,7 @@
 	      isRequired: false
 	    }, {
 	      title: 'Источник результатов',
-	      key: 'collection_uuid',
+	      key: 'source_collection_uuid',
 	      type: 'string',
 	      isRequired: true,
 	      defaultValue: ''
@@ -22199,7 +22199,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.2")
+	    version: ("0.4.3")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -22227,11 +22227,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.2");
+	  var version = ("0.4.3");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.2");
+	    global.BMLVersion = ("0.4.3");
 	  } else {
-	    window.BMLVersion = ("0.4.2");
+	    window.BMLVersion = ("0.4.3");
 	    console.log('Start BML v' + version);
 	  }
 	};
