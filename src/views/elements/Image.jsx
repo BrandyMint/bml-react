@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
 
-const Image = ({ height, width, url }) => (
+const DEFAULT_CLASS_NAME = 'BML-img-fluid';
+
+const Image = ({ height, className, width, url }) => (
   <img
-    className="BML-img-fluid"
+    className={className || DEFAULT_CLASS_NAME}
     src={url}
     height={height}
     width={width}
@@ -11,6 +13,7 @@ const Image = ({ height, width, url }) => (
 
 Image.propTypes = {
   url: PropTypes.string.isRequired,
+  className: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,
   alt: PropTypes.string,

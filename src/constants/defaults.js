@@ -21,6 +21,10 @@ export const defaultBackgroundVideos = [
   { src: '/assets/video/video.ogv', type: 'video/ogg' },
 ];
 
+export const redshellLogoImage = {
+  url: 'http://www.crossfitredshell.com/assets/logo-crossfit-redshell-white-fd99090fa160f3f975a4258e18a99410af57370d92515f690942f4bd18aeb67b.svg',
+};
+
 export const defaultLogoImage = {
   url: 'http://www.wodcast.com/images/event_logos/1276.png',
   width: 204,

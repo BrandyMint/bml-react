@@ -19,8 +19,8 @@ class View extends Component {
     return (
       <ViewContainer block={ block } className="BML-section--padding">
         <div className="row mb64 mb-xs-24">
-          <div className="col-sm-12 text-center spread-children-large">
-            <Image {...block.content.logo} />
+          <div className="col-sm-12 text-center">
+            <Image {...block.content.logo} className="BML-img-logo" />
           </div>
         </div>
         <div className="row mb40 mb-xs-0">
