@@ -12,10 +12,10 @@ const renderEvent = (event, index) => (
   <option name={event} key={index}>{event}</option>
 );
 
-const selectRecords = (tables, event, division, isMale) => {
+const selectRecords = (tables, event, division, sex) => {
   const findTable = (table) => table.event === event &&
       table.division === division &&
-      table.is_male === isMale;
+      table.sex === sex;
 
   const table = tables.find(findTable);
 
@@ -83,14 +83,14 @@ class Content extends Component {
       tables,
       this.state.currentEvent,
       this.state.currentDivision,
-      true,
+      'male',
     );
 
     const recordsForWoman = selectRecords(
       tables,
       this.state.currentEvent,
       this.state.currentDivision,
-      false,
+      'female',
     );
 
     return (

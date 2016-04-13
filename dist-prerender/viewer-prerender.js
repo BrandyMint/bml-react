@@ -7002,7 +7002,7 @@
 	var TablePropTypes = exports.TablePropTypes = {
 	  event: _react.PropTypes.string.isRequired,
 	  division: _react.PropTypes.string.isRequired,
-	  is_male: _react.PropTypes.bool.isRequired,
+	  sex: _react.PropTypes.string.isRequired,
 	  records: _react.PropTypes.arrayOf(_react.PropTypes.shape(RecordPropTypes)).isRequired
 	};
 	
@@ -24381,9 +24381,9 @@
 	  );
 	};
 	
-	var selectRecords = function selectRecords(tables, event, division, isMale) {
+	var selectRecords = function selectRecords(tables, event, division, sex) {
 	  var findTable = function findTable(table) {
-	    return table.event === event && table.division === division && table.is_male === isMale;
+	    return table.event === event && table.division === division && table.sex === sex;
 	  };
 	
 	  var table = tables.find(findTable);
@@ -24463,9 +24463,9 @@
 	      var tables = this.props.tables;
 	
 	
-	      var recordsForMan = selectRecords(tables, this.state.currentEvent, this.state.currentDivision, true);
+	      var recordsForMan = selectRecords(tables, this.state.currentEvent, this.state.currentDivision, 'male');
 	
-	      var recordsForWoman = selectRecords(tables, this.state.currentEvent, this.state.currentDivision, false);
+	      var recordsForWoman = selectRecords(tables, this.state.currentEvent, this.state.currentDivision, 'female');
 	
 	      return _react2.default.createElement(
 	        'div',
@@ -24709,7 +24709,7 @@
 	  tables: [{
 	    division: 'Новички',
 	    event: event,
-	    is_male: true,
+	    sex: 'm',
 	    records: [{
 	      title: 'Иванов Иван',
 	      rank: 1,
@@ -24723,7 +24723,7 @@
 	  }, {
 	    division: 'Новички',
 	    event: event,
-	    is_male: false,
+	    sex: 'f',
 	    records: [{
 	      title: 'Петрова Светлана',
 	      rank: 1,

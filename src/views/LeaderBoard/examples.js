@@ -9,7 +9,7 @@ const data = {
     {
       division: 'Новички',
       event: event,
-      is_male: true,
+      sex: 'm',
       records: [
         {
           title: 'Иванов Иван',
@@ -27,7 +27,7 @@ const data = {
     {
       division: 'Новички',
       event: event,
-      is_male: false,
+      sex: 'f',
       records: [
         {
           title: 'Петрова Светлана',

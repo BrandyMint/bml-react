@@ -11,7 +11,7 @@ export const RecordPropTypes = {
 export const TablePropTypes = {
   event: PropTypes.string.isRequired,
   division: PropTypes.string.isRequired,
-  is_male: PropTypes.bool.isRequired,
+  sex: PropTypes.string.isRequired,
   records: PropTypes.arrayOf(PropTypes.shape(RecordPropTypes)).isRequired,
 };
 
