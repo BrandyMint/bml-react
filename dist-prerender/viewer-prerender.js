@@ -22199,7 +22199,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.3")
+	    version: ("0.4.4")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -22227,11 +22227,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.3");
+	  var version = ("0.4.4");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.3");
+	    global.BMLVersion = ("0.4.4");
 	  } else {
-	    window.BMLVersion = ("0.4.3");
+	    window.BMLVersion = ("0.4.4");
 	    console.log('Start BML v' + version);
 	  }
 	};
@@ -24805,10 +24805,10 @@
 	    key: 'render',
 	    value: function render() {
 	      /* eslint-disable react/prop-types */
-	      var _props = this.props;
-	      var block = _props.block;
-	      var content = _props.block.content;
+	      var block = this.props.block;
 	      /* eslint-enable */
+	
+	      var data = block.data || block.content.data;
 	
 	      return _react2.default.createElement(
 	        _ViewContainer2.default,
@@ -24819,7 +24819,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'col-sm-12 text-center spread-children-large' },
-	            _react2.default.createElement(_Image2.default, content.logo)
+	            _react2.default.createElement(_Image2.default, block.content.logo)
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -24835,7 +24835,7 @@
 	            })
 	          )
 	        ),
-	        _react2.default.createElement(_Content2.default, content.data)
+	        _react2.default.createElement(_Content2.default, data)
 	      );
 	    }
 	  }]);

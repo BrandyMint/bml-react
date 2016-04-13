@@ -11,14 +11,16 @@ import './index.scss';
 class View extends Component {
   render() {
     /* eslint-disable react/prop-types */
-    const { block, block: { content } } = this.props;
+    const { block } = this.props;
     /* eslint-enable */
+
+    const data = block.data || block.content.data;
 
     return (
       <ViewContainer block={ block } className="BML-section--padding">
         <div className="row mb64 mb-xs-24">
           <div className="col-sm-12 text-center spread-children-large">
-            <Image {...content.logo} />
+            <Image {...block.content.logo} />
           </div>
         </div>
         <div className="row mb40 mb-xs-0">
@@ -30,7 +32,7 @@ class View extends Component {
             />
           </div>
         </div>
-        <Content {...content.data} />
+        <Content {...data} />
       </ViewContainer>
     );
   }
