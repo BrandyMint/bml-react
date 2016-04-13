@@ -39,7 +39,7 @@ class FieldItems extends Component {
     const newItems = [ ...items ];
     const item = newItems[index];
     newItems[index] = {...item, [fieldKey]: fieldValue};
-    this.props.onChange(items);
+    this.props.onChange(newItems);
   }
 
   onRemoveItem(index) {
