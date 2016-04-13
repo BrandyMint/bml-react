@@ -11,7 +11,7 @@ class NodeAttributes extends Component {
   }
 
   render() {
-    const { attributes = {}, onChange } = this.props;
+    const { attributes = {}, uuid, onChange } = this.props;
 
     return (
       <div className="TabPage">
@@ -20,7 +20,7 @@ class NodeAttributes extends Component {
           description="Аттрибут id у тега блока"
           placeholder="Введите идентификатор блока"
           title="Идентификатор блока (якорь)"
-          value={get(attributes, 'id')}
+          value={get(attributes, 'id') || uuid}
           onChange={partial(onChange, 'id')}
         />
         <Attribute
@@ -38,6 +38,7 @@ class NodeAttributes extends Component {
 
 NodeAttributes.propTypes = {
   attributes: PropTypes.object,
+  uuid: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
