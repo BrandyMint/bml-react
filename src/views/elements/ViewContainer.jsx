@@ -24,7 +24,7 @@ class ViewContainer extends Component {
       backgroundImage,
     } = block;
 
-    const blockId = get('nodeAttributes.id') || uuid;
+    const blockId = get(block, 'nodeAttributes.id') || uuid;
     const blockClasses = classnames(
       {
         'BML-section': true,

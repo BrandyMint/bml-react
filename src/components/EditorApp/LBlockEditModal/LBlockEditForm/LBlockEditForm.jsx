@@ -64,6 +64,7 @@ class LBlockEditForm extends Component {
       <Tab key={2} label={t('element')}>
         <NodeAttributes
           attributes={block.nodeAttributes}
+          uuid={block.uuid}
           onChange={this.onNodeAttributeChange}
         />
       </Tab>,

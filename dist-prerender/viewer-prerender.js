@@ -515,7 +515,7 @@
 	      var backgroundImage = block.backgroundImage;
 	
 	
-	      var blockId = (0, _get2.default)('nodeAttributes.id') || uuid;
+	      var blockId = (0, _get2.default)(block, 'nodeAttributes.id') || uuid;
 	      var blockClasses = (0, _classnames3.default)(_defineProperty({
 	        'BML-section': true
 	      }, 'BML-View-' + viewName, true), (0, _get2.default)(backgroundStyle, 'bgClasses'), className, (0, _get2.default)(nodeAttributes, 'class'));
@@ -5456,8 +5456,6 @@
 	      }
 	
 	      var classNames = (0, _classnames2.default)('BML-buttons-group', className);
-	      // <ul className="list-inline MustRead3-buttons">
-	      // (<li className="list-inline-item" key={index}>
 	
 	      return _react2.default.createElement(
 	        'div',
@@ -22199,7 +22197,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.4")
+	    version: ("0.4.5")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -22227,11 +22225,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.4");
+	  var version = ("0.4.5");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.4");
+	    global.BMLVersion = ("0.4.5");
 	  } else {
-	    window.BMLVersion = ("0.4.4");
+	    window.BMLVersion = ("0.4.5");
 	    console.log('Start BML v' + version);
 	  }
 	};
