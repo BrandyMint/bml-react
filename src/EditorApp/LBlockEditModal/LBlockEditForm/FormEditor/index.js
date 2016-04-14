@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
-import Field from '../ContentSchemaForm/Field';
+import Field from 'components/ContentSchemaForm/Field';
 
 import formSchema from './formSchema';
 

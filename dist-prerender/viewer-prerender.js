@@ -89,11 +89,11 @@
 	
 	var _store2 = _interopRequireDefault(_store);
 	
-	var _LandingLoader = __webpack_require__(341);
+	var _LandingLoader = __webpack_require__(345);
 	
 	var _LandingLoader2 = _interopRequireDefault(_LandingLoader);
 	
-	var _ShowApp = __webpack_require__(345);
+	var _ShowApp = __webpack_require__(342);
 	
 	var _ShowApp2 = _interopRequireDefault(_ShowApp);
 	
@@ -12841,7 +12841,7 @@
 	
 	var _createReducer2 = _interopRequireDefault(_createReducer);
 	
-	var _activity = __webpack_require__(339);
+	var _activity = __webpack_require__(343);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21470,6 +21470,166 @@
 
 /***/ },
 /* 339 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _map = __webpack_require__(19);
+	
+	var _map2 = _interopRequireDefault(_map);
+	
+	var _size = __webpack_require__(61);
+	
+	var _size2 = _interopRequireDefault(_size);
+	
+	var _classnames = __webpack_require__(34);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _ViewComponent = __webpack_require__(351);
+	
+	var _ViewComponent2 = _interopRequireDefault(_ViewComponent);
+	
+	__webpack_require__(44);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Page = function Page(_ref) {
+	  var blocks = _ref.blocks;
+	  var is_boxed = _ref.is_boxed;
+	  var className = _ref.className;
+	
+	  var classNames = (0, _classnames2.default)(className, { 'boxed-layout': is_boxed });
+	  if ((0, _size2.default)(blocks) > 0) {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: classNames },
+	      (0, _map2.default)(blocks, function (block, index) {
+	        return _react2.default.createElement(_ViewComponent2.default, { block: block, key: index });
+	      })
+	    );
+	  }
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { className: classNames },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'PageEmptyPlaceholder' },
+	      _react2.default.createElement(
+	        'h2',
+	        { className: 'PageEmptyPlaceholder-header' },
+	        'Сайт еще не готов.'
+	      )
+	    )
+	  );
+	};
+	
+	Page.propTypes = {
+	  className: _react.PropTypes.string,
+	  blocks: _react.PropTypes.array.isRequired,
+	  is_boxed: _react.PropTypes.bool.isRequired
+	};
+	
+	exports.default = Page;
+
+/***/ },
+/* 340 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(62);
+	
+	var _reselect = __webpack_require__(828);
+	
+	var _backgroundResolver = __webpack_require__(21);
+	
+	var _backgroundResolver2 = _interopRequireDefault(_backgroundResolver);
+	
+	var _component = __webpack_require__(339);
+	
+	var _component2 = _interopRequireDefault(_component);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var selector = (0, _reselect.createStructuredSelector)({
+	  blocks: function blocks(state) {
+	    return (0, _backgroundResolver2.default)(state.blocks);
+	  },
+	  is_boxed: function is_boxed(state) {
+	    return state.site.is_boxed;
+	  }
+	});
+	
+	exports.default = (0, _reactRedux.connect)(selector)(_component2.default);
+
+/***/ },
+/* 341 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Tracker = __webpack_require__(349);
+	
+	var _Tracker2 = _interopRequireDefault(_Tracker);
+	
+	var _Themer = __webpack_require__(347);
+	
+	var _Themer2 = _interopRequireDefault(_Themer);
+	
+	var _Page = __webpack_require__(340);
+	
+	var _Page2 = _interopRequireDefault(_Page);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ShowApp = function ShowApp(_ref) {
+	  var children = _ref.children;
+	  var className = _ref.className;
+	  return _react2.default.createElement(
+	    _Tracker2.default,
+	    null,
+	    _react2.default.createElement(
+	      _Themer2.default,
+	      null,
+	      _react2.default.createElement(_Page2.default, { className: className }),
+	      children
+	    )
+	  );
+	};
+	
+	ShowApp.propTypes = {
+	  className: _react.PropTypes.string,
+	  children: _react.PropTypes.arrayOf(_react.PropTypes.element) };
+	
+	// Например сюда передаются Toolbar-ы при preview
+	exports.default = ShowApp;
+
+/***/ },
+/* 342 */
+[841, 341],
+/* 343 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21487,7 +21647,7 @@
 	};
 
 /***/ },
-/* 340 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21574,7 +21734,7 @@
 	exports.default = LandingLoader;
 
 /***/ },
-/* 341 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21585,7 +21745,7 @@
 	
 	var _reactRedux = __webpack_require__(62);
 	
-	var _component = __webpack_require__(340);
+	var _component = __webpack_require__(344);
 	
 	var _component2 = _interopRequireDefault(_component);
 	
@@ -21604,166 +21764,6 @@
 	exports.default = (0, _reactRedux.connect)(selector, actions)(_component2.default);
 
 /***/ },
-/* 342 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _map = __webpack_require__(19);
-	
-	var _map2 = _interopRequireDefault(_map);
-	
-	var _size = __webpack_require__(61);
-	
-	var _size2 = _interopRequireDefault(_size);
-	
-	var _classnames = __webpack_require__(34);
-	
-	var _classnames2 = _interopRequireDefault(_classnames);
-	
-	var _ViewComponent = __webpack_require__(351);
-	
-	var _ViewComponent2 = _interopRequireDefault(_ViewComponent);
-	
-	__webpack_require__(44);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Page = function Page(_ref) {
-	  var blocks = _ref.blocks;
-	  var is_boxed = _ref.is_boxed;
-	  var className = _ref.className;
-	
-	  var classNames = (0, _classnames2.default)(className, { 'boxed-layout': is_boxed });
-	  if ((0, _size2.default)(blocks) > 0) {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: classNames },
-	      (0, _map2.default)(blocks, function (block, index) {
-	        return _react2.default.createElement(_ViewComponent2.default, { block: block, key: index });
-	      })
-	    );
-	  }
-	
-	  return _react2.default.createElement(
-	    'div',
-	    { className: classNames },
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'PageEmptyPlaceholder' },
-	      _react2.default.createElement(
-	        'h2',
-	        { className: 'PageEmptyPlaceholder-header' },
-	        'Сайт еще не готов.'
-	      )
-	    )
-	  );
-	};
-	
-	Page.propTypes = {
-	  className: _react.PropTypes.string,
-	  blocks: _react.PropTypes.array.isRequired,
-	  is_boxed: _react.PropTypes.bool.isRequired
-	};
-	
-	exports.default = Page;
-
-/***/ },
-/* 343 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _reactRedux = __webpack_require__(62);
-	
-	var _reselect = __webpack_require__(828);
-	
-	var _backgroundResolver = __webpack_require__(21);
-	
-	var _backgroundResolver2 = _interopRequireDefault(_backgroundResolver);
-	
-	var _component = __webpack_require__(342);
-	
-	var _component2 = _interopRequireDefault(_component);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var selector = (0, _reselect.createStructuredSelector)({
-	  blocks: function blocks(state) {
-	    return (0, _backgroundResolver2.default)(state.blocks);
-	  },
-	  is_boxed: function is_boxed(state) {
-	    return state.site.is_boxed;
-	  }
-	});
-	
-	exports.default = (0, _reactRedux.connect)(selector)(_component2.default);
-
-/***/ },
-/* 344 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _Tracker = __webpack_require__(349);
-	
-	var _Tracker2 = _interopRequireDefault(_Tracker);
-	
-	var _Themer = __webpack_require__(347);
-	
-	var _Themer2 = _interopRequireDefault(_Themer);
-	
-	var _Page = __webpack_require__(343);
-	
-	var _Page2 = _interopRequireDefault(_Page);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var ShowApp = function ShowApp(_ref) {
-	  var children = _ref.children;
-	  var className = _ref.className;
-	  return _react2.default.createElement(
-	    _Tracker2.default,
-	    null,
-	    _react2.default.createElement(
-	      _Themer2.default,
-	      null,
-	      _react2.default.createElement(_Page2.default, { className: className }),
-	      children
-	    )
-	  );
-	};
-	
-	ShowApp.propTypes = {
-	  className: _react.PropTypes.string,
-	  children: _react.PropTypes.arrayOf(_react.PropTypes.element) };
-	
-	// Например сюда передаются Toolbar-ы при preview
-	exports.default = ShowApp;
-
-/***/ },
-/* 345 */
-[841, 344],
 /* 346 */
 /***/ function(module, exports, __webpack_require__) {
 

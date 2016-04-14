@@ -11,7 +11,7 @@ import { FULL_VIEWS_EXAMPLES_SECTIONS } from 'constants/fullViewsExamples';
 import assign from 'lodash/assign';
 import expect from 'expect';
 
-import LBlock from 'components/EditorApp/LPage/LBlocks/LBlock/component';
+import LBlock from 'EditorApp/LPage/LBlocks/LBlock/component';
 
 const store = createStore(state => state, initialState);
 

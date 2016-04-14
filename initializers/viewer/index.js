@@ -9,7 +9,7 @@ import 'stylesheets/viewer.scss';
 
 import createStore from './store';
 import LandingLoader from 'components/LandingLoader';
-import ShowApp from 'components/ShowApp';
+import ShowApp from 'ShowApp';
 import initialState from 'constants/initialState';
 
 import backgroundResolver from 'helpers/backgroundResolver';

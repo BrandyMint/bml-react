@@ -6,7 +6,7 @@ import partial from 'lodash/partial';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 
-import ContentSchemaForm from './ContentSchemaForm';
+import ContentSchemaForm from 'components/ContentSchemaForm';
 import NodeAttributes from './NodeAttributes';
 import BackgroundForm from './BackgroundForm';
 import FormEditor from './FormEditor';

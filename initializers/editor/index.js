@@ -10,12 +10,13 @@ import 'stylesheets/editor.scss';
 
 import { store, history } from './store';
 
+import DesktopPreviewApp from 'EditorApp/DesktopPreviewApp';
+import MobilePreviewApp from 'EditorApp/MobilePreviewApp';
 import LandingLoader from 'components/LandingLoader';
-import DesktopPreviewApp from 'components/DesktopPreviewApp';
-import ShowApp from 'components/ShowApp';
-import MobilePreviewApp from 'components/MobilePreviewApp';
-import NoMatch from 'components/NoMatch';
-import EditorApp from 'components/EditorApp';
+import NoMatch from 'EditorApp/NoMatch';
+
+import ShowApp from 'ShowApp';
+import EditorApp from 'EditorApp';
 
 if (__ENV__ === 'development') {
   window.React = React;

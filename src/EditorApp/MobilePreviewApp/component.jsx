@@ -2,11 +2,11 @@
 
 import React, { PropTypes } from 'react';
 import BodyClassName from 'react-body-classname';
-import ShowApp from 'components/ShowApp';
+import ShowApp from 'ShowApp';
 
 import ReactTooltip from 'react-tooltip';
 
-import PreviewToolbar from 'components/DesktopPreviewApp/PreviewToolbar';
+import PreviewToolbar from 'EditorApp/DesktopPreviewApp/PreviewToolbar';
 
 import Frame from 'react-frame-component';
 
