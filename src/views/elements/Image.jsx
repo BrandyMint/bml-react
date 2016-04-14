@@ -5,6 +5,7 @@ const DEFAULT_CLASS_NAME = 'BML-img-fluid';
 const Image = ({ height, className, width, url }) => (
   <img
     className={className || DEFAULT_CLASS_NAME}
+    role="presentation"
     src={url}
     height={height}
     width={width}

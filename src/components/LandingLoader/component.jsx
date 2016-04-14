@@ -14,16 +14,23 @@ class LandingLoader extends Component {
   render() {
     const { loadingState, children } = this.props;
 
+    let result;
+
     switch (loadingState) {
       case LOADING_STATE_LOADING:
-        return (<div>Загружаю..</div>);
+        result = (<div>Загружаю..</div>);
+        break;
       case LOADING_STATE_LOADED:
-        return children;
+        result = children;
+        break;
       case LOADING_STATE_FAILURE:
-        return (<div>Произошла ошибка при загрузке</div>);
+        result = (<div>Произошла ошибка при загрузке</div>);
+        break;
       default:
-        return (<div>Ничего не происходит, это странно..</div>);
+        result = (<div>Ничего не происходит, это странно..</div>);
     }
+
+    return result;
   }
 }
 

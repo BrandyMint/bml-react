@@ -17,7 +17,7 @@ class FieldImage extends Component {
     return (
       <FormGroup fieldKey={field.key} title={field.title}>
         <div>
-          <img src={value.url} style={imageStyle} />
+          <img src={value.url} style={imageStyle} role="presentation" />
           <input
             className="form-control"
             type="text"
