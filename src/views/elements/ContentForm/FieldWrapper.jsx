@@ -5,9 +5,9 @@ const getClasses = (hasError) => classnames({ 'form-group': true, 'has-error': h
 
 const FieldWrapper = ({ children, title, hint, hasError, name }) => (
     <div className={getClasses(hasError)}>
-      {title && (<label htmlFor={name}>{title}</label>)}
+      {title && title.length > 0 && (<label htmlFor={name}>{title}</label>)}
       {children}
-      {hint && <p className="help-block" dangerouslySetInnerHTML={{ __html: hint }} />}
+      {hint && hint.length > 0 && <p className="help-block" dangerouslySetInnerHTML={{ __html: hint }} />}
     </div>
   );
 

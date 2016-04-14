@@ -25,6 +25,7 @@ $inputHeight: 5.0rem;
 
   &.form-inline {
     .form-group {
+      vertical-align: top;
       margin-right: 2.5rem;
       &:last-of-type {
         margin-right: 0px;
