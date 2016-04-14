@@ -1,4 +1,10 @@
 @component BML-BackgroundVideo {
+  /* This helps to place video when component in bottom of page */
+  position: absolute;
+  min-width: 100%;
+  min-height: 100px;
+  height: inherit;
+
   @descendent overlay {
     position: absolute;
     top: 0;
