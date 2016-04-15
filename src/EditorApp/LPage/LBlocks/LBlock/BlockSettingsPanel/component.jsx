@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { translate } from 'react-i18next';
+import { findDOMNode } from 'react-dom';
 
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
@@ -14,9 +16,14 @@ import IconViews from 'material-ui/svg-icons/action/view-carousel';
 import IconAttributes from 'material-ui/svg-icons/action/extension';
 
 import Divider from 'material-ui/Divider';
+import FaCog from 'react-icons/lib/fa/cog';
+// import FaCog from 'react-icons/lib/md/extension';
 
-import LBlockSettingsButton from './LBlockSettingsButton';
+import BubbleIcon from 'components/ui-elements/BubbleIcon';
+
 import partial from 'lodash/partial';
+
+import './index.scss';
 
 class BlockSettingsPanel extends Component {
   constructor(props) {
@@ -36,7 +43,7 @@ class BlockSettingsPanel extends Component {
 
     this.state = {
       open: false,
-      anchorEl: undefined,
+      anchorEl: null,
     };
   }
 
@@ -48,8 +55,15 @@ class BlockSettingsPanel extends Component {
     this.setState({ open: false });
   }
 
+  componentDidMount() {
+    this.setState({
+      anchorEl: findDOMNode(this)
+    });
+  }
+
   render() {
     const {
+      t,
       enable, block,
       schema,
       hasMultipleViews,
@@ -62,15 +76,16 @@ class BlockSettingsPanel extends Component {
     }
 
     return (
-      <LBlockSettingsButton ref="button" onClick={this.open}>
+      <div className="LBlockSettingsButton">
+        <BubbleIcon onClick={this.open} text={t('tips:block_settings')}>
+          <FaCog />
+        </BubbleIcon>
         <Popover
+          anchorEl={this.state.anchorEl}
           anchorOrigin={{horizontal: 'right', vertical: 'top'}}
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
           open={this.state.open}
-          canAutoPosition
-          autoCloseWhenOffScreen
           onRequestClose={this.close}
-          useLayerForClickAway
         >
 				<Menu animateOpen onItemTouchTap={this.close}>
 					<MenuItem value="edit_content" primaryText="Изменить текст" leftIcon={<IconEdit />} onTouchTap={this.onEditingStart} />
@@ -83,13 +98,14 @@ class BlockSettingsPanel extends Component {
 					<MenuItem primaryText="Переместить ниже" leftIcon={<IconDown />} onTouchTap={this.onBlockPositionDown} disabled={!enableMoveDown} />
 					<MenuItem primaryText="Удалить" value="del" leftIcon={<IconRemove />} onTouchTap={this.onDelete} />
 				</Menu>
-			</Popover>
-    </LBlockSettingsButton>
+      </Popover>
+    </div>
     );
   }
 }
 
 BlockSettingsPanel.propTypes = {
+  t: PropTypes.func.isRequired,
   block: PropTypes.object.isRequired,
   enable: PropTypes.bool.isRequired,
 
@@ -110,4 +126,4 @@ BlockSettingsPanel.propTypes = {
   onDelete: PropTypes.func.isRequired,
 };
 
-export default BlockSettingsPanel;
+export default translate('')(BlockSettingsPanel);
