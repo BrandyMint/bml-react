@@ -3,8 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
 import partial from 'lodash/partial';
 
-import Tabs from 'material-ui/lib/tabs/tabs';
-import Tab from 'material-ui/lib/tabs/tab';
+import Tabs from 'material-ui/Tabs/Tabs';
+import Tab from 'material-ui/Tabs/Tab';
 
 import ContentSchemaForm from 'components/ContentSchemaForm';
 import NodeAttributes from './NodeAttributes';

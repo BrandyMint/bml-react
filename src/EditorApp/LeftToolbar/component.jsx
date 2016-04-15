@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-import FloatingActionButton from 'material-ui/lib/floating-action-button';
-import MenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 
 const STYLE = { position: 'fixed', top: 32, left: 32 };
 

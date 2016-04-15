@@ -1,19 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 
-import Popover from 'material-ui/lib/popover/popover';
-import Menu from 'material-ui/lib/menus/menu';
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import ListItem from 'material-ui/lib/lists/list-item';
-import IconUp from 'material-ui/lib/svg-icons/navigation/arrow-upward';
-import IconDown from 'material-ui/lib/svg-icons/navigation/arrow-downward';
-import IconRemove from 'material-ui/lib/svg-icons/action/delete';
-import IconEdit from 'material-ui/lib/svg-icons/editor/mode-edit';
-import IconForm from 'material-ui/lib/svg-icons/action/description';
-import IconBackground from 'material-ui/lib/svg-icons/image/panorama';
-import IconViews from 'material-ui/lib/svg-icons/action/view-carousel';
-import IconAttributes from 'material-ui/lib/svg-icons/action/extension';
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import ListItem from 'material-ui/List/ListItem';
+import IconUp from 'material-ui/svg-icons/navigation/arrow-upward';
+import IconDown from 'material-ui/svg-icons/navigation/arrow-downward';
+import IconRemove from 'material-ui/svg-icons/action/delete';
+import IconEdit from 'material-ui/svg-icons/editor/mode-edit';
+import IconForm from 'material-ui/svg-icons/action/description';
+import IconBackground from 'material-ui/svg-icons/image/panorama';
+import IconViews from 'material-ui/svg-icons/action/view-carousel';
+import IconAttributes from 'material-ui/svg-icons/action/extension';
 
-import Divider from 'material-ui/lib/divider';
+import Divider from 'material-ui/Divider';
 
 import LBlockSettingsButton from './LBlockSettingsButton';
 import partial from 'lodash/partial';

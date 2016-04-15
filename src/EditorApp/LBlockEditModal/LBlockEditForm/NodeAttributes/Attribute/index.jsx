@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import TextField from 'material-ui/lib/text-field';
+import TextField from 'material-ui/TextField';
 
 const Attribute = ({
   placeholder,

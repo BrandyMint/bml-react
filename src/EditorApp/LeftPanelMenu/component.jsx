@@ -4,18 +4,18 @@ import partial from 'lodash/partial';
 import config from 'constants/config';
 import { ThemesRepo } from 'constants/themes';
 
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import LeftNav from 'material-ui/lib/left-nav';
+import MenuItem from 'material-ui/MenuItem';
+import Drawer from 'material-ui/Drawer';
 
-import Divider from 'material-ui/lib/divider';
+import Divider from 'material-ui/Divider';
 
-import IconMenu     from 'material-ui/lib/svg-icons/navigation/menu';
+import IconMenu     from 'material-ui/svg-icons/navigation/menu';
 
-import IconExit from 'material-ui/lib/svg-icons/action/exit-to-app';
-import IconPhone from 'material-ui/lib/svg-icons/hardware/phone-android';
-import IconStyle from 'material-ui/lib/svg-icons/image/style';
+import IconExit from 'material-ui/svg-icons/action/exit-to-app';
+import IconPhone from 'material-ui/svg-icons/hardware/phone-android';
+import IconStyle from 'material-ui/svg-icons/image/style';
 
-import ListItem from 'material-ui/lib/lists/list-item';
+import ListItem from 'material-ui/List/ListItem';
 
 import SaveMenuItem from './SaveMenuItem';
 
@@ -54,7 +54,7 @@ class LeftPanelMenu extends Component {
     const onChangeTheme = () => changeTheme(nextTheme.name);
 
     return (
-      <LeftNav
+      <Drawer
         docked={false}
         width={290}
         open={isMenuOpen}
@@ -75,7 +75,7 @@ class LeftPanelMenu extends Component {
         <SaveMenuItem />
         <Divider />
         <ListItem secondaryText={t('data')} primaryText={t('exit')} href={config('exitUrl')} leftIcon={<IconExit />} />
-      </LeftNav>
+      </Drawer>
     );
   }
 }

@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 import map from 'lodash/map';
 import partial from 'lodash/partial';
 
-import RaisedButton from 'material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import FieldSubitem, { FieldSubitemPropTypes } from './FieldSubitem';
 

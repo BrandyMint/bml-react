@@ -1,9 +1,9 @@
 import React, { PropTypes, Component } from 'react';
 
-import { red500 } from 'material-ui/lib/styles/colors';
-import IconSave from 'material-ui/lib/svg-icons/content/save';
-import IconFace from 'material-ui/lib/svg-icons/action/face';
-import IconProcess from 'material-ui/lib/svg-icons/action/update';
+import { red500 } from 'material-ui/Styles/colors';
+import IconSave from 'material-ui/svg-icons/content/save';
+import IconFace from 'material-ui/svg-icons/action/face';
+import IconProcess from 'material-ui/svg-icons/action/update';
 import { translate } from 'react-i18next';
 
 class SaveMenuItem extends Component {

@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import { translate } from 'react-i18next';
 
-import FlatButton from 'material-ui/lib/flat-button';
-import Dialog from 'material-ui/lib/dialog';
+import FlatButton from 'material-ui/FlatButton';
+import Dialog from 'material-ui/Dialog';
 // import Modal from 'components/ui-elements/Modal';
 import LBlockEditForm from './LBlockEditForm';
 

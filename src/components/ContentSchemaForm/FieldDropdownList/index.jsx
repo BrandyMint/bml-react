@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
-import SelectField from 'material-ui/lib/select-field';
-import MenuItem from 'material-ui/lib/menus/menu-item';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 export default class FieldDropdownList extends Component {
   static propTypes = {

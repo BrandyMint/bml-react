@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
-import RaisedButton from 'material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import map from 'lodash/map';
 import partial from 'lodash/partial';

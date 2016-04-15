@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import TextField from 'material-ui/lib/text-field';
+import TextField from 'material-ui/TextField';
 
 class FieldText extends Component {
   shouldComponentUpdate(nextProps) {

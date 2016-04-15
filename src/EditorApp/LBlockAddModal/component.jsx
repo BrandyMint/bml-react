@@ -1,7 +1,7 @@
 import { translate } from 'react-i18next';
 import React, { PropTypes } from 'react';
 
-import Dialog from 'material-ui/lib/dialog';
+import Dialog from 'material-ui/Dialog';
 
 import LBlockAddForm from './LBlockAddForm';
 

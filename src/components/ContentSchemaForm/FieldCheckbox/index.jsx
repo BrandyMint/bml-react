@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import Checkbox from 'material-ui/lib/checkbox';
+import Checkbox from 'material-ui/Checkbox';
 
 export default class FieldCheckbox extends Component {
   static propTypes = {
