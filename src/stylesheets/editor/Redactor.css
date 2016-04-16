@@ -1,5 +1,7 @@
 $glowColor: rgba(70, 186, 249, 0.2);
 
+/* TODO z-index бордюров должен быть ниже BlockSettingsPanel */
+
 .Redactor {
   transition: all 0.3s;
   word-break: normal !important;

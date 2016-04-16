@@ -25,6 +25,10 @@ import partial from 'lodash/partial';
 
 import './index.scss';
 
+const FIXED_STYLE = {
+  position: 'fixed',
+}
+
 class BlockSettingsPanel extends Component {
   constructor(props) {
     super(props);
@@ -61,31 +65,34 @@ class BlockSettingsPanel extends Component {
   }
 
   render() {
-    const {
-      t,
-      enable, block,
-      schema,
-      hasMultipleViews,
-      enableMoveDown, enableMoveUp,
-
-    } = this.props;
+    const { t, fixed, enable } = this.props;
 
     if (!enable) {
       return (<noscript />);
     }
 
+    let style = {};
+
+    if (fixed) {
+      style = FIXED_STYLE;
+    }
+
+    console.log(fixed);
+
     return (
-      <div className="LBlockSettingsButton">
+      <div className="LBlockSettingsButton" style={style}>
         <BubbleIcon onClick={this.open} text={t('tips:block_settings')}>
           <FaCog />
         </BubbleIcon>
-    </div>
+      </div>
     );
   }
 }
 
 BlockSettingsPanel.propTypes = {
   t: PropTypes.func.isRequired,
+  fixed: PropTypes.bool.isRequired,
+
   block: PropTypes.object.isRequired,
   enable: PropTypes.bool.isRequired,
 
