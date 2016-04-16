@@ -18,7 +18,6 @@ class ContentSchemaForm extends Component {
     const should = this.props.schemaFields !== nextProps.schemaFields ||
       this.props.uuid !== nextProps.uuid ||
       this.props.content !== nextProps.content
-    console.log("ContentSchameForm should", should);
     return should;
   }
   onChange(path, value) {

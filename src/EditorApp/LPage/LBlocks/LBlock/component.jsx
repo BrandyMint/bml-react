@@ -25,6 +25,18 @@ class LBlock extends Component {
     };
   }
 
+  getChildContext() {
+    const { block, onContentChange } = this.props;
+
+    return {
+      onContentChange: partial(onContentChange, block.uuid),
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     const should = nextProps.block != this.props.block ||
       nextState.mouseOver != this.state.mouseOver ||
@@ -33,20 +45,16 @@ class LBlock extends Component {
     return should;
   }
 
-	componentDidMount() {
-		window.addEventListener('scroll', this.handleScroll);
-	}
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.handleScroll);
-	}
+  onMouseLeave() {
+    this.setState({ mouseOver: false });
+  }
 
-  getChildContext() {
-    const { block, onContentChange } = this.props;
-
-    return {
-      onContentChange: partial(onContentChange, block.uuid),
-    };
+  onMouseOver() {
+    this.setState({ mouseOver: true });
   }
 
   handleScroll(event) {
@@ -62,14 +70,6 @@ class LBlock extends Component {
       settingsFixed: fixed,
       settingsVisible: visible,
     });
-  }
-
-  onMouseLeave() {
-    this.setState({ mouseOver: false });
-  }
-
-  onMouseOver() {
-    this.setState({ mouseOver: true });
   }
 
   render() {

@@ -16,7 +16,6 @@ class Field extends Component {
     const should = this.props.field !== nextProps.field ||
       this.props.value !== nextProps.value;
 
-    console.log("Field should", this.props.field.key, should);
     return should;
   }
   onChange(value) {

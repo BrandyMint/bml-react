@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { PropTypes, Component } from 'react';
 import { translate } from 'react-i18next';
 import BodyClassName from 'react-body-classname';
@@ -62,8 +64,6 @@ class BlockContentEditModal extends Component {
 
   render () {
     const { t, savedBlock, open, children } = this.props;
-
-    console.log("Render dialog", open);
 
     if (!open) {
       return null;

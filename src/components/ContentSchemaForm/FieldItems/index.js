@@ -26,8 +26,10 @@ class FieldItems extends Component {
     this.onRemoveItem = this.onRemoveItem.bind(this);
   }
   shouldComponentUpdate(nextProps) {
-    console.log("FieldItems should");
-    return true;
+    const should = nextProps.field !== this.props.field ||
+      nextProps.value !== this.props.value;
+
+    return should;
   }
   onClickAdd() {
     const items = this.props.value;

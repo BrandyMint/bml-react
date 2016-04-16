@@ -61,9 +61,11 @@ class BlockContentEditModal extends Component {
   render () {
     const { t, savedBlock, open, children } = this.props;
 
-    console.log("Render dialog", open);
+    if (!savedBlock) {
+      return null;
+    }
 
-    const title = savedBlock && t('title', { name: savedBlock.viewName });
+    const title = t('title', { name: savedBlock.viewName });
     return (
       <Dialog
         title={title}
@@ -93,7 +95,8 @@ BlockContentEditModal.propTypes = {
   onCancel: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
 
-  savedBlock: PropTypes.object.isRequired,
+  // Can be empty if dialog is new and hidden
+  savedBlock: PropTypes.object,
 };
 
 export default translate('block_edit_modal')(BlockContentEditModal);

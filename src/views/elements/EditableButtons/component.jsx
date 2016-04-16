@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import EditableEditor from 'views/elements/Editable/Editor';
 import EditorOptions from 'views/elements/Editable/options';
 
+import shallowCompare from 'react-addons-shallow-compare';
+
 import Buttons from 'views/elements/Buttons';
 
 import classnames from 'classnames';
@@ -12,10 +14,8 @@ import map from 'lodash/map';
 const DEFAULT_BUTTON_TEXT = 'КНОПКА';
 
 class EditableButtons extends Component {
-  shouldComponentUpdate(nextProps) {
-    // TODO зависит и от props и от context
-    // Хотя это странно если у компонента будут меняться props
-    return true;
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
   }
 
   getButtons() {

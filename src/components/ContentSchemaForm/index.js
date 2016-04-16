@@ -13,10 +13,6 @@ const selector = createSelector(
   isModalOpenSelector(EDIT_BLOCK_CONTENT),
   editBlockSelector,
   (open, block) => {
-    if (!open) {
-      return { open };
-    }
-
     return {
       open,
       content: block.content,
