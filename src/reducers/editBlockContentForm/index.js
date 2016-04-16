@@ -1,7 +1,7 @@
 import createReducer from 'helpers/createReducer';
 
 import {
-  CANCEL_EDITING_BLOCK, START_EDITING_BLOCK_CONTENT, SUBMIT_EDITING_BLOCK,
+  START_EDITING_BLOCK_CONTENT,
 } from 'actions/blocks';
 
 export const initialState = {

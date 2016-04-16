@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 
 import { cancelEditingBlock, submitEditingBlock } from 'actions/blocks';
 
-import { EDIT_BLOCK_CONTENT } from 'reducers/modal';
-
 import component from './component';
 
 const selector = state => ({

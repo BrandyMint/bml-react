@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 
 import LPage from './LPage';
@@ -18,33 +18,29 @@ import BaselineGrid from 'components/BaselineGrid';
 
 import './index.scss';
 
-class EditorApp extends Component {
-  render() {
-    return (
-      <Tracker>
-        <ActivityController>
-          <BodyClassName className="EditorApp">
+const EditorApp = () => (
+  <Tracker>
+    <ActivityController>
+      <BodyClassName className="EditorApp">
 
-            <div>
-              <div className="EditorApp-content">
-                <BaselineGrid />
-                <LPage />
-              </div>
+        <div>
+          <div className="EditorApp-content">
+            <BaselineGrid />
+            <LPage />
+          </div>
 
-              <LeftToolbar />
-              <PreviewToolbar />
-              <LBlockAddModal />
-              <BlockContentEditModal />
-              <LeftPanelMenu />
+          <LeftToolbar />
+          <PreviewToolbar />
+          <LBlockAddModal />
+          <BlockContentEditModal />
+          <LeftPanelMenu />
 
-              <ReactTooltip />
-            </div>
+          <ReactTooltip />
+        </div>
 
-          </BodyClassName>
-        </ActivityController>
-      </Tracker>
-    );
-  }
-}
+      </BodyClassName>
+    </ActivityController>
+  </Tracker>
+);
 
 export default EditorApp;

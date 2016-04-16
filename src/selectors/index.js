@@ -1,5 +1,5 @@
 import invariant from 'invariant';
-import { createSelector, createStructuredSelector } from 'reselect';
+import { createSelector } from 'reselect';
 
 export const applicationSelector = ({ application }) => application;
 

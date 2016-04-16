@@ -77,7 +77,7 @@ class BlockContentEditModal extends Component {
         actions={this.actions}
         onRequestClose={this.handleCancel}
       >
-        <div style={CONTAINER_STYLE}>
+        <div className="EditorScrollable" style={CONTAINER_STYLE}>
           {open && children}
         </div>
       </Dialog>
