@@ -1,7 +1,7 @@
 import createReducer from 'helpers/createReducer';
 
 import {
-  CANCEL_EDITING_BLOCK, START_EDITING_BLOCK, SUBMIT_EDITING_BLOCK,
+  CANCEL_EDITING_BLOCK, START_EDITING_BLOCK_CONTENT, SUBMIT_EDITING_BLOCK,
 } from 'actions/blocks';
 
 export const initialState = {
@@ -17,7 +17,7 @@ export const initialState = {
 };
 
 const handlers = {
-  [START_EDITING_BLOCK]: (state, { payload }) => ({
+  [START_EDITING_BLOCK_CONTENT]: (state, { payload }) => ({
     ...state,
     block: payload.block,
   }),

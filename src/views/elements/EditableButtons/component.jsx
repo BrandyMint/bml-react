@@ -12,6 +12,12 @@ import map from 'lodash/map';
 const DEFAULT_BUTTON_TEXT = 'КНОПКА';
 
 class EditableButtons extends Component {
+  shouldComponentUpdate(nextProps) {
+    // TODO зависит и от props и от context
+    // Хотя это странно если у компонента будут меняться props
+    return true;
+  }
+
   getButtons() {
     return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
@@ -52,9 +58,9 @@ class EditableButtons extends Component {
 
   render() {
     return (
-      // TODO isEditMode вынести в store
+      // TODO isEditor вынести в store
       // TODO все вместе объеденитьв один флаг и вынести в selector
-      (this.context.isEditMode && this.props.enable) ?
+      (this.props.enable) ?
         this.createEditorElement() :
         this.createStaticElement()
     );
@@ -75,7 +81,6 @@ EditableButtons.defaultProps = {
 };
 
 EditableButtons.contextTypes = {
-  isEditMode: PropTypes.bool, // Вытащить в store
   block: PropTypes.object.isRequired,
 };
 

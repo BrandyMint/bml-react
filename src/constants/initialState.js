@@ -4,14 +4,26 @@ import { initialState as blocksInitialState } from 'reducers/blocks';
 import { initialState as applicationInitialState } from 'reducers/application';
 import { initialState as activityInitialState } from 'reducers/activity';
 import { initialState as addBlockFormInitialState } from 'reducers/addBlockForm';
-import { initialState as editBlockFormInitialState } from 'reducers/editBlockForm';
+import { initialState as editBlockContentFormInitialState } from 'reducers/editBlockContentForm';
 
-export default {
+export const initialState = {
   tracker: trackerInitialState,
   application: applicationInitialState,
   blocks: blocksInitialState,
   modal: modalInitialState,
   activity: activityInitialState,
   addBlockForm: addBlockFormInitialState,
-  editBlockForm: editBlockFormInitialState,
+  editBlockContentForm: editBlockContentFormInitialState,
+};
+
+export default initialState;
+
+const editorApplicationInitialState = {
+  ...applicationInitialState,
+  isEditor: true,
+};
+
+export const editorInitialState = {
+  ...initialState,
+  application: editorApplicationInitialState,
 };

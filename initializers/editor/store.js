@@ -8,8 +8,7 @@ import createLogger from 'redux-logger';
 import APIMiddleware from 'middleware/API';
 
 import reducers from 'reducers';
-import initialState from 'constants/initialState';
-
+import { editorInitialState } from 'constants/initialState';
 
 // https://github.com/erikras/react-redux-universal-hot-example/pull/560/files
 // https://github.com/taion/scroll-behavior/issues/28#issuecomment-190182066
@@ -36,7 +35,7 @@ const createStoreWithMiddleware = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f // redux DevTools
 )(createStore);
 
-export const store = createStoreWithMiddleware(finalReducers, initialState);
+export const store = createStoreWithMiddleware(finalReducers, editorInitialState);
 
 if (window) { window.store = store; }
 

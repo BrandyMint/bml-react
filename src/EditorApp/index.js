@@ -7,7 +7,7 @@ const selector = createSelector(
   state => state.application,
   (appliction) => (
     {
-      isEditMode: appliction.isEditMode,
+      isEditor: appliction.isEditor,
     }
   )
 );

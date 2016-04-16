@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import map from 'lodash/map';
+import partial from 'lodash/partial';
+
 
 import Field from './Field';
 
@@ -9,23 +10,35 @@ import Field from './Field';
 // Переименовть в ContentFormBuilder
 
 class ContentSchemaForm extends Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+  }
   shouldComponentUpdate(nextProps) {
     const should = this.props.schemaFields !== nextProps.schemaFields ||
+      this.props.uuid !== nextProps.uuid ||
       this.props.content !== nextProps.content
     return should;
   }
+  onChange(path, value) {
+    this.props.changeContent(this.props.uuid, path, value);
+  }
   render() {
-    const { content, schemaFields, onChange } = this.props;
+    const { uuid, content, schemaFields, onChange } = this.props;
 
+    // Такое бывает когда модалку гасят
+    if (!uuid) {
+      return false;
+    }
     return (
       <div className="ContentFormBuilder">
-        {map(schemaFields, (field, index) =>
+        {schemaFields.map((field, index) =>
           (
             <Field
               field={field}
               key={index}
               value={content[field.key]}
-              onChange={onChange}
+              onChange={this.onChange}
             />
           )
         )}
@@ -37,7 +50,8 @@ class ContentSchemaForm extends Component {
 ContentSchemaForm.propTypes = {
   schemaFields: PropTypes.array.isRequired,
   content: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
+  uuid: PropTypes.string,
+  changeContent: PropTypes.func.isRequired,
 };
 
 export default ContentSchemaForm;

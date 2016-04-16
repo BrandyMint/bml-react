@@ -6,7 +6,7 @@ export const CHANGE_BLOCK_BACKGROUND_IMAGE = 'CHANGE_BLOCK_BACKGROUND_IMAGE';
 export const START_ADDING_BLOCK = 'START_ADDING_BLOCK';
 export const CANCEL_ADDING_BLOCK = 'CANCEL_ADDING_BLOCK';
 
-export const START_EDITING_BLOCK = 'START_EDITING_BLOCK';
+export const START_EDITING_BLOCK_CONTENT = 'START_EDITING_BLOCK_CONTENT';
 export const DELETE_EDITING_BLOCK = 'DELETE_EDITING_BLOCK';
 export const CANCEL_EDITING_BLOCK = 'CANCEL_EDITING_BLOCK';
 
@@ -34,14 +34,14 @@ export const cancelAddingBlock = () => ({
   type: CANCEL_ADDING_BLOCK,
 });
 
-export const startEditing = (block) => ({
-  type: START_EDITING_BLOCK,
+export const startEditingContent = (block) => ({
+  type: START_EDITING_BLOCK_CONTENT,
   payload: { block },
 });
 
 export const submitEditingBlock = () => (dispatch, getState) => {
-  const { editBlockForm } = getState();
-  const { block } = editBlockForm;
+  const { editBlockContentForm } = getState();
+  const { block } = editBlockContentForm;
 
   return dispatch({
     type: SUBMIT_EDITING_BLOCK,

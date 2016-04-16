@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import findIndex from 'lodash/findIndex';
 import { deleteEditingBlock, switchNextView, downBlockPosition, upBlockPosition } from 'actions/blocks';
 
-import { startEditing } from 'actions/blocks';
+import { startEditingContent } from 'actions/blocks';
 
 import { viewsRepository } from 'repositories/ViewsRepository';
 
@@ -34,7 +34,7 @@ const actions = {
   onViewSwitchNext: switchNextView,
   onDelete: deleteEditingBlock,
 
-  onEditingStart: startEditing,
+  onStartContentEditing: startEditingContent,
 };
 
 export default connect(selector, actions)(component);

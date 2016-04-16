@@ -5,7 +5,7 @@ import modal from './modal';
 import tracker from './tracker';
 import activity from './activity';
 import addBlockForm from './addBlockForm';
-import editBlockForm from './editBlockForm';
+import editBlockContentForm from './editBlockContentForm';
 
 export default {
   tracker,
@@ -15,5 +15,5 @@ export default {
   modal,
   activity,
   addBlockForm,
-  editBlockForm,
+  editBlockContentForm,
 };

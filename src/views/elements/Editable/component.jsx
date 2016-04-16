@@ -8,11 +8,17 @@ class Editable extends Component {
     return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
 
+  shouldComponentUpdate(nextProps) {
+    // TODO зависит и от props и от context
+    // Хотя это странно если у компонента будут меняться props
+    return true;
+  }
+
   createEditorElement() {
     return (
       <EditableEditor
-        element={this.props.element}
         value={this.getValue()}
+        element={this.props.element}
         path={this.props.path}
         className={this.props.className}
         options={this.props.options}
@@ -33,9 +39,9 @@ class Editable extends Component {
   }
   render() {
     return (
-      // TODO isEditMode вынести в store
+      // TODO isEditor вынести в store
       // TODO все вместе объеденитьв один флаг и вынести в selector
-      (this.context.isEditMode && this.props.enable) ?
+      (this.props.enable) ?
         this.createEditorElement() :
         this.createStaticElement()
     );
@@ -51,7 +57,6 @@ Editable.propTypes = {
   options: PropTypes.object,
   defaultValue: PropTypes.string,
 
-  // из store
   enable: PropTypes.bool.isRequired,
 };
 
@@ -61,7 +66,6 @@ Editable.defaultProps = {
 };
 
 Editable.contextTypes = {
-  isEditMode: PropTypes.bool, // Вытащить в store
   block: PropTypes.object.isRequired,
 };
 

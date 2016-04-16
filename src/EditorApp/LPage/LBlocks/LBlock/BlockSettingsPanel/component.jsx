@@ -31,7 +31,7 @@ class BlockSettingsPanel extends Component {
     const { block } = props;
     const { uuid } = block;
 
-    this.onEditingStart = partial(props.onEditingStart, block);
+    this.onStartContentEditing = partial(props.onStartContentEditing, block);
     this.onViewSwitchNext = partial(props.onViewSwitchNext, uuid);
     this.onBlockPositionUp = partial(props.onBlockPositionUp, uuid);
     this.onBlockPositionDown = partial(props.onBlockPositionDown, uuid);
@@ -88,10 +88,10 @@ class BlockSettingsPanel extends Component {
           onRequestClose={this.close}
         >
 				<Menu animateOpen onItemTouchTap={this.close}>
-					<MenuItem value="edit_content" primaryText="Изменить текст" leftIcon={<IconEdit />} onTouchTap={this.onEditingStart} />
-					<MenuItem primaryText="Изменить форму" leftIcon={<IconForm />} onTouchTap={this.onEditingStart} disabled={!schema.form} />
-					<MenuItem primaryText="Установить фон" leftIcon={<IconBackground />} onTouchTap={this.onEditingStart} disabled={!schema.backgroundImage} />
-					<ListItem primaryText="Свойства блока" leftIcon={<IconAttributes />} secondaryText={block.viewName} onTouchTap={this.onEditingStart} />
+					<MenuItem primaryText="Изменить текст" leftIcon={<IconEdit />} onTouchTap={this.onStartContentEditing} />
+					<MenuItem primaryText="Изменить форму" leftIcon={<IconForm />} onTouchTap={this.onStartContentEditing} disabled={!schema.form} />
+					<MenuItem primaryText="Установить фон" leftIcon={<IconBackground />} onTouchTap={this.onStartContentEditing} disabled={!schema.backgroundImage} />
+					<ListItem primaryText="Свойства блока" leftIcon={<IconAttributes />} secondaryText={block.viewName} onTouchTap={this.onStartContentEditing} />
 					<Divider />
 					<MenuItem primaryText="Сменить вид" leftIcon={<IconViews />} onTouchTap={this.onViewSwitchNext} disabled={!hasMultipleViews} />
 					<MenuItem primaryText="Переместить выше" leftIcon={<IconUp />} onTouchTap={this.onBlockPositionUp} disabled={!enableMoveUp} />
@@ -111,7 +111,7 @@ BlockSettingsPanel.propTypes = {
 
   schema: PropTypes.object.isRequired,
 
-  onEditingStart: PropTypes.func.isRequired,
+  onStartContentEditing: PropTypes.func.isRequired,
 
   onViewSwitchNext: PropTypes.func.isRequired,
 

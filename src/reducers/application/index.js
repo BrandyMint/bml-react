@@ -59,7 +59,7 @@ export const initialState = {
 
   loadingState: LOADING_STATE_NONE,
 
-  isEditMode: false,
+  isEditor: false,
   isSaving: false,
   isMenuOpen: false,
   hasUnsavedChanges: false,

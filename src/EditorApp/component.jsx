@@ -3,7 +3,7 @@ import BodyClassName from 'react-body-classname';
 
 import LPage from './LPage';
 import LBlockAddModal from './LBlockAddModal';
-import LBlockEditModal from './LBlockEditModal';
+import BlockContentEditModal from './BlockContentEditModal';
 import LeftPanelMenu from './LeftPanelMenu';
 
 import ReactTooltip from 'react-tooltip';
@@ -19,10 +19,6 @@ import BaselineGrid from 'components/BaselineGrid';
 import './index.scss';
 
 class EditorApp extends Component {
-  getChildContext() {
-    return { isEditMode: true };
-  }
-
   render() {
     return (
       <Tracker>
@@ -38,7 +34,7 @@ class EditorApp extends Component {
               <LeftToolbar />
               <PreviewToolbar />
               <LBlockAddModal />
-              <LBlockEditModal />
+              <BlockContentEditModal />
               <LeftPanelMenu />
 
               <ReactTooltip />
@@ -50,9 +46,5 @@ class EditorApp extends Component {
     );
   }
 }
-
-EditorApp.childContextTypes = {
-  isEditMode: PropTypes.bool.isRequired,
-};
 
 export default EditorApp;

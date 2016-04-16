@@ -1,21 +1,22 @@
 import { connect } from 'react-redux';
+import { createSelector, createStructuredSelector } from 'reselect';
+import { EDIT_BLOCK_CONTENT } from 'reducers/modal';
 
-import { cancelEditingBlock, submitEditingBlock } from 'actions/blocks';
+import component from './component';
 
-import { EDIT_BLOCK } from 'reducers/modal';
+const currentModalSelector = state => state.modal.current;
+const isOpenSelector = createSelector(
+  currentModalSelector,
+  currentModal => currentModal === EDIT_BLOCK_CONTENT
+);
 
-import LBlockEditModal from './LBlockEditModal';
+const formSelector = ({ editBlockContentForm }) => editBlockContentForm;
+const blockSelector = createSelector( formSelector, ({ block }) => block );
+const uuidSelector = createSelector( blockSelector, ({ uuid }) => uuid );
 
-import './LBlockEditModal.css';
-
-const selector = state => ({
-  isVisible: state.modal.current === EDIT_BLOCK,
-  savedBlock: state.editBlockForm.block,
+const selector = createStructuredSelector({
+  open: isOpenSelector,
+  uuid: uuidSelector,
 });
 
-const actions = {
-  onCancel: cancelEditingBlock,
-  onSave: submitEditingBlock,
-};
-
-export default connect(selector, actions)(LBlockEditModal);
+export default connect(selector)(component);

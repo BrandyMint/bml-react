@@ -17,6 +17,7 @@ const Page = ({ blocks, is_boxed, className }) => {
     );
   }
 
+  // TODO: i18n
   return (
     <div className={classNames}>
       <div className="PageEmptyPlaceholder">
