@@ -15,11 +15,15 @@ const CONTENT_STYLE = {
 };
 
 const BODY_STYLE = {
-  height: 300,
 };
 
 const DIALOG_STYLE ={
   // backgroundColor: 'black',
+};
+
+const CONTAINER_STYLE = {
+  height: 400,
+  overflowY: 'auto',
 };
 
 class BlockContentEditModal extends Component {
@@ -59,19 +63,21 @@ class BlockContentEditModal extends Component {
 
     console.log("Render dialog", open);
 
+    const title = savedBlock && t('title', { name: savedBlock.viewName });
     return (
       <Dialog
-        title={t('title', { name: savedBlock.viewName })}
+        title={title}
         open={open}
         style={DIALOG_STYLE}
         contentStyle={CONTENT_STYLE}
         bodyStyle={BODY_STYLE}
         modal={false}
         actions={this.actions}
-        autoScrollBodyContent
         onRequestClose={this.handleCancel}
       >
-        {open && children}
+        <div style={CONTAINER_STYLE}>
+          {open && children}
+        </div>
       </Dialog>
     );
   }

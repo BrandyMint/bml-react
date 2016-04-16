@@ -7,6 +7,7 @@ import { EDIT_BLOCK_CONTENT } from 'reducers/modal';
 import component from './component';
 
 const selector = state => ({
+  // open: state.modal.current === EDIT_BLOCK_CONTENT,
   savedBlock: state.editBlockContentForm.block,
 });
 

@@ -28,7 +28,7 @@ class ContentSchemaForm extends Component {
     const { uuid, content, schemaFields } = this.props;
 
     // Такое бывает когда модалку гасят
-    if (!uuid) {
+    if (!uuid || !content || !schemaFields) {
       return false;
     }
     return (
