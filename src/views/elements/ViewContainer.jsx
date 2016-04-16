@@ -10,7 +10,6 @@ const TAG_NAME = 'section';
 class ViewContainer extends Component {
   getChildContext() {
     const { block } = this.props;
-    console.log("ViewContainer getChildContext", block.uuid, block.content);
     return { block };
   }
 
@@ -45,7 +44,6 @@ class ViewContainer extends Component {
       backgroundPosition: 'center',
     };
 
-    console.log('Render ViewContainer');
     return React.createElement(
       tagName || TAG_NAME,
       {

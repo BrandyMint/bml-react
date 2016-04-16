@@ -4,14 +4,14 @@ import get from 'lodash/get';
 import EditableEditor from 'views/elements/Editable/Editor';
 
 class Editable extends Component {
-  getValue() {
-    return get(this.context.block.content, this.props.path, this.props.defaultValue);
-  }
-
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(){
     // TODO зависит и от props и от context
     // Хотя это странно если у компонента будут меняться props
     return true;
+  }
+
+  getValue() {
+    return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
 
   createEditorElement() {

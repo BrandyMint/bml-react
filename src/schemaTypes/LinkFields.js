@@ -15,7 +15,15 @@ export default [
   {
     title: 'Target',
     key: 'target',
-    type: 'string',
+    type: 'dropdownList',
+    defaultValue: '_parent',
+    data: [
+      '_blank',
+      '_self',
+      '_parent',
+      '_top',
+      // custom framename
+    ],
     isRequired: true,
   },
 ];

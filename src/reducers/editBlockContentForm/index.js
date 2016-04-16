@@ -5,15 +5,7 @@ import {
 } from 'actions/blocks';
 
 export const initialState = {
-  block: {
-    uuid: '',
-    type: '',
-    viewName: '',
-    content: {},
-    nodeAttributes: {},
-    backgroundImage: {},
-    meta: {},
-  },
+  block: null,
 };
 
 const handlers = {

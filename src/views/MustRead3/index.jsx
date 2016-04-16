@@ -12,9 +12,6 @@ import ViewContainer from 'views/elements/ViewContainer';
 class MustRead3 extends Component {
   render() {
     const { block } = this.props;
-    console.log("MustRead3 render", block);
-    console.log("MustRead3 render header", block.content.header);
-
     return (
       <ViewContainer block={ block } className="BML-section--height-70 text-center">
         <div className="container vertical-center-rel">

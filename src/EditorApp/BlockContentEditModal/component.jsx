@@ -7,10 +7,12 @@ class BlockContentEditModal extends Component {
   render () {
     const { uuid, open } = this.props;
 
-    console.log("Render EditModal", open);
+    if (!open) {
+      return null;
+    }
     return (
       <Modal open={open}>
-        { open && <ContentSchemaForm uuid={uuid} /> }
+        <ContentSchemaForm uuid={uuid} />
       </Modal>
     );
   }
@@ -18,6 +20,7 @@ class BlockContentEditModal extends Component {
 
 BlockContentEditModal.propTypes = {
   open: PropTypes.bool.isRequired,
+  // TODO перенести в ContentSchemaFOrm?
   uuid: PropTypes.string,
 };
 

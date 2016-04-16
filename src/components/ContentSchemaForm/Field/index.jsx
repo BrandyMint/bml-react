@@ -6,22 +6,32 @@ import { FIELD_COMPONENTS } from '../schemaFieldTypes';
 import { FIELD_TYPES } from 'constants/fieldTypes';
 
 class Field extends Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+  }
   shouldComponentUpdate(nextProps) {
     // TODO починить изменение FieldItems
     //
     const should = this.props.field !== nextProps.field ||
       this.props.value !== nextProps.value;
 
+    console.log("Field should", this.props.field.key, should);
     return should;
   }
+  onChange(value) {
+    const { field, onChange } = this.props;
+
+    onChange(field.key, value);
+  }
   render() {
-    const { field, value, onChange } = this.props;
+    const { field, value } = this.props;
     const FieldComponent = FIELD_COMPONENTS[field.type];
     return (
       <FieldComponent
         field={field}
-        onChange={partial(onChange, field.key)}
         value={value}
+        onChange={this.onChange}
       />
     );
   }

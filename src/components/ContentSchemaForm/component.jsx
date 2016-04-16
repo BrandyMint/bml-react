@@ -18,13 +18,14 @@ class ContentSchemaForm extends Component {
     const should = this.props.schemaFields !== nextProps.schemaFields ||
       this.props.uuid !== nextProps.uuid ||
       this.props.content !== nextProps.content
+    console.log("ContentSchameForm should", should);
     return should;
   }
   onChange(path, value) {
     this.props.changeContent(this.props.uuid, path, value);
   }
   render() {
-    const { uuid, content, schemaFields, onChange } = this.props;
+    const { uuid, content, schemaFields } = this.props;
 
     // Такое бывает когда модалку гасят
     if (!uuid) {

@@ -7,11 +7,26 @@ import Dialog from 'material-ui/Dialog';
 
 import './index.css';
 
+const CONTENT_STYLE = {
+  width: '100%',
+  maxWidth: 'none',
+  bottom: 60, // Высота строки с actions
+  position: 'absolute',
+};
+
+const BODY_STYLE = {
+  height: 300,
+};
+
+const DIALOG_STYLE ={
+  // backgroundColor: 'black',
+};
+
 class BlockContentEditModal extends Component {
   constructor(props) {
     super(props);
-    const { t, savedBlock, onCancel, onSave } = props;
-    this.handleCancel = () => onCancel(savedBlock);
+    const { t, onSave } = props;
+    this.handleCancel = this.handleCancel.bind(this);
     this.actions = [
       <FlatButton
         label={t('cancel')}
@@ -28,10 +43,15 @@ class BlockContentEditModal extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const should = nextProps.isVisible !== this.props.isVisible  ||
+    const should = nextProps.open !== this.props.open  ||
       nextProps.savedBlock !== this.props.savedBlock;
 
     return should;
+  }
+
+  handleCancel() {
+    const { onCancel, savedBlock } = this.props;
+    onCancel(savedBlock);
   }
 
   render () {
@@ -43,10 +63,11 @@ class BlockContentEditModal extends Component {
       <Dialog
         title={t('title', { name: savedBlock.viewName })}
         open={open}
+        style={DIALOG_STYLE}
+        contentStyle={CONTENT_STYLE}
+        bodyStyle={BODY_STYLE}
         modal={false}
         actions={this.actions}
-        repositionOnUpdate
-        autoDetectWindowHeight={false}
         autoScrollBodyContent
         onRequestClose={this.handleCancel}
       >

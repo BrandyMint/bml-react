@@ -25,6 +25,10 @@ class FieldItems extends Component {
     this.onChangeItem = this.onChangeItem.bind(this);
     this.onRemoveItem = this.onRemoveItem.bind(this);
   }
+  shouldComponentUpdate(nextProps) {
+    console.log("FieldItems should");
+    return true;
+  }
   onClickAdd() {
     const items = this.props.value;
     const newItems = [
@@ -81,9 +85,10 @@ class FieldItems extends Component {
               <FieldItem
                 item={item}
                 key={index}
+                index={index}
                 itemSchemaFields={itemSchema.fields}
-                onChange={partial(this.onChangeItem, index)}
-                onRemove={partial(this.onRemoveItem, index)}
+                onChange={this.onChangeItem}
+                onRemove={this.onRemoveItem}
               />
             );
           }

@@ -1,22 +1,13 @@
 import { connect } from 'react-redux';
 import { createSelector, createStructuredSelector } from 'reselect';
 import { EDIT_BLOCK_CONTENT } from 'reducers/modal';
+import { isModalOpenSelector, editBlockSelector } from 'selectors';
 
 import component from './component';
 
-const currentModalSelector = state => state.modal.current;
-const isOpenSelector = createSelector(
-  currentModalSelector,
-  currentModal => currentModal === EDIT_BLOCK_CONTENT
-);
-
-const formSelector = ({ editBlockContentForm }) => editBlockContentForm;
-const blockSelector = createSelector( formSelector, ({ block }) => block );
-const uuidSelector = createSelector( blockSelector, ({ uuid }) => uuid );
-
 const selector = createStructuredSelector({
-  open: isOpenSelector,
-  uuid: uuidSelector,
+  open: isModalOpenSelector(EDIT_BLOCK_CONTENT),
+  uuid: createSelector( editBlockSelector, ( block ) => block && block.uuid),
 });
 
 export default connect(selector)(component);

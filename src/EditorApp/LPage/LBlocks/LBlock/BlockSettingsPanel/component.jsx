@@ -47,18 +47,17 @@ class BlockSettingsPanel extends Component {
     };
   }
 
+  //componentDidMount() {
+    //this.setState({ anchorEl: findDOMNode(this) });
+  //}
+
   open() {
-    this.setState({ open: true });
+    this.onStartContentEditing();
+    // this.setState({ open: true });
   }
 
   close() {
     this.setState({ open: false });
-  }
-
-  componentDidMount() {
-    this.setState({
-      anchorEl: findDOMNode(this)
-    });
   }
 
   render() {
@@ -80,25 +79,6 @@ class BlockSettingsPanel extends Component {
         <BubbleIcon onClick={this.open} text={t('tips:block_settings')}>
           <FaCog />
         </BubbleIcon>
-        <Popover
-          anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-          targetOrigin={{horizontal: 'right', vertical: 'top'}}
-          open={this.state.open}
-          onRequestClose={this.close}
-        >
-				<Menu animateOpen onItemTouchTap={this.close}>
-					<MenuItem primaryText="Изменить текст" leftIcon={<IconEdit />} onTouchTap={this.onStartContentEditing} />
-					<MenuItem primaryText="Изменить форму" leftIcon={<IconForm />} onTouchTap={this.onStartContentEditing} disabled={!schema.form} />
-					<MenuItem primaryText="Установить фон" leftIcon={<IconBackground />} onTouchTap={this.onStartContentEditing} disabled={!schema.backgroundImage} />
-					<ListItem primaryText="Свойства блока" leftIcon={<IconAttributes />} secondaryText={block.viewName} onTouchTap={this.onStartContentEditing} />
-					<Divider />
-					<MenuItem primaryText="Сменить вид" leftIcon={<IconViews />} onTouchTap={this.onViewSwitchNext} disabled={!hasMultipleViews} />
-					<MenuItem primaryText="Переместить выше" leftIcon={<IconUp />} onTouchTap={this.onBlockPositionUp} disabled={!enableMoveUp} />
-					<MenuItem primaryText="Переместить ниже" leftIcon={<IconDown />} onTouchTap={this.onBlockPositionDown} disabled={!enableMoveDown} />
-					<MenuItem primaryText="Удалить" value="del" leftIcon={<IconRemove />} onTouchTap={this.onDelete} />
-				</Menu>
-      </Popover>
     </div>
     );
   }
