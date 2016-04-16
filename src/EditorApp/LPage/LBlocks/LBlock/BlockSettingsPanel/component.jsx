@@ -77,8 +77,6 @@ class BlockSettingsPanel extends Component {
       style = FIXED_STYLE;
     }
 
-    console.log(fixed);
-
     return (
       <div className="LBlockSettingsButton" style={style}>
         <BubbleIcon onClick={this.open} text={t('tips:block_settings')}>

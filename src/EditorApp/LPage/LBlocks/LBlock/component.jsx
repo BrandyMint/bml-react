@@ -10,20 +10,24 @@ import './index.css';
 
 // Minimal visible height of block to show SettingsPanel
 //
-const MIN_HEIGHT = 90;
+const MIN_HEIGHT = 120;
 
 class LBlock extends Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
+    this.onMouseOver = this.onMouseOver.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
     this.state = {
       settingsFixed: false,
       settingsVisible: true,
+      mouseOver: false,
     };
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const should = nextProps.block != this.props.block ||
+      nextState.mouseOver != this.state.mouseOver ||
       nextState.settingsVisible != this.state.settingsVisible ||
       nextState.settingsFixed != this.state.settingsFixed;
     return should;
@@ -60,13 +64,21 @@ class LBlock extends Component {
     });
   }
 
+  onMouseLeave() {
+    this.setState({ mouseOver: false });
+  }
+
+  onMouseOver() {
+    this.setState({ mouseOver: true });
+  }
+
   render() {
     const { block } = this.props;
 
     return (
-      <div className="LBlock">
+      <div className="LBlock" onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
         <Animated>
-          {this.state.settingsVisible && <BlockSettingsPanel block={block} fixed={this.state.settingsFixed}/>}
+          {this.state.settingsVisible && this.state.mouseOver && <BlockSettingsPanel block={block} fixed={this.state.settingsFixed} />}
         </Animated>
         <ViewComponent block={block} />
       </div>

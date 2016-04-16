@@ -6,8 +6,6 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 import classnames from 'classnames';
 import EditorOptions from '../options';
 
-import bind from 'lodash/bind';
-
 const DEFAULT_VALUE = 'Текст';
 
 
@@ -19,8 +17,9 @@ class EditableEditor extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.handleBlur = bind(this.handleBlur, this);
-    this.handleKeyDownEnter = bind(this.handleKeyDownEnter, this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleKeyDownEnter = this.handleKeyDownEnter.bind(this);
 
     this.state = {
       value: this.props.value,
@@ -50,9 +49,13 @@ class EditableEditor extends Component {
     const { onContentChange } = this.context;
     const editedValue = this.getEditedValue();
 
+    this.props.changeEditable(null);
     if (this.state.value !== editedValue) {
       onContentChange(path, editedValue);
     }
+  }
+  handleFocus() {
+    this.props.changeEditable(this);
   }
   render() {
     const { className, element } = this.props;
@@ -61,6 +64,7 @@ class EditableEditor extends Component {
       tag={element}
       className={classnames(className, 'Redactor')}
       text={this.state.value}
+      onFocus={this.handleFocus}
       onBlur={this.handleBlur}
       options={this.props.options}
     />);
@@ -74,6 +78,7 @@ EditableEditor.propTypes = {
   options: PropTypes.object.isRequired,
   value: PropTypes.string.isRequired,
   defaultValue: PropTypes.string.isRequired,
+  changeEditable: PropTypes.func.isRequired,
 };
 
 EditableEditor.defaultProps = {

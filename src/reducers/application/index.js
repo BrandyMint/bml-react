@@ -5,6 +5,7 @@ import {
   RESTORE_SITE,
   TOGGLE_MENU,
   CLOSE_MENU,
+  CHANGE_EDITABLE,
 } from 'actions/application';
 
 import {
@@ -59,11 +60,17 @@ export const initialState = {
 
   loadingState: LOADING_STATE_NONE,
 
+  // Are we in editor mode?
+  //
   isEditor: false,
   isSaving: false,
   isMenuOpen: false,
   hasUnsavedChanges: false,
 
+  // The component which editing now (Editable or EditableButtons)
+  editable: null,
+
+  // Original (backup) version of site
   originalSite: BLANK_SITE,
 
   zoom: false,
@@ -99,6 +106,11 @@ const toggleMenu = (state) => ({
 const closeMenu = (state) => ({
   ...state,
   isMenuOpen: false,
+});
+
+const changeEditable = (state, { payload }) => ({
+  ...state,
+  editable: payload,
 });
 
 const handlers = {
@@ -137,6 +149,7 @@ const handlers = {
 
   [TOGGLE_MENU]: toggleMenu,
   [CLOSE_MENU]: closeMenu,
+  [CHANGE_EDITABLE]: changeEditable,
 
   [BACKGROUND_UPLOAD_REQUEST]: state => ({ ...state, backgroundUploading: true }),
   [BACKGROUND_UPLOAD_SUCCESS]: state => ({ ...state, backgroundUploading: false }),

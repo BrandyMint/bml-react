@@ -19,6 +19,11 @@ import ListItem from 'material-ui/List/ListItem';
 
 import SaveMenuItem from './SaveMenuItem';
 
+const FOOTER_STYLE = {
+  position: 'absolute',
+  bottom: 0,
+};
+
 class LeftPanelMenu extends Component {
   //shouldComponentUpdate(nextProps, nextState) {
     //// Продиводействуем внешним изменениям. Потому что во время редактирования блока
@@ -73,8 +78,10 @@ class LeftPanelMenu extends Component {
 
         <Divider />
         <SaveMenuItem />
-        <Divider />
-        <ListItem secondaryText={t('data')} primaryText={t('exit')} href={config('exitUrl')} leftIcon={<IconExit />} />
+        <div style={FOOTER_STYLE}>
+          <Divider />
+          <ListItem secondaryText={t('data')} primaryText={t('exit')} href={config('exitUrl')} leftIcon={<IconExit />} />
+        </div>
       </Drawer>
     );
   }

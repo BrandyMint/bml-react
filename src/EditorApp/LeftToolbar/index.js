@@ -6,7 +6,7 @@ import { toggleMenu } from 'actions/application';
 const actions = { toggleMenu };
 
 const selector = ({ application, modal }) => ({
-  enable: (!application.isMenuOpen && !modal.current),
+  enable: (!application.isMenuOpen && !modal.current && !application.editable),
 });
 
 export default connect(selector, actions)(component);

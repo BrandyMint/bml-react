@@ -41,6 +41,7 @@ export const RICH_OPTIONS = {
   },
   toolbar: {
     allowMultiParagraphSelection: false,
+    // TODO make static on top with full width
     static: true,
     sticky: true,
   },
