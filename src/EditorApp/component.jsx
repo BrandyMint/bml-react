@@ -3,7 +3,7 @@ import BodyClassName from 'react-body-classname';
 
 import LPage from './LPage';
 import LBlockAddModal from './LBlockAddModal';
-import BlockContentEditModal from './BlockContentEditModal';
+import BlockEditModal from './BlockEditModal';
 import LeftPanelMenu from './LeftPanelMenu';
 
 import ReactTooltip from 'react-tooltip';
@@ -32,7 +32,7 @@ const EditorApp = () => (
           <LeftToolbar />
           <PreviewToolbar />
           <LBlockAddModal />
-          <BlockContentEditModal />
+          <BlockEditModal />
           <LeftPanelMenu />
 
           <ReactTooltip />

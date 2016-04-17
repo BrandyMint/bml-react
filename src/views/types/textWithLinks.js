@@ -1,7 +1,7 @@
 import { PropTypes } from 'react';
 import blockPropType from './blockPropType';
 import { buttonsPropTypes } from 'views/elements/Buttons';
-import LinkSchemaFields from 'schemaTypes/LinkFields';
+import LinkItemSchema from 'schemaTypes/LinkItemSchema';
 
 const ContentPropTypes = {
   text: PropTypes.string,
@@ -26,10 +26,7 @@ export default {
         key: 'items',
         type: 'items',
         isRequired: true,
-        itemSchema: {
-          limit: 12,
-          fields: LinkSchemaFields,
-        },
+        itemSchema: LinkItemSchema,
       },
     ],
   },

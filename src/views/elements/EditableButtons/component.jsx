@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import EditableEditor from 'views/elements/Editable/Editor';
 import EditorOptions from 'views/elements/Editable/options';
 
-import shallowCompare from 'react-addons-shallow-compare';
+// import shallowCompare from 'react-addons-shallow-compare';
 
 import Buttons from 'views/elements/Buttons';
 
@@ -14,8 +14,10 @@ import map from 'lodash/map';
 const DEFAULT_BUTTON_TEXT = 'КНОПКА';
 
 class EditableButtons extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
+  shouldComponentUpdate() {
+    // TODO Проблема в том, что контент меняется в context-е
+    // const should = shallowCompare(this, nextProps, nextState);
+    return true;
   }
 
   getButtons() {

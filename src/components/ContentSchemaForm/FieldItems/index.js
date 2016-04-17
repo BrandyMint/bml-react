@@ -5,12 +5,12 @@ import map from 'lodash/map';
 import each from 'lodash/each';
 import clone from 'lodash/clone';
 import FieldItem from './FieldItem';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 
 const BLANK_ITEM = {
-  inputType: 'text',
-  isRequired: false,
-  entities: [],
   title: 'FIELD', // TODO i18n
+  href: '',
+  target: '_parent',
 };
 
 class FieldItems extends Component {
@@ -31,8 +31,8 @@ class FieldItems extends Component {
   onClickAdd() {
     const items = this.props.value;
     const newItems = [
-      ...items,
       this.blankItem,
+      ...items,
     ]
     this.props.onChange(newItems);
   }
@@ -62,41 +62,33 @@ class FieldItems extends Component {
 
   render() {
     const { t, field, value } = this.props;
-
+    const { title, key, itemSchema } = field;
+    const { titleKey, subtitleKey } = itemSchema;
     const items = value || [];
-
-    const {
-      title,
-      key,
-      itemSchema,
-    } = field;
-
     return (
-      <fieldset className="form-group">
-        <label htmlFor={key}>
-          <h3>
-            {title}
-          </h3>
-        </label>
-        <ol className="FieldItems">
-          {map(items, (item, index) => {
-            return (
-              <FieldItem
-                item={item}
-                key={index}
-                index={index}
-                itemSchemaFields={itemSchema.fields}
-                onChange={this.onChangeItem}
-                onRemove={this.onRemoveItem}
-              />
-            );
-          }
-          )}
-        </ol>
-        <div className="pull-xs-right">
-          <RaisedButton primary onClick={this.onClickAdd} label={t('add')} />
-        </div>
-      </fieldset>
+      <div className="FieldItems" style={{marginTop: 20}}>
+        <fieldset className="form-group">
+          <label htmlFor={key}>
+            <h3 style={{display: 'inline-block', marginLeft: 20, marginRight: 20}}>
+              {title}
+            </h3>
+            <RaisedButton primary onClick={this.onClickAdd} label={t('add')} />
+          </label>
+            {map(items, (item, index) => (
+                <FieldItem
+                  item={item}
+                  key={index}
+                  index={index}
+                  titleKey={titleKey}
+                  subtitleKey={subtitleKey}
+                  itemSchemaFields={itemSchema.fields}
+                  onChange={this.onChangeItem}
+                  onRemove={this.onRemoveItem}
+                />
+              )
+            )}
+        </fieldset>
+    </div>
     );
   }
 }

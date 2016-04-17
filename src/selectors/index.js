@@ -2,10 +2,19 @@ import invariant from 'invariant';
 import { createSelector } from 'reselect';
 
 export const applicationSelector = ({ application }) => application;
+export const modalSelector = ({ modal }) => modal;
+
+export const editBlockFormTabSelector = ({ editBlockForm }) => (editBlockForm.tab);
 
 export const editableEnableSelector = createSelector(
   applicationSelector,
   ({ zoom, isEditor }) => (!zoom && isEditor),
+);
+
+export const editSettingsEnableSelector = createSelector(
+  applicationSelector,
+  modalSelector,
+  ({ zoom, isEditor, editable }, { current }) => (!zoom && !current && !editable && isEditor),
 );
 
 export const currentModalSelector = state => state.modal.current;
@@ -20,6 +29,12 @@ export const isModalOpenSelector = (modalName) => (
 
 export const blocksSelector = (state) => state.blocks;
 export const editBlockFormSelector = (state) => state.editBlockForm;
+
+export const editFormBlockSelector = createSelector(
+  editBlockFormSelector,
+  (editBlockForm) => editBlockForm.block,
+);
+
 export const editBlockUuidSelector = createSelector(
   editBlockFormSelector,
   (editBlockForm) => editBlockForm.block.uuid,
@@ -41,3 +56,6 @@ export const editBlockSelector = createSelector(
     return block;
   },
 );
+
+// Examples
+// uuid: createSelector( editBlockSelector, ( block ) => block && block.uuid),

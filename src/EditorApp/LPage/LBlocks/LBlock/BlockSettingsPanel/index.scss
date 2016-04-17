@@ -3,7 +3,7 @@
 .LBlockSettingsButton {
   position: absolute;
   top: 45px;
-  right: 95px;
+  right: 30px; /* offset of material Plus icon */
   z-index: $zindexBlockToolbar;
   transition: opacity 0.3s ease;
 

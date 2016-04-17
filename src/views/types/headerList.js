@@ -31,6 +31,7 @@ export default {
         isRequired: false,
         itemSchema: {
           limit: 30,
+          titleKey: 'title',
           fields: [
             {
               title: 'Название',

@@ -12,6 +12,9 @@ import './index.css';
 //
 const MIN_HEIGHT = 120;
 
+// Minimal bottom offset to benot overlayed by Material PlusIcon
+const OFFSET_BOTTOM = 200;
+
 class LBlock extends Component {
   constructor(props) {
     super(props);
@@ -57,12 +60,16 @@ class LBlock extends Component {
     this.setState({ mouseOver: true });
   }
 
-  handleScroll(event) {
+  getViewportHeight() {
+    return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  }
+
+  handleScroll() {
     const element = findDOMNode(this);
     const rect = element.getBoundingClientRect()
 
-
-    const visible = rect.bottom > MIN_HEIGHT;
+    const visible = rect.bottom > MIN_HEIGHT &&
+      rect.top < this.getViewportHeight() - OFFSET_BOTTOM;
     const fixed = rect.top < 0;
 
     this.setState({

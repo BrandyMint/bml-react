@@ -5,6 +5,8 @@ import EditableEditor from 'views/elements/Editable/Editor';
 
 class Editable extends Component {
   shouldComponentUpdate(){
+    // TODO Проблема в том, что контент меняется в context-е
+    // const should = shallowCompare(this, nextProps, nextState);
     // TODO зависит и от props и от context
     // Хотя это странно если у компонента будут меняться props
     return true;

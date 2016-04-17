@@ -1,9 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
 import map from 'lodash/map';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import FieldSubitem, { FieldSubitemPropTypes } from './FieldSubitem';
-import './index.scss';
+import RemoveIcon from 'material-ui/svg-icons/content/remove-circle';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+
+const CARD_STYLE = {
+  padding: 20,
+  margin: 20,
+};
 
 class FieldItem extends Component {
   constructor(props) {
@@ -23,28 +29,54 @@ class FieldItem extends Component {
   }
 
   render () {
-    const { t, item, itemSchemaFields } = this.props;
+    const { t, index, item, titleKey, subtitleKey, itemSchemaFields } = this.props;
+
+    const title = item[titleKey] || index;
+    let subtitle = item[subtitleKey] || index;
+
+    // For example Location of a Map
+    if (typeof subtitle === 'object') {
+      subtitle = JSON.stringify(subtitle);
+    }
 
     return (
-      <li className="Editor-FieldItem">
-        {
-          map(itemSchemaFields, (field, index) => (
-            <FieldSubitem
-              key={index}
-              field={field}
-              value={item[field.key]}
-              onChange={this.onChange}
-            />
-          )
-         )}
-       <RaisedButton label={t('remove')} onClick={this.onRemove} />
-       </li>
+      <Card style={CARD_STYLE}>
+        <CardHeader
+          title={title}
+          subtitle={subtitle}
+          actAsExpander
+          showExpandableButton
+        />
+        <CardText expandable>
+          {
+            map(itemSchemaFields, (field, index) => (
+              <FieldSubitem
+                key={index}
+                field={field}
+                value={item[field.key]}
+                onChange={this.onChange}
+              />
+            )
+           )}
+        </CardText>
+        <CardActions expandable>
+          <FlatButton
+            label={t('remove')}
+            icon={<RemoveIcon />}
+            secondary
+            onClick={this.onRemove}
+          />
+        </CardActions>
+     </Card>
     );
   }
 }
 
 FieldItem.propTypes = {
   t: PropTypes.func.isRequired,
+  titleKey: PropTypes.string.isRequired,
+  subtitleKey: PropTypes.string.isRequired,
+
   index: PropTypes.number.isRequired,
   itemSchemaFields: PropTypes.arrayOf(
     PropTypes.shape(FieldSubitemPropTypes)

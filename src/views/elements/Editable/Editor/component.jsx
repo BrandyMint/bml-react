@@ -35,6 +35,7 @@ class EditableEditor extends Component {
       this.setState({ value: nextProps.value });
     }
   }
+
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   getEditedValue() {
@@ -55,7 +56,7 @@ class EditableEditor extends Component {
     }
   }
   handleFocus() {
-    this.props.changeEditable(this);
+    this.props.changeEditable(this.props.path);
   }
   render() {
     const { className, element } = this.props;

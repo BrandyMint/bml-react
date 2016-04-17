@@ -43,18 +43,20 @@ export default {
         isRequired: false,
         itemSchema: {
           limit: 20,
+          titleKey: 'title',
+          subtitleKey: 'location',
           fields: [
-            {
-              title: 'Координаты',
-              key: 'location',
-              type: 'location',
-              isRequired: true,
-            },
             {
               title: 'Название',
               key: 'title',
               type: 'string',
               isRequired: false,
+            },
+            {
+              title: 'Координаты',
+              key: 'location',
+              type: 'location',
+              isRequired: true,
             },
           ],
         },

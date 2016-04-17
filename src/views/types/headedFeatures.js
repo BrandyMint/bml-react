@@ -29,6 +29,8 @@ export default {
         isRequired: true,
         itemSchema: {
           limit: 6,
+          titleKey: 'title',
+          subtitleKey: 'iconClass',
           fields: [
             {
               title: 'Возможность',

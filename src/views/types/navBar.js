@@ -2,7 +2,7 @@ import { PropTypes } from 'react';
 import blockPropType from './blockPropType';
 import Link from 'views/elements/Link';
 import { buttonsPropTypes } from 'views/elements/Buttons';
-import LinkSchemaFields from 'schemaTypes/LinkFields';
+import LinkItemSchema from 'schemaTypes/LinkItemSchema';
 
 const ContentPropTypes = {
   logoLink: PropTypes.shape(Link.propTypes),
@@ -33,10 +33,7 @@ export default {
         key: 'items',
         type: 'items',
         isRequired: false,
-        itemSchema: {
-          limit: 7,
-          fields: LinkSchemaFields,
-        },
+        itemSchema: LinkItemSchema,
       },
     ],
   },
