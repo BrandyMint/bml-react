@@ -22,6 +22,8 @@ import SaveMenuItem from './SaveMenuItem';
 const FOOTER_STYLE = {
   position: 'absolute',
   bottom: 0,
+  left: 0,
+  right: 0,
 };
 
 class LeftPanelMenu extends Component {
