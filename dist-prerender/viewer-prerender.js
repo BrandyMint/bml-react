@@ -4658,8 +4658,8 @@
 	  return function (dispatch, getState) {
 	    var _getState = getState();
 	
-	    var editBlockContentForm = _getState.editBlockContentForm;
-	    var block = editBlockContentForm.block;
+	    var editBlockForm = _getState.editBlockForm;
+	    var block = editBlockForm.block;
 	
 	
 	    return dispatch({
@@ -12766,26 +12766,26 @@
 	  return state.blocks;
 	};
 	var editBlockFormSelector = exports.editBlockFormSelector = function editBlockFormSelector(state) {
-	  return state.editBlockContentForm;
+	  return state.editBlockForm;
 	};
-	var editBlockUuidSelector = exports.editBlockUuidSelector = (0, _reselect.createSelector)(editBlockFormSelector, function (editBlockContentForm) {
-	  return editBlockContentForm.block.uuid;
+	var editBlockUuidSelector = exports.editBlockUuidSelector = (0, _reselect.createSelector)(editBlockFormSelector, function (editBlockForm) {
+	  return editBlockForm.block.uuid;
 	});
 	
 	// Возвращает блок из blocks который сейчас редактируется
 	// Находит его там по uuid
-	var editBlockSelector = exports.editBlockSelector = (0, _reselect.createSelector)(blocksSelector, editBlockFormSelector, function (blocks, editBlockContentForm) {
+	var editBlockSelector = exports.editBlockSelector = (0, _reselect.createSelector)(blocksSelector, editBlockFormSelector, function (blocks, editBlockForm) {
 	
-	  if (!editBlockContentForm || !editBlockContentForm.block) {
+	  if (!editBlockForm || !editBlockForm.block) {
 	    return null;
 	  }
 	
 	  var block = blocks.find(function (_ref3) {
 	    var uuid = _ref3.uuid;
-	    return uuid == editBlockContentForm.block.uuid;
+	    return uuid == editBlockForm.block.uuid;
 	  });
 	
-	  (0, _invariant2.default)(block, 'Not found block ' + editBlockContentForm.block.uuid);
+	  (0, _invariant2.default)(block, 'Not found block ' + editBlockForm.block.uuid);
 	  return block;
 	});
 
@@ -22129,7 +22129,7 @@
 	
 	var _addBlockForm = __webpack_require__(216);
 	
-	var _editBlockContentForm = __webpack_require__(219);
+	var _editBlockForm = __webpack_require__(219);
 	
 	var initialState = exports.initialState = {
 	  tracker: _tracker.initialState,
@@ -22138,7 +22138,7 @@
 	  modal: _modal.initialState,
 	  activity: _activity.initialState,
 	  addBlockForm: _addBlockForm.initialState,
-	  editBlockContentForm: _editBlockContentForm.initialState
+	  editBlockForm: _editBlockForm.initialState
 	};
 	
 	exports.default = initialState;
@@ -22659,9 +22659,9 @@
 	
 	var _addBlockForm2 = _interopRequireDefault(_addBlockForm);
 	
-	var _editBlockContentForm = __webpack_require__(219);
+	var _editBlockForm = __webpack_require__(219);
 	
-	var _editBlockContentForm2 = _interopRequireDefault(_editBlockContentForm);
+	var _editBlockForm2 = _interopRequireDefault(_editBlockForm);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22673,7 +22673,7 @@
 	  modal: _modal2.default,
 	  activity: _activity2.default,
 	  addBlockForm: _addBlockForm2.default,
-	  editBlockContentForm: _editBlockContentForm2.default
+	  editBlockForm: _editBlockForm2.default
 	};
 
 /***/ },

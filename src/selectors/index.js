@@ -19,25 +19,25 @@ export const isModalOpenSelector = (modalName) => (
 );
 
 export const blocksSelector = (state) => state.blocks;
-export const editBlockFormSelector = (state) => state.editBlockContentForm;
+export const editBlockFormSelector = (state) => state.editBlockForm;
 export const editBlockUuidSelector = createSelector(
   editBlockFormSelector,
-  (editBlockContentForm) => editBlockContentForm.block.uuid,
+  (editBlockForm) => editBlockForm.block.uuid,
 );
 
 // Возвращает блок из blocks который сейчас редактируется
 // Находит его там по uuid
 export const editBlockSelector = createSelector(
   blocksSelector, editBlockFormSelector,
-  (blocks, editBlockContentForm) => {
+  (blocks, editBlockForm) => {
 
-    if (!editBlockContentForm || !editBlockContentForm.block) {
+    if (!editBlockForm || !editBlockForm.block) {
       return null;
     }
 
-    const block = blocks.find(({ uuid }) => uuid == editBlockContentForm.block.uuid);
+    const block = blocks.find(({ uuid }) => uuid == editBlockForm.block.uuid);
 
-    invariant(block, `Not found block ${editBlockContentForm.block.uuid}`);
+    invariant(block, `Not found block ${editBlockForm.block.uuid}`);
     return block;
   },
 );

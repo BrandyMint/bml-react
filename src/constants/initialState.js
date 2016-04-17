@@ -4,7 +4,7 @@ import { initialState as blocksInitialState } from 'reducers/blocks';
 import { initialState as applicationInitialState } from 'reducers/application';
 import { initialState as activityInitialState } from 'reducers/activity';
 import { initialState as addBlockFormInitialState } from 'reducers/addBlockForm';
-import { initialState as editBlockContentFormInitialState } from 'reducers/editBlockContentForm';
+import { initialState as editBlockFormInitialState } from 'reducers/editBlockForm';
 
 export const initialState = {
   tracker: trackerInitialState,
@@ -13,7 +13,7 @@ export const initialState = {
   modal: modalInitialState,
   activity: activityInitialState,
   addBlockForm: addBlockFormInitialState,
-  editBlockContentForm: editBlockContentFormInitialState,
+  editBlockForm: editBlockFormInitialState,
 };
 
 export default initialState;

@@ -40,8 +40,8 @@ export const startEditingContent = (block) => ({
 });
 
 export const submitEditingBlock = () => (dispatch, getState) => {
-  const { editBlockContentForm } = getState();
-  const { block } = editBlockContentForm;
+  const { editBlockForm } = getState();
+  const { block } = editBlockForm;
 
   return dispatch({
     type: SUBMIT_EDITING_BLOCK,

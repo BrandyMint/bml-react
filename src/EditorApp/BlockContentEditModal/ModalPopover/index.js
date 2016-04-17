@@ -5,7 +5,7 @@ import { cancelEditingBlock, submitEditingBlock } from 'actions/blocks';
 import component from './component';
 
 const selector = state => ({
-  savedBlock: state.editBlockContentForm.block,
+  savedBlock: state.editBlockForm.block,
 });
 
 const actions = {
