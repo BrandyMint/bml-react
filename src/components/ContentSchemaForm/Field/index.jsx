@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import partial from 'lodash/partial';
-
 import { FIELD_BASIC_TYPES } from 'constants/fieldTypes';
 import { FIELD_COMPONENTS } from '../schemaFieldTypes';
 import { FIELD_TYPES } from 'constants/fieldTypes';

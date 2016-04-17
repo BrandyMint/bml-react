@@ -58,7 +58,6 @@ class LBlock extends Component {
   }
 
   handleScroll(event) {
-    const scrollTop = event.srcElement.body.scrollTop;
     const element = findDOMNode(this);
     const rect = element.getBoundingClientRect()
 

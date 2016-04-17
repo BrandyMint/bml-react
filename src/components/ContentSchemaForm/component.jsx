@@ -1,7 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import partial from 'lodash/partial';
-
-
 import Field from './Field';
 
 // Универсальный генератор формы. Создает на экране форму из ее схемы и данных

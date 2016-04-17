@@ -1,28 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
-import { findDOMNode } from 'react-dom';
-
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import ListItem from 'material-ui/List/ListItem';
-import IconUp from 'material-ui/svg-icons/navigation/arrow-upward';
-import IconDown from 'material-ui/svg-icons/navigation/arrow-downward';
-import IconRemove from 'material-ui/svg-icons/action/delete';
-import IconEdit from 'material-ui/svg-icons/editor/mode-edit';
-import IconForm from 'material-ui/svg-icons/action/description';
-import IconBackground from 'material-ui/svg-icons/image/panorama';
-import IconViews from 'material-ui/svg-icons/action/view-carousel';
-import IconAttributes from 'material-ui/svg-icons/action/extension';
-
-import Divider from 'material-ui/Divider';
 import FaCog from 'react-icons/lib/fa/cog';
-// import FaCog from 'react-icons/lib/md/extension';
-
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
-
 import partial from 'lodash/partial';
-
 import './index.scss';
 
 const FIXED_STYLE = {

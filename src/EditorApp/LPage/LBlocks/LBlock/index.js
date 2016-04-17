@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { changeContent } from 'actions/blocks';
 
 import component from './component';
 
-const selector = createStructuredSelector({});
+const selector = () => ({});
 
 const actions = {
   onContentChange: changeContent,
