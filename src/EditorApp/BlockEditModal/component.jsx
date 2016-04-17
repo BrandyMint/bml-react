@@ -71,7 +71,7 @@ class BlockEditModal extends Component {
     }
 
     const clientHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    const containerStyle = expand ? {...CONTAINER_STYLE, height: clientHeight - 200 } : CONTAINER_STYLE;
+    const containerStyle = expand ? {...CONTAINER_STYLE, height: clientHeight - 167 } : CONTAINER_STYLE;
 
     return (
       <Dialog
