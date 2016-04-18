@@ -33,7 +33,6 @@ describe('Action creators: blocks', () => {
 
       expect(action).toEqual({
         type: SUBMIT_EDITING_BLOCK,
-        payload: { block },
       });
     });
   });

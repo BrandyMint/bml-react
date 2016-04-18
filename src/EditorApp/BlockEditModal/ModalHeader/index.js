@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { cancelEditingBlock } from 'actions/blocks';
-
 import { editFormBlockSelector } from 'selectors';
 import component from './component';
+import { cancelEditingBlock, submitEditingBlock } from 'actions/blocks';
 
 const selector = createSelector(
   editFormBlockSelector,
@@ -12,6 +11,7 @@ const selector = createSelector(
 
 const actions = {
   onClose: cancelEditingBlock,
+  onSubmit: submitEditingBlock,
 };
 
 export default connect(selector, actions)(component);

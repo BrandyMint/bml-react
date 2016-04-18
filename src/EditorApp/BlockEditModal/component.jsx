@@ -4,6 +4,10 @@ import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import ModalHeader from './ModalHeader'
 import ContentSchemaForm from 'components/ContentSchemaForm';
+import FormEditor from './FormEditor';
+import NodeAttributes from './NodeAttributes';
+import BackgroundForm from './BackgroundForm';
+import BlockDebug from './BlockDebug';
 import { CONTENT_TAB, FORM_TAB, BACKGROUND_TAB, NODEATTRIBUTES_TAB } from 'actions/editBlockForm';
 
 const CONTENT_STYLE = {
@@ -19,19 +23,6 @@ const CONTAINER_STYLE = {
 };
 
 class BlockEditModal extends Component {
-  constructor(props) {
-    super(props);
-    const { t, onSubmit } = props;
-    this.actions = [
-      <FlatButton
-        label={t('submit')}
-        primary
-        keyboardFocused
-        onTouchTap={onSubmit}
-      />,
-    ];
-  }
-
   shouldComponentUpdate(nextProps) {
     const should = nextProps.open !== this.props.open ||
       nextProps.expand !== this.props.expand ||
@@ -48,13 +39,13 @@ class BlockEditModal extends Component {
         element = <ContentSchemaForm />;
         break;
       case FORM_TAB:
-        element = (<div>form</div>);
+        element = <FormEditor />;
         break;
       case BACKGROUND_TAB:
-        element = (<div>background</div>);
+        element = <BackgroundForm />;
         break;
       case NODEATTRIBUTES_TAB:
-        element = (<div>node</div>);
+        element = <NodeAttributes />;
         break;
       default:
         element = (<div>{`Unknown tab ${tab}`}</div>)
@@ -81,7 +72,6 @@ class BlockEditModal extends Component {
         modal={false}
         autoScrollBodyContent={false}
         autoDetectWindowHeight={false}
-        actions={this.actions}
         onRequestClose={onClose}
       >
         <div className="EditorScrollable" style={containerStyle}>
@@ -100,7 +90,6 @@ BlockEditModal.propTypes = {
   expand: PropTypes.bool.isRequired,
 
   onClose: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 };
 
 export default translate('block_edit_modal')(BlockEditModal);

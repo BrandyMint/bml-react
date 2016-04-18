@@ -3,7 +3,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { EDIT_BLOCK_CONTENT } from 'reducers/modal';
 import { isModalOpenSelector, editBlockFormTabSelector } from 'selectors';
-import { cancelEditingBlock, submitEditingBlock } from 'actions/blocks';
+import { cancelEditingBlock } from 'actions/blocks';
 
 import component from './component';
 
@@ -15,7 +15,6 @@ const selector = createStructuredSelector({
 
 const actions = {
   onClose: cancelEditingBlock,
-  onSubmit: submitEditingBlock,
 };
 
 export default connect(selector, actions)(component);

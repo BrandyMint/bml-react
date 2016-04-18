@@ -19,7 +19,8 @@ class ExpandIcon extends Component {
   render() {
     const { expand } = this.props;
     const IconClass = expand ? ExpandLessIcon : ExpandMoreIcon;
-    return <IconButton onTouchTap={this.onTouchTap} ><IconClass /></IconButton>;
+    const tooltip = expand ? 'Свернуть окно' : 'Развернуть на всю высоту';
+    return <IconButton tooltip={tooltip} onTouchTap={this.onTouchTap} ><IconClass /></IconButton>;
   }
 }
 
