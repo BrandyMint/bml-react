@@ -1,0 +1,6 @@
+@import '../editor/config';
+@import '../shared/angeled-background';
+
+.AngeledBackground {
+  @include angled-background;
+}
