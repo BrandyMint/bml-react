@@ -2,12 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import invariant from 'invariant';
 import { translate } from 'react-i18next';
 import MenuItem from 'material-ui/MenuItem';
-import ListItem from 'material-ui/List/ListItem';
 import DropDownMenu from 'material-ui/DropDownMenu';
-import IconEdit from 'material-ui/svg-icons/editor/mode-edit';
-import IconForm from 'material-ui/svg-icons/action/description';
-import IconBackground from 'material-ui/svg-icons/image/panorama';
-import IconAttributes from 'material-ui/svg-icons/action/extension';
 import { viewsRepository } from 'repositories/ViewsRepository';
 
 import { CONTENT_TAB, FORM_TAB, BACKGROUND_TAB, NODEATTRIBUTES_TAB } from 'actions/editBlockForm';

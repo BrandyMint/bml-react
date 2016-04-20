@@ -5,12 +5,8 @@ import { translate } from 'react-i18next';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
 import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/cancel';
-import IconMenu from 'material-ui/IconMenu';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
-import DeleteIcon from 'material-ui/svg-icons/action/delete';
-import PopoverMenu from './PopoverMenu';
 import TabSwitcher from './TabSwitcher';
 import ExpandIcon from './ExpandIcon';
 

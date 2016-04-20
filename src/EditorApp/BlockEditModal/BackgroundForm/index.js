@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import component from './component';
 import { createSelector } from 'reselect';
-import { EDIT_BLOCK_CONTENT } from 'reducers/modal';
 import { changeBackgroundImage } from 'actions/blocks';
-import { viewsRepository } from 'repositories/ViewsRepository';
-import { isModalOpenSelector, editBlockSelector } from 'selectors';
+import { editBlockSelector } from 'selectors';
 
 import { uploadBackground } from 'actions/variants';
 

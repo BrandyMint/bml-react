@@ -1,5 +1,5 @@
 import component from './component';
-import { createSelector, createStructuredSelector } from 'reselect';
+import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { switchTab } from 'actions/editBlockForm';
 

@@ -1,14 +1,13 @@
 import React, { PropTypes, Component } from 'react';
 import { translate } from 'react-i18next';
-import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import ModalHeader from './ModalHeader'
 import ContentSchemaForm from 'components/ContentSchemaForm';
 import FormEditor from './FormEditor';
 import NodeAttributes from './NodeAttributes';
 import BackgroundForm from './BackgroundForm';
-import BlockDebug from './BlockDebug';
 import { CONTENT_TAB, FORM_TAB, BACKGROUND_TAB, NODEATTRIBUTES_TAB } from 'actions/editBlockForm';
+// import BlockDebug from './BlockDebug';
 
 const CONTENT_STYLE = {
   width: '100%',
