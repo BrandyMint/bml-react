@@ -39,8 +39,14 @@ class FieldItem extends Component {
       subtitle = JSON.stringify(subtitle);
     }
 
+    const style = {
+      ...CARD_STYLE,
+      width: 300,
+      display: 'inline-block',
+    };
+
     return (
-      <Card style={CARD_STYLE}>
+      <Card style={style}>
         <CardHeader
           title={title}
           subtitle={subtitle}
@@ -49,9 +55,9 @@ class FieldItem extends Component {
         />
         <CardText expandable>
           {
-            map(itemSchemaFields, (field, index) => (
+            map(itemSchemaFields, (field, key) => (
               <FieldSubitem
-                key={index}
+                key={key}
                 field={field}
                 value={item[field.key]}
                 onChange={this.onChange}
@@ -72,10 +78,15 @@ class FieldItem extends Component {
   }
 }
 
+FieldItem.defaultPropTypes = {
+  horizontal: false,
+};
+
 FieldItem.propTypes = {
   t: PropTypes.func.isRequired,
   titleKey: PropTypes.string.isRequired,
   subtitleKey: PropTypes.string.isRequired,
+  horizontal: PropTypes.bool.isRequired,
 
   index: PropTypes.number.isRequired,
   itemSchemaFields: PropTypes.arrayOf(

@@ -29,11 +29,10 @@ describe('Action creators: blocks', () => {
       const getState = () => ({
         editBlockForm: { block },
       });
-      const action = submitEditingBlock()(identity, getState);
+      const action = submitEditingBlock(); // (identity, getState);
 
       expect(action).toEqual({
         type: SUBMIT_EDITING_BLOCK,
-        payload: { block },
       });
     });
   });

@@ -6,23 +6,6 @@
 @import './editor/IconLink';
 @import './editor/Medium';
 @import './editor/MobilePreviewBody';
-
-
-body.EditorStopScrolling {
-  overflow: hidden;
-}
-
-.EditorScrollable {
-
-  // Чтобы scroll был всегда
-  // Нужно для скролинга блока редактирования
-  &::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-  }
-}
+@import './editor/EditorScrollable.scss';
+@import './editor/EditorStopScrolling.scss';
+@import './editor/AngeledBackground.scss';

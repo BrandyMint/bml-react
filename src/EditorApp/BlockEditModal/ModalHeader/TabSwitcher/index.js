@@ -1,12 +1,12 @@
 import component from './component';
-import { createStructuredSelector } from 'reselect';
+import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { switchTab } from 'actions/editBlockForm';
-import { editBlockFormTabSelector } from 'selectors';
 
-const selector = createStructuredSelector({
-  tab: editBlockFormTabSelector,
-});
+const selector = createSelector(
+  ({ editBlockForm }) => editBlockForm,
+  ({ tab, block: { viewName } }) => ({ tab, viewName }),
+);
 
 const actions = {
   switchTab: switchTab,

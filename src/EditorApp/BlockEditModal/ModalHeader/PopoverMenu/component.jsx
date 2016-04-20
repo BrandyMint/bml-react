@@ -4,7 +4,6 @@ import { translate } from 'react-i18next';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
-import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import ListItem from 'material-ui/List/ListItem';
 import IconUp from 'material-ui/svg-icons/navigation/arrow-upward';
@@ -17,19 +16,16 @@ import IconViews from 'material-ui/svg-icons/action/view-carousel';
 import IconAttributes from 'material-ui/svg-icons/action/extension';
 
 import Divider from 'material-ui/Divider';
-import FaCog from 'react-icons/lib/fa/cog';
+// import FaCog from 'react-icons/lib/fa/cog';
 // import FaCog from 'react-icons/lib/md/extension';
 
-import BubbleIcon from 'components/ui-elements/BubbleIcon';
-
-import partial from 'lodash/partial';
+// import BubbleIcon from 'components/ui-elements/BubbleIcon';
 
 import { CONTENT_TAB, FORM_TAB, BACKGROUND_TAB, NODEATTRIBUTES_TAB } from 'actions/editBlockForm';
 
 class PopoverMenu extends Component {
   constructor(props) {
     super(props);
-    const { uuid } = props;
 
     this.switchTabToForm = this.switchTabToForm.bind(this);
     this.switchTabToContent = this.switchTabToContent.bind(this);
@@ -44,7 +40,7 @@ class PopoverMenu extends Component {
 
   onDelete() { this.props.onDelete(this.props.uuid); }
 
-  switchTabToContent(tab) { this.props.switchTab(CONTENT_TAB); }
+  switchTabToContent() { this.props.switchTab(CONTENT_TAB); }
   switchTabToForm() { this.props.switchTab(FORM_TAB); }
   switchTabToBackground() { this.props.switchTab(BACKGROUND_TAB); }
   switchTabToAttributes() { this.props.switchTab(NODEATTRIBUTES_TAB); }

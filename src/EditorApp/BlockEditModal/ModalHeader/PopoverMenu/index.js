@@ -18,7 +18,6 @@ const selector = createStructuredSelector({
   // enableMoveDown: enableMoveDownSelector,
   // enableMoveUp: enableMoveUpSelector,
   tab: editBlockFormTabSelector,
-  // schema: (state, { block: { viewName }}) => viewsRepository.getContentSchemaByViewName(viewName),
 });
 
 const actions = {

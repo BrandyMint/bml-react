@@ -5,7 +5,6 @@ import map from 'lodash/map';
 import each from 'lodash/each';
 import clone from 'lodash/clone';
 import FieldItem from './FieldItem';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 
 const BLANK_ITEM = {
   title: 'FIELD', // TODO i18n
@@ -74,6 +73,7 @@ class FieldItems extends Component {
             </h3>
             <RaisedButton primary onClick={this.onClickAdd} label={t('add')} />
           </label>
+          <div>
             {map(items, (item, index) => (
                 <FieldItem
                   item={item}
@@ -82,11 +82,13 @@ class FieldItems extends Component {
                   titleKey={titleKey}
                   subtitleKey={subtitleKey}
                   itemSchemaFields={itemSchema.fields}
+                  horizontal
                   onChange={this.onChangeItem}
                   onRemove={this.onRemoveItem}
                 />
               )
             )}
+          </div>
         </fieldset>
     </div>
     );
