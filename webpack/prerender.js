@@ -1,9 +1,9 @@
-import merge from 'lodash/merge';
 import path from 'path';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import done from './done';
+import stubs from './stubs';
 
 import StatsPlugin from 'stats-webpack-plugin';
 
@@ -11,17 +11,6 @@ import common from './common';
 
 const VERSION = require('../package').version;
 
-const resolve = merge(
-  {
-    // Специальные фейковые замены, чтобы во вьюхер не подтягивалась JS и CSS от редактора
-    alias: {
-      'views/elements/Editable/Editor': 'viewer/stubs/Editor.js',
-      'react-medium-editor': 'viewer/stubs/Editor.js',
-      'superagent': 'viewer/stubs/superagent.js',
-    }
-  },
-  common.resolve
-);
 
 const BUILD_DIR = 'dist-prerender';
 
@@ -57,7 +46,7 @@ export default {
     done,
   ],
 
-  resolve: resolve,
+  resolve: { ...stubs, ...common.resolve },
 
   module: { loaders: common.loaders },
 };

@@ -4,8 +4,9 @@
   "description": "Awesome BML front-end",
   "license": "UPL-1.0",
   "scripts": {
-    "build": "npm run build:production && npm run build:prerender",
-    "build:production": "NODE_ENV=production node -r babel-core/register ./node_modules/.bin/webpack --profile --config ./webpack/production.js",
+    "build": "npm run build:production:viewer && npm run build:production:editor && npm run build:prerender",
+    "build:production:viewer": "NODE_ENV=production node -r babel-core/register ./node_modules/.bin/webpack --profile --config ./webpack/production-viewer.js",
+    "build:production:editor": "NODE_ENV=production node -r babel-core/register ./node_modules/.bin/webpack --profile --config ./webpack/production-editor.js",
     "build:prerender": "NODE_ENV=production node -r babel-core/register ./node_modules/.bin/webpack --profile --config ./webpack/prerender.js",
     "start": "node -r babel-register ./initializers/server/index.js",
     "lint": "eslint --ext .json --ext .js --ext .jsx src initializers test",

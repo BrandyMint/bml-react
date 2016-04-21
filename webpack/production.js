@@ -34,22 +34,18 @@ const loaders = concat(
   ]
 )
 
-const BUILD_DIR = 'dist';
-
-export default {
+export default (buildDir) => ({
   devtool: 'source-map',
   postcss: common.postcss,
 
-  entry: common.entry,
-
   output: {
-    path: path.join(process.cwd(), BUILD_DIR),
+    path: path.join(process.cwd(), buildDir),
     filename: '[name].js',
   },
 
   plugins: [
     new ProgressBarPlugin(),
-    new CleanWebpackPlugin(BUILD_DIR, { root: process.cwd() }),
+    new CleanWebpackPlugin(buildDir, { root: process.cwd() }),
     new CopyWebpackPlugin([
       {
         from: path.join(process.cwd(), 'public'),
@@ -93,4 +89,4 @@ export default {
   resolve: common.resolve,
 
   module: { loaders: loaders }
-};
+});
