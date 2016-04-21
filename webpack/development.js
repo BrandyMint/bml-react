@@ -64,6 +64,9 @@ export default {
     // new WebpackErrorNotificationPlugin(),
     // new WebpackBuildNotifierPlugin(),
   ],
+  node: {
+    fs: "empty"
+  },
 
   resolve: common.resolve,
 

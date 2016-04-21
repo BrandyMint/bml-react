@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-import identity from 'lodash/identity';
+// import identity from 'lodash/identity';
 
 import {
   DOWN_BLOCK_POSITION,
@@ -25,10 +25,10 @@ describe('Action creators: blocks', () => {
 
   describe('action: submitEditingBlock', () => {
     it('should handle submitting editable block', () => {
-      const block = { uuid: 'testUuid' };
-      const getState = () => ({
-        editBlockForm: { block },
-      });
+      // const block = { uuid: 'testUuid' };
+      //const getState = () => ({
+        //editBlockForm: { block },
+      //});
       const action = submitEditingBlock(); // (identity, getState);
 
       expect(action).toEqual({
