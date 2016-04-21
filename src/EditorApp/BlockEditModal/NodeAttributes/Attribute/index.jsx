@@ -1,26 +1,36 @@
-import React, { PropTypes } from 'react';
-
+import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
 
-const Attribute = ({
-  placeholder,
-  title,
-  value,
+class Attribute extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  onChange,
-}) => {
-  const handleChange = (event) => onChange(event.target.value);
+  handleChange(event)  {
+    this.props.onChange(this.props.attribute, event.target.value);
+  }
 
-  return (
-    <TextField
-      hintText={placeholder}
-      fullWidth
-      floatingLabelText={title}
-      value={value}
-      onChange={handleChange}
-    />
-  );
-};
+  render() {
+    const {
+      placeholder,
+      title,
+      value,
+
+      ...props,
+    }= this.props;
+
+    return (
+      <TextField
+        {...props}
+        hintText={placeholder}
+        floatingLabelText={title}
+        defaultValue={value}
+        onBlur={this.handleChange}
+      />
+    );
+  }
+}
 
 Attribute.propTypes = {
   attribute: PropTypes.string,
