@@ -6199,7 +6199,7 @@
 	var RecordPropTypes = exports.RecordPropTypes = {
 	  rank: _react.PropTypes.number.isRequired,
 	  title: _react.PropTypes.string.isRequired,
-	  score: _react.PropTypes.string.isRequired,
+	  score: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]).isRequired,
 	  note: _react.PropTypes.string
 	};
 	
@@ -12352,7 +12352,6 @@
 	
 	  // Are we in editor mode?
 	  //
-	  isEditor: false,
 	  isSaving: false,
 	  isMenuOpen: false,
 	  hasUnsavedChanges: false,
@@ -12705,16 +12704,14 @@
 	
 	var editableEnableSelector = exports.editableEnableSelector = (0, _reselect.createSelector)(applicationSelector, function (_ref4) {
 	  var zoom = _ref4.zoom;
-	  var isEditor = _ref4.isEditor;
-	  return !zoom && isEditor;
+	  return !zoom;
 	});
 	
 	var editSettingsEnableSelector = exports.editSettingsEnableSelector = (0, _reselect.createSelector)(applicationSelector, modalSelector, function (_ref5, _ref6) {
 	  var zoom = _ref5.zoom;
-	  var isEditor = _ref5.isEditor;
 	  var editable = _ref5.editable;
 	  var current = _ref6.current;
-	  return !zoom && !current && !editable && isEditor;
+	  return !zoom && !current && !editable;
 	});
 	
 	var currentModalSelector = exports.currentModalSelector = function currentModalSelector(state) {
@@ -22236,9 +22233,7 @@
 	exports.default = initialState;
 	
 	
-	var editorApplicationInitialState = _extends({}, _application.initialState, {
-	  isEditor: true
-	});
+	var editorApplicationInitialState = _extends({}, _application.initialState);
 	
 	var editorInitialState = exports.editorInitialState = _extends({}, initialState, {
 	  application: editorApplicationInitialState
@@ -22288,7 +22283,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.11")
+	    version: ("0.4.12")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -22316,11 +22311,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.11");
+	  var version = ("0.4.12");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.11");
+	    global.BMLVersion = ("0.4.12");
 	  } else {
-	    window.BMLVersion = ("0.4.11");
+	    window.BMLVersion = ("0.4.12");
 	    console.log('Start BML v' + version);
 	  }
 	};
@@ -25975,6 +25970,11 @@
 	      return (0, _get2.default)(this.context.block.content, this.props.path, this.props.defaultValue);
 	    }
 	  }, {
+	    key: 'isEditing',
+	    value: function isEditing() {
+	      return this.context.isEditor && this.props.enable;
+	    }
+	  }, {
 	    key: 'createEditorElement',
 	    value: function createEditorElement() {
 	      return _jsx(_Editor2.default, {
@@ -25996,11 +25996,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return(
-	        // TODO isEditor вынести в store
-	        // TODO все вместе объеденитьв один флаг и вынести в selector
-	        this.props.enable ? this.createEditorElement() : this.createStaticElement()
-	      );
+	      return this.isEditing() ? this.createEditorElement() : this.createStaticElement();
 	    }
 	  }]);
 	
@@ -26025,7 +26021,8 @@
 	};
 	
 	Editable.contextTypes = {
-	  block: _react.PropTypes.object.isRequired
+	  block: _react.PropTypes.object.isRequired,
+	  isEditor: _react.PropTypes.bool
 	};
 	
 	exports.default = Editable;
@@ -26101,6 +26098,11 @@
 	      return true;
 	    }
 	  }, {
+	    key: 'isEditing',
+	    value: function isEditing() {
+	      return this.context.isEditor && this.props.enable;
+	    }
+	  }, {
 	    key: 'getButtons',
 	    value: function getButtons() {
 	      return (0, _get2.default)(this.context.block.content, this.props.path, this.props.defaultValue);
@@ -26146,11 +26148,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return(
-	        // TODO isEditor вынести в store
-	        // TODO все вместе объеденитьв один флаг и вынести в selector
-	        this.props.enable ? this.createEditorElement() : this.createStaticElement()
-	      );
+	      return this.isEditing() ? this.createEditorElement() : this.createStaticElement();
 	    }
 	  }]);
 	
@@ -26171,7 +26169,8 @@
 	};
 	
 	EditableButtons.contextTypes = {
-	  block: _react.PropTypes.object.isRequired
+	  block: _react.PropTypes.object.isRequired,
+	  isEditor: _react.PropTypes.bool
 	};
 	
 	exports.default = EditableButtons;

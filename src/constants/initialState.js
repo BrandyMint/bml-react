@@ -20,7 +20,6 @@ export default initialState;
 
 const editorApplicationInitialState = {
   ...applicationInitialState,
-  isEditor: true,
 };
 
 export const editorInitialState = {

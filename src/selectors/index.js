@@ -8,13 +8,13 @@ export const editBlockFormTabSelector = ({ editBlockForm }) => (editBlockForm.ta
 
 export const editableEnableSelector = createSelector(
   applicationSelector,
-  ({ zoom, isEditor }) => (!zoom && isEditor),
+  ({ zoom }) => (!zoom),
 );
 
 export const editSettingsEnableSelector = createSelector(
   applicationSelector,
   modalSelector,
-  ({ zoom, isEditor, editable }, { current }) => (!zoom && !current && !editable && isEditor),
+  ({ zoom, editable }, { current }) => (!zoom && !current && !editable),
 );
 
 export const currentModalSelector = state => state.modal.current;

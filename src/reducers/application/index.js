@@ -62,7 +62,6 @@ export const initialState = {
 
   // Are we in editor mode?
   //
-  isEditor: false,
   isSaving: false,
   isMenuOpen: false,
   hasUnsavedChanges: false,

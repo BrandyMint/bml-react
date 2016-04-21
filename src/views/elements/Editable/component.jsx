@@ -16,6 +16,10 @@ class Editable extends Component {
     return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
 
+  isEditing() {
+    return this.context.isEditor && this.props.enable;
+  }
+
   createEditorElement() {
     return (
       <EditableEditor
@@ -40,13 +44,7 @@ class Editable extends Component {
     );
   }
   render() {
-    return (
-      // TODO isEditor вынести в store
-      // TODO все вместе объеденитьв один флаг и вынести в selector
-      (this.props.enable) ?
-        this.createEditorElement() :
-        this.createStaticElement()
-    );
+    return this.isEditing() ?  this.createEditorElement() : this.createStaticElement();
   }
 }
 
@@ -69,6 +67,7 @@ Editable.defaultProps = {
 
 Editable.contextTypes = {
   block: PropTypes.object.isRequired,
+  isEditor: PropTypes.bool,
 };
 
 export default Editable;

@@ -20,6 +20,10 @@ class EditableButtons extends Component {
     return true;
   }
 
+  isEditing() {
+    return this.context.isEditor && this.props.enable;
+  }
+
   getButtons() {
     return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
@@ -59,13 +63,7 @@ class EditableButtons extends Component {
   }
 
   render() {
-    return (
-      // TODO isEditor вынести в store
-      // TODO все вместе объеденитьв один флаг и вынести в selector
-      (this.props.enable) ?
-        this.createEditorElement() :
-        this.createStaticElement()
-    );
+    return this.isEditing() ?  this.createEditorElement() : this.createStaticElement();
   }
 }
 
@@ -84,6 +82,7 @@ EditableButtons.defaultProps = {
 
 EditableButtons.contextTypes = {
   block: PropTypes.object.isRequired,
+  isEditor: PropTypes.bool,
 };
 
 export default EditableButtons;

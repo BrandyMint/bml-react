@@ -8,6 +8,10 @@ import LBlocks from './LBlocks';
 import './index.scss';
 
 class LPage extends Component {
+  getChildContext() {
+    return { isEditor: true };
+  }
+
   render() {
     const { is_boxed, zoom } = this.props;
 
@@ -24,6 +28,10 @@ class LPage extends Component {
     );
   }
 }
+
+LPage.childContextTypes = {
+  isEditor: PropTypes.bool,
+};
 
 LPage.propTypes = {
   is_boxed: PropTypes.bool.isRequired,

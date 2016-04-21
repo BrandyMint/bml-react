@@ -4,7 +4,7 @@ import blockPropType from './blockPropType';
 export const RecordPropTypes = {
   rank: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  score: PropTypes.string.isRequired,
+  score: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   note: PropTypes.string,
 };
 
