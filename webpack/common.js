@@ -15,7 +15,7 @@ import autoprefixer from 'autoprefixer';
 
 // https://github.com/aaronj1335/webpack-postcss-tools
 
-const root = path.join(process.cwd(), 'src');
+export const root = path.join(process.cwd(), 'src');
 const viewer = path.join(process.cwd(), 'initializers/viewer');
 const editor = path.join(process.cwd(), 'initializers/editor');
 
@@ -71,14 +71,17 @@ export default {
     {
       test: /\.jpg/,
       loader: 'file-loader?limit=10000!img&properties=true&name=[path][name].[ext]?[hash]',
+      include: [root],
     },
     {
       test: /\.gif$/,
       loader: 'file-loader?mimetype=image/png&name=[path][name].[ext]?[hash]',
+      include: [root],
     },
     {
       test: /\.json/,
       loader: 'json-loader',
+      include: [root],
     },
   ],
 };

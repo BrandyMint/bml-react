@@ -12,7 +12,7 @@ import config from '/initializers/config';
 const VERSION = process.env.npm_package_version;
 // const VERSION = require('../package').version;
 
-const loaders = concat(
+export const loaders = concat(
   common.loaders,
   [
     {
@@ -23,17 +23,19 @@ const loaders = concat(
     {
       test: /\.s(a|c)ss$/,
       loaders: ['style', 'css', 'sass'],
+      include: common.root, // styleguide
     },
     {
       test: /\.less$/,
       loaders: ['style', 'css', 'less'],
+      include: common.root, // styleguide
     },
   ]
 )
 
 export default {
   devtool: 'cheap-eval-source-map',
-  devtool: 'eval-source-map',
+  // devtool: 'eval-source-map',
 
   postcss: common.postcss,
 
