@@ -20,10 +20,6 @@ class EditableButtons extends Component {
     return true;
   }
 
-  isEditing() {
-    return this.context.isEditor && this.props.enable;
-  }
-
   getButtons() {
     return get(this.context.block.content, this.props.path, this.props.defaultValue);
   }
@@ -34,6 +30,10 @@ class EditableButtons extends Component {
 
   getButtonTextPath(index) {
     return `${this.props.path}[${index}].text`;
+  }
+
+  isEditing() {
+    return this.context.isEditor && this.props.enable;
   }
 
   createEditorElement() {
