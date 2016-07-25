@@ -129,7 +129,7 @@
     "react-icon-base": "^1.0.0",
     "react-icons": "brandymint/react-icons",
     "react-input-mask": "^0.6.4",
-    "react-medium-editor": "git://github.com/kbomb/react-medium-editor.git#fix-import-selection-loop",
+    "react-medium-editor": "^1.8.0",
     "react-mixin": "^3.0.4",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.4.1",
