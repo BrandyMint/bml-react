@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import LBlockAddButton from '../LBlockAddButton';
 import partial from 'lodash/partial';
 import BlockSettingsPanel from './BlockSettingsPanel';
 import { findDOMNode } from 'react-dom';
@@ -79,7 +80,7 @@ class LBlock extends Component {
   }
 
   render() {
-    const { block } = this.props;
+    const { block, index } = this.props;
 
     return (
       <div className="LBlock" onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
@@ -87,6 +88,7 @@ class LBlock extends Component {
           {this.state.settingsVisible && this.state.mouseOver && <BlockSettingsPanel block={block} fixed={this.state.settingsFixed} />}
         </Animated>
         <ViewComponent block={block} />
+        <LBlockAddButton index={index + 1}/>
       </div>
     );
   }
@@ -94,6 +96,7 @@ class LBlock extends Component {
 
 LBlock.propTypes = {
   block: PropTypes.object.isRequired, // TODO block shape
+  index: PropTypes.number.isRequired,
   onContentChange: PropTypes.func.isRequired,
 };
 
