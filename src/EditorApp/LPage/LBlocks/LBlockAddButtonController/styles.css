@@ -1,0 +1,24 @@
+.LBlockAddController {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: -30px;
+  bottom: 0;
+  height: 60px;
+
+  .LBlockAddButton {
+    opacity: 0;
+  }
+
+  &:hover {
+    .LBlockAddButton {
+      opacity: 1;
+    }
+  }
+
+  .LBlockAddButton {
+    .LBlockAddButton-handle {
+      top: 60px;
+    }
+  }
+};

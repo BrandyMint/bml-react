@@ -13,11 +13,13 @@ const LBlockAddButton = ({
   onAddBlock,
   index,
   enable,
+  className,
   blocksCount,
 }) => {
   if (!enable) { return false; }
 
   const classes = classnames(
+    className,
     'LBlockAddButton',
     { 'LBlockAddButton--last': blocksCount === index }
   );
@@ -28,6 +30,7 @@ const LBlockAddButton = ({
         className="LBlockAddButton-handle"
         data-multiline
         data-tip={t('tips:add_button')}
+        data-effect='solid'
         onClick={partial(onAddBlock, index)}
       >
         <PlusIcon className="Icon" />
@@ -39,6 +42,7 @@ const LBlockAddButton = ({
 LBlockAddButton.propTypes = {
   t: PropTypes.func.isRequired,
   onAddBlock: PropTypes.func.isRequired,
+  className: PropTypes.string,
   index: PropTypes.number,
   blocksCount: PropTypes.number.isRequired,
   enable: PropTypes.bool.isRequired,

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import LBlockAddButton from '../LBlockAddButton';
+import LBlockAddButtonController from '../LBlockAddButtonController';
 import partial from 'lodash/partial';
 import BlockSettingsPanel from './BlockSettingsPanel';
 import { findDOMNode } from 'react-dom';
@@ -88,7 +88,7 @@ class LBlock extends Component {
           {this.state.settingsVisible && this.state.mouseOver && <BlockSettingsPanel block={block} fixed={this.state.settingsFixed} />}
         </Animated>
         <ViewComponent block={block} />
-        <LBlockAddButton index={index + 1}/>
+        <LBlockAddButtonController index={index} />
       </div>
     );
   }

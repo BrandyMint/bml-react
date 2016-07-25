@@ -30,7 +30,6 @@ const EditorApp = () => (
           </div>
 
           <LeftToolbar />
-          <PreviewToolbar />
           <LBlockAddModal />
           <BlockEditModal />
           <LeftPanelMenu />
