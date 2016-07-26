@@ -6,6 +6,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 
 const STYLE = { position: 'fixed', top: 32, left: 32 };
+const HEADER_HEIGHT = 60;
 
 class LeftToolbar extends Component {
   constructor(props) {
@@ -22,9 +23,10 @@ class LeftToolbar extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll(event) {
-    this.setState({ show: window.scrollY < 60 || this.savedScrollY > window.scrollY });
-    this.savedScrollY = window.scrollY;
+  handleScroll() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    this.setState({ show: scrollY < HEADER_HEIGHT || this.savedScrollY > scrollY });
+    this.savedScrollY = scrollY;
   }
 
   render() {
@@ -50,7 +52,7 @@ class LeftToolbar extends Component {
 
     return <noscript />;
   }
-};
+}
 
 LeftToolbar.propTypes = {
   enable: PropTypes.bool.isRequired,

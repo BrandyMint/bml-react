@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { translate } from 'react-i18next';
-import FaCog from 'react-icons/lib/fa/cog';
+// import FaCog from 'react-icons/lib/fa/cog';
+import DeleteIcon from 'react-icons/lib/md/delete';
 import BubbleIcon from 'components/ui-elements/BubbleIcon';
 import './index.scss';
 
@@ -15,8 +16,8 @@ class BlockSettingsPanel extends Component {
   }
 
   onClick() {
-    const { startEditingBlock, block } = this.props;
-    startEditingBlock(block);
+    const { deleteEditingBlock, block } = this.props;
+    deleteEditingBlock(block.uuid);
   }
 
   render() {
@@ -26,11 +27,12 @@ class BlockSettingsPanel extends Component {
       return (<noscript />);
     }
 
-    const text=t('tips:block_settings');
+    // const text=t('tips:block_settings');
+    const text=t('tips:delete_block');
     return (
       <div className="LBlockSettingsButton" style={fixed ? FIXED_STYLE : {}}>
-        <BubbleIcon onClick={this.onClick}>
-          <FaCog />
+        <BubbleIcon onClick={this.onClick} text={text}>
+          <DeleteIcon />
         </BubbleIcon>
       </div>
     );
@@ -45,6 +47,7 @@ BlockSettingsPanel.propTypes = {
   block: PropTypes.object.isRequired,
 
   startEditingBlock: PropTypes.func.isRequired,
+  deleteEditingBlock: PropTypes.func.isRequired,
 };
 
 export default translate('')(BlockSettingsPanel);
