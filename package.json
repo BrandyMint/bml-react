@@ -14,7 +14,8 @@
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
     "screenshot": "node ./screenshoter.js http://localhost:3000/preview 960x720 src/assets/images/screenshot.png",
-    "bump": "npm version patch && npm run build && git add . && git commit -m build && git push"
+    "bump": "npm version patch && npm run build && git add . && git commit -m build && git push",
+    "deploy": "./node_modules/ghpages/cli.js -p dist-editor"
   },
   "repository": {
     "type": "git",
@@ -58,7 +59,7 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "gh-pages": "^0.11.0",
+    "ghpages": "0.0.8",
     "html-webpack-plugin": "^2.15.0",
     "i18next-resource-store-loader": "^0.1.1",
     "jsdom": "^8.2.0",
