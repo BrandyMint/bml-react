@@ -9,7 +9,7 @@ const LeftToolbar = ({ toggleMenu, enable }) => {
 
   if (enable) {
     return (
-      <FloatingActionButton style={STYLE} backgroundColor="#000" onTouchTap={toggleMenu}>
+      <FloatingActionButton style={STYLE} onTouchTap={toggleMenu}>
           <MenuIcon />
         </FloatingActionButton>
       );

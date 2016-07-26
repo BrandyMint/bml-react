@@ -34,7 +34,7 @@ class LBlocks extends Component {
     const index = findIndex(currentUuids, (uuid) => (uuid===targetUuid));
     invariant(index>=0, 'Index must be greater or equal zero');
 
-    // Realy it does not work and we don't need it
+    // Realy it does not work right way and we don't need it
     // this.scrollBlock(index);
   }
 

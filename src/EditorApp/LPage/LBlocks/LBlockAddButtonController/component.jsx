@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import classnames from 'classnames';
 import LBlockAddButton from '../LBlockAddButton';
-import styles from './styles.css';
+import './styles.css';
 
 class LBlockAddButtonController extends Component {
   constructor(props) {
@@ -14,16 +13,16 @@ class LBlockAddButtonController extends Component {
 
     if (show) {
       return (
-        <LBlockAddButton index={index}/>
-      )
-    } else {
-      return (
-        <div className='LBlockAddController'>
-          <LBlockAddButton index={index} className='LBlockAddButton-middle'/>
-        </div>
+        <LBlockAddButton index={index} />
       );
     }
-  };
+
+    return (
+      <div className='LBlockAddController'>
+        <LBlockAddButton index={index} className='LBlockAddButton-middle' />
+      </div>
+    );
+  }
 }
 
 LBlockAddButtonController.propTypes = {
