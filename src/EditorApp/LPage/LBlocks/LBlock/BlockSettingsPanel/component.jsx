@@ -26,9 +26,10 @@ class BlockSettingsPanel extends Component {
       return (<noscript />);
     }
 
+    const text=t('tips:block_settings');
     return (
       <div className="LBlockSettingsButton" style={fixed ? FIXED_STYLE : {}}>
-        <BubbleIcon onClick={this.onClick} text={t('tips:block_settings')}>
+        <BubbleIcon onClick={this.onClick}>
           <FaCog />
         </BubbleIcon>
       </div>

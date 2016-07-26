@@ -60,6 +60,8 @@ export const initialState = {
 
   loadingState: LOADING_STATE_NONE,
 
+  enableMenu: true,
+
   // Are we in editor mode?
   //
   isSaving: false,

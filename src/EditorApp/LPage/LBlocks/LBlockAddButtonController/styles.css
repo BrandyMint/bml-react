@@ -1,4 +1,5 @@
 .LBlockAddController {
+  z-index: 20; /* Выше блоков */
   width: 100%;
   display: block;
   position: absolute;
