@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import Editor from 'react-medium-editor';
+import ReactMediumEditor from 'react-medium-editor';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 
 import classnames from 'classnames';
@@ -60,7 +60,7 @@ class EditableEditor extends Component {
   }
   render() {
     const { className, element } = this.props;
-    return (<Editor
+    return (<ReactMediumEditor
       ref="redactor"
       tag={element}
       className={classnames(className, 'Redactor')}

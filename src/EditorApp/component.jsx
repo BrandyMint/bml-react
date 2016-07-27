@@ -12,7 +12,7 @@ import Tracker from 'components/Tracker';
 import ActivityController from 'components/ActivityController';
 
 import LeftToolbar from './LeftToolbar';
-import PreviewToolbar from './PreviewToolbar';
+// import PreviewToolbar from './PreviewToolbar';
 
 import BaselineGrid from 'components/BaselineGrid';
 
@@ -30,7 +30,6 @@ const EditorApp = () => (
           </div>
 
           <LeftToolbar />
-          <PreviewToolbar />
           <LBlockAddModal />
           <BlockEditModal />
           <LeftPanelMenu />

@@ -34,7 +34,8 @@ class LBlocks extends Component {
     const index = findIndex(currentUuids, (uuid) => (uuid===targetUuid));
     invariant(index>=0, 'Index must be greater or equal zero');
 
-    this.scrollBlock(index);
+    // Realy it does not work right way and we don't need it
+    // this.scrollBlock(index);
   }
 
   scrollBlock(index) {
@@ -52,7 +53,7 @@ class LBlocks extends Component {
   }
 
   blockRef(index) {
-    return `block${index}`
+    return `block${index}`;
   }
 
   render() {
