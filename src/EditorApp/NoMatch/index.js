@@ -1,3 +1,4 @@
+/* global __VERSION__ */
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import map from 'lodash/map';
@@ -22,7 +23,10 @@ const LANDINGS = [
   },
 ];
 
-const NoMatch = ({ t }) => (
+const NoMatch = ({ t }) => {
+
+  const version = __VERSION__;
+  return (
   <div className="container">
     <h2>{t('no_such_page')}</h2>
     <ul>
@@ -31,9 +35,11 @@ const NoMatch = ({ t }) => (
           <Link to={`/editor/${l.uuid}`}>{t(l.key)}</Link>
         </li>
       )}
-     </ul>
+      </ul>
+      <p>Version: {version}</p>
   </div>
-);
+  )
+};
 
 NoMatch.propTypes = {
   t: PropTypes.func.isRequired,
