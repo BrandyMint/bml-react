@@ -11,6 +11,8 @@ import Place from './place.jsx';
 import { K_SIZE } from './styles.js';
 import './index.css';
 
+const GOOGLE_MAP_API_KEY = 'AIzaSyAabTjF0oFgnXU2vgncF9dSNPzwIjBaCPs';
+
 const DEFAULT_PLACE_TEXT = '·';
 
 const createMapOptions = () => (
@@ -52,7 +54,7 @@ class GoogleMap1 extends Component {
     return (
       <ViewContainer block={ block }>
         <GoogleMap
-          // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
+          apiKey={GOOGLE_MAP_API_KEY}
           center={[center.lat, center.lng]}
           options={createMapOptions}
           zoom={zoom}

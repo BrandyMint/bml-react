@@ -23195,6 +23195,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var GOOGLE_MAP_API_KEY = 'AIzaSyAabTjF0oFgnXU2vgncF9dSNPzwIjBaCPs';
+	
 	var DEFAULT_PLACE_TEXT = '·';
 	
 	var createMapOptions = function createMapOptions() {
@@ -23233,9 +23235,8 @@
 	      var selectedPlaces = (0, _filter2.default)(places, validPlace);
 	      return _jsx(_ViewContainer2.default, {
 	        block: block
-	      }, void 0, _jsx(_googleMapReact2.default
-	      // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
-	      , {
+	      }, void 0, _jsx(_googleMapReact2.default, {
+	        apiKey: GOOGLE_MAP_API_KEY,
 	        center: [center.lat, center.lng],
 	        options: createMapOptions,
 	        zoom: zoom,
