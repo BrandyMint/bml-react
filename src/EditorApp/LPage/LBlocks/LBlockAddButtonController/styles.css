@@ -3,23 +3,30 @@
   width: 100%;
   display: block;
   position: absolute;
-  top: -30px;
-  bottom: 0;
   height: 60px;
+  bottom: -30px;
 
-  .LBlockAddButton {
-    opacity: 0;
-  }
+  /*.LBlockAddButton {*/
+    /*opacity: 0;*/
+  /*}*/
 
-  &:hover {
-    .LBlockAddButton {
-      opacity: 1;
-    }
-  }
+  /*&:hover {*/
+    /*.LBlockAddButton {*/
+      /*opacity: 1;*/
+    /*}*/
+  /*}*/
 
   .LBlockAddButton {
     .LBlockAddButton-handle {
       top: 60px;
     }
   }
-};
+  .LBlockAddController-horline {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,.9) 15px, rgba(255,255,255,.9) 30px);
+    top: 27px;
+    width: 100%;
+    height: 5px;
+  }
+}

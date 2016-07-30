@@ -31,6 +31,7 @@ $hoverBorderColor: #1eabf8;
   user-select: none;
   opacity: $opacity;
 
+
   &:link,
   &:visited {
     color: $bubbleTextColor;

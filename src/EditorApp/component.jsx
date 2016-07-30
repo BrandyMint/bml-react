@@ -12,7 +12,7 @@ import Tracker from 'components/Tracker';
 import ActivityController from 'components/ActivityController';
 
 import LeftToolbar from './LeftToolbar';
-// import PreviewToolbar from './PreviewToolbar';
+// import FloatingAddButton from './FloatingAddButton';
 
 import BaselineGrid from 'components/BaselineGrid';
 

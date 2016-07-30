@@ -6,6 +6,8 @@ import difference from 'lodash/difference';
 import findIndex from 'lodash/findIndex';
 import invariant from 'invariant';
 
+import CopyrightBlock from './CopyrightBlock';
+
 import EmptyPlaceholder from './EmptyPlaceholder';
 import LBlock from './LBlock';
 
@@ -68,8 +70,9 @@ class LBlocks extends Component {
     return (
       <Animated>
         {blocks.map((block, index) =>
-           <LBlock block={block} ref={this.blockRef(index)} index={index} key={block.uuid} />
+          <LBlock block={block} ref={this.blockRef(index)} index={index} key={block.uuid} />
         )}
+        <CopyrightBlock />
       </Animated>
     );
   }

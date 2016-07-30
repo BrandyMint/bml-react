@@ -87,8 +87,8 @@ class LBlock extends Component {
         <Animated>
           {this.state.settingsVisible && this.state.mouseOver && <BlockSettingsPanel block={block} fixed={this.state.settingsFixed} />}
         </Animated>
-        { index > 0 && <LBlockAddButtonController index={index} /> }
         <ViewComponent block={block} />
+        <LBlockAddButtonController index={index + 1} />
       </div>
     );
   }

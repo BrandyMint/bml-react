@@ -21298,7 +21298,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.12")
+	    version: ("0.4.13")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -21326,11 +21326,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.12");
+	  var version = ("0.4.13");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.12");
+	    global.BMLVersion = ("0.4.13");
 	  } else {
-	    window.BMLVersion = ("0.4.12");
+	    window.BMLVersion = ("0.4.13");
 	    console.log('Start BML v' + version);
 	  }
 	};

@@ -2,6 +2,7 @@
   "have_changes": "Есть изменения. Сохраняйте",
   "exit_from_preview": "Переход в конструктор",
   "block_settings": "Настройка блока",
+  "delete_block": "Удалить блок",
   "reset_changes": "Отменить все изменения",
   "color_schema_change": "Сменить цветовую схему",
   "change_block_view": "Смена вида",

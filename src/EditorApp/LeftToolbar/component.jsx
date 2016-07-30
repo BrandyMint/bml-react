@@ -42,7 +42,7 @@ class LeftToolbar extends Component {
           transitionLeaveTimeout={TRANSITION_TIMEOUT}
         >
           { show &&
-            <FloatingActionButton style={STYLE} onTouchTap={toggleMenu} backgroundColor='#000000'>
+            <FloatingActionButton style={STYLE} onTouchTap={toggleMenu}>
               <MenuIcon />
             </FloatingActionButton>
           }
