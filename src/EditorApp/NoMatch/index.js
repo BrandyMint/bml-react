@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import map from 'lodash/map';
 import { translate } from 'react-i18next';
@@ -34,5 +34,9 @@ const NoMatch = ({ t }) => (
      </ul>
   </div>
 );
+
+NoMatch.propTypes = {
+  t: PropTypes.func.isRequired,
+};
 
 export default translate('no_match')(NoMatch);

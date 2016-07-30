@@ -1,3 +1,5 @@
+import React from 'react';
+
 const CopyrightBlock = () => {
   return (
     <section className="BML-section BML-section--padding">

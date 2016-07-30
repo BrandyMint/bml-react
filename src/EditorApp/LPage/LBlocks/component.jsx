@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import LBlockAddButtonController from './LBlockAddButtonController';
 import { findDOMNode } from 'react-dom';
 import { animateScroll } from 'react-scroll';
 import Animated from 'components/primitives/Animated';

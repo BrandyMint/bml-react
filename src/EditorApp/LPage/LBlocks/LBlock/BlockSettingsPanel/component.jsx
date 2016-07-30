@@ -12,26 +12,46 @@ const FIXED_STYLE = {
 class BlockSettingsPanel extends Component {
   constructor(props) {
     super(props);
+    this.state = { hover: false };
     this.onClick = this.onClick.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
+  }
+
+  onEnter() {
+    this.setState({ hover: true });
+  }
+
+  onLeave() {
+    this.setState({ hover: false });
   }
 
   onClick() {
     const { deleteEditingBlock, block } = this.props;
-    deleteEditingBlock(block.uuid);
+    if (confirm(this.props.t('confirm_delete'))) {
+      deleteEditingBlock(block.uuid);
+    }
   }
 
   render() {
     const { t, fixed, enable } = this.props;
+    const { hover } = this.state;
 
     if (!enable) {
       return (<noscript />);
     }
 
     // const text=t('tips:block_settings');
-    const text=t('tips:delete_block');
+    const text=t('delete_block');
     return (
-      <div className="LBlockSettingsButton" style={fixed ? FIXED_STYLE : {}}>
-        <BubbleIcon onClick={this.onClick} text={text}>
+      <div
+        className="LBlockSettingsButton"
+        style={fixed ? FIXED_STYLE : {}}
+        onMouseOver={this.onEnter}
+        onMouseEnter={this.onEnter}
+        onMouseLeave={this.onLeave}
+      >
+        <BubbleIcon onClick={this.onClick} text={hover ? text : ''}>
           <DeleteIcon />
         </BubbleIcon>
       </div>
@@ -50,4 +70,4 @@ BlockSettingsPanel.propTypes = {
   deleteEditingBlock: PropTypes.func.isRequired,
 };
 
-export default translate('')(BlockSettingsPanel);
+export default translate('block_settings_panel')(BlockSettingsPanel);
