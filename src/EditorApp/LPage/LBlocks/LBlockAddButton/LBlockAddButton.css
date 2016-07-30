@@ -20,7 +20,8 @@ $width: 60px;
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 1);
+    /* background: rgba(255, 255, 255, 0.6); */
     border: 1px solid #ebebeb;
     border-radius: 100em;
     transition: all 0.25s ease;
@@ -41,7 +42,8 @@ $width: 60px;
   &:hover {
     .LBlockAddButton-handle {
       border: 1px solid #1eabf8;
-      background: rgba(70, 186, 249, 0.8);
+      /* background: rgba(70, 186, 249, 0.8);*/
+      background: rgba(70, 186, 249, 1);
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 

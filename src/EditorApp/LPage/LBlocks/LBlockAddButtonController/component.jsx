@@ -19,6 +19,7 @@ class LBlockAddButtonController extends Component {
 
     return (
       <div className='LBlockAddController'>
+        <div className='LBlockAddController-horline' />
         <LBlockAddButton index={index} className='LBlockAddButton-middle' />
       </div>
     );
