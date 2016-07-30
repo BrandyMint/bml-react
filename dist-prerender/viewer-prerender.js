@@ -22458,11 +22458,13 @@
 	      return _jsx(_ViewContainer2.default, {
 	        block: block,
 	        className: 'BML-section--padding text-center'
+	      }, void 0, _jsx('div', {
+	        className: 'container'
 	      }, void 0, _ref, _jsx('div', {
 	        className: 'row mb64 mb-xs-24'
 	      }, void 0, _jsx('div', {
 	        className: 'col-sm-12 text-center spread-children-large'
-	      }, void 0, _react2.default.createElement(_Image2.default, content.image))), _ref2);
+	      }, void 0, _react2.default.createElement(_Image2.default, content.image))), _ref2));
 	    }
 	  }]);
 	
@@ -24267,10 +24269,12 @@
 	        block: block,
 	        className: 'BML-section--padding'
 	      }, void 0, _jsx('div', {
+	        className: 'container'
+	      }, void 0, _jsx('div', {
 	        className: 'row mb64 mb-xs-24'
 	      }, void 0, _jsx('div', {
 	        className: 'col-sm-12 text-center'
-	      }, void 0, _react2.default.createElement(_Image2.default, _extends({}, block.content.logo, { className: 'BML-img-logo' })))), _ref, _react2.default.createElement(_Content2.default, data));
+	      }, void 0, _react2.default.createElement(_Image2.default, _extends({}, block.content.logo, { className: 'BML-img-logo' })))), _ref), _react2.default.createElement(_Content2.default, data));
 	    }
 	  }]);
 	

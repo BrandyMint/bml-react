@@ -18,18 +18,20 @@ class View extends Component {
 
     return (
       <ViewContainer block={ block } className="BML-section--padding">
-        <div className="row mb64 mb-xs-24">
-          <div className="col-sm-12 text-center">
-            <Image {...block.content.logo} className="BML-img-logo" />
+        <div className="container">
+          <div className="row mb64 mb-xs-24">
+            <div className="col-sm-12 text-center">
+              <Image {...block.content.logo} className="BML-img-logo" />
+            </div>
           </div>
-        </div>
-        <div className="row mb40 mb-xs-0">
-          <div className="col-sm-12 text-center">
-            <Editable
-              element="h2"
-              path="title"
-              className="BML-h2 color-primary"
-            />
+          <div className="row mb40 mb-xs-0">
+            <div className="col-sm-12 text-center">
+              <Editable
+                element="h2"
+                path="title"
+                className="BML-h2 color-primary"
+              />
+            </div>
           </div>
         </div>
         <Content {...data} />

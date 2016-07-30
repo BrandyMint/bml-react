@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BML-React Editor Demo</title>
+    <link rel="stylesheet" media="all" href="fonts.css" data-turbolinks-track="true" />
+    <link rel="stylesheet" media="all" href="editor.css" data-turbolinks-track="true" />
+    <link rel="stylesheet" media="all" href="viewer.css" data-turbolinks-track="true" />
+    <meta name="csrf-token" content="324NZwkaS6t1WoHs1bZ7k8N/0FvFs635V46FeOKLA6S/FMmTdC/+XmQSLjcfoAGjMOS6YXnpwk6PgyCoVHVT1g==" />
+  </head>
+  <body>
+    <div id="content"></div>
+    <script src="editor.js"></script>
+  </body>
+</html>

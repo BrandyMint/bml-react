@@ -16,28 +16,30 @@ class ContentSection0 extends Component {
 
     return (
       <ViewContainer block={ block } className="BML-section--padding text-center">
-        <div className="row mb40 mb-xs-0">
-          <div className="col-sm-12 text-center">
-            <Editable
-              element="h2"
-              path="header"
-              className="BML-h2 color-primary"
-            />
+        <div className="container">
+          <div className="row mb40 mb-xs-0">
+            <div className="col-sm-12 text-center">
+              <Editable
+                element="h2"
+                path="header"
+                className="BML-h2 color-primary"
+              />
+            </div>
           </div>
-        </div>
-        <div className="row mb64 mb-xs-24">
-          <div className="col-sm-12 text-center spread-children-large">
-            <Image {...content.image} />
+          <div className="row mb64 mb-xs-24">
+            <div className="col-sm-12 text-center spread-children-large">
+              <Image {...content.image} />
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-            <Editable
-              path="leadText"
-              className="lead"
-              options={RICH_OPTIONS}
-            />
-            <EditableButtons path="links" className="mt40" />
+          <div className="row">
+            <div className="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+              <Editable
+                path="leadText"
+                className="lead"
+                options={RICH_OPTIONS}
+              />
+              <EditableButtons path="links" className="mt40" />
+            </div>
           </div>
         </div>
       </ViewContainer>
