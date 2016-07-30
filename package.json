@@ -15,7 +15,7 @@
     "test:watch": "npm test -- --watch",
     "screenshot": "node ./screenshoter.js http://localhost:3000/preview 960x720 src/assets/images/screenshot.png",
     "bump": "npm version patch && npm run build && git add . && git commit -m build && git push",
-    "deploy": "./node_modules/ghpages/cli.js -p dist-editor"
+    "deploy": "./node_modules/ghpages/cli.js -p ghpages"
   },
   "repository": {
     "type": "git",
