@@ -6,3 +6,4 @@ bower_components
 npm-debug.log
 tags
 dist/stats.json
+tmp/
