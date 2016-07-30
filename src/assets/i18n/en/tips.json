@@ -2,6 +2,7 @@
   "have_changes": "Have changes. Do saving",
   "exit_from_preview": "Go to builder",
   "block_settings": "Block settings",
+  "delete_block": "Delete block",
   "reset_changes": "Cancel all changes",
   "color_schema_change": "Change color scheme",
   "change_block_view": "Change view",

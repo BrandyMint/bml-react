@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import map from 'lodash/map';
+import { translate } from 'react-i18next';
 
 import { BLANK_LANDING_VARIANT_UUID } from 'actions/variants';
 import { EXAMPLE_LANDING_VARIANT_UUID } from 'constants/config';
@@ -9,29 +10,29 @@ import { FULL_VIEWS_EXAMPLES_UUID } from 'constants/fullViewsExamples';
 const LANDINGS = [
   {
     uuid: BLANK_LANDING_VARIANT_UUID,
-    title: 'Пустой лендинг',
+    key: 'empty_page',
   },
   {
     uuid: EXAMPLE_LANDING_VARIANT_UUID,
-    title: `Пример лендинга из API ${EXAMPLE_LANDING_VARIANT_UUID}`,
+    key: 'example_page',
   },
   {
     uuid: FULL_VIEWS_EXAMPLES_UUID,
-    title: 'Примеры всех блоков во всех вариантах',
+    key: 'all_blocks_page',
   },
 ];
 
-const NoMatch = () => (
+const NoMatch = ({ t }) => (
   <div className="container">
-    <h2>Такая страница не найдена</h2>
+    <h2>{t('no_such_page')}</h2>
     <ul>
       {map(LANDINGS, (l, index) =>
         <li key={index}>
-          <Link to={`/editor/${l.uuid}`}>{l.title}</Link>
+          <Link to={`/editor/${l.uuid}`}>{t(l.key)}</Link>
         </li>
       )}
      </ul>
   </div>
 );
 
-export default NoMatch;
+export default translate('no_match')(NoMatch);
