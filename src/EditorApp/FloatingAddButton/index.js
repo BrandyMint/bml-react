@@ -5,7 +5,7 @@ import { startAddingBlock } from 'actions/blocks';
 
 const selector = (state) => ({
   open: state.application.zoom,
-  enable: (!state.application.isMenuOpen && !state.application.editable && !state.modal.current && size(state.blocks) > 0),
+  enable: (!state.application.isMenuOpen && !state.modal.current && size(state.blocks) > 0),
 });
 
 const actions = {

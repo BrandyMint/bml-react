@@ -5,7 +5,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const STYLE = { position: 'fixed', bottom: 32, right: 32 };
 
-const PreviewToolbar = ({ enable, startAddingBlock }) => {
+const FloatingAddButton = ({ enable, startAddingBlock }) => {
   if (!enable) { return <noscript />; }
 
   const onTouchTap = () => startAddingBlock();
@@ -17,9 +17,9 @@ const PreviewToolbar = ({ enable, startAddingBlock }) => {
     );
 };
 
-PreviewToolbar.propTypes = {
+FloatingAddButton.propTypes = {
   enable: PropTypes.bool.isRequired,
   startAddingBlock: PropTypes.func.isRequired,
 };
 
-export default PreviewToolbar;
+export default FloatingAddButton;
