@@ -28,13 +28,13 @@ const NoMatch = ({ t }) => {
   const version = __VERSION__;
   return (
   <div className="container">
-    <h2>{t('no_such_page')}</h2>
-    <ul>
-      {map(LANDINGS, (l, index) =>
-        <li key={index}>
-          <Link to={`/editor/${l.uuid}`}>{t(l.key)}</Link>
-        </li>
-      )}
+    <h1>{t('no_such_page')}</h1>
+      <ul>
+        {map(LANDINGS, (l, index) =>
+          <li key={index}>
+            <Link to={`/editor/${l.uuid}`}>{t(l.key)}</Link>
+          </li>
+        )}
       </ul>
       <p>Version: {version}</p>
   </div>

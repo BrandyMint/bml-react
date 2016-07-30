@@ -6,7 +6,7 @@ const CopyrightBlock = () => {
       <div className="container vertical-center-rel">
         <div className="row">
           <div className="col-md-12">
-            Copyright brandymint.ru
+            This site is constructed on <a href="http://yopage.ru">yopage.ru</a>
           </div>
         </div>
       </div>

@@ -53,6 +53,7 @@ export default {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       __VERSION__: `"${VERSION}"`,
       __CLIENT__: true,
