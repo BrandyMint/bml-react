@@ -15,7 +15,7 @@
     "test:watch": "npm test -- --watch",
     "screenshot": "node ./screenshoter.js http://localhost:3000/preview 960x720 src/assets/images/screenshot.png",
     "bump": "npm version patch && npm run build && git add . && git commit -m build && git push",
-    "deploy": "./node_modules/ghpages/cli.js -p ghpages"
+    "deploy": "rm -fr ./ghpages; mkdir ./ghpages; cp -vr ./src/assets ./dist-editor/* ./ghpages; rm ./ghpages/stats.json; git add ghpages; git commit -m 'publicate ghpages',:tabe./node_modules/ghpages/cli.js -d yopage.ru -p ghpages"
   },
   "repository": {
     "type": "git",
