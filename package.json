@@ -1,6 +1,6 @@
 {
   "name": "bml-react",
-  "version": "0.4.13",
+  "version": "0.4.14",
   "description": "Awesome BML front-end",
   "license": "UPL-1.0",
   "scripts": {
@@ -40,6 +40,7 @@
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-root-import": "^4.0.0",
+    "babel-root-slash-import": "^1.1.0",
     "bower": "^1.7.7",
     "bower-webpack-plugin": "^0.1.9",
     "clean-webpack-plugin": "^0.1.8",

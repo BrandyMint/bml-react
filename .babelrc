@@ -10,9 +10,7 @@
     "development": {
       "plugins": [
         ["transform-decorators-legacy"],
-        ["babel-root-import", {
-          "rootPathPrefix": "/"
-        }],
+        ["babel-root-slash-import"],
         ["react-transform", {
           "transforms": [
             {

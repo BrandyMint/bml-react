@@ -9,7 +9,9 @@
 }
 
 .BML-section--height-70 {
-  min-height: base(75);
+  // Отключил, потому что это мешает позицизнироваться BackgroundVideo
+  // появляется снизу отступ
+  // min-height: base(75);
   height: 70vh;
 }
 
