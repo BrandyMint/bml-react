@@ -6,15 +6,15 @@
   height: 60px;
   bottom: -30px;
 
-  /*.LBlockAddButton {*/
-    /*opacity: 0;*/
-  /*}*/
+  .LBlockAddButton {
+    opacity: 0;
+  }
 
-  /*&:hover {*/
-    /*.LBlockAddButton {*/
-      /*opacity: 1;*/
-    /*}*/
-  /*}*/
+  &:hover {
+    .LBlockAddButton {
+      opacity: 1;
+    }
+  }
 
   .LBlockAddButton {
     .LBlockAddButton-handle {
