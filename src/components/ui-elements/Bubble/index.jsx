@@ -19,9 +19,10 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, hasIcon, text, to, isProcessing } = this.props;
+    const { children, hasIcon, text, to, isProcessing, isBlank } = this.props;
     const bubbleClasses = classnames({
       Bubble: true,
+      'Bubble--blank': isBlank,
       'Bubble--withText': !!text,
       'Bubble--withIcon': !!hasIcon,
       'is-processing': isProcessing,
@@ -51,6 +52,7 @@ class Bubble extends Component {
 }
 
 Bubble.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
   hasIcon: PropTypes.bool,
   onClick: PropTypes.func,
@@ -58,6 +60,7 @@ Bubble.propTypes = {
   to: PropTypes.string,
   url: PropTypes.string,
   isProcessing: PropTypes.bool,
+  isBlank: PropTypes.bool,
 };
 
 export default Bubble;

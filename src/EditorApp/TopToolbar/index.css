@@ -1,0 +1,13 @@
+:local(.leftButtonsGroup) {
+  float: left;
+}
+:local(.rightButtonsGroup) {
+  float: right;
+}
+:local(.buttonItem) {
+  margin-left: 15px;
+  &:first-child {
+    margin-left: 0;
+  }
+  display: inline-block;
+}

@@ -4,12 +4,14 @@
     "production": {
       "presets": ["react", "es2015", "stage-0", "react-optimize"],
       "plugins": [
-        ["transform-decorators-legacy"]
+        ["transform-decorators-legacy"],
+        ["transform-class-properties"]
       ]
     },
     "development": {
       "plugins": [
         ["transform-decorators-legacy"],
+        ["transform-class-properties"],
         ["babel-root-slash-import"],
         ["react-transform", {
           "transforms": [

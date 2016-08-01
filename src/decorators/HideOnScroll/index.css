@@ -1,0 +1,8 @@
+:local(.toolbar) {
+  z-index: 50;
+  position: fixed;
+  left: 25px;
+  top: 25px;
+  right: 25px;
+  height: 40px;
+}

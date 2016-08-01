@@ -17,7 +17,10 @@ const loaders = concat(
   [
     {
       test: /\.css$/,
-      loaders: ['style', 'css', 'postcss'],
+      loaders: [
+        'style',
+        'css?localIdentName=[name]__[local]___[hash:base64:5',
+        'postcss'],
       include: common.root,
     },
     {

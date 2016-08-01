@@ -9,6 +9,11 @@ $hoverShadowColor: rgba(0, 0, 0, 0.1);
 $opacity: 0.5;
 $hoverBorderColor: #1eabf8;
 
+$blankBackground: rgba(255, 255, 255, 0.9);
+$blankBubbleTextColor: rgba(0, 0, 0, 0.8);
+$blankBubbleHoverTextColor: rgba(255, 255, 255, 0.8);
+$blankHoverShadowColor: $blankBackground;
+
 @component Bubble {
   cursor: pointer;
   display: inline-block;
@@ -45,6 +50,21 @@ $hoverBorderColor: #1eabf8;
     box-shadow: 0 0 8px $hoverShadowColor;
     color: $bubbleTextColor;
     opacity: 1;
+  }
+
+  @modifier blank {
+    opacity: 1;
+    background-color: $blankBackground;
+    color: $blankBubbleTextColor;
+    border-color: $blankBubbleTextColor;
+    &:focus,
+    &:hover {
+      background-color: $blankBubbleTextColor;
+      box-shadow: 0 0 8px $blankHoverShadowColor;
+      color: $blankBubbleHoverTextColor;
+      opacity: 1;
+      border-color: $blankBubbleTextColor;
+    }
   }
 
   @modifier withIcon {
