@@ -12,18 +12,17 @@ const FIXED_STYLE = {
 class BlockSettingsPanel extends Component {
   constructor(props) {
     super(props);
-    this.state = { hover: false };
     this.onClick = this.onClick.bind(this);
     this.onEnter = this.onEnter.bind(this);
     this.onLeave = this.onLeave.bind(this);
   }
 
   onEnter() {
-    this.setState({ hover: true });
+    this.props.onPanelSettingsOpen(true);
   }
 
   onLeave() {
-    this.setState({ hover: false });
+    this.props.onPanelSettingsOpen(false);
   }
 
   onClick() {
@@ -34,14 +33,12 @@ class BlockSettingsPanel extends Component {
   }
 
   render() {
-    const { t, fixed, enable } = this.props;
-    const { hover } = this.state;
+    const { t, fixed, enable, isOpen } = this.props;
 
     if (!enable) {
       return (<noscript />);
     }
 
-    // const text=t('tips:block_settings');
     const text=t('delete_block');
     return (
       <div
@@ -51,7 +48,7 @@ class BlockSettingsPanel extends Component {
         onMouseEnter={this.onEnter}
         onMouseLeave={this.onLeave}
       >
-        <BubbleIcon onClick={this.onClick} text={hover ? text : ''}>
+        <BubbleIcon onClick={this.onClick} text={isOpen ? text : ''}>
           <DeleteIcon />
         </BubbleIcon>
       </div>
@@ -66,7 +63,10 @@ BlockSettingsPanel.propTypes = {
   enable: PropTypes.bool.isRequired,
   block: PropTypes.object.isRequired,
 
-  startEditingBlock: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+
+  onPanelSettingsOpen: PropTypes.func.isRequired,
+
   deleteEditingBlock: PropTypes.func.isRequired,
 };
 

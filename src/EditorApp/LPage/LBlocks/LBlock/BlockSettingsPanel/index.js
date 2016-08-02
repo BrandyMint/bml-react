@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { editSettingsEnableSelector } from 'selectors';
-import { startEditingBlock, deleteEditingBlock } from 'actions/blocks';
+import { deleteEditingBlock } from 'actions/blocks';
+import { onPanelSettingsOpen } from 'actions/activity';
 
 const selector = createStructuredSelector({
   enable: editSettingsEnableSelector,
+  isOpen: (state) => state.activity.isPanelSettingsOpen,
 });
 
-const actions = { startEditingBlock, deleteEditingBlock };
+const actions = { deleteEditingBlock, onPanelSettingsOpen };
 
 export default connect(selector, actions)(component);
