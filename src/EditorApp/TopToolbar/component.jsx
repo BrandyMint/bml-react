@@ -19,14 +19,14 @@ class TopToolbar extends Component {
       >
       { enable &&
         <HideOnScroll>
-          <div className={css.leftButtonsGroup} styleName={css.buttonsGroup}>
+          <div className={css.leftButtonsGroup}>
             <div className={css.buttonItem}>
               <BubbleIcon onClick={toggleMenu} isBlank>
                 <MenuIcon />
               </BubbleIcon>
             </div>
           </div>
-          <div className={css.rightButtonsGroup} styleName={css.buttonsGroup}>
+          <div className={css.rightButtonsGroup}>
             <div className={css.buttonItem}><BubbleIcon isBlank onClick={this.onClick} text={t('preview')} /></div>
             <div className={css.buttonItem}><BubbleIcon isBlank onClick={this.onClick} text={t('publicate')} /></div>
           </div>

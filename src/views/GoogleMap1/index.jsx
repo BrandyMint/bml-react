@@ -54,7 +54,7 @@ class GoogleMap1 extends Component {
     return (
       <ViewContainer block={ block }>
         <GoogleMap
-          apiKey={GOOGLE_MAP_API_KEY}
+          bootstrapURLKeys={{key: GOOGLE_MAP_API_KEY}}
           center={[center.lat, center.lng]}
           options={createMapOptions}
           zoom={zoom}

@@ -12825,6 +12825,8 @@
 	  value: true
 	});
 	
+	var _handlers;
+	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var _createReducer = __webpack_require__(56);
@@ -12839,12 +12841,18 @@
 	
 	var initialState = {
 	  controlTimer: null,
-	  isActive: false
+	  isActive: false,
+	  isPanelSettingsOpen: false
 	};
 	
-	var handlers = _defineProperty({}, _activity.ON_ACTIVITY, function (state, action) {
+	var handlers = (_handlers = {}, _defineProperty(_handlers, _activity.ON_PANEL_SETTINGS_OPEN, function (state, _ref) {
+	  var payload = _ref.payload;
+	  return _extends({}, state, {
+	    isPanelSettingsOpen: payload
+	  });
+	}), _defineProperty(_handlers, _activity.ON_ACTIVITY, function (state, action) {
 	  return _extends({}, state, action.payload);
-	});
+	}), _handlers);
 	
 	exports.default = (0, _createReducer2.default)(initialState, handlers);
 
@@ -21120,10 +21128,18 @@
 	  value: true
 	});
 	var ON_ACTIVITY = exports.ON_ACTIVITY = 'ON_ACTIVITY';
+	var ON_PANEL_SETTINGS_OPEN = exports.ON_PANEL_SETTINGS_OPEN = 'ON_PANEL_SETTINGS_OPEN';
 	
 	var startActivity = exports.startActivity = function startActivity(payload) {
 	  return {
 	    type: ON_ACTIVITY,
+	    payload: payload
+	  };
+	};
+	
+	var onPanelSettingsOpen = exports.onPanelSettingsOpen = function onPanelSettingsOpen(payload) {
+	  return {
+	    type: ON_PANEL_SETTINGS_OPEN,
 	    payload: payload
 	  };
 	};
@@ -21724,7 +21740,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.14")
+	    version: ("0.4.15")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -21752,11 +21768,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.14");
+	  var version = ("0.4.15");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.14");
+	    global.BMLVersion = ("0.4.15");
 	  } else {
-	    window.BMLVersion = ("0.4.14");
+	    window.BMLVersion = ("0.4.15");
 	    console.log('Start BML v' + version);
 	  }
 	};
@@ -23236,7 +23252,7 @@
 	      return _jsx(_ViewContainer2.default, {
 	        block: block
 	      }, void 0, _jsx(_googleMapReact2.default, {
-	        apiKey: GOOGLE_MAP_API_KEY,
+	        bootstrapURLKeys: { key: GOOGLE_MAP_API_KEY },
 	        center: [center.lat, center.lng],
 	        options: createMapOptions,
 	        zoom: zoom,
