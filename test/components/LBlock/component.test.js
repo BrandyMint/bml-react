@@ -13,6 +13,14 @@ import expect from 'expect';
 
 import LBlock from 'EditorApp/LPage/LBlocks/LBlock/component';
 
+i18n
+  .init({
+    fallbackLng: 'en',
+    defaultNS: 'common',
+    ns: ['common'],
+    // returnObjects: true,
+  });
+
 const store = createStore(state => state, initialState);
 
 const getProps = (extra = {}) =>
@@ -33,7 +41,7 @@ describe('Components: LBlock', () => {
       output = TestUtils.renderIntoDocument(
         <I18nextProvider i18n={ i18n }>
           <Provider store={store}>
-            <LBlock {...props} />
+            <LBlock {...props} index={1} />
           </Provider>
         </I18nextProvider>
       );
