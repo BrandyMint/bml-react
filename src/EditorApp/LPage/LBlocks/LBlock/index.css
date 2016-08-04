@@ -9,9 +9,16 @@
 
 }
 
-:local(.blockShifted) {
+:local(.blockOver) {
+  transition: all 0.25s ease;
   composes: block;
-  left: -100px;
+  left: -15px;
+}
+
+:local(.blockShifted) {
+  transition: all 0.25s ease;
+  composes: block;
+  left: -150px;
 }
 
 .LPage--scale {

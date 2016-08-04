@@ -19,14 +19,14 @@ class Bubble extends Component {
     }
   }
   render() {
-    const { children, hasIcon, text, to, isOpen, isProcessing, isBlank } = this.props;
+    const { children, hasIcon, text, to, isActive, isProcessing, isBlank } = this.props;
     const bubbleClasses = classnames({
       Bubble: true,
       'Bubble--blank': isBlank,
       'Bubble--withText': !!text,
       'Bubble--withIcon': !!hasIcon,
       'is-processing': isProcessing,
-      'is-open': isOpen,
+      'is-active': isActive,
     });
 
     if (to) {
@@ -61,7 +61,7 @@ Bubble.propTypes = {
   to: PropTypes.string,
   url: PropTypes.string,
   isProcessing: PropTypes.bool,
-  isOpen: PropTypes.bool,
+  isActive: PropTypes.bool,
   isBlank: PropTypes.bool,
 };
 

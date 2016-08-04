@@ -24,7 +24,9 @@ class LBlock extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.onMouseOverSettingsButton = this.onMouseOverSettingsButton.bind(this);
     this.state = {
+      mouseOverSettingsButton: false,
       settingsFixed: false,
       settingsVisible: true,
       mouseOver: false,
@@ -48,12 +50,19 @@ class LBlock extends Component {
       nextState.mouseOver != this.state.mouseOver ||
       nextState.settingsVisible != this.state.settingsVisible ||
       nextProps.panelSettingsOpen != this.props.panelSettingsOpen ||
+      nextState.mouseOverSettingsButton != this.state.mouseOverSettingsButton ||
       nextState.settingsFixed != this.state.settingsFixed;
     return should;
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  onMouseOverSettingsButton(flag) {
+    this.setState({
+      mouseOverSettingsButton: flag,
+    });
   }
 
   onMouseLeave() {
@@ -87,15 +96,24 @@ class LBlock extends Component {
 
     const isSettingsOpen = panelSettingsOpen === block;
 
-    const className = isSettingsOpen ? css.blockShifted : css.block;
+    const className = isSettingsOpen ? css.blockShifted : (this.state.mouseOverSettingsButton ? css.blockOver : css.block);
 
     return (
       <div className={css.container}>
         <SettingsPanel block={block} />
-          <div className={className} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
-            {this.state.settingsVisible && (this.state.mouseOver || isSettingsOpen) && <SettingsButton block={block} isOpen={isSettingsOpen}/>}
-            <ViewComponent block={block} />
-          </div>
+        <div className={className} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
+          <Animated>
+            {
+              this.state.settingsVisible &&
+                (this.state.mouseOver || isSettingsOpen) &&
+                <SettingsButton
+                  block={block}
+                  onOver={this.onMouseOverSettingsButton}
+                  isOpen={isSettingsOpen}/>
+                }
+          </Animated>
+          <ViewComponent block={block} />
+        </div>
         <LBlockAddButtonController index={index + 1} />
       </div>
     );

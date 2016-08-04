@@ -1,13 +1,15 @@
-/*@import "src/stylesheets/shared/zindexes";*/
-
 :local(.panel) {
+  font-size: 14px;
   position: absolute;
+  right: 0px;
   top: 0px;
-  padding: 10px;
-  font-size: 12px;
-  right: 0px; /* offset of material Plus icon */
-  width: 100px;
+  padding: 25px 20px;
+  width: 150px;
   height: 100%;
-  color: red;
+  color: #666;
   background: #333;
+}
+
+:local(.menuItem) {
+  margin-bottom: 15px;
 }

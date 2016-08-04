@@ -14,6 +14,16 @@ class SettingsButton extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
+  }
+
+  onEnter() {
+    this.props.onOver(true);
+  }
+
+  onLeave() {
+    this.props.onOver(false);
   }
 
   onClick() {
@@ -28,9 +38,10 @@ class SettingsButton extends Component {
       return (<noscript />);
     }
 
-    const text=t('delete_block');
     return (
       <div
+        onMouseOver={this.onEnter}
+        onMouseLeave={this.onLeave}
         className={css.button}
         style={fixed ? FIXED_STYLE : {}}
       >
@@ -50,6 +61,8 @@ SettingsButton.propTypes = {
   block: PropTypes.object.isRequired,
 
   isOpen: PropTypes.bool.isRequired,
+
+  onOver: PropTypes.func.isRequired,
 
   onPanelSettingsOpen: PropTypes.func.isRequired,
 
