@@ -1,9 +1,21 @@
-.LBlock {
+:local(.container) {
   position: relative;
 }
 
+:local(.block) {
+  position: relative;
+  transition: all 0.25s ease;
+  left: 0;
+
+}
+
+:local(.blockShifted) {
+  composes: block;
+  left: -100px;
+}
+
 .LPage--scale {
-  .LBlock {
+  :local(.block) {
     margin-top: 56px;
     margin-bottom: 56px;
   }

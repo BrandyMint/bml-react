@@ -12842,13 +12842,13 @@
 	var initialState = {
 	  controlTimer: null,
 	  isActive: false,
-	  isPanelSettingsOpen: false
+	  panelSettingsOpen: null
 	};
 	
 	var handlers = (_handlers = {}, _defineProperty(_handlers, _activity.ON_PANEL_SETTINGS_OPEN, function (state, _ref) {
 	  var payload = _ref.payload;
 	  return _extends({}, state, {
-	    isPanelSettingsOpen: payload
+	    panelSettingsOpen: payload
 	  });
 	}), _defineProperty(_handlers, _activity.ON_ACTIVITY, function (state, action) {
 	  return _extends({}, state, action.payload);
@@ -21740,7 +21740,7 @@
 	
 	var METADATA = {
 	  BMLApp: {
-	    version: ("0.4.15")
+	    version: ("0.4.16")
 	  }
 	}; /* global __VERSION__ */
 	/* global __CLIENT__ */
@@ -21768,11 +21768,11 @@
 	
 	/* eslint-disable no-console */
 	var semverInit = function semverInit() {
-	  var version = ("0.4.15");
+	  var version = ("0.4.16");
 	  if (typeof window === 'undefined') {
-	    global.BMLVersion = ("0.4.15");
+	    global.BMLVersion = ("0.4.16");
 	  } else {
-	    window.BMLVersion = ("0.4.15");
+	    window.BMLVersion = ("0.4.16");
 	    console.log('Start BML v' + version);
 	  }
 	};

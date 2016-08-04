@@ -10,6 +10,7 @@ import HideOnScroll from 'decorators/HideOnScroll';
 class TopToolbar extends Component {
   render() {
     const { enable, toggleMenu, t } = this.props;
+    console.log('TopToolbar', enable);
     return (
       <ReactCSSTransitionGroup
         component="div"

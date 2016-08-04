@@ -1,0 +1,13 @@
+/*@import "src/stylesheets/shared/zindexes";*/
+
+:local(.panel) {
+  position: absolute;
+  top: 0px;
+  padding: 10px;
+  font-size: 12px;
+  right: 0px; /* offset of material Plus icon */
+  width: 100px;
+  height: 100%;
+  color: red;
+  background: #333;
+}

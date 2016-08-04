@@ -1,13 +1,15 @@
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import LBlockAddButtonController from '../LBlockAddButtonController';
 import partial from 'lodash/partial';
-import BlockSettingsPanel from './BlockSettingsPanel';
-import { findDOMNode } from 'react-dom';
+// import BlockSettingsPanel from './BlockSettingsPanel';
+import SettingsPanel from './SettingsPanel';
+import SettingsButton from './SettingsButton';
 import Animated from 'components/primitives/Animated';
 
 import ViewComponent from 'components/shared/ViewComponent';
 
-import './index.css';
+import css from './index.css';
 
 // Minimal visible height of block to show SettingsPanel
 //
@@ -45,6 +47,7 @@ class LBlock extends Component {
     const should = nextProps.block != this.props.block ||
       nextState.mouseOver != this.state.mouseOver ||
       nextState.settingsVisible != this.state.settingsVisible ||
+      nextProps.panelSettingsOpen != this.props.panelSettingsOpen ||
       nextState.settingsFixed != this.state.settingsFixed;
     return should;
   }
@@ -80,14 +83,19 @@ class LBlock extends Component {
   }
 
   render() {
-    const { block, index } = this.props;
+    const { panelSettingsOpen, block, index } = this.props;
+
+    const isSettingsOpen = panelSettingsOpen === block;
+
+    const className = isSettingsOpen ? css.blockShifted : css.block;
 
     return (
-      <div className="LBlock" onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
-        <Animated>
-          {this.state.settingsVisible && this.state.mouseOver && <BlockSettingsPanel block={block} fixed={this.state.settingsFixed} />}
-        </Animated>
-        <ViewComponent block={block} />
+      <div className={css.container}>
+        <SettingsPanel block={block} />
+          <div className={className} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
+            {this.state.settingsVisible && (this.state.mouseOver || isSettingsOpen) && <SettingsButton block={block} isOpen={isSettingsOpen}/>}
+            <ViewComponent block={block} />
+          </div>
         <LBlockAddButtonController index={index + 1} />
       </div>
     );
@@ -96,6 +104,7 @@ class LBlock extends Component {
 
 LBlock.propTypes = {
   block: PropTypes.object.isRequired, // TODO block shape
+  panelSettingsOpen: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired,
   onContentChange: PropTypes.func.isRequired,
 };

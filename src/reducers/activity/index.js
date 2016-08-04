@@ -8,14 +8,14 @@ import {
 const initialState = {
   controlTimer: null,
   isActive: false,
-  isPanelSettingsOpen: false,
+  panelSettingsOpen: null,
 };
 
 const handlers = {
   [ON_PANEL_SETTINGS_OPEN]: (state, { payload }) => (
     {
       ...state,
-      isPanelSettingsOpen: payload,
+      panelSettingsOpen: payload,
     }
   ),
   [ON_ACTIVITY]: (state, action) => (

@@ -53,17 +53,24 @@ $blankHoverShadowColor: $blankBackground;
   }
 
   @modifier blank {
-    opacity: 0.9;
+    opacity: 0.7;
     background-color: $blankBackground;
     color: $blankBubbleTextColor;
-    border-color: $blankBubbleTextColor;
+    border: 2px solid $blankBubbleTextColor;
     &:focus,
     &:hover {
       background-color: $blankBubbleTextColor;
       box-shadow: 0 0 8px $blankHoverShadowColor;
       color: $blankBubbleHoverTextColor;
-      opacity: 1;
-      border-color: $blankBubbleTextColor;
+      opacity: 0.9;
+      border: 2px solid $blankBubbleTextColor;
+    }
+    @when open {
+      background-color: $blankBubbleTextColor;
+      box-shadow: 0 0 8px $blankHoverShadowColor;
+      color: $blankBubbleHoverTextColor;
+      opacity: 0.9;
+      border: 2px solid $blankBubbleTextColor;
     }
   }
 
@@ -94,7 +101,7 @@ $blankHoverShadowColor: $blankBackground;
     padding: 0 15px 0 6px;
     vertical-align: middle;
     font-size: 16px;
-    margin-top: 2px;
+    /* margin-top: 2px; */
     display: inline-block;
   }
 
