@@ -108,8 +108,9 @@ class LBlock extends Component {
                 <SettingsButton
                   block={block}
                   onOver={this.onMouseOverSettingsButton}
-                  isOpen={isSettingsOpen}/>
-                }
+                  isOpen={isSettingsOpen}
+                />
+              }
           </Animated>
           <ViewComponent block={block} />
         </div>

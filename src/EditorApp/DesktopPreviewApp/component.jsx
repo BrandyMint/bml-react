@@ -1,12 +1,13 @@
 import React from 'react';
 
-import PreviewToolbar from 'EditorApp/DesktopPreviewApp/PreviewToolbar';
 import ShowApp from 'ShowApp';
 import ReactTooltip from 'react-tooltip';
+import TopToolbar from 'EditorApp/TopToolbar';
+import { DESKTOP_PREVIEW_MODE } from 'EditorApp/TopToolbar/modes';
 
 const DesktopPreviewApp = () => (
   <ShowApp>
-    <PreviewToolbar />
+    <TopToolbar mode={DESKTOP_PREVIEW_MODE} />
     <ReactTooltip />
   </ShowApp>
 );

@@ -32,7 +32,7 @@ class SettingsButton extends Component {
   }
 
   render() {
-    const { t, fixed, enable, isOpen, block } = this.props;
+    const { fixed, enable, isOpen } = this.props;
 
     if (!enable) {
       return (<noscript />);

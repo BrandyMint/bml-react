@@ -6,9 +6,9 @@ import ShowApp from 'ShowApp';
 
 import ReactTooltip from 'react-tooltip';
 
-import PreviewToolbar from 'EditorApp/DesktopPreviewApp/PreviewToolbar';
-
 import Frame from 'react-frame-component';
+import TopToolbar from 'EditorApp/TopToolbar';
+import { MOBILE_PREVIEW_MODE } from 'EditorApp/TopToolbar/modes';
 
 import './index.css';
 
@@ -18,8 +18,8 @@ const FontsStyleUrl = '/dist/fonts.css';
 
 // В development-е используем обычный iframe
 // чтобы нормально подгужались актуальные стили
+// В production-e используем Frame чтобы небыло паузы при загрузке
 //
-// В продакшене используем Frame чтобы небыло паузы при загрузке
 const useFrame = __ENV__ !== 'development';
 
 // Специфика фотографии телефона
@@ -54,7 +54,7 @@ const App = ({ variantUuid }) => {
         <div className="MobilePreview-viewport">
           {Screen}
         </div>
-        <PreviewToolbar mobile />
+        <TopToolbar mode={MOBILE_PREVIEW_MODE} />
         <ReactTooltip />
       </div>
     </BodyClassName>
