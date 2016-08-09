@@ -40,12 +40,13 @@ class SettingsButton extends Component {
 
     return (
       <div
+        onClick={this.onClick}
         onMouseOver={this.onEnter}
         onMouseLeave={this.onLeave}
         className={css.button}
         style={fixed ? FIXED_STYLE : {}}
       >
-        <BubbleIcon isBlank isActive={isOpen} onClick={this.onClick}>
+        <BubbleIcon isBlank isActive={isOpen}>
           <Icon />
         </BubbleIcon>
       </div>

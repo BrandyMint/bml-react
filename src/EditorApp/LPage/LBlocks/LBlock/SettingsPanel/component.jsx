@@ -8,17 +8,13 @@ import DeleteIcon from 'react-icons/lib/md/delete';
 import DownIcon from 'react-icons/lib/md/arrow-downward';
 import UpIcon from 'react-icons/lib/md/arrow-upward';
 
-const FIXED_STYLE = {
-  position: 'fixed',
-}
-
 class SettingsPanel extends Component {
   constructor(props) {
     super(props);
-    this.onClick = this.onClick.bind(this);
+    this.onClickDelete = this.onClickDelete.bind(this);
   }
 
-  onClick() {
+  onClickDelete() {
     const { deleteEditingBlock, block } = this.props;
     if (confirm(this.props.t('confirm_delete'))) {
       deleteEditingBlock(block.uuid);
@@ -26,19 +22,29 @@ class SettingsPanel extends Component {
   }
 
   render() {
-    const { t, fixed, enable, isOpen } = this.props;
+    const { t, isOpen } = this.props;
 
-    //if (!enable) {
-      //return (<noscript />);
-    //}
+    console.log(css);
 
     const text=t('delete_block');
     return (
       <div className={css.panel}>
-        <div className={css.menuItem}><ImageIcon /> Image</div>
-        <div className={css.menuItem}><UpIcon /> Move </div>
-        <div className={css.menuItem}><DownIcon /> Move</div>
-        <div className={css.menuItem}><DeleteIcon /> Delete</div>
+        <div className={css.menuItem} onClick={this.onClickDelete}>
+          <div className={css.menuItemIcon}><DeleteIcon /></div>
+          <div className={css.menuItemText}>Delete</div>
+        </div>
+        <div className={css.menuItem}>
+          <div className={css.menuItemIcon}><ImageIcon /></div>
+          <div className={css.menuItemText}>Image</div>
+        </div>
+        <div className={css.menuItem}>
+          <div className={css.menuItemIcon}><UpIcon /></div>
+          <div className={css.menuItemText}>Move Up</div>
+        </div>
+        <div className={css.menuItem}>
+          <div className={css.menuItemIcon}><DownIcon /></div>
+          <div className={css.menuItemText}>Move Down</div>
+        </div>
       </div>
     );
   }
@@ -46,8 +52,6 @@ class SettingsPanel extends Component {
 
 SettingsPanel.propTypes = {
   t: PropTypes.func.isRequired,
-  fixed: PropTypes.bool.isRequired,
-  enable: PropTypes.bool.isRequired,
   block: PropTypes.object.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onPanelSettingsOpen: PropTypes.func.isRequired,

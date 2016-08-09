@@ -8,7 +8,6 @@ import SettingsButton from './SettingsButton';
 import Animated from 'components/primitives/Animated';
 
 import ViewComponent from 'components/shared/ViewComponent';
-
 import css from './index.css';
 
 // Minimal visible height of block to show SettingsPanel

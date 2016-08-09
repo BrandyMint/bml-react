@@ -6,7 +6,6 @@
   position: relative;
   transition: all 0.25s ease;
   left: 0;
-
 }
 
 :local(.blockOver) {
