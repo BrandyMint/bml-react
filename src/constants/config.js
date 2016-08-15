@@ -1,6 +1,7 @@
 import get from 'lodash/get';
 
 export const EXAMPLE_LANDING_VARIANT_UUID = 'example';
+export const AUTO_SAVE_TIMEOUT = 4000;
 
 const defaults = {
   exitUrl: '/#exit',

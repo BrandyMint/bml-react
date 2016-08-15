@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
+import autoSaveLanding from 'middleware/autoSaveLanding';
 import APIMiddleware from 'middleware/API';
 
 import reducers from 'reducers';
@@ -23,6 +24,7 @@ const finalReducers = combineReducers({
 const middlewares = [
   thunk,
   APIMiddleware,
+  autoSaveLanding,
 ];
 
 const logger = createLogger();
