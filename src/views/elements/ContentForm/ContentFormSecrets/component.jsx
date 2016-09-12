@@ -21,7 +21,7 @@ class ContentFormSecrets extends Component {
     const { tracker, collectionUuid, variantUuid } = this.props;
     const { cookie } = this.state;
 
-    const tracking = JSON.stringify(tracker);
+    const tracking = JSON.stringify(tracker) || 'tracking';
 
     const viewerUid = config('viewerUid');
     return (
@@ -35,7 +35,7 @@ class ContentFormSecrets extends Component {
         <input
           name="cookie"
           type="hidden"
-          value={cookie}
+          value={cookie || 'cookie'}
         />
         <input
           name="variant_uuid"

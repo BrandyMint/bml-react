@@ -106,6 +106,7 @@ class LBlock extends Component {
               this.state.settingsVisible &&
                 (this.state.mouseOver || isSettingsOpen) &&
                 <SettingsButton
+                  fixed={false}
                   block={block}
                   onOver={this.onMouseOverSettingsButton}
                   isOpen={isSettingsOpen}
@@ -122,7 +123,7 @@ class LBlock extends Component {
 
 LBlock.propTypes = {
   block: PropTypes.object.isRequired, // TODO block shape
-  panelSettingsOpen: PropTypes.object.isRequired,
+  panelSettingsOpen: PropTypes.object,
   index: PropTypes.number.isRequired,
   onContentChange: PropTypes.func.isRequired,
 };

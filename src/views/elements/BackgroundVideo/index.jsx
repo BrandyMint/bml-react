@@ -67,10 +67,11 @@ class BackgroundVideo extends Component {
 
   render() {
     const { videos, overlay } = this.props;
+    // pageload="auto" из тега video убрал из-за warning-ов в react
     return (
       <div className="BML-BackgroundVideo">
         <div style={containerStyles}>
-          <video autoPlay loop muted pageload="auto" poster={poster} style={videoStyle}
+          <video autoPlay loop muted poster={poster} style={videoStyle}
             className="BML-BackgroundVideo-video"
           >
             {map(videos, (video, index) =>
