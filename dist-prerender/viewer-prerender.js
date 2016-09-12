@@ -24886,6 +24886,7 @@
 	      var _props = this.props;
 	      var videos = _props.videos;
 	      var overlay = _props.overlay;
+	      // pageload="auto" из тега video убрал из-за warning-ов в react
 	
 	      return _jsx('div', {
 	        className: 'BML-BackgroundVideo'
@@ -24895,7 +24896,6 @@
 	        autoPlay: true,
 	        loop: true,
 	        muted: true,
-	        pageload: 'auto',
 	        poster: poster,
 	        style: videoStyle,
 	        className: 'BML-BackgroundVideo-video'
@@ -25024,7 +25024,7 @@
 	      var cookie = this.state.cookie;
 	
 	
-	      var tracking = JSON.stringify(tracker);
+	      var tracking = JSON.stringify(tracker) || 'tracking';
 	
 	      var viewerUid = (0, _config2.default)('viewerUid');
 	      return _jsx('div', {}, void 0, _ref, _jsx('input', {
@@ -25034,7 +25034,7 @@
 	      }), _jsx('input', {
 	        name: 'cookie',
 	        type: 'hidden',
-	        value: cookie
+	        value: cookie || 'cookie'
 	      }), _jsx('input', {
 	        name: 'variant_uuid',
 	        type: 'hidden',
