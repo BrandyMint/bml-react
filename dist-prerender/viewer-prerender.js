@@ -6241,7 +6241,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.EXAMPLE_LANDING_VARIANT_UUID = undefined;
+	exports.AUTO_SAVE_TIMEOUT = exports.EXAMPLE_LANDING_VARIANT_UUID = undefined;
 	
 	var _get = __webpack_require__(62);
 	
@@ -6250,6 +6250,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var EXAMPLE_LANDING_VARIANT_UUID = exports.EXAMPLE_LANDING_VARIANT_UUID = 'example';
+	var AUTO_SAVE_TIMEOUT = exports.AUTO_SAVE_TIMEOUT = 4000;
 	
 	var defaults = {
 	  exitUrl: '/#exit',
